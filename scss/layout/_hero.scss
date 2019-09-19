@@ -12,7 +12,7 @@
 
   &__container {
     @extend .grid-center;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 60% 1fr;
     grid-template-areas:
       "hero__container--titles hero__img"
       "hero__description hero__img";
@@ -47,7 +47,6 @@
 
 @media only screen and (max-width: 768px) {
   .hero__container {
-    grid-template-columns: 60% 1fr;
     grid-template-areas:
       "hero__container--titles hero__container--titles"
       "hero__description hero__img";

@@ -253,8 +253,8 @@ h3 {
 }
 
 .hero__container {
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: 60% 1fr;
+      grid-template-columns: 60% 1fr;
       grid-template-areas: "hero__container--titles hero__img" "hero__description hero__img";
 }
 
@@ -293,8 +293,6 @@ h3 {
 
 @media only screen and (max-width: 768px) {
   .hero__container {
-    -ms-grid-columns: 60% 1fr;
-        grid-template-columns: 60% 1fr;
         grid-template-areas: "hero__container--titles hero__container--titles" "hero__description hero__img";
     row-gap: 1rem;
   }
