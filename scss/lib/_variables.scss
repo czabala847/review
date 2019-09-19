@@ -1,0 +1,52 @@
+/*-----------------------------------------*\
+                  VARIABLES
+\*-----------------------------------------*/
+
+/*COLORS*/
+
+$color-gray: #f6f6f6;
+$color-white: #fff;
+$color-black: black;
+$color-black-font: #242a2d;
+
+$color-dark-orange: #e15e00;
+$color-orange: #fa6900;
+$color-light-orange: #ff9548;
+$color-yellow: #fae600;
+$color-blue: #009ead;
+
+$color-degraded: linear-gradient(
+  to bottom,
+  $color-dark-orange,
+  $color-light-orange
+);
+
+/*TYPOGRAPHY*/
+
+$font-family-base: "Open Sans", sans-serif;
+$font-family-title: "Pacifico", cursive;
+$font-size-base: 16px;
+$font-letter-spacing: 2px;
+
+/*CONSTANT*/
+
+$header-height: 90px;
+$hero-height: 450px;
+
+$width-full: 100%;
+$height-full: 100%;
+
+/*CONTAINERS*/
+$container-justify: center;
+$container-align: center;
+$container-direction: row;
+
+/*ESPACED*/
+$espaced-base: 1rem;
+
+$margin-base: $espaced-base;
+$padding-base: $espaced-base;
+
+/*BORDERS*/
+$border-radius: 5px;
+$box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);

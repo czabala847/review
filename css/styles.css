@@ -1,0 +1,421 @@
+/*-----------------------------------------*\
+                  VARIABLES
+\*-----------------------------------------*/
+/*COLORS*/
+/*TYPOGRAPHY*/
+/*CONSTANT*/
+/*CONTAINERS*/
+/*ESPACED*/
+/*BORDERS*/
+/*-----------------------------------------*\
+                  MIXINS
+\*-----------------------------------------*/
+/*-----------------------------------------*\
+                 FUNCTIONS
+\*-----------------------------------------*/
+/*-----------------------------------------*\
+              SETTINGS GLOBAL
+\*-----------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f6f6f6;
+}
+
+body,
+figure,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+/*-----------------------------------------*\
+                  CONTAINERS
+\*-----------------------------------------*/
+.grid-center, .container-general, .header-menu, .hero__container, .course__list, .course__item {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-center, .header-menu__list, .hero, .footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-general {
+  -ms-grid-columns: minmax(auto, 1024px);
+      grid-template-columns: minmax(auto, 1024px);
+}
+
+@media only screen and (max-width: 1024px) {
+  .container-general {
+    padding: 0 1rem;
+  }
+}
+
+/*-----------------------------------------*\
+                  LINKS
+\*-----------------------------------------*/
+.link {
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.link.link-refe {
+  color: #009ead;
+  font-style: italic;
+}
+
+.link:hover {
+  color: #fae600;
+}
+
+.link-refe:hover {
+  color: #fa6900;
+}
+
+/*-----------------------------------------*\
+                  OVERLAYS
+\*-----------------------------------------*/
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/*-----------------------------------------*\
+                 TYPOGRAPHY
+\*-----------------------------------------*/
+html,
+body {
+  font-size: 16px;
+  color: #242a2d;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Pacifico", cursive;
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/*hero*/
+.hero__title {
+  font-size: 4rem;
+}
+
+.hero__subtitle {
+  font-size: 1.3rem;
+}
+
+.t-upper {
+  text-transform: uppercase;
+}
+
+.t-bold {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 636px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+  h1,
+  .hero__title {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/*-----------------------------------------*\
+                  HEADER
+\*-----------------------------------------*/
+.header {
+  height: 90px;
+  width: 100%;
+  background: #e15e00;
+}
+
+.header > .container-general {
+  height: inherit;
+}
+
+.header-menu {
+  -ms-grid-columns: 200px 1fr 200px;
+      grid-template-columns: 200px 1fr 200px;
+      grid-template-areas: "menu-left header-menu__logo menu-right";
+}
+
+.header-menu__list {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header-menu__list--item {
+  list-style: none;
+}
+
+.header-menu__logo {
+  text-align: center;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: header-menu__logo;
+}
+
+.menu-left {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: menu-left;
+}
+
+.menu-right {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: menu-right;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    height: auto;
+  }
+  .header-menu {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "header-menu__logo header-menu__logo" "menu-left menu-right";
+  }
+  .header-menu__logo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: header-menu__logo;
+  }
+  .menu-left {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: menu-left;
+  }
+  .menu-right {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: menu-right;
+  }
+  .header-menu__list {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+/*-----------------------------------------*\
+                  HERO
+\*-----------------------------------------*/
+.hero {
+  min-height: 450px;
+  width: 100%;
+  color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e15e00), to(#ff9548));
+  background: linear-gradient(to bottom, #e15e00, #ff9548);
+  position: relative;
+}
+
+.hero__container {
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "hero__container--titles hero__img" "hero__description hero__img";
+}
+
+.hero__container--titles {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: hero__container--titles;
+}
+
+.hero__title {
+  margin: 0;
+  line-height: 1;
+}
+
+.hero__subtitle {
+  margin: 0 0 1rem 0;
+  letter-spacing: 2px;
+  color: #fae600;
+  font-weight: bold;
+}
+
+.hero__description {
+  margin-top: 2rem;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: hero__description;
+}
+
+.hero__img {
+  text-align: center;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: hero__img;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero__container {
+    -ms-grid-columns: 60% 1fr;
+        grid-template-columns: 60% 1fr;
+        grid-template-areas: "hero__container--titles hero__container--titles" "hero__description hero__img";
+    row-gap: 1rem;
+  }
+  .hero__container--titles {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: hero__container--titles;
+  }
+  .hero__description {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: hero__description;
+  }
+  .hero__img {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: hero__img;
+  }
+  .hero__img img {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hero {
+    padding-top: 2rem;
+    min-height: auto;
+  }
+  .hero__img {
+    display: none;
+  }
+  .hero__description {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / span 2;
+  }
+}
+
+/*-----------------------------------------*\
+              COURSES CONTAINER
+\*-----------------------------------------*/
+.course {
+  padding: 2rem 0;
+}
+
+.course__title {
+  margin-bottom: 1rem;
+}
+
+.course__description {
+  margin: 0 0 1rem 0;
+}
+
+.course__list {
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+}
+
+.course__item {
+  -ms-grid-columns: 70px 1fr;
+      grid-template-columns: 70px 1fr;
+  background: #fff;
+  margin-top: 2rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.course__item:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+}
+
+.course__item--img {
+  text-align: center;
+}
+
+.course__item--text {
+  padding: 0.5rem 1rem;
+}
+
+.course__item--title {
+  margin: 0;
+  color: #fa6900;
+}
+
+.course__item--description {
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .course__list {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    row-gap: 1rem;
+  }
+  .course__item {
+    margin-top: 0;
+  }
+}
+
+/*-----------------------------------------*\
+                  FOOTER
+\*-----------------------------------------*/
+.footer {
+  background-color: black;
+}
+
+.footer__container {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #fff;
+  padding: 1rem 0;
+}
+/*# sourceMappingURL=styles.css.map */

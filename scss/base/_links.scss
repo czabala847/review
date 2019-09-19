@@ -1,0 +1,22 @@
+/*-----------------------------------------*\
+                  LINKS
+\*-----------------------------------------*/
+
+.link {
+  color: $color-white;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &.link-refe {
+    color: $color-blue;
+    font-style: italic;
+  }
+}
+
+.link:hover {
+  color: $color-yellow;
+}
+
+.link-refe:hover {
+  color: $color-orange;
+}

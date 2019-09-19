@@ -1,0 +1,13 @@
+/*-----------------------------------------*\
+                  FOOTER
+\*-----------------------------------------*/
+
+.footer {
+  background-color: $color-black;
+}
+
+.footer__container {
+  @include m-flex(space-between);
+  color: $color-white;
+  padding: $espaced-base 0;
+}

@@ -1,0 +1,16 @@
+/*-----------------------------------------*\
+              SETTINGS GLOBAL
+\*-----------------------------------------*/
+
+body {
+  font-family: $font-family-base;
+  background-color: $color-gray;
+}
+
+body,
+figure,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
