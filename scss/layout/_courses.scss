@@ -1,7 +1,7 @@
 /*-----------------------------------------*\
               COURSES CONTAINER
 \*-----------------------------------------*/
-.course {
+.courses {
   padding: sum-space(1rem) 0;
 }
 
@@ -33,8 +33,9 @@
   margin-top: sum-space($espaced-base);
   border-radius: $border-radius;
   box-shadow: $box-shadow;
-  cursor: pointer;
   transition: 0.3s;
+  text-decoration: none;
+  color: $color-black-font;
 }
 
 .course__item:hover {

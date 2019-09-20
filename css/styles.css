@@ -336,7 +336,7 @@ h3 {
 /*-----------------------------------------*\
               COURSES CONTAINER
 \*-----------------------------------------*/
-.course {
+.courses {
   padding: 2rem 0;
 }
 
@@ -363,9 +363,10 @@ h3 {
   border-radius: 5px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-  cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  text-decoration: none;
+  color: #242a2d;
 }
 
 .course__item:hover {
