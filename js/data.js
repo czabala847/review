@@ -36,7 +36,7 @@ data = [
         courseName: "Curso Básico",
         courseDescription:
           "Curso de entrada a conocer y manejar conceptos básico sobre React JS.",
-        courseURL: "../courses/react/react-basico.html",
+        courseURL: "./courses/react/react-basico.html",
         courseImage:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
       }
@@ -55,7 +55,7 @@ function createTemplate(HTMLString) {
 function templateCourse(course) {
   return `
   <a href=${
-    course.courseURL ? course.courseURL : "../index.html"
+    course.courseURL ? course.courseURL : "./index.html"
   } class="course__item" data-id=${course.courseID}>
     <figure class="course__item--img">
       <img src=${course.courseImage} alt="avatar ${
