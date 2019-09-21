@@ -13,6 +13,7 @@ $color-dark-orange: #e15e00;
 $color-orange: #fa6900;
 $color-light-orange: #ff9548;
 $color-yellow: #fae600;
+$color-dark-blue: #008794;
 $color-blue: #009ead;
 
 $color-degraded: linear-gradient(
@@ -48,5 +49,6 @@ $margin-base: $espaced-base;
 $padding-base: $espaced-base;
 
 /*BORDERS*/
-$border-radius: 5px;
+$border-radius-max: 30px;
+$border-radius-min: 5px;
 $box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);

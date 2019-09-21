@@ -46,6 +46,20 @@
   overflow: hidden;
 }
 
+/*-----------------------------------------*\
+              HERO COURSES
+\*-----------------------------------------*/
+
+.hero-course {
+  @extend .hero;
+  min-height: 300px;
+  padding-bottom: sum-space($padding-base);
+}
+
+.hero-course__title {
+  margin-bottom: 0;
+}
+
 @media only screen and (max-width: 768px) {
   .hero__container {
     grid-template-areas:

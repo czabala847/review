@@ -19,6 +19,18 @@
   grid-template-columns: minmax(auto, 1024px);
 }
 
+.note {
+  background-color: #fef6d0;
+  border-left: 5px solid #fee467;
+  padding: 0.5rem $padding-base;
+  font-size: 0.95rem;
+}
+
+.code {
+  border: 2px dashed #d8d8d8;
+  background-color: #ededed;
+}
+
 @media only screen and (max-width: 1024px) {
   .container-general {
     padding: 0 $padding-base;

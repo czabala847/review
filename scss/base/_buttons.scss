@@ -1,0 +1,47 @@
+/*-----------------------------------------*\
+                 BUTTONS
+\*-----------------------------------------*/
+
+.btn {
+  padding: 8px 25px 12px;
+  border-radius: $border-radius-min;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.9rem;
+  box-shadow: inset 0px -5px 1px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  color: $color-white;
+
+  &.btn--blue {
+    // background: linear-gradient(to right bottom, $color-dark-blue, $color-blue);
+    background-color: $color-blue;
+
+    &:hover {
+      // background: linear-gradient(
+      //   to right bottom,
+      //   $color-dark-blue,
+      //   $color-dark-blue
+      // );
+      background-color: $color-dark-blue;
+    }
+  }
+
+  &.btn--primary {
+    // background: linear-gradient(
+    //   to right bottom,
+    //   $color-dark-orange,
+    //   $color-orange
+    // );
+    background-color: $color-orange;
+
+    &:hover {
+      // background: linear-gradient(
+      //   to right bottom,
+      //   $color-dark-orange,
+      //   $color-dark-orange
+      // );
+      background-color: $color-dark-orange;
+    }
+  }
+}

@@ -22,9 +22,7 @@ body {
 }
 
 body,
-figure,
-ul,
-ol {
+figure {
   margin: 0;
   padding: 0;
 }
@@ -32,7 +30,7 @@ ol {
 /*-----------------------------------------*\
                   CONTAINERS
 \*-----------------------------------------*/
-.grid-center, .container-general, .header-menu, .hero__container, .course__list, .course__item {
+.grid-center, .container-general, .header-menu, .hero__container, .course__list, .course__item, .course-class {
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
@@ -43,7 +41,7 @@ ol {
           align-items: center;
 }
 
-.flex-center, .header-menu__list, .hero, .footer__container {
+.flex-center, .header-menu__list, .hero, .hero-course, .footer__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -58,6 +56,18 @@ ol {
 .container-general {
   -ms-grid-columns: minmax(auto, 1024px);
       grid-template-columns: minmax(auto, 1024px);
+}
+
+.note {
+  background-color: #fef6d0;
+  border-left: 5px solid #fee467;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+}
+
+.code {
+  border: 2px dashed #d8d8d8;
+  background-color: #ededed;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -78,7 +88,6 @@ ol {
 
 .link.link-refe {
   color: #009ead;
-  font-style: italic;
 }
 
 .link:hover {
@@ -162,6 +171,39 @@ h3 {
 }
 
 /*-----------------------------------------*\
+                 BUTTONS
+\*-----------------------------------------*/
+.btn {
+  padding: 8px 25px 12px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.9rem;
+  -webkit-box-shadow: inset 0px -5px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0px -5px 1px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #fff;
+}
+
+.btn.btn--blue {
+  background-color: #009ead;
+}
+
+.btn.btn--blue:hover {
+  background-color: #008794;
+}
+
+.btn.btn--primary {
+  background-color: #fa6900;
+}
+
+.btn.btn--primary:hover {
+  background-color: #e15e00;
+}
+
+/*-----------------------------------------*\
                   HEADER
 \*-----------------------------------------*/
 .header {
@@ -184,6 +226,8 @@ h3 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .header-menu__list--item {
@@ -243,7 +287,7 @@ h3 {
 /*-----------------------------------------*\
                   HERO
 \*-----------------------------------------*/
-.hero {
+.hero, .hero-course {
   min-height: 450px;
   width: 100%;
   color: #fff;
@@ -292,6 +336,18 @@ h3 {
   overflow: hidden;
 }
 
+/*-----------------------------------------*\
+              HERO COURSES
+\*-----------------------------------------*/
+.hero-course {
+  min-height: 300px;
+  padding-bottom: 2rem;
+}
+
+.hero-course__title {
+  margin-bottom: 0;
+}
+
 @media only screen and (max-width: 768px) {
   .hero__container {
         grid-template-areas: "hero__container--titles hero__container--titles" "hero__description hero__img";
@@ -319,7 +375,7 @@ h3 {
 }
 
 @media only screen and (max-width: 480px) {
-  .hero {
+  .hero, .hero-course {
     padding-top: 2rem;
     min-height: auto;
   }
@@ -417,5 +473,13 @@ h3 {
           justify-content: space-between;
   color: #fff;
   padding: 1rem 0;
+}
+
+/*-----------------------------------------*\
+                  COURSE
+\*-----------------------------------------*/
+.course-class {
+  -ms-grid-columns: 20% 1fr;
+      grid-template-columns: 20% 1fr;
 }
 /*# sourceMappingURL=styles.css.map */

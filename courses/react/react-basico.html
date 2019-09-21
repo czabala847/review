@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Curso básico de React JS</title>
-    <link rel="icon" href="./images/favicon.png" type="img/text" />
+    <link rel="icon" href="../../images/favicon.png" type="img/text" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico&display=swap"
       rel="stylesheet"
@@ -27,7 +27,7 @@
                 </li>
               </ul>
               <figure class="header-menu__logo">
-                <a href="/"
+                <a href="../../index.html"
                   ><img
                     class="header-menu__logo--img"
                     src="../../images/logo_white.png"
@@ -45,23 +45,129 @@
             </nav>
           </div>
         </header>
-        <section>
-          <h1>Curso básico de react js</h1>
-          <p>
-            React cumple su función como biblioteca ya que para utilizar su
-            código se debe importar. También es un Framework aunque las
-            convenciones de cómo debe ser organizado todo no son estrictas. En
-            este curso aprenderás las prácticas que la comunidad ha decidido que
-            son buenas. React es declarativo, lo que quiere decir que se le
-            indica qué debe hacer pero no cómo debe hacerse, ahorrando de esta
-            manera muchos pasos. JSX es HTML dentro de Javascript, esto se verá
-            más adelante en detalle. React está estructurado por componentes que
-            son como pequeños bloques de lego que al ser unidos forman
-            aplicaciones de React. Estos componentes pueden tener estilos, ser
-            enlazados a eventos y sus estados pueden ser modificados. Con React
-            también se tiene la ventaja de que será escrito una sola vez y podrá
-            ser utilizado en aplicaciones web, móviles, entre otras.
-          </p>
+        <section class="hero-course">
+          <div class="container-general">
+            <h1 class="hero-course__title">Curso básico de react js</h1>
+            <p class="hero-course__description">
+              <strong>React</strong> cumple su función como biblioteca ya que
+              para utilizar su código se debe importar. También es un Framework
+              aunque las convenciones de cómo debe ser organizado todo no son
+              estrictas. <br />
+              <span class="t-bold">React es declarativo</span>, lo que quiere
+              decir que se le indica qué debe hacer pero no cómo debe hacerse,
+              ahorrando de esta manera muchos pasos. <br />
+              React está estructurado por componentes que son como pequeños
+              bloques de lego que al ser unidos forman aplicaciones de React.
+              Estos componentes pueden tener estilos, ser enlazados a eventos y
+              sus estados pueden ser modificados. Con React también se tiene la
+              ventaja de que será escrito una sola vez y podrá ser utilizado en
+              aplicaciones web, móviles, entre otras.
+            </p>
+            <div class="hero-course__buttons">
+              <a
+                target="_blank"
+                href="https://es.reactjs.org/"
+                class="btn btn--blue"
+                >Web oficial</a
+              >
+              <a
+                target="_blank"
+                href="https://platzi.com/clases/react/"
+                class="btn btn--primary"
+                >Curso platzi</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="course-class">
+          <nav class="course-class__menu">
+            <ul>
+              <li><a href="#">Herramientas a usar</a></li>
+              <li><a href="#">Create React App</a></li>
+              <li><a href="#">ReactDOM.render</a></li>
+            </ul>
+          </nav>
+          <div class="course-class__content">
+            <article class="course-class__section">
+              <h2>Herramientas a usar</h2>
+              <p>
+                La herramientas que se usaron en el curso básico de react en
+                <strong>platzi</strong> son:
+              </p>
+              <ul>
+                <li>
+                  <span class="t-bold">React Developer Tools:</span> Es una
+                  herramienta Open Source creada por Facebook y tiene
+                  instalación para
+                  <a
+                    class="link link-refe t-bold"
+                    target="_blank"
+                    href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=es"
+                    >chrome</a
+                  >
+                  o firefox. Nos dejará ver el código de React inspeccionando
+                  elementos.
+                </li>
+                <li>
+                  <span class="t-bold">Editor de texto:</span> Puedes usar
+                  cualquiera, en este curso se sugirió
+                  <a
+                    target="_blank"
+                    href="https://code.visualstudio.com/"
+                    class="link link-refe t-bold"
+                    >Visual Studio</a
+                  >
+                </li>
+              </ul>
+
+              <p>
+                VS Code tiene muchos plugis utiles entre los cuales esta: <br />
+                <a
+                  target="_blank"
+                  href="https://github.com/prettier/prettier-vscode"
+                  class="t-bold link link-refe"
+                  >Prettier</a
+                >
+                Es un plugin que hace que el código se vea bien sin importar
+                cómo esta escrito. Tiene la función de que al darle save, le da
+                formato al código.
+              </p>
+              <div class="note">
+                <p>
+                  Para activar la función de que al guardar el documento se haga
+                  el autoformateado, se debe habilitar la opción
+                  <span class="t-bold">editor.formatOnSave</span>:
+                  <ul>
+                    <li>Abril el Command Palette, (control + shift + p) en windows</li>
+                    <li>Escribir Open user Settings</li>
+                    <li>Buscar format on save y activarlo</li>
+                  </ul>
+                </p>
+                <p>
+                  Para deshabilitar prettier para ciertos lenguajes, se puede
+                  emplear la siguiente configuración, en el archivo
+                  <span class="t-bold">setting.json</span> de VS Code: <br />
+                  <span class="t-bold"
+                    >"prettier.disableLanguages" : ["html"]</span
+                  >
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section">
+              <h2>Create React App</h2>
+              <p>
+                <a class="link link-refe t-bold" href="https://github.com/facebook/create-react-app" target="_blank">Create React App</a> 
+                app es una aplicación moderna que se usa desde una línea de comando. Antes de ella se configuraba todo el entorno manualmente lo cual tomaba mucho tiempo.
+              </p>
+              <p>
+                <span class="t-bold">Instalar de forma global: </span>
+                <pre class="code">
+                  npm install -g react-create-app
+                </pre>
+              </p>
+              <code></code>
+            </article>
+          </div>
         </section>
       </div>
     </div>
