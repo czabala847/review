@@ -20,15 +20,24 @@
 }
 
 .note {
-  background-color: #fef6d0;
-  border-left: 5px solid #fee467;
-  padding: 0.5rem $padding-base;
-  font-size: 0.95rem;
+  background-color: $color-light-yellow;
+  border-left: 5px solid $color-yellow;
+  padding: sum-space(-0.5rem) $padding-base;
 }
 
 .code {
-  border: 2px dashed #d8d8d8;
-  background-color: #ededed;
+  // border: 2px dashed $color-dark-gray;
+  background-color: $color-gray-code;
+  outline: 0;
+  overflow: auto;
+  line-height: 20px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  box-sizing: inherit;
+  tab-size: $espaced-base;
+  color: $color-white;
+  background-color: $color-code-black;
+  border-radius: $border-radius-min;
 }
 
 @media only screen and (max-width: 1024px) {

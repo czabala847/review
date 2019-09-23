@@ -9,6 +9,7 @@
   color: $color-white;
   background: $color-degraded;
   position: relative;
+  margin-top: $header-height;
 
   &__container {
     @extend .grid-center;

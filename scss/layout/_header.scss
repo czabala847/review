@@ -6,6 +6,9 @@
   height: $header-height;
   width: $width-full;
   background: $color-dark-orange;
+  position: fixed;
+  z-index: 100;
+  top: 0;
 
   & > .container-general {
     height: inherit;

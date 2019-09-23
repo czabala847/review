@@ -23,6 +23,18 @@ h3 {
   font-size: 1.5rem;
 }
 
+.t-upper {
+  text-transform: uppercase;
+}
+
+.t-bold {
+  font-weight: bold;
+}
+
+.note {
+  font-size: 0.95rem;
+}
+
 /*hero*/
 
 .hero__title {
@@ -33,12 +45,10 @@ h3 {
   font-size: 1.3rem;
 }
 
-.t-upper {
-  text-transform: uppercase;
-}
+/*cursos*/
 
-.t-bold {
-  font-weight: bold;
+.course-class__section--title {
+  font-size: 1.8rem;
 }
 
 @media only screen and (max-width: 636px) {

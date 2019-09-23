@@ -4,7 +4,10 @@
 
 /*COLORS*/
 
+$color-dark-gray: #d8d8d8;
 $color-gray: #f6f6f6;
+$color-gray-code: #ededed;
+
 $color-white: #fff;
 $color-black: black;
 $color-black-font: #242a2d;
@@ -12,7 +15,10 @@ $color-black-font: #242a2d;
 $color-dark-orange: #e15e00;
 $color-orange: #fa6900;
 $color-light-orange: #ff9548;
+
+$color-light-yellow: #fef6d0;
 $color-yellow: #fae600;
+
 $color-dark-blue: #008794;
 $color-blue: #009ead;
 
@@ -21,6 +27,14 @@ $color-degraded: linear-gradient(
   $color-dark-orange,
   $color-light-orange
 );
+
+/*COLORS CODE*/
+$color-code-pink: rgb(252, 146, 158);
+$color-code-green: rgb(141, 200, 145);
+$color-code-black: #282c34;
+$color-code-yellow: rgb(250, 200, 99);
+$color-code-gray: rgba(255, 255, 255, 0.3);
+$color-code-blue: rgb(121, 182, 242);
 
 /*TYPOGRAPHY*/
 

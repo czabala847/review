@@ -1,7 +1,9 @@
+@charset "UTF-8";
 /*-----------------------------------------*\
                   VARIABLES
 \*-----------------------------------------*/
 /*COLORS*/
+/*COLORS CODE*/
 /*TYPOGRAPHY*/
 /*CONSTANT*/
 /*CONTAINERS*/
@@ -25,6 +27,10 @@ body,
 figure {
   margin: 0;
   padding: 0;
+}
+
+.app > div {
+  position: relative;
 }
 
 /*-----------------------------------------*\
@@ -60,14 +66,25 @@ figure {
 
 .note {
   background-color: #fef6d0;
-  border-left: 5px solid #fee467;
+  border-left: 5px solid #fae600;
   padding: 0.5rem 1rem;
-  font-size: 0.95rem;
 }
 
 .code {
-  border: 2px dashed #d8d8d8;
   background-color: #ededed;
+  outline: 0;
+  overflow: auto;
+  line-height: 20px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  -moz-tab-size: 1rem;
+    -o-tab-size: 1rem;
+       tab-size: 1rem;
+  color: #fff;
+  background-color: #282c34;
+  border-radius: 5px;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -136,6 +153,18 @@ h3 {
   font-size: 1.5rem;
 }
 
+.t-upper {
+  text-transform: uppercase;
+}
+
+.t-bold {
+  font-weight: bold;
+}
+
+.note {
+  font-size: 0.95rem;
+}
+
 /*hero*/
 .hero__title {
   font-size: 4rem;
@@ -145,12 +174,9 @@ h3 {
   font-size: 1.3rem;
 }
 
-.t-upper {
-  text-transform: uppercase;
-}
-
-.t-bold {
-  font-weight: bold;
+/*cursos*/
+.course-class__section--title {
+  font-size: 1.8rem;
 }
 
 @media only screen and (max-width: 636px) {
@@ -210,6 +236,9 @@ h3 {
   height: 90px;
   width: 100%;
   background: #e15e00;
+  position: fixed;
+  z-index: 100;
+  top: 0;
 }
 
 .header > .container-general {
@@ -294,6 +323,7 @@ h3 {
   background: -webkit-gradient(linear, left top, left bottom, from(#e15e00), to(#ff9548));
   background: linear-gradient(to bottom, #e15e00, #ff9548);
   position: relative;
+  margin-top: 90px;
 }
 
 .hero__container {
@@ -481,5 +511,59 @@ h3 {
 .course-class {
   -ms-grid-columns: 20% 1fr;
       grid-template-columns: 20% 1fr;
+  -webkit-column-gap: 3rem;
+          column-gap: 3rem;
+  position: relative;
+}
+
+.course-class__content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 95%;
+      grid-template-columns: 95%;
+}
+
+.course-class__menu {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 90px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  overflow: auto;
+}
+
+.course-class__menu li {
+  list-style: none;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.course-class__menu--a {
+  color: #242a2d;
+}
+
+.course-class__menu--a:hover {
+  color: #fa6900;
+}
+
+/*Estilos de código, para mostrar ejemplos*/
+.code-var {
+  color: #79b6f2;
+}
+
+.code-sym {
+  color: #fc929e;
+}
+
+.code-function {
+  color: #8dc891;
+}
+
+.code-text {
+  color: #fac863;
+}
+
+.code-comment {
+  color: rgba(255, 255, 255, 0.3);
 }
 /*# sourceMappingURL=styles.css.map */

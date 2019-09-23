@@ -5,4 +5,54 @@
 .course-class {
   @extend .grid-center;
   grid-template-columns: 20% 1fr;
+  column-gap: sum-space(2rem);
+  position: relative;
+}
+
+.course-class__content {
+  display: grid;
+  grid-template-columns: 95%;
+}
+
+.course-class__menu {
+  position: sticky;
+  top: $header-height;
+  align-self: flex-start;
+  overflow: auto;
+
+  & li {
+    list-style: none;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+.course-class__menu--a {
+  color: $color-black-font;
+}
+
+.course-class__menu--a:hover {
+  color: $color-orange;
+}
+
+/*Estilos de código, para mostrar ejemplos*/
+
+.code-var {
+  color: $color-code-blue;
+}
+
+.code-sym {
+  color: $color-code-pink;
+}
+
+.code-function {
+  color: $color-code-green;
+}
+
+.code-text {
+  color: $color-code-yellow;
+}
+
+.code-comment {
+  color: $color-code-gray;
 }

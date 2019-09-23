@@ -14,33 +14,17 @@
   color: $color-white;
 
   &.btn--blue {
-    // background: linear-gradient(to right bottom, $color-dark-blue, $color-blue);
     background-color: $color-blue;
 
     &:hover {
-      // background: linear-gradient(
-      //   to right bottom,
-      //   $color-dark-blue,
-      //   $color-dark-blue
-      // );
       background-color: $color-dark-blue;
     }
   }
 
   &.btn--primary {
-    // background: linear-gradient(
-    //   to right bottom,
-    //   $color-dark-orange,
-    //   $color-orange
-    // );
     background-color: $color-orange;
 
     &:hover {
-      // background: linear-gradient(
-      //   to right bottom,
-      //   $color-dark-orange,
-      //   $color-dark-orange
-      // );
       background-color: $color-dark-orange;
     }
   }

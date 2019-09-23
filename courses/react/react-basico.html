@@ -82,14 +82,27 @@
         <section class="course-class">
           <nav class="course-class__menu">
             <ul>
-              <li><a href="#">Herramientas a usar</a></li>
-              <li><a href="#">Create React App</a></li>
-              <li><a href="#">ReactDOM.render</a></li>
+              <li><a class="link course-class__menu--a" href="#tools">Herramientas a usar</a></li>
+              <li><a class="link course-class__menu--a" href="#react-app">Create React App</a></li>
+              <li><a class="link course-class__menu--a" href="#react-dom">ReactDOM.render</a></li>
+              <li><a class="link course-class__menu--a" href="#jsx">JSX</a></li>
+              <li><a class="link course-class__menu--a" href="#component">Componentes</a></li>
+              <li><a class="link course-class__menu--a" href="#create-component">Creación de componentes</a></li>
+              <li><a class="link course-class__menu--a" href="#css">Estilos CSS</a></li>
+              <li><a class="link course-class__menu--a" href="#props">Props</a></li>
+              <li><a class="link course-class__menu--a" href="#page-react">Páginas en React</a></li>
+              <li><a class="link course-class__menu--a" href="#event">Eventos</a></li>
+              <li><a class="link course-class__menu--a" href="#state">Estados</a></li>
+              <li><a class="link course-class__menu--a" href="#lifting-state">Levantamiento de estados</a></li>
+              <li><a class="link course-class__menu--a" href="#list-component">Listas de componentes</a></li>
+              <li><a class="link course-class__menu--a" href="#icon">Font Awesome</a></li>
+              <li><a class="link course-class__menu--a" href="#react-router">React Router</a></li>
+              <li><a class="link course-class__menu--a" href="#layout">Layout</a></li>
             </ul>
           </nav>
           <div class="course-class__content">
-            <article class="course-class__section">
-              <h2>Herramientas a usar</h2>
+            <article class="course-class__section" id="tools">
+              <h2 class="course-class__section--title">Herramientas a usar</h2>
               <p>
                 La herramientas que se usaron en el curso básico de react en
                 <strong>platzi</strong> son:
@@ -115,11 +128,10 @@
                     target="_blank"
                     href="https://code.visualstudio.com/"
                     class="link link-refe t-bold"
-                    >Visual Studio</a
-                  >
+                    >Visual Studio Code</a
+                  >.
                 </li>
               </ul>
-
               <p>
                 VS Code tiene muchos plugis utiles entre los cuales esta: <br />
                 <a
@@ -133,39 +145,975 @@
                 formato al código.
               </p>
               <div class="note">
-                <p>
-                  Para activar la función de que al guardar el documento se haga
-                  el autoformateado, se debe habilitar la opción
-                  <span class="t-bold">editor.formatOnSave</span>:
-                  <ul>
-                    <li>Abril el Command Palette, (control + shift + p) en windows</li>
-                    <li>Escribir Open user Settings</li>
-                    <li>Buscar format on save y activarlo</li>
-                  </ul>
-                </p>
+                Para activar la función de que al guardar el documento se haga
+                el autoformateado, se debe habilitar la opción
+                <span class="t-bold">editor.formatOnSave</span>:
+                <ul>
+                  <li>
+                    Abril el Command Palette, control + shift + p (en windows)
+                  </li>
+                  <li>Escribir Open user Settings</li>
+                  <li>Buscar format on save y activarlo</li>
+                </ul>
                 <p>
                   Para deshabilitar prettier para ciertos lenguajes, se puede
                   emplear la siguiente configuración, en el archivo
                   <span class="t-bold">setting.json</span> de VS Code: <br />
                   <span class="t-bold"
                     >"prettier.disableLanguages" : ["html"]</span
-                  >
+                  >.
                 </p>
               </div>
             </article>
+            <article class="course-class__section" id="react-app">
+              <h2 class="course-class__section--title">Create React App</h2>
+              <p>
+                <a
+                  class="link link-refe t-bold"
+                  href="https://github.com/facebook/create-react-app"
+                  target="_blank"
+                  >Create React App</a
+                >
+                app es una aplicación moderna que se usa desde una línea de
+                comando. Antes de ella se configuraba todo el entorno
+                manualmente lo cual tomaba mucho tiempo.
+              </p>
+              <span class="t-bold">Instalar de forma global: </span>
+              <pre class="code">
+
+                npm install -g react-create-app
+              </pre>
+              Una vez instalado se crea la carpeta del proyecto con:
+              <pre class="code">
+
+                npm react-create-app nombre_proyecto
+              </pre>
+              <p>
+                En este punto se estará instalando React y otras herramientas,
+                también se configurará el entorno usando
+                <a class="link link-refe t-bold" href="#">Webpack</a>. Una vez
+                se instala todo entra a la carpeta src donde estará todo el
+                código fuente de la aplicación, siendo el más importante
+                <i>index.js</i> que es el punto de entrada a la aplicación.
+                <br />
+                Finalmente, para correr la aplicación se usa el comando:
+              </p>
+              <pre class="code">
+
+                npm run start
+              </pre>
+              <div class="note">
+                <p>
+                  <strong>Babel: </strong> Traduce Javascript moderno (JSX) a un
+                  Javascript que todos los navegadores puedan interpretar.
+                  <br />
+                  <strong>Eslint: </strong> Lee el código y avisa de errores.
+                  <br /><br />
+                  Para desistalar Creat React App :
+                  <span class="t-bold">npm uninstall -g react</span>.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="react-dom">
+              <h2 class="course-class__section--title">ReactDOM.render</h2>
+              <ul>
+                <li>
+                  <strong>React</strong> y <strong>ReactDOM</strong> trabajarán
+                  en conjunto.
+                </li>
+                <li>
+                  React como análogo a
+                  <span class="t-bold">createElement</span>.
+                </li>
+                <li>ReactDOM a <span class="t-bold">appendChild</span>.</li>
+                <li>
+                  <span class="t-bold">ReactDOM.render()</span> toma dos
+                  argumentos: Qué queremos renderizar y dónde lo queremos
+                  renderizar.
+                </li>
+                <li>
+                  Siempre que escribas <span class="t-bold">JSX</span> es
+                  requisito importar React.
+                </li>
+              </ul>
+              <p>
+                Ahora veremos como seria una aplicación que añade un elemento al
+                DOM sin usar React y otra donde si implementemos React, (Estos
+                cambios se haran en el index.js de la aplicación). <br /><br />
+                <span class="t-bold">Sin usar React</span>
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//Se crea un elemento html, en este caso un h1</span>
+                <span class="code-var">const</span> element <span class="code-sym">=</span> document.<span class="code-function">createElement</span>(<span class="code-text">"h1"</span>)
+                  
+                <span class="code-comment">//A ese elemento se le agrega un texto</span>                  
+                element.innerText <span class="code-sym">=</span> <span class="code-text">"Hello, this is a title"</span>              
+                
+                <span class="code-comment">//El siguiente paso es donde se añadira ese elemento, 
+                se añadira al contenedor que tenga el id "app", el unico elemento que hay en el index.html</span>                  
+                <span class="code-var">const</span> container <span class="code-sym">=</span> document.<span class="code-function">getElementById(</span><span class="code-text">"app"</span>)
+                  
+                <span class="code-comment">//Se añade con el metodo <span class="t-bold">appendChild</span></span>                  
+                container.<span class="code-function">appendChild</span>(element)
+              </pre>
+
+              <span class="t-bold">Con React</span><br />
+
+              <pre class="code">
+
+                <span class="code-comment">/*Lo primero es <span class="t-bold">importar</span> React, que esta en el módulo(carpeta que ya tenemos descargada al instalar react-create-app)
+                este elemento se comportara como <span class="t-bold">createElement</span> de JS Vanilla.*/ </span>
+                <span class="code-sym">import</span> React <span class="code-sym">from</span> <span class="code-text">"react"</span>
+                  
+                <span class="code-comment">/*Otro elemento a importar es <span class="t-bold">ReactDom</span> del módulo react-dom, que se comportara como <span class="t-bold">appendChild.</span>*/</span>
+                <span class="code-sym">import</span> ReactDOM <span class="code-sym">from</span> <span class="code-text">"react-dom"</span>
+
+                <span class="code-var">const</span> element <span class="code-sym">=</span> &lt<span class="code-sym">h1</span>&gt This is a title with JSX and React &lt<span class="code-sym">/h1</span>&gt
+                <span class="code-var">const</span> container <span class="code-sym">=</span> document.<span class="code-function">getElementById(</span><span class="code-text">"app"</span>)
+
+                <span class="code-comment">//ReactDOM.render(que_queremos_renderizar, donde_se_renderizara)</span>
+
+                ReactDOM.<span class="code-function">render</span>(element, container)
+              </pre>
+            </article>
+            <article class="course-class__section" id="jsx">
+              <h2 class="course-class__section--title">JSX</h2>
+              Es una extensión de JavaScript creada por Facebook para el uso con
+              la biblioteca React. Sirve de preprocesador (como Sass o Stylus a
+              CSS) y transforma el código generado con React a JavaScript.
+              <br />
+              JSX tiene su alternativa que es
+              <span class="t-bold">React.createElement</span> pero es preferible
+              JSX porque es mucho más legible y expresivo. Ambos tienen el mismo
+              poder y la misma capacidad. <br />
+              <br />
+              <span class="t-bold">React.createElement</span> recibe 3
+              argumentos:
+              <ul>
+                <li>El tipo de elemento que estamos creando.</li>
+                <li>sus atributos o props.</li>
+                <li>Y el children que es el contenido.</li>
+              </ul>
+              Ejemplo:
+              <pre class="code">
+
+                React.<span class="code-function">createElement</span>(<span class="code-text">"h1"</span>, {href:<span class="code-text">"https://carloszabala.com"</span>},<span class="code-text">"ir al home"</span>)
+              </pre>
+              <div class="note">
+                <p>
+                  Jsx es azúcar sintética (Syntactic Sugar! es como el Async
+                  Await de las promesas de JS).
+                </p>
+              </div>
+              <p>
+                Veamos en un ejemplo la
+                <span class="t-bold">diferencia</span> entre JSX y
+                createElement.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment t-bold">//JSX</span>
+                <span class="code-var">const</span> jsx <span class="code-sym">=</span> (
+                  &lt<span class="code-sym">div</span>&gt
+                    &lt<span class="code-sym">h1</span>&gtMy name is ...&lt<span class="code-sym">/h1</span>&gt
+                    &lt<span class="code-sym">p</span>&gtThis is a paragraph&lt<span class="code-sym">/p</span>&gt
+                  &lt<span class="code-sym">/div</span>&gt
+                )
+
+                <span class="code-comment t-bold">//CreateElement</span>
+                <span class="code-var">const</span> element <span class="code-sym">=</span> React.<span class="code-function">createElement</span>(<span class="code-text">"div"</span>, {}, 
+                  React.<span class="code-function">createElement</span>(<span class="code-text">"h1"</span>, {}, <span class="code-text">"My name is..."</span>,
+                  React.<span class="code-function">createElement</span>(<span class="code-text">"p"</span>, {}, <span class="code-text">"This is a paragraph"</span>
+                ))
+
+              </pre>
+              <div class="note">
+                <p>
+                  Jsx es mas expresivo, mejor legible, más claro. Jsx antes de
+                  llegar al navegador, se debe interpretar con webpack y babel,
+                  para poder transformar las líneas de código "fácil" que
+                  escribimos a js para que lo puede entender el navegador.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="component">
+              <h2 class="course-class__section--title">
+                ¿Qué es un componente?
+              </h2>
+              <p>
+                Los componentes en React son
+                <span class="t-bold">bloques de construcción</span>. <br />
+                Las aplicaciones hechas con React son como figuras de Lego.
+                Junta varias piezas (componentes) y puedes construir un website
+                tan pequeño o grande como quieras. Los componentes serán barras
+                de búsquedas, enlaces, encabezados, el header, etc.
+              </p>
+              <p>
+                <span class="t-bold">Componente vs elemento</span> <br />
+                Un elemento es a un objeto como un componente es a una clase. Si
+                el elemento fuera una casa, el componente serían los planos para
+                hacer esa casa.
+              </p>
+              <p>
+                <span class="t-bold">Identificación de componentes</span> <br />
+                Para identificarlos debes hacerte las siguientes preguntas:
+              </p>
+              <ul>
+                <li>
+                  ¿Qué elementos se repiten? Estos son los elementos en una
+                  lista o los que comparten aspecto visual y su funcionalidad
+                </li>
+                <li>
+                  ¿Qué elementos cumplen una función muy específica? Estos
+                  sirven para encapsular la lógica y permiten juntar muchos
+                  comportamientos y aspectos visuales en un solo lugar.
+                </li>
+              </ul>
+              <div class="note">
+                <p>
+                  Unidad básica de desarrollo --> elemento (átomo).
+                  <br />
+                  Lo que forma un website --> componente.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="create-component">
+              <h3 class="course-class__section--title">
+                Creación de un componente
+              </h3>
+              <ul>
+                <li>
+                  Es una buena práctica que los componentes vivan en su propio
+                  archivo y para ello se les crea una carpeta (src/components).
+                </li>
+                <li>
+                  Todos los componentes requieren por lo menos el método
+                  <span class="t-bold">render</span>
+                  que define cuál será el resultado que aparecerá en pantalla.
+                </li>
+                <li>
+                  El source de las imágenes en React puede contener direcciones
+                  en la web o se le puede hacer una referencia directa
+                  importándola. Si se importa deben usarse llaves para que sea
+                  evaluado.
+                </li>
+              </ul>
+              A continuación, se creara el componente badge:
+              <pre class="code">
+
+                <span class="code-comment">//Lo primero siempre <span class="t-bold">importar</span> React </span>
+                <span class="code-sym">import</span> React <span class="code-sym">from</span> <span class="code-text">"react"</span>
+                
+                <span class="code-comment">//Hay dos tipos de componentes, el primero que veremos sera el que hereda de una clase.
+                "Component", para poder usar funcionalidades de los componentes, como el método <span class="t-bold">render</span>.</span>
+                <span class="code-var">class</span> Badge <span class="code-sym">extends</span> React.<span class="code-function">Component</span>{
+
+                  <span class="code-comment">//Todos los componentes requieren al menos 1 método que es obligatorio y es el render,
+                  lo que hace es que define cual será el resultado que se verá en pantalla</span>
+                  <span class="code-function">render</span>(){
+                    <span class="code-sym">return</span>(
+                      &lt<span class="code-sym">div</span>&gt
+                        &lt<span class="code-sym">header</span>&gt
+                          &lt<span class="code-sym">img</span> <span class="code-function">src</span><span class="code-sym">=</span>"" <span class="code-function">alt</span><span class="code-sym">=</span><span class="code-text">"Logo de la conferencia"</span> /&gt
+                        &lt<span class="code-sym">/header</span>&gt
+                      &lt<span class="code-sym">section</span>&gt
+                        &lt<span class="code-sym">img</span> <span class="code-function">src</span><span class="code-sym">=</span>"" <span class="code-function">alt</span><span class="code-sym">=</span><span class="code-text">"avatar"</span> /&gt
+                        &lt<span class="code-sym">h1</span>&gtCarlos Zabala&lt<span class="code-sym">/h1</span>&gt
+                      &lt<span class="code-sym">/section</span>&gt
+
+                      &lt<span class="code-sym">section</span>&gt
+                        &lt<span class="code-sym">p</span>&gtFrontend Engineer&lt<span class="code-sym">/p</span>&gt
+                        &lt<span class="code-sym">p</span>&gt@czabala847&lt<span class="code-sym">/p</span>&gt
+                      &lt<span class="code-sym">/section</span>&gt
+                      &lt<span class="code-sym">footer</span>&gt#platziconf&lt<span class="code-sym">/footer</span>&gt
+                      &lt<span class="code-sym">/div</span>&gt
+                    )
+                  }
+                }
+
+                <span class="code-comment">//Por último hay que exportar ese componente</span>
+                <span class="code-sym">export default</span> Badge
+              </pre>
+              En el archivo principal <span class="t-bold">index.js</span> hay
+              que importar ese componente.
+              <pre class="code">
+
+                <span class="code-sym">import</span> React <span class="code-sym">from</span> <span class="code-text">"react"</span>
+                <span class="code-sym">import</span> ReactDOM <span class="code-sym">from</span> <span class="code-text">"react-dom"</span>
+
+                <span class="code-comment">//importando componente</span>
+                <span class="code-sym">import</span> Badge <span class="code-sym">from</span> <span class="code-text">"../components/Badge"</span>
+
+                <span class="code-var">const</span> container <span class="code-sym">=</span> document.<span class="code-function">getElementById(</span><span class="code-text">"app"</span>)
+
+                <span class="code-comment">/*Ahora para renderizar con ReactDOM, recordemos que si no tienen los mayor y menor que <>
+                quiere decir que es un componente, pero ReactDOM.render necesita un elemento así que le colocamos los < />*/</span>
+                ReactDOM.<span class="code-function">render</span>( &lt <span class="code-var">Badge</span> / &gt, container )
+              </pre>
+
+              Para hacer uso de imagenes, primero hay que importarlas
+              <pre class="code">
+
+                <span class="code-sym">import</span> logoConf <span class="code-sym">from</span> <span class="code-text">"../images/logo.svg"</span>
+              </pre>
+              Y para usarla
+              <pre class="code">
+
+                  &lt<span class="code-sym">img</span> <span class="code-function">src</span><span class="code-sym">=</span>{logoConf} <span class="code-function">alt</span><span class="code-sym">=</span><span class="code-text">"Logo de la conferencia"</span> /&gt
+              </pre>
+              <p>
+                puede ocurrir en VS Code un problema y es que Emmet no reconoce
+                a JSX, para solucionar esto hay que ir al archivo
+                <span class="t-bold">settings.json</span> y colocar el siguiente
+                código:
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://medium.com/@eshwaren/enable-emmet-support-for-jsx-in-visual-studio-code-react-f1f5dfe8809c"
+                  >referencia</a
+                >
+              </p>
+              <pre class="code">
+                  
+                    {
+                      "emmet.includeLanguages": {
+                        "javascript": "javascriptreact"
+                      }
+                    }
+                  </pre
+              >
+            </article>
+            <article class="course-class__section" id="css">
+              <h2 class="course-class__section--title">
+                Estilos CSS
+              </h2>
+              <ul>
+                <li>
+                  Para los estilos crearemos una carpeta llamada
+                  <span class="t-bold">Styles</span> y allí vivirán todos los
+                  archivos de estilos que tienen que ver con los componentes.
+                </li>
+                <li>
+                  Para usar los estilos es necesario importarlos con import.
+                </li>
+                <li>
+                  React funciona ligeramente diferente y para los atributos de
+                  clases no se utiliza class sino
+                  <span class="t-bold">className</span>.
+                </li>
+                <li>
+                  Es posible utilizar <span class="t-bold">Bootstrap</span> con
+                  React, sólo debe ser instalado con
+                  <i>npm install bootstrap</i> y debe ser importado en el
+                  <span class="t-bold">index.js</span>.
+                </li>
+                <li>
+                  Existen estilos que son usados de manera global o en varios
+                  componentes, así que deben ser importados en el index.js.
+                </li>
+              </ul>
+            </article>
+            <article class="course-class__section" id="props">
+              <h2 class="course-class__section--title">
+                Props
+              </h2>
+              <p>
+                Los props que es la forma corta de properties son argumentos de
+                una función y en este caso serán los atributos de nuestro
+                componente como <span class="t-bold">class, src, etc</span>.
+                Estos props salen de una variable de la clase que se llama
+                this.props y los valores son asignados directamente en el
+                <span class="t-bold">ReactDOM.render()</span>.
+              </p>
+              Los props son como atributos en HTML, primero hay que pasarle los
+              props al componente de la siguiente forma:
+              <pre class="code">
+
+                &lt <span class="code-var">Badge</span> <span class="code-function">nombreProps</span> = valorProps /&gt
+
+                &lt <span class="code-var">Badge</span> 
+                  <span class="code-function">firstName</span> = <span class="code-text">"Carlos"</span>
+                  <span class="code-function">lastName</span> = <span class="code-text">"Zabala"</span>
+                  <span class="code-function">jobTitle</span> = <span class="code-text">"Frontend Engineer"</span>
+                  <span class="code-function">twitter</span> = <span class="code-text">"czabala847"</span>
+                /&gt
+              </pre>
+
+              Y en el componente se usan por medio de
+              <span class="t-bold">this.props</span>.
+
+              <pre class="code">
+
+                <span class="code-comment">//Puedes usar destructuring para acceder fácilmente a las props. El nombre de la variable debe ser igual al nombre del prop.</span>
+                <span class="code-function">render</span>(){
+                  <span class="code-var">const</span> {firstName, lastName, jobTitle, twitter} <span class="code-sym">=</span> this.<span class="code-function">props</span>
+                }
+              </pre>
+            </article>
+            <article class="course-class__section" id="page-react">
+              <h2 class="course-class__section--title">
+                Páginas en React
+              </h2>
+              <p>
+                Las páginas en React son componentes y conseguir distinguirlas
+                nos servirá para saber que es un componente que adentro lleva
+                otros componentes. <br />
+                Al escribir los props no importa el orden en el que lo hagas,
+                únicamente importa el nombre.
+              </p>
+              <p>
+                Para crear la página es igual al componente, la diferencia es
+                que esta contendra más componente, los cuales deberan ser
+                importados mediante <span class="t-bold">import</span>. <br />
+                La página será la que se importe en el archivo principal
+                index.js.
+              </p>
+            </article>
+            <article class="course-class__section" id="event">
+              <h2 class="course-class__section--title">Eventos</h2>
+              <ul>
+                <li>
+                  React dispone de eventos. Cada vez que se recibe información
+                  en un input se obtiene un evento
+                  <span class="t-bold">onChange</span> y se maneja con un método
+                  de la clase this.handleChange.
+                </li>
+                <li>
+                  Los elementos button también tienen un evento que es
+                  <span class="t-bold">onClick</span>.
+                </li>
+                <li>
+                  Cuando hay un botón dentro de un formulario, este
+                  automáticamente será de tipo
+                  <span class="t-bold">submit</span>. Si no queremos que pase
+                  así hay dos maneras de evitarlo: especificando que su valor es
+                  de tipo button o manejándolo desde el formulario cuando ocurre
+                  el evento <span class="t-bold">onSubmit</span>.
+                </li>
+              </ul>
+              El evento se usa como atributo(props)
+              <pre class="code">
+
+                <span class="code-comment">//Usando el evento de onChange dentro de la caja de texto</span>
+                &lt<span class="code-sym">input</span>
+                  <span class="code-function">onChange</span> <span class="code-sym">=</span> {
+                    this.<span class="code-function">handleChange</span>
+                  }
+                  <span class="code-function">type</span> <span class="code-sym">=</span> <span class="code-text">"text"</span>
+                  <span class="code-function">name</span> <span class="code-sym">=</span> <span class="code-text">"firstName"</span>
+                /&gt
+
+                <span class="code-comment">//Evento de click</span>
+                &lt<span class="code-sym">button</span> 
+                <span class="code-function">onClick</span> <span class="code-sym">=</span> {this.handleClick}
+                <span class="code-function">className</span> <span class="code-sym">=</span> <span class="code-text">"btn"</span>
+                &gt
+                  click           
+                &lt<span class="code-sym">/button</span>&gt 
+
+                <span class="code-comment">//Evento de submit</span>
+                &lt<span class="code-sym">form</span> <span class="code-function">onSubmit</span> <span class="code-sym">=</span> {this.handleSubmit}&gt        
+                &lt<span class="code-sym">/form</span>&gt 
+
+                <span class="code-comment">//Para truncar el evento de submit, en el metodo handleSubmit colocar:</span>
+                <span class="code-function">handleSubmit</span>(e){
+                  e.<span class="code-function">preventDefault</span>()
+                }
+              </pre>
+              <div class="note">
+                <p>Si el evento es onChange el método debe ser handleChange.</p>
+              </div>
+            </article>
+            <article class="course-class__section" id="state">
+              <h2 class="course-class__section--title">
+                Estados
+              </h2>
+              <p>
+                Hasta esta clase todos los componentes han obtenido su
+                información a través de props que vienen desde afuera (otros
+                componentes) pero hay otra manera en la que
+                <span class="t-bold"
+                  >los componentes pueden producir su propia información</span
+                >
+                y guardarla para ser consumida o pasada a otros componentes a
+                través de sus props. La clave está en que la información del
+                <span class="t-bold">state</span> a otros componentes pasará en
+                una sola dirección y podrá ser consumida pero no modificada.
+              </p>
+              <ul>
+                <li>
+                  Para guardar la información en el estado se usa una función de
+                  la clase component llamada
+                  <span class="t-bold">setState</span> a la cual se le debe
+                  pasar un objeto con la información que se quiere guardar.
+                </li>
+                <li>
+                  Aunque no se ve, la información está siendo guardada en dos
+                  sitios. Cada input guarda su propio valor y al tiempo la está
+                  guardando en setState, lo cual no es ideal. Para solucionarlo
+                  hay que modificar los inputs de un estado de no controlados a
+                  <span class="t-bold">controlados</span>.
+                </li>
+              </ul>
+              <p>
+                Guardar dentro del state, la información digitada en el
+                formulario gracias al evento onSubmit y el método handleSubmit.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//Es una función flecha, para así no tener problemas con el this, si se hace con una función normal hay que usar bind, para especificarlo.</span>
+                <span class="code-function">handleChange</span> <span class="code-sym">=</span> (e) => {
+                  this.<span class="code-function">setState</span>({
+                    <span class="code-var">firstName</span> : e.target.value  
+                  })
+                }
+              </pre>
+              Guardar todos los campos del formulario:
+              <pre class="code">
+
+                <span class="code-comment">/*[e.target.name] crea variables con el nombre de los inputs del formulario (firstName, lastName, email)
+                e.target.value, guarda el valor ingresado en las cajas de texto dentro de las variables(atributos) nombrados anteriormente*/</span>
+                this.<span class="code-function">setState</span>({
+                  [e.target.name] = e.target.value
+                })
+              </pre>
+              <div class="note">
+                <p>
+                  El <span class="t-bold">state</span> en React es un objeto que
+                  deriva de la clase React Component. Puede definirse a sí mismo
+                  como un objeto que almacena las propiedades observables que
+                  controlan el comportamiento del componente. (como en este caso
+                  el value de los inputs de los formularios).
+                </p>
+              </div>
+              <p>
+                para declarar una variable como key del set state es necesario
+                escribirla entre corchetes cuadrados:
+              </p>
+              <pre class="code">
+
+                [e.target.name]
+              </pre>
+              <p>Ejemplo de un <span class="t-bold">input controlado</span>:</p>
+              <pre class="code">
+
+                &lt<span class="code-sym">input</span>
+                  <span class="code-function">onChange</span> <span class="code-sym">=</span> {this.handleChange}
+                  <span class="code-function">type</span> <span class="code-sym">=</span> <span class="code-text">"text"</span>
+                  <span class="code-function">name</span> <span class="code-sym">=</span> <span class="code-text">"firstName"</span>
+                  <span class="code-function">value</span> <span class="code-sym">=</span> {this.state.firstName}
+                /&gt
+              </pre>
+              <P>Importante inicializar el state</P>
+              <pre class="code">
+
+                state <span class="code-sym">=</span> {
+                  <span class="code-var">firstName</span> : "",
+                  <span class="code-var">lasttName</span> : "",
+                  <span class="code-var">jobTitle</span> : "Designer",
+                  <span class="code-var">email</span> : "",
+                  <span class="code-var">twitter</span> : ""
+                }
+              </pre>
+              <p>
+                <span class="t-bold">Resumen formularios controlados</span>:
+                darle el poder a react que controle todo, y que lo que se
+                muestre en las cajas de texto sea state.value, y no lo que
+                digite el usuario, claro que debe estar el evento onChange
+                escuchando cada que digitamos o borramos una letra.
+                <a
+                  target="_blank"
+                  class="link link-refe t-bold"
+                  href="https://es.reactjs.org/docs/forms.html"
+                >
+                  Documentación formularios controlados</a
+                >.
+              </p>
+            </article>
+            <article class="course-class__section" id="lifting-state">
+              <h2 class="course-class__section--title">
+                Levantamiento del estado
+              </h2>
+              <p>
+                Levantar el estado es una técnica de React que pone el estado en
+                una localización donde se le pueda pasar como props a los
+                componentes. Lo ideal es poner el estado en el lugar más cercano
+                a todos los componentes que quieren compartir esa información.
+                Algo interesante que le da el nombre a React es su parte de
+                "reactivo" ya que cada vez que hay un cambio en el estado o en
+                los props que recibe un componente se vuelve a renderizar todo
+                el componente y todos sus descendientes. <br />
+                <i>
+                  Pasar el state a la página y no en el componente, para que así
+                  la información se pueda compartir en otros componentes
+                </i>
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//En la <span class="t-bold">página</span>, que tendra el state, se crea el método handleChange</span>
+                <span class="code-function">handleChange</span>= (e) => {
+                  this.<span class="code-function">setState</span>({
+                    form : {
+                      <span class="code-comment">desestructurar objeto</span>
+                      ...this.state.form,
+                      [e.target.name] : e.target.value
+                    }
+                  })
+                }
+
+                <span class="code-comment">//El método handleChange, se le pasara como prop al componente hijo</span>
+                &lt <span class="code-var">BadgeForm</span>
+                  <span class="code-function">listenChange</span> = {this.handleChange}
+                  <span class="code-comment">//Se pasa la información almacenada como prop.</span>
+                  <span class="code-function">dataForm</span> = {this.state.form}
+                /&gt
+              </pre>
+              <p>
+                En los inputs del componente hijo, al evento dispararse el
+                evento onChange, se llamara al método handleChange del
+                componente padre.
+              </p>
+              <pre class="code">
+
+                &lt<span class="code-sym">input</span>
+                  <span class="code-comment">//Se llama al método del componente padre pasado como prop.</span>
+                  <span class="code-function">onChange</span> <span class="code-sym">=</span> {this.props.listenChange}
+                  <span class="code-function">type</span> <span class="code-sym">=</span> <span class="code-text">"text"</span>
+                  <span class="code-function">name</span> <span class="code-sym">=</span> <span class="code-text">"firstName"</span>
+                  <span class="code-function">value</span> <span class="code-sym">=</span> {this.props.dataForm}
+                /&gt
+              </pre>
+            </article>
+            <article class="course-class__section" id="list-component">
+              <h2 class="course-class__section--title">
+                Lista de componentes
+              </h2>
+              <p>
+                Cuando queremos hacer una lista de elementos tener en cuenta que
+                para cada ítem <span class="t-bold">(li)</span> se le debe pasar
+                un atributo data-id para así ayudar a react, para cuando se
+                renderice ver si ese elemento con ese id cambio, se quitó, o se
+                mantuvo en la lista, el data clave debe ser único.
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://reactjs.org/docs/lists-and-keys.html#keys"
+                  >documentación</a
+                >
+              </p>
+              <pre class="code">
+
+                &lt<span class="code-sym">li</span> <span class="code-function">key</span> = {badge.id} &gt
+              </pre>
+              <p>
+                Es recomendable usar la función
+                <span class="t-bold">map</span> para recorrer el array de
+                elementos a mostrar en pantalla, Hay que recordar que los
+                elementos que se repiten y tiene el mismo estilo como las
+                listas, deben ser componentes así que deben de estar en un
+                archivo aparte.
+              </p>
+              <pre class="code">
+
+                &lt<span class="code-sym">ul</span>&gt
+                  {
+                    this.state.data.<span class="code-function">map</span>(<span class="code-var">badge</span> => {
+                      <span class="code-sym">return</span>(
+                        &lt<span class="code-sym">li</span> <span class="code-function">key</span>={badge.id} &gt
+                          &lt<span class="code-sym">p</span>&gt
+                            {badge.firstName} {badge.lastName}
+                          &lt<span class="code-sym">/p</span>&gt
+                        &lt<span class="code-sym">/li</span>&gt
+                      )
+                    })
+                  }
+                &lt<span class="code-sym">/ul</span>&gt 
+              </pre>
+            </article>
+            <article class="course-class__section" id="icon">
+              <h2 class="course-class__section--title">
+                Iconos con FontAwesome
+              </h2>
+              <pre class="code">
+
+                <span class="code-comment">//Instalación con npm</span>
+                npm i --save @fortawesome/fontawesome-svg-core
+                npm i --save @fortawesome/free-solid-svg-icons
+                npm i --save @fortawesome/react-fontawesome
+                npm i --save @fortawesome/free-brands-svg-icons
+
+                <span class="code-comment">//Importando en el componente</span>
+                <span class="code-sym">import</span> { FontAwesomeIcon } <span class="code-sym">from</span> <span class="code-text">"@fortawesome/react-fontawesome"</span> ;
+                <span class="code-sym">import</span> { faTwitter } <span class="code-sym">from</span> <span class="code-text">"@fortawesome/free-brands-svg-icons"</span> ;
+
+                <span class="code-comment">//Usando el icono</span>
+                &lt<span class="code-sym">FontAwesomeIcon</span> <span class="code-function">icon</span> <span class="code-sym">=</span> {faTwitter} /&gt
+              </pre>
+              <a
+                target="_blank"
+                href="https://www.npmjs.com/package/@fortawesome/react-fontawesome"
+                class="link link-refe"
+                >Documentación</a
+              >.
+            </article>
+            <article class="course-class__section" id="react-router">
+              <h2 class="course-class__section--title">React Router</h2>
+              <p>
+                Las aplicaciones que se trabajan en React son llamadas
+                <span class="t-bold">single page apps</span>. Esto es posible
+                gracias a
+                <a
+                  class="link link-refe t-bold"
+                  href="https://reacttraining.com/react-router/web/guides/quick-start"
+                  target="_blank"
+                  >React Router</a
+                >
+                que es una librería Open Source. <br />
+                <span class="t-bold">Multi Page Apps</span>: Cada página implica
+                una petición al servidor. La respuesta usualmente tiene todo el
+                contenido de la página. <br />
+                <span class="t-bold">Single Page Apps (SPA)</span>: Aplicaciones
+                que cargan una sola página de HTML y cualquier actualización la
+                hacen re-escribiendo el HTML que ya tenían. <br />
+                <span class="t-bold">React Router (v4)</span>: Nos da las
+                herramientas para poder hacer SPA fácilmente. Usaremos 4
+                componentes:
+              </p>
+              <ul>
+                <li>
+                  <span class="t-bold">BrowserRouter</span>: es un componente
+                  que debe estar siempre lo más arriba de la aplicación. Todo lo
+                  que esté adentro funcionará como una SPA.
+                </li>
+                <li>
+                  <span class="t-bold">Route</span>: Cuando hay un match con el
+                  path, se hace render del component. El component va a recibir
+                  tres props: match, history, location.
+                </li>
+                <li>
+                  <span class="t-bold">Switch</span>: Dentro de Switch solamente
+                  van elementos de Route. Switch se asegura que solamente un
+                  Route se renderize.
+                </li>
+                <li>
+                  <span class="t-bold">Link</span>: Toma el lugar del elemento
+                  &lt<span class="code-sym">a</span>&gt, evita que se recargue
+                  la página completamente y actualiza la URL.
+                </li>
+              </ul>
+              <div class="note">
+                <p>
+                  Gracias a <span class="t-bold">SPA</span> No perdemos toda la
+                  información, no hay que pintar todo de nuevo, es mucho más
+                  rápido.
+                </p>
+              </div>
+              <pre class="code">
+
+                <span class="code-comment">//Brouser Router hace que el switch, link, route funcionen este siempre debe estar declarado en lo más alto de la página.</span>
+                
+                <span class="code-comment">//Route representa una dirección de internet, Recibe 2 prop path (donde se va a renderizar)
+                y component (que componente se va a renderizar, este componente debe ser una página)</span>
+                &lt <span class="code-sym">Route</span> <span class="code-function">path</span> <span class="code-sym">=</span> <span class="code-text">"/"</span> <span class="code-function">component</span> <span class="code-sy">=</span> {Home} /&gt
+              
+                <span class="code-comment">//Switch igual al switch de js, solo se ejecuta una opción de muchas.</span>                  
+              </pre>
+            </article>
             <article class="course-class__section">
-              <h2>Create React App</h2>
+              <h2 class="course-class__section--title">
+                Dividiendo la aplicación en rutas
+              </h2>
               <p>
-                <a class="link link-refe t-bold" href="https://github.com/facebook/create-react-app" target="_blank">Create React App</a> 
-                app es una aplicación moderna que se usa desde una línea de comando. Antes de ella se configuraba todo el entorno manualmente lo cual tomaba mucho tiempo.
+                Lo primero es instalar React Router por npm.
+              </p>
+              <pre class="code">
+
+                npm install react-router-dom
+              </pre>
+              <p>
+                Se comienza con browser Router, esto habilita que la app
+                funcione con react Router, se crea un nuevo componente, es allí
+                donde se usará react Router y donde se añadirán las rutas. Se
+                crea un archivo en la carpeta de components llamado
+                <span class="t-bold">App.js</span>. <br /><br />
+                Y dicho componente se importa en el index.js.
+              </p>
+              <pre class="code">
+
+                <span class="code-sym">import</span> App <span class="code-sym">from</span> <span class="code-text">"../components/App"</span>
+              </pre>
+              <p>
+                Dentro de App, se crea el componente, pero esta vez no sera una
+                clase si no un componente <span class="t-bold">funcional</span>,
+                ya que no necesitaremos del state. Se procede a import React
+                Router, y el primer componente como ya se dijo debe ser
+                <span class="t-bold">BrowserRouter</span>.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//App iria quedando así:</span>
+                
+                <span class="code-sym">import</span> React <span class="code-sym">from</span> <span class="code-text">"react"</span>
+                
+                <span class="code-comment">//Importando React Router:</span>
+                <span class="code-sym">import</span> {BrowserRouter} <span class="code-sym">from</span> <span class="code-text">"react-router-dom"</span>
+
+                <span class="code-var">function</span> <span class="code-function">App</span>(){
+                  <span class="code-sym">return</span>(
+
+                    <span class="code-comment">//Usando BrowserRouter:</span>
+                    &lt<span class="code-sym">BrowserRouter</span>&gt
+                    
+                    &lt<span class="code-sym">/BrowserRouter</span>&gt
+                  )
+                }
+
+                <span class="code-sym">export default</span> App
+              </pre>
+              <p>
+                Dentro de esos tags se van a añadir las rutas, que serán las
+                paginas de nuestra aplicación.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//Esas páginas hay que importarlas antes, (donde se importa todo)</span>
+                &lt<span class="code-sym">Route</span> <span class="code-function">path</span> <span class="code-sym">=</span> <span class="code-text">"/badges"</span> <span class="code-function">component</span> <span class="code-sym">=</span> {Badge} /&gt
+                &lt<span class="code-sym">Route</span> <span class="code-function">path</span> <span class="code-sym">=</span> <span class="code-text">"/badges/new"</span> <span class="code-function">component</span> <span class="code-sym">=</span> {BadgeNew} /&gt
+              </pre>
+              <p>
+                Si se dejara esto así, se generaria el siguiente error
+                <span class="t-bold"
+                  >"Uncaught Invariat Violation: A &ltRouter&gt, may have only
+                  one child element."</span
+                >
+                <br />
+                Esto se debe a que BrowserRouter, solo acepta un solo hijo, y le
+                estamos pasando dos (2 Route). Se podría colocar un
+                <span class="t-bold">div</span> y dentro de él colocar los
+                Route. Aunque esto generaría 2 errores, uno que se recargaría
+                toda la página algo que se quiere evitar y segundo las páginas
+                se renderizarían a la misma vez. En vez de usar un div se
+                utiliza <span class="t-bold">Switch</span>, este toma la
+                dirección que está en el navegador y renderizara una sola
+                página, la primera que coincida con dicha ruta, para asegurarnos
+                de que la ruta que se va a renderizar sea la correcta, que sea
+                exacta se coloca el prop <span class="t-bold">exact</span>.
+              </p>
+              <pre class="code">
+                
+                <span class="code-sym">import</span> React <span class="code-sym">from</span> <span class="code-text">"react"</span>
+                <span class="code-sym">import</span> {BrowserRouter, Route, Switch, Link} <span class="code-sym">from</span> <span class="code-text">"react-router-dom"</span>
+
+                <span class="code-var">function</span> <span class="code-function">App</span>(){
+                  <span class="code-sym">return</span>(
+                    &lt<span class="code-sym">BrowserRouter</span>&gt
+                      &lt<span class="code-sym">Switch</span>&gt
+                        &lt<span class="code-sym">Route</span> <span class="code-function">exact</span> <span class="code-function">path</span> <span class="code-sym">=</span> <span class="code-text">"/badges"</span> <span class="code-function">component</span> <span class="code-sym">=</span> {Badge} /&gt
+                        &lt<span class="code-sym">Route</span> <span class="code-function">exact</span> <span class="code-function">path</span> <span class="code-sym">=</span> <span class="code-text">"/badges/new"</span> <span class="code-function">component</span> <span class="code-sym">=</span> {BadgeNew} /&gt
+                      &lt<span class="code-sym">/Switch</span>&gt
+                    &lt<span class="code-sym">/BrowserRouter</span>&gt
+                  )
+                }
+
+                <span class="code-sym">export default</span> App
+              </pre>
+              <p>Solo quedaria reemplazar las anclas por Link.</p>
+              <pre class="code">
+
+                &lt<span class="code-sym">Link</span> <span class="code-function">to</span> <span class="code-sym">=</span> <span class="code-text">"/badge/new"</span> <span class="code-function">className</span> <span class="code-sym">=</span> <span class="code-text">"btn btn--primary"</span> &gt 
+                  New Badge
+                &lt<span class="code-sym">/Link</span>&gt
+              </pre>
+              <p>
+                Si quieren pasar props a cada componente deberían borrar el
+                atributo component y cambiarlo por render. render quedaría un
+                arrow function para que no se ejecute al instante y espere la
+                decisión del usuario. Dentro del segundo paréntesis damos por
+                implícito el return.
+              </p>
+              <pre class="code">
+
+                &lt<span class="code-sym">Route</span> <span class="code-function">exact</span> <span class="code-function">path</span> <span class="code-sym">=</span> <span class="code-text">"/badges/new"</span> <span class="code-function">render</span> <span class="code-sym">=</span> {() => ( &ltBadges <span class="code-function">props</span> <span class="code-sym">=</span> {this.props} )} /&gt
+              </pre>
+            </article>
+            <article class="course-class__section" id="layout">
+              <h2 class="course-class__section--title">Layout</h2>
+              <ul>
+                <li>
+                  <strong>React.Fragment</strong> es la herramienta que te
+                  ayudará a renderizar varios componentes y/o elementos sin
+                  necesidad de colocar un div o cualquier otro elemento de HTML
+                  para renderizar sus hijos. Al usar esta característica de
+                  React podremos renderizar un código más limpio y legible, ya
+                  que React.Fragment no se renderiza en el navegador o solo
+                  colando (&lt &gt).
+                </li>
+                <li>
+                  El 404 es la ruta que se renderizará cuando ninguna otra
+                  coincida con la dirección ingresada.
+                </li>
+              </ul>
+              <pre class="code">
+
+                <span class="code-comment">//Si el usuario ingresa una ruta incorrecta podemos mostrar el 404 de la siguiente forma:</span>
+                &lt<span class="code-sym">Route</span> <span class="code-function">component</span> <span class="code-sym">=</span> {NotFound} /&gt
+              </pre>
+              <p>
+                Al contruir páginas con react, debemos ver que componentes se
+                estan reptiendo que código se repite, para poder evitarlo, hay
+                páginas donde el navbar y el footer se repiten para todo el
+                sitio. Este código repetido se puede llevar a un solo sitio para
+                que se comparta en todas las paginas a eso se le llama
+                <span class="t-bold">layout</span> o plantilla en común para
+                todas las páginas.
               </p>
               <p>
-                <span class="t-bold">Instalar de forma global: </span>
-                <pre class="code">
-                  npm install -g react-create-app
-                </pre>
+                El Layout sera un componente funcional que se importar en App.js donde esta el React Router.
               </p>
-              <code></code>
+              <pre class="code">
+
+                <span class="code-comment">//Todo lo que tiene Switch queda dentro del componente Layout</span>
+                &lt<span class="code-sym">BrowserRouter</span>&gt
+                  &lt<span class="code-sym">Layout</span>&gt
+                    &lt<span class="code-sym">Switch</span>&gt
+                      &lt<span class="code-sym">Route</span> <span class="code-function">exact</span> <span class="code-function">path</span> <span class="code-sym">=</span> <span class="code-text">"/badges"</span> <span class="code-function">component</span> <span class="code-sym">=</span> {Badge} /&gt
+                      &lt<span class="code-sym">Route</span> <span class="code-function">exact</span> <span class="code-function">path</span> <span class="code-sym">=</span> <span class="code-text">"/badges/new"</span> <span class="code-function">component</span> <span class="code-sym">=</span> {BadgeNew} /&gt
+                    &lt<span class="code-sym">/Switch</span>&gt
+                  &lt<span class="code-sym">/Layout</span>&gt
+                &lt<span class="code-sym">/BrowserRouter</span>&gt
+              </pre>
+              <p>
+                Ahora para que esto funcione y se pueda renderizar las páginas dentro del componente Layout, se deben retornar sus hijo, que sera Switch.
+              </p>
+              <pre class="code">
+
+                <span class="code-var">function</span> <span class="code-function">Layout</span>(props){
+                  <span class="code-sym">return</span>(
+                    <span class="code-comment">//con React.Fragment -> esto es un componente especial que react entiende que va a hacer que
+                    podemos regresar varios elementos, pero en realidad va a hacer que regresemos uno.
+                    Esto sería imaginario, ya que en el html no se muestra.</span> 
+                    &lt<span class="code-sym">React.Fragment</span>&gt
+                      &lt<span class="code-sym">NavBar /</span>&gt
+                        {props.children}
+                      &lt<span class="code-sym">Footer /</span>&gt
+                    &lt<span class="code-sym">/React.Fragment</span>&gt
+                  )
+                }
+
+                <span class="code-comment">//así todos los elementos que este encapsulados en ese Layout
+                tendran tu custom Navbar y tu Custom Footer
+                </span>
+              </pre>
+              <div class="note">
+                <p>
+                  Si el componente tiene etiquetas de apertura y cierre, se deben retornar sus children, mediante sus props. {this.props.children}.
+                </p>
+                <p>
+                  Componente clase -> presentacional <br>
+                  Componente funcion -> funcional
+                </p>
+              </div>
             </article>
           </div>
         </section>
