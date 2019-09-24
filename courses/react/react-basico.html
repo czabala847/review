@@ -82,22 +82,120 @@
         <section class="course-class">
           <nav class="course-class__menu">
             <ul>
-              <li><a class="link course-class__menu--a" href="#tools">Herramientas a usar</a></li>
-              <li><a class="link course-class__menu--a" href="#react-app">Create React App</a></li>
-              <li><a class="link course-class__menu--a" href="#react-dom">ReactDOM.render</a></li>
+              <li>
+                <a class="link course-class__menu--a" href="#tools"
+                  >Herramientas a usar</a
+                >
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#react-app"
+                  >Create React App</a
+                >
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#react-dom"
+                  >ReactDOM.render</a
+                >
+              </li>
               <li><a class="link course-class__menu--a" href="#jsx">JSX</a></li>
-              <li><a class="link course-class__menu--a" href="#component">Componentes</a></li>
-              <li><a class="link course-class__menu--a" href="#create-component">Creación de componentes</a></li>
-              <li><a class="link course-class__menu--a" href="#css">Estilos CSS</a></li>
-              <li><a class="link course-class__menu--a" href="#props">Props</a></li>
-              <li><a class="link course-class__menu--a" href="#page-react">Páginas en React</a></li>
-              <li><a class="link course-class__menu--a" href="#event">Eventos</a></li>
-              <li><a class="link course-class__menu--a" href="#state">Estados</a></li>
-              <li><a class="link course-class__menu--a" href="#lifting-state">Levantamiento de estados</a></li>
-              <li><a class="link course-class__menu--a" href="#list-component">Listas de componentes</a></li>
-              <li><a class="link course-class__menu--a" href="#icon">Font Awesome</a></li>
-              <li><a class="link course-class__menu--a" href="#react-router">React Router</a></li>
-              <li><a class="link course-class__menu--a" href="#layout">Layout</a></li>
+              <li>
+                <a class="link course-class__menu--a" href="#component"
+                  >Componentes</a
+                >
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#create-component"
+                  >Creación de componentes</a
+                >
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#css"
+                  >Estilos CSS</a
+                >
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#props">Props</a>
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#page-react"
+                  >Páginas en React</a
+                >
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#event">Eventos</a>
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#state">Estados</a>
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#lifting-state"
+                  >Levantamiento de estados</a
+                >
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#list-component"
+                  >Listas de componentes</a
+                >
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#icon"
+                  >Font Awesome</a
+                >
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#react-router"
+                  >React Router</a
+                >
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#layout">Layout</a>
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#lifecycle"
+                  >Ciclo de vida</a
+                >
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#api"
+                  >Llamadas API</a
+                >
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#get">Datos GET</a>
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#post"
+                  >Enviando datos POST</a
+                >
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#put"
+                  >Actualizando datos PUT</a
+                >
+              </li>
+              <li>
+                <a
+                  class="link course-class__menu--a"
+                  href="#container-components"
+                  >UI Components y Container Components</a
+                >
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#portals"
+                  >Portales</a
+                >
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#modal">Modales</a>
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#hooks">Hooks</a>
+              </li>
+              <li>
+                <a class="link course-class__menu--a" href="#search"
+                  >Search filter</a
+                >
+              </li>
             </ul>
           </nav>
           <div class="course-class__content">
@@ -1069,7 +1167,8 @@
                 todas las páginas.
               </p>
               <p>
-                El Layout sera un componente funcional que se importar en App.js donde esta el React Router.
+                El Layout sera un componente funcional que se importar en App.js
+                donde esta el React Router.
               </p>
               <pre class="code">
 
@@ -1084,7 +1183,9 @@
                 &lt<span class="code-sym">/BrowserRouter</span>&gt
               </pre>
               <p>
-                Ahora para que esto funcione y se pueda renderizar las páginas dentro del componente Layout, se deben retornar sus hijo, que sera Switch.
+                Ahora para que esto funcione y se pueda renderizar las páginas
+                dentro del componente Layout, se deben retornar sus hijo, que
+                sera Switch.
               </p>
               <pre class="code">
 
@@ -1107,13 +1208,838 @@
               </pre>
               <div class="note">
                 <p>
-                  Si el componente tiene etiquetas de apertura y cierre, se deben retornar sus children, mediante sus props. {this.props.children}.
+                  Si el componente tiene etiquetas de apertura y cierre, se
+                  deben retornar sus children, mediante sus props.
+                  {this.props.children}.
                 </p>
                 <p>
-                  Componente clase -> presentacional <br>
+                  Componente clase -> presentacional <br />
                   Componente funcion -> funcional
                 </p>
               </div>
+            </article>
+            <article class="course-class__section" id="lifecycle">
+              <h2 class="course-class__section--title">
+                Ciclo de vida de un componente
+              </h2>
+              <p>
+                Cuando React renderiza los componentes decimos que entran en
+                escena, cuando su estado cambia o recibe unos props diferentes
+                se actualizan y cuando cambiamos de página se dice que se
+                desmontan.
+              </p>
+              <ul>
+                <li>
+                  <span class="t-bold">
+                    Montaje
+                  </span>
+                  <ul>
+                    <li>
+                      Representa el momento donde se inserta el código del
+                      componente en el DOM.
+                    </li>
+                    <li>
+                      Se llaman tres métodos: constructor (donde se inicializan
+                      los estados o valores), render (momento preciso donde
+                      react calcula este elemento y lo introduce en el código),
+                      <strong>componentDidMount</strong> (una vez lo del render
+                      ocurra, react envía una señal, ejecuta el método
+                      componentDidMount, ya con esto el código es visible en
+                      pantalla).
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <span class="t-bold">Actualización</span>
+                  <ul>
+                    <li>
+                      Ocurre cuando los props o el estado del componente
+                      cambian.
+                    </li>
+                    <li>
+                      Se llaman dos métodos: render,
+                      <strong>componentDidUpdate</strong> (recibe dos
+                      argumentos, los props que tenía anteriormente y el estado
+                      que tenía ).
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <span class="t-bold">Desmontaje</span>
+                  <ul>
+                    <li>
+                      Nos da la oportunidad de hacer limpieza de nuestro
+                      componente. Cuando el componente sale de escena, ejemplo
+                      cuando se va de una página a otra.
+                    </li>
+                    <li>
+                      Se llama un método:
+                      <strong>componentWillUnmount</strong> (lugar perfecto para
+                      limpiar memoria).
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <h3>Practica del ciclo de vida</h3>
+              <p>Un componente pasa por muchos estados.</p>
+              <p>
+                <span class="t-bold">El constructor</span> recibe unos props,
+                esos props se le pasan al constructor de la clase padre (super).
+                El constructor es el lugar donde se deben inicializar los datos.
+              </p>
+              <pre class="code">
+
+                <span class="code-var">constructor</span>(props){
+                  super(props)
+
+                  <span class="code-comment">//iniciando datos</span>
+                  this.state = {
+                    data : [
+                      {
+                        id : <span class="code-text">"1"</span>,
+                        firstName: <span class="code-text">"Carlos"</span>,
+                        lastName : <span class="code-text">"Zabala"</span>,
+                        email : <span class="code-text">"czabala@gmail.com"</span>
+                      },
+                      {
+                        id : <span class="code-text">"2"</span>,
+                        firstName: <span class="code-text">"FirstName"</span>,
+                        lastName : <span class="code-text">"LastName"</span>,
+                        email : <span class="code-text">"prueba@example.com"</span>
+                      }
+                    ]
+                  }
+                }
+              </pre>
+              <p>
+                <span class="t-bold">componentDidMount</span>, que será el que
+                se ejecuta después del render. Es en este método el ideal si
+                queremos hacer una petición aun API, ya que esa llamada se
+                ejectura una vez nuestros componentes esten cargados en
+                pantalla.
+              </p>
+              <pre class="code">
+
+                <span class="code-function">componentDidMount</span>(){
+                  <span class="code-var">console</span>.log(<span class="code-text">"this is a componentDidMount"</span>)
+                }
+              </pre>
+              <p>
+                <span class="t-bold">Render</span>, dentro de el estarán todos
+                los componentes que se mostraran en pantalla.
+              </p>
+              <pre class="code">
+
+                <span class="code-function">render</span>(){
+                  <span class="code-sym">return</span>(
+                    &lt<span class="code-var">React.Fragment</span>&gt
+                      &lt<span class="code-sym">h1</span>&gt
+                        Esto se mostrara en pantalla, método render.
+                      &lt<span class="code-sym">/h1</span>&gt 
+                    &lt<span class="code-var">/React.Fragment</span>&gt
+                  )
+                }
+              </pre>
+              <pre class="code">
+
+                <span class="code-comment">//El orden en que se ejecutan es el siguiente.</span>
+                <span class="code-comment">1. constructor()</span>
+                <span class="code-comment">2. render()</span>
+                <span class="code-comment">3. componentDidMount()</span>
+              </pre>
+              <p>
+                Si nuestro componente hay un cambió en el state o en los props,
+                lo que hace React es volver a llamar al método render y dispara
+                la señal <span class="t-bold">componentDidUpdate</span>.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//El nuevo orden de ejecución seria:</span>
+                <span class="code-comment">1. constructor()</span>
+                <span class="code-comment">2. render()</span>
+                <span class="code-comment">3. componentDidMount()</span>
+                <span class="code-comment">4. render()</span>
+                <span class="code-comment">5. componentDidUpdate()</span>
+              </pre>
+              <p>
+                El método componentDidUpdate recibe dos parámetros los props que
+                tenía antes y el state que tenía antes
+              </p>
+              <pre class="code">
+
+                <span class="code-function">componentDidUpdate</span>(prevProps, prevState){
+                  <span class="code-comment">//imprimir datos que tenía antes</span>
+                  <span class="code-var">console</span>.log({
+                    propsAntes: prevProps,
+                    stateAntes: prevSate
+                  })
+
+                  <span class="code-comment">//imprimir datos que tenemos ahora</span>
+                  <span class="code-var">console</span>.log({
+                    props: this.props,
+                    state: this.state
+                  })
+                }
+              </pre>
+              <p>
+                <span class="t-bold">Desmontaje</span>, El ultimo método es el
+                <span class="t-bold">componentWillUnmount</span> es el que se
+                ejecuta antes de que el componente salga de escena.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//Orden de ejecución:</span>
+                <span class="code-comment">1. constructor()</span>
+                <span class="code-comment">2. render()</span>
+                <span class="code-comment">3. componentDidMount()</span>
+                <span class="code-comment">4. render()</span>
+                <span class="code-comment">5. componentDidUpdate()</span>
+                <span class="code-comment">6. componentWillUnmount()</span>
+              </pre>
+              <p>
+                El <span class="t-bold">componentWillUnmount()</span>, es el
+                lugar donde debemos limpiar procesos que se están ejecutando,
+                como funciones asíncronas.
+              </p>
+              <pre class="code">
+
+                <span class="code-function">componentWillUnmount</span>(){
+                  <span class="code-comment">//Cancelar un setTimeOut</span>
+                  <span class="code-var">clearTimeout</span>(this.timeOutID)
+                }
+              </pre>
+            </article>
+            <article class="course-class__section" id="api">
+              <h2 class="course-class__section--title">Llamadas API</h2>
+              <p>
+                Las llamadas a una API siguen un patrón similar siempre que las
+                hacemos, cada llamada consta de tres estados:
+              </p>
+              <ul>
+                <li>
+                  <span class="t-bold">Loading</span>: cuando la petición se
+                  envía y estamos esperando.
+                </li>
+                <li>
+                  <span class="t-bold">Error</span>: se debe dejar un mensaje
+                  para el usuario para arreglar el error o volver a intentarlo.
+                </li>
+                <li>
+                  <span class="t-bold">Data</span>: los datos nos pueden llegar
+                  de dos formas, o en error o con los datos requeridos.
+                </li>
+              </ul>
+              <a
+                class="link link-refe t-bold"
+                target="_blank"
+                href="https://blog.iamsuleiman.com/stop-using-loading-spinner-theres-something-better/"
+                >Loading Spinner</a
+              >
+              <h3>Datos API React</h3>
+              <p>
+                Una llamada a una API es un proceso asíncrono, es decir que lo
+                comenzamos, pero no sabemos cuándo acabará. Por lo mismo la
+                función a escribir debe ser asíncrona. La llamada se hará usando
+                <span class="t-bold">fetch</span> que es una función de React
+                que, al pasarle una dirección de internet, hará una petición
+                <span class="t-bold">GET</span> y lo que sea que exista ahí será
+                devuelto.
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://es.reactjs.org/docs/state-and-lifecycle.html#state-updates-may-be-asynchronous"
+                  >Asynchronous React</a
+                >.
+              </p>
+            </article>
+            <article class="course-class__section" id="get">
+              <h2 class="course-class__section--title">
+                Solicitando datos GET
+              </h2>
+              <P>
+                Lo primero es definir en el state valores iniciales, para tres
+                variables (atributos), como son la data (donde se guardarán los
+                datos resultantes del llamado a la API), loading (estado de
+                carga) y el error.
+              </P>
+              <pre class="code">
+
+                state = {
+                  <span class="code-comment">//Estado de carga en true, para mostrar al usuario que se estan cargando los datos.</span>
+                  loading : <span class="code-sym">true</span>,
+
+                  <span class="code-comment">//No hay datos undefined</span>
+                  data : <span class="code-sym">undefined</span>,
+
+                  <span class="code-comment">//No hay error.</span>
+                  error : <span class="code-sym">null</span>
+                }
+              </pre>
+              <p>
+                Dentro del <span class="t-bold">render</span>, podemos mostrar
+                uno de estos casos, la acción de carga (para mejorar la
+                experiencia de usuario), los datos o un mensaje de error o
+                warning.
+              </p>
+              <pre class="code">
+
+                <span class="code-function">render</span>(){
+
+                  <span class="code-comment">//si loading es true, mostrar animación de cargando</span>
+                  <span class="code-var">if</span>(this.state.loading === <span class="code-sym">true</span>){
+                    <span class="code-sym">return</span> <span class="code-text">"loading..."</span>
+                  }
+
+                  <span class="code-comment">//si ocurre un error</span>
+                  <span class="code-var">if</span>(this.state.error){
+                    <span class="code-sym">return</span> <span class="code-text">`Error : ${this.state.error.message}`</span>
+                  }
+
+                  <span class="code-comment">//todo sale bien, mostrar los datos</span>
+                  <span class="code-sym">return</span>(
+                    &lt<span class="code-sym">BadgeForm</span> <span class="code-function">data</span>={this.state.data} /&gt
+                  )
+                }
+              </pre>
+              <p>
+                Se debe tener un método que es el que hará la llamada a la API
+                <span class="t-bold">fetchData</span>, en él se vuelve a iniciar
+                el state a sus valores por defecto. Se manejaran los errores con
+                un <span class="t-bold">try catch</span>.
+              </p>
+              <pre class="code">
+
+                <span class="code-function">fetchData</span>(){
+                  <span class="code-comment">//Valores por defecto del state</span>
+                  this.<span class="code-var">setState</span>({
+                    loading : <span class="code-sym">true</span>, error: <span class="code-sym">null</span>
+                  })
+
+                  <span class="code-var">try</span>{
+
+                  }
+                  <span class="code-var">catch</span>(){
+
+                  }
+                }
+              </pre>
+              <p>
+                Si tenemos suerte recibimos unos datos y esos datos los
+                guardamos en el state, y si tenemos un error lo manejamos en el
+                catch y también se guarda en el state.
+              </p>
+              <pre class="code">
+
+                <span class="code-var">try</span>{
+                  <span class="code-var">const</span> data = []
+                  this.<span class="code-var">setState</span>({
+                    data : data, loading : <span class="code-sym">false</span>
+                  })
+                }
+                <span class="code-var">catch</span>(error){
+                  this.<span class="code-var">setState</span>({
+                    error : error, loading : <span class="code-sym">false</span>
+                  })
+                }
+              </pre>
+              <p>
+                <span class="t-bold">Loading</span> para los dos casos es false,
+                porque se supone que ya termino de buscar, todo comienza en el
+                <span class="t-bold">componentWillMount</span> llamando al
+                método fetchData.
+              </p>
+              <pre class="code">
+
+                <span class="code-function">componentDidMount</span>(){
+                  this.<span class="code-function">fetchData</span>()
+                }
+              </pre>
+              <p>
+                Hay que recordar que al llamar una API, es un proceso asíncrono
+                así que el método fetchData, debe ser una función asíncrona,
+                para esto se usaran los manejadores de promesas
+                <span class="t-bold">async await</span>.
+              </p>
+              <pre class="code">
+
+                <span class="code-function">fetchData</span> = <span class="code-sym">async</span> () => {
+                  this.<span class="code-var">setState</span>({
+                    loading : <span class="code-sym">true</span>, error: <span class="code-sym">null</span>
+                  })
+
+                  <span class="code-var">try</span>{
+                    <span class="code-var">const</span> data = <span class="code-sym">await</span> api.data.list()
+                    this.<span class="code-var">setState</span>({
+                      data : data, loading : <span class="code-sym">false</span>
+                    })
+                  }
+                  <span class="code-var">catch</span>(error){
+                    this.<span class="code-var">setState</span>({
+                      error : error, loading : <span class="code-sym">false</span>
+                    })
+                  }
+                }
+              </pre>
+              <p>
+                Ejemplo de solicitud de una API GET curso de React Paltzi
+                <a
+                  class="link link-refe t-bold"
+                  target="_blank"
+                  href="https://github.com/afisaacs/reactjs/blob/master/src/pages/Badges.js"
+                  >Repo GIT</a
+                >.
+              </p>
+              <div class="note">
+                <p>
+                  Es importante para la experiencia de usuario, mostrar un
+                  mensaje si no hay datos disponibles y una acción que él haga
+                  si esto ocurre.
+                </p>
+              </div>
+              <h3>Mejorando la experiencia de usuario</h3>
+              <p>
+                Para mejorar la experiencia de los usuarios, lo ideal es manejar
+                el loading y el error como componente, recomendado usar
+                animaciones para el loading.
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://loading.io/css/"
+                  >animaciones</a
+                >
+              </p>
+            </article>
+            <article class="course-class__section" id="post">
+              <h2 class="course-class__section--title">Enviando datos POST</h2>
+              <p>
+                <span class="t-bold">MD5</span> es una pequeña librería a la
+                cual se le da un texto y ella regresa un
+                <span class="t-bold">hash</span>. Podremos hacer pruebas para
+                cifrar nuestros textos a md5 en el siguiente sitio
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://md5online.es/cifrar-md5"
+                  >MD5 Online</a
+                >. <br />
+                Esto si queremos usar
+                <a
+                  class="link link-refe t-bold"
+                  target="_blank"
+                  href="https://es.gravatar.com/"
+                  >Gravatar</a
+                >
+                en nuestras aplicaciones.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//instalar libreria MD5</span>
+                npm install md5
+              </pre>
+              <p>Crear el componente que generara el avatar.</p>
+              <pre class="code">
+
+                <span class="code-comment">//Gravatar.js</span>
+                <span class="code-sym">import</span> React <span class="code-sym">from</span> <span class="code-text">"react"</span>
+                <span class="code-sym">import</span> md5 <span class="code-sym">from</span> <span class="code-text">"md5"</span>
+                
+                <span class="code-var">function</span> <span class="code-function">Gravatar</span>(props){
+                  <span class="code-var">const</span> email <span class="code-sym">=</span> props.mail
+                  <span class="code-var">const</span> name <span class="code-sym">=</span> props.name
+                  <span class="code-var">const</span> hash <span class="code-sym">=</span> <span class="code-function">md5</span>(email)
+                
+                  <span class="code-sym">return</span>(
+                    &lt<span class="code-sym">img</span>
+                      <span class="code-function">className</span> = {props.className}
+                      <span class="code-function">src</span> = {<span class="code-text">`https://gravatar.com/avatar${hash}?d=identicon`</span>}
+                      <span class="code-function">alt</span> = {<span class="code-text">`Avatar ${name} ? name : "user"`</span>}
+                    /&gt
+                  )
+                }
+              </pre>
+              <p>Usandolo:</p>
+              <pre class="code">
+
+                &lt<span class="code-var">Gravatar</span> <span class="code-function">email</span> = {email} <span class="code-function">name</span> = {firstName} <span class="code-function">className</span> = <span class="code-text">"Badge__avatar"</span> /&gt
+              </pre>
+              <p>
+                Para guardar los datos de un formulario a una API, en este caso
+                se coloca el evento <span class="t-bold">onSubmit</span> y en el
+                método <span class="t-bold">handleSubmit</span> se hace el
+                desarrollo.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//método handleSubmit</span>
+                <span class="code-function">handleSubmit</span> = <span class="code-sym">async</span> (e)=>{
+                  <span class="code-comment">//truncar submit</span>
+                  e.preventDefault
+                  
+                  this.<span class="code-var">setState</span>({
+                    loading : <span class="code-sym">true</span>, error: <span class="code-sym">null</span>
+                  })
+
+                  <span class="code-var">try</span>{
+                    <span class="code-var">const</span> data = <span class="code-sym">await</span> api.data.<span class="t-bold">create</span>(this.state.data)
+                    this.<span class="code-var">setState</span>({
+                      data : data, loading : <span class="code-sym">false</span>
+                    })
+                  }
+                  <span class="code-var">catch</span>(error){
+                    this.<span class="code-var">setState</span>({
+                      error : error, loading : <span class="code-sym">false</span>
+                    })
+                  }
+                }
+              </pre>
+              <pre class="code">
+
+                <span class="code-comment">//el || funciona como un (o) si no hay nada en firstName entonces coloca el texo "firstName" </span>
+                {firstName <span class="code-sym">||</span> <span class="code-text">"FirstName"</span>}
+              </pre>
+              <p>
+                De la misma manera en la que se manejan los estados cuando se
+                solicitan datos, deben ser manejados cuando los datos son
+                enviados. Existe un tiempo entre que se da clic y los datos son
+                enviados. Ese tiempo de espera es necesario visualizarlo. Igual
+                hay que mostrar mensajes de error cuando no funcionan las cosas.
+              </p>
+            </article>
+            <article class="course-class__section" id="put">
+              <h2 class="course-class__section--title">
+                Actualizando datos PUT
+              </h2>
+              <p>
+                En React Router se pueden pasar variables entre las rutas de las
+                páginas, ejemplo, si queremos editar o ver un producto en una
+                página lo podemos hacer mediante la dirección general y el id
+                del producto.
+              </p>
+              <pre class="code">
+                
+                &lt<span class="code-sym">Route</span> <span class="code-function">exact</span> <span class="code-function">path</span> = <span class="code-text">"/badges/:badgeID/edit"</span> <span class="code-function">component</span>={BadgeNew} /&gt
+              </pre>
+              <p>
+                Gracias a react-router, podemos obtener el
+                <span class="t-bold">id</span> de un elemento mediante la url
+              </p>
+              <pre class="code">
+
+                this.props.match.params.nombreVariable
+
+                <span class="code-comment">//accediendo a la ruta relativa</span>
+                &lt<span class="code-sym">Link</span> <span class="code-function">to</span>={<span class="code-text">`/badges/${badgeID}/edit`</span>} &gt
+                  ir
+                &lt<span class="code-sym">/Link</span>&gt
+              </pre>
+              <p>Lo que se ha hecho con el manejo de API es:</p>
+              <ul>
+                <li>Importar API</li>
+                <li>Ejecutar el método fetchData en componentDidMount</li>
+                <li>Inicializar el state: loading, error</li>
+                <li>Usar try catch para capturar errores</li>
+                <li>Async await para las promesas</li>
+                <li>
+                  El id del badge se obtiene por medio de la URL
+                  (this.props.match.params.badgeID)
+                </li>
+                <li>Apagar loading, manejar error</li>
+                <li>
+                  Condicionales dentro del método render, mostrar loading,
+                  mostrar error si hay
+                </li>
+              </ul>
+            </article>
+            <article class="course-class__section" id="container-components">
+              <h2 class="course-class__section--title">
+                UI Components y Container Components
+              </h2>
+              <p>
+                En la programación es bueno separar las tareas en diferentes
+                funciones y en React sucede lo mismo. Cuando un componente hace
+                demasiado, probablemente es mejor dividirlo en dos. Esta técnica
+                de componentes presentacionales y componentes container es
+                común, útil y hace parte de las buenas prácticas.
+              </p>
+              <p>
+                Separar el pedir los datos a la api y mostrarlos en el render,
+                esto hay que separarlo. En un componente ira la lógica de la
+                aplicación y en otro la parte visual.
+              </p>
+              <p>
+                Existe un enfoque interesante de React:
+                <span class="t-bold"
+                  >Ese donde hay dos tipos de componentes</span
+                >
+                Los primeros tontos, superficiales, solo se enfocan en el
+                <i>look and feel</i> Los segundos más inteligentes, racionales,
+                solo se enfocan en la lógica En la práctica:
+              </p>
+              <ul>
+                <li>
+                  Los componentes presentacionales casi nunca tienen estados y
+                  se hacen en base a funciones, importan los estilos y contienen
+                  las clases.
+                </li>
+                <li>
+                  Los componentes inteligentes contienen el estado y los métodos
+                  que dan lógica a la App y lo transfieren a otros componentes a
+                  través de Props.
+                </li>
+              </ul>
+              <p>
+                Me parece recomendable contenedor el segundo tipo de componentes
+                a través de un <span class="t-bold">React.Fragment</span>.
+                <br />
+                Así mismo el contenedor del primero dependerá de lo que sea
+                (div, section, figure, article, header, aside).
+              </p>
+              <div class="note">
+                <p>
+                  1000 componentes = Utilizar Redux. <br />
+                  Solo si se usa este método para aplicaciones con 5 a 10
+                  componentes máximo,
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="portals">
+              <h2 class="course-class__section--title">
+                Portales
+              </h2>
+              <p>
+                Hay momentos en los que queremos renderizar un modal, un
+                tooltip, etc. Esto puede volverse algo complicado ya sea por la
+                presencia de un z-index o un overflow hidden. En estos casos lo
+                ideal será renderizar en un nodo completamente aparte y para
+                esto React tiene una herramienta llamada
+                <span class="t-bold">Portales</span> que funcionan parecido a
+                ReactDOM.render; se les dice qué se desea renderizar y dónde,
+                con la diferencia de que ese dónde puede ser fuera de la
+                aplicación.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//La idea es que cuando se le de click al botón, se muestre el modal</span>
+                &lt<span class="code-sym">button</span>&gt
+                  <span class="code-function">onClick</span>={this.<span class="code-function">openModal</span>} <span class="code-function">className</span>={<span class="code-text">"btn btn-modal"</span>}
+                &lt<span class="code-sym">/button</span>&gt
+              </pre>
+              <p>
+                El <span class="t-bold">ReactDOM.createPortal</span>, lo
+                usaremos para crear el modal en un nodo aparte, funciona de la
+                siguiente manera
+              </p>
+              <pre class="code">
+
+                {ReactDOM.<span class="code-function">createPortal</span>(que, donde) }
+
+                &lt<span class="code-sym">div</span>&gt
+                  &lt<span class="code-sym">button</span>&gtDelete&lt<span class="code-sym">/button</span>&gt
+                  {ReactDOM<span class="code-function">createPortal</span> (
+                    &lt<span class="code-sym">h1</span>&gt
+                      Hola, realmente no estoy aquí
+                    &lt<span class="code-sym">/h1</span>&gt,
+                    document.<span class="code-function">getElementById</span>(<span class="code-text">"modal"</span>)
+                  )}
+                &lt<span class="code-sym">/div</span>&gt
+
+              </pre>
+              <P
+                >Cuando se habla de nodos se refieren a los elementos que estan
+                dentro del <span class="t-bold">index.html</span>.</P
+              >
+              <pre class="code">
+
+                &lt<span class="code-sym">body</span>&gt
+                  &lt<span class="code-sym">div</span> <span class="code-function">id</span>=<span class="code-text">"app"</span>&gt&lt<span class="code-sym">div</span>&gt
+                  &lt<span class="code-sym">div</span> <span class="code-function">id</span>=<span class="code-text">"modal"</span>&gt&lt<span class="code-sym">div</span>&gt
+                &lt<span class="code-sym">/body</span>&gt
+              </pre>
+            </article>
+            <article class="course-class__section" id="modal">
+              <h2 class="course-class__section--title">Modales</h2>
+              <p>
+                La técnica de usar componentes genéricos para crear uno nuevo
+                especializado se llama composición y es una herramienta que todo
+                buen programador debe saber utilizar.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//Componente Modal</span>
+
+                <span class="code-sym">import</span> React <span class="code-sym">from</span> <span class="code-text">"react"</span>
+                <span class="code-sym">import</span> ReactDOM <span class="code-sym">from</span> <span class="code-text">"react-dom"</span>
+
+                <span class="code-var">function</span> <span class="code-function">Modal</span>(props){
+                  <span class="code-var">if</span>(<span class="code-sym">!</span>props.isOpenModal){
+                    <span class="code-sym">return null</span>
+                  }
+
+                  <span class="code-sym">return</span> ReactDOM.<span class="code-function">createPortal</span>(
+                    &lt<span class="code-sym">h1</span>&gtModal&lt<span class="code-sym">/h1</span>&gt,
+                    document.<span class="code-function">getElementById</span>(<span class="code-text">"modal"</span>)
+                  )
+
+                }
+              </pre>
+            </article>
+            <article class="course-class__section" id="hooks">
+              <h2 class="course-class__section--title">Hooks</h2>
+              <p>
+                Las funciones no tienen un estado propio que manejar como ciclos
+                de vida a los que deben suscribirse, mientras tanto las clases
+                sí cuentan con ello. React tiene un feature llamado
+                <strong>Hooks</strong> que permite que las funciones también
+                tengan features que solamente tienen las clases.
+              </p>
+              <ul>
+                <li>
+                  <span class="t-bold">useState</span>: Para manejo de estado.
+                  Regresa un arreglo de dos argumentos.
+                </li>
+                <li>
+                  <span class="t-bold">useEffect</span>: Para suscribir el
+                  componente a su ciclo de vida.
+                </li>
+                <li>
+                  <span class="t-bold">useReducer</span>: Ejecutar un efecto
+                  basado en una acción.
+                </li>
+                <li>
+                  <span class="t-bold">Custom Hooks</span>:Usamos los hooks
+                  fundamentales para crear nuevos hooks custom. Estos hooks irán
+                  en su propia función y su nombre comenzará con la palabra use.
+                  Otra de sus características es que no pueden ser ejecutados
+                  condicionalmente (if).
+                </li>
+              </ul>
+              <pre class="code">
+
+                <span class="code-var">const</span> [state, setState] = React.<span class="code-function">useState</span>(initialState)
+              </pre>
+            </article>
+            <article class="course-class__section" id="search">
+              <h2 class="course-class__section--title">Search filter</h2>
+              <p>
+                Hacer caja de búsqueda que este filtrando cada vez que se digite
+                una palabra, para eso se usan los hooks. Los hooks solo viven en
+                componentes funcionales.
+              </p>
+              <p>
+                Hacer que los inputs sean controlados.
+              </p>
+              <pre class="code">
+
+                &lt<span class="code-sym">input</span>
+                  <span class="code-function">type</span> = <span class="code-text">"text"</span>
+                  <span class="code-function">className</span> = <span class="code-text">"form-control"</span>
+                  <span class="code-function">value</span> = <span class="code-text">""</span>
+                  <span class="code-function">onChange</span> = {(e) => {
+                    console.<span class="code-function">log</span>(e.target.value)
+                  }}
+                /&gt
+
+                <span class="code-comment">//Crear primer hooks, que sera igual al state de los componentes clases</span>
+                <span class="code-var">const</span>[query, setQuery] = React.<span class="code-function">useState</span>(<span class="code-text">''</span>)
+              </pre>
+              <p>
+                Ese Query es lo que se usa en el value del input, para explicar
+                mejor, se guardaran los datos ingresados en la caja de texto
+                mediante setQuery y se mostraran esos datos en la caja de texto
+                por medio de Query a través del atributo value
+              </p>
+              <pre class="code">
+
+                &lt<span class="code-sym">input</span>
+                  <span class="code-function">type</span> = <span class="code-text">"text"</span>
+                  <span class="code-function">className</span> = <span class="code-text">"form-control"</span>
+                  <span class="code-function">value</span> = {query}
+                  <span class="code-function">onChange</span> = {(e) => {
+                    setQuery(e.target.value)
+                  }}
+                /&gt
+              </pre>
+              <p>
+                El resultado de ese filtro se guardará en una variable, y
+                filtramos el array de badges, usando la función de los array
+                <span class="t-bold">filter</span>. <br />
+                Cuya condición para filtrar los badges son los que contengan en
+                el nombre lo que se esta escribiendo en la caja de texto. Para
+                comparar que una palabra esta contenida en otra se usa la
+                función includes().
+              </p>
+              <pre class="code">
+
+                <span class="code-var">const</span> filteredBadges = badges.<span class="code-function">filter</span>(badge => {
+                  <span class="code-sym">return</span> badge.firstName<span class="code-function">includes</span>(query);
+                })
+              </pre>
+              <p>
+                Se pueden ignorar las mayúsculas y minúsculas para evitar
+                problemas de filtrado.
+              </p>
+              <pre class="code">
+
+                <span class="code-sym">return</span> badge.firstName.<span class="code-function">toLoweCase</span>().<span class="code-function">includes</span>(query.<span class="code-function">toLowerCase</span>())
+              </pre>
+              <p>
+                Este filtrado puede generar un cuello de botella cuando la lista
+                sea mucho más grande ya que cada vez esta calculando y
+                renderizando cada vez que se digite una letra en la caja de
+                texto, para eso se puede usar otro hook uno que ya trae react.
+                Se llama <strong>useMemo</strong>, el cual calcula, busca los
+                resultados y los guarda por decirlo así, ya que con esto al
+                hacer nuevamente la misma búsqueda el ya tiene guardado esos
+                datos de la búsqueda (argumentos) y no tiene que volver a
+                calcularlos, con esto los mostrara muy rápidamente ya que los
+                conoce
+              </p>
+              <p>
+                Recibe como argumentos una función, la que ya teníamos, y
+                segundo unos argumentos, que si cambian realizara el filtrado,
+                el cambio y si no cambian mostrara los que ya tiene guardado.
+                Los argumentos que siempre cambian en este caso son la lista de
+                badges, y los datos que ingresan en la caja de texto.
+              </p>
+              <p>
+                Antes hay que crear un estado, cuyo valor inicial será la lista
+                de badges completas Luego en el useMemo guardamos el result en
+                el estado que creamos.
+              </p>
+              <pre class="code">
+
+                <span class="code-var">const</span> [filteredBadges, setFilteredBadges] = React.<span class="code-function">useState</span>(badgeList)
+
+                React.<span class="code-function">useMemo</span>(() => {
+                  <span class="code-var">const</span> result = badges.<span class="code-function">filter</span>(badge => {
+                    <span class="code-sym">return</span> badge.firstName.<span class="code-function">toLoweCase</span>().<span class="code-function">includes</span>(query.<span class="code-function">toLoweCase</span>())
+                  })
+                  setFilteredBadges(result)
+                }, [badge, query])
+              </pre>
+              <p>
+                Último paso empaquetar todo en un customhook.
+              </p>
+              <pre class="code">
+
+                <span class="code-var">function</span> <span class="code-function">useSearchBadges</span>(badges){
+
+                  <span class="code-var">const</span> [query, setQuery] = React.<span class="code-function">useState</span>('')
+                  <span class="code-var">const</span> [filteredBadges, setFilteredBadges] = React.<span class="code-function">useState</span>(badgeList)
+
+                  React.<span class="code-function">useMemo</span>(() => {
+                    <span class="code-var">const</span> result = badges.<span class="code-function">filter</span>(badge => {
+                      <span class="code-sym">return</span> badge.firstName.<span class="code-function">toLoweCase</span>().<span class="code-function">includes</span>(query.<span class="code-function">toLoweCase</span>())
+                    })
+                    setFilteredBadges(result)
+                  }, [badge, query])
+
+                  <span class="code-sym">return</span> {setQuery, filteredBadges}
+                }
+
+                <span class="code-comment">//uso</span>
+                <span class="code-var">const</span> {setQuery, filteredBadges} = <span class="code-function">useSearchBadges</span>(listBadges)
+              </pre>
             </article>
           </div>
         </section>

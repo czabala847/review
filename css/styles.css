@@ -530,6 +530,7 @@ h3 {
   -ms-flex-item-align: start;
       align-self: flex-start;
   overflow: auto;
+  height: 500px;
 }
 
 .course-class__menu li {
