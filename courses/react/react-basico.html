@@ -125,6 +125,9 @@
                 <a class="link course-class__menu--a" href="#event">Eventos</a>
               </li>
               <li>
+                <a class="link course-class__menu--a" href="#conditional">Condicionales en JSX</a>
+              </li>
+              <li>
                 <a class="link course-class__menu--a" href="#state">Estados</a>
               </li>
               <li>
@@ -276,14 +279,12 @@
                 comando. Antes de ella se configuraba todo el entorno
                 manualmente lo cual tomaba mucho tiempo.
               </p>
-              <span class="t-bold">Instalar de forma global: </span>
               <pre class="code">
 
+                <span class="code-comment">//Instalar de forma global</span>
                 npm install -g react-create-app
-              </pre>
-              Una vez instalado se crea la carpeta del proyecto con:
-              <pre class="code">
 
+                <span class="code-comment">//Crear proyecto</span>
                 react-create-app nombre_proyecto
               </pre>
               <p>
@@ -477,9 +478,9 @@
               </div>
             </article>
             <article class="course-class__section" id="create-component">
-              <h3 class="course-class__section--title">
+              <h2 class="course-class__section--title">
                 Creación de un componente
-              </h3>
+              </h2>
               <ul>
                 <li>
                   Es una buena práctica que los componentes vivan en su propio
@@ -723,6 +724,23 @@
                 <p>Si el evento es onChange el método debe ser handleChange.</p>
               </div>
             </article>
+            <article class="course-class__section" id="conditional">
+              <h2 class="course-class__section--title">Condiciones en React JS</h2>
+              <p>
+                Dentro de <span class="t-bold">jsx</span>, para el manejo de condiciones se pueden usar las siguientes:  
+              </p>
+              <pre class="code">
+
+                {this.state.loading === <span class="code-sym">true</span> ? <span class="code-text">"Parte del true"</span> : <span class="code-text">"Parte del false"</span> }
+              </pre>
+              <p>O</p>
+              <pre class="code">
+
+                {this.state.loading <span class="code-sym">&&</span> (
+                  &lt<span class="code-sym">p</span>&gtSi la condición se cumple se mostrara este parrafo.&lt<span class="code-sym">/p</span>&gt
+                 ) }
+              </pre>
+            </article>
             <article class="course-class__section" id="state">
               <h2 class="course-class__section--title">
                 Estados
@@ -813,6 +831,20 @@
                   <span class="code-var">email</span> : "",
                   <span class="code-var">twitter</span> : ""
                 }
+
+                <span class="code-comment">//Iniciando el state dentro del constructor</span>
+                <span class="code-var">constructor</span>(props){
+                  <span class="code-comment">//En React al especificar el constructor, se debe también llamar al constructor de la clase padre (Component).</span>
+                  <span class="code-var">super</span>(props)
+
+                  state <span class="code-sym">=</span> {
+                    <span class="code-var">loading</span> : <span class="code-sym">true</span> ,
+                    <span class="code-var">data</span> : <span class="code-sym">undefined</span> ,
+                    <span class="code-var">error</span> : <spam class="code-sym">null</spam>
+                  }
+
+                }
+
               </pre>
               <p>
                 <span class="t-bold">Resumen formularios controlados</span>:
@@ -882,6 +914,60 @@
                   <span class="code-function">value</span> <span class="code-sym">=</span> {this.props.dataForm}
                 /&gt
               </pre>
+              <p>
+                Al modificar directamente el state, sin utilizar la función
+                <span class="t-bold">setState</span>, se pierde el poder de
+                React como, por ejemplo:
+                <span class="t-bold">componentDidMount</span>, no verá esto como
+                una actualización porque se modifica directamente.
+              </p>
+              <p>
+                Una forma sencilla y clara de modificar el state sin alterar su
+                <span class="t-bold">mutabilidad</span> es mediante el siguiente
+                ejemplo: <br />
+                En el state hay un array de géneros de películas, el array tiene
+                un nombre, una descripción y un array de películas. Lo que se
+                quiere es modificar el array de películas por los datos de una
+                API y actualizar el state sin mutarlo.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//Primero clonar el array de géneros, hacerle una copia</span>
+                <span class="code-var">const</span> genreNew = [...this.state.genre]
+
+                <span class="code-comment">//O con el método de los arrays <span class="t-bold">slice()</span>.</span>
+                <span class="code-var">const</span> genreNew = this.state.genre.<span class="code-function">slice</span>()
+                
+                <span class="code-comment">//Se recorre el array nuevo, para asignarle al array de películas la data que arrojo la api.</span>
+
+                genreNew.<span class="code-var">forEach</span>(genreItem => {
+                  genreItem.movies = dataAPI.movies
+                })
+
+                <span class="code-comment">//Se actualiza el state, con el nuevo array.</span>
+                this.<span class="code-function">setState</span>({
+                  genre : genreNew
+                })
+              </pre>
+              <div class="note">
+                <p>
+                  Más información de como modificar el index de un array en el
+                  state.
+                  <a
+                    class="link link-refe t-bold"
+                    target="_blank"
+                    href="https://stackoverflow.com/questions/29537299/react-how-do-i-update-state-item1-on-setstate-with-jsfiddle"
+                    >Update state item</a
+                  >. <br />
+                  Inmutablidad en React JS
+                  <a
+                    class="link link-refe t-bold"
+                    target="_blank"
+                    href="https://stackoverflow.com/questions/46232867/why-is-react-setstate-method-immutable"
+                    >setState method immutable</a
+                  >.
+                </p>
+              </div>
             </article>
             <article class="course-class__section" id="list-component">
               <h2 class="course-class__section--title">
@@ -914,19 +1000,23 @@
               </p>
               <pre class="code">
 
-                &lt<span class="code-sym">ul</span>&gt
-                  {
-                    this.state.data.<span class="code-function">map</span>(<span class="code-var">badge</span> => {
-                      <span class="code-sym">return</span>(
-                        &lt<span class="code-sym">li</span> <span class="code-function">key</span>={badge.id} &gt
-                          &lt<span class="code-sym">p</span>&gt
-                            {badge.firstName} {badge.lastName}
-                          &lt<span class="code-sym">/p</span>&gt
-                        &lt<span class="code-sym">/li</span>&gt
-                      )
-                    })
-                  }
-                &lt<span class="code-sym">/ul</span>&gt 
+                <span class="code-function">render</span>(){
+                  <span class="code-sym t-bold">return</span>(
+                    &lt<span class="code-sym">ul</span>&gt
+                    {
+                      this.state.data.<span class="code-function">map</span>(<span class="code-var">badge</span> => {
+                        <span class="code-sym t-bold">return</span>(
+                          &lt<span class="code-sym">li</span> <span class="code-function">key</span>={badge.id} &gt
+                            &lt<span class="code-sym">p</span>&gt
+                              {badge.firstName} {badge.lastName}
+                            &lt<span class="code-sym">/p</span>&gt
+                          &lt<span class="code-sym">/li</span>&gt
+                        )
+                      })
+                    }
+                    &lt<span class="code-sym">/ul</span>&gt 
+                  )
+                }
               </pre>
             </article>
             <article class="course-class__section" id="icon">
