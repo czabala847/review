@@ -99,6 +99,12 @@
     grid-area: content;
     padding: $padding-base;
   }
+
+  .course-class__menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width: 95%;
+  }
+
   .course-class__menu--a {
     color: $color-white;
   }
