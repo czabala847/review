@@ -7,19 +7,33 @@
   grid-template-columns: 20% 1fr;
   column-gap: sum-space(2rem);
   position: relative;
+  grid-template-areas: "menu content";
+}
+
+.course-class__left {
+  grid-area: menu;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.course-class__left--container {
+  position: relative;
+  height: $width-full;
 }
 
 .course-class__content {
   display: grid;
   grid-template-columns: 95%;
+  position: relative;
 }
 
 .course-class__menu {
   position: sticky;
   top: $header-height;
-  align-self: flex-start;
   overflow: auto;
-  height: 500px;
+  height: calc(100vh - 90px);
 
   & li {
     list-style: none;
@@ -34,6 +48,11 @@
 
 .course-class__menu--a:hover {
   color: $color-orange;
+}
+
+.course-class__content {
+  grid-area: content;
+  position: relative;
 }
 
 /*Estilos de código, para mostrar ejemplos*/
@@ -56,4 +75,31 @@
 
 .code-comment {
   color: $color-code-gray;
+}
+
+@media only screen and (max-width: 768px) {
+  .course-class {
+    grid-template-columns: $width-full;
+    grid-template-areas: "content";
+  }
+
+  .course-class__left {
+    background-color: $color-light-orange;
+    z-index: 999;
+    width: 0;
+    transition: 0.3s;
+    // display: none;
+  }
+
+  .course-class__left.is-active {
+    width: 50%;
+  }
+
+  .course-class__content {
+    grid-area: content;
+    padding: $padding-base;
+  }
+  .course-class__menu--a {
+    color: $color-white;
+  }
 }

@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../fonts/style.css" />
   </head>
   <body>
     <div class="app">
@@ -80,127 +81,152 @@
           </div>
         </section>
         <section class="course-class">
-          <nav class="course-class__menu">
-            <ul>
-              <li>
-                <a class="link course-class__menu--a" href="#tools"
-                  >Herramientas a usar</a
-                >
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#react-app"
-                  >Create React App</a
-                >
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#react-dom"
-                  >ReactDOM.render</a
-                >
-              </li>
-              <li><a class="link course-class__menu--a" href="#jsx">JSX</a></li>
-              <li>
-                <a class="link course-class__menu--a" href="#component"
-                  >Componentes</a
-                >
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#create-component"
-                  >Creación de componentes</a
-                >
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#css"
-                  >Estilos CSS</a
-                >
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#props">Props</a>
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#page-react"
-                  >Páginas en React</a
-                >
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#event">Eventos</a>
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#conditional">Condicionales en JSX</a>
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#state">Estados</a>
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#lifting-state"
-                  >Levantamiento de estados</a
-                >
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#list-component"
-                  >Listas de componentes</a
-                >
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#icon"
-                  >Font Awesome</a
-                >
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#react-router"
-                  >React Router</a
-                >
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#layout">Layout</a>
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#lifecycle"
-                  >Ciclo de vida</a
-                >
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#api"
-                  >Llamadas API</a
-                >
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#get">Datos GET</a>
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#post"
-                  >Enviando datos POST</a
-                >
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#put"
-                  >Actualizando datos PUT</a
-                >
-              </li>
-              <li>
-                <a
-                  class="link course-class__menu--a"
-                  href="#container-components"
-                  >UI Components y Container Components</a
-                >
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#portals"
-                  >Portales</a
-                >
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#modal">Modales</a>
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#hooks">Hooks</a>
-              </li>
-              <li>
-                <a class="link course-class__menu--a" href="#search"
-                  >Search filter</a
-                >
-              </li>
-            </ul>
-          </nav>
+          <div class="course-class__left" id="course-class__left">
+            <div class="course-class__left--container">
+              <i class="icon-menu icon" id="btn-menu"></i>
+              <nav class="course-class__menu">
+                <ul>
+                  <li>
+                    <a class="link course-class__menu--a" href="#tools"
+                      >Herramientas a usar</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#react-app"
+                      >Create React App</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#react-dom"
+                      >ReactDOM.render</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#jsx">JSX</a>
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#component"
+                      >Componentes</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#create-component"
+                      >Creación de componentes</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#css"
+                      >Estilos CSS</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#props"
+                      >Props</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#page-react"
+                      >Páginas en React</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#event"
+                      >Eventos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#conditional"
+                      >Condicionales en JSX</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#state"
+                      >Estados</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#lifting-state"
+                      >Levantamiento de estados</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#list-component"
+                      >Listas de componentes</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#icon"
+                      >Font Awesome</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#react-router"
+                      >React Router</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#layout"
+                      >Layout</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#lifecycle"
+                      >Ciclo de vida</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#api"
+                      >Llamadas API</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#get"
+                      >Datos GET</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#post"
+                      >Enviando datos POST</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#put"
+                      >Actualizando datos PUT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#container-components"
+                      >UI Components y Container Components</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#portals"
+                      >Portales</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#modal"
+                      >Modales</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#hooks"
+                      >Hooks</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#search"
+                      >Search filter</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
           <div class="course-class__content">
             <article class="course-class__section" id="tools">
               <h2 class="course-class__section--title">Herramientas a usar</h2>
@@ -725,9 +751,12 @@
               </div>
             </article>
             <article class="course-class__section" id="conditional">
-              <h2 class="course-class__section--title">Condiciones en React JS</h2>
+              <h2 class="course-class__section--title">
+                Condiciones en React JS
+              </h2>
               <p>
-                Dentro de <span class="t-bold">jsx</span>, para el manejo de condiciones se pueden usar las siguientes:  
+                Dentro de <span class="t-bold">jsx</span>, para el manejo de
+                condiciones se pueden usar las siguientes:
               </p>
               <pre class="code">
 
@@ -1635,8 +1664,8 @@
               <p>
                 <span class="t-bold">Loading</span> para los dos casos es false,
                 porque se supone que ya termino de buscar, todo comienza en el
-                <span class="t-bold">componentWillMount</span> llamando al
-                método fetchData.
+                <span class="t-bold">componentDidMount</span> llamando al método
+                fetchData.
               </p>
               <pre class="code">
 
@@ -2135,5 +2164,17 @@
         </section>
       </div>
     </div>
+    <script>
+      const $menu = document.getElementById('btn-menu');
+      const $courseMenu = document.getElementById('course-class__left');
+ 
+      $menu.addEventListener('click', handleClick)
+
+      function handleClick(){
+        $courseMenu.classList.toggle('is-active')
+      }
+
+
+    </script>
   </body>
 </html>

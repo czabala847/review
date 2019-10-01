@@ -17,6 +17,7 @@
 .container-general {
   @extend .grid-center;
   grid-template-columns: minmax(auto, 1024px);
+  position: relative;
 }
 
 .note {
