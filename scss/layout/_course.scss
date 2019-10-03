@@ -79,15 +79,15 @@
 
 @media only screen and (max-width: 768px) {
   .course-class {
-    grid-template-columns: $width-full;
+    grid-template-columns: 95%;
     grid-template-areas: "content";
   }
 
   .course-class__left {
     background-color: $color-light-orange;
-    z-index: 999;
+    z-index: $index-third;
     width: 0;
-    transition: 0.3s;
+    transition: $animation-transition;
     // display: none;
   }
 
@@ -97,7 +97,7 @@
 
   .course-class__content {
     grid-area: content;
-    padding: $padding-base;
+    grid-template-columns: 1fr;
   }
 
   .course-class__menu li {

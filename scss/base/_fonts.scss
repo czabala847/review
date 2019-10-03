@@ -1,12 +1,12 @@
 /*-----------------------------------------*\
-                  FONTS
+               FONTS ICONS
 \*-----------------------------------------*/
 
 .icon {
   @extend .flex-center;
   background: $color-light-orange;
-  width: 40px;
-  height: 40px;
+  width: $icon-width;
+  height: $icon-height;
   color: $color-white;
   border-radius: 50%;
 }
@@ -14,9 +14,16 @@
 .icon.icon-menu {
   display: none;
   position: sticky;
-  z-index: 1000;
+  z-index: $index-secundary;
   top: 110px;
   cursor: pointer;
+  transition: $animation-transition;
+  transform: translateY(10px);
+}
+
+.icon-menu.is-active {
+  border-radius: 0;
+  transform: translateX(calc(50vw - 20px)) translateY(10px);
 }
 
 @media only screen and (max-width: 768px) {

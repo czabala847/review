@@ -5,7 +5,7 @@
 .link {
   color: $color-white;
   text-decoration: none;
-  transition: 0.3s;
+  transition: $animation-transition;
 
   &.link-refe {
     color: $color-blue;

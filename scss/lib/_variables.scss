@@ -66,3 +66,19 @@ $padding-base: $espaced-base;
 $border-radius-max: 30px;
 $border-radius-min: 5px;
 $box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+
+/*BUTTONS*/
+$button-padding: 8px 25px 12px;
+$button-shadow: inset 0px -5px 1px rgba(0, 0, 0, 0.2);
+
+/*ANIMATION*/
+$animation-transition: 0.3s;
+
+/*ICONS*/
+$icon-height: 40px;
+$icon-width: 40px;
+
+/*Z-INDEX*/
+$index-primary: 10000;
+$index-secundary: 1000;
+$index-third: 100;

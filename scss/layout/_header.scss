@@ -4,11 +4,12 @@
 
 .header {
   height: $header-height;
-  width: $width-full;
   background: $color-dark-orange;
   position: fixed;
-  z-index: 10000;
+  z-index: $index-primary;
   top: 0;
+  left: 0;
+  right: 0;
 
   & > .container-general {
     height: inherit;

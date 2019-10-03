@@ -33,7 +33,7 @@
   margin-top: sum-space($espaced-base);
   border-radius: $border-radius-min;
   box-shadow: $box-shadow;
-  transition: 0.3s;
+  transition: $animation-transition;
   text-decoration: none;
   color: $color-black-font;
 }

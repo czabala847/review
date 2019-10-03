@@ -5,7 +5,6 @@
 .hero {
   @extend .flex-center;
   min-height: $hero-height;
-  width: $width-full;
   color: $color-white;
   background: $color-degraded;
   position: relative;
@@ -55,10 +54,6 @@
   @extend .hero;
   min-height: 300px;
   padding-bottom: sum-space($padding-base);
-}
-
-.hero-course__title {
-  margin-bottom: 0;
 }
 
 @media only screen and (max-width: 768px) {

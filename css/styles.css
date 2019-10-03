@@ -9,6 +9,10 @@
 /*CONTAINERS*/
 /*ESPACED*/
 /*BORDERS*/
+/*BUTTONS*/
+/*ANIMATION*/
+/*ICONS*/
+/*Z-INDEX*/
 /*-----------------------------------------*\
                   MIXINS
 \*-----------------------------------------*/
@@ -180,6 +184,10 @@ h3 {
   font-size: 1.8rem;
 }
 
+.hero-course__title {
+  margin-bottom: 0;
+}
+
 @media only screen and (max-width: 636px) {
   html,
   body {
@@ -194,6 +202,12 @@ h3 {
   }
   h3 {
     font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hero-course__title {
+    font-size: 2.5rem;
   }
 }
 
@@ -231,7 +245,7 @@ h3 {
 }
 
 /*-----------------------------------------*\
-                  FONTS
+               FONTS ICONS
 \*-----------------------------------------*/
 .icon {
   background: #ff9548;
@@ -248,6 +262,16 @@ h3 {
   z-index: 1000;
   top: 110px;
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+.icon-menu.is-active {
+  border-radius: 0;
+  -webkit-transform: translateX(calc(50vw - 20px)) translateY(10px);
+          transform: translateX(calc(50vw - 20px)) translateY(10px);
 }
 
 @media only screen and (max-width: 768px) {
@@ -263,11 +287,12 @@ h3 {
 \*-----------------------------------------*/
 .header {
   height: 90px;
-  width: 100%;
   background: #e15e00;
   position: fixed;
   z-index: 10000;
   top: 0;
+  left: 0;
+  right: 0;
 }
 
 .header > .container-general {
@@ -347,7 +372,6 @@ h3 {
 \*-----------------------------------------*/
 .hero, .hero-course {
   min-height: 450px;
-  width: 100%;
   color: #fff;
   background: -webkit-gradient(linear, left top, left bottom, from(#e15e00), to(#ff9548));
   background: linear-gradient(to bottom, #e15e00, #ff9548);
@@ -401,10 +425,6 @@ h3 {
 .hero-course {
   min-height: 300px;
   padding-bottom: 2rem;
-}
-
-.hero-course__title {
-  margin-bottom: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -621,13 +641,13 @@ h3 {
 
 @media only screen and (max-width: 768px) {
   .course-class {
-    -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
+    -ms-grid-columns: 95%;
+        grid-template-columns: 95%;
         grid-template-areas: "content";
   }
   .course-class__left {
     background-color: #ff9548;
-    z-index: 999;
+    z-index: 100;
     width: 0;
     -webkit-transition: 0.3s;
     transition: 0.3s;
@@ -639,7 +659,8 @@ h3 {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: content;
-    padding: 1rem;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
   .course-class__menu li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
