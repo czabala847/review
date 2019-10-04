@@ -255,7 +255,7 @@ h3 {
   border-radius: 50%;
 }
 
-.icon.icon-menu {
+.icon.course-class__icon-menu {
   display: none;
   position: -webkit-sticky;
   position: sticky;
@@ -268,14 +268,14 @@ h3 {
           transform: translateY(10px);
 }
 
-.icon-menu.is-active {
+.course-class__icon-menu.is-active {
   border-radius: 0;
-  -webkit-transform: translateX(calc(50vw - 20px)) translateY(10px);
-          transform: translateX(calc(50vw - 20px)) translateY(10px);
+  -webkit-transform: translateX(calc(50vw - 10px)) translateY(10px);
+          transform: translateX(calc(50vw - 10px)) translateY(10px);
 }
 
 @media only screen and (max-width: 768px) {
-  .icon.icon-menu {
+  .icon.course-class__icon-menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

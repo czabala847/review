@@ -11,7 +11,7 @@
   border-radius: 50%;
 }
 
-.icon.icon-menu {
+.icon.course-class__icon-menu {
   display: none;
   position: sticky;
   z-index: $index-secundary;
@@ -21,13 +21,13 @@
   transform: translateY(10px);
 }
 
-.icon-menu.is-active {
+.course-class__icon-menu.is-active {
   border-radius: 0;
-  transform: translateX(calc(50vw - 20px)) translateY(10px);
+  transform: translateX(calc(50vw - 10px)) translateY(10px);
 }
 
 @media only screen and (max-width: 768px) {
-  .icon.icon-menu {
+  .icon.course-class__icon-menu {
     display: flex;
   }
 }

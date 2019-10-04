@@ -227,7 +227,7 @@
             </div>
           </div>
           <div class="course-class__content">
-              <i class="icon-menu icon" id="btn-menu"></i>
+              <i class="icon-menu icon course-class__icon-menu" id="btn-menu"></i>
             <article class="course-class__section" id="tools">
               <h2 class="course-class__section--title">Herramientas a usar</h2>
               <p>
@@ -2173,6 +2173,15 @@
       function handleClick(){
         $courseMenu.classList.toggle('is-active')
         $menu.classList.toggle('is-active')
+
+        if($menu.classList.contains('icon-menu')){
+          $menu.classList.remove('icon-menu')
+          $menu.classList.add('icon-close')
+        }
+        else{
+          $menu.classList.remove('icon-close')
+          $menu.classList.add('icon-menu')
+        }
       }
 
 
