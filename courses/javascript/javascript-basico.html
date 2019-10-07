@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso básico de Javascript</title>
+    <link rel="icon" href="../../images/favicon.png" type="img/text" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../fonts/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="app-react-basico">
+        <header class="header">
+          <div class="container-general">
+            <nav class="header-menu">
+              <ul class="header-menu__list menu-left">
+                <li class="header-menu__list--item">
+                  <a class="link" href="../../index.html">Inicio</a>
+                </li>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Carreras</a>
+                </li>
+              </ul>
+              <figure class="header-menu__logo">
+                <a href="../../index.html"
+                  ><img
+                    class="header-menu__logo--img"
+                    src="../../images/logo_white.png"
+                    alt="logo carlos zabala"
+                /></a>
+              </figure>
+              <ul class="header-menu__list menu-right">
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Me</a>
+                </li>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Contacto</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <section class="hero-course">
+          <div class="container-general">
+            <h1 class="hero-course__title">Curso básico de Javascript</h1>
+            <p class="hero-course__description">
+              A lo largo del curso aprenderemos las bases sólidas para dominar
+              el lenguaje JavaScript. Veremos desde lo más básico como:
+              variables, tipos de datos y operadores, e iremos avanzando con los
+              condicionales y las estructuras de control. Luego veremos los
+              conceptos relacionados con asincronismo, uno de los aspectos
+              fundamentales de JavaScript, usando callbacks, promesas y async
+              await.
+            </p>
+            <div class="hero-course__buttons">
+              <a
+                target="_blank"
+                href="https://platzi.com/clases/fundamentos-javascript/"
+                class="btn btn--primary"
+                >Curso platzi</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="course-class">
+          <div class="course-class__left" id="course-class__left">
+            <div class="course-class__left--container">
+              <nav class="course-class__menu">
+                <ul>
+                  <li>
+                    <a class="link course-class__menu--a" href="#variables"
+                      >Variables</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#functions"
+                      >Funciones</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#function-scope"
+                      >Alcance de las funciones</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="course-class__content">
+            <i class="icon-menu icon course-class__icon-menu" id="btn-menu"></i>
+            <article class="course-class__section" id="variables">
+              <h2 class="course-class__section--title">Variables</h2>
+              <p>
+                Para declarar una variable se hace de la siguiente forma, en el
+                ejemplo se declara y se le asigna un valor:
+              </p>
+              <pre class="code">
+  
+                <span class="code-var">var</span> nombreVariable <span class="code-sym">=</span> <span class="code-text">"valor de la variable"</span>
+              </pre>
+              <div class="note">
+                <p>
+                  Recomendado usar en js la comilla simple para String ('').
+                  <br />El punto y coma se puede incluir o no, es una convención
+                  escribirlo. Pero hay ciertos casos en los que sí hay que
+                  colocarlo, son acciones puntuales.
+                </p>
+              </div>
+              <p>
+                Js lenguaje débilmente tipado, en una variable se pueden asignar
+                tanto números y textos, ej:
+              </p>
+              <pre class="code">
+  
+                edad <span class="code-sym">=</span> 28
+                edad <span class="code-sym">=</span> <span class="code-text">'28'</span>
+              </pre>
+              <h3>Variables: Strings</h3>
+              <p>
+                Los strings son cadenas de texto. Para indicar que estamos
+                usando una cadena de texto debemos de colocar las comillas
+                simples.
+              </p>
+              <pre class="code">
+  
+                <span class="code-comment">// <span class="t-bold">toUpperCase</span>, que sirve para transformar un String a mayúsculas.</span>
+                <span class="code-var">var</span> nombreEnMayusculas <span class="code-sym">=</span> name.<span class="code-var">toUpperCase</span>()
+  
+                <span class="code-comment">// <span class="t-bold">toLowerCase</span>, que sirve para transformar un String a minúsculas.</span>
+                <span class="code-var">var</span> nombreEnMinuscula <span class="code-sym">=</span> name.<span class="code-var">toLowerCase</span>()
+  
+                <span class="code-comment">// imprimir primera letra del nombre <span class="t-bold">(charAt(posicion))</span>.</span>
+                <span class="code-var">var</span> primeraLetraNombre <span class="code-sym">=</span> name.<span class="code-var">charAt</span>(0)
+  
+                <span class="code-comment">// cantidad de letras del nombre <span class="t-bold">length</span>.</span>
+                <span class="code-var">var</span> cantidadLetrasNombre <span class="code-sym">=</span> name.<span class="code-var">length</span>
+  
+                <span class="code-comment">// extraer texto de un string con <span class="t-bold">substr</span>(inicio, cuantasLetras).</span>
+                <span class="code-var">var</span> str <span class="code-sym">=</span> name.<span class="code-var">substr</span>(1, 2)
+  
+                <span class="code-comment">// Imprimir ultima letra del nombre</span>
+                <span class="code-var">var</span> ultimaLetraDelNombre <span class="code-sym">=</span> name.<span class="code-var">substr</span>(name.<span class="code-var">length</span> - 1, 1)
+  
+                <span class="code-comment">//Para concatenar texto se usa el signo (+), y para imprimir en consola se usa la función console.log</span>
+                <span class="code-var">console</span>.log(<span class="code-text">'hello, my name is '</span> <span class="code-sym">+</span> name <span class="code-sym">+</span> <span class="code-text"> ' ' </span> <span class="code-sym">+</span> lastName)
+              </pre>
+              <p>
+                Si queremos evitar la concatenación de texto con (+), podemos
+                usar
+                <span class="t-bold">Interpolación</span> de texto que ofrece
+                JS. Para usarla podemos definir una cadena de texto por medio de
+                las comillas invertidas (``), ejemplo:
+              </p>
+              <pre class="code">
+  
+                <span class="code-var">var</span> interpolacion <span class="code-sym">=</span> <span class="code-text">`${Aquí se puede poner código js}`</span>
+                <span class="code-var">var</span> nombreCompleto <span class="code-sym">=</span> <span class="code-text">`Hello, my name is ${name} ${lastName}`</span>
+              </pre>
+              <h3>Variables: Número</h3>
+              <p>
+                Recuerda que en operaciones con decimales debemos realizar
+                operaciones adicionales para conseguir un resultado preciso. Ej.
+                var total = ( precioDeVino * 100 * 3) / 100. <br />
+                Para redondear una operación se utiliza la función:
+                <span class="t-bold">Math.round</span>
+              </p>
+              <pre class="code">
+  
+                <span class="code-var">let</span> precioVino = 200.3
+                <span class="code-var">let</span> total = Math.<span class="code-var">round</span>(precioVino * 3) / 100 <span class="code-comment">//Redondear sin importar los decimales</span>
+                <span class="code-var">let</span> totalStr = total.<span class="code-var">toFixed</span>(2) <span class="code-comment">//Agregar decimales convierte el valor en un string</span>
+                <span class="code-var">let</span> total2 = <span class="code-var">parseFloat</span>(totalStr) <span class="code-comment">//Convierte el string nuevamente a número</span>
+              </pre>
+              <h3>Diferencias entre LET vs VAR</h3>
+              <p>
+                let permite declarar variables limitando su alcance (scope) al
+                bloque, declaración, o expresión donde se está usando. Lo
+                anterior diferencia la expresión let de la palabra reservada
+                var, la cual define una variable global o local en una función
+                sin importar el ámbito del bloque.
+              </p>
+              <p>
+                Cuando usamos let dentro de un bloque, podemos limitar el
+                alcance de la variable a dicho bloque. Notemos la diferencia con
+                var, cuyo alcance reside dentro de la función donde ha sido
+                declarada la variable.
+              </p>
+              <pre class="code">
+  
+                <span class="code-var">var</span> a = 5; <span class="code-var">var</span> b = 10;
+                
+                <span class="code-sym">if</span>(a === 5){
+                  <span class="code-var">let</span> a = 4; <span class="code-comment">// El alcance es dentro del bloque if</span>
+                  <span class="code-var">var</span> b = 1; <span class="code-comment">// El alcance es global</span>
+  
+                  console.<span class="code-var">log</span>(a) <span class="code-comment">//4</span>
+                  console.<span class="code-var">log</span>(b) <span class="code-comment">//1</span>
+                }
+  
+                console.<span class="code-var">log</span>(a) <span class="code-comment">//5</span>
+                console.<span class="code-var">log</span>(b) <span class="code-comment">//1</span>
+              </pre>
+            </article>
+            <article class="course-class__section" id="functions">
+              <h2 class="course-class__section--title">Funciones</h2>
+              <p>
+                Las funciones son
+                <span class="t-bold">fracciones de código reutilizable</span>.
+                Para definir una función utilizaremos la palabra reservada
+                "function". <br />
+                Delimitamos el cuerpo de la función usando llaves { }. Los
+                parámetros de la función son variables que se pasan a la función
+                escribiéndolos entre paréntesis (). <br />
+                Definir funciones nos sirve para reutilizar código. JavaScript
+                es un lenguaje interpretado, esto quiere decir que intentará
+                ejecutar el código sin importar si los parámetros que le pasemos
+                a la función estén invertidos o incluso incompletos.
+              </p>
+              <pre class="code">
+
+                <span class="code-var">var</span> nombre = <span class="code-text">'Carlos'</span> , apellido = <span class="code-text">'Zabala'</span>, edad = 21
+
+                <span class="code-var">function</span> <span class="code-function">imprimirEdad</span>(nombre, apellido, edad){
+                  console.<span class="code-var">log</span>(<span class="code-text">`${n} ${a} tiene ${e} años`</span>)
+                }
+
+                <span class="code-function">imprimirEdad</span>(nombre, apellido, edad) <span class="code-comment">//Carlos Zabala tiene 21 años</span>
+                <span class="code-function">imprimirEdad</span>() <span class="code-comment">//undefined undefined tiene undefined años</span>
+                <span class="code-function">imprimirEdad</span>(<span class="code-text">'Juan'</span>, <span class="code-text">'Diaz'</span>, 21) <span class="code-comment">//Juan Diaz tiene 21 años</span>
+                <span class="code-function">imprimirEdad</span>(21, 5, <span class="code-text">'Lopez'</span>) <span class="code-comment">//21 5 tiene lopez años</span>
+              </pre>
+            </article>
+            <article class="course-class__section" id="function-scope">
+              <h2 class="course-class__section--title">
+                El alcance de las funciones
+              </h2>
+              <p>
+                En esta clase hablaremos del alcance que tienen las funciones.
+                Si una variable no está definida dentro del cuerpo de una
+                función hablamos de una variable global. Por el contrario, una
+                variable definida dentro de una función es una variable local.
+                Para que la ejecución de una función no modifique una variable
+                global usamos parámetros en lugar de pasar directamente la
+                variable. Es posible utilizar el mismo nombre para una variable
+                global y para el parámetro de una función con un alcance local.
+              </p>
+              <div class="note">
+                <p>
+                  A que variables la función puede acceder y que valor tomara
+                  esa variable dentro de la función. <br />
+                  <span class="t-bold">Variable global</span>: Variable que no
+                  está definida dentro de una función sino por fuera de ella.
+                </p>
+              </div>
+              <p>
+                Al hacer referencia directa a una variable global dentro de una
+                función, podemos modificar su valor, esto se le denomina
+                <span class="t-bold">sideEfect</span>, y esto lo vamos a querer
+                evitar. Para acceder a la variable global, hacemos referencia al
+                objeto global, en este caso por estar en el browser accedemos
+                con <span class="t-bold">window.nombre</span>.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//Accediendo a una variable global (no hacer)</span>
+                
+                <span class="code-var">var</span> nombre = <span class="code-text">'Cosme Fulanito'</span>
+
+                <span class="code-var">function</span> <span class="code-function">imprimirNombreMayusculas</span>(){
+                  nombre = nombre.<span class="code-var">toUpperCase</span>()
+                  console.<span class="code-var">log</span>(nombre)
+                }
+
+                <span class="code-function">imprimirNombreMayusculas</span>()
+
+                <span class="code-comment">//Accediendo a los parametros de la función (recomendado)</span>
+                <span class="code-comment">//El alcance de la siguiente función solo es para la variable local que le llega por parámetro</span>
+                <span class="code-var">function</span> <span class="code-function">imprimirNombreMayusculas</span>(nombre){
+                  nombre = nombre.<span class="code-var">toUpperCase</span>()
+                  console.<span class="code-var">log</span>(nombre)
+                }
+
+                <span class="code-function">imprimirNombreMayusculas</span>(nombre)
+              </pre>
+              <div class="note">
+                <p>
+                  SideEfect funciones que modifican variables que "no le
+                  corresponde".
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script>
+      const $menu = document.getElementById("btn-menu");
+      const $courseMenu = document.getElementById("course-class__left");
+
+      $menu.addEventListener("click", handleClick);
+
+      function handleClick() {
+        $courseMenu.classList.toggle("is-active");
+        $menu.classList.toggle("is-active");
+
+        if ($menu.classList.contains("icon-menu")) {
+          $menu.classList.remove("icon-menu");
+          $menu.classList.add("icon-close");
+        } else {
+          $menu.classList.remove("icon-close");
+          $menu.classList.add("icon-menu");
+        }
+      }
+    </script>
+  </body>
+</html>

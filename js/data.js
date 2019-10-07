@@ -27,6 +27,23 @@ data = [
   },
   {
     id: 2,
+    name: "Javascript",
+    description:
+      "Es un lenguaje de programación que te permite crear contenido nuevo y dinámico, controlar archivos de multimedia, crear imágenes animadas y muchas otras cosas más. (Aunque, no todo, pero es increíble lo que puedes llegar a hacer con tan sólo unas pocas líneas de código de JavaScript",
+    courses: [
+      {
+        courseID: 1,
+        courseName: "Curso Básico",
+        courseDescription:
+          "A lo largo del curso aprenderemos las bases sólidas para dominar el lenguaje JavaScript.",
+        courseURL: "./courses/javascript/javascript-basico.html",
+        courseImage:
+          "https://gitconnected.com/public/images/tutorials/svg/javascript.svg"
+      }
+    ]
+  },
+  {
+    id: 3,
     name: "React JS",
     description:
       "Una biblioteca de JavaScript para construir interfaces de usuario de forma sencilla.",
