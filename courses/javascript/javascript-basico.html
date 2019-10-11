@@ -159,17 +159,23 @@
                     >
                   </li>
                   <li>
-                    <a
-                      class="link course-class__menu--a"
-                      href="#callbacks"
+                    <a class="link course-class__menu--a" href="#callbacks"
                       >Callbacks</a
                     >
                   </li>
                   <li>
-                    <a
-                      class="link course-class__menu--a"
-                      href="#promise"
+                    <a class="link course-class__menu--a" href="#promise"
                       >Promesas</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#async-await"
+                      >Async-await</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#context-function"
+                      >Contexto de una función</a
                     >
                   </li>
                 </ul>
@@ -290,6 +296,26 @@
                 console.<span class="code-var">log</span>(a) <span class="code-comment">//5</span>
                 console.<span class="code-var">log</span>(b) <span class="code-comment">//1</span>
               </pre>
+              <p>
+                "var" es la manera más antigua de declarar variables. No es muy
+                estricta en cuanto al alcance, ya que, al declarar variables de
+                esta forma, dichas variables podrán ser accedidas, e incluso
+                modificadas, tanto dentro como fuera de los bloques internos en
+                una función. <br />
+                Con "let" por otra parte, el alcance se reduce al bloque (las
+                llaves) en el cual la variable fue declarada. Fuera de este
+                bloque la variable no existe. Una vez declarada la variable con
+                let, no se puede volver a declarar con en ninguna otra parte de
+                la función. <br />
+                "const" al igual que "let" se define en el contexto o alcance de
+                un bloque, a diferencia de let y var, las varibles definidas
+                como constantes (const), ya no podrán ser modificadas ni
+                declaradas nuevamente, en ninguna otra parte de la función o el
+                contexto en el que ya existen. <br />
+                La recomendación es reducir siempre al mínimo el alcance de
+                nuestras variables, por lo que se debe usar let en lugar de var
+                mientras sea posible.
+              </p>
             </article>
             <article class="course-class__section" id="functions">
               <h2 class="course-class__section--title">Funciones</h2>
@@ -1020,7 +1046,10 @@
             </article>
             <article class="course-class__section" id="promise">
               <h2 class="course-class__section--title">Promesas</h2>
-              <p>Son valores que aún no conocemos. Las promesas tienen tre estados:</p>
+              <p>
+                Son valores que aún no conocemos. Las promesas tienen tre
+                estados:
+              </p>
               <ul>
                 <li>pending</li>
                 <li>fullfilled</li>
@@ -1040,6 +1069,115 @@
                     <span class="code-var">reject</span>()
                   }
                 })
+              </pre>
+              <p>Pensemos las promesas como valores que aún no conocemos.</p>
+              <pre class="code">
+
+                <span class="code-var">function</span> <span class="code-function">obtenerPersonaje</span>(id) {
+                  <span class="code-sym">return new</span> Promise(<span class="code-var">function</span>(resolve, reject){
+                    <span class="code-var">const</span> URL = <span class="code-text">`${API_URL}${PEOPLE_URL.replace(':id', id)}`</span>
+                    $
+                    .<span class="code-function">get</span>(URL, OPTS, <span class="code-var">function</span>(data){
+                      <span class="code-var">resolve</span>(data)
+                    })
+                    .<span class="code-function">fail</span>(<span class="code-var">function</span>(){
+                      <span class="code-var">reject</span>(id)
+                    })
+                  })
+                }
+
+                <span class="code-function">obtenerPersonaje</span>(1)
+                .<span class="code-var">then</span>(<span class="code-var">function</span>(personaje){
+                  console.<span class="code-var">log</span>(<span class="code-text">`El personaje 1 es ${personaje.name}`</span>)
+                })
+                .<span class="code-var">catch</span>(error => console.<span class="code-var">log</span>(<span class="code-text">`error`</span>))
+              </pre>
+              <h3>Promesas encadenadas</h3>
+              <p>
+                A diferencia de los callbacks en el CallbackHell, que terminan
+                estando anidados unos dentro de otros, cuando se usan Promesas
+                la ejecución de las llamadas no se hacen de manera anidada sino
+                de manera encadenada, al mismo nivel una debajo de la otra, lo
+                que hace que el código sea mucho más legible y mantenible.
+              </p>
+              <h3>Múltiples promesas en paralelo</h3>
+              <p>
+                Para hacer el llamado a múltiples promesas, nos apoyamos en un
+                array de ids con el que luego construimos otro arreglo de
+                Promesas, que pasaremos como parámetro a Promise.all(
+                arregloDePromesas ), con las promesas podemos encadenar llamadas
+                en paralelo, algo que no es posible usando callbacks.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//crear array de ids</span>
+                <span class="code-var">var</span> ids = [1, 2, 3, 4, 5, 6, 7]
+
+                <span class="code-comment">//crear un array de promesas, con base al array IDS llamar al metodo obtener personajes</span>
+                <span class="code-var">var</span> promesas = ids.<span class="code-var">map</span>(id <span class="code-sym">=></span> <span class="code-function">obtenerPersonaje</span>(id))
+
+                <span class="code-var">Promise</span> 
+                  .<span class="code-var">all</span> (promesas)
+                  .<span class="code-var">then</span> (<span class="code-var">function</span> (personajes){
+                    <span class="code-sym">form</span> (let i = 0; i < personajes.length;i++){
+                      console.<span class="code-var">log</span> (<span class="code-text">`El personaje ${i+1} es: ${personajes[i].name}`</span>)
+                    }
+                  })
+                  .<span class="code-var">catch</span>(onError)
+              </pre>
+            </article>
+            <article class="course-class__section" id="async-await">
+              <h2 class="course-class__section--title">
+                Async-await: lo último en asincronismo
+              </h2>
+              <p>
+                Async-await es la manera más simple y clara de realizar tareas
+                asíncronas. Await detiene la ejecución del programa hasta que
+                todas las promesas sean resueltas. Para poder utilizar esta
+                forma, hay que colocar async antes de la definición de la
+                función, y encerrar el llamado a Promises.all() dentro de un
+                bloque try … catch.
+              </p>
+              <pre class="code">
+
+                <span class="code-sym">async</span> <span class="code-var">function</span> <span class="code-function">obtenerPersonaje</span>(){
+                  <span class="code-comment">//crear array de ids</span>
+                  <span class="code-var">var</span> ids = [1, 2, 3, 4, 5, 6, 7]
+                
+                  <span class="code-comment">//crear un array de promesas, con base al array IDS llamar al metodo obtener personajes</span>
+                  <span class="code-var">var</span> promesas = ids.<span class="code-var">map</span>(id <span class="code-sym">=></span> <span class="code-function">obtenerPersonaje</span>(id))
+                
+                  <span class="code-sym">try</span> {
+                    var personajes = <span class="code-sym">await</span> Promise.<span class="code-var">all</span>(promesas)
+                    console.<span class="code-var">log</span>(personajes)
+                  } <span class="code-sym">catch</span> (id) {
+                    <span class="code-function">onError</span>(id)
+                  }
+                }
+              </pre>
+            </article>
+            <article class="course-class__section" id="context-function">
+              <h2 class="course-class__section--title">
+                Cambiando de contexto al llamar a una función
+              </h2>
+              <p>
+                El contexto (o alcance) de una función es por lo general,
+                window. Así que, en ciertos casos, cuando intentamos referirnos
+                a this en alguna parte del código, es posible que tengamos un
+                comportamiento inesperado, porque el contexto quizás no sea el
+                que esperamos. <br> Existen al menos tres maneras de cambiar el
+                contexto de una función.
+              </p>
+              <ul>
+                <li>Usando el método .bind, enviamos la referencia a la función sin ejecutarla, pasando el contexto como parámetro.</li>
+                <li>Usando el método .call, ejecutamos inmediatamente la función con el contexto indicado.s</li>
+                <li>Usando el método .apply, es similar a .call pero los parámetros adicionales se pasan como un arreglo de valores</li>
+              </ul>
+              <pre class="code">
+
+                <span class="code-var">constructor</span>(){
+                  <span class="code-sym">this</span>.<span class="code-function">handleClick</span> = <span class="code-sym">this</span>.<span class="code-function">handleClick</span>.<span class="code-var">bind</span>(this)
+                }
               </pre>
             </article>
           </div>
