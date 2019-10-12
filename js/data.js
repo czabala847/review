@@ -29,7 +29,7 @@ data = [
     id: 2,
     name: "Javascript",
     description:
-      "Es un lenguaje de programación que te permite crear contenido nuevo y dinámico, controlar archivos de multimedia, crear imágenes animadas y muchas otras cosas más. (Aunque, no todo, pero es increíble lo que puedes llegar a hacer con tan sólo unas pocas líneas de código de JavaScript",
+      "Es un lenguaje de programación que te permite crear contenido nuevo y dinámico, controlar archivos de multimedia, crear imágenes animadas y muchas otras cosas más. (Aunque, no todo, pero es increíble lo que puedes llegar a hacer con tan sólo unas pocas líneas de código de JavaScript.",
     courses: [
       {
         courseID: 1,
@@ -39,6 +39,14 @@ data = [
         courseURL: "./courses/javascript/javascript-basico.html",
         courseImage:
           "https://gitconnected.com/public/images/tutorials/svg/javascript.svg"
+      },
+      {
+        courseID: 2,
+        courseName: "Javascript Vanilla Front",
+        courseDescription: `Técnicas para aplicar en la parte del Frontend con JS Vanilla, sin usar <span class="t-bold">JQuery</span>.`,
+        courseURL: "./courses/javascript/javascript-vanilla.html",
+        courseImage:
+          "https://i.etsystatic.com/13517909/r/il/e028cc/1802571151/il_570xN.1802571151_kie1.jpg"
       }
     ]
   },

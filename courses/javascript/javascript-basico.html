@@ -174,9 +174,14 @@
                     >
                   </li>
                   <li>
-                    <a class="link course-class__menu--a" href="#context-function"
+                    <a
+                      class="link course-class__menu--a"
+                      href="#context-function"
                       >Contexto de una función</a
                     >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#api">API</a>
                   </li>
                 </ul>
               </nav>
@@ -186,6 +191,26 @@
             <i class="icon-menu icon course-class__icon-menu" id="btn-menu"></i>
             <article class="course-class__section" id="variables">
               <h2 class="course-class__section--title">Variables</h2>
+              <p>
+                Dentro de JavaScript tenemos tres formas de declarar una
+                variable las cuales son: var, const y let.
+              </p>
+              <ul>
+                <li>
+                  <span class="t-bold">var</span> era la forma en que se
+                  declaraban las variables hasta ECMAScript 5.
+                </li>
+                <li>
+                  <span class="t-bold">const</span> y
+                  <span class="t-bold">let</span> es la forma en que se declaran
+                  las variables a partir de ECMAScript 6.
+                </li>
+              </ul>
+              <p>
+                const sirve para declarar variables que nunca van a ser
+                modificadas y en cambio let son variables que pueden ser
+                modificadas.
+              </p>
               <p>
                 Para declarar una variable se hace de la siguiente forma, en el
                 ejemplo se declara y se le asigna un valor:
@@ -203,8 +228,8 @@
                 </p>
               </div>
               <p>
-                Js lenguaje débilmente tipado, en una variable se pueden asignar
-                tanto números y textos, ej:
+                <span class="t-bold">Js lenguaje débilmente tipado</span>, en
+                una variable se pueden asignar tanto números y textos, ej:
               </p>
               <pre class="code">
   
@@ -215,31 +240,28 @@
               <p>
                 Los strings son cadenas de texto. Para indicar que estamos
                 usando una cadena de texto debemos de colocar las comillas
-                simples.
+                simples, algunas funciones que se pueden hacer con los string:
               </p>
-              <pre class="code">
-  
-                <span class="code-comment">// <span class="t-bold">toUpperCase</span>, que sirve para transformar un String a mayúsculas.</span>
-                <span class="code-var">var</span> nombreEnMayusculas <span class="code-sym">=</span> name.<span class="code-var">toUpperCase</span>()
-  
-                <span class="code-comment">// <span class="t-bold">toLowerCase</span>, que sirve para transformar un String a minúsculas.</span>
-                <span class="code-var">var</span> nombreEnMinuscula <span class="code-sym">=</span> name.<span class="code-var">toLowerCase</span>()
-  
-                <span class="code-comment">// imprimir primera letra del nombre <span class="t-bold">(charAt(posicion))</span>.</span>
-                <span class="code-var">var</span> primeraLetraNombre <span class="code-sym">=</span> name.<span class="code-var">charAt</span>(0)
-  
-                <span class="code-comment">// cantidad de letras del nombre <span class="t-bold">length</span>.</span>
-                <span class="code-var">var</span> cantidadLetrasNombre <span class="code-sym">=</span> name.<span class="code-var">length</span>
-  
-                <span class="code-comment">// extraer texto de un string con <span class="t-bold">substr</span>(inicio, cuantasLetras).</span>
-                <span class="code-var">var</span> str <span class="code-sym">=</span> name.<span class="code-var">substr</span>(1, 2)
-  
-                <span class="code-comment">// Imprimir ultima letra del nombre</span>
-                <span class="code-var">var</span> ultimaLetraDelNombre <span class="code-sym">=</span> name.<span class="code-var">substr</span>(name.<span class="code-var">length</span> - 1, 1)
-  
-                <span class="code-comment">//Para concatenar texto se usa el signo (+), y para imprimir en consola se usa la función console.log</span>
-                <span class="code-var">console</span>.log(<span class="code-text">'hello, my name is '</span> <span class="code-sym">+</span> name <span class="code-sym">+</span> <span class="code-text"> ' ' </span> <span class="code-sym">+</span> lastName)
-              </pre>
+              <ul>
+                <li>
+                  <a
+                    target="_blank"
+                    class="t-bold link link-refe"
+                    href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/charAt"
+                    >charAt</a
+                  >(indice) devuelve un caracter de una cadena de texto.
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    class="t-bold link link-refe"
+                    href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/substr"
+                    >substr</a
+                  >(inicio, longitud) devuelve los caracteres de una cadena que
+                  comienzan en una localización especificada y de acuerdo al
+                  número de caracteres que se especifiquen.
+                </li>
+              </ul>
               <p>
                 Si queremos evitar la concatenación de texto con (+), podemos
                 usar
@@ -251,21 +273,6 @@
   
                 <span class="code-var">var</span> interpolacion <span class="code-sym">=</span> <span class="code-text">`${Aquí se puede poner código js}`</span>
                 <span class="code-var">var</span> nombreCompleto <span class="code-sym">=</span> <span class="code-text">`Hello, my name is ${name} ${lastName}`</span>
-              </pre>
-              <h3>Variables: Número</h3>
-              <p>
-                Recuerda que en operaciones con decimales debemos realizar
-                operaciones adicionales para conseguir un resultado preciso. Ej.
-                var total = ( precioDeVino * 100 * 3) / 100. <br />
-                Para redondear una operación se utiliza la función:
-                <span class="t-bold">Math.round</span>
-              </p>
-              <pre class="code">
-  
-                <span class="code-var">let</span> precioVino = 200.3
-                <span class="code-var">let</span> total = Math.<span class="code-var">round</span>(precioVino * 3) / 100 <span class="code-comment">//Redondear sin importar los decimales</span>
-                <span class="code-var">let</span> totalStr = total.<span class="code-var">toFixed</span>(2) <span class="code-comment">//Agregar decimales convierte el valor en un string</span>
-                <span class="code-var">let</span> total2 = <span class="code-var">parseFloat</span>(totalStr) <span class="code-comment">//Convierte el string nuevamente a número</span>
               </pre>
               <h3>Diferencias entre LET vs VAR</h3>
               <p>
@@ -296,26 +303,6 @@
                 console.<span class="code-var">log</span>(a) <span class="code-comment">//5</span>
                 console.<span class="code-var">log</span>(b) <span class="code-comment">//1</span>
               </pre>
-              <p>
-                "var" es la manera más antigua de declarar variables. No es muy
-                estricta en cuanto al alcance, ya que, al declarar variables de
-                esta forma, dichas variables podrán ser accedidas, e incluso
-                modificadas, tanto dentro como fuera de los bloques internos en
-                una función. <br />
-                Con "let" por otra parte, el alcance se reduce al bloque (las
-                llaves) en el cual la variable fue declarada. Fuera de este
-                bloque la variable no existe. Una vez declarada la variable con
-                let, no se puede volver a declarar con en ninguna otra parte de
-                la función. <br />
-                "const" al igual que "let" se define en el contexto o alcance de
-                un bloque, a diferencia de let y var, las varibles definidas
-                como constantes (const), ya no podrán ser modificadas ni
-                declaradas nuevamente, en ninguna otra parte de la función o el
-                contexto en el que ya existen. <br />
-                La recomendación es reducir siempre al mínimo el alcance de
-                nuestras variables, por lo que se debe usar let en lugar de var
-                mientras sea posible.
-              </p>
             </article>
             <article class="course-class__section" id="functions">
               <h2 class="course-class__section--title">Funciones</h2>
@@ -327,10 +314,13 @@
                 Delimitamos el cuerpo de la función usando llaves { }. Los
                 parámetros de la función son variables que se pasan a la función
                 escribiéndolos entre paréntesis (). <br />
-                Definir funciones nos sirve para reutilizar código. JavaScript
-                es un lenguaje interpretado, esto quiere decir que intentará
-                ejecutar el código sin importar si los parámetros que le pasemos
-                a la función estén invertidos o incluso incompletos.
+                Definir funciones nos sirve para reutilizar código.
+                <span class="t-bold"
+                  >JavaScript es un lenguaje interpretado, esto quiere decir que
+                  intentará ejecutar el código sin importar si los parámetros
+                  que le pasemos a la función estén invertidos o incluso
+                  incompletos.</span
+                >
               </p>
               <pre class="code">
 
@@ -348,12 +338,7 @@
               <h3>Funciones que retornan valores</h3>
               <p>
                 <span class="t-bold">Return</span> detiene la ejecución de una
-                función y devuelve el valor de esa función. Las variables
-                definidas con const se comportan como las variables, excepto que
-                no pueden ser reasignadas. Las constantes pueden ser declaradas
-                en mayúsculas o minúsculas. Pero por convención, para
-                distinguirlas del resto de variables, se escribe todo en
-                mayúsculas.
+                función y devuelve el valor de esa función.
               </p>
               <pre class="code">
 
@@ -361,13 +346,26 @@
                   <span class="code-sym">return</span> persona.edad >= MAYORIA_DE_EDAD <span class="code-comment">// retorna true / false</span>
                 }
               </pre>
+              <p>Podemos declarar una función e invocarla allí mismo.</p>
+              <pre class="code">
+
+                <span class="code-var">function</span> <span class="code-function">load</span>(){}
+
+                <span class="code-function">load</span>()
+              </pre>
+              <p>Lo anterior equivaldría a esto:</p>
+              <pre class="code">
+
+                (<span class="code-var">function</span> <span class="code-function">load</span>(){
+
+                })()
+              </pre>
             </article>
             <article class="course-class__section" id="function-scope">
               <h2 class="course-class__section--title">
                 El alcance de las funciones
               </h2>
               <p>
-                En esta clase hablaremos del alcance que tienen las funciones.
                 Si una variable no está definida dentro del cuerpo de una
                 función hablamos de una variable global. Por el contrario, una
                 variable definida dentro de una función es una variable local.
@@ -687,8 +685,7 @@
                 Los arrays son estructuras que nos permiten organizar elementos
                 dentro de una colección. Estos elementos pueden ser números,
                 strings, booleanos, objetos, etc.
-              </p>
-              <p>
+                <br />
                 Para indicar que algo es un array se utiliza el símbolo []. En
                 js se permiten mezclar diferentes tipos de datos en un array.
               </p>
@@ -770,12 +767,33 @@
                   puede usar console.<span class="t-bold">table</span>(array).
                 </p>
               </div>
-              <h3>Reducir un array a un valor</h3>
-              <p>
-                El método reduce() nos permite reducir, mediante una función que
-                se aplica a cada uno de los elemento del array, todos los
-                elementos de dicho array, a un valor único.
-              </p>
+              <p>Otras funciones que se pueden aplicar a los arrays son:</p>
+              <ul>
+                <li>
+                  <a
+                    class="link link-refe t-bold"
+                    target="_blank"
+                    href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce"
+                    >Reduce</a
+                  >: El método
+                  <span class="t-bold">reduce()</span>
+                  nos permite reducir, mediante una función que se aplica a cada
+                  uno de los elemento del array, todos los elementos de dicho
+                  array, a un valor único.
+                </li>
+                <li>
+                  <a
+                    class="link link-refe t-bold"
+                    target="_blank"
+                    href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/find"
+                    >Find</a
+                  >: El método
+                  <span class="t-bold">find()</span>
+                  devuelve el valor del primer elemento del array que cumple la
+                  función de prueba proporcionada. En cualquier otro caso se
+                  devuelve undefined.
+                </li>
+              </ul>
             </article>
             <article class="course-class__section" id="class">
               <h2 class="course-class__section--title">Clases</h2>
@@ -1047,19 +1065,26 @@
             <article class="course-class__section" id="promise">
               <h2 class="course-class__section--title">Promesas</h2>
               <p>
-                Son valores que aún no conocemos. Las promesas tienen tre
-                estados:
+                <span class="t-i"
+                  >"Una Promesa es un objeto que representa la terminación o el
+                  fracaso eventual de una operación asíncrona"</span
+                >, o dicho de forma más cotidiana, se va a mandar una función
+                para ver si falla o se ejecuta con éxito.
+                <br />
+                Al crear una Promesa debemos pasarle por argumento la función
+                que vamos a ejecutar de forma asíncrona, dicha función va a
+                recibir dos parámetros para evaluar si se ejecutó bien
+                <span class="t-bold">(resolve)</span> o si fallo
+                <span class="t-bold">(reject)</span>.
               </p>
-              <ul>
-                <li>pending</li>
-                <li>fullfilled</li>
-                <li>reject</li>
-              </ul>
+              <pre class="code">
+
+                <span class="code-var">const</span> <span class="code-function">getUser</span> = <span class="code-sym">new</span> Promise(<span class="code-var">function</span>(resolve, reject))
+              </pre>
               <p>Las promesas se invocan de la siguiente forma:</p>
               <pre class="code">
 
                 <span class="code-sym">new</span> Promise((resolve, reject) <span class="code-sym">=></span> {
-                  <span class="code-comment">//llamado asíncrono</span>
                   <span class="code-sym">if</span>(todoOk){
                     <span class="code-comment">//se ejecutó el llamado exitosamente</span>
                     <span class="code-var">resolve</span>()
@@ -1070,7 +1095,9 @@
                   }
                 })
               </pre>
-              <p>Pensemos las promesas como valores que aún no conocemos.</p>
+              <p class="t-bold">
+                Pensemos las promesas como valores que aún no conocemos.
+              </p>
               <pre class="code">
 
                 <span class="code-var">function</span> <span class="code-function">obtenerPersonaje</span>(id) {
@@ -1092,21 +1119,31 @@
                 })
                 .<span class="code-var">catch</span>(error => console.<span class="code-var">log</span>(<span class="code-text">`error`</span>))
               </pre>
-              <h3>Promesas encadenadas</h3>
               <p>
-                A diferencia de los callbacks en el CallbackHell, que terminan
-                estando anidados unos dentro de otros, cuando se usan Promesas
-                la ejecución de las llamadas no se hacen de manera anidada sino
-                de manera encadenada, al mismo nivel una debajo de la otra, lo
-                que hace que el código sea mucho más legible y mantenible.
+                Nuestra promesa va a tener dos métodos para saber si todo salió
+                bien o fallo. El método <span class="t-bold">then</span> se
+                encarga cuando la promesa se cumplió exitosamente, mientras que
+                el método <span class="t-bold">catch</span> se encarga cuando la
+                promesa falla.
               </p>
+              <div class="note">
+                <p>
+                  A diferencia de los callbacks en el CallbackHell, que terminan
+                  estando anidados unos dentro de otros, cuando se usan Promesas
+                  la ejecución de las llamadas no se hacen de manera anidada
+                  sino de <span class="t-bold"> manera encadenada</span>, al
+                  mismo nivel una debajo de la otra, lo que hace que el código
+                  sea mucho más legible y mantenible.
+                </p>
+              </div>
               <h3>Múltiples promesas en paralelo</h3>
               <p>
-                Para hacer el llamado a múltiples promesas, nos apoyamos en un
-                array de ids con el que luego construimos otro arreglo de
-                Promesas, que pasaremos como parámetro a Promise.all(
-                arregloDePromesas ), con las promesas podemos encadenar llamadas
-                en paralelo, algo que no es posible usando callbacks.
+                Si queremos resolver varias promesas a la misma vez, Promise
+                cuenta con un método llamado <span class="t-bold">all</span> que
+                recibe un array de promesas como parámetro. Este método se
+                termina cuando todas las promesas del array se terminan de
+                ejecutar. Si una de las promesas falla entonces el método all
+                saltara un error mandándote al método catch.
               </p>
               <pre class="code">
 
@@ -1125,35 +1162,94 @@
                   })
                   .<span class="code-var">catch</span>(onError)
               </pre>
+              <p>
+                Promise también cuenta con el método
+                <span class="t-bold">race</span> que te regresa los resultados
+                de la promesa que termine primero.
+              </p>
             </article>
             <article class="course-class__section" id="async-await">
               <h2 class="course-class__section--title">
                 Async-await: lo último en asincronismo
               </h2>
               <p>
-                Async-await es la manera más simple y clara de realizar tareas
-                asíncronas. Await detiene la ejecución del programa hasta que
-                todas las promesas sean resueltas. Para poder utilizar esta
-                forma, hay que colocar async antes de la definición de la
-                función, y encerrar el llamado a Promises.all() dentro de un
-                bloque try … catch.
+                Una función asíncrona va a ser como una función normal, pero
+                poniendo código asíncrono de forma que sea más fácil de leer de
+                forma síncrona.
+              </p>
+              <p>
+                <span class="t-bold">Async-await</span> es la manera más simple
+                y clara de realizar tareas asíncronas.
+                <span class="t-bold">Await</span> detiene la ejecución del
+                programa hasta que todas las promesas sean resueltas. Para poder
+                utilizar esta forma, hay que colocar
+                <span class="t-bold">async</span> antes de la definición de la
+                función asíncrona.
+              </p>
+              <div class="note">
+                <p>
+                  Sin el uso de funciones asíncronas para cada fetch tendríamos
+                  que usar los métodos then y catch, en cambio gracias a
+                  async/await solo debemos escribir la palabra await antes de
+                  cada promesa
+                </p>
+              </div>
+              <p>
+                <span class="t-bold">API</span> es un servicio externo, en el
+                cual accedemos y nos devuelve unos datos (json). Con esos datos
+                podemos hacer lo que queramos,
+                <span class="t-bold">CRUD</span> Crear, Leer, Actualizar y
+                Borrar. Para manejar funciones asíncronas, como pedir datos a
+                una API,
+                <span class="t-bold"
+                  >no sabemos cuándo tardar en darnos respuestas</span
+                >, para eso manejamos
+                <span class="t-bold">async await</span> para manejar procesos
+                asíncronos y hacerlos más lineales, lo que hace es que va a
+                detener el programa hasta que se resuelvan las peticiones.
               </p>
               <pre class="code">
+                
+                <span class="code-comment">//Usando async await se guarda la promesa que retorna fecth dentro de una constante</span>
+                (<span class="code-sym">async</span> <span class="code-var">function</span> <span class="code-function">load</span>(){
+                  <span class="code-var">const</span> response = <span class="code-sym">await</span> <span class="code-function">fetch</span>(<span class="code-text">'https://yts.lt/api/v2/list_movies.json?genre=horror'</span>)
+                  console.<span class="code-var">log</span>(response)
+                  console.<span class="code-var">log</span>(<span class="code-text">'Esto se ejecutara después del llamado a la API'</span>)
+                })()
 
-                <span class="code-sym">async</span> <span class="code-var">function</span> <span class="code-function">obtenerPersonaje</span>(){
-                  <span class="code-comment">//crear array de ids</span>
-                  <span class="code-var">var</span> ids = [1, 2, 3, 4, 5, 6, 7]
-                
-                  <span class="code-comment">//crear un array de promesas, con base al array IDS llamar al metodo obtener personajes</span>
-                  <span class="code-var">var</span> promesas = ids.<span class="code-var">map</span>(id <span class="code-sym">=></span> <span class="code-function">obtenerPersonaje</span>(id))
-                
-                  <span class="code-sym">try</span> {
-                    var personajes = <span class="code-sym">await</span> Promise.<span class="code-var">all</span>(promesas)
-                    console.<span class="code-var">log</span>(personajes)
-                  } <span class="code-sym">catch</span> (id) {
-                    <span class="code-function">onError</span>(id)
+                <span class="code-comment">//Esto seria el resultado</span>
+                <span class="code-comment">//1. respuesta de la API</span>
+                <span class="code-comment">//1. Esto se ejecutara después del llamada a la API</span>
+              </pre>
+              <P
+                >Como se observa el proceso de vuelve un poco más síncrono
+                (líneal). El resultado o la data de una API, lo obtenemos a
+                través del método <span class="t-bold">json</span>().</P
+              >
+              <pre class="code">
+
+                <span class="code-var">const</span> response = <span class="code-sym">await</span> <span class="code-function">fetch</span>(<span class="code-text">'https://yts.lt/api/v2/list_movies.json?genre=horror'</span>)
+                <span class="code-var">const</span> data = <span class="code-sym">await</span> response.<span class="code-var">json</span>()
+
+                <span class="code-comment">//Retornamos la información</span>
+                <span class="code-sym">return</span> data
+              </pre>
+              <p>Más ejemplos</p>
+              <pre class="code">
+
+                (<span class="code-sym">async</span> <span class="code-var">function</span> <span class="code-function">load</span>(){
+
+                  <span class="code-sym">async</span> <span class="code-var">function</span> <span class="code-function">getData</span>(url){
+                    <span class="code-var">const</span> response = <span class="code-sym">await</span> <span class="code-function">fetch</span>(url)
+                    <span class="code-var">const</span> data = <span class="code-sym">await</span> response.json()
+                    
+                    <span class="code-sym">return</span> data
                   }
-                }
+
+                  <span class="code-var">const</span> actionMovieList = <span class="code-sym">await</span> <span class="code-function">getData</span>(<span class="code-text">'https://yts.lt/api/v2/list_movies.json?genre=action'</span>)
+                  <span class="code-var">const</span> dramaMovieList = <span class="code-sym">await</span> <span class="code-function">getData</span>(<span class="code-text">'https://yts.lt/api/v2/list_movies.json?genre=drama'</span>)
+                  <span class="code-var">const</span> animationMovieList = <span class="code-sym">await</span> <span class="code-function">getData</span>(<span class="code-text">'https://yts.lt/api/v2/list_movies.json?genre=animation'</span>)
+                })()
               </pre>
             </article>
             <article class="course-class__section" id="context-function">
@@ -1165,13 +1261,23 @@
                 window. Así que, en ciertos casos, cuando intentamos referirnos
                 a this en alguna parte del código, es posible que tengamos un
                 comportamiento inesperado, porque el contexto quizás no sea el
-                que esperamos. <br> Existen al menos tres maneras de cambiar el
-                contexto de una función.
+                que esperamos. <br />
+                Existen al menos tres maneras de cambiar el contexto de una
+                función.
               </p>
               <ul>
-                <li>Usando el método .bind, enviamos la referencia a la función sin ejecutarla, pasando el contexto como parámetro.</li>
-                <li>Usando el método .call, ejecutamos inmediatamente la función con el contexto indicado.s</li>
-                <li>Usando el método .apply, es similar a .call pero los parámetros adicionales se pasan como un arreglo de valores</li>
+                <li>
+                  Usando el método .bind, enviamos la referencia a la función
+                  sin ejecutarla, pasando el contexto como parámetro.
+                </li>
+                <li>
+                  Usando el método .call, ejecutamos inmediatamente la función
+                  con el contexto indicado.s
+                </li>
+                <li>
+                  Usando el método .apply, es similar a .call pero los
+                  parámetros adicionales se pasan como un arreglo de valores
+                </li>
               </ul>
               <pre class="code">
 
@@ -1179,6 +1285,46 @@
                   <span class="code-sym">this</span>.<span class="code-function">handleClick</span> = <span class="code-sym">this</span>.<span class="code-function">handleClick</span>.<span class="code-var">bind</span>(this)
                 }
               </pre>
+            </article>
+            <article class="course-class__section" id="api">
+              <h2 class="course-class__section--title">API</h2>
+              <P>
+                Una característica muy solicitada en cualquier sitio dinámico es
+                solicitar datos a un servidor, denominado API. Para esto
+                normalmente se utiliza <span class="t-bold">Ajax</span>. <br />
+                Ajax recibe dos parámetros los cuales son la url de la API y un
+                objeto donde pondrás la configuración que se usara para realizar
+                la petición. En la configuración se añaden dos funciones para
+                manejar cuando la petición se realizó correctamente y cuando
+                falla. <br />
+                JavaScript internamente cuenta con una función llamada
+                <span class="t-bold">fetch</span> que también realiza peticiones
+                a una API. Al igual que Ajax necesita dos parámetros, una url y
+                una configuración, pero si solo le mandas la url fetch usará una
+                configuración por defecto donde el
+                <span class="t-bold">método HTTP será GET</span>. <br />
+                fetch te regresa una promesa, esa promesa al resolverse te da
+                los datos de respuesta y tiene un método llamado
+                <span class="t-bold">json</span> que te regresa otra promesa con
+                los datos en formato JSON. <br />
+                Las promesas resuelven el problema del Callback Hell haciendo
+                que una promesa pueda devolver otra promesa y en lugar de ser
+                anidadas como los callback, estas promesas son encadenadas.
+                <br />
+                <br />
+                <a
+                  target="_blank"
+                  class="btn btn--primary"
+                  href="https://yts.lt/api#list_movies"
+                  >Api Movies</a
+                >
+                <a
+                  target="_blank"
+                  class="btn btn--blue"
+                  href="https://rickandmortyapi.com/documentation/"
+                  >Rick and Morty</a
+                >
+              </P>
             </article>
           </div>
         </section>
