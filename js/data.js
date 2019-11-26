@@ -33,7 +33,7 @@ data = [
     courses: [
       {
         courseID: 1,
-        courseName: "Curso Básico",
+        courseName: "Básico",
         courseDescription:
           "A lo largo del curso aprenderemos las bases sólidas para dominar el lenguaje JavaScript.",
         courseURL: "./courses/javascript/javascript-basico.html",
@@ -42,11 +42,19 @@ data = [
       },
       {
         courseID: 2,
-        courseName: "Javascript Vanilla Front",
+        courseName: "Intermedio",
         courseDescription: `Técnicas para aplicar en la parte del Frontend con JS Vanilla, sin usar <span class="t-bold">JQuery</span>.`,
-        courseURL: "./courses/javascript/javascript-vanilla.html",
+        courseURL: "./courses/javascript/javascript-medio.html",
         courseImage:
-          "https://i.etsystatic.com/13517909/r/il/e028cc/1802571151/il_570xN.1802571151_kie1.jpg"
+          "https://gitconnected.com/public/images/tutorials/svg/javascript.svg"
+      },
+      {
+        courseID: 3,
+        courseName: "Avanzado",
+        courseDescription: `Técnicas para aplicar en la parte del Frontend con JS Vanilla, sin usar <span class="t-bold">JQuery</span>.`,
+        courseURL: "./courses/javascript/javascript-avanzado.html",
+        courseImage:
+          "https://gitconnected.com/public/images/tutorials/svg/javascript.svg"
       }
     ]
   },

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso avanzado de Javascript</title>
+    <link rel="icon" href="../../images/favicon.png" type="img/text" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../fonts/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="app-js-basico">
+        <header class="header">
+          <div class="container-general">
+            <nav class="header-menu">
+              <ul class="header-menu__list menu-left">
+                <li class="header-menu__list--item">
+                  <a class="link" href="../../index.html">Inicio</a>
+                </li>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Carreras</a>
+                </li>
+              </ul>
+              <figure class="header-menu__logo">
+                <a href="../../index.html"
+                  ><img
+                    class="header-menu__logo--img"
+                    src="../../images/logo_white.png"
+                    alt="logo carlos zabala"
+                /></a>
+              </figure>
+              <ul class="header-menu__list menu-right">
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Me</a>
+                </li>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Contacto</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <section class="hero-course">
+          <div class="container-general">
+            <h1 class="hero-course__title">Curso avanzado de Javascript</h1>
+            <p class="hero-course__description">
+              A lo largo del curso aprenderemos las bases sólidas para dominar
+              el lenguaje JavaScript. Veremos desde lo más básico como:
+              variables, tipos de datos y operadores, e iremos avanzando con los
+              condicionales y las estructuras de control. Luego veremos los
+              conceptos relacionados con asincronismo, uno de los aspectos
+              fundamentales de JavaScript, usando callbacks, promesas y async
+              await.
+            </p>
+            <div class="hero-course__buttons">
+              <a
+                target="_blank"
+                href="https://platzi.com/clases/fundamentos-javascript/"
+                class="btn btn--primary"
+                >Curso platzi</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="course-class">
+          <div class="course-class__left" id="course-class__left">
+            <div class="course-class__left--container">
+              <nav class="course-class__menu">
+                <ul>
+                  <li>
+                    <a class="link course-class__menu--a" href="#variables"
+                      >Variables</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="course-class__content">
+            <i class="icon-menu icon course-class__icon-menu" id="btn-menu"></i>
+            <article class="course-class__section" id="variables">
+              <h2 class="course-class__section--title">Variables</h2>
+              <p>
+                Dentro de JavaScript tenemos tres formas de declarar una
+                variable las cuales son: var, const y let.
+              </p>
+              <ul>
+                <li>
+                  <span class="t-bold">var</span> era la forma en que se
+                  declaraban las variables hasta ECMAScript 5.
+                </li>
+                <li>
+                  <span class="t-bold">const</span> y
+                  <span class="t-bold">let</span> es la forma en que se declaran
+                  las variables a partir de ECMAScript 6.
+                </li>
+              </ul>
+              <p>
+                const sirve para declarar variables que nunca van a ser
+                modificadas y en cambio let son variables que pueden ser
+                modificadas.
+              </p>
+              <p>
+                Para declarar una variable se hace de la siguiente forma, en el
+                ejemplo se declara y se le asigna un valor:
+              </p>
+              <pre class="code">
+  
+                <span class="code-var">var</span> nombreVariable <span class="code-sym">=</span> <span class="code-text">"valor de la variable"</span>
+              </pre>
+              <p>
+                <span class="t-bold">Js lenguaje débilmente tipado</span>, en
+                una variable se pueden asignar tanto números y textos (esto
+                puede cambiar con Typescript), ej:
+              </p>
+              <pre class="code">
+  
+                edad <span class="code-sym">=</span> 28
+                edad <span class="code-sym">=</span> <span class="code-text">'28'</span>
+              </pre>
+              <h3>Variables: Strings</h3>
+              <p>
+                Los strings son cadenas de texto. Para indicar que estamos
+                usando una cadena de texto debemos de colocar las comillas
+                simples (''), algunas funciones que se pueden hacer con los
+                string:
+              </p>
+              <ul>
+                <li>
+                  <a
+                    target="_blank"
+                    class="t-bold link link-refe"
+                    href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/charAt"
+                    >charAt</a
+                  >(indice) devuelve un caracter de una cadena de texto.
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    class="t-bold link link-refe"
+                    href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/substr"
+                    >substr</a
+                  >(inicio, longitud) devuelve los caracteres de una cadena que
+                  comienzan en una localización especificada y de acuerdo al
+                  número de caracteres que se especifiquen.
+                </li>
+              </ul>
+              <p>
+                Si queremos evitar la concatenación de texto con (+), podemos
+                usar
+                <span class="t-bold">Interpolación</span> de texto que ofrece
+                JS. Para usarla podemos definir una cadena de texto por medio de
+                las comillas invertidas (``), ejemplo:
+              </p>
+              <pre class="code">
+  
+                <span class="code-var">var</span> interpolacion <span class="code-sym">=</span> <span class="code-text">`${Aquí se puede poner código js}`</span>
+                <span class="code-var">var</span> nombreCompleto <span class="code-sym">=</span> <span class="code-text">`Hello, my name is ${name} ${lastName}`</span>
+              </pre>
+              <h3>Diferencias entre LET vs VAR</h3>
+              <p>
+                let permite declarar variables limitando su alcance (scope) al
+                bloque, declaración, o expresión donde se está usando. Lo
+                anterior diferencia la expresión let de la palabra reservada
+                var, la cual define una variable global o local en una función
+                sin importar el ámbito del bloque.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script>
+      const $menu = document.getElementById("btn-menu");
+      const $courseMenu = document.getElementById("course-class__left");
+
+      $menu.addEventListener("click", handleClick);
+
+      function handleClick() {
+        $courseMenu.classList.toggle("is-active");
+        $menu.classList.toggle("is-active");
+
+        if ($menu.classList.contains("icon-menu")) {
+          $menu.classList.remove("icon-menu");
+          $menu.classList.add("icon-close");
+        } else {
+          $menu.classList.remove("icon-close");
+          $menu.classList.add("icon-menu");
+        }
+      }
+    </script>
+  </body>
+</html>

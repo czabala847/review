@@ -109,21 +109,6 @@
                     >
                   </li>
                   <li>
-                    <a class="link course-class__menu--a" href="#for"
-                      >Estructuras repetitivas: for</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#while"
-                      >Estructuras repetitivas: while</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#do-while"
-                      >Estructuras repetitivas: do while</a
-                    >
-                  </li>
-                  <li>
                     <a class="link course-class__menu--a" href="#switch"
                       >Condicional múltiple: switch</a
                     >
@@ -219,17 +204,10 @@
   
                 <span class="code-var">var</span> nombreVariable <span class="code-sym">=</span> <span class="code-text">"valor de la variable"</span>
               </pre>
-              <div class="note">
-                <p>
-                  Recomendado usar en js la comilla simple para String ('').
-                  <br />El punto y coma se puede incluir o no, es una convención
-                  escribirlo. Pero hay ciertos casos en los que sí hay que
-                  colocarlo, son acciones puntuales.
-                </p>
-              </div>
               <p>
                 <span class="t-bold">Js lenguaje débilmente tipado</span>, en
-                una variable se pueden asignar tanto números y textos, ej:
+                una variable se pueden asignar tanto números y textos (esto
+                puede cambiar con Typescript), ej:
               </p>
               <pre class="code">
   
@@ -240,7 +218,8 @@
               <p>
                 Los strings son cadenas de texto. Para indicar que estamos
                 usando una cadena de texto debemos de colocar las comillas
-                simples, algunas funciones que se pueden hacer con los string:
+                simples (''), algunas funciones que se pueden hacer con los
+                string:
               </p>
               <ul>
                 <li>
@@ -282,45 +261,15 @@
                 var, la cual define una variable global o local en una función
                 sin importar el ámbito del bloque.
               </p>
-              <p>
-                Cuando usamos let dentro de un bloque, podemos limitar el
-                alcance de la variable a dicho bloque. Notemos la diferencia con
-                var, cuyo alcance reside dentro de la función donde ha sido
-                declarada la variable.
-              </p>
-              <pre class="code">
-  
-                <span class="code-var">var</span> a = 5; <span class="code-var">var</span> b = 10;
-                
-                <span class="code-sym">if</span>(a === 5){
-                  <span class="code-var">let</span> a = 4; <span class="code-comment">// El alcance es dentro del bloque if</span>
-                  <span class="code-var">var</span> b = 1; <span class="code-comment">// El alcance es global</span>
-  
-                  console.<span class="code-var">log</span>(a) <span class="code-comment">//4</span>
-                  console.<span class="code-var">log</span>(b) <span class="code-comment">//1</span>
-                }
-  
-                console.<span class="code-var">log</span>(a) <span class="code-comment">//5</span>
-                console.<span class="code-var">log</span>(b) <span class="code-comment">//1</span>
-              </pre>
             </article>
             <article class="course-class__section" id="functions">
               <h2 class="course-class__section--title">Funciones</h2>
               <p>
                 Las funciones son
                 <span class="t-bold">fracciones de código reutilizable</span>.
-                Para definir una función utilizaremos la palabra reservada
-                "function". <br />
-                Delimitamos el cuerpo de la función usando llaves { }. Los
-                parámetros de la función son variables que se pasan a la función
-                escribiéndolos entre paréntesis (). <br />
-                Definir funciones nos sirve para reutilizar código.
-                <span class="t-bold"
-                  >JavaScript es un lenguaje interpretado, esto quiere decir que
-                  intentará ejecutar el código sin importar si los parámetros
-                  que le pasemos a la función estén invertidos o incluso
-                  incompletos.</span
-                >
+                JavaScript es un lenguaje interpretado, esto quiere decir que
+                intentará ejecutar el código sin importar si los parámetros que
+                le pasemos a la función estén invertidos o incluso incompletos.
               </p>
               <pre class="code">
 
@@ -374,26 +323,15 @@
                 variable. Es posible utilizar el mismo nombre para una variable
                 global y para el parámetro de una función con un alcance local.
               </p>
-              <div class="note">
-                <p>
-                  A que variables la función puede acceder y que valor tomara
-                  esa variable dentro de la función. <br />
-                  <span class="t-bold">Variable global</span>: Variable que no
-                  está definida dentro de una función sino por fuera de ella.
-                </p>
-              </div>
               <p>
                 Al hacer referencia directa a una variable global dentro de una
                 función, podemos modificar su valor, esto se le denomina
                 <span class="t-bold">sideEfect</span>, y esto lo vamos a querer
-                evitar. Para acceder a la variable global, hacemos referencia al
-                objeto global, en este caso por estar en el browser accedemos
-                con <span class="t-bold">window.nombre</span>.
+                evitar.
               </p>
               <pre class="code">
 
                 <span class="code-comment">//Accediendo a una variable global (no hacer)</span>
-                
                 <span class="code-var">var</span> nombre = <span class="code-text">'Cosme Fulanito'</span>
 
                 <span class="code-var">function</span> <span class="code-function">imprimirNombreMayusculas</span>(){
@@ -422,21 +360,23 @@
             <article class="course-class__section" id="objects">
               <h2 class="course-class__section--title">Objetos</h2>
               <p>
-                Vamos a empezar a trabajar con objetos, veremos cómo
-                declararlos, cuáles son sus ventajas, cómo asignarles atributos
-                y cómo trabajar con ellos dentro de las funciones. <br />
-                Los objetos se definen delimitados mediante llaves {} <br />
-                Un atributo se compone de una clave (key) y un valor (value),
-                que se separan entre sí por dos puntos ":". Los valores pueden
-                ser de tipo string, número, booleano, etc. Cada atributo está
+                Los objetos se definen delimitados mediante llaves {}, Un
+                atributo se compone de una clave (key) y un valor (value), que
+                se separan entre sí por dos puntos (:), los valores pueden ser
+                de tipo string, número, booleano, etc. Cada atributo está
                 separado del siguiente por una coma. Un objeto puede tener todos
                 los atributos que sean necesarios.
               </p>
               <p>
                 Las últimas versiones de JavaScript nos permiten
-                <span class="t-bold">desglosar</span> el objeto para acceder
-                únicamente al atributo que nos interesa. Esto se consigue
-                encerrando el nombre del atributo entre llaves { }.
+                <a
+                  class="link link-refe"
+                  href="./javascript-medio.html#destructuring"
+                  >desglosar</a
+                >
+                el objeto para acceder únicamente al atributo que nos interesa.
+                Esto se consigue encerrando el nombre del atributo entre llaves
+                { }.
               </p>
               <pre class="code">
 
@@ -452,36 +392,6 @@
                   console.<span class="code-var">log</span>(nombre.<span class="code-var">toUpperCase</span>())
                 }
               </pre>
-
-              <h3>Desestructurar objetos</h3>
-              <p>
-                En esta clase aprenderemos otra forma de acceder a los atributos
-                de los objetos que es la desestructuración de estos. Para no
-                duplicar las variables introducir el nombre de la variable como
-                parámetro de la segunda variable.
-              </p>
-              <pre class="code">
-
-                <span class="code-var">var</span> nombre = persona.nombre
-
-                <span class="code-comment">Lo anterior se puede escribir así</span>
-                <span class="code-var">var</span> {nombre} = persona
-              </pre>
-              <p>
-                Lo que se hace es crear una variable nombre que va a tomar el
-                valor del atributo nombre del objeto persona.
-              </p>
-              <p>
-                También se puede crear un nuevo objeto dentro de los parametros
-                de la función.
-              </p>
-              <pre class="code">
-
-                <span class="code-function">imprimirNombreEnMayusculas</span>({nombre: <span class="code-text">'pepito'</span>})
-              </pre>
-              <div class="note">
-                <p>Acceder a los atributos de los objetos desestructuración.</p>
-              </div>
               <h3>Parámetros como referencia o como valor</h3>
               <p>
                 Javascript se comporta de manera distinta cuando le pasamos un
@@ -525,8 +435,7 @@
                 valor y permite que se puedan comparar. Cuando realizamos
                 operaciones es recomendable usar tres símbolos de igual (===).
                 Esto permite que JavasScript no iguale las variables que son de
-                distinto tipo. Te recomendamos que uses el triple igual siempre
-                que estés comparando variables.
+                distinto tipo.
               </p>
               <p>
                 Existen cinco tipos de datos que son primitivos:
@@ -597,50 +506,14 @@
               <span class="code-var">const</span> permitirAcceso = ({edad}) <span class="code-sym">=></span> esMayorEdad({edad}) <span class="code-sym">?</span> console.<span class="code-var">log</span>(<span class="code-text">'NICE'</span>) <span class="code-sym">:</span> console.<span class="code-var">log</span>(<span class="code-text">'NO'</span>)
             </pre>
             </article>
-            <article class="course-class__section" id="for">
-              <h2 class="course-class__section--title">
-                Estructuras repetitivas: for
-              </h2>
-              <p>
-                En esta clase estudiaremos una de las estructuras básicas de
-                control. El bucle for, se utiliza para repetir una o más
-                instrucciones un determinado número de veces. Para escribir un
-                bucle for se coloca la palabra for seguida de paréntesis y
-                llaves. Ej. for( ){ }. Dentro de los paréntesis irán las
-                condiciones para ejecutar el bucle, y dentro las llaves irán las
-                instrucciones que se deben repetir.
-              </p>
-            </article>
-            <article class="course-class__section" id="while">
-              <h2 class="course-class__section--title">
-                Estructuras repetitivas: while
-              </h2>
-              <p>
-                While se ejecuta únicamente mientras la condición que se está
-                evaluando es verdadera. En ocasiones nuestro código puede fallar
-                por errores de syntaxis o errores lógicos. En caso de que
-                quieras verificar tu código, debes utilizar un debugger. El
-                código se detiene cada vez que lee esta palabra.
-              </p>
-            </article>
-            <article class="course-class__section" id="do-while">
-              <h2 class="course-class__section--title">
-                Estructuras repetitivas: do-while
-              </h2>
-              <p>
-                Otra estructura repetitiva es el do-while. A diferencia de la
-                instrucción while, un bucle do…while se ejecuta una vez antes de
-                que se evalúe la expresión condicional.
-              </p>
-            </article>
             <article class="course-class__section" id="switch">
               <h2 class="course-class__section--title">
                 Condicional múltiple: switch
               </h2>
               <p>
-                Una última estructura de control se llama switch. Switch se
+                Switch se
                 utiliza para realizar diferentes acciones basadas en múltiples
-                condiciones. <br />
+                condiciones.
                 <span class="t-bold"
                   >Prompt, muestra un cuadro de mensaje que le pide al usuario
                   que ingrese algúna información.</span
@@ -1221,11 +1094,11 @@
                 <span class="code-comment">//1. respuesta de la API</span>
                 <span class="code-comment">//1. Esto se ejecutara después del llamada a la API</span>
               </pre>
-              <P
-                >Como se observa el proceso de vuelve un poco más síncrono
+              <p>
+                Como se observa el proceso de vuelve un poco más síncrono
                 (líneal). El resultado o la data de una API, lo obtenemos a
-                través del método <span class="t-bold">json</span>().</P
-              >
+                través del método <span class="t-bold">json</span>().
+              </p>
               <pre class="code">
 
                 <span class="code-var">const</span> response = <span class="code-sym">await</span> <span class="code-function">fetch</span>(<span class="code-text">'https://yts.lt/api/v2/list_movies.json?genre=horror'</span>)
@@ -1288,7 +1161,7 @@
             </article>
             <article class="course-class__section" id="api">
               <h2 class="course-class__section--title">API</h2>
-              <P>
+              <p>
                 Una característica muy solicitada en cualquier sitio dinámico es
                 solicitar datos a un servidor, denominado API. Para esto
                 normalmente se utiliza <span class="t-bold">Ajax</span>. <br />
@@ -1324,7 +1197,7 @@
                   href="https://rickandmortyapi.com/documentation/"
                   >Rick and Morty</a
                 >
-              </P>
+              </p>
             </article>
           </div>
         </section>

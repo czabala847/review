@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Curso de Javascript Vanilla</title>
+    <title>Curso de Javascript Intermedio</title>
     <link rel="icon" href="../../images/favicon.png" type="img/text" />
     <link
       href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
@@ -49,7 +49,7 @@
         <section class="hero-course">
           <div class="container-general">
             <h1 class="hero-course__title">
-              Curso Javascript vanilla para el Frontend
+              Curso Javascript intermedio
             </h1>
             <p class="hero-course__description">
               Este curso es un repaso sobre las técnicas de cómo manejar
@@ -195,14 +195,15 @@
                 Creación de templates
               </h2>
               <p>
-                Vamos a crear una plantilla con nuestro elemento base, dicha
-                plantilla será recibirá valores dinámicos.
-                <br />
                 Desde ECMAScript 6 contamos con una nueva característica llamada
                 <span class="t-bold">template literals</span> que se representan
                 con las comillas invertidas (``), ejemplo:
               </p>
               <pre class="code">
+
+                <span class="code-comment">//La interpolación de texto ayuda a
+                  colocar código html en js de
+                  manera más fácil que jquery solo es colocar el html entre(``).</span>
                 <span class="code-text">
                   `
                     &lt;div class="container" &gt;
@@ -210,13 +211,6 @@
                     &lt;/div&gt;
                   `</span>
               </pre>
-              <div class="note">
-                <p>
-                  La interpolación de texto ayuda a colocar código html en js de
-                  manera más fácil que jquery solo es colocar el html entre
-                  (``).
-                </p>
-              </div>
               <pre class="code">
 
                 <span class="code-comment">//Creación del template de movies, del curso Curso de jQuery a JavaScript de Platzi</span>
@@ -239,10 +233,10 @@
             <article class="course-class__section" id="dom">
               <h2 class="course-class__section--title">Creación de DOM</h2>
               <p>
-                La plantilla que creamos la clase anterior de momento es puro
-                texto, no es un elemento HTML que podamos poner dentro del
-                navegador pues si los imprimimos en el navegador lo único que
-                veremos es texto. <br />
+                La plantilla que se creo anteriormente de momento es puro texto,
+                no es un elemento HTML que podamos poner dentro del navegador
+                pues si los imprimimos en el navegador lo único que veremos es
+                texto. <br />
                 Vamos a insertar la plantilla dentro de nuestro container, para
                 ello recuerda que JavaScript se lee de arriba hacia abajo
                 entonces debemos declarar la variable del container antes de
@@ -280,7 +274,7 @@
                 
                 <span class="code-var">const</span>  movieElement = <span class="code-function">createTemplate</span>(HTMLString)
                 
-                <span class="code-comment">// agregar esas peliculas a la sección indicada, append agrega html al final del elemento</span>
+                <span class="code-comment">// agregar el template al contenedor usando append</span>
                 $container.<span class="code-var">append</span>(movieElement)
               </pre>
             </article>
@@ -294,7 +288,7 @@
                 Existen muchos tipos de eventos, el más común es el evento de
                 click. <br />
                 Para que un elemento HTML pueda escuchar algún evento debemos
-                usar el método <span class="t-bold">addEventListener</span> .
+                usar el método <span class="t-bold">addEventListener</span>.
                 Este método recibe dos parámetros, el nombre del evento que va a
                 escuchar y la función que se va a ejecutar al momento de que se
                 accione el evento.
@@ -312,7 +306,7 @@
               <h2 class="course-class__section--title">Clases y estilos CSS</h2>
               <p>
                 Dentro de cada elemento tenemos un método llamado
-                <span class="t-bold">classList</span> , con este podemos ver las
+                <span class="t-bold">classList</span>, con este podemos ver las
                 clases que tiene nuestro elemento y además llamar a otros
                 métodos para añadir, borrar o hacer toggle a alguna clase. De
                 igual forma podemos acceder a todas las propiedades de CSS algún
@@ -379,8 +373,7 @@
                 método <span class="t-bold">setAttribute</span>. Este recibe dos
                 parámetros, uno indicando el nombre del atributo que vamos a
                 añadir y el segundo parámetro indicando el valor de dicho
-                atributo. Vamos a crear una función para poder añadir múltiples
-                atributos a un solo elemento.
+                atributo.
               </p>
               <pre class="code">
 
