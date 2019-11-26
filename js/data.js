@@ -51,7 +51,7 @@ data = [
       {
         courseID: 3,
         courseName: "Avanzado",
-        courseDescription: `Técnicas para aplicar en la parte del Frontend con JS Vanilla, sin usar <span class="t-bold">JQuery</span>.`,
+        courseDescription: `Javascript puro, fundamentos clave del lenguaje, explorando APIs del DOM, implementando TypeScript y aplicando las mejores prácticas con Patrones de Diseño.`,
         courseURL: "./courses/javascript/javascript-avanzado.html",
         courseImage:
           "https://gitconnected.com/public/images/tutorials/svg/javascript.svg"
