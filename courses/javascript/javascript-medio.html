@@ -277,6 +277,17 @@
                 <span class="code-comment">// agregar el template al contenedor usando append</span>
                 $container.<span class="code-var">append</span>(movieElement)
               </pre>
+              <div class="note">
+                <p>
+                  Todos los elementos del DOM tienen un api:
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://developer.mozilla.org/es/docs/Web/API/HTMLMediaElement"
+                    >documentación</a
+                  >.
+                </p>
+              </div>
             </article>
             <article class="course-class__section" id="event">
               <h2 class="course-class__section--title">Eventos</h2>
@@ -293,6 +304,14 @@
                 escuchar y la función que se va a ejecutar al momento de que se
                 accione el evento.
               </p>
+              <p>
+                Para el evento de click, se puede simplificar usando el método
+                <span class="t-bold">onClick</span>()
+              </p>
+              <pre class="code">
+
+                $elementoHTML.<span class="code-function">onClick</span> = () => console.<span class="code-var">log</span>(<span class="code-text">'Este mensaje se mostrara al hacer click'</span>)
+              </pre>
               <div class="note">
                 <p>
                   La página se recarga al momento de ejecutarse el evento

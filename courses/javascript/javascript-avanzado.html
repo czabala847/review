@@ -24,7 +24,7 @@
                   <a class="link" href="../../index.html">Inicio</a>
                 </li>
                 <li class="header-menu__list--item">
-                  <a class="link" href="">Carreras</a>
+                  <a class="link" href="../../index.html#courses">Carreras</a>
                 </li>
               </ul>
               <figure class="header-menu__logo">
@@ -72,8 +72,68 @@
               <nav class="course-class__menu">
                 <ul>
                   <li>
-                    <a class="link course-class__menu--a" href="#variables"
-                      >Variables</a
+                    <a class="link course-class__menu--a" href="#introduction"
+                      >Introducción</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#script"
+                      >Script en el navegador</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#scope"
+                      >Scope</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#closures"
+                      >Closures</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#this">This</a>
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#cab"
+                      >Call, Apply y Bind</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#prototype"
+                      >Prototype</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#extends-prototype"
+                      >Herencia Prototipal</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#parsers-ast"
+                      >Parsers y el Abstract Syntax Tree</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#js-engine"
+                      >Cómo funciona el JavaScript Engine</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#event-loop"
+                      >Event Loop</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#get-set"
+                      >Getters y setters</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#fetch"
+                      >Fetch cancelar peticiones</a
                     >
                   </li>
                 </ul>
@@ -82,93 +142,742 @@
           </div>
           <div class="course-class__content">
             <i class="icon-menu icon course-class__icon-menu" id="btn-menu"></i>
-            <article class="course-class__section" id="variables">
-              <h2 class="course-class__section--title">Variables</h2>
+            <article class="course-class__section" id="introduction">
+              <h2 class="course-class__section--title">Introducción</h2>
               <p>
-                Dentro de JavaScript tenemos tres formas de declarar una
-                variable las cuales son: var, const y let.
+                Para iniciar un proyecto profesional en Javascript, debemos
+                instalar
+                <a
+                  class="link link-refe"
+                  href="https://www.npmjs.com/"
+                  target="_blank"
+                  >npm</a
+                >, para crear un proyecto con npm, corremos el comando:
+              </p>
+              <pre class="code">
+
+                npm init -y <span class="code-comment">//La bandera y contestara "si" a todas las preguntas de npm</span>
+              </pre>
+              <p>
+                Se creara el archivo <span class="t-bold">package.json</span>,
+                que sera similar al siguiente:
+              </p>
+              <pre class="code">
+
+                {
+                  <span class="code-var">"name"</span>: "mediaplayer",
+                  <span class="code-var">"version"</span>: "1.0.0",
+                  <span class="code-var">"description"</span>: "Proyecto del Curso Profesional de JavaScript de la escuela de Javascript de Platzi",
+                  <span class="code-var">"license"</span>: "MIT",
+                  <span class="code-var">"author"</span>: "Carlos Zabala",
+                  <span class="code-var">"keywords"</span>: [
+                    "platzi"
+                  ],
+                  <span class="code-var">"scripts"</span>: {},
+                }
+              </pre>
+              <p>
+                Para simular un servidor donde correrá nuestro programa se
+                instalara
+                <a
+                  class="link link-refe t-bold"
+                  href="https://www.npmjs.com/package/live-server"
+                  target="_blank"
+                  >LiveServer</a
+                >, el cual es un pequeño servidor de desarrollo con capacidad de
+                recarga en vivo. Se instala a través de npm mediante el
+                siguiente código.
+              </p>
+              <pre class="code">
+
+                npm install -D live-server <span class="code-comment">//La bandera -D Solo será para desarrollo y no para producción</span>
+              </pre>
+              <p>Se añade a devDependencies:</p>
+              <pre class="code">
+
+                <span class="code-var">"devDependencies"</span>: {
+                  "live-server": "^1.2.1"
+                }
+              </pre>
+              <p>Se usa a través de su script llamado start:</p>
+              <pre class="code">
+
+                <span class="code-var">"scripts"</span>: {
+                  "start": "live-server"
+                },                
+              </pre>
+              <p>Finalmente se ejecuta usando el comando en la terminal:</p>
+              <pre class="code">
+
+                npm start
+              </pre>
+            </article>
+            <article class="course-class__section" id="script">
+              <h2 class="course-class__section--title">
+                Cómo llega un script al navegador
+              </h2>
+              <p>
+                <span class="t-bold"
+                  >El DOM es la representación que hace el navegador de un
+                  documento HTML</span
+                >. El navegador interpreta el archivo HTML y cuando termina de
+                transformarlo al DOM se dispara el evento
+                <span class="t-bold">DOMContentLoaded</span> lo que significa
+                que todo el documento está disponible para ser manipulado.
+                <br />
+                Todo script que carguemos en nuestra página tiene un llamado y
+                una ejecución. Tanto con <span class="t-bold">async</span> como
+                <span class="t-bold">defer</span> podemos hacer llamados
+                asíncronos, pero tiene sus diferencias:
               </p>
               <ul>
                 <li>
-                  <span class="t-bold">var</span> era la forma en que se
-                  declaraban las variables hasta ECMAScript 5.
+                  <span class="t-bold">async</span>: Con async podemos hacer la
+                  petición de forma asíncrona y no vamos a detener la carga del
+                  DOM hasta que se haga la ejecución del código. Cuando se
+                  cumpla la petición es decir cuando tengamos una respuesta si
+                  se detendrá la carga del DOM.
                 </li>
                 <li>
-                  <span class="t-bold">const</span> y
-                  <span class="t-bold">let</span> es la forma en que se declaran
-                  las variables a partir de ECMAScript 6.
+                  <span class="t-bold">defer</span>: La petición es igual
+                  asíncrona como en el async pero va a deferir la ejecución del
+                  Javascript hasta el final de que se cargue todo el documento.
                 </li>
               </ul>
               <p>
-                const sirve para declarar variables que nunca van a ser
-                modificadas y en cambio let son variables que pueden ser
-                modificadas.
+                Hay que tener en cuenta que cuando carga una página y se
+                encuentra un script a ejecutar toda la carga se detiene. Por eso
+                se recomienda agregar tus scripts justo antes de cerrar el body
+                para que todo el documento esté disponible.
               </p>
+            </article>
+            <article class="course-class__section" id="scope">
+              <h2 class="course-class__section--title">Scope</h2>
               <p>
-                Para declarar una variable se hace de la siguiente forma, en el
-                ejemplo se declara y se le asigna un valor:
-              </p>
-              <pre class="code">
-  
-                <span class="code-var">var</span> nombreVariable <span class="code-sym">=</span> <span class="code-text">"valor de la variable"</span>
-              </pre>
-              <p>
-                <span class="t-bold">Js lenguaje débilmente tipado</span>, en
-                una variable se pueden asignar tanto números y textos (esto
-                puede cambiar con Typescript), ej:
-              </p>
-              <pre class="code">
-  
-                edad <span class="code-sym">=</span> 28
-                edad <span class="code-sym">=</span> <span class="code-text">'28'</span>
-              </pre>
-              <h3>Variables: Strings</h3>
-              <p>
-                Los strings son cadenas de texto. Para indicar que estamos
-                usando una cadena de texto debemos de colocar las comillas
-                simples (''), algunas funciones que se pueden hacer con los
-                string:
+                El Scope o ámbito es lo que define el tiempo de vida de una
+                variable, en que partes de nuestro código pueden ser usadas.
               </p>
               <ul>
                 <li>
-                  <a
-                    target="_blank"
-                    class="t-bold link link-refe"
-                    href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/charAt"
-                    >charAt</a
-                  >(indice) devuelve un caracter de una cadena de texto.
+                  <span class="t-bold">Global Scope</span>: Variables
+                  disponibles de forma global se usa la palabra var, son
+                  accesibles por todos los scripts que se cargan en la página.
+                  Aquí hay mucho riesgo de sobreescritura.
                 </li>
                 <li>
-                  <a
-                    target="_blank"
-                    class="t-bold link link-refe"
-                    href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/substr"
-                    >substr</a
-                  >(inicio, longitud) devuelve los caracteres de una cadena que
-                  comienzan en una localización especificada y de acuerdo al
-                  número de caracteres que se especifiquen.
+                  <span class="t-bold">Function Scope</span>: Variables
+                  declaradas dentro de una función sólo visibles dentro de ella
+                  misma (incluyendo los argumentos que se pasan a la función).
+                </li>
+                <li>
+                  <span class="t-bold">Block Scope</span>
+                  Variables definidas dentro de un bloque, por ejemplo variables
+                  declaradas dentro un loop while o for. Se usa let y const para
+                  declarar este tipo de variables.
+                </li>
+                <li>
+                  <span class="t-bold">Module Scope</span>
+                  Cuando se denota un script de tipo module con el atributo
+                  type="module las variables son limitadas al archivo en el que
+                  están declaradas.
+                </li>
+              </ul>
+              <pre class="code">
+                
+                <span class="code-comment">//Las variables no sales del archivo.</span>
+                &lt;<span class="code-sym">script</span> <span class="code-function">type</span>=<span class="code-text">"modules"</span>  <span class="code-function">src</span>=<span class="code-text">"./assets/index.js"</span>&gt;&lt;/<span class="code-sym">script</span>&gt;
+                
+                <span class="code-comment">//Importar un modulo</span>
+                <span class="code-sym">import</span> nombreModulo <span class="code-sym">from</span> <span class="code-text">"./ruta/archivo.js"</span>
+                
+                <span class="code-comment">//Exportar un modulo</span>
+                <span class="code-sym">export default</span> nombreModuloExportar
+              </pre>
+            </article>
+            <article class="course-class__section" id="closures">
+              <h2 class="course-class__section--title">Closures</h2>
+              <p>
+                Son funciones que regresan una función o un objeto con funciones
+                que mantienen las variables que fueron declaras fuera de su
+                scope. Los
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Closures"
+                  >closures</a
+                >
+                nos sirven para tener algo parecido a variables privadas,
+                característica que no tiene JavaScript por default. Es decir
+                encapsulan variables que no pueden ser modificadas directamente
+                por otros objetos, sólo por funciones pertenecientes al mismo.
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://programacionymas.com/blog/funciones-javascript-invocadas-inmediatamente-IIFE"
+                  >IIFE</a
+                >
+              </p>
+              <pre class="code">
+
+              <span class="code-comment">// función IIFE</span>
+              (<span class="code-var">function</span>(){
+                <span class="code-var">let</span> color = <span class="code-text">'green'</span>
+                  
+                (<span class="code-var">function</span> <span class="code-function">printColor</span>(){
+                  console.<span class="code-var">log</span>(color)
+                }
+                  
+                <span class="code-function">printColor</span>()
+              })()
+              </pre>
+              <pre class="code">
+
+                <span class="code-comment">//Funciones que regresan funciones</span>
+                <span class="code-var">function</span> <span class="code-function">makeColorPrinter</span>(color){
+                  <span class="code-var">let</span> colorMessage = <span class="code-text">`The color is ${color}`</span>
+                  
+                  <span class="code-sym">return</span> <span class="code-var">function</span> (){
+                    console.<span class="code-var">log</span>(colorMessage)
+                  }
+                }
+                  
+                <span class="code-var">let</span> greenColorPrinter = <span class="code-function">makeColorPrinter</span>(<span class="code-text">'green'</span>)
+                  
+                console.<span class="code-var">log</span>(<span class="code-function">greenColorPrinter</span>()) <span class="code-comment">//The color is green </span>                 
+              </pre>
+              <pre class="code">
+
+                <span class="code-var">function</span> <span class="code-function">makeCounter</span>(n) {
+                  <span class="code-var">let</span> n = n;
+                  
+                  <span class="code-sym">return</span> {
+                    <span class="code-function">increase</span> : <span class="code-var">function</span>() {
+                      count = count + 1;
+                    },
+                    <span class="code-function">decrease</span>: <span class="code-var">function</span>() {
+                      count = count - 1;
+                    },
+                    <span class="code-function">getCount</span>: <span class="code-var">function</span>() {
+                      <span class="code-sym">return</span> count;
+                    }
+                  };
+                }
+                  
+                <span class="code-var">let</span> counter = <span class="code-function">makeCounter</span>(7)
+                console.<span class="code-var">log</span>(<span class="code-text">'The count is, '</span> , counter.<span class="code-function">getCount</span>)
+                counter. <span class="code-function">increase</span>()
+                counter. <span class="code-function">decrease</span>()
+                counter. <span class="code-function">decrease</span>()
+                counter. <span class="code-function">decrease</span>()
+              </pre>
+            </article>
+            <article class="course-class__section" id="this">
+              <h2 class="course-class__section--title">this</h2>
+              <p>
+                this se refiere a un objeto, ese objeto es el que actualmente
+                está ejecutando un pedazo de código. No se puede asignar un
+                valor a this directamente y este depende de en qué scope nos
+                encontramos:
+              </p>
+              <ul>
+                <li>
+                  Cuando llamamos a this en el
+                  <span class="t-bold">Global Scope o Function Scope</span>, se
+                  hace referencia al objeto window. A excepción de cuando
+                  estamos en <span class="t-bold">strict mode</span> que nos
+                  regresará undefined.
+                </li>
+                <li>
+                  Cuando llamamos a this desde
+                  <span class="t-bold">una función</span> que está contenida en
+                  un objeto, this se hace referencia a ese objeto.
+                </li>
+                <li>
+                  Cuando llamamos a this desde una
+                  <span class="t-bold">"clase"</span>, se hace referencia a la
+                  instancia generada por el constructor.
+                </li>
+              </ul>
+              <pre class="code">
+
+                <span class="code-comment">// **Ejemplo uso de strict mode</span>
+                <span class="code-comment">// ** sin usar strict mode</span>
+
+                console.<span class="code-var">log</span>(<span class="code-text">"This"</span> + this) <span class="code-comment">//[object window]</span>
+
+                <span class="code-var">function</span> <span class="code-function">whoIsThis</span>() {
+                  <span class="code-sym">return</span> this;
+                }
+                  
+                console.<span class="code-var">log</span>(<span class="code-text">`whoIsThis() =  `</span>  + <span class="code-function">whoIsThis</span>()); <span class="code-comment">// [object Window]</span>
+                
+                <span class="code-comment">// ** usando strict mode</span>
+
+                <span class="code-var">function</span> <span class="code-function">whoIsThis</span>() {
+                  <span class="code-text">"use strict"</span> ;
+                  <span class="code-sym">return</span> this;
+                }
+                
+                console.<span class="code-var">log</span>(<span class="code-text">`whoIsThis() =  `</span>  + <span class="code-function">whoIsThis</span>()); <span class="code-comment">// undefined</span>
+              </pre>
+              <p>This en el contexto de un objeto:</p>
+              <pre class="code">
+                
+                <span class="code-var">const</span> person = {
+                  name: <span class="code-text">"Carlos"</span> ,
+                  saludar: <span class="code-var">function</span>() {
+                    console.<span class="code-var">log</span>(<span class="code-text">`Hola soy ${this.name}`</span>);
+                  }
+                };
+                  
+                person.<span class="code-function">saludar</span>(); <span class="code-comment">//Hola soy Carlos</span>
+
+                <span class="code-comment">//Ahora si se asigna la función saludar a una variable</span>
+                <span class="code-var">const</span> <span class="code-function">action</span> = person.<span class="code-function">saludar</span>;
+                <span class="code-function">action</span>(); <span class="code-comment">//Hola soy</span>
+                <span class="code-comment">//this será undefined ya que action no representa ningún objeto es una función normal.</span>
+              </pre>
+              <div class="note">
+                <p>
+                  Depende del contexto o el ámbito en que se esté usando this.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="cab">
+              <h2 class="course-class__section--title">
+                Los métodos call, apply y bind
+              </h2>
+              <p>
+                Estas funciones nos sirven para establecer el valor de this, es
+                decir cambiar el contexto que se va a usar cuando la función sea
+                llamada. Las funciones call, apply y bind son parte del
+                prototipo Function. Toda función usa este prototipo y por lo
+                tanto tiene estas tres funciones.
+              </p>
+              <ul>
+                <li>
+                  <span class="t-bold">functionName.call()</span>: Ejecuta la
+                  función recibiendo como primer argumento el this y los
+                  siguientes son los argumentos que recibe la función que llamó
+                  a call.
+                </li>
+                <li>
+                  <span class="t-bold">functionName.apply()</span>. Ejecuta la
+                  función recibiendo como primer argumento el this y como
+                  segundo un arreglo con los argumentos que recibe la función
+                  que llamó a apply.
+                </li>
+                <li>
+                  <span class="t-bold">functionName.bind()</span>. Recibe como
+                  primer y único argumento el this. No ejecuta la función, sólo
+                  regresa otra función con el nuevo this integrado.
+                </li>
+              </ul>
+              <h3>call</h3>
+              <pre class="code">
+
+                <span class="code-var">function</span> <span class="code-function">saludar</span>() {
+                  console.<span class="code-var">log</span>(<span class="code-text">`Hola. Soy ${this.name} ${this.lastName}`</span>);
+                }
+                  
+                saludar(); <span class="code-comment">//Hola. Soy  undefined</span>
+              </pre>
+              <p>
+                La función anterior, no está en el contexto de ningún objeto de
+                ninguna clase y aun así estamos usando this, el resultado será
+                undefined. Podemos establecer quien es this a esa función por
+                medio de call, appy, bind.
+              </p>
+              <p>
+                Primero se crea un objeto, que es el que tendrá la referencia a
+                this en esa función.
+              </p>
+              <pre class="code">
+
+                <span class="code-var">const</span> carlos = {
+                  name = <span class="code-text">'Carlos'</span> ,
+                  lastName = <span class="code-text">'Zabala'</span>
+                }
+
+                <span class="code-comment">//Luego se llama a la función saludar, pero sin los paréntesis (), seguido del método .call</span>
+                saludar.<span class="code-var">call</span>(carlos); <span class="code-comment">//Hola. Soy Carlos Zabala</span>
+              </pre>
+              <p>
+                Al método call necesita que le pasemos quien es this, en este
+                caso el objeto Carlos. También le podemos pasar parámetros
+                usando call de la siguiente forma:
+              </p>
+              <pre class="code">
+
+                <span class="code-var">function</span> <span class="code-function">caminar</span>(metros, direccion) {
+                  console.<span class="code-var">log</span>(<span class="code-text">`${this.name} caminó ${metros} mts en dirección ${direccion}`</span>);
+                }
+                
+                <span class="code-comment">// caminar.call(this, arg1, arg2, argn);</span>
+                
+                caminar.<span class="code-function">call</span>(carlos, 100, <span class="code-text">"sur"</span>);
+                <span class="code-comment">//Carlos caminó 100 mts en dirección sur</span>                
+              </pre>
+              <h3>apply</h3>
+              <p>
+                Funciona igual que <span class="t-bold">call</span>, pero la
+                manera en cómo se pasan los argumentos es diferente en vez de
+                pasar todos los argumentos separados por coma, se pasa un
+                arreglo de argumentos.
+              </p>
+              <pre class="code">
+
+                caminar.<span class="code-var">apply</span>(carlos, [200, <span class="code-text">"norte"</span>]); 
+
+                <span class="code-comment">//</span>
+                
+                <span class="code-var">const</span> array = [800, <span class="code-text">"oeste"</span>];
+                caminar.<span class="code-var">apply</span>(carlos, array); 
+              </pre>
+              <div class="note">
+                <p>
+                  call -> c -> comas <br />
+                  apply -> a -> arreglo
+                </p>
+              </div>
+              <h3>bind</h3>
+              <p>
+                bind no ejecuta directamente la función lo que hace es crear una
+                nueva función. Para pasarle argumentos se pueden hacer
+                directamente cuando se llama bind o pasarselos a la nueva
+                función creada.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//Siguiendo con el ejemplo de saludar</span>
+                
+                <span class="code-comment">//bind retorna una nueva función, la cual hay que guardar</span>
+                <span class="code-var">const</span> newSaludar = saludar.<span class="code-var">bind</span>(carlos);
+                
+                <span class="code-comment">//se ejecuta la nueva función</span>
+                <span class="code-function">newSaludar</span>()
+              </pre>
+            </article>
+            <article class="course-class__section" id="prototype">
+              <h2 class="course-class__section--title">Prototype</h2>
+              <p>
+                En Javascript todo son objetos, no tenemos clases, no tenemos
+                ese plano para crear objetos. Todos los objetos "heredan" de un
+                prototipo que a su vez hereda de otro prototipo y así
+                sucesivamente creando lo que se llama la
+                <span class="t-bold">prototype chain</span>. La keyword
+                <span class="t-bold">new</span> crea un nuevo objeto que
+                "hereda" todas las propiedades del prototype de otro objeto. No
+                confundir prototype con proto que es sólo una propiedad en cada
+                instancia que apunta al prototipo del que hereda.
+              </p>
+              <p>Usando new podemos pasar de esto:</p>
+              <pre class="code">
+
+                <span class="code-var">function</span> <span class="code-function">NombreClase</span>() {
+                  clase.methods = Object.<span class="code-var">create</span>(NombreClase.prototype);
+                  clase.atributo = <span class="code-text">'Este es el atributo del prototype'</span> ;
+                  <span class="code-sym">return</span> clase;
+                }
+                
+                <span class="code-comment">//crear una función o método de la clase</span>
+                NombreClase.prototype.<span class="code-function">NombreFuncion</span>  = <span class="code-var">function</span>() {
+                  console.<span class="code-var">log</span>(<span class="code-text">'Esto es una función del prototype'</span>);
+                }
+                
+                <span class="code-var">const</span> bumblebee = NombreClase
+                NombreClase.<span class="code-function">NombreFuncion</span>()                
+              </pre>
+              <p>
+                A esto, una mejor forma de escribir código (azúcar sintáctica),
+                ya no hace falta especificar el
+                <span class="t-bold">Object.create</span> ni retornar los
+                atributos de la "clase".
+              </p>
+              <pre class="code">
+
+                <span class="code-var">function</span> <span class="code-function">NombreClase</span>() {
+
+                  <span class="code-comment">//crear una función o método de la clase</span>
+                  NombreClase.prototype.<span class="code-function">NombreFuncion</span>() {
+                    console.<span class="code-var">log</span>(<span class="code-text">'Esto es una función del prototype'</span>);
+                  }
+                }
+          
+                <span class="code-comment">// crear una instancia de esa "clase"</span>
+                <span class="code-var">const</span> object = <span class="code-sym">new</span> <span class="code-function">NombreClase</span>()
+                
+              </pre>
+              <div class="note">
+                <p>
+                  En js no existen las clases, pero si los objetos, para simular
+                  una clase su usan los prototipos.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="extends-prototype">
+              <h2 class="course-class__section--title">Herencia Prototipal</h2>
+              <p>
+                Por default los objetos en JavaScript tienen cómo prototipo a
+                <span class="t-bold">Object</span> que es el punto de partida de
+                todos los objetos, es el prototipo padre. Object es la raíz de
+                todo, por lo tanto tiene un prototipo padre undefined. Cuando se
+                llama a una función o variable que no se encuentra en el mismo
+                objeto que la llamó, se busca en toda la prototype chain hasta
+                encontrarla o regresar undefined. La función
+                <span class="t-bold">hasOwnProperty</span>
+                sirve para verificar si una propiedad es parte del objeto o si
+                viene heredada desde su prototype chain.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//hasOwnProperty</span>
+                object.<span class="code-var">hasOwnProperty</span>(<span class="code-text">'Saludar'</span>)
+              </pre>
+              <p>
+                <span class="t-bold">__proto__</span> Es algo que puede variar
+                debido a algún browser o node, Para acceder a proto lo
+                recomendable es mediante la función
+                <span class="t-bold">getPrototypeOf</span>.
+              </p>
+              <pre class="code">
+
+                Object.<span class="code-var">getPrototypeOf</span>(object)
+              </pre>
+            </article>
+            <article class="course-class__section" id="parsers-ast">
+              <h2 class="course-class__section--title">
+                Parsers y el Abstract Syntax Tree
+              </h2>
+              <p>
+                El JS Engine recibe el código fuente y lo procesa de la
+                siguiente manera:
+              </p>
+              <ul>
+                <li>
+                  El <span class="t-bold">parser</span> descompone y crea tokens
+                  que integran el <span class="t-bold">AST</span>.
+                </li>
+                <li>
+                  Se compila a <span class="t-bold">bytecode</span> y se
+                  ejecuta.
+                </li>
+                <li>
+                  Lo que se pueda se optimiza a
+                  <span class="t-bold">machine code</span> y se reemplaza el
+                  código base.
                 </li>
               </ul>
               <p>
-                Si queremos evitar la concatenación de texto con (+), podemos
-                usar
-                <span class="t-bold">Interpolación</span> de texto que ofrece
-                JS. Para usarla podemos definir una cadena de texto por medio de
-                las comillas invertidas (``), ejemplo:
+                Un SyntaxError es lanzado cuando el motor JavaScript encuentra
+                partes que no forman parte de la sintaxis del lenguaje y esto lo
+                logra gracias a que se tiene un AST generado por el parser. El
+                parser es del 15% al 20% del proceso de ejecución por lo que hay
+                que usar parser del código justo en el momento que lo
+                necesitamos y no antes de saber si se va a usar o no.
+              </p>
+              <p>
+                Para que el código llegue al navegador tiene que pasar muchas
+                cosas, agarra el código, lo analiza, lo deconstruye, lo
+                construye nuevamente, lo ejecuta y lo optimiza. Este es el
+                proceso que realiza JavaScript para lograr ejecutar su código de
+                la mejor forma posible. Ahora veamos un gráfico donde se explica
+                mejor.
+              </p>
+              <img
+                src="../../images/js-avanzado-js-engine.png"
+                alt="Proceso del JS Engine"
+              />
+              <ul>
+                <li>
+                  <span class="t-bold">Bytecode</span>: es un código de más bajo
+                  nivel que permite que se ejecute mucho más rápido. Donde se va
+                  a empezar a ejecutar el programa
+                </li>
+                <li>
+                  <span class="t-bold">Profiling data</span>: encuentra todos
+                  los puntos optimizables del código para luego dar paso al
+                  optimizer compiler -> machine code
+                </li>
+                <li>
+                  <span class="t-bold">Optimized code</span>: Aveces este
+                  proceso falla y se quita la optimización.
+                </li>
+              </ul>
+              <p>
+                <span class="t-bold">Parser</span>: Este agarra tu código fuente
+                y lo lee, pero tiene que descomponerlo primero, a estos pedazos
+                se les llama tokens, identifica que significa cada palabra o
+                símbolo. Una vez teniendo esta información se pasa al Abstract
+                Syntax Tree.
+              </p>
+              <img
+                src="../../images/js-avanzado-ast.png"
+                alt="flujo de proceso del parser"
+              />
+              <p>
+                Cuando sucede un error en esta lectura es donde sucede el
+                syntaxError. Parsing debe hacerse bien
+              </p>
+              <p>
+                <span class="t-bold">Tokens</span>: Esto nos da el tipo y el
+                valor que tiene cada palabra, símbolo o número. Tendremos cada
+                uno de los caracteres clasificados para poder manipular y leer
+                cada uno de ellos.
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://esprima.org/demo/parse.html"
+                  >demo</a
+                >
+              </p>
+              <p>
+                <span class="t-bold">Ast</span>: Esta es una estructura en forma
+                de árbol, Abstract Syntax Tree. Este empieza desde una raíz y se
+                desploma en partes. Se puede usar en muchos lugares, para
+                corregir el código, para compilar, entre otras funciones.
+                Podemos experimentar en el siguiente
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://astexplorer.net/"
+                  >enlace</a
+                >. Allí veremos cómo se va ramificando nuestro programa y va
+                haciéndolo en forma de patrón anidado profundo, aparece valores
+                que nuestro programa terminará ejecutando.
+              </p>
+            </article>
+            <article class="course-class__section" id="js-engine">
+              <h2 class="course-class__section--title">
+                Cómo funciona el JavaScript Engine
+              </h2>
+              <p>
+                Una vez tenemos el <span class="t-bold">AST</span> ahora hay que
+                convertirlo a Bytecode. <span class="t-bold">Bytecode</span> es
+                como el código assembler pero en lugar de operar en el
+                procesador opera en la máquina virtual
+                <span class="t-bold">V8</span> del navegador.
+                <span class="t-bold">Machine code</span> es el más bajo nivel,
+                es código binario que va directo al procesador. El
+                <span class="t-bold">profiler</span> se sitúa en medio del
+                bytecode y el optimizador Cada máquina virtual tiene sus
+                particularidades, por ejemplo V8 tiene algo llamado
+                <span class="t-bold">Hot Functions</span>. Cuando una sentencia
+                función es ejecutada muy frecuentemente, V8 la denomina como una
+                hot function y hace una optimización que consiste en convertirla
+                a machine code para no tener que interpretarla de nuevo y
+                agilizar su ejecución.
+              </p>
+              <p>
+                Cada navegador tiene su implementación de JavaScript Engine:
+              </p>
+              <ul>
+                <li>SpiderMonkey - Firefox.</li>
+                <li>Chackra - Edge.</li>
+                <li>JavaScriptCore - Safari.</li>
+                <li>V8 - Chrome.</li>
+              </ul>
+            </article>
+            <article class="course-class__section" id="event-loop">
+              <h2 class="course-class__section--title">Event Loop</h2>
+              <p>
+                Es lo que hace que JavaScript parezca ser multi-hilo cuando en
+                realidad es de un solo hilo. Esto permite hacer muchas cosas a
+                la vez. JavaScript se organiza en dos estructuras de datos:
+              </p>
+              <img
+                src="../../images/js-avanzado-event-loop.png"
+                alt="Event Loop JS"
+              />
+              <p>
+                Javascript se organiza usando las siguientes estructuras de
+                datos:
+              </p>
+              <ul>
+                <li>
+                  <span class="t-bold">Stack</span>: Va apilando de forma
+                  organizada las diferentes instrucciones que se llaman. Lleva
+                  así un rastro de dónde está el programa, en que punto de
+                  ejecución nos encontramos.
+                </li>
+                <li>
+                  <span class="t-bold">Memory Heap</span>: De forma
+                  desorganizada se guarda información de las variables y del
+                  scope. <br />
+                  Al stack se le llena haciendo
+                  <span class="t-bold">push</span>, se le va agregando
+                  información se arriba hacia abajo, para para poder sacar
+                  información que esté en la parte inferior primero tenemos que
+                  sacar a los bloques de información que estén arriba, a esta
+                  acción se le llama <span class="t-bold">pop</span>.
+                  <br /><br />
+                  <img
+                    src="../../images/js-avanzado-stack.png"
+                    alt="Stack JS"
+                  />
+                </li>
+                <li>
+                  <span class="t-bold">Memory Heap</span>: De forma
+                  desorganizada se guarda información de las variables y del
+                  scope.
+                </li>
+                <li>
+                  <span class="t-bold">Schedule Tasks</span>: Aquí se agregan a
+                  la cola, las tareas programadas para su ejecución.
+                </li>
+                <li>
+                  <span class="t-bold">Task Queue</span>: Aquí se agregan las
+                  tares que ya están listas para pasar al stack y ser
+                  ejecutadas. El stack debe estar vacío para que esto suceda.
+                </li>
+                <li>
+                  <span class="t-bold">MicroTask Queue</span>: Aquí se agregan
+                  las promesas. Esta Queue es la que tiene mayor prioridad.
+                </li>
+              </ul>
+              <p>
+                El Event Loop es un loop que está ejecutando todo el tiempo y
+                pasa periódicamente revisando las queues y el stack moviendo
+                tareas entre estas dos estructuras.
+              </p>
+              <img
+                src="../../images/js-avanzado-event.png"
+                alt="Proceso del event loop JS"
+              />
+            </article>
+            <article class="course-class__section" id="get-set">
+              <h2 class="course-class__section--title">Getters y setters</h2>
+              <p>
+                Los getters y setters son funciones que podemos usar en un
+                objeto para tener propiedades virtuales. Se usan los keywords
+                set y get para crear estas propiedades. Estas propiedades al ser
+                funciones pueden llevar una validación de por medio y ser usadas
+                con el operador de asignación como si fueran una variable más
+                dentro del objeto.
+              </p>
+            </article>
+            <article class="course-class__section" id="fetch">
+              <h2 class="course-class__section--title">
+                Fetch - Cómo cancelar peticiones
+              </h2>
+              <p>
+                La peticiones AJAX permitieron en su tiempo hacer peticiones
+                asíncronas al servidor sin tener que detener la carga de la
+                página. Hoy en día se utiliza la función fetch para esto. Con
+                fetch tenemos algo llamado
+                <span class="t-bold">AbortController</span> que nos permite
+                enviar una señal a una petición en plena ejecución para
+                detenerla.
               </p>
               <pre class="code">
-  
-                <span class="code-var">var</span> interpolacion <span class="code-sym">=</span> <span class="code-text">`${Aquí se puede poner código js}`</span>
-                <span class="code-var">var</span> nombreCompleto <span class="code-sym">=</span> <span class="code-text">`Hello, my name is ${name} ${lastName}`</span>
+
+                <span class="code-var">let</span> controller = <span class="code-sym">new</span> <span class="code-va">AbortController</span>();
+
+                <span class="code-var">const</span> response = <span class="code-sym">await</span> <span class="code-var">fetch</span>(url, { signal: controller.signal });
+
+                <span class="code-comment">// detener fetch</span>
+                controller.<span class="code-var">abort</span>();
               </pre>
-              <h3>Diferencias entre LET vs VAR</h3>
-              <p>
-                let permite declarar variables limitando su alcance (scope) al
-                bloque, declaración, o expresión donde se está usando. Lo
-                anterior diferencia la expresión let de la palabra reservada
-                var, la cual define una variable global o local en una función
-                sin importar el ámbito del bloque.
-              </p>
             </article>
           </div>
         </section>
