@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TypeScript</title>
+    <link rel="icon" href="../../images/favicon.png" type="img/text" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../fonts/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="app-js-basico">
+        <header class="header">
+          <div class="container-general">
+            <nav class="header-menu">
+              <ul class="header-menu__list menu-left">
+                <li class="header-menu__list--item">
+                  <a class="link" href="../../index.html">Inicio</a>
+                </li>
+                <li class="header-menu__list--item">
+                  <a class="link" href="../../index.html#courses">Carreras</a>
+                </li>
+              </ul>
+              <figure class="header-menu__logo">
+                <a href="../../index.html"
+                  ><img
+                    class="header-menu__logo--img"
+                    src="../../images/logo_white.png"
+                    alt="logo carlos zabala"
+                /></a>
+              </figure>
+              <ul class="header-menu__list menu-right">
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Me</a>
+                </li>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Contacto</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <section class="hero-course">
+          <div class="container-general">
+            <h1 class="hero-course__title">TypeScript</h1>
+            <p class="hero-course__description">
+              TypeScript es un <span class="t-bold">superset</span> de
+              JavaScript que añade tipos a nuestras variables ayudando así a la
+              detección de errores de forma temprana y mejorando el
+              autocompletado. Los navegadores no entienden TypeScript así que
+              hay que transpilar a JavaScript usa Parcel.
+            </p>
+            <div class="hero-course__buttons">
+              <a
+                target="_blank"
+                href="https://platzi.com/clases/javascript-profesional/"
+                class="btn btn--primary"
+                >Curso platzi</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="course-class">
+          <div class="course-class__left" id="course-class__left">
+            <div class="course-class__left--container">
+              <nav class="course-class__menu">
+                <ul>
+                  <li>
+                    <a class="link course-class__menu--a" href="#parcel"
+                      >Parcel</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="course-class__content">
+            <i class="icon-menu icon course-class__icon-menu" id="btn-menu"></i>
+            <article class="course-class__section" id="parcel">
+              <h2 class="course-class__section--title">
+                Transpilar código de TypeScript a JS
+              </h2>
+              <p>Instalar parcel en el proyecto a través de npm:</p>
+              <pre class="code">
+
+                npm install -D parcel-bundler
+              </pre>
+              <p>
+                Hay que reemplazar en script del archivo
+                <span class="t-bold">package.json</span> y configurar los HTML
+                que queremos que <span class="t-bold">parcel</span> procese.
+              </p>
+              <pre class="code">
+
+                <span class="code-var">"scripts"</span>: {
+                  "start": <span class="code-text">"parcel index.html ejercicios/index.html ejercicios/**/*.html"</span>
+                },              
+              </pre>
+              <p>
+                Se pueden añadir configuraciones, ejemplo decirle a parcel que
+                transpile el código para el navegador que esta utilizando, que
+                es una versión reciente de chrome.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//Browserlist: que navegadores queremos darle apoyo.</span>
+                <span class="code-var">"browserlist"</span>: [
+                  "last 1 Chrome version"
+                ]
+              </pre>
+              <p>
+                Si antes estaba instalado
+                <span class="t-bold">liveServer</span> debemos desistalarlo
+              </p>
+              <pre class="code">
+
+                npm rm live-server
+              </pre>
+              <p>
+                Ahora se podrá correr el servidor de parcel, mediante
+                <span class="t-bold">npm start</span>, si no es así se debe
+                apagar el servidor y borrar las carpetas
+                <span class="t-bold">.cache</span> y
+                <span class="t-bold">dist</span>
+              </p>
+              <pre class="code">
+
+                rm -rf .cache dist
+              </pre>
+            </article>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script>
+      const $menu = document.getElementById("btn-menu");
+      const $courseMenu = document.getElementById("course-class__left");
+
+      $menu.addEventListener("click", handleClick);
+
+      function handleClick() {
+        $courseMenu.classList.toggle("is-active");
+        $menu.classList.toggle("is-active");
+
+        if ($menu.classList.contains("icon-menu")) {
+          $menu.classList.remove("icon-menu");
+          $menu.classList.add("icon-close");
+        } else {
+          $menu.classList.remove("icon-close");
+          $menu.classList.add("icon-menu");
+        }
+      }
+    </script>
+  </body>
+</html>

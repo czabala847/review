@@ -51,10 +51,18 @@ data = [
       {
         courseID: 3,
         courseName: "Avanzado",
-        courseDescription: `Javascript puro, fundamentos clave del lenguaje, explorando APIs del DOM, implementando TypeScript y aplicando las mejores prácticas con Patrones de Diseño.`,
+        courseDescription: `Javascript puro, fundamentos clave del lenguaje, explorando APIs del DOM y aplicando las mejores prácticas con Patrones de Diseño.`,
         courseURL: "./courses/javascript/javascript-avanzado.html",
         courseImage:
           "https://gitconnected.com/public/images/tutorials/svg/javascript.svg"
+      },
+      {
+        courseID: 4,
+        courseName: "TypeScript",
+        courseDescription: `Es un lenguaje de programación de código abierto con herramientas de programación orientada a objetos.`,
+        courseURL: "./courses/javascript/typescript.html",
+        courseImage:
+          "http://lineadecodigo.com/wp-content/uploads/2017/08/typescript.png"
       }
     ]
   },

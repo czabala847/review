@@ -136,6 +136,18 @@
                       >Fetch cancelar peticiones</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#observer"
+                      >IntersectionObserver</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#visibilitychange"
+                      >VisibilityChange</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -877,6 +889,87 @@
 
                 <span class="code-comment">// detener fetch</span>
                 controller.<span class="code-var">abort</span>();
+              </pre>
+            </article>
+            <article class="course-class__section" id="observer">
+              <h2 class="course-class__section--title">IntersectionObserver</h2>
+              <p>
+                Sirve para observar elementos y si cruzan un umbral que nosotros
+                definimos nos lo va a notificar para tomar acción. El umbral se
+                define por el porcentaje que tiene intersección con el viewport,
+                con la parte visible de nuestra página.
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://www.youtube.com/watch?v=Mm9R1Z5B31s"
+                  >ejemplo</a
+                >
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">// crear un IntersectionObserver</span>
+                <span class="code-comment">// const observer = new IntersectionObserver(handler, config)</span>
+
+                <span class="code-var">const</span> observer = <span class="code-sym">new</span> IntersectionObserver(this.<span class="code-function">handleIntersection</span>, {
+                threshold: 0.25 <span class="code-comment">//IntersectionOnserver enviara una señal cuando el elemento este visible un 25%</span>
+                });
+              </pre>
+              <p>
+                Mediante el método <span class="t-bold">observe</span> se le
+                pasa el elemento HTML que se desea "escuchar".
+              </p>
+              <pre class="code">
+
+                observer.<span class="code-var">observe</span>(player.media);
+              </pre>
+              <p>
+                cuando intersectionObserver llame al método handler, le pasara
+                como parámetros todos los entries, los entries serán todos los
+                elementos que estamos observando en este caso es uno solo.
+              </p>
+              <pre class="code">
+
+                <span class="code-function">handleIntersection</span>(entries) {
+                  <span class="code-var">const</span> entry = entries[0];
+                  console.<span class="code-var">log</span>(entry);
+                }              
+              </pre>
+              <p>
+                De las propiedades más importantes esta el
+                <span class="t-bold">intersectionRatio</span> que será el que
+                nos indique si el elemento está en pantalla o no, si se está
+                yendo o llegando.
+              </p>
+            </article>
+            <article class="course-class__section" id="visibilitychange">
+              <h2 class="course-class__section--title">VisibilityChange</h2>
+              <p>
+                El visibilityChange forma parte del API del DOM llamado Page
+                Visibility y nos deja saber si el elemento es visible, pude ser
+                usado para ejecutar una acción cuando cambiamos de pestaña. Así
+                podemos ahorrar batería y mejorar la UX.
+                <a
+                  target="_blank"
+                  class="link link-refe"
+                  href="https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilitychange_event"
+                  >documentación</a
+                >
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">//Añadir el escucha</span>
+                document.<span class="code-var">addEventListener</span>(<span class="code-text">'visibilitychange'</span> , <span class="code-function">handleVisibilityChange</span>)
+                
+                <span class="code-comment">//En la función handleVisibilityChange</span>
+                <span class="code-function">handleVisibilityChange</span>() {
+                  <span class="code-var">const</span> isVisible = document.<span class="code-var">visibilityState</span> <span class="code-sym">===</span> <span class="code-text">"visible"</span>;
+              
+                  <span class="code-var">if</span> (isVisible) {
+                    <span class="code-comment">//Si esta en la página has algo</span>
+                  } <span class="code-sym">else</span> {
+                    <span class="code-comment">//Si NO esta en la página has algo</span>
+                  }
+                }
               </pre>
             </article>
           </div>
