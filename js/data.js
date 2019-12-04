@@ -82,6 +82,23 @@ data = [
           "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
       }
     ]
+  },
+  {
+    id: 4,
+    name: "Fundamentos",
+    description:
+      "Cursos de fundamentos que hay que tener encuenta en el mundo de la programación.",
+    courses: [
+      {
+        courseID: 1,
+        courseName: "Git & GitHub",
+        courseDescription:
+          "Curso sobre el manejo de control de versiones de nuestros proyectos usando git y github.",
+        courseURL: "./courses/basics/git-github.html",
+        courseImage:
+          "https://pbs.twimg.com/profile_images/1157035760085684224/iuxTnT5g_400x400.jpg"
+      }
+    ]
   }
 ];
 

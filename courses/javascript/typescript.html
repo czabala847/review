@@ -76,6 +76,26 @@
                       >Parcel</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#typed"
+                      >Tipado</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#type-data"
+                      >Tipos básicos de datos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#function"
+                      >Funciones</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#interface"
+                      >Interfaces</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -132,6 +152,212 @@
               <pre class="code">
 
                 rm -rf .cache dist
+              </pre>
+            </article>
+            <article class="course-class__section" id="typed">
+              <h2 class="course-class__section--title">
+                Tipado con TypeScript
+              </h2>
+              <pre class="code">
+                
+                <span class="code-comment">//La siguiente función solo recibe como parametros números</span>
+                <span class="code-var">function</span> <span class="code-function">add</span>(a: <span class="code-var">number</span>, b: <span class="code-var">number</span>) {
+                  <span class="code-sym">return</span> a + b;
+                }
+                
+                <span class="code-var">const</span> sum = <span class="code-function">add</span>(4, 5);                
+              </pre>
+              <h3>
+                ¿A que se refiere con que TypeScript ayuda a mejorar el
+                autocompletado?
+              </h3>
+              <p>
+                En parte es porque al ser una versión tipada de JavaScript te
+                permite predecir exactamente qué tipo de datos lleva cada
+                variable, argumento, método, contenido de objetos y arrays; Es
+                decir te permite predecir lo que quieres hacer. Por otra parte
+                hay que tener en cuenta que
+                <span class="t-bold">Visual Studio Code</span> y TypeScript son
+                ambos de Microsoft, lo que hace que se complementen
+                perfectamente.
+              </p>
+            </article>
+            <article class="course-class__section" id="type-data">
+              <h2 class="course-class__section--title">
+                Tipos básicos de datos
+              </h2>
+              <ul>
+                <li>
+                  <span class="t-bold">boolean</span>: El tipo de datos más
+                  básico es el valor verdadero / falso simple, que JavaScript y
+                  TypeScript llaman un boolean valor.
+                  <pre class="code">
+
+                    <span class="code-var">let</span> state: <span class="code-var">boolean</span> = <span class="code-sym">false</span>
+                  </pre>
+                </li>
+                <li>
+                  <span class="t-bold">Números</span>: Como en JavaScript, todos
+                  los números en TypeScript son valores de coma flotante. Estos
+                  números de coma flotante obtienen el tipo number. Además de
+                  los literales hexadecimales y decimales, TypeScript también
+                  admite literales binarios y octales introducidos en ECMAScript
+                  2015.
+                  <pre class="code">
+
+                    <span class="code-var">let</span> decimal: <span class="code-var">number</span> = 6;
+                    <span class="code-var">let</span> hex: <span class="code-var">number</span> = 0xf00d;
+                    <span class="code-var">let</span> binary: <span class="code-var">number</span> = 0b1010;
+                    <span class="code-var">let</span> octal: <span class="code-var">number</span> = 0o744;
+                  </pre>
+                </li>
+                <li>
+                  <span class="t-bold">String</span>: Otra parte fundamental de
+                  la creación de programas en JavaScript para páginas web y
+                  servidores es trabajar con datos textuales. Como en otros
+                  idiomas, usamos el tipo String para referirnos a estos tipos
+                  de datos textuales. Al igual que JavaScript, TypeScript
+                  también utiliza comillas dobles (") o comillas simples (')
+                  para rodear los datos de cadena.
+                  <pre class="code">
+
+                    <span class="code-var">let</span> color: <span class="code-var">string</span> = <span class="code-text">"blue"</span>
+                  </pre>
+                </li>
+                <li>
+                  <span class="t-bold">Array</span>: TypeScript, como
+                  JavaScript, le permite trabajar con matrices de valores. Los
+                  tipos de matriz se pueden escribir de una de dos maneras. En
+                  el primero, usa el tipo de elementos seguido de []para denotar
+                  una matriz de ese tipo de elemento:
+                  <pre class="code">
+
+                    <span class="code-var">let</span> list : <span class="code-var">number</span>[] = [1, 2, 3]
+                    <span class="code-var">let</span> list : Array<<span class="code-var">Number</span> | <span class="code-var">String</span>> = [1, 2, <span class="code-text">'3'</span>]
+                  </pre>
+                </li>
+                <li>
+                  <span class="t-bold">enum</span>: Una adición útil al conjunto
+                  estándar de tipos de datos de JavaScript es enum. Como en
+                  lenguajes como C #, una enumeración es una forma de dar
+                  nombres más amigables a conjuntos de valores numéricos.
+                  <pre class="code">
+
+                    <span class="code-sym">enum</span> Color {Red, Green, Blue}
+                    <span class="code-sym">enum</span> Color {Red = <span class="code-text">"Red"</span>,
+                     Green = <span class="code-text">"Green"</span>,
+                     Blue = <span class="code-text">"Blue"</span>}
+
+                     <span class="code-var">let</span> c : Color = Color.Green
+                  </pre>
+                </li>
+                <li>
+                  <span class="t-bold">Any</span>: Es posible que necesitemos
+                  describir el tipo de variables que no sabemos cuándo estamos
+                  escribiendo una solicitud. Estos valores pueden provenir de
+                  contenido dinámico, por ejemplo, del usuario o de una
+                  biblioteca de terceros. En estos casos, queremos inhabilitar
+                  la verificación de tipos y dejar que los valores pasen por las
+                  comprobaciones en tiempo de compilación. Para hacerlo, los
+                  etiquetamos con el any tipo:
+                  <pre class="code">
+
+                    <span class="code-var">let</span> notSure: <span class="code-var">any</span> = 4;
+                    <span class="code-var">let</span> notSure: <span class="code-var">any</span>[] = [<span class="code-text">'Carlos'</span>, 1 , <span class="code-sym">true</span> ];
+                  </pre>
+                </li>
+              </ul>
+            </article>
+            <article class="course-class__section" id="function">
+              <h2 class="course-class__section--title">Funciones</h2>
+              <p>
+                TypeScript aporta varias características que JavaScript no
+                dispone hasta el momento cuando tenemos que plantear funciones y
+                métodos. Podemos indicar a cada parámetro el tipo de dato que
+                puede recibir y también el tipo de dato que retorna la función o
+                método en caso que estemos en una clase:
+              </p>
+              <pre class="code">
+
+                <span class="code-var">function</span> <span class="code-function">sumar</span>(valor1:<span class="code-var">number</span>, valor2:<span class="code-var">number</span>): <span class="code-var">number</span>{
+                  <span class="code-sym">return</span> valor1+valor2;
+                }
+              
+                console.<span class="code-var">log</span>(<span class="code-function">sumar</span>(10, 5));              
+              </pre>
+              <p>
+                La función sumar recibe dos parámetros de tipo number y retorna
+                un valor de tipo number. Luego si llamamos a esta función
+                enviando un valor distinto a number el compilador nos avisará
+                del error.
+              </p>
+              <h3>Parámetros opcionales y predeterminados</h3>
+              <p>
+                En TypeScript, se supone que cada parámetro es requerido por la
+                función. Esto no significa que no se pueda dar null o undefined,
+                sino que, cuando se llama a la función, el compilador verificará
+                que el usuario haya proporcionado un valor para cada parámetro.
+                El compilador también supone que estos parámetros son los únicos
+                parámetros que se pasarán a la función. En resumen, el número de
+                argumentos dados a una función tiene que coincidir con el número
+                de parámetros que la función espera.
+              </p>
+              <pre class="code">
+
+                <span class="code-var">function</span> <span class="code-function">buildName</span>(firstName: <span class="code-var">string</span> , lastName: <span class="code-var">string</span>) {
+                  <span class="code-sym">return</span> firstName + " " + lastName;
+                } 
+                
+                <span class="code-var">let</span> result1 = <span class="code-function">buildName</span>(<span class="code-text">"Bob"</span>); <span class="code-comment">// error, too few parameters</span>
+                <span class="code-var">let</span> result2 = <span class="code-function">buildName</span>(<span class="code-text">"Bob"</span>, <span class="code-text">"Adams"</span>, <span class="code-text">"Sr."</span>);  <span class="code-comment">// error, too many parameters</span>
+                <span class="code-var">let</span> result3 = <span class="code-function">buildName</span>(<span class="code-text">"Bob"</span>, <span class="code-text">"Adams"</span>); <span class="code-comment">//// ah, just right</span>
+              </pre>
+              <p>
+                En JavaScript, cada parámetro es opcional, y los usuarios pueden
+                dejarlos como mejor les parezca. Cuando lo hacen, su valor es
+                undefined. Podemos obtener esta funcionalidad en TypeScript
+                agregando un (?) al final de los parámetros que queremos que
+                sean opcionales. Por ejemplo, supongamos que queremos que el
+                parámetro de apellido anterior sea opcional:
+              </p>
+              <pre class="code">
+
+                <span class="code-var">function</span> <span class="code-function">buildName</span>(firstName: <span class="code-var">string</span> , lastName<span class="t-bold">?</span>: <span class="code-var">string</span>) {
+                  <span class="code-sym">return</span> firstName + " " + lastName;
+                } 
+              </pre>
+            </article>
+            <article class="course-class__section" id="interface">
+              <h2 class="course-class__section--title">Interfaces</h2>
+              <p>
+                Nos permiten declarar la forma exacta de un objeto, definiendo
+                los tipos de sus propiedades y si son opcionales o no. ejemplo:
+              </p>
+              <pre class="code">
+
+                <span class="code-var">enum</span> Color {
+                  rojo = <span class="code-text">"Rojo"</span>,
+                  verde = <span class="code-text">"Verde"</span>
+                }
+                
+                <span class="code-var">interface</span> Rectangulo {
+                  ancho: number;
+                  alto: number;
+                  color<span class="code-sym">?</span>: Color; <span class="code-comment">//Esta propiedad es opcional ?:</span>
+                }
+                
+                <span class="code-var">let</span> rect: Rectangulo = {
+                  ancho: 4,
+                  alto: 6,
+                  color: Color.rojo
+                };
+                
+                <span class="code-comment">//Funcion que pide un objeto Rectangulo y devuelve un número</span>
+                <span class="code-var">function</span> <span class="code-function">area</span>(rectangulo: <span class="code-var">Rectangulo</span>): <span class="code-var">number</span> {
+                  <span class="code-var">return</span> rectangulo.alto <span class="code-sym">*</span> rectangulo.ancho;
+                }
+                
+                <span class="code-var">let</span> areaRect = <span class="code-function">area</span>(rect);                
               </pre>
             </article>
           </div>
