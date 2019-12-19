@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Curso git & github</title>
+    <title>Curso Git & GitHub</title>
     <link rel="icon" href="../../images/favicon.png" type="img/text" />
     <link
       href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
@@ -49,7 +49,18 @@
         <section class="hero-course">
           <div class="container-general">
             <h1 class="hero-course__title">Curso de Git y Github</h1>
-            <p class="hero-course__description"></p>
+            <p class="hero-course__description">
+              Este curso se enseñara para qué sirve Git, cómo usarlo, cómo
+              mejora nuestra productividad y cómo sacarle el mayor provecho.
+              <br />
+              Git es un software de control de versiones diseñado por Linus
+              Torvalds, pensando en la eficiencia y la confiabilidad del
+              mantenimiento de versiones de aplicaciones cuando estas tienen un
+              gran número de archivos de código fuente. En su lugar GitHub es
+              una forja para alojar proyectos utilizando el sistema de control
+              de versiones Git. GitHub sería la red social de código para los
+              programadores, tu propio curriculum vitae.
+            </p>
             <div class="hero-course__buttons">
               <a
                 target="_blank"
@@ -66,8 +77,23 @@
               <nav class="course-class__menu">
                 <ul>
                   <li>
-                    <a class="link course-class__menu--a" href="#tools"
-                      >Herramientas a usar</a
+                    <a class="link course-class__menu--a" href="#introduction"
+                      >Sistema de control de versiones</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#install"
+                      >Instalar Git</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#console"
+                      >Línea de comandos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#ciclo"
+                      >Ciclo trabajo Git</a
                     >
                   </li>
                 </ul>
@@ -76,68 +102,182 @@
           </div>
           <div class="course-class__content">
             <i class="icon-menu icon course-class__icon-menu" id="btn-menu"></i>
-            <article class="course-class__section" id="tools">
-              <h2 class="course-class__section--title">Herramientas a usar</h2>
-              <p>
-                La herramientas que se usaron en el curso básico de react en
-                <strong>platzi</strong> son:
-              </p>
-              <ul>
-                <li>
-                  <span class="t-bold">React Developer Tools:</span> Es una
-                  herramienta Open Source creada por Facebook y tiene
-                  instalación para
-                  <a
-                    class="link link-refe t-bold"
-                    target="_blank"
-                    href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=es"
-                    >chrome</a
-                  >
-                  o firefox. Nos dejará ver el código de React inspeccionando
-                  elementos.
-                </li>
-                <li>
-                  <span class="t-bold">Editor de texto:</span> Puedes usar
-                  cualquiera, en este curso se sugirió
-                  <a
-                    target="_blank"
-                    href="https://code.visualstudio.com/"
-                    class="link link-refe t-bold"
-                    >Visual Studio Code</a
-                  >.
-                </li>
-              </ul>
-              <p>
-                VS Code tiene muchos plugis utiles entre los cuales esta: <br />
-                <a
-                  target="_blank"
-                  href="https://github.com/prettier/prettier-vscode"
-                  class="t-bold link link-refe"
-                  >Prettier</a
-                >
-                Es un plugin que hace que el código se vea bien sin importar
-                cómo esta escrito. Tiene la función de que al darle save, le da
-                formato al código.
-              </p>
-              <div class="note">
-                Para activar la función de que al guardar el documento se haga
-                el autoformateado, se debe habilitar la opción
-                <span class="t-bold">editor.formatOnSave</span>:
+            <article class="course-class__section" id="introduction">
+              <h2 class="course-class__section--title">
+                ¿Por qué usar un sistema de control de versiones como Git?
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Un sistema de control de versiones como Git nos ayuda a
+                  guardar el historial de cambios y crecimiento de los archivos
+                  de nuestro proyecto.
+                </p>
+                <p>
+                  En realidad, los cambios y diferencias entre las versiones de
+                  nuestros proyecto pueden tener similitudes, algunas veces los
+                  cambios pueden ser solo una palabra o una parte específica de
+                  un archivo específico. Git está optimizado para guardar todos
+                  estos cambios de forma atómica e incremental, o sea, aplicando
+                  cambios sobre los últimos cambios, estos sobre los cambios
+                  anteriores y así hasta el inicio de nuestro proyecto.
+                </p>
                 <ul>
                   <li>
-                    Abril el Command Palette, control + shift + p (en windows)
+                    El comando para iniciar nuestro repositorio, o sea,
+                    indicarle a Git que queremos usar su sistema de control de
+                    versiones en nuestro proyecto, es
+                    <span class="t-bold">git init</span>.
                   </li>
-                  <li>Escribir Open user Settings</li>
-                  <li>Buscar format on save y activarlo</li>
+                  <li>
+                    El comando para que nuestro repositorio sepa de la
+                    existencia de un archivo o sus últimos cambios es
+                    <span class="t-bold">git add</span>. Este comando no
+                    almacena las actualizaciones de forma definitiva, solo las
+                    guarda en algo que conocemos como "Staging Area".
+                  </li>
+                  <li>
+                    El comando para almacenar definitivamente todos los cambios
+                    que por ahora viven en el staging area es
+                    <span class="t-bold">git commit</span>. También podemos
+                    guardar un mensaje para recordar muy bien qué cambios
+                    hicimos en este commit con el argumento
+                    <span class="t-bold">-m "Mensaje del commit"</span>.
+                  </li>
+                  <li>
+                    Por último, si queremos mandar nuestros commits a un
+                    servidor remoto, un lugar donde todos podamos conectar
+                    nuestros proyectos, usamos el comando
+                    <span class="t-bold">git push</span>.
+                  </li>
                 </ul>
+              </div>
+            </article>
+            <article class="course-class__section" id="install">
+              <h2 class="course-class__section--title">
+                Instalando Git y GitBash en Windows
+              </h2>
+              <div class="course-class__section--content">
                 <p>
-                  Para deshabilitar prettier para ciertos lenguajes, se puede
-                  emplear la siguiente configuración, en el archivo
-                  <span class="t-bold">setting.json</span> de VS Code: <br />
-                  <span class="t-bold"
-                    >"prettier.disableLanguages" : ["html"]</span
-                  >.
+                  Windows y Linux comandos diferentes, graban el enter de formas
+                  diferentes y tienen muchas otras diferencias. Cuando instales
+                  Git Bash en Windows debes elegir si prefieres trabajar con la
+                  forma de Windows o la forma de UNIX (Linux y Mac).
                 </p>
+                <p>
+                  Ten en cuenta que, normalmente, los entornos de desarrollo
+                  profesionales tienen personas que usan sistemas operativos
+                  diferentes. Esto significa que, si todos podemos usar los
+                  mismos comandos, el trabajo resultará más fácil para todos en
+                  el equipo.
+                </p>
+                <p>
+                  Los comandos de UNIX son los más comunes entre los equipos de
+                  desarrollo. Así que, a menos que trabajes con tecnologías
+                  nativas de Microsoft (por ejemplo, .NET), la recomendación es
+                  que elijas la opción de la terminal tipo UNIX para obtener una
+                  mejor compatibilidad con todo tu equipo.
+                </p>
+                <a
+                  class="btn btn--blue"
+                  href="https://git-scm.com/"
+                  target="_blank"
+                  >Descargar Git</a
+                >
+              </div>
+            </article>
+            <article class="course-class__section" id="console">
+              <h2 class="course-class__section--title">Línea de comandos</h2>
+              <div class="course-class__section--content">
+                <p>
+                  <span class="t-bold">Diferencias</span> entre la estructura de
+                  archivos de Windows, Mac o Linux.
+                </p>
+                <ul>
+                  <li>
+                    La ruta principal en Windows es C:\, en UNIX es solo /.
+                  </li>
+                  <li>
+                    Windows no hace diferencia entre mayúsculas y minúsculas
+                    pero UNIX sí.
+                  </li>
+                </ul>
+                <h3>Comandos básicos en la terminal</h3>
+                <ul>
+                  <li>
+                    <span class="t-bold">pwd:</span> Nos muestra la ruta de
+                    carpetas en la que te encuentras ahora mismo.
+                  </li>
+                  <li>
+                    <span class="t-bold">mkdir:</span> Nos permite crear
+                    carpetas.
+                    <pre class="code">
+
+                      mkdir nombre-carpeta
+                    </pre>
+                  </li>
+                  <li>
+                    <span class="t-bold">touch:</span> Nos permite crear
+                    archivos.
+                    <pre class="code">
+
+                      touch archivo.txt
+                    </pre>
+                  </li>
+                  <li>
+                    <span class="t-bold">rm:</span> Nos permite borrar un
+                    archivo o carpeta.
+                  </li>
+                  <li>
+                    <span class="t-bold">cat:</span> Ver el contenido de un
+                    archivo.
+                  </li>
+                  <li>
+                    <span class="t-bold">ls:</span>
+                    Nos permite cambiar ver los archivos de la carpeta donde
+                    estamos ahora mismo. Podemos usar uno o más argumentos para
+                    ver más información sobre estos archivos (los argumentos
+                    pueden ser -- + el nombre del argumento o - + una sola letra
+                    o shortcut por cada argumento).
+                    <ul>
+                      <li>
+                        <span class="t-bold">ls -a:</span> Mostrar todos los
+                        archivos, incluso los ocultos.
+                      </li>
+                      <li>
+                        <span class="t-bold">ls -l:</span> Ver todos los
+                        archivos como una lista.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="t-bold">cd:</span> Nos permite navegar entre
+                    carpetas.
+                  </li>
+                  <li>
+                    <span class="t-bold">history:</span> Ver los últimos
+                    comandos que ejecutamos y un número especial con el que
+                    podemos repetir su ejecución.
+                  </li>
+                  <li>
+                    <span class="t-bold">! + número:</span> Ejecutar algún
+                    comando con el número que nos muestra el comando history
+                    (por ejemplo, !72).
+                  </li>
+                  <li>
+                    <span class="t-bold">clear:</span> Para limpiar la terminal.
+                    También podemos usar los atajos de teclado Ctrl + L o
+                    Command + L.
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="course-class__section" id="ciclo">
+              <h2 class="course-class__section--title">
+                ¿Qué es staging, repositorios y cuál es el ciclo básico de
+                trabajo en GitHub?
+              </h2>
+              <div class="course-class__section--content">
+                <p></p>
               </div>
             </article>
           </div>
