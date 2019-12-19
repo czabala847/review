@@ -277,7 +277,120 @@
                 trabajo en GitHub?
               </h2>
               <div class="course-class__section--content">
-                <p></p>
+                <p>
+                  Para iniciar un repositorio, o sea, activar el sistema de
+                  control de versiones de Git en tu proyecto, solo debes
+                  ejecutar el comando git init.
+                </p>
+                <p>
+                  Este comando se encargará de dos cosas: primero, crear una
+                  carpeta .git donde se guardará toda la base de datos con
+                  cambios atómicos de nuestro proyecto; y segundo, crear un área
+                  en la memoria RAM, que conocemos como
+                  <span class="t-bold">Staging</span>, que guardará
+                  temporalmente nuestros archivos (cuando ejecutemos un comando
+                  especial para eso) y nos permitirá, más adelante, guardar
+                  estos cambios en el repositorio (también con un comando
+                  especial).
+                </p>
+                <h3>Ciclo de vida o estados de los archivos en Git:</h3>
+                <p>
+                  Cuando trabajamos con Git, nuestros archivos pueden vivir y
+                  moverse entre 4 diferentes estados (cuando trabajamos con
+                  repositorios remotos pueden ser más estados pero lo
+                  estudiaremos más adelante):
+                </p>
+                <ul>
+                  <li>
+                    <span class="t-bold">Archivos Untracked:</span> Son archivos
+                    que NO viven dentro de Git, solo en el disco duro. Nunca han
+                    sido afectados por git add, así que Git no tiene registros
+                    de su existencia.
+                  </li>
+                  <li>
+                    <span class="t-bold">Archivos Tracked:</span> Son los
+                    archivos que viven dentro de Git, no tienen cambios
+                    pendientes y sus últimas actualizaciones han sido guardadas
+                    en el repositorio gracias a los comandos git add y git
+                    commit.
+                  </li>
+                  <li>
+                    <span class="t-bold">Archivos Unstaged:</span> Entiendelos
+                    como archivos "Tracked pero Unstaged". Son archivos que
+                    viven dentro de Git pero no han sido afectados por el
+                    comando <span class="t-bold">git add</span> ni mucho menos
+                    por <span class="t-bold">git commit</span>. Git tiene un
+                    registro de estos archivos pero está desactualizado, sus
+                    últimas versiones solo están guardadas en el disco duro.
+                  </li>
+                  <li>
+                    <span class="t-bold">Archivos Staged:</span> Son archivos en
+                    Staging. Viven dentro de Git y hay registro de ellos porque
+                    han sido afectados por el comando
+                    <span class="t-bold">git add</span>, aunque no sus últimos
+                    cambios. Git ya sabe de la existencia de estos últimos
+                    cambios pero todavía no han sido guardados definitivamente
+                    en el repositorio porque falta ejecutar el comando
+                    <span class="t-bold">git commit</span>.
+                  </li>
+                </ul>
+                <p>
+                  Recuerda que hay un caso muy raro donde los archivos tienen
+                  dos estados al mismo tiempo: Staged y Untracked. Esto pasa
+                  guardas los cambios de un archivo en el área de Staging (con
+                  el comando git add) pero, antes de hacer commit para guardar
+                  los cambios en el repositorio, haces nuevos cambios que
+                  todavía no han sido guardados en el área de Staging (en
+                  realidad, todo sigue funcionando igual pero es un poco
+                  divertido).
+                </p>
+                <h3>Comandos para mover archivos entre los estados de Git:</h3>
+                <ul>
+                  <li>
+                    <span class="t-bold">git status:</span> Nos permite ver el
+                    estado de todos nuestros archivos y carpetas.
+                  </li>
+                  <li>
+                    <span class="t-bold">git add:</span> Nos ayuda a mover
+                    archivos del Untracked o Unstaged al estado Staged. Podemos
+                    usar git add nombre-del-archivo-o-carpeta para añadir
+                    archivos y carpetas individuales o git add -A para mover
+                    todos los archivos de nuestro proyecto (tanto Untrackeds
+                    como unstageds).
+                  </li>
+                  <li>
+                    <span class="t-bold">git reset HEAD:</span> Nos ayuda a
+                    sacar archivos del estado Staged para devolverlos a su
+                    estado anterior. Si los archivos venían de Unstaged, vuelven
+                    allí. Y lo mismo se venían de Untracked.
+                  </li>
+                  <li>
+                    <span class="t-bold">git rm:</span> Este comando necesita
+                    alguno de los siguientes argumentos para poder ejecutarse
+                    correctamente:
+                    <ul>
+                      <li>
+                        <span class="t-bold">git rm --cached:</span> Mueve los
+                        archivos que le indiquemos al estado Untracked.
+                      </li>
+                      <li>
+                        <span class="t-bold">git rm --force:</span> Elimina los
+                        archivos de Git y del disco duro. Git guarda el registro
+                        de la existencia de los archivos, por lo que podremos
+                        recuperarlos si es necesario (pero debemos usar comandos
+                        más avanzados).
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <div class="note">
+                  <p>
+                    Staging: Estado temporal de los archivos que estan en
+                    memoria, esperando a pasar al repositorio mediante un
+                    commit. Es un lugar antes de enviar los cambios al
+                    repositorio.
+                  </p>
+                </div>
               </div>
             </article>
           </div>
