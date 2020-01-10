@@ -93,7 +93,27 @@
                   </li>
                   <li>
                     <a class="link course-class__menu--a" href="#ciclo"
-                      >Ciclo trabajo Git</a
+                      >Ciclos de trabajo Git</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#branch"
+                      >Ramas en Git</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#user-git"
+                      >Git config</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#show-diff"
+                      >Cambios en un archivo</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#remote-repo"
+                      >Repositorio remoto</a
                     >
                   </li>
                 </ul>
@@ -337,10 +357,10 @@
                 <p>
                   Recuerda que hay un caso muy raro donde los archivos tienen
                   dos estados al mismo tiempo: Staged y Untracked. Esto pasa
-                  guardas los cambios de un archivo en el área de Staging (con
-                  el comando git add) pero, antes de hacer commit para guardar
-                  los cambios en el repositorio, haces nuevos cambios que
-                  todavía no han sido guardados en el área de Staging (en
+                  cuando guardas los cambios de un archivo en el área de Staging
+                  (con el comando git add) pero, antes de hacer commit para
+                  guardar los cambios en el repositorio, haces nuevos cambios
+                  que todavía no han sido guardados en el área de Staging (en
                   realidad, todo sigue funcionando igual pero es un poco
                   divertido).
                 </p>
@@ -391,6 +411,195 @@
                     repositorio.
                   </p>
                 </div>
+              </div>
+            </article>
+            <article class="course-class__section" id="branch">
+              <h2 class="course-class__section--title">
+                ¿Qué es un Branch (rama) y cómo funciona un Merge en Git?
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Git es una base de datos muy precisa con todos los cambios y
+                  crecimiento que ha tenido nuestro proyecto. Los commits son la
+                  única forma de tener un registro de los cambios. Pero las
+                  ramas amplifican mucho más el potencial de Git.
+                </p>
+                <p>
+                  <span class="t-bold"
+                    >Todos los commits se aplican sobre una rama</span
+                  >. Por defecto, siempre empezamos en la rama master (pero
+                  puedes cambiarle el nombre si no te gusta) y creamos nuevas
+                  ramas, a partir de esta, para crear flujos de trabajo
+                  independientes.
+                </p>
+                <p>
+                  Crear una nueva rama se trata de copiar un commit (de
+                  cualquier rama), pasarlo a otro lado (a otra rama) y continuar
+                  el trabajo de una parte específica de nuestro proyecto sin
+                  afectar el flujo de trabajo principal (que continúa en la rama
+                  master o la rama principal).
+                </p>
+                <p>
+                  Los equipos de desarrollo tienen un estándar: Todo lo que esté
+                  en la rama master va a producción, las nuevas features,
+                  características y experimentos van en una rama "development"
+                  (para unirse a master cuando estén definitivamente listas) y
+                  los issues o errores se solucionan en una rama "hotfix" para
+                  unirse a master tan pronto como sea posible.
+                </p>
+                <p>
+                  Crear una nueva rama lo conocemos como
+                  <span class="t-bold">Checkout</span>. Unir dos ramas lo
+                  conocemos como <span class="t-bold">Merge</span>.
+                </p>
+                <p>
+                  Podemos crear todas las ramas y commits que queramos. De
+                  hecho, podemos aprovechar el registro de cambios de Git para
+                  crear ramas, traer versiones viejas del código, arreglarlas y
+                  combinarlas de nuevo para mejorar el proyecto.
+                </p>
+                <p>
+                  Solo ten en cuenta que combinar estas ramas (sí, hacer
+                  "merge") puede generar conflictos. Algunos archivos pueden ser
+                  diferentes en ambas ramas. Git es muy inteligente y puede
+                  intentar unir estos cambios automáticamente, pero no siempre
+                  funciona. En algunos casos, somos nosotros los que debemos
+                  resolver estos conflictos "a mano".
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="user-git">
+              <h2 class="course-class__section--title">
+                Comandos para configurar usuarios en Git
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Los siguientes comandos serviran para poder hacer
+                  configuraciones en git ya sea para modifiar nombre, correo,
+                  entre otras cosas a nuestro usuario de git.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">//Muestra todas las configuraciones posibles</span>
+                  git config
+
+                  <span class="code-comment">//Ver configuración actual</span>
+                  git config --list
+                  
+                  <span class="code-comment">//Cambiar nombre</span>
+                  git config --global user.name "Carlos Zabala Roqueme"
+
+                  <span class="code-comment">//Cambiar email</span>
+                  git config --global user.email "czabala847@gmail.com"
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="show-diff">
+              <h2 class="course-class__section--title">
+                Analizar cambios en los archivos de tu proyecto con Git
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  El comando <span class="t-bold">git show</span> nos muestra
+                  los cambios que han existido sobre un archivo y es muy útil
+                  para detectar cuándo se produjeron ciertos cambios, qué se
+                  rompió y cómo lo podemos solucionar. Pero podemos ser más
+                  detallados.
+                </p>
+                <p>
+                  Si queremos ver la diferencia entre una versión y otra, no
+                  necesariamente todos los cambios desde la creación del
+                  archivo, podemos usar el comando
+                  <span class="t-bold">git diff commitA commitB</span>.
+                </p>
+                <div class="note">
+                  <p>
+                    Recuerda que puedes obtener el ID de tus commits con el
+                    comando <span class="t-bold">git log</span>.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="course-class__section" id="checkout-reset">
+              <h2 class="course-class__section--title">
+                Reset y Checkout
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  El comando <span class="t-bold">git checkout</span> + ID del
+                  commit nos permite viajar en el tiempo. Podemos volver a
+                  cualquier versión anterior de un archivo específico o incluso
+                  del proyecto entero. Esta también es la forma de crear ramas y
+                  movernos entre ellas.
+                </p>
+                <p>
+                  También hay una forma de hacerlo un poco más "ruda": usando el
+                  comando <span class="t-bold">git reset</span>. En este caso,
+                  no solo "volvemos en el tiempo", sino que borramos los cambios
+                  que hicimos después de este commit.
+                </p>
+                <p>
+                  Hay dos formas de usar git reset: con el argumento
+                  <span class="t-bold">--hard</span>, borrando toda la
+                  información que tengamos en el área de staging (y perdiendo
+                  todo para siempre). O, un poco más seguro, con el argumento
+                  <span class="t-bold">--soft</span>, que mantiene allí los
+                  archivos del área de staging para que podamos aplicar nuestros
+                  últimos cambios pero desde un commit anterior.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="remote-repo">
+              <h2 class="course-class__section--title">
+                Flujo de trabajo básico con un repositorio remoto
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  <span class="t-bold">Servidores remotos</span>: un nuevo
+                  estado que deben seguir nuestros archivos para conectarse y
+                  trabajar con equipos de cualquier parte del mundo.
+                </p>
+                <p>
+                  Estos servidores remotos pueden estar alojados en GitHub,
+                  GitLab, BitBucket, entre otros. Lo que van a hacer es guardar
+                  el mismo repositorio que tienes en tu computadora y darnos una
+                  URL con la que todos podremos acceder a los archivos del
+                  proyecto para descargarlos, hacer cambios y volverlos a enviar
+                  al servidor remoto para que otras personas vean los cambios,
+                  comparen sus versiones y creen nuevas propuestas para el
+                  proyecto.
+                </p>
+                <p>Nuevos comandos:</p>
+                <ul>
+                  <li>
+                    <span class="t-bold"
+                      >git clone url_del_servidor_remoto:</span
+                    >
+                    Nos permite descargar los archivos de la última versión de
+                    la rama principal y todo el historial de cambios en la
+                    carpeta .git.
+                  </li>
+                  <li>
+                    <span class="t-bold">git push: </span> Luego de hacer git
+                    add y git commit debemos ejecutar este comando para mandar
+                    los cambios al servidor remoto.
+                  </li>
+                  <li>
+                    <span class="t-bold">git fetch:</span> Lo usamos para traer
+                    actualizaciones del servidor remoto y guardarlas en nuestro
+                    repositorio local (en caso de que hayan, por supuesto).
+                  </li>
+                  <li>
+                    <span class="t-bold">git merge:</span> También usamos el
+                    comando git fetch con servidores remotos. Lo necesitamos
+                    para combinar los últimos cambios del servidor remoto y
+                    nuestro directorio de trabajo.
+                  </li>
+                  <li>
+                    <span class="t-bold">git pull:</span> Básicamente, git fetch
+                    y git merge al mismo tiempo.
+                  </li>
+                </ul>
               </div>
             </article>
           </div>
