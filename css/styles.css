@@ -548,6 +548,7 @@ h3 {
 \*-----------------------------------------*/
 .footer {
   background-color: black;
+  height: 100px;
 }
 
 .footer__container {
@@ -598,7 +599,7 @@ h3 {
   position: sticky;
   top: 90px;
   overflow: auto;
-  height: calc(100vh - 90px);
+  height: calc(100vh - 180px);
 }
 
 .course-class__menu li {
