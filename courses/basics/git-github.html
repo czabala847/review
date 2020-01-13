@@ -131,6 +131,11 @@
                       >Git Merge conflictos</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#github"
+                      >GitHub</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -711,6 +716,64 @@
                   git add para pasarlos al área de staging y git commit para
                   aplicar los cambios en el repositorio.
                 </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="github">
+              <h2 class="course-class__section--title">Uso de GitHub</h2>
+              <div class="course-class__section--content">
+                <p>
+                  GitHub es una plataforma que nos permite guardar repositorios
+                  de Git que podemos usar como servidores remotos y ejecutar
+                  algunos comandos de forma visual e interactiva (sin necesidad
+                  de la consola de comandos).
+                </p>
+                <p>
+                  Luego de crear nuestra cuenta, podemos crear o importar
+                  repositorios, crear organizaciones y proyectos de trabajo,
+                  descubrir repositorios de otras personas, contribuir a esos
+                  proyectos, dar estrellas y muchas otras cosas.
+                </p>
+                <p>
+                  El <span class="t-bold">README.md</span> es el archivo que
+                  veremos por defecto al entrar a un repositorio. Es una muy
+                  buena práctica configurarlo para describir el proyecto, los
+                  requerimientos y las instrucciones que debemos seguir para
+                  contribuir correctamente.
+                </p>
+                <p>
+                  Para <span class="t-bold">clonar</span> un repositorio desde
+                  GitHub (o cualquier otro servidor remoto) debemos copiar la
+                  URL (por ahora, usando HTTPS) y ejecutar el comando
+                  <span class="t-bold">git clone + la URL</span> que acabamos de
+                  copiar. Esto descargara la versión de nuestro proyecto que se
+                  encuentra en GitHub.
+                </p>
+                <p>
+                  Sin embargo, esto solo funciona para las personas que quieren
+                  empezar a contribuir en el proyecto. Si queremos conectar el
+                  repositorio de GitHub con nuestro repositorio local, el que
+                  creamos con git init, debemos ejecutar las siguientes
+                  instrucciones:
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">//Primero: Conectar con el repositorio remoto</span>
+                  git remote add origin url
+
+                  <span class="code-comment">//Segundo: Verificar que la URL se haya guardado correctamente</span>
+                  git remote
+                  git remote -v
+                  
+                  <span class="code-comment">//Tercero: Traer la versión del repositorio remoto y
+                    # hacer merge para crear un commit con los archivos
+                    # de ambas partes. Podemos usar git fetch y git merge
+                    # o solo el git pull con el flag --allow-unrelated-histories:</span>
+                  git pull origin master --allow-unrelated-histories
+
+                  <spam class="code-comment">//Por último, ahora sí podemos hacer git push para guardar
+                    # los cambios de nuestro repositorio local en GitHub:</spam>
+                  git push origin master
+                </pre>
               </div>
             </article>
           </div>
