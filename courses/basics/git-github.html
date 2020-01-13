@@ -116,6 +116,21 @@
                       >Repositorio remoto</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#git-branch"
+                      >Git Branch</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#git-merge"
+                      >Git Merge</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#conflict-merge"
+                      >Git Merge conflictos</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -600,6 +615,102 @@
                     y git merge al mismo tiempo.
                   </li>
                 </ul>
+              </div>
+            </article>
+            <article class="course-class__section" id="git-brach">
+              <h2 class="course-class__section--title">
+                Introducción a las ramas o branches de Git
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Las ramas son la forma de hacer cambios en nuestro proyecto
+                  sin afectar el flujo de trabajo de la rama principal. Esto
+                  porque queremos trabajar una parte muy específica de la
+                  aplicación o simplemente experimentar.
+                </p>
+                <p>
+                  La cabecera o HEAD representan la rama y el commit de esa rama
+                  donde estamos trabajando. Por defecto, esta cabecera aparecerá
+                  en el último commit de nuestra rama principal.
+                </p>
+                <ul>
+                  <li>
+                    <span class="t-bold">git branch nombre-rama</span>: Crear
+                    una nueva rama.
+                  </li>
+                  <li>
+                    <span class="t-bold"
+                      >git checkout nombre-rama-o-id-commit</span
+                    >: Para movernos entre ramas o en el tiempo.
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="course-class__section" id="git-merge">
+              <h2 class="course-class__section--title">
+                Fusión de ramas con Git merge
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  El comando <span class="t-bold">git merge</span> nos permite
+                  crear un nuevo commit con la combinación de dos ramas (la rama
+                  donde nos encontramos cuando ejecutamos el comando y la rama
+                  que indiquemos después del comando).
+                </p>
+                <div class="note">
+                  <p>
+                    Recuerda que al ejecutar el comando
+                    <span class="t-bold">git checkout</span> para cambiar de
+                    rama o commit puedes perder el trabajo que no hayas
+                    guardado. Guarda tus cambios antes de hacer git checkout.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="course-class__section" id="conflict-merge">
+              <h2 class="course-class__section--title">
+                Solución de conflictos al hacer un merge
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  <span class="t-bold">Git nunca borra nada</span> a menos que
+                  nosotros se lo indiquemos. Cuando usamos los comandos git
+                  merge o git checkout estamos cambiando de rama o creando un
+                  nuevo commit, no borrando ramas ni commits (recuerda que
+                  puedes borrar commits con git reset y ramas con git branch
+                  -d).
+                </p>
+                <p>
+                  Git es muy inteligente y puede resolver algunos conflictos
+                  automáticamente: cambios, nuevas líneas, entre otros. Pero
+                  algunas veces no sabe cómo resolver estas diferencias, por
+                  ejemplo, cuando dos ramas diferentes hacen cambios distintos a
+                  una misma línea.
+                </p>
+                <p>
+                  Esto lo conocemos como <span class="t-bold">conflicto</span> y
+                  lo podemos resolver manualmente, solo debemos hacer el merge,
+                  ir a nuestro editor de código y elegir si queremos quedarnos
+                  con alguna de estas dos versiones o algo diferente. Algunos
+                  editores de código como VSCode nos ayudan a resolver estos
+                  conflictos sin necesidad de borrar o escribir líneas de texto,
+                  basta con hundir un botón y guardar el archivo.
+                </p>
+                <p>
+                  Recuerda que siempre debemos crear un nuevo commit para
+                  aplicar los cambios del merge. Si Git puede resolver el
+                  conflicto hará commit automáticamente. Pero, en caso de no
+                  pueda resolverlo, debemos solucionarlo y hacer el commit.
+                </p>
+                <p>
+                  Los archivos con conflictos por el comando git merge entran en
+                  un nuevo estado que conocemos como
+                  <span class="t-bold">Unmerged</span>. Funcionan muy parecido a
+                  los archivos en estado Unstaged, algo así como un estado
+                  intermedio entre Untracked y Unstaged, solo debemos ejecutar
+                  git add para pasarlos al área de staging y git commit para
+                  aplicar los cambios en el repositorio.
+                </p>
               </div>
             </article>
           </div>
