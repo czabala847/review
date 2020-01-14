@@ -776,6 +776,40 @@
                 </pre>
               </div>
             </article>
+            <article class="course-class__section" id="ssh-key">
+              <h2 class="course-class__section--title">
+                Configura tus llaves SSH en local
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  <span class="t-bold">Primer paso: Generar tus llaves SSH</span
+                  >. Recuerda que es muy buena idea proteger tu llave privada
+                  con una contraseña.
+                </p>
+                <pre class="code">
+
+                  ssh-keygen -t rsa -b 4096 -C "tu@email.com"
+                </pre>
+                <p>
+                  <span class="t-bold">Segundo paso:</span> Terminar de
+                  configurar nuestro sistema.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment"># Encender el "servidor" de llaves SSH de tu computadora:</span>
+                  eval $(ssh-agent -s)
+
+                  <span class="code-comment"># Añadir tu llave SSH a este "servidor":</span>
+                  ssh-add ruta-donde-guardaste-tu-llave-privada (~/.ssh/id_rsa)
+                </pre>
+                <div class="note">
+                  <p>
+                    Las llaves en windows por defecto se guardan en la ruta
+                    <span class="t-bold">c/users/nombre-pc/.ssh</span>
+                  </p>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
         <footer class="footer">
