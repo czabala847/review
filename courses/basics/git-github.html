@@ -136,6 +136,16 @@
                       >GitHub</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#ssh-key"
+                      >SSH</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#ssh-github"
+                      >SSH con GitHub</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -808,6 +818,37 @@
                     <span class="t-bold">c/users/nombre-pc/.ssh</span>
                   </p>
                 </div>
+              </div>
+            </article>
+            <article class="course-class__section" id="ssh-github">
+              <h2 class="course-class__section--title">
+                Conexión a GitHub con SSH
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Luego de crear nuestras llaves SSH podemos entregarle la llave
+                  pública a GitHub para comunicarnos de forma segura y sin
+                  necesidad de escribir nuestro usuario y contraseña todo el
+                  tiempo.
+                </p>
+                <p>
+                  Para esto debes entrar a la Configuración de Llaves SSH en
+                  GitHub, crear una nueva llave con el nombre que le quieras dar
+                  y el contenido de la llave pública de tu computadora.
+                </p>
+                <p>
+                  Ahora podemos actualizar la URL que guardamos en nuestro
+                  repositorio remoto, solo que, en vez de guardar la URL con
+                  HTTPS, vamos a usar la URL con SSH:
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">//Ver el repositorio remoto al cual estamos conectados</span>
+                  git remote -v
+
+                  <span class="code-comment">//Actualizar el ssh por el https</span>
+                  git remote set-url origin url-ssh-del-repositorio-en-github
+                </pre>
               </div>
             </article>
           </div>
