@@ -93,12 +93,12 @@
                   </li>
                   <li>
                     <a class="link course-class__menu--a" href="#ciclo"
-                      >Ciclos de trabajo Git</a
+                      >Ciclos de trabajo</a
                     >
                   </li>
                   <li>
                     <a class="link course-class__menu--a" href="#branch"
-                      >Ramas en Git</a
+                      >Ramas</a
                     >
                   </li>
                   <li>
@@ -108,7 +108,12 @@
                   </li>
                   <li>
                     <a class="link course-class__menu--a" href="#show-diff"
-                      >Cambios en un archivo</a
+                      >Git show y log</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#checkout-reset"
+                      >Git reset y checkout</a
                     >
                   </li>
                   <li>
@@ -118,17 +123,17 @@
                   </li>
                   <li>
                     <a class="link course-class__menu--a" href="#git-branch"
-                      >Git Branch</a
+                      >Git branch</a
                     >
                   </li>
                   <li>
                     <a class="link course-class__menu--a" href="#git-merge"
-                      >Git Merge</a
+                      >Git merge</a
                     >
                   </li>
                   <li>
                     <a class="link course-class__menu--a" href="#conflict-merge"
-                      >Git Merge conflictos</a
+                      >Git merge conflictos</a
                     >
                   </li>
                   <li>
@@ -144,6 +149,23 @@
                   <li>
                     <a class="link course-class__menu--a" href="#ssh-github"
                       >SSH con GitHub</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#git-tag"
+                      >Git tag</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#github-branch"
+                      >GitHub branch</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#github-collaborators"
+                      >GitHub Collaborators</a
                     >
                   </li>
                 </ul>
@@ -548,6 +570,20 @@
                     comando <span class="t-bold">git log</span>.
                   </p>
                 </div>
+                <pre class="code">
+
+                  <span class="code-comment">#Ver de una mejor forma los commit en git log</span>
+                  git log --all --graph
+  
+                  <span class="code-comment">#Agregar más cosas, mucho más comprimido y más facil de leer</span>
+                  git log --all --graph --decorate --oneline
+  
+                  <span class="code-comment">#Como el comando es muy largo gracias a linux se puede crear un alias</span>
+                  alias <span class="t-bold">nombre-alias</span> = "git log --all --graph --decorate --oneline"
+  
+                  <span class="code-comment">#Eliminar alias</span>
+                  unalias nombre-alias
+                  </pre>
               </div>
             </article>
             <article class="course-class__section" id="checkout-reset">
@@ -843,11 +879,94 @@
                 </p>
                 <pre class="code">
 
-                  <span class="code-comment">//Ver el repositorio remoto al cual estamos conectados</span>
+                  <span class="code-comment">#Ver el repositorio remoto al cual estamos conectados</span>
                   git remote -v
 
-                  <span class="code-comment">//Actualizar el ssh por el https</span>
+                  <span class="code-comment">#Actualizar el ssh por el https</span>
                   git remote set-url origin url-ssh-del-repositorio-en-github
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="git-tag">
+              <h2 class="course-class__section--title">
+                Tags y versiones en Git y GitHub
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Los tags o etiquetas nos permiten asignar versiones a los
+                  commits con cambios más importantes o significativos de
+                  nuestro proyecto.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">#git tag -a(agregar) nombre-tag(v0.1) -m(mensaje) id-commit</span>
+                  git tag a v0.1 -m "primer resultado del repo" 1b5664d5
+                  
+                  <span class="code-comment">#ver tags</span>
+                  git tag
+                  git show-ref --tags
+                  
+                  <span class="code-comment">#enviar tags al repositorio remoto</span>
+                  git push origin --tags
+
+                  <span class="code-comment">#elimar tag en el local</span>
+                  git tag -d nombre-tag
+
+                  <span class="code-comment">#elimar tag en el remoto</span>
+                  git push origin :refs/tags/nombre-tag
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="github-branch">
+              <h2 class="course-class__section--title">
+                Manejo de ramas en GitHub
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Puedes trabajar con ramas que nunca envias a GitHub, así como
+                  pueden haber ramas importantes en GitHub que nunca usas en el
+                  repositorio local. Lo importantes que aprendas a manejarlas
+                  para trabajar profesionalmente
+                </p>
+                <ul>
+                  <li>
+                    Primero posicionarnos en la rama que queremos enviar al
+                    remoto con <span class="t-bold">checkout</span>.
+                  </li>
+                  <li>
+                    comando:
+                    <span class="t-bold">git push origin nombre-rama</span>.
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="course-class__section" id="github-collaborators">
+              <h2 class="course-class__section--title">
+                Configurar múltiples colaboradores en un repositorio de GitHub
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Por defecto, cualquier persona puede clonar o descargar tu
+                  proyecto desde GitHub, pero no pueden crear commits, ni ramas,
+                  ni nada.
+                </p>
+                <p>
+                  Existen varias formas de solucionar esto para poder aceptar
+                  contribuciones. Una de ellas es añadir a cada persona de
+                  nuestro equipo como colaborador de nuestro repositorio.
+                </p>
+                <p>
+                  Solo debemos entrar a la configuración de colaboradores de
+                  nuestro proyecto
+                  <span class="t-bold"
+                    >(Repositorio > Settings > Collaborators)</span
+                  >
+                  y añadir el email o username de los nuevos colaboradores.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">#Clonar el repositorio remoto de otra persona</span>
+                  git clone ssh-https-repo-remoto
                 </pre>
               </div>
             </article>
