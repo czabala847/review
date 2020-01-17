@@ -188,6 +188,26 @@
                       >Git clean</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#git-amend"
+                      >Git amend</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#git-reflog"
+                      >Git reflog</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#git-grep"
+                      >Git grep</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#command-git"
+                      >Otros comandos Git</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -602,7 +622,7 @@
                 </ul>
               </div>
             </article>
-            <article class="course-class__section" id="git-brach">
+            <article class="course-class__section" id="git-branch">
               <h2 class="course-class__section--title">
                 Introducción a las ramas o branches de Git
               </h2>
@@ -1043,6 +1063,143 @@
                   <li>
                     Para borrar todos los archivos listados (que no son
                     carpetas) tecleamos <strong>git clean -f</strong>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="course-class__section" id="git-amend">
+              <h2 class="course-class__section--title">
+                Reconstruír commits en Git con amend
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  A veces hacemos un commit, pero resulta que no queríamos
+                  mandarlo porque faltaba algo más. Utilizamos
+                  <strong>git commit --amend</strong>, amend en inglés es
+                  remendar y lo que hará es que los cambios que hicimos nos lo
+                  agregará al commit anterior.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="git-reflog">
+              <h2 class="course-class__section--title">
+                Git Reset y Reflog: Úsese en caso de emergencia
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  ¿Qué pasa cuando todo se rompe y no sabemos qué está pasando?
+                  Con git reset HashDelHEAD nos devolveremos al estado en que el
+                  proyecto funcionaba.
+                </p>
+                <ul>
+                  <li>
+                    <strong>git reset --soft</strong> HashDelHEAD te mantiene lo
+                    que tengas en staging ahí.
+                  </li>
+                  <li>
+                    <strong>git reset --hard</strong> HashDelHEAD resetea
+                    absolutamente todo incluyendo lo que tengas en staging.
+                  </li>
+                </ul>
+                <div class="note">
+                  <p>
+                    git reset es una <span class="t-bold">mala práctica</span>,
+                    no deberías usarlo en ningún momento; debe ser nuestro
+                    último recurso.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="course-class__section" id="git-grep">
+              <h2 class="course-class__section--title">
+                Buscar en archivos y commits de Git con Grep y log
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  A medida que nuestro proyecto se hace grande vamos a querer
+                  buscar ciertas cosas.
+                </p>
+                <p>
+                  Por ejemplo: ¿cuántas veces en nuestro proyecto utilizamos la
+                  palabra color?
+                </p>
+                <p>
+                  Para buscar utilizamos el comando git grep color y nos buscará
+                  en todo el proyecto los archivos en donde está la palabra
+                  color.
+                </p>
+                <ul>
+                  <li>
+                    Con <strong>git grep -n</strong> color nos saldrá un output
+                    el cual nos dirá en qué línea está lo que estamos buscando.
+                  </li>
+                  <li>
+                    Con <strong>git grep -c</strong> color nos saldrá un output
+                    el cual nos dirá cuántas veces se repite esa palabra y en
+                    qué archivo.
+                  </li>
+                  <li>
+                    Si queremos buscar cuántas veces utilizamos un atributo de
+                    HTML lo hacemos con <strong>git grep</strong> -c
+                    "&lt;p&gt;".
+                  </li>
+                  <li>
+                    Para buscar un palabra especifica en un commit toca usar el
+                    comando: <strong>git log -S</strong> "Platzi".
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="course-class__section" id="command-git">
+              <h2 class="course-class__section--title">
+                Comandos y recursos colaborativos en Git y Github
+              </h2>
+              <div class="course-class__section--content">
+                <ul>
+                  <li>
+                    <strong>git shortlog:</strong> Ver cuantos commits a hecho
+                    los miembros del equipo.
+                  </li>
+                  <li>
+                    <strong>git shortlog -sn:</strong> Las personas que han
+                    hecho ciertos commits.
+                  </li>
+                  <li>
+                    <strong>git shortlog -sn --all:</strong> Todos los commits
+                    (también los borrados).
+                  </li>
+                  <li>
+                    <strong>git shortlog -sn --all --no-merges:</strong> muestra
+                    las estadisticas de los comigs del repositorio donde estoy.
+                  </li>
+                  <li>
+                    <strong
+                      >git config --global alias.stats "shortlog -sn --all
+                      --no-merges":</strong
+                    >
+                    configura el comando "shortlog -sn --all --no-merges" en un
+                    Alias en las configuraciones globales de git del pc.
+                  </li>
+                  <li>
+                    <strong>git blame -c blogpost.html:</strong> Muestra quien
+                    ha hecho cambios en dicho archivo identado.
+                  </li>
+                  <li>
+                    <strong>git blame --help:</strong> Muestra en el navegador
+                    el uso del comando.
+                  </li>
+                  <li>
+                    <strong>git blame archivo -L 35, 60 -c:</strong> Muestra
+                    quien escribio el codigo con informacion de la linea 35 a la
+                    60, EJ: git blame css/estilos.css -L 35, 60 -c.
+                  </li>
+                  <li>
+                    <strong>git branch -r:</strong> Muestra las Ramas remotas de
+                    GitHub.
+                  </li>
+                  <li>
+                    <strong>git branch -a:</strong> Muestra todas las Ramas del
+                    repo y remotas de GitHub.
                   </li>
                 </ul>
               </div>
