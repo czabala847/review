@@ -178,6 +178,16 @@
                       >Readme.md</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#git-stash"
+                      >Git stash</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#git-clean"
+                      >Git clean</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -967,8 +977,74 @@
                   excelentes texto formateados.
                 </p>
                 <p>
-                  También podemos usar un editor online de markdowm <a class="link link-refe" target="_blank" href="https://pandao.github.io/editor.md/en.html">Editor.md</a>
+                  También podemos usar un editor online de markdowm
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://pandao.github.io/editor.md/en.html"
+                    >Editor.md</a
+                  >
                 </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="git-stash">
+              <h2 class="course-class__section--title">
+                Git Stash: Guardar cambios en memoria y recuperarlos después
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Cuando necesitamos regresar en el tiempo porque borramos
+                  alguna línea de código pero no queremos pasarnos a otra rama
+                  porque nos daría un error ya que debemos pasar ese "mal
+                  cambio" que hicimos a stage, podemos usar git stash para
+                  regresar el cambio anterior que hicimos.
+                </p>
+                <p>
+                  git stash es típico cuando estamos cambios que no merecen una
+                  rama o no merecen un rebase si no simplemente estamos probando
+                  algo y luego quieres volver rápidamente a tu versión anterior
+                  la cual es la correcta.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">#Guardar cambios en el lugar temporal</span>
+                  git stash
+
+                  <span class="code-comment">#Ver ese stash</span>
+                  git stash list
+
+                  <span class="code-comment">#Volver a pegar los cambios anteriores al stash</span>
+                  git stash pop
+
+                  <span class="code-comment">#guardar cambios en stash y pegarlos en otra rama</span>
+                  git stash
+                  git stash branch nombre-rama-nueva
+
+                  <span class="code-comment">#borrar un stash</span>
+                  git stash drop
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="git-clean">
+              <h2 class="course-class__section--title">
+                Git Clean: Limpiar tu proyecto de archivos no deseados
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  A veces creamos archivos cuando estamos realizando nuestro
+                  proyecto que realmente no forman parte de nuestro directorio
+                  de trabajo, que no se debería agregar y lo sabemos.
+                </p>
+                <ul>
+                  <li>
+                    Para saber qué archivos vamos a borrar tecleamos
+                    <strong>git clean --dry-run</strong>.
+                  </li>
+                  <li>
+                    Para borrar todos los archivos listados (que no son
+                    carpetas) tecleamos <strong>git clean -f</strong>
+                  </li>
+                </ul>
               </div>
             </article>
           </div>
