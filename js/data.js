@@ -99,6 +99,22 @@ data = [
           "https://pbs.twimg.com/profile_images/1157035760085684224/iuxTnT5g_400x400.jpg"
       }
     ]
+  },
+  {
+    id: 5,
+    name: "Base de Datos",
+    description:
+      "Crear y modelar bases de datos para aplicaciones web como locales, bases para ser un profesional en DBs.",
+    courses: [
+      {
+        courseID: 1,
+        courseName: "Fundamentos",
+        courseDescription:
+          "Conoce los conceptos básicos para manejar profesionalmente los sistemas de BD, para realizar CRUD.",
+        courseURL: "./courses/bd/fundamentos.html",
+        courseImage: "https://image.flaticon.com/icons/svg/1420/1420398.svg"
+      }
+    ]
   }
 ];
 
