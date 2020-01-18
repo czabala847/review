@@ -50,10 +50,26 @@
           <div class="container-general">
             <h1 class="hero-course__title">Fundamentos de bases de datos</h1>
             <p class="hero-course__description">
-              A través de la creación de un sistema de blogs obtendrás las
-              habilidades necesarias para realizar un CRUD (Create, Read,
-              Update, Delete) para aplicarlo en base de datos relacionales como
-              no relacionales.
+              Desde la antigüedad el ser humano se percató de la necesidad de
+              <strong class="t-yellow">almacenar la información</strong> de
+              manera tal que no se distorsionara y prolongarla mucho tiempo más
+              que el de la vida de un ser humano. Se data que algunas
+              civilizaciones como los sumerios empezaron a grabar la información
+              en piedra y tablas de arcilla, pero esto tiene varias desventajas,
+              como la movilidad, o la fragilidad de fracturas, es por eso que
+              damos un salto al papiro y a los pergaminos, eran mucho más
+              portátiles y ligeros, pero por ser de material animal, tenían
+              tendencia a sufrir de hongos o a descomponerse, fue cuando los
+              chinos brindaron la revolución con las hojas de papel. Fue hasta
+              el siglo XX donde se inventa el microfilm, el cual permitía
+              guardar en teoría información infinita, el problema principal es
+              que leer esta información o modificarla es mucho más complicado y
+              requiere maquinas complejas. Después de un tiempo llega la era
+              digital donde migramos a nuevos métodos con CD, Discos duros,
+              Discos sólidos, pasado el tiempo llega la
+              <strong class="t-yellow">nube</strong> la cual tiene una gran
+              ventaja con respecto a estos medios tradicionales, y es que es
+              accesible desde cualquier parte del mundo (centralizado).
             </p>
             <div class="hero-course__buttons">
               <a
@@ -71,8 +87,13 @@
               <nav class="course-class__menu">
                 <ul>
                   <li>
-                    <a class="link course-class__menu--a" href="#introduction"
-                      >item</a
+                    <a class="link course-class__menu--a" href="#rdb-history"
+                      >Historia RDB</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#rdb-history"
+                      >Entidades y atributos</a
                     >
                   </li>
                 </ul>
@@ -81,12 +102,96 @@
           </div>
           <div class="course-class__content">
             <i class="icon-menu icon course-class__icon-menu" id="btn-menu"></i>
-            <article class="course-class__section" id="introduction">
+            <article class="course-class__section" id="rdb-history">
               <h2 class="course-class__section--title">
-                titulo
+                Historia de las RDB
               </h2>
               <div class="course-class__section--content">
-                contenido
+                <p>
+                  Las bases de datos surgen de la necesidad de conservar la
+                  información más allá de lo que existe en la memoria RAM.
+                </p>
+                <p>
+                  En el esquema tradicional de computación
+                  <strong>Von Neumann</strong> (Creador del sistema de
+                  arquitectura computacional clásica) Se contempla el
+                  procesamiento de datos, y la memoria RAM, pero no una memoria
+                  que permitiera guardar datos persistentes. Así que cuando se
+                  empezó a pensar en formas de guardar datos y extraerlos se
+                  dieron los siguientes:
+                </p>
+                <ul>
+                  <li>
+                    BB.DD basadas en archivo: Básicamente era texto plano (como
+                    guardar archivos en el bloc de notas separadas por comas),
+                    fácil de guardar, pero difícil de consultar de forma
+                    ordenada. Entonces surge la necesidad de crear algo más
+                    estructurado y emergen las famosas BB.DD relacionales por
+                    <strong>Edgar Codd</strong>.
+                  </li>
+                </ul>
+                <p>
+                  <strong>Edgar Codd</strong> Creo las BB.DD relacionales, quien
+                  además dejo una serie reglas, considerados por algunos como
+                  "Los mandamientos de Codd", quien tenía la intención de
+                  asegurar que la filosofía de las BB.DD no se perdiera, o
+                  tergiversara con el paso del tiempo, dejando claro una
+                  doctrina y estandarizando el proceso.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="entities-attributes">
+              <h2 class="course-class__section--title">
+                Entidades y atributos
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Una <strong>entidad</strong> es algo similar a un objeto
+                  (programación orientada a objetos) y representa algo en el
+                  mundo real, incluso algo abstracto. Tienen atributos que son
+                  las cosas que los hacen ser una entidad y por convención se
+                  ponen en plural. Gráficamente las entidades se representan con
+                  un rectángulo.
+                </p>
+                <p>
+                  Los <strong>atributos compuestos</strong> son aquellos que
+                  tienen atributos ellos mismos.
+                </p>
+                <p>
+                  Los <strong>atributos llave</strong> son aquellos que
+                  identifican a la entidad y no pueden ser repetidos. Existen:
+                </p>
+                <ul>
+                  <li>
+                    Naturales: Son inherentes al objeto como el número de serie
+                  </li>
+                  <li>
+                    Clave artificial: No es inherente al objeto y se asigna de
+                    manera arbitraria.
+                  </li>
+                </ul>
+                <p>
+                  <strong>Entidades débiles</strong>: No pueden existir sin una
+                  entidad fuerte y se representan con un cuadrado con doble
+                  línea.
+                </p>
+                <ul>
+                  <li>
+                    Identidades débiles por identidad: No se diferencian entre
+                    sí más que por la clave de su identidad fuerte.
+                  </li>
+                  <li>
+                    Identidades débiles por existencia: Se les asigna una clave
+                    propia.
+                  </li>
+                </ul>
+                <figure class="img-container">
+                  <img
+                    class="img-container__image"
+                    src="https://i.imgur.com/K9j8ppf.png"
+                    alt="Representación grafica de una entidad BD"
+                  />
+                </figure>
               </div>
             </article>
           </div>
