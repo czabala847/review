@@ -128,6 +128,16 @@
                       >Historia de SQL</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#ddl-create"
+                      >DDL Create</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#ddl-alter"
+                      >DDL Alter</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -451,6 +461,78 @@
                   Query Language que significa que no sólo se utiliza SQLen las
                   bases de datos no relacionales.
                 </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="ddl-create">
+              <h2 class="course-class__section--title">
+                DDL create
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  SQL tiene dos grandes sublenguajes: <br />
+                  <strong>DDL</strong> o Data Definition Language que nos ayuda
+                  a crear la estructura de una base de datos. Existen 3 grandes
+                  comandos:
+                </p>
+                <ul>
+                  <li>
+                    <strong>Create:</strong> Nos ayuda a crear bases de datos,
+                    tablas, vistas, índices, etc.
+                  </li>
+                  <li>
+                    <strong>Alter:</strong> Ayuda a alterar o modificar
+                    entidades.
+                  </li>
+                  <li>
+                    <strong>Drop:</strong> Nos ayuda a borrar. Hay que tener
+                    cuidado al utilizarlo.
+                  </li>
+                </ul>
+                <p>
+                  3 objetos que manipularemos con el lenguaje DDL:
+                </p>
+                <ul>
+                  <li>
+                    Database o bases de datos.
+                  </li>
+                  <li>
+                    Table o tablas. Son la traducción a SQL de las entidades.
+                  </li>
+                  <li>
+                    View o vistas: Se ofrece la proyección de los datos de la
+                    base de datos de forma entendible.
+                  </li>
+                </ul>
+                <pre class="code">
+
+                  <span class="code-comment">#Crear una base de datos</span>
+                  CREATE DATABASE <span class="code-var">nombre_db</span>;
+
+                  <span class="code-comment">#La base a la cual se dirigirán las próximas consultas SQL en el proceso actual.</span>
+                  USE DATABASE <span class="code-var">nombre_db</span>;                 
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="ddl-alter">
+              <h2 class="course-class__section--title">DDL alter</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Los Views toman datos de la base de datos, los hacen
+                  presentables y los convierten en algo que podamos consultar de
+                  manera recurrente.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">#Crear vistas</span>
+                  CREATE VIEW <span class="code-var">v_nombre_tabla</span> AS
+                    SELECT <span class="code-var">campo</span> FROM <span class="code-var">otra_tabla</span> WHERE <span class="code-var">campo</span> = <span class="code-text">"condicion"</span>;
+                </pre>
+                <p>Alterar tabla:</p>
+                <pre class="code">
+
+                  ALTER TABLE <span class="code-var">nombre_tabla</span>
+                  ADD COLUMN <span class="code-var">campo_alterar</span> DATETIME NULL
+                </pre>
               </div>
             </article>
           </div>
