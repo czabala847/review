@@ -92,8 +92,50 @@
                     >
                   </li>
                   <li>
-                    <a class="link course-class__menu--a" href="#rdb-history"
+                    <a
+                      class="link course-class__menu--a"
+                      href="#entities-attributes"
                       >Entidades y atributos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#relation"
+                      >Relaciones</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#diagram-er"
+                      >Diagrama ER</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#data-constraints"
+                      >Tipos de datos y Constraints</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#normalization"
+                      >Normalización</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#rdb">RDB</a>
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#sql-history"
+                      >Historia de SQL</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#ddl-create"
+                      >DDL Create</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#ddl-alter"
+                      >DDL Alter</a
                     >
                   </li>
                 </ul>
@@ -192,6 +234,305 @@
                     alt="Representación grafica de una entidad BD"
                   />
                 </figure>
+              </div>
+            </article>
+            <article class="course-class__section" id="relation">
+              <h2 class="course-class__section--title">Relaciones</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Las relaciones nos permiten ligar o unir nuestras diferentes
+                  entidades y se representan con rombos. Por convención se
+                  definen a través de verbos.
+                </p>
+                <p>
+                  Las relaciones tienen una propiedad llamada
+                  <strong>cardinalidad</strong> y tiene que ver con números.
+                  Cuántos de un lado pertenecen a cuántos del otro lado:
+                </p>
+                <ul>
+                  <li>
+                    Cardinalidad: 1 a 1
+                  </li>
+                  <li>
+                    Cardinalidad: 0 a 1
+                  </li>
+                  <li>
+                    Cardinalidad: 1 a N
+                  </li>
+                  <li>
+                    Cardinalidad: 0 a N
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="course-class__section" id="diagram-er">
+              <h2 class="course-class__section--title">Diagrama ER</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Un diagrama es como un <strong>mapa</strong> y nos ayuda a
+                  entender cuáles son las entidades con las que vamos a
+                  trabajar, cuáles son sus relaciones y qué papel van a jugar en
+                  las aplicaciones de la base de datos.
+                </p>
+                <figure class="img-container">
+                  <img
+                    class="img-conteiner__image"
+                    src="https://i.imgur.com/1mf07Xv.png"
+                    alt="Diagrama ER del blog de platzi"
+                  />
+                </figure>
+              </div>
+            </article>
+            <article class="course-class__section" id="data-constraints">
+              <h2 class="course-class__section--title">
+                Diagrama Físico: tipos de datos y constraints
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para llevar a la práctica un diagrama debemos ir más allá y
+                  darle detalle con parámetros como:
+                </p>
+                <ul>
+                  <li>
+                    <strong>Tipos de datos</strong>
+                    <ul>
+                      <li>
+                        <strong>Texto:</strong>
+                        <ul>
+                          <li>
+                            <strong>CHAR:</strong>Guarda el espacio que se le
+                            asigne .
+                          </li>
+                          <li>
+                            <strong>VARCHAR:</strong> Asigna un espacio dinámico
+                            en memoria, dependiendo del número de caracteres del
+                            texto.
+                          </li>
+                          <li>
+                            <strong>TEXT:</strong> Almacena grandes cantidades
+                            de texto.
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <strong>Números</strong>
+                        <ul>
+                          <li><strong>INTEGER.</strong></li>
+                          <li>
+                            <strong>BIGINT:</strong> Tiene una función similar a
+                            la INTERGER, pero la utilizamos cuando sabemos que
+                            necesitamos trabajar con números muy grandes.
+                          </li>
+                          <li>
+                            <strong>SMALLINT:</strong> Tiene una función similar
+                            a la INTERGER, pero la utilizamos cuando sabemos que
+                            necesitamos trabajar con números "pequeños".
+                          </li>
+                          <li>
+                            <strong>DECIMAL(n, s)</strong>
+                          </li>
+                          <li>
+                            <strong>NUMERIC(n, s)</strong>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <strong>Fecha/hora:</strong>
+                        <ul>
+                          <li><strong>DATE:</strong> Año, mes y día.</li>
+                          <li>
+                            <strong>TIME:</strong> La hora del día de las 24h
+                          </li>
+                          <li>
+                            <strong>DATETIME:</strong> Obtiene los dos
+                            anteriores
+                          </li>
+                          <li>
+                            <strong>TIMESTAMP.</strong>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <strong>Lógicos:</strong>
+                        <ul>
+                          <li><strong>BOOLEAN</strong></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Constraints (Restricciones)</strong>
+                    <ul>
+                      <li>
+                        <strong>NOT NULL: </strong>Se asegura que la columna no
+                        tenga valores nulos.
+                      </li>
+                      <li>
+                        <strong>UNIQUE:</strong> Se asegura que cada valor en la
+                        columna no se repita.
+                      </li>
+                      <li>
+                        <strong>PRIMARY KEY:</strong> Es una combinación de NOT
+                        NULL y UNIQUE.
+                      </li>
+                      <li>
+                        <strong>FOREIGN KEY:</strong> Identifica de manera única
+                        una tupla en otra tabla.
+                      </li>
+                      <li>
+                        <strong>CHECK:</strong> Se asegura que el valor en la
+                        columna cumpla una condición dada.
+                      </li>
+                      <li>
+                        <strong>DEFAULT:</strong> Coloca un valor por defecto
+                        cuando no hay un valor especificado .
+                      </li>
+                      <li>
+                        <strong>INDEX:</strong> Se crea por columna para
+                        permitir búsquedas más rápidas.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="course-class__section" id="normalization">
+              <h2 class="course-class__section--title">
+                Diagrama Físico: normalización
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  La normalización como su nombre lo indica nos ayuda a dejar
+                  todo de una forma normal. Esto obedece a las 12 reglas de
+                  <strong>Codd</strong>
+                  y nos permiten separar componentes en la base de datos:
+                </p>
+                <ul>
+                  <li>
+                    Primera forma normal (1FN): Atributos atómicos (Sin campos
+                    repetidos).
+                  </li>
+                  <li>
+                    Segunda forma normal (2FN): Cumple 1FN y cada campo de la
+                    tabla debe depender de una clave única.
+                  </li>
+                  <li>
+                    Tercera forma normal (3FN): Cumple 1FN y 2FN y los campos
+                    que NO son clave, NO deben tener dependencias.
+                  </li>
+                  <li>
+                    Cuarta forma normal (4FN): Cumple 1FN, 2FN, 3FN y los campos
+                    multivaluados se identifican por una clave única.
+                  </li>
+                </ul>
+                <figure class="img-container">
+                  <img
+                    class="img-container__image"
+                    src="https://i.imgur.com/UXsb47p.png"
+                    alt="Ejemplo de normalización en base de datos"
+                  />
+                </figure>
+              </div>
+            </article>
+            <article class="course-class__section" id="rdb">
+              <h2 class="course-class__section--title">RDB ¿Qué?</h2>
+              <div class="course-class__section--content">
+                <p>
+                  RDBMS significa Relational Database Management System o
+                  sistema manejador de bases de datos relacionales. Es un
+                  programa que se encarga de seguir las reglas de Codd y se
+                  puede utilizar de manera programática.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="sql-history">
+              <h2 class="course-class__section--title">
+                Historia de SQL
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  SQL significa Structured Query Language y tiene una estructura
+                  clara y fija. Su objetivo es hacer un solo lenguaje para
+                  consultar cualquier manejador de bases de datos volviéndose un
+                  gran estándar.
+                </p>
+                <p>
+                  Ahora existe el <strong>NOSQL</strong> o Not Only Structured
+                  Query Language que significa que no sólo se utiliza SQLen las
+                  bases de datos no relacionales.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="ddl-create">
+              <h2 class="course-class__section--title">
+                DDL create
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  SQL tiene dos grandes sublenguajes: <br />
+                  <strong>DDL</strong> o Data Definition Language que nos ayuda
+                  a crear la estructura de una base de datos. Existen 3 grandes
+                  comandos:
+                </p>
+                <ul>
+                  <li>
+                    <strong>Create:</strong> Nos ayuda a crear bases de datos,
+                    tablas, vistas, índices, etc.
+                  </li>
+                  <li>
+                    <strong>Alter:</strong> Ayuda a alterar o modificar
+                    entidades.
+                  </li>
+                  <li>
+                    <strong>Drop:</strong> Nos ayuda a borrar. Hay que tener
+                    cuidado al utilizarlo.
+                  </li>
+                </ul>
+                <p>
+                  3 objetos que manipularemos con el lenguaje DDL:
+                </p>
+                <ul>
+                  <li>
+                    Database o bases de datos.
+                  </li>
+                  <li>
+                    Table o tablas. Son la traducción a SQL de las entidades.
+                  </li>
+                  <li>
+                    View o vistas: Se ofrece la proyección de los datos de la
+                    base de datos de forma entendible.
+                  </li>
+                </ul>
+                <pre class="code">
+
+                  <span class="code-comment">#Crear una base de datos</span>
+                  CREATE DATABASE <span class="code-var">nombre_db</span>;
+
+                  <span class="code-comment">#La base a la cual se dirigirán las próximas consultas SQL en el proceso actual.</span>
+                  USE DATABASE <span class="code-var">nombre_db</span>;                 
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="ddl-alter">
+              <h2 class="course-class__section--title">DDL alter</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Los Views toman datos de la base de datos, los hacen
+                  presentables y los convierten en algo que podamos consultar de
+                  manera recurrente.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">#Crear vistas</span>
+                  CREATE VIEW <span class="code-var">v_nombre_tabla</span> AS
+                    SELECT <span class="code-var">campo</span> FROM <span class="code-var">otra_tabla</span> WHERE <span class="code-var">campo</span> = <span class="code-text">"condicion"</span>;
+                </pre>
+                <p>Alterar tabla:</p>
+                <pre class="code">
+
+                  ALTER TABLE <span class="code-var">nombre_tabla</span>
+                  ADD COLUMN <span class="code-var">campo_alterar</span> DATETIME NULL
+                </pre>
               </div>
             </article>
           </div>
