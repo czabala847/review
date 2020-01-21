@@ -138,6 +138,26 @@
                       >DDL Alter</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#ddl-drop"
+                      >DDL Drop</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#dml">DML</a>
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#foreing-key"
+                      >Llaves Foráneas</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#transitive-tables"
+                      >Tablas transitivas</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -230,7 +250,7 @@
                 <figure class="img-container">
                   <img
                     class="img-container__image"
-                    src="https://i.imgur.com/K9j8ppf.png"
+                    src="https://i.ibb.co/YBYsTJ9/representacion-grafica-entidades.png"
                     alt="Representación grafica de una entidad BD"
                   />
                 </figure>
@@ -277,7 +297,7 @@
                 <figure class="img-container">
                   <img
                     class="img-conteiner__image"
-                    src="https://i.imgur.com/1mf07Xv.png"
+                    src="https://i.ibb.co/PTrYqKP/diagrama-er.png"
                     alt="Diagrama ER del blog de platzi"
                   />
                 </figure>
@@ -428,7 +448,7 @@
                 <figure class="img-container">
                   <img
                     class="img-container__image"
-                    src="https://i.imgur.com/UXsb47p.png"
+                    src="https://i.ibb.co/3Mfzj7q/normalizacion.png"
                     alt="Ejemplo de normalización en base de datos"
                   />
                 </figure>
@@ -461,6 +481,14 @@
                   Query Language que significa que no sólo se utiliza SQLen las
                   bases de datos no relacionales.
                 </p>
+                <div class="note">
+                  <p>
+                    La utilidad más grande de SQL fue unificar la forma en la
+                    que pensamos y hacemos preguntas a un repositorio de datos.
+                    Ahora que nacen nuevas bases de datos igualmente siguen
+                    tomando elementos de SQL.
+                  </p>
+                </div>
               </div>
             </article>
             <article class="course-class__section" id="ddl-create">
@@ -509,7 +537,17 @@
                   CREATE DATABASE <span class="code-var">nombre_db</span>;
 
                   <span class="code-comment">#La base a la cual se dirigirán las próximas consultas SQL en el proceso actual.</span>
-                  USE DATABASE <span class="code-var">nombre_db</span>;                 
+                  USE DATABASE <span class="code-var">nombre_db</span>;    
+
+                  <span class="code-comment">#Crear una tabla.</span>
+                  CREATE TABLE <span class="code-var">nombre_tabla</span>(
+                    <span class="code-var">id</span> INT NOT NULL AUTO_INCREMENT,
+                    <span class="code-var">campo1</span> VARCHAR(255) NOT NULL ,
+                    <span class="code-var">campo2</span> VARCHAR(30),
+                    <span class="code-var">campo3</span> VARCHAR(255),
+                    <span class="code-var">campo4</span> VARCHAR(255),
+                    PRIMARY KEY (`id`)
+                  );
                 </pre>
               </div>
             </article>
@@ -533,6 +571,126 @@
                   ALTER TABLE <span class="code-var">nombre_tabla</span>
                   ADD COLUMN <span class="code-var">campo_alterar</span> DATETIME NULL
                 </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="ddl-drop">
+              <h2 class="course-class__section--title">
+                DDL drop
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Está puede ser la sentencia
+                  <span class="t-bold">¡más peligrosa!</span>, sobre todo cuando
+                  somos principiantes. Básicamente borra o desaparece de nuestra
+                  base de datos algún elemento.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">#Borrar una tabla</span>
+                  DROP TABLE <span class="code-var">nombre_tabla</span>;
+
+                  <span class="code-comment">#Borrar una base de datos</span>
+                  DROP DATABASE <span class="code-var">nombre_bd</span>;
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="dml">
+              <h2 class="course-class__section--title">DML</h2>
+              <div class="course-class__section--content">
+                <p>
+                  <strong>DML</strong> trata del contenido de la base de datos.
+                  Son las siglas de Data Manipulation Language y sus comandos
+                  son:
+                </p>
+                <p>
+                  <strong>Insert</strong>: Inserta o agrega nuevos registros a
+                  la tabla.
+                </p>
+                <pre class="code">
+
+                  INSERT INTO <span class="code-var">nombre_tabla</span>(campo1, campo2, campo3)
+                  VALUES (<span class="code-text">'Dato1'</span>, <span class="code-text">'Dato2'</span>, <span class="code-text">'Dato3'</span>),
+                  (<span class="code-text">'Dato1'</span>, <span class="code-text">'Dato2'</span>, <span class="code-text">'Dato3'</span>);
+                </pre>
+                <p>
+                  <strong>Update</strong>: Actualiza o modifica los datos que ya
+                  existen.
+                </p>
+                <pre class="code">
+
+                  UPDATE <span class="code-var">nombre_tabla</span>
+                  SET <span class="code-var">campo_actualizar</span> = <span class="code-text">'Nuevo valor'</span>,  <span class="code-var">campo_actualizar</span> = <span class="code-text">'Nuevo valor'</span>
+                  WHERE <span class="code-var">campo_condicion</span> = <span class="code-text">'condicion'</span>;
+                </pre>
+                <p>
+                  <strong>Delete</strong>: Esta sentencia es riesgosa porque
+                  puede borrar el contenido de una tabla.
+                </p>
+                <pre class="code">
+
+                  DELETE FROM <span class="code-var">nombre_tabla</span> WHERE <span class="code-var">campo_condicion</span> = <span class="code-text">'condicion'</span>;
+                </pre>
+                <p>
+                  <strong>Select</strong>: Trae información de la base de datos.
+                </p>
+                <pre class="code">
+
+                  SELECT * FROM <span class="code-var">nombre_tabla</span> WHERE <span class="code-var">campo_condicion</span> = <span class="code-text">'condicion'</span>;
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="foreing-key">
+              <h2 class="course-class__section--title">Llaves Foráneas</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para las llaves foráneas los campos de las dos tablas deben
+                  ser del mismo tipo y longitud.
+                </p>
+                <p>
+                  Las opciones de las llaves foráneas son:
+                </p>
+                <ul>
+                  <li>
+                    <strong>no action</strong>: No hacer nada. cuando se haga un
+                    update o un delete de la tabla principal.
+                  </li>
+                  <li>
+                    <strong>cascade</strong>: Sirve para que cada que se haga un
+                    update en la tabla principal, se refleje también en la tabla
+                    en la que estamos creando la relación.
+                  </li>
+                  <li>
+                    <strong>restrict</strong>: Cuando se haga update o delete de
+                    la tabla principal, no lo pueden hacer hasta que se haga
+                    primero en la tabla que tiene la relación.
+                  </li>
+                </ul>
+                <div class="note">
+                  <p>
+                    Se recomienda que el nombre de la llave foránea sea el
+                    nombre de las dos tablas, ejemplo: si queremos una llave
+                    foránea de un post y usuario, el nombre de la llave foránea
+                    debería ser post_usuario.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="course-class__section" id="transitive-tables">
+              <h2 class="course-class__section--title">
+                Tablas transitivas
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Las tablas transitivas sirven como puente para unir dos
+                  tablas. No tienen contenido semántico.
+                </p>
+                <p>
+                  <strong>Reverse Engineer</strong> nos reproduce el esquema del
+                  cual nos basamos para crear nuestras tablas. Es útil cuando
+                  llegas a un nuevo trabajo y quieres entender cuál fue la
+                  mentalidad que tuvieron al momento de crear las bases de
+                  datos.
+                </p>
               </div>
             </article>
           </div>
