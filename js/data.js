@@ -1,5 +1,5 @@
 data = [
-  {
+  /*{
     id: 1,
     name: "Arquitectura frontend",
     description: `Para adentrarse en el mundo del diseño web y en especial a la
@@ -24,7 +24,7 @@ data = [
         courseImage: "./images/icon-responsive.png"
       }
     ]
-  },
+  },*/
   {
     id: 2,
     name: "Javascript",
@@ -118,8 +118,8 @@ data = [
         courseID: 2,
         courseName: "Curso SQL y MYSQL",
         courseDescription:
-          "Conoce los conceptos básicos para manejar profesionalmente los sistemas de BD, para realizar CRUD.",
-        courseURL: "./courses/bd/fundamentos.html",
+          "Mysql el manejador de bases de datos más usados en los sistemas de bd relacionales.",
+        courseURL: "./courses/bd/sql-mysql.html",
         courseImage:
           "https://www.differencebetween.com/wp-content/uploads/2017/12/Difference-Between-SQL-and-MySQL-fig-1-724x1024.png"
       }
