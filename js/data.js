@@ -113,6 +113,15 @@ data = [
           "Conoce los conceptos básicos para manejar profesionalmente los sistemas de BD, para realizar CRUD.",
         courseURL: "./courses/bd/fundamentos.html",
         courseImage: "https://image.flaticon.com/icons/svg/1420/1420398.svg"
+      },
+      {
+        courseID: 2,
+        courseName: "Curso SQL y MYSQL",
+        courseDescription:
+          "Conoce los conceptos básicos para manejar profesionalmente los sistemas de BD, para realizar CRUD.",
+        courseURL: "./courses/bd/fundamentos.html",
+        courseImage:
+          "https://www.differencebetween.com/wp-content/uploads/2017/12/Difference-Between-SQL-and-MySQL-fig-1-724x1024.png"
       }
     ]
   }
