@@ -638,15 +638,22 @@
                   donde estamos trabajando. Por defecto, esta cabecera aparecerá
                   en el último commit de nuestra rama principal.
                 </p>
-                <ul>
-                  <li>
-                    <strong>git branch nombre-rama</strong>: Crear una nueva
-                    rama.
-                  </li>
-                  <li>
-                    <strong>git checkout nombre-rama-o-id-commit</strong>: Para
-                    movernos entre ramas o en el tiempo.
-                  </li>
+                <pre class="code">
+
+                  <span class="code-comment">#Crear una rama</span>
+                  git branch nombre-rama
+
+                  <span class="code-comment">#Ver ramas creadas</span>
+                  git branch
+
+                  <span class="code-comment">#Eliminar una rama</span>
+                  git branch -d nombre-rama
+                  git branch -D nombre-rama
+                  git push origin :nombre-rama <span class="code-comment">#Elimar rama en el repo remoto</span>
+
+                  <span class="code-comment">#Moverse entre ramas o en el tiempo</span>
+                  git checkout nombre-rama-o-id-commit
+                </pre>
                 </ul>
               </div>
             </article>
@@ -661,6 +668,10 @@
                   nos encontramos cuando ejecutamos el comando y la rama que
                   indiquemos después del comando).
                 </p>
+                <pre class="code">
+
+                  git merge nombre-rama-fusionar -m "Mensaje"
+                </pre>
                 <div class="note">
                   <p>
                     Recuerda que al ejecutar el comando

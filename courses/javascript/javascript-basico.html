@@ -137,13 +137,6 @@
                     >
                   </li>
                   <li>
-                    <a
-                      class="link course-class__menu--a"
-                      href="#time-javascript"
-                      >Tiempo en JavaScript</a
-                    >
-                  </li>
-                  <li>
                     <a class="link course-class__menu--a" href="#callbacks"
                       >Callbacks</a
                     >
@@ -182,19 +175,18 @@
               </p>
               <ul>
                 <li>
-                  <span class="t-bold">var</span> era la forma en que se
-                  declaraban las variables hasta ECMAScript 5.
+                  <strong>var</strong> era la forma en que se declaraban las
+                  variables hasta ECMAScript 5.
                 </li>
                 <li>
-                  <span class="t-bold">const</span> y
-                  <span class="t-bold">let</span> es la forma en que se declaran
-                  las variables a partir de ECMAScript 6.
+                  <strong>const</strong> y <strong>let</strong> es la forma en
+                  que se declaran las variables a partir de ECMAScript 6.
                 </li>
               </ul>
               <p>
-                const sirve para declarar variables que nunca van a ser
-                modificadas y en cambio let son variables que pueden ser
-                modificadas.
+                <strong>const</strong> sirve para declarar variables que nunca
+                van a ser modificadas y en cambio <strong>let</strong> son
+                variables que pueden ser modificadas.
               </p>
               <p>
                 Para declarar una variable se hace de la siguiente forma, en el
@@ -255,21 +247,23 @@
               </pre>
               <h3>Diferencias entre LET vs VAR</h3>
               <p>
-                let permite declarar variables limitando su alcance (scope) al
-                bloque, declaración, o expresión donde se está usando. Lo
-                anterior diferencia la expresión let de la palabra reservada
-                var, la cual define una variable global o local en una función
-                sin importar el ámbito del bloque.
+                <strong>let</strong> permite declarar variables limitando su
+                alcance (scope) al bloque, declaración, o expresión donde se
+                está usando. Lo anterior diferencia la expresión let de la
+                palabra reservada <strong>var</strong>, la cual define una
+                variable global o local en una función sin importar el ámbito
+                del bloque.
               </p>
             </article>
             <article class="course-class__section" id="functions">
               <h2 class="course-class__section--title">Funciones</h2>
               <p>
                 Las funciones son
-                <span class="t-bold">fracciones de código reutilizable</span>.
-                JavaScript es un lenguaje interpretado, esto quiere decir que
-                intentará ejecutar el código sin importar si los parámetros que
-                le pasemos a la función estén invertidos o incluso incompletos.
+                <strong>fracciones de código reutilizable</strong>. JavaScript
+                es un lenguaje <strong>interpretado</strong>, esto quiere decir
+                que intentará ejecutar el código sin importar si los parámetros
+                que le pasemos a la función estén invertidos o incluso
+                incompletos.
               </p>
               <pre class="code">
 
@@ -279,20 +273,20 @@
                   console.<span class="code-var">log</span>(<span class="code-text">`${n} ${a} tiene ${e} años`</span>)
                 }
 
-                <span class="code-function">imprimirEdad</span>(nombre, apellido, edad) <span class="code-comment">//Carlos Zabala tiene 21 años</span>
-                <span class="code-function">imprimirEdad</span>() <span class="code-comment">//undefined undefined tiene undefined años</span>
-                <span class="code-function">imprimirEdad</span>(<span class="code-text">'Juan'</span>, <span class="code-text">'Diaz'</span>, 21) <span class="code-comment">//Juan Diaz tiene 21 años</span>
-                <span class="code-function">imprimirEdad</span>(21, 5, <span class="code-text">'Lopez'</span>) <span class="code-comment">//21 5 tiene lopez años</span>
+                <span class="code-function">imprimirEdad</span>(nombre, apellido, edad) <span class="code-comment">#Carlos Zabala tiene 21 años</span>
+                <span class="code-function">imprimirEdad</span>() <span class="code-comment">#undefined undefined tiene undefined años</span>
+                <span class="code-function">imprimirEdad</span>(<span class="code-text">'Juan'</span>, <span class="code-text">'Diaz'</span>, 21) <span class="code-comment">#Juan Diaz tiene 21 años</span>
+                <span class="code-function">imprimirEdad</span>(21, 5, <span class="code-text">'Lopez'</span>) <span class="code-comment">#21 5 tiene lopez años</span>
               </pre>
               <h3>Funciones que retornan valores</h3>
               <p>
-                <span class="t-bold">Return</span> detiene la ejecución de una
-                función y devuelve el valor de esa función.
+                <strong>Return</strong> detiene la ejecución de una función y
+                devuelve el valor de esa función.
               </p>
               <pre class="code">
 
                 <span class="code-var">function</span> <span class="code-function">esMayorEdad</span>(persona){
-                  <span class="code-sym">return</span> persona.edad >= MAYORIA_DE_EDAD <span class="code-comment">// retorna true / false</span>
+                  <span class="code-sym">return</span> persona.edad >= MAYORIA_DE_EDAD <span class="code-comment"># retorna true / false</span>
                 }
               </pre>
               <p>Podemos declarar una función e invocarla allí mismo.</p>
@@ -326,12 +320,11 @@
               <p>
                 Al hacer referencia directa a una variable global dentro de una
                 función, podemos modificar su valor, esto se le denomina
-                <span class="t-bold">sideEfect</span>, y esto lo vamos a querer
-                evitar.
+                <strong>sideEfect</strong>, y esto lo vamos a querer evitar.
               </p>
               <pre class="code">
 
-                <span class="code-comment">//Accediendo a una variable global (no hacer)</span>
+                <span class="code-comment">#Accediendo a una variable global (no hacer)</span>
                 <span class="code-var">var</span> nombre = <span class="code-text">'Cosme Fulanito'</span>
 
                 <span class="code-var">function</span> <span class="code-function">imprimirNombreMayusculas</span>(){
@@ -341,8 +334,8 @@
 
                 <span class="code-function">imprimirNombreMayusculas</span>()
 
-                <span class="code-comment">//Accediendo a los parametros de la función (recomendado)</span>
-                <span class="code-comment">//El alcance de la siguiente función solo es para la variable local que le llega por parámetro</span>
+                <span class="code-comment">#Accediendo a los parametros de la función (recomendado)</span>
+                <span class="code-comment">#El alcance de la siguiente función solo es para la variable local que le llega por parámetro</span>
                 <span class="code-var">function</span> <span class="code-function">imprimirNombreMayusculas</span>(nombre){
                   nombre = nombre.<span class="code-var">toUpperCase</span>()
                   console.<span class="code-var">log</span>(nombre)
@@ -352,8 +345,8 @@
               </pre>
               <div class="note">
                 <p>
-                  SideEfect funciones que modifican variables que "no le
-                  corresponde".
+                  <strong>SideEfect</strong> funciones que modifican variables
+                  que "no le corresponde".
                 </p>
               </div>
             </article>
@@ -380,14 +373,14 @@
               </p>
               <pre class="code">
 
-                <span class="code-comment">//Creación de objetos</span>
+                <span class="code-comment">#Creación de objetos</span>
                 <span class="code-var">var</span> carlos = {
                   nombre : <span class="code-text">'Carlos'</span>,
                   apellido : <span class="code-text">'Zabala'</span>,
                   edad : 22
                 }
 
-                <span class="code-comment">//Una nueva funcionalidad de js es pedir el atributo de un objeto en los parametros para esto se usan las llaves {nombreAtributo}</span>
+                <span class="code-comment">#Una nueva funcionalidad de js es pedir el atributo de un objeto en los parametros para esto se usan las llaves {nombreAtributo}</span>
                 <span class="code-var">function</span> <span class="code-function">imprimirNombreMayusculas</span>({nombre}){
                   console.<span class="code-var">log</span>(nombre.<span class="code-var">toUpperCase</span>())
                 }
@@ -398,8 +391,14 @@
                 objeto como parámetro. Cuando los objetos se pasan como una
                 referencia, estos se modifican fuera de la función. Para
                 solucionar esto se puede crear un objeto diferente. Esto lo
-                podemos hacer colocando tres puntos antes del nombre. Ej
-                …persona.
+                podemos hacer con
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://platzi.com/tutoriales/1339-fundamentos-javascript/2231-entendiendo-el-spread-operator-en-javascript/"
+                  >Spread Operator</a
+                >
+                colocando tres puntos antes del nombre. Ej …persona.
               </p>
               <p>
                 Cuando a una función le pasamos un objeto como parámetro y
@@ -419,8 +418,8 @@
                   }
                 }
 
-                <span class="code-function">birthday</span>(carlos) <span class="code-comment">//{nombre: 'Carlos', apellido : 'Zabala', edad : 23}</span>
-                carlos <span class="code-comment">//El objeto original no fue modificado {nombre : 'Carlos', apellido : 'Zabala', edad:22}</span>
+                <span class="code-function">birthday</span>(carlos) <span class="code-comment">#{nombre: 'Carlos', apellido : 'Zabala', edad : 23}</span>
+                carlos <span class="code-comment">#El objeto original no fue modificado {nombre : 'Carlos', apellido : 'Zabala', edad:22}</span>
               </pre>
             </article>
             <article class="course-class__section" id="compare">
@@ -492,7 +491,7 @@
                 <span class="code-sym">return</span> persona.edad >= MAYORIA_DE_EDAD
               }
 
-              <span class="code-comment">//La funcion anterior se puede guardar en una variable</span>
+              <span class="code-comment">#La funcion anterior se puede guardar en una variable</span>
               <span class="code-var">const</span> esMayorEdad = <span class="code-var">function</span>(persona){
                 <span class="code-sym">return</span> persona.edad >= MAYORIA_DE_EDAD
               }
@@ -502,7 +501,7 @@
 
               <span class="code-var">const</span> esMayorEdad = persona <span class="code-sym">=></span> persona.edad >= MAYORIA_DE_EDAD
 
-              <span class="code-comment">//Otro ejemplo</span>
+              <span class="code-comment">#Otro ejemplo</span>
               <span class="code-var">const</span> permitirAcceso = ({edad}) <span class="code-sym">=></span> esMayorEdad({edad}) <span class="code-sym">?</span> console.<span class="code-var">log</span>(<span class="code-text">'NICE'</span>) <span class="code-sym">:</span> console.<span class="code-var">log</span>(<span class="code-text">'NO'</span>)
             </pre>
             </article>
@@ -564,17 +563,17 @@
               <h3>Filtrar un array</h3>
               <p>
                 Para filtrar siempre necesitamos establecer una condición. El
-                método <span class="t-bold">filter()</span> crea una nueva
-                matriz con todos los elementos que pasan la prueba implementada
-                por la función proporcionada. Recuerda que si no hay elementos
-                que pasen la prueba, filter devuelve un array vacío.
+                método <strong>filter()</strong> crea una nueva matriz con todos
+                los elementos que pasan la prueba implementada por la función
+                proporcionada. Recuerda que si no hay elementos que pasen la
+                prueba, filter devuelve un array vacío.
               </p>
               <pre class="code">
 
                 <span class="code-var">const</span> <span class="code-function">sonAltas</span> = ({altura}) <span class="code-sym">=></span> altura >= 1.80 
                 <span class="code-var">const</span> <span class="code-function">sonBajas</span> = ({altura}) <span class="code-sym">=></span> altura < 1.80
 
-                <span class="code-comment">//Array de personas</span>
+                <span class="code-comment">#Array de personas</span>
                 <span class="code-var">var</span> personas = [sacha, alan, martin, dario, vicky, paula]
 
                 <span class="code-var">var</span> personasAltas = personas.<span class="code-var t-bold">filter</span>(sonAltas)
@@ -582,13 +581,11 @@
               </pre>
               <div class="note">
                 <p>
-                  Para filtrar se necesitan dos cosas un array y una condición y
-                  la condición puede ser una función. Para filtrar en un array,
-                  se utiliza el método <span class="t-bold">filter</span>, y
-                  recibe como parámetros una condición. <br /><br />
-                  <span class="t-bold"
-                    >var filtro = array.filter(condición)</span
-                  >
+                  Para filtrar se necesitan dos cosas: un array y una condición
+                  y la condición puede ser una función. Para filtrar en un
+                  array, se utiliza el método <strong>filter</strong>, y recibe
+                  como parámetros una condición. <br /><br />
+                  <strong>var filtro = array.filter(condición)</strong>
                   <br /><br />
                   Filter lo que hace es ir filtrando, recorriendo e iterando
                   cada elemento del array.
@@ -596,34 +593,38 @@
               </div>
               <h3>Transformar un array</h3>
               <p>
-                El método <span class="t-bold">map()</span> itera sobre los
+                El método <a class="link link-refe" target="_blank" href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/map"><strong>map</strong></a> itera sobre los
                 elementos de un array en el orden de inserción y devuelve array
                 nuevo con los elementos modificados.
               </p>
               <pre class="code">
 
-                <span class="code-comment">// esta funcion modificaria el array original</span>
+                <span class="code-var">const</span> nuevo_array = array.<span class="code-var">map</span>(iterador_elementos_array => {
+                  <span class="code-comment">#Código de la condición</span>
+                })
+
+                <span class="code-comment">#esta funcion modificaria el array original</span>
                 <span class="code-var">const</span> <span class="code-function">convertirCm</span> = persona => {
                   persona.altura *= 100
                   <span class="code-sym">return</span> persona
                 }
 
-                <span class="code-comment">// esta funcion no modifica el original, devuelve uno nuevo</span>
+                <span class="code-comment">#esta funcion no modifica el original, devuelve uno nuevo</span>
                 <span class="code-var">const</span> <span class="code-function">convertirCm</span> = persona => ({
                   <span class="code-sym">...</span>persona,
                   altura: persona.altura * 100
                 })
 
-                <span class="code-comment">// otra forma de escribirlo</span>
+                <span class="code-comment">#otra forma de escribirlo</span>
                 <span class="code-var">const</span> <span class="code-function">convertirCm</span> = persona =>{
-                  <span class="code-comment">// el return {} se usa cuando se devuelve un array nuevo ...</span>
+                  <span class="code-comment">#el return {} se usa cuando se devuelve un array nuevo ...</span>
                   <span class="code-sym">return</span> {
                     <span class="code-sym">...</span>persona,
                     altura : persona.altura * 100
                   }
                 }
                 
-                <span class="code-comment">//Usando el método map</span>
+                <span class="code-comment">#Usando el método map</span>
                 <span class="code-var">var</span> personasCm = personas.<span class="code-var t-bold">map</span>(<span class="code-function">convertirCms</span>)
               </pre>
               <div class="note">
@@ -648,7 +649,7 @@
                     href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce"
                     >Reduce</a
                   >: El método
-                  <span class="t-bold">reduce()</span>
+                  <strong>reduce()</strong>
                   nos permite reducir, mediante una función que se aplica a cada
                   uno de los elemento del array, todos los elementos de dicho
                   array, a un valor único.
@@ -660,7 +661,7 @@
                     href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/find"
                     >Find</a
                   >: El método
-                  <span class="t-bold">find()</span>
+                  <strong>find()</strong>
                   devuelve el valor del primer elemento del array que cumple la
                   función de prueba proporcionada. En cualquier otro caso se
                   devuelve undefined.
@@ -712,26 +713,6 @@
                    console.<span class="code-var">log</span>(<span class="code-text">`${this.nombre} ${this.altura >= 1.8 ? 'es': 'no es'} una persona alta`</span>)
                 }
               </pre>
-              <h3>Modificando un prototipo</h3>
-              <p>
-                JavaScript funciona con una estructura orientada a objetos y
-                cada objeto tiene una propiedad privada que mantiene un enlace a
-                otro objeto llamado prototipo.
-              </p>
-              <p>
-                Es de mucha importancia
-                <span class="t-bold"
-                  >donde colocamos las funciones que va a tener el
-                  prototipo</span
-                >. Estos se deben de colocar juntos, ya que con ellos se va
-                creando <span class="t-bold">el prototipo del objeto</span>, y
-                deseamos que tenga juntas todas sus funciones. Por ello
-                <span class="t-bold"
-                  >definimos los prototipos arriba, y los utilizamos a lo largo
-                  del código</span
-                >. NOTA: Cuando tenemos un error en JS, éste no se sigue
-                ejecutando, se corta ahí la ejecución del código.
-              </p>
               <h3>La verdad oculta sobre las clases en JavaScript</h3>
               <p>
                 Los objetos en JavaScript son "contenedores" dinámicos de
@@ -754,7 +735,7 @@
               </p>
               <pre class="code">
 
-                <span class="code-comment">//hacer herencia de prototipos</span>
+                <span class="code-comment">#hacer herencia de prototipos</span>
                 <span class="code-var">function</span> <span class="code-function">heredaDe</span>(prototipoHijo, prototipoPadre){
                   <span class="code-var">var</span> fn = <span class="code-var">function</span>(){}
                   fn.prototype = prototipoPadre.prototype
@@ -792,7 +773,7 @@
                 <span class="t-bold">¿Para qué sirve el debugger?</span> Para
                 solventar errores ("bugs" como dicen los programadores)
                 deteniendo tu programa en la línea de código donde coloques el
-                debugger y dándote herramientas para ver qué sucede.
+                debugger y dándote herramientas para ver qué sucede. <a class="link link-refe" href="./javascript-avanzado.html#this">Más sobre this</a>
               </p>
             </article>
             <article class="course-class__section" id="class-ecma">
@@ -825,6 +806,17 @@
                   }
                 }
               </pre>
+              <p>Ahora aplicando herencia.</p>
+              <pre class="code">
+
+                <span class="code-var">class</span> <span class="code-function">Profesor</span> <span class="code-var">extends</span> <span class="code-function">Persona</span>{
+                  <span class="code-var">constructor</span>(nombre, apellido, altura, materia_profesor){
+                    <span class="code-comment">#Llamando al constructor del padre</span>
+                    <span class="code-var">super</span>(nombre, apellido, altura)
+                    <span class="code-sym">this</span>.materia_profesor = materia_profesor
+                  }
+                }
+              </pre>
             </article>
             <article class="course-class__section" id="async">
               <h2 class="course-class__section--title">
@@ -833,7 +825,7 @@
               <p>
                 JavaScript sólo puede hacer una cosa a la vez, sin embargo; es
                 capaz de delegar la ejecución de ciertas funciones a otros
-                procesos. Este modelo de concurrencia se llama EventLoop.
+                procesos. Este modelo de concurrencia se llama <a class="link link-refe" href="./javascript-avanzado.html#event-loop">EventLoop</a>.
                 JavaScript delega en el navegador ciertas tareas y les asocia
                 funciones que deberán ser ejecutadas al ser completadas. Estas
                 funciones se llaman callbacks, y una vez que el navegador ha
@@ -856,20 +848,6 @@
                 <span class="code-var">while</span>(<span class="code-sym">true</span>){ console.<span class="code-var">warn</span>(<span class="code-text">' NO VOY A BLOQUEAR EL EVENTLOOP'</span>) }
               </pre>
             </article>
-            <article class="course-class__section" id="time-javascript">
-              <h2 class="course-class__section--title">
-                Cómo funciona el tiempo en JavaScript
-              </h2>
-              <p>
-                En principio, cualquier tarea que se haya delegado al navegador
-                a través de un callback, deberá esperar hasta que todas las
-                instrucciones del programa principal se hayan ejecutado. Por
-                esta razón el tiempo de espera definido en funciones como
-                setTimeout, no garantizan que el callback se ejcute en ese
-                tiempo exactamente, sino en cualquier momento a partir de allí,
-                sólo cuando la cola de tareas se haya vaciado.
-              </p>
-            </article>
             <article class="course-class__section" id="callbacks">
               <h2 class="course-class__section--title">Callbacks</h2>
               <p>
@@ -891,14 +869,14 @@
               </ol>
               <pre class="code">
 
-                <span class="code-comment">//URL a acceder</span>
+                <span class="code-comment">#URL a acceder</span>
                 <span class="code-var">const</span> API_URL = <span class="code-text">'https://swapi.co/api/'</span>
                 <span class="code-var">const</span> PEOPLE_URL = <span class="code-text">'people/:id'</span>
 
                 <span class="code-var">const</span> LUKE_URL = <span class="code-text">`${API_URL}${PEOPLE_URL.replace(':id', 1)}`</span>
                 <span class="code-var">const</span> OPTS = {crossDomain : <span class="code-sym">true</span>}
 
-                <span class="code-comment">//Función callback</span>
+                <span class="code-comment">#Función callback</span>
                 <span class="code-var">const</span> <span class="code-function">onPeopleResponse</span> = <span class="code-var">function</span>(person){
                   console.<span class="code-var">log</span>(<span class="code-text">`Hola soy ${person.name}`</span>)
                 }
@@ -916,7 +894,7 @@
               </p>
               <pre class="code">
 
-              <span class="code-comment">//callback hell</span>
+              <span class="code-comment">#callback hell</span>
                <span class="code-function">obtenerPersonaje</span>(1, function () {
                 <span class="code-function">obtenerPersonaje</span>(2, function () {
                   <span class="code-function">obtenerPersonaje</span>(3, function () {
@@ -937,7 +915,7 @@
             <article class="course-class__section" id="promise">
               <h2 class="course-class__section--title">Promesas</h2>
               <p>
-                <span class="t-i"
+                <span class="t-bold"
                   >"Una Promesa es un objeto que representa la terminación o el
                   fracaso eventual de una operación asíncrona"</span
                 >, o dicho de forma más cotidiana, se va a mandar una función
@@ -958,11 +936,11 @@
 
                 <span class="code-sym">new</span> Promise((resolve, reject) <span class="code-sym">=></span> {
                   <span class="code-sym">if</span>(todoOk){
-                    <span class="code-comment">//se ejecutó el llamado exitosamente</span>
+                    <span class="code-comment">#Se ejecutó el llamado exitosamente</span>
                     <span class="code-var">resolve</span>()
                   }
                   <span class="code-sym">else</span>{
-                    <span class="code-comment">hubo un error en el llamado</span>
+                    <span class="code-comment">#Hubo un error en el llamado</span>
                     <span class="code-var">reject</span>()
                   }
                 })
