@@ -168,10 +168,10 @@
               </p>
               <pre class="code">
 
-                npm init -y <span class="code-comment">//La bandera y contestara "si" a todas las preguntas de npm</span>
+                npm init -y <span class="code-comment">#La bandera y contestara "si" a todas las preguntas de npm</span>
               </pre>
               <p>
-                Se creara el archivo <span class="t-bold">package.json</span>,
+                Se creara el archivo <strong>package.json</strong>,
                 que sera similar al siguiente:
               </p>
               <pre class="code">
@@ -202,7 +202,7 @@
               </p>
               <pre class="code">
 
-                npm install -D live-server <span class="code-comment">//La bandera -D Solo será para desarrollo y no para producción</span>
+                npm install -D live-server <span class="code-comment">#La bandera -D Solo será para desarrollo y no para producción</span>
               </pre>
               <p>Se añade a devDependencies:</p>
               <pre class="code">
@@ -234,24 +234,24 @@
                   documento HTML</span
                 >. El navegador interpreta el archivo HTML y cuando termina de
                 transformarlo al DOM se dispara el evento
-                <span class="t-bold">DOMContentLoaded</span> lo que significa
+                <strong>DOMContentLoaded</strong> lo que significa
                 que todo el documento está disponible para ser manipulado.
                 <br />
                 Todo script que carguemos en nuestra página tiene un llamado y
-                una ejecución. Tanto con <span class="t-bold">async</span> como
-                <span class="t-bold">defer</span> podemos hacer llamados
+                una ejecución. Tanto con <strong>async</strong> como
+                <strong>defer</strong> podemos hacer llamados
                 asíncronos, pero tiene sus diferencias:
               </p>
               <ul>
                 <li>
-                  <span class="t-bold">async</span>: Con async podemos hacer la
+                  <strong>async</strong>: Con async podemos hacer la
                   petición de forma asíncrona y no vamos a detener la carga del
                   DOM hasta que se haga la ejecución del código. Cuando se
                   cumpla la petición es decir cuando tengamos una respuesta si
                   se detendrá la carga del DOM.
                 </li>
                 <li>
-                  <span class="t-bold">defer</span>: La petición es igual
+                  <strong>defer</strong>: La petición es igual
                   asíncrona como en el async pero va a deferir la ejecución del
                   Javascript hasta el final de que se cargue todo el documento.
                 </li>
@@ -271,24 +271,24 @@
               </p>
               <ul>
                 <li>
-                  <span class="t-bold">Global Scope</span>: Variables
+                  <strong>Global Scope</strong>: Variables
                   disponibles de forma global se usa la palabra var, son
                   accesibles por todos los scripts que se cargan en la página.
                   Aquí hay mucho riesgo de sobreescritura.
                 </li>
                 <li>
-                  <span class="t-bold">Function Scope</span>: Variables
+                  <strong>Function Scope</strong>: Variables
                   declaradas dentro de una función sólo visibles dentro de ella
                   misma (incluyendo los argumentos que se pasan a la función).
                 </li>
                 <li>
-                  <span class="t-bold">Block Scope</span>
+                  <strong>Block Scope</strong>
                   Variables definidas dentro de un bloque, por ejemplo variables
                   declaradas dentro un loop while o for. Se usa let y const para
                   declarar este tipo de variables.
                 </li>
                 <li>
-                  <span class="t-bold">Module Scope</span>
+                  <strong>Module Scope</strong>
                   Cuando se denota un script de tipo module con el atributo
                   type="module las variables son limitadas al archivo en el que
                   están declaradas.
@@ -296,13 +296,13 @@
               </ul>
               <pre class="code">
                 
-                <span class="code-comment">//Las variables no sales del archivo.</span>
+                <span class="code-comment">#Las variables no sales del archivo.</span>
                 &lt;<span class="code-sym">script</span> <span class="code-function">type</span>=<span class="code-text">"modules"</span>  <span class="code-function">src</span>=<span class="code-text">"./assets/index.js"</span>&gt;&lt;/<span class="code-sym">script</span>&gt;
                 
-                <span class="code-comment">//Importar un modulo</span>
+                <span class="code-comment">#Importar un modulo</span>
                 <span class="code-sym">import</span> nombreModulo <span class="code-sym">from</span> <span class="code-text">"./ruta/archivo.js"</span>
                 
-                <span class="code-comment">//Exportar un modulo</span>
+                <span class="code-comment">#Exportar un modulo</span>
                 <span class="code-sym">export default</span> nombreModuloExportar
               </pre>
             </article>
@@ -331,7 +331,7 @@
               </p>
               <pre class="code">
 
-              <span class="code-comment">// función IIFE</span>
+              <span class="code-comment">#Función IIFE</span>
               (<span class="code-var">function</span>(){
                 <span class="code-var">let</span> color = <span class="code-text">'green'</span>
                   
@@ -344,7 +344,7 @@
               </pre>
               <pre class="code">
 
-                <span class="code-comment">//Funciones que regresan funciones</span>
+                <span class="code-comment">#Funciones que regresan funciones</span>
                 <span class="code-var">function</span> <span class="code-function">makeColorPrinter</span>(color){
                   <span class="code-var">let</span> colorMessage = <span class="code-text">`The color is ${color}`</span>
                   
@@ -355,7 +355,7 @@
                   
                 <span class="code-var">let</span> greenColorPrinter = <span class="code-function">makeColorPrinter</span>(<span class="code-text">'green'</span>)
                   
-                console.<span class="code-var">log</span>(<span class="code-function">greenColorPrinter</span>()) <span class="code-comment">//The color is green </span>                 
+                console.<span class="code-var">log</span>(<span class="code-function">greenColorPrinter</span>()) <span class="code-comment">#The color is green </span>                 
               </pre>
               <pre class="code">
 
@@ -394,43 +394,41 @@
               <ul>
                 <li>
                   Cuando llamamos a this en el
-                  <span class="t-bold">Global Scope o Function Scope</span>, se
+                  <strong>Global Scope o Function Scope</strong>, se
                   hace referencia al objeto window. A excepción de cuando
-                  estamos en <span class="t-bold">strict mode</span> que nos
+                  estamos en <strong>strict mode</strong> que nos
                   regresará undefined.
                 </li>
                 <li>
                   Cuando llamamos a this desde
-                  <span class="t-bold">una función</span> que está contenida en
+                  <strong>una función</strong> que está contenida en
                   un objeto, this se hace referencia a ese objeto.
                 </li>
                 <li>
                   Cuando llamamos a this desde una
-                  <span class="t-bold">"clase"</span>, se hace referencia a la
+                  <strong>"clase"</strong>, se hace referencia a la
                   instancia generada por el constructor.
                 </li>
               </ul>
               <pre class="code">
 
-                <span class="code-comment">// **Ejemplo uso de strict mode</span>
-                <span class="code-comment">// ** sin usar strict mode</span>
-
-                console.<span class="code-var">log</span>(<span class="code-text">"This"</span> + this) <span class="code-comment">//[object window]</span>
+                <span class="code-comment">#Sin usar strict mode</span>
+                console.<span class="code-var">log</span>(<span class="code-text">"This"</span> + this) <span class="code-comment">#[object window]</span>
 
                 <span class="code-var">function</span> <span class="code-function">whoIsThis</span>() {
                   <span class="code-sym">return</span> this;
                 }
                   
-                console.<span class="code-var">log</span>(<span class="code-text">`whoIsThis() =  `</span>  + <span class="code-function">whoIsThis</span>()); <span class="code-comment">// [object Window]</span>
+                console.<span class="code-var">log</span>(<span class="code-text">`whoIsThis() =  `</span>  + <span class="code-function">whoIsThis</span>()); <span class="code-comment">#[object Window]</span>
                 
-                <span class="code-comment">// ** usando strict mode</span>
+                <span class="code-comment">#Usando strict mode</span>
 
                 <span class="code-var">function</span> <span class="code-function">whoIsThis</span>() {
                   <span class="code-text">"use strict"</span> ;
                   <span class="code-sym">return</span> this;
                 }
                 
-                console.<span class="code-var">log</span>(<span class="code-text">`whoIsThis() =  `</span>  + <span class="code-function">whoIsThis</span>()); <span class="code-comment">// undefined</span>
+                console.<span class="code-var">log</span>(<span class="code-text">`whoIsThis() =  `</span>  + <span class="code-function">whoIsThis</span>()); <span class="code-comment">#Undefined</span>
               </pre>
               <p>This en el contexto de un objeto:</p>
               <pre class="code">
@@ -442,12 +440,12 @@
                   }
                 };
                   
-                person.<span class="code-function">saludar</span>(); <span class="code-comment">//Hola soy Carlos</span>
+                person.<span class="code-function">saludar</span>(); <span class="code-comment">#Hola soy Carlos</span>
 
-                <span class="code-comment">//Ahora si se asigna la función saludar a una variable</span>
+                <span class="code-comment">#Ahora si se asigna la función saludar a una variable</span>
                 <span class="code-var">const</span> <span class="code-function">action</span> = person.<span class="code-function">saludar</span>;
-                <span class="code-function">action</span>(); <span class="code-comment">//Hola soy</span>
-                <span class="code-comment">//this será undefined ya que action no representa ningún objeto es una función normal.</span>
+                <span class="code-function">action</span>(); <span class="code-comment">#Hola soy</span>
+                <span class="code-comment">#this será undefined ya que action no representa ningún objeto es una función normal.</span>
               </pre>
               <div class="note">
                 <p>

@@ -997,10 +997,10 @@
               </p>
               <pre class="code">
 
-                <span class="code-comment">//crear array de ids</span>
+                <span class="code-comment">#crear array de ids</span>
                 <span class="code-var">var</span> ids = [1, 2, 3, 4, 5, 6, 7]
 
-                <span class="code-comment">//crear un array de promesas, con base al array IDS llamar al metodo obtener personajes</span>
+                <span class="code-comment">#crear un array de promesas, con base al array IDS llamar al metodo obtener personajes</span>
                 <span class="code-var">var</span> promesas = ids.<span class="code-var">map</span>(id <span class="code-sym">=></span> <span class="code-function">obtenerPersonaje</span>(id))
 
                 <span class="code-var">Promise</span> 
@@ -1028,12 +1028,12 @@
                 forma síncrona.
               </p>
               <p>
-                <span class="t-bold">Async-await</span> es la manera más simple
+                <strong>Async-await</strong> es la manera más simple
                 y clara de realizar tareas asíncronas.
-                <span class="t-bold">Await</span> detiene la ejecución del
+                <strong>Await</strong> detiene la ejecución del
                 programa hasta que todas las promesas sean resueltas. Para poder
                 utilizar esta forma, hay que colocar
-                <span class="t-bold">async</span> antes de la definición de la
+                <strong>async</strong> antes de la definición de la
                 función asíncrona.
               </p>
               <div class="note">
@@ -1045,43 +1045,43 @@
                 </p>
               </div>
               <p>
-                <span class="t-bold">API</span> es un servicio externo, en el
+                <strong>API</strong> es un servicio externo, en el
                 cual accedemos y nos devuelve unos datos (json). Con esos datos
                 podemos hacer lo que queramos,
-                <span class="t-bold">CRUD</span> Crear, Leer, Actualizar y
+                <strong>CRUD</strong> Crear, Leer, Actualizar y
                 Borrar. Para manejar funciones asíncronas, como pedir datos a
                 una API,
-                <span class="t-bold"
-                  >no sabemos cuándo tardar en darnos respuestas</span
+                <strong
+                  >no sabemos cuándo tardar en darnos respuestas</strong
                 >, para eso manejamos
-                <span class="t-bold">async await</span> para manejar procesos
+                <strong>async await</strong> para manejar procesos
                 asíncronos y hacerlos más lineales, lo que hace es que va a
                 detener el programa hasta que se resuelvan las peticiones.
               </p>
               <pre class="code">
                 
-                <span class="code-comment">//Usando async await se guarda la promesa que retorna fecth dentro de una constante</span>
+                <span class="code-comment">#Usando async await se guarda la promesa que retorna fecth dentro de una constante</span>
                 (<span class="code-sym">async</span> <span class="code-var">function</span> <span class="code-function">load</span>(){
                   <span class="code-var">const</span> response = <span class="code-sym">await</span> <span class="code-function">fetch</span>(<span class="code-text">'https://yts.lt/api/v2/list_movies.json?genre=horror'</span>)
                   console.<span class="code-var">log</span>(response)
                   console.<span class="code-var">log</span>(<span class="code-text">'Esto se ejecutara después del llamado a la API'</span>)
                 })()
 
-                <span class="code-comment">//Esto seria el resultado</span>
-                <span class="code-comment">//1. respuesta de la API</span>
-                <span class="code-comment">//1. Esto se ejecutara después del llamada a la API</span>
+                <span class="code-comment">#Esto seria el resultado</span>
+                <span class="code-comment">#1. respuesta de la API</span>
+                <span class="code-comment">#2. Esto se ejecutara después del llamada a la API</span>
               </pre>
               <p>
-                Como se observa el proceso de vuelve un poco más síncrono
+                Como se observa el proceso devuelve un poco más síncrono
                 (líneal). El resultado o la data de una API, lo obtenemos a
-                través del método <span class="t-bold">json</span>().
+                través del método <strong>json</strong>().
               </p>
               <pre class="code">
 
                 <span class="code-var">const</span> response = <span class="code-sym">await</span> <span class="code-function">fetch</span>(<span class="code-text">'https://yts.lt/api/v2/list_movies.json?genre=horror'</span>)
                 <span class="code-var">const</span> data = <span class="code-sym">await</span> response.<span class="code-var">json</span>()
 
-                <span class="code-comment">//Retornamos la información</span>
+                <span class="code-comment">#Retornamos la información</span>
                 <span class="code-sym">return</span> data
               </pre>
               <p>Más ejemplos</p>
@@ -1135,27 +1135,28 @@
                   <span class="code-sym">this</span>.<span class="code-function">handleClick</span> = <span class="code-sym">this</span>.<span class="code-function">handleClick</span>.<span class="code-var">bind</span>(this)
                 }
               </pre>
+              <a class="link link-refe" href="./javascript-avanzado.html#cab">Más información</a>
             </article>
             <article class="course-class__section" id="api">
               <h2 class="course-class__section--title">API</h2>
               <p>
                 Una característica muy solicitada en cualquier sitio dinámico es
                 solicitar datos a un servidor, denominado API. Para esto
-                normalmente se utiliza <span class="t-bold">Ajax</span>. <br />
+                normalmente se utiliza <strong>Ajax</strong>. <br />
                 Ajax recibe dos parámetros los cuales son la url de la API y un
                 objeto donde pondrás la configuración que se usara para realizar
                 la petición. En la configuración se añaden dos funciones para
                 manejar cuando la petición se realizó correctamente y cuando
                 falla. <br />
                 JavaScript internamente cuenta con una función llamada
-                <span class="t-bold">fetch</span> que también realiza peticiones
+                <strong>fetch</strong> que también realiza peticiones
                 a una API. Al igual que Ajax necesita dos parámetros, una url y
                 una configuración, pero si solo le mandas la url fetch usará una
                 configuración por defecto donde el
-                <span class="t-bold">método HTTP será GET</span>. <br />
+                <strong>método HTTP será GET</strong>. <br />
                 fetch te regresa una promesa, esa promesa al resolverse te da
                 los datos de respuesta y tiene un método llamado
-                <span class="t-bold">json</span> que te regresa otra promesa con
+                <strong>json</strong> que te regresa otra promesa con
                 los datos en formato JSON. <br />
                 Las promesas resuelven el problema del Callback Hell haciendo
                 que una promesa pueda devolver otra promesa y en lugar de ser

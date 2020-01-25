@@ -196,14 +196,14 @@
               </h2>
               <p>
                 Desde ECMAScript 6 contamos con una nueva característica llamada
-                <span class="t-bold">template literals</span> que se representan
-                con las comillas invertidas (``), ejemplo:
+                <strong>template literals</strong> que se representan con las
+                comillas invertidas (``), ejemplo:
               </p>
               <pre class="code">
 
-                <span class="code-comment">//La interpolación de texto ayuda a
-                  colocar código html en js de
-                  manera más fácil que jquery solo es colocar el html entre(``).</span>
+                <span class="code-comment">#La interpolación de texto ayuda a
+                #colocar código html en js de
+                #manera más fácil que jquery solo es colocar el html entre(``).</span>
                 <span class="code-text">
                   `
                     &lt;div class="container" &gt;
@@ -213,7 +213,7 @@
               </pre>
               <pre class="code">
 
-                <span class="code-comment">//Creación del template de movies, del curso Curso de jQuery a JavaScript de Platzi</span>
+                <span class="code-comment">#Creación del template de movies, del curso Curso de jQuery a JavaScript de Platzi</span>
                 <span class="code-var">function</span> <span class="code-function">template</span>(movie){
                   <span class="code-sym">return</span>(
                     <span class="code-text">`
@@ -242,9 +242,8 @@
                 entonces debemos declarar la variable del container antes de
                 llamar a algún método de este. <br />
                 Para convertir nuestra plantilla de texto a un
-                <span class="t-bold">Document Object Model</span> necesitamos
-                crear dentro de memoria un documento HTML, esto es posible
-                gracias al método
+                <strong>Document Object Model</strong> necesitamos crear dentro
+                de memoria un documento HTML, esto es posible gracias al método
                 <span class="t-bold"
                   >document.implementation.createHTMLDocument</span
                 >. A este documento HTML le vamos a añadir al body, mediante
@@ -258,10 +257,10 @@
               <pre class="code">
 
                 <span class="code-var">function</span> <span class="code-function">createTemplate</span>(HTMLString){
-                  <span class="code-comment">// crea un elemento html</span>
+                  <span class="code-comment">#Crea un elemento html</span>
                   <span class="code-var">const</span> html = document.implementation.<span class="code-var">createHTMLDocument</span>()
 
-                  <span class="code-comment">//innerHTML agrega html a un elemento del DOM</span>
+                  <span class="code-comment">#InnerHTML agrega html a un elemento del DOM</span>
                   html.body.<span class="code-var">innerHTML</span> = HTMLString;
                   <span class="code-sym">return</span> html.body.children[0]
                 }
@@ -269,12 +268,12 @@
               <p>Utilización</p>
               <pre class="code">
 
-                <span class="code-comment">// guardar el template dentro de una constante</span>
+                <span class="code-comment">#Guardar el template dentro de una constante</span>
                 <span class="code-var">const</span>  HTMLString = <span class="code-function">videoActionTemplate</span>(movie);
                 
                 <span class="code-var">const</span>  movieElement = <span class="code-function">createTemplate</span>(HTMLString)
                 
-                <span class="code-comment">// agregar el template al contenedor usando append</span>
+                <span class="code-comment">#Agregar el template al contenedor usando append</span>
                 $container.<span class="code-var">append</span>(movieElement)
               </pre>
               <div class="note">
@@ -299,10 +298,10 @@
                 Existen muchos tipos de eventos, el más común es el evento de
                 click. <br />
                 Para que un elemento HTML pueda escuchar algún evento debemos
-                usar el método <span class="t-bold">addEventListener</span>.
-                Este método recibe dos parámetros, el nombre del evento que va a
-                escuchar y la función que se va a ejecutar al momento de que se
-                accione el evento.
+                usar el método <strong>addEventListener</strong>. Este método
+                recibe dos parámetros, el nombre del evento que va a escuchar y
+                la función que se va a ejecutar al momento de que se accione el
+                evento.
               </p>
               <p>
                 Para el evento de click, se puede simplificar usando el método
@@ -315,9 +314,9 @@
               <div class="note">
                 <p>
                   La página se recarga al momento de ejecutarse el evento
-                  <span class="t-bold">submit</span>, para evitar esto debemos
-                  quitarle la acción por defecto que viene en submit usando el
-                  método <span class="t-bold">event.preventDefault()</span>.
+                  <strong>submit</strong>, para evitar esto debemos quitarle la
+                  acción por defecto que viene en submit usando el método
+                  <strong>event.preventDefault()</strong>.
                 </p>
               </div>
             </article>
@@ -325,36 +324,32 @@
               <h2 class="course-class__section--title">Clases y estilos CSS</h2>
               <p>
                 Dentro de cada elemento tenemos un método llamado
-                <span class="t-bold">classList</span>, con este podemos ver las
-                clases que tiene nuestro elemento y además llamar a otros
-                métodos para añadir, borrar o hacer toggle a alguna clase. De
-                igual forma podemos acceder a todas las propiedades de CSS algún
-                elemento mediante <span class="t-bold">element.style</span>.
+                <strong>classList</strong>, con este podemos ver las clases que
+                tiene nuestro elemento y además llamar a otros métodos para
+                añadir, borrar o hacer toggle a alguna clase. De igual forma
+                podemos acceder a todas las propiedades de CSS algún elemento
+                mediante <strong>element.style</strong>.
               </p>
               <p>Algunos métodos que nos ofrece classList</p>
               <ul>
                 <li>
-                  <span class="t-bold">add</span>: Añade las clases indicadas.
-                  Si estas clases existieran en el atributo del elemento serán
-                  ignoradas.
+                  <strong>add</strong>: Añade las clases indicadas. Si estas
+                  clases existieran en el atributo del elemento serán ignoradas.
+                </li>
+                <li><strong>remove</strong>: Elimina las clases indicadas.</li>
+                <li>
+                  <strong>toggle</strong>: Cuando sólo hay un argumento
+                  presente: Alterna el valor de la clase; ej., si la clase
+                  existe la elimina y devuelve false, si no, la añade y devuelve
+                  true.
                 </li>
                 <li>
-                  <span class="t-bold">remove</span>: Elimina las clases
-                  indicadas.
+                  <strong>contains</strong>: Comprueba si la clase indicada
+                  existe en el atributo de clase del elemento.
                 </li>
                 <li>
-                  <span class="t-bold">toggle</span>: Cuando sólo hay un
-                  argumento presente: Alterna el valor de la clase; ej., si la
-                  clase existe la elimina y devuelve false, si no, la añade y
-                  devuelve true.
-                </li>
-                <li>
-                  <span class="t-bold">contains</span>: Comprueba si la clase
-                  indicada existe en el atributo de clase del elemento.
-                </li>
-                <li>
-                  <span class="t-bold">replace</span>: Reemplaza una clase
-                  existente por una nueva.
+                  <strong>replace</strong>: Reemplaza una clase existente por
+                  una nueva.
                 </li>
               </ul>
               <a
@@ -396,10 +391,10 @@
               </p>
               <pre class="code">
 
-                <span class="code-comment">//Crear elemento html sin template</span>
-                <span class="code-var">const</span> $loader = document.<span class="code-var">createElement</span>( <span class="code-text">'img'</span> ) <span class="code-comment">//se crea una elemento img</span>
+                <span class="code-comment">#Crear elemento html sin template</span>
+                <span class="code-var">const</span> $loader = document.<span class="code-var">createElement</span>( <span class="code-text">'img'</span> ) <span class="code-comment">Se crea una elemento img</span>
               
-                <xspan class="code-comment">//Se añade atributos a la etiqueta creada</xspan>
+                <xspan class="code-comment">#Se añade atributos a la etiqueta creada</xspan>
                 <span class="code-var">addAttr</span>($loader, {
                   <span class="code-function">src</span>: <span class="code-text">'src/images/loader.gif'</span>,
                   <span class="code-function">height</span>: 50,
@@ -424,25 +419,24 @@
                 <span class="code-var">const</span> dataForm = <span class="code-sym">new</span> FormData($form)
               </pre>
               <p>
-                Tiene <span class="t-bold">getters</span> y
-                <span class="t-bold">setters</span>, para obtener lo que se
-                escribió en la caja de texto se usa el get, y el atributo
-                <span class="t-bold">name del input en el formulario html</span
-                >.
+                Tiene <strong>getters</strong> y <strong>setters</strong>, para
+                obtener lo que se escribió en la caja de texto se usa el get, y
+                el atributo
+                <strong>name del input en el formulario html</strong>.
               </p>
               <pre class="code">
 
                 dataForm.<span class="code-var">set</span>(<span class="code-text">'name'</span>, <span class="code-text">'example name'</span>)
                 
                 dataForm.<span class="code-var">get</span>(<span class="code-text">'name'</span>)
-                <span class="code-comment">//Resultado : 'example name'</span>
+                <span class="code-comment">#Resultado : 'example name'</span>
               </pre>
               <div class="note">
                 <p>
                   Para resumir, dataSet nos permite controlar los
-                  <span class="t-bold">inputs</span> de un fomulario y a través
-                  de sus metodos getters y setters podremos manipular la
-                  información que se ingrese en ellos.
+                  <strong>inputs</strong> de un fomulario y a través de sus
+                  metodos getters y setters podremos manipular la información
+                  que se ingrese en ellos.
                 </p>
               </div>
             </article>
@@ -463,7 +457,7 @@
               </p>
               <pre class="code">
 
-                <span class="code-comment">//En vez de usar</span>
+                <span class="code-comment">#En vez de usar</span>
                 <span class="code-var">const</span> peliculaBuscada = data.movies[0]
 
                 <span class="code-commnet">Se puede usar</span>
@@ -482,9 +476,9 @@
                   
                 &lt;<span class="code-sym">div</span> <span class="code-function">id</span>= <span class="code-text">"element"</span> <span class="code-function">data-id</span> = <span class="code-text">"10"</span> <span class="code-function">data-category</span> = <span class="code-text">"action"</span>&gt;&lt;/<span class="code-sym">div</span>&gt;
                 
-                <span class="code-comment">//guarda el valor de data-id</span>
+                <span class="code-comment">#Guarda el valor de data-id</span>
                 <span class="code-var">const</span> id = $element.<span class="code-var">dataset</span>.id;
-                <span class="code-comment">//guarda el valor de data-category</span>
+                <span class="code-comment">#Guarda el valor de data-category</span>
                 <span class="code-var">const</span> category = $element.<span class="code-var">dataset</span>.category;
               </pre>
             </article>
