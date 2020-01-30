@@ -124,6 +124,23 @@ data = [
           "https://www.differencebetween.com/wp-content/uploads/2017/12/Difference-Between-SQL-and-MySQL-fig-1-724x1024.png"
       }
     ]
+  },
+  {
+    id: 6,
+    name: "PHP",
+    description:
+      "Es un lenguaje de código abierto muy popular especialmente adecuado para el desarrollo web y que puede ser incrustado en HTML.",
+    courses: [
+      {
+        courseID: 1,
+        courseName: "Básico",
+        courseDescription:
+          "En este curso se veran los fundamentos de PHP mientras desarrollas un proyecto que servirá de sitio web personal.",
+        courseURL: "./courses/php/php-basico.html",
+        courseImage:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png"
+      }
+    ]
   }
 ];
 
