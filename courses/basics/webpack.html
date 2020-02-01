@@ -110,6 +110,11 @@
                       >Assets con Loaders</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#plugins"
+                      >Plugins</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -460,7 +465,7 @@
                   </li>
                   <li>
                     <strong>css-loader</strong>: Permite colocar un archivo .css
-                    en un .js
+                    en un .js, hace que el programa no se rompa.
                   </li>
                   <li>
                     <strong>style-loader</strong>: Inyecta CSS al código HTML.
@@ -507,6 +512,137 @@
                 <pre class="code">
 
                   <span class="code-sym">import</span> <span class="code-text">"../css/index.css"</span>
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="plugins">
+              <h2 class="course-class__section--title">
+                Introducción al uso de plugins
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  <strong>Los Plugins</strong> sirven para extender las
+                  capacidades de webpack y dar más poder a los loaders.
+                  <span class="t-bold"
+                    >Los loaders interpretan los tipos de archivos que tenemos y
+                    ya!!!</span
+                  >. Pero para poder manipular esos archivos, para hacer lo que
+                  queremos necesitamos de plugins.
+                </p>
+                <h3>Plugins CSS</h3>
+                <p>
+                  Para manipular archivos .css usaremos dos plugins:
+                </p>
+                <ul>
+                  <li>
+                    <a
+                      class="link link-refe"
+                      target="_blank"
+                      href="https://github.com/webpack-contrib/mini-css-extract-plugin"
+                      >mini-css-extract-plugin</a
+                    >: Este complemento extrae CSS en archivos separados. Crea
+                    un archivo CSS por archivo JS que contiene CSS. Admite carga
+                    bajo demanda de CSS y SourceMaps.
+                  </li>
+                  <li>
+                    <a
+                      class="link link-refe"
+                      target="_blank"
+                      href="https://github.com/jantimon/html-webpack-plugin"
+                      >html-webpack-plugin</a
+                    >: Complemento que simplifica la creación de archivos HTML
+                    para servir sus paquetes.
+                  </li>
+                </ul>
+                <pre class="code">
+
+                  <span class="code-comment">#Instalación</span>
+                  npm i -D -E mini-css-extract-plugin html-webpack-plugin
+                </pre>
+                <p>En el archivo <strong>webpack.config.js</strong>:</p>
+                <pre class="code">
+
+                  <span class="code-comment">#Los plugins se importan al comienzo del documento</span>
+                  <span class="code-var">const</span> MiniCSSExtractPlugin = <span class="code-var">require</span>(<span class="code-text">'mini-css-extract-plugin'</span>);
+                  <span class="code-var">const</span> HTMLWebpackPlugin = <span class="code-var">require</span>(<span class="code-text">'html-webpack-plugin'</span>);
+                </pre>
+                <p>
+                  Lo que acabamos de importar son clases y para usarlos hay que
+                  <strong>instanciarlos</strong>, los plugins se definen en una
+                  nueva <strong>key</strong> del archivo llamada
+                  <strong>plugins</strong> que recibira un arreglo.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Configuración MiniCSSExtractPlugin</strong>:
+                    <ul>
+                      <li>
+                        <strong>filename:</strong>: Donde se exportara el
+                        archivo finalizado de CSS.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>HTMLWebpackPlugin</strong>: Genera un nuevo HTML.
+                    <ul>
+                      <li>
+                        <strong>title</strong>: Titulo (etiqueta title) del nuevo archivo HTML.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>
+                  Cuando usamos estos plugins ya no es necesario el loader de
+                  <strong>style-loader</strong>, ya que no queremos que inyecte
+                  todo el CSS dentro del HTML, si no majarlo como un archivo
+                  aparte.
+                </p>
+                <pre class="code">
+
+                  plugins: [
+                    <span class="code-sym">new </span> HTMLWebpackPlugin({
+                      title: <span class="code-text">'Plugins'</span>
+                    }),
+                    <span class="code-sym">new</span> MiniCSSExtractPlugin({
+                      filename: <span class="code-text">'css/[name].css'</span>    
+                    })
+                  ]
+                </pre>
+                <p>
+                  En la configuración de los loaders en
+                  <strong>use</strong> debemos importar los plugins.
+                  <strong>MiniCSSExtractPlugin.loader</strong> devolvera una
+                  cadena de texto.
+                </p>
+                <pre class="code">
+
+                  use: [
+                    {
+                      loader: MiniCSSExtractPlugin.loader
+                    },
+                    <span class="code-text">css-loader</span>
+                  ]
+                </pre>
+                <p><strong>package.json</strong>:</p>
+                <pre class="code">
+
+                  <span class="code-var">"build:plugins"</span> : <span class="code-text">"webpack --config ./plugins/webpack.config.js"</span>
+                </pre>
+                <p>
+                  Si tenemos varios archivos HTML:
+                </p>
+                <pre class="code">
+
+                  <span class="code-sym">new</span> HtmlWebpackPlugin({
+                    template: <span class="code-text">"./src/templates/home.html"</span>,
+                    filename: <span class="code-text">"index.html"</span>,
+                    chunks: [<span class="code-text">'home'</span>] 
+                  }),
+                  <span class="code-sym">new</span> HtmlWebpackPlugin({
+                    template: <span class="code-text">"./src/templates/contact.html"</span>,
+                    filename: <span class="code-text">"aboutus.html"</span>,
+                    chunks: [<span class="code-text">'contact'</span>] 
+                  })
                 </pre>
               </div>
             </article>
