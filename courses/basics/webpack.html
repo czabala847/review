@@ -115,6 +115,18 @@
                       >Plugins</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#dev-server"
+                      >Servidor de desarrollo</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#hot-module-replacement"
+                      >Hot Module Replacement</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -586,7 +598,8 @@
                     <strong>HTMLWebpackPlugin</strong>: Genera un nuevo HTML.
                     <ul>
                       <li>
-                        <strong>title</strong>: Titulo (etiqueta title) del nuevo archivo HTML.
+                        <strong>title</strong>: Titulo (etiqueta title) del
+                        nuevo archivo HTML.
                       </li>
                     </ul>
                   </li>
@@ -643,6 +656,113 @@
                     filename: <span class="code-text">"aboutus.html"</span>,
                     chunks: [<span class="code-text">'contact'</span>] 
                   })
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="dev-server">
+              <h2 class="course-class__section--title">
+                Servidor de desarrollo
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Webpack nos permite avanzar rápido en nuestra experiencia de
+                  desarrollo, como por ejemplo ver plasmado nuestros cambios en
+                  el navegador (que se compile automáticamente).
+                </p>
+                <p>
+                  En el package json el flag <strong>--watch</strong> o
+                  <strong>-w</strong> nos permite autocompliar webpack cada vez
+                  que hagamos cambios a nuestro proyecto. También podemos añadir
+                  ese flag desde la consola:
+                </p>
+                <pre class="code">
+
+                  npm run build:dev -- -w
+                </pre>
+                <p>
+                  Con lo anterior cada cambio vuelve a compilar los archivos,
+                  pero el "problema" es que todavía debemos recargar la página
+                  del navegador manualmente para ver los cambios que hacemos a
+                  nuestro proyecto. Si queremos evitar eso podemos instalar el
+                  módulo
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://github.com/webpack/webpack-dev-server"
+                    >webpack dev server</a
+                  >.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">#Instalación</span>
+                  npm i -D -E webpack-dev-server
+
+                  <span class="code-comment">#En <strong>package.json</strong></span>
+                  <span class="code-var">"build:dev"</span> : <span class="code-text">"webpack-dev-server" --config ./webpack-dev-server/webpack.config.js"</span>
+                </pre>
+                <h3>Configuraciones adicionales a Dev Server</h3>
+                <ul>
+                  <li>
+                    <strong>hot:</strong> Activa el
+                    <strong>HotModuleReplacementPlugin</strong>
+                    que muestra los cambios sin actualizar la página.
+                  </li>
+                  <li>
+                    <strong>port:</strong> Al crear un servidor de prueba con
+                    webpack-dev-server éste tomará por defecto el puerto 8080,
+                    acá podrás cambiar el puerto.
+                  </li>
+                  <li>
+                    <strong>open</strong>: Abrirá el navegador al iniciar el
+                    servidor.
+                  </li>
+                </ul>
+                <p>
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://webpack.js.org/configuration/dev-server/"
+                    >más configuraciones</a
+                  >.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">#Añadir key (objeto) a module.exports</span>
+                  devServer: {
+                    hot: <span class="code-sym">true</span>,
+                    open: <span class="code-sym">true</span>,
+                    port: 9090
+                  }
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="hot-module-replacement">
+              <h2 class="course-class__section--title">
+                Hot Module Replacement
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  <strong>Hot Module Replacement (HMR)</strong> es un plugin de
+                  Webpack que permite intercambiar, agregar o eliminar módulos
+                  en tiempo de ejecución, sin una recarga completa de la página
+                </p>
+                <p>
+                  Para activarlo lo tienes que importar desde webpack, agregarlo
+                  como plugin y en el <strong>devServer</strong> agregar la
+                  propiedad hot.
+                </p>
+                <pre class="code">
+
+                  <span class="code-var">const</span> webpack = <span class="code-var">require</span> (<span class="code-text">'webpack'</span>);
+                  module.<span class="code-var">exports</span> = {
+                    <span class="code-comment">//...</span>
+                    devServer: {
+                      hot: <span class="code-sym">true</span>
+                    }
+                    plugins: [
+                      <span class="code-sym">new</span> webpack.<span class="code-function">HotModuleReplacementPlugin</span>()
+                    ]
+                  };
                 </pre>
               </div>
             </article>
