@@ -143,8 +143,22 @@
                     >
                   </li>
                   <li>
-                    <a class="link course-class__menu--a" href="#preprocesadores"
+                    <a
+                      class="link course-class__menu--a"
+                      href="#preprocesadores"
                       >Estilos con preprocesadores</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#code-splitting"
+                      >Código duplicado</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#dynamic-link-library"
+                      >Dynamic Link Library</a
                     >
                   </li>
                 </ul>
@@ -969,15 +983,18 @@
               </div>
             </article>
             <article class="course-class__section" id="preprocesadores">
-              <h2 class="course-class__section--title">Estilos con preprocesadores</h2>
+              <h2 class="course-class__section--title">
+                Estilos con preprocesadores
+              </h2>
               <div class="course-class__section--content">
                 <p>
                   Es una práctica común usar preprocesadores de CSS como: Sass,
                   Less, Stylus y hasta PostCSS. Webpack permite integrar estos
                   preprocesadores en su configuración a través de loaders, sólo
-                  ten cuidado con las <strong>peerDependencies</strong> que son dependencias que
-                  el loader espera estén instaladas previamente, como el caso de
-                  <strong>stylus</strong> para <strong>stylus-loader</strong>.
+                  ten cuidado con las <strong>peerDependencies</strong> que son
+                  dependencias que el loader espera estén instaladas
+                  previamente, como el caso de <strong>stylus</strong> para
+                  <strong>stylus-loader</strong>.
                 </p>
                 <pre class="code">
 
@@ -988,7 +1005,9 @@
                   npm i stylus less node-sass -D -E
                 </pre>
                 <p>
-                  Dentro del <strong>webpack.config.js</strong> agregar las nuevas reglas en <strong>module</strong> > <strong>rules</strong>:
+                  Dentro del <strong>webpack.config.js</strong> agregar las
+                  nuevas reglas en <strong>module</strong> >
+                  <strong>rules</strong>:
                 </p>
                 <pre class="code">
 
@@ -1017,6 +1036,105 @@
                         <span class="code-text">'style-loader'</span>
                       ]
                     }
+                  ]
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="code-splitting">
+              <h2 class="course-class__section--title">
+                Evitar código duplicado
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Es útil dividir nuestro código en diversos archivos y a veces
+                  enteros proyectos, pero no queremos cargar nuestra aplicación
+                  de más multiplicando el peso de alguna dependencia al
+                  utilizarla en diferentes partes de la aplicación, para eso
+                  utilizamos el módulo de optimización con splitChunks en
+                  webpack.
+                  <a
+                    target="_blank"
+                    class="link link-refe"
+                    href="https://webpack.js.org/plugins/split-chunks-plugin/"
+                    >Documentación Split Chunks</a
+                  >.
+                </p>
+                <pre class="code">
+
+                  module.exports = {
+                    entry:{
+                      home: path.<span class="code-var">resolve</span>(__dirname, <span class="code-text">'./src/js/index.js'</span>),
+                      contact: path.<span class="code-var">resolve</span>(__dirname, <span class="code-text">'./src/js/contact.js'</span>),
+                    },
+                    optimization:{
+                      splitChunks:{ <span class="code-comment">#Permite dividir el peso en diferentes archivos para evitar duplicación</span>
+                        chunks: <span class="code-text">'all'</span>,
+                        minSize:0,
+                        name: <span class="code-text">'commons'</span>,
+                      }
+                    },
+                  }
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="dynamic-link-library">
+              <h2 class="course-class__section--title">
+                Añadiendo un Dynamic Link Library
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Mientras más librerías agregamos más lento se empiezan a
+                  volver nuestros builds, arruinando así la
+                  <strong>Developer Experience</strong>. Por suerte podemos
+                  crear una (o varias) Dynamic Link Library para acortar estos
+                  tiempos.
+                </p>
+                <p>
+                  Una <strong>Dynamic Link Library (DLL)</strong> es un conjunto
+                  de librerías comunes que no cambian frecuentemente por lo que
+                  se hace un build por adelantado de las mismas para no
+                  re-empaquetar cada vez que hacemos build de nuestra
+                  aplicación.
+                </p>
+                <p>
+                  Beneficiando tanto la
+                  <strong>Developer Experience</strong> como la
+                  <strong>User Experience</strong> ya que el caché del navegador
+                  va a mantener una copia que solo va a cambiar cuando nosotros
+                  agreguemos o quitemos alguna dependencia, ahorrando así
+                  valiosos requests al servidor.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment"><strong>#webpack.dll.config.js</strong></span>
+                  <span class="code-comment">#Para exportar librerias comunes (react, react-dom)</span>
+                  <span class="code-comment">#No necesita ningún loader</span>
+                  module.exports = {
+                    entry: {
+                      modules: [
+                        <span class="code-text">'react'</span>,
+                        <span class="code-text">'react-dom'</span>
+                      ]
+                    }
+                    mode: <span class="code-text">'production'</span>
+                    output {
+                      path : ...,
+                      filename: <span class="code-text">'js/[name].js'</span>,
+                      library: <span class="code-text">'[name]'</span>
+                    },
+                    plugins: [
+                      <span class="code-sym">new</span> webpack.DLLPlugin({
+                        name: <span class="code-text">'[name]'</span>,
+                        path: path.<span class="code-var">join</span>(__dirname, <span class="code-text">'[name]-manifest.json'</span>)
+                      })
+                    ]
+                  }
+
+                  <span class="code-comment"><strong>#webpack.config.js</strong></span>
+                  plugins: [
+                    <span class="code-sym">new</span> webpack.DLLReferencePlugin({
+                      manifest: <span class="code-var">require</span>(<span class="code-text">'./modules-manifest.json'</span>)
+                    })
                   ]
                 </pre>
               </div>
