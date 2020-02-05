@@ -127,6 +127,40 @@
                       >Hot Module Replacement</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#babel"
+                      >Babel</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#jsx"
+                      >JSX React</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#media"
+                      >Soporte imágenes, fuentes y videos</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#preprocesadores"
+                      >Estilos con preprocesadores</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#code-splitting"
+                      >Código duplicado</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#dynamic-link-library"
+                      >Dynamic Link Library</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -763,6 +797,345 @@
                       <span class="code-sym">new</span> webpack.<span class="code-function">HotModuleReplacementPlugin</span>()
                     ]
                   };
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="babel">
+              <h2 class="course-class__section--title">
+                Soporte de Javascript moderno
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Javascript es un lenguaje moderno en evolución, siempre
+                  agregando nuevas funciones. El problema es que al ser
+                  interpretado en el navegador, no tenemos control sobre que
+                  versión de Javascript soportan y por lo tanto que funciones.
+                </p>
+                <p>
+                  Para poder usar Javascript moderno y tener una buena
+                  <strong>Developer Experience</strong> sin afectar la
+                  <strong>User Experience</strong>, existe
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://github.com/babel/babel"
+                    >Babel</a
+                  >. Babel transpila nuestro código moderno de Javascript a una
+                  una versión que todos los navegadores pueden entender.
+                </p>
+                <p>
+                  Babel será un nuevo <strong>loader</strong> para intersertar
+                  los archivos de Javascript.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">#Se crea la regla</span>
+                  module: {
+                    rules: [
+                      test: /\.js$/,
+                      use: <span class="code-text">'babel-loader'</span>,
+                      exclude: /node_modules/
+                    ]
+                  }
+                </pre>
+                <p>
+                  <strong>exclude</strong>: Que directorios o tipos de archivos
+                  que, aunque sean Javascript no queremos que se le aplique
+                  <strong>babel-loader</strong>.
+                </p>
+                <p>
+                  Babel requerirá de configuración, ésta puede ser declarada
+                  dentro del webpack, pero se recomienda hacerlo dentro de un
+                  archivo llamado
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://babeljs.io/docs/en/config-files"
+                    >.babelrc</a
+                  >
+                  que leerá babel a la hora de ser configurado por webpack.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">#archivo .babelrc</span>
+                  
+                  <span class="code-comment">Configuración presets y plugins de babel</span>
+                  {
+                    <span class="code-var">"presets"</span>: [
+                    <span class="code-comment">#preset-env soportar ECMAScript 6</span>
+                      "@babel/preset-env"
+                    ]
+                  }
+                </pre>
+                <p>
+                  Instalar las dependencia:
+                </p>
+                <pre class="code">
+
+                  npm i -D -E @babel/core babel-loader @babel/preset-env
+
+                  <span class="code-comment">#En package.json</span>
+                  <span class="code-var">"build:babel"</span> : <span class="code-text">"webpack-dev-server --config ./webpack-babel/webpack.config.js"</span>
+                </pre>
+                <h3>Funciones asíncronas</h3>
+                <pre class="code">
+
+                  <span class="code-comment">#Instalar dependencias para que babel interprete async await</span>
+                  npm i -D -E @babel/plugin-transform-runtime
+                  
+                  npm i -E @babel/runtime
+
+                  <span class="code-comment">#En el .babelrc</span>
+                  <span class="code-var">"plugins"</span>:[
+                    "@babel/plugin-transform-runtime"
+                  ]
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="jsx">
+              <h2 class="course-class__section--title">
+                Soporte de JSX (React)
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  <strong>JSX</strong> es un lenguaje de templates para React
+                  que permite definir componentes con un código muy similar al
+                  HTML.
+                </p>
+                <p>
+                  No existe navegador que entienda JSX porque no es un estándar,
+                  es algo especifico de React. Afortunadamente Babel puede
+                  transpilar el código JSX de nuestros archivos JS a código que
+                  el navegador.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">#En .babelrc</span>
+                  <span class="code-var">"presets"</span>: [
+                    "@babel/preset-react"
+                  ]
+
+                  <span class="code-comment">#Instalar Preset de React babel</span>
+                  npm i -D -E @babel/preset-react
+
+                  <span class="code-comment">#Instalar React</span>
+                  npm i -E react react-dom
+
+                  <span class="code-comment">#webpack.config.js</span>
+                  <span class="code-comment">#El Plugin HTMLWebpackPlugin hacer que tome nuestro index.html como template</span>
+                  <span class="code-sym">new</span> HTMLWebpackPlugin({
+                    title : <span class="code-text">'React Webpack'</span>,
+                    template : path.<span class="code-var">resolve</span>(__dirname, <span class="code-text">'index.html'</span>)
+                  })
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="media">
+              <h2 class="course-class__section--title">
+                Soporte imágenes, fuentes y videos
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para soportar la importación de archivos binarios en nuestro
+                  código Javascript cómo lo son: fuentes, imágenes y videos,
+                  podemos usar <strong>url-loader</strong>.
+                </p>
+                <p>
+                  url-loader transforma archivos a un cadena de texto base64
+                  para que carguen dentro de nuestros archivos Javascript y así
+                  ahorrarnos un request al servidor por cada archivo
+                  transformado.
+                </p>
+                <p>
+                  Debemos tomar en cuenta que sólo nos conviene convertir
+                  archivos pequeños, ya que archivos muy grandes podrían hacer
+                  nuestro archivo bundle muy pesado. Es por esto que la opción
+                  <strong>limit</strong> del url-loader sirve para asignar el
+                  peso máximo que un archivo puede tener para ser transformado
+                  en base64.
+                </p>
+                <p>
+                  No olvides instalar <strong>file-loader</strong> junto con
+                  <strong>url-loader</strong> ya que cuando se sobrepasa el
+                  limite establecido en la opción limit y el archivo no pueda
+                  ser transformado a base64, <strong>url-loader</strong> hará
+                  uso del <strong>file-loader</strong> para insertar un nombre y
+                  ruta de archivo en el lugar correspondiente.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">#Instalar loader</span>
+                  npm i -D -E url-loader file-loader
+
+                  <span class="code-comment">#webpack.config.js</span>
+                  rules: [
+                    {
+                      test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/
+                      use: {
+                        loader: <span class="code-text">'url-loader'</span>,
+                        options: {
+                          limit: 90000 <span class="code-text">convertir en base64</span>
+                        }
+                      }
+                    }
+                  ]
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="preprocesadores">
+              <h2 class="course-class__section--title">
+                Estilos con preprocesadores
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Es una práctica común usar preprocesadores de CSS como: Sass,
+                  Less, Stylus y hasta PostCSS. Webpack permite integrar estos
+                  preprocesadores en su configuración a través de loaders, sólo
+                  ten cuidado con las <strong>peerDependencies</strong> que son
+                  dependencias que el loader espera estén instaladas
+                  previamente, como el caso de <strong>stylus</strong> para
+                  <strong>stylus-loader</strong>.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">#Instalación loader</span>
+                  npm i sass-loader stylus-loader less-loader postcss-loader -D -E
+
+                  <span class="code-comment">#sass, stylus y less deben ser instalados antes</span>
+                  npm i stylus less node-sass -D -E
+                </pre>
+                <p>
+                  Dentro del <strong>webpack.config.js</strong> agregar las
+                  nuevas reglas en <strong>module</strong> >
+                  <strong>rules</strong>:
+                </p>
+                <pre class="code">
+
+                  [
+                    {
+                      test: /\.less$/,
+                      use: [
+                        <span class="code-text">'style-loader'</span>,
+                        <span class="code-text">'ccs-loader'</span>,
+                        <span class="code-text">'less-loader'</span>
+                      ]
+                    },
+                    {
+                      test: /\.sass$/,
+                      use: [
+                        <span class="code-text">'style-loader'</span>,
+                        <span class="code-text">'ccs-loader'</span>,
+                        <span class="code-text">'sass-loader'</span>
+                      ]
+                    },
+                    {
+                      test: /\.styl$/,
+                      use: [
+                        <span class="code-text">'style-loader'</span>,
+                        <span class="code-text">'ccs-loader'</span>,
+                        <span class="code-text">'style-loader'</span>
+                      ]
+                    }
+                  ]
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="code-splitting">
+              <h2 class="course-class__section--title">
+                Evitar código duplicado
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Es útil dividir nuestro código en diversos archivos y a veces
+                  enteros proyectos, pero no queremos cargar nuestra aplicación
+                  de más multiplicando el peso de alguna dependencia al
+                  utilizarla en diferentes partes de la aplicación, para eso
+                  utilizamos el módulo de optimización con splitChunks en
+                  webpack.
+                  <a
+                    target="_blank"
+                    class="link link-refe"
+                    href="https://webpack.js.org/plugins/split-chunks-plugin/"
+                    >Documentación Split Chunks</a
+                  >.
+                </p>
+                <pre class="code">
+
+                  module.exports = {
+                    entry:{
+                      home: path.<span class="code-var">resolve</span>(__dirname, <span class="code-text">'./src/js/index.js'</span>),
+                      contact: path.<span class="code-var">resolve</span>(__dirname, <span class="code-text">'./src/js/contact.js'</span>),
+                    },
+                    optimization:{
+                      splitChunks:{ <span class="code-comment">#Permite dividir el peso en diferentes archivos para evitar duplicación</span>
+                        chunks: <span class="code-text">'all'</span>,
+                        minSize:0,
+                        name: <span class="code-text">'commons'</span>,
+                      }
+                    },
+                  }
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="dynamic-link-library">
+              <h2 class="course-class__section--title">
+                Añadiendo un Dynamic Link Library
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Mientras más librerías agregamos más lento se empiezan a
+                  volver nuestros builds, arruinando así la
+                  <strong>Developer Experience</strong>. Por suerte podemos
+                  crear una (o varias) Dynamic Link Library para acortar estos
+                  tiempos.
+                </p>
+                <p>
+                  Una <strong>Dynamic Link Library (DLL)</strong> es un conjunto
+                  de librerías comunes que no cambian frecuentemente por lo que
+                  se hace un build por adelantado de las mismas para no
+                  re-empaquetar cada vez que hacemos build de nuestra
+                  aplicación.
+                </p>
+                <p>
+                  Beneficiando tanto la
+                  <strong>Developer Experience</strong> como la
+                  <strong>User Experience</strong> ya que el caché del navegador
+                  va a mantener una copia que solo va a cambiar cuando nosotros
+                  agreguemos o quitemos alguna dependencia, ahorrando así
+                  valiosos requests al servidor.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment"><strong>#webpack.dll.config.js</strong></span>
+                  <span class="code-comment">#Para exportar librerias comunes (react, react-dom)</span>
+                  <span class="code-comment">#No necesita ningún loader</span>
+                  module.exports = {
+                    entry: {
+                      modules: [
+                        <span class="code-text">'react'</span>,
+                        <span class="code-text">'react-dom'</span>
+                      ]
+                    }
+                    mode: <span class="code-text">'production'</span>
+                    output {
+                      path : ...,
+                      filename: <span class="code-text">'js/[name].js'</span>,
+                      library: <span class="code-text">'[name]'</span>
+                    },
+                    plugins: [
+                      <span class="code-sym">new</span> webpack.DLLPlugin({
+                        name: <span class="code-text">'[name]'</span>,
+                        path: path.<span class="code-var">join</span>(__dirname, <span class="code-text">'[name]-manifest.json'</span>)
+                      })
+                    ]
+                  }
+
+                  <span class="code-comment"><strong>#webpack.config.js</strong></span>
+                  plugins: [
+                    <span class="code-sym">new</span> webpack.DLLReferencePlugin({
+                      manifest: <span class="code-var">require</span>(<span class="code-text">'./modules-manifest.json'</span>)
+                    })
+                  ]
                 </pre>
               </div>
             </article>
