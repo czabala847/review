@@ -99,6 +99,9 @@
                 <li>
                   <a class="link course-class__menu--a" href="#require">Archivos externos</a>
                 </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#poo">Programación Orientada a Objetos</a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -332,6 +335,49 @@
                 <span class="code-var">include</span>(<span class="code-text">'otraArchivo.php'</span>);
                 <span class="code-var">require</span>(<span class="code-text">'otraArchivo.php'</span>);
                 <span class="code-var">require_once</span>(<span class="code-text">'otraArchivo.php'</span>);
+              </pre>
+            </div>
+          </article>
+          <article class="course-class__section" id="poo">
+            <h2 class="course-class__section--title">Programación Orientada a Objetos</h2>
+            <div class="course-class__section--content">
+              <p>
+                La programación orientada a objetos nos ayudará a estructurar mejor nuestros programas, lo que lo hace
+                tener código más reutilizable y
+                mantenible.
+                Una <strong>clase</strong> es una plantilla o definición de algo. Y una <strong>instancia</strong> es la
+                representación
+                concreta de la
+                clase.
+              </p>
+              <p>
+                Encapsulamiento será el nivel de visibilidad que queramos darle a alguna variable, para ello podemos
+                utilizar los modificadores de acceso <strong>private</strong>, <strong>public</strong> y
+                <strong>protected</strong>.
+              </p>
+              <p>
+                Con la palabra reservada <strong>this</strong> estaremos haciendo referencia a la variable que pertenece
+                a la clase.
+              </p>
+              <pre class="code">
+
+                <span class="code-var">class</span> NombreClase {
+                  <span class="code-var">private</span> $atributo1;
+                  <span class="code-var">public</span> $atributo2;
+                  <span class="code-var">public</span> $atributoN;
+                  
+                  <span class="code-var">public function</span> <span class="code-function">setAtributo1</span>($parametro){
+                    <span class="code-sym">$this</span>->atributo1 = $parametro
+                  }
+                  
+                  <span class="code-var">public function</span> <span class="code-function">getAtributo1</span>(){
+                    <span class="code-sym">return $this</span>->atributo1
+                  }
+                }
+
+                <span class="code-comment">#Se crea la instancia de la clase</span>
+                $objeto1 = <span class="code-sym">new</span> <span class="code-var">NombreClase</span>();
+                $objeto1-><span class="code-function">setAtributo1</span>(<span class="code-text">'Valor'</span>);
               </pre>
             </div>
           </article>
