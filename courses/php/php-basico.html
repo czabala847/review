@@ -414,6 +414,13 @@
                   Con la palabra reservada <strong>this</strong> estaremos
                   haciendo referencia a la variable que pertenece a la clase.
                 </p>
+                <p>
+                  El método <strong>constructor</strong> nos permitirá
+                  inicializar valores por default, así como también pasar datos
+                  como parámetro al momento de inicializar un objeto. Todas las
+                  funciones que tienen __ antes del nombre de la función se
+                  conocen como <strong>métodos mágicos</strong>.
+                </p>
                 <pre class="code">
 
                 <span class="code-var">class</span> NombreClase {
@@ -421,13 +428,20 @@
                   <span class="code-var">public</span> $atributo2;
                   <span class="code-var">public</span> $atributoN;
 
+                  <span class="code-comment">#Contructor de la clase</span>
                   <span class="code-var">public function __constructor</span>($atributo1, $atributo2){
-                    <span class="code-sym">$this</span>->atributo1 = $atributo1
+                    <span class="code-sym">$this</span>-><span class="code-function">setAtributo1</span>($atributo1)
                     <span class="code-sym">$this</span>->atributo2 = $atributo2
+                    <span class="code-sym">$this</span>->atributoN = <span class="code-var">true</span>
                   } 
                   
                   <span class="code-var">public function</span> <span class="code-function">setAtributo1</span>($parametro){
-                    <span class="code-sym">$this</span>->atributo1 = $parametro
+                    <span class="code-sym">if</span>($parametro == <span class="code-text">''</span> ){
+                      <span class="code-sym">$this</span>->atributo1 = <span class="code-text">'N/A'</span>
+                    }
+                    <span class="code-sym">else</span>{
+                      <span class="code-sym">$this</span>->atributo1 = $parametro
+                    }
                   }
                   
                   <span class="code-var">public function</span> <span class="code-function">getAtributo1</span>(){
@@ -436,7 +450,7 @@
                 }
 
                 <span class="code-comment">#Se crea la instancia de la clase</span>
-                $objeto1 = <span class="code-sym">new</span> <span class="code-var">NombreClase</span>();
+                $objeto1 = <span class="code-sym">new</span> <span class="code-var">NombreClase</span>(<span class="code-text">'valor1'</span>, <span class="code-text">'valor2'</span>);
                 $objeto1-><span class="code-function">setAtributo1</span>(<span class="code-text">'Valor'</span>);
               </pre>
               </div>
