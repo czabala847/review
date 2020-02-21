@@ -131,6 +131,16 @@
                       >Programación Orientada a Objetos</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#inheritance"
+                      >Herencia</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#interface"
+                      >Interfaces</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -429,7 +439,7 @@
                   <span class="code-var">public</span> $atributoN;
 
                   <span class="code-comment">#Contructor de la clase</span>
-                  <span class="code-var">public function __constructor</span>($atributo1, $atributo2){
+                  <span class="code-var">public function __construct</span>($atributo1, $atributo2){
                     <span class="code-sym">$this</span>-><span class="code-function">setAtributo1</span>($atributo1)
                     <span class="code-sym">$this</span>->atributo2 = $atributo2
                     <span class="code-sym">$this</span>->atributoN = <span class="code-var">true</span>
@@ -453,6 +463,84 @@
                 $objeto1 = <span class="code-sym">new</span> <span class="code-var">NombreClase</span>(<span class="code-text">'valor1'</span>, <span class="code-text">'valor2'</span>);
                 $objeto1-><span class="code-function">setAtributo1</span>(<span class="code-text">'Valor'</span>);
               </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="inheritance">
+              <h2 class="course-class__section--title">Herencia</h2>
+              <div class="course-class__section--content">
+                <p>
+                  La herencia permite que ciertas clases tengan características
+                  de una clase padre. Esta clase se llamará hijo. La herencia la
+                  expresaremos con la palabra reservada
+                  <strong>extends</strong>.
+                </p>
+                <p>
+                  Es muy conveniente utilizar
+                  <strong>require_once</strong> cuando queremos utilizar
+                  herencia e incluir clases que están en otros archivos.
+                </p>
+                <p>
+                  Dentro de nuestra clase hijo podemos sobrescribir algún método
+                  del padre, esto es un concepto que conocemos como
+                  <strong>polimorfismo</strong>. Lo que polimorfismo quiere
+                  decir es que tendremos un método que va a funcionar de acuerdo
+                  con su contexto donde es llamado.
+                </p>
+                <pre class="code">
+
+                  <span class="code-sym">require_once</span>(<span class="code-text">'clasePadre.php'</span>);
+
+                  <span class="code-var">class</span> claseHija <span class="code-var">extends</span> clasePadre {
+                    <span class="code-var">public function __construct</span>($parametro1, $parametro2){
+                      <span class="code-comment">#Constructo del padre</span>
+                      <span class="code-sym">parent::</span><span class="code-var">__construct</span>($parametro1, $parametro2);
+                    }
+
+                    <span class="code-comment">#Polimorfismo</span>
+                    <span class="code-var">public function</span> <span class="code-function">nombreFuncionPolimorfismo</span>(){
+                      ...
+                    }
+                  }
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="interface">
+              <h2 class="course-class__section--title">Interfaces</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Una Interface es un tipo abstracto que es usado para definir o
+                  especificar el comportamiento de ciertas clases. Los métodos
+                  de las interfaces no tienen implementación (Solo se describe
+                  el "enunciado"). Las interfaces no pueden ser instanciadas,
+                  sino implementadas por aquellas clases que tienen el
+                  comportamiento definido en la interfaz (es) que esta
+                  implementa.
+                </p>
+                <p>
+                  Las interfaces son usadas para implementar las similitudes que
+                  varios tipos de clases comparten.
+                </p>
+                <p>
+                  Con las interfaces se puede simular la
+                  <strong>herencia múltiple</strong>.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">#Definiendo la interfaz</span>
+                  <span class="code-var">interface</span> <span class="code-function">PrintableInterface</span>{
+                    <span class="code-var">public function </span> <span class="code-function">getDescription</span>();
+                  }
+
+                  <span class="code-comment">#Usando la interfaz</span>
+                  <span class="code-var">class</span> NombreClase <span class="code-var">implement</span> PrintableInterface{
+                    ...
+                  }
+                  
+                  <span class="code-comment">#Especificar el tipo de datos que esperamos en una función</span>
+                  <span class="code-var">function</span> <span class="code-function">printElement</span>(<span class="code-var">PrintableInterface</span> $element){
+                    ...
+                  }
+                </pre>
               </div>
             </article>
           </div>
