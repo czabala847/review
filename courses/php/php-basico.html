@@ -126,6 +126,12 @@
                 <li>
                   <a class="link course-class__menu--a" href="#show-data-eloquent">Listar registros</a>
                 </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#front-controller">Front Controller</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#psr-7">PSR7</a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -693,6 +699,101 @@
 
                 <span class="code-comment">Trae todos los registros que encuentre</span>
                 $listData = ClaseExtendsModel::<span class="code-var">all</span>();
+              </pre>
+            </div>
+          </article>
+          <article class="course-class__section" id="front-controller">
+            <h2 class="course-class__section--title">Front Controller</h2>
+            <div class="course-class__section--content">
+              <p>Front Controller es un patrón de diseño que nos dará una solución a la redundancia del código en las
+                múltiples entradas a la aplicación. Este tendrá el control de todas las entradas además de las
+                inicializaciones de base de datos etc.</p>
+              <p>
+                Crear una carpeta public, dónde estara el index.php que será el front controller.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">#Inicializar errores:</span>
+                <span class="code-var">ini_set</span>(<span class="code-text">'display_errors'</span>, 1);
+                <span class="code-var">ini_set</span>(<span class="code-text">'display_starup_error'</span>, 1);
+                <span class="code-var">error_reporting</span>(E_ALL);
+
+                $route = $_GET[<span class="code-text">'route'</span>] ?? <span class="code-text">'/'</span>;
+                
+                <span class="code-sym">if</span>($route == <span class="code-text">'/'</span>){
+                  <span class="code-var">require</span> <span class="code-text">'../index.php'</span>;
+                } <span class="code-sym">elseif</span>($route == <span class="code-text">'addJob'</span>){
+                  <span class="code-var">require</span> <span class="code-text">'../addJob.php'</span>;
+                }
+              </pre>
+              <div class="note">
+                <p>Ya no es necesario el <strong>require_once "vendor/autoload.php"</strong> en todos los archivos solo
+                  en el index.php
+                  que tiene el front-controller.</p>
+              </div>
+              <pre class="code">
+
+                  <span class="code-comment">#Esto:</span>
+                  $route = <span class="code-var">isset</span>($_GET[<span class="code-text">'route'</span>]) ? $_GET[<span class="code-text">'route'</span>] : <span class="code-text">'/'</span>;
+                  
+                  <span class="code-comment">#Es lo mismo que esto:</span>
+                  $route = $_GET[<span class="code-text">'route'</span>] ?? <span class="code-text">'/'</span>;
+              </pre>
+            </div>
+          </article>
+          <article class="course-class__section" id="psr-7">
+            <h2 class="course-class__section--title">
+              PSR7
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                PSR7 es un estandar que nos permite normalizar un request y un response en PHP.
+                En este enlace encontrarás la documentación de <a class="link link-refe"
+                  href="https://www.php-fig.org/psr/psr-7/" target="_blank">PSR7</a>.
+              </p>
+              <p>
+                <a class="link link-refe" target="_blank"
+                  href="https://docs.laminas.dev/laminas-diactoros/">laminas-diactoros</a>: Es un paquete que nos
+                ayudara a implementar PSR7 en nuestro proyecto.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">#Instalación</span>
+                composer require laminas/laminas-diactoros
+
+                php composer.phar require laminas/laminas-diactoros
+
+                <span class="code-comment">#En el index.php (front-controller)</span>
+                <span class="code-comment">#Request por variables globales</span>
+                $request = Laminas\Diactoros\ServerRequestFactory::<span class="code-var">fromGlobals</span>(
+                    $_SERVER,
+                    $_GET,
+                    $_POST,
+                    $_COOKIE,
+                    $_FILES
+                );
+
+                $request-><span class="code-var">getUri</span>()-><span class="code-var">getPath</span>();
+              </pre>
+              <p>
+                Para configurar las rutas dinámicas de la aplicación, se crea un archivo <strong>.htaccess</strong> es
+                un archivo de configuración de apache.
+              </p>
+              <pre class="code">
+
+                <span class="code-comment">#Habilitar motor de rewrite</span>
+                RewriteEngine On
+                RewriteCond %{THE_REQUEST} /public/([^s?*]) [NC]
+                RewriteRule ^ %1 [L,NE,R=302]
+                RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+              </pre>
+              <p>Archivo .htaccess en la carpeta public:</p>
+              <pre class="code">
+
+                RewriteEngine On
+                RewriteCond %{REQUEST_FILENAME} !-d
+                RewriteCond %{REQUEST_FILENAME} !-f
+                RewriteRule ^ index.php [QSA,L] 
               </pre>
             </div>
           </article>
