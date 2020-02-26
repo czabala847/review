@@ -109,6 +109,9 @@
                   <a class="link course-class__menu--a" href="#interface">Interfaces</a>
                 </li>
                 <li>
+                  <a class="link course-class__menu--a" href="#autoload">Autoload</a>
+                </li>
+                <li>
                   <a class="link course-class__menu--a" href="#namespaces">Namespaces</a>
                 </li>
                 <li>
@@ -514,6 +517,24 @@
                     ...
                   }
                 </pre>
+            </div>
+          </article>
+          <article class="course-class__section" id="autoload">
+            <h2 class="course-class__section--title">Autoload</h2>
+            <div class="course-class__section--content">
+              <pre class="code">
+
+                <span class="code-comment">#autoload.php</span>
+                <span class="code-var">function</span> <span class="code-function">autocargador</span>($clase){
+                  <span class="code-var">include</span> $clase . <span class="code-text">'.php'</span>;
+                }
+                
+                <span class="code-var">spl_autoload_register</span>(<span class="code-text">'autocargador'</span>);
+                
+                <span class="code-comment">#uso</span>
+                <span class="code-var">include</span> <span class="code-text">'autoload.php'</span>;
+
+              </pre>
             </div>
           </article>
           <article class="course-class__section" id="namespaces">
