@@ -148,6 +148,15 @@ data = [
         courseURL: "./courses/php/php-basico.html",
         courseImage:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png"
+      },
+      {
+        courseID: 2,
+        courseName: "PHP y MYSQL",
+        courseDescription:
+          "Primer curso sobre la manipulación(CRUD) de datos por medio de PHP y Mysql.",
+        courseURL: "./courses/php/php-mysql.html",
+        courseImage:
+          "https://www.eclixxo.com/wp-content/uploads/2009/01/PHP-MYSQL.jpg"
       }
     ]
   }
