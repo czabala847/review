@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Curso básico de Javascript</title>
-    <link rel="icon" href="../../images/favicon.png" type="img/text" />
+    <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
     <link
       href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../src/css/styles.css" />
     <link rel="stylesheet" href="../../fonts/style.css" />
   </head>
   <body>
@@ -31,7 +31,7 @@
                 <a href="../../index.html"
                   ><img
                     class="header-menu__logo--img"
-                    src="../../images/logo_white.png"
+                    src="../../src/images/logo_white.png"
                     alt="logo carlos zabala"
                 /></a>
               </figure>
@@ -593,9 +593,15 @@
               </div>
               <h3>Transformar un array</h3>
               <p>
-                El método <a class="link link-refe" target="_blank" href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/map"><strong>map</strong></a> itera sobre los
-                elementos de un array en el orden de inserción y devuelve array
-                nuevo con los elementos modificados.
+                El método
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/map"
+                  ><strong>map</strong></a
+                >
+                itera sobre los elementos de un array en el orden de inserción y
+                devuelve array nuevo con los elementos modificados.
               </p>
               <pre class="code">
 
@@ -773,7 +779,10 @@
                 <span class="t-bold">¿Para qué sirve el debugger?</span> Para
                 solventar errores ("bugs" como dicen los programadores)
                 deteniendo tu programa en la línea de código donde coloques el
-                debugger y dándote herramientas para ver qué sucede. <a class="link link-refe" href="./javascript-avanzado.html#this">Más sobre this</a>
+                debugger y dándote herramientas para ver qué sucede.
+                <a class="link link-refe" href="./javascript-avanzado.html#this"
+                  >Más sobre this</a
+                >
               </p>
             </article>
             <article class="course-class__section" id="class-ecma">
@@ -825,8 +834,12 @@
               <p>
                 JavaScript sólo puede hacer una cosa a la vez, sin embargo; es
                 capaz de delegar la ejecución de ciertas funciones a otros
-                procesos. Este modelo de concurrencia se llama <a class="link link-refe" href="./javascript-avanzado.html#event-loop">EventLoop</a>.
-                JavaScript delega en el navegador ciertas tareas y les asocia
+                procesos. Este modelo de concurrencia se llama
+                <a
+                  class="link link-refe"
+                  href="./javascript-avanzado.html#event-loop"
+                  >EventLoop</a
+                >. JavaScript delega en el navegador ciertas tareas y les asocia
                 funciones que deberán ser ejecutadas al ser completadas. Estas
                 funciones se llaman callbacks, y una vez que el navegador ha
                 regresado con la respuesta, el callback asociado pasa a la cola
@@ -1028,13 +1041,12 @@
                 forma síncrona.
               </p>
               <p>
-                <strong>Async-await</strong> es la manera más simple
-                y clara de realizar tareas asíncronas.
-                <strong>Await</strong> detiene la ejecución del
-                programa hasta que todas las promesas sean resueltas. Para poder
-                utilizar esta forma, hay que colocar
-                <strong>async</strong> antes de la definición de la
-                función asíncrona.
+                <strong>Async-await</strong> es la manera más simple y clara de
+                realizar tareas asíncronas. <strong>Await</strong> detiene la
+                ejecución del programa hasta que todas las promesas sean
+                resueltas. Para poder utilizar esta forma, hay que colocar
+                <strong>async</strong> antes de la definición de la función
+                asíncrona.
               </p>
               <div class="note">
                 <p>
@@ -1045,18 +1057,15 @@
                 </p>
               </div>
               <p>
-                <strong>API</strong> es un servicio externo, en el
-                cual accedemos y nos devuelve unos datos (json). Con esos datos
-                podemos hacer lo que queramos,
-                <strong>CRUD</strong> Crear, Leer, Actualizar y
-                Borrar. Para manejar funciones asíncronas, como pedir datos a
-                una API,
-                <strong
-                  >no sabemos cuándo tardar en darnos respuestas</strong
-                >, para eso manejamos
-                <strong>async await</strong> para manejar procesos
-                asíncronos y hacerlos más lineales, lo que hace es que va a
-                detener el programa hasta que se resuelvan las peticiones.
+                <strong>API</strong> es un servicio externo, en el cual
+                accedemos y nos devuelve unos datos (json). Con esos datos
+                podemos hacer lo que queramos, <strong>CRUD</strong> Crear,
+                Leer, Actualizar y Borrar. Para manejar funciones asíncronas,
+                como pedir datos a una API,
+                <strong>no sabemos cuándo tardar en darnos respuestas</strong>,
+                para eso manejamos <strong>async await</strong> para manejar
+                procesos asíncronos y hacerlos más lineales, lo que hace es que
+                va a detener el programa hasta que se resuelvan las peticiones.
               </p>
               <pre class="code">
                 
@@ -1135,7 +1144,9 @@
                   <span class="code-sym">this</span>.<span class="code-function">handleClick</span> = <span class="code-sym">this</span>.<span class="code-function">handleClick</span>.<span class="code-var">bind</span>(this)
                 }
               </pre>
-              <a class="link link-refe" href="./javascript-avanzado.html#cab">Más información</a>
+              <a class="link link-refe" href="./javascript-avanzado.html#cab"
+                >Más información</a
+              >
             </article>
             <article class="course-class__section" id="api">
               <h2 class="course-class__section--title">API</h2>
@@ -1149,15 +1160,15 @@
                 manejar cuando la petición se realizó correctamente y cuando
                 falla. <br />
                 JavaScript internamente cuenta con una función llamada
-                <strong>fetch</strong> que también realiza peticiones
-                a una API. Al igual que Ajax necesita dos parámetros, una url y
-                una configuración, pero si solo le mandas la url fetch usará una
+                <strong>fetch</strong> que también realiza peticiones a una API.
+                Al igual que Ajax necesita dos parámetros, una url y una
+                configuración, pero si solo le mandas la url fetch usará una
                 configuración por defecto donde el
                 <strong>método HTTP será GET</strong>. <br />
                 fetch te regresa una promesa, esa promesa al resolverse te da
                 los datos de respuesta y tiene un método llamado
-                <strong>json</strong> que te regresa otra promesa con
-                los datos en formato JSON. <br />
+                <strong>json</strong> que te regresa otra promesa con los datos
+                en formato JSON. <br />
                 Las promesas resuelven el problema del Callback Hell haciendo
                 que una promesa pueda devolver otra promesa y en lugar de ser
                 anidadas como los callback, estas promesas son encadenadas.

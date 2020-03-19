@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Curso avanzado de Javascript</title>
-    <link rel="icon" href="../../images/favicon.png" type="img/text" />
+    <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
     <link
       href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../src/css/styles.css" />
     <link rel="stylesheet" href="../../fonts/style.css" />
   </head>
   <body>
@@ -31,7 +31,7 @@
                 <a href="../../index.html"
                   ><img
                     class="header-menu__logo--img"
-                    src="../../images/logo_white.png"
+                    src="../../src/images/logo_white.png"
                     alt="logo carlos zabala"
                 /></a>
               </figure>
@@ -171,8 +171,8 @@
                 npm init -y <span class="code-comment">#La bandera y contestara "si" a todas las preguntas de npm</span>
               </pre>
               <p>
-                Se creara el archivo <strong>package.json</strong>,
-                que sera similar al siguiente:
+                Se creara el archivo <strong>package.json</strong>, que sera
+                similar al siguiente:
               </p>
               <pre class="code">
 
@@ -234,26 +234,26 @@
                   documento HTML</span
                 >. El navegador interpreta el archivo HTML y cuando termina de
                 transformarlo al DOM se dispara el evento
-                <strong>DOMContentLoaded</strong> lo que significa
-                que todo el documento está disponible para ser manipulado.
+                <strong>DOMContentLoaded</strong> lo que significa que todo el
+                documento está disponible para ser manipulado.
                 <br />
                 Todo script que carguemos en nuestra página tiene un llamado y
                 una ejecución. Tanto con <strong>async</strong> como
-                <strong>defer</strong> podemos hacer llamados
-                asíncronos, pero tiene sus diferencias:
+                <strong>defer</strong> podemos hacer llamados asíncronos, pero
+                tiene sus diferencias:
               </p>
               <ul>
                 <li>
-                  <strong>async</strong>: Con async podemos hacer la
-                  petición de forma asíncrona y no vamos a detener la carga del
-                  DOM hasta que se haga la ejecución del código. Cuando se
-                  cumpla la petición es decir cuando tengamos una respuesta si
-                  se detendrá la carga del DOM.
+                  <strong>async</strong>: Con async podemos hacer la petición de
+                  forma asíncrona y no vamos a detener la carga del DOM hasta
+                  que se haga la ejecución del código. Cuando se cumpla la
+                  petición es decir cuando tengamos una respuesta si se detendrá
+                  la carga del DOM.
                 </li>
                 <li>
-                  <strong>defer</strong>: La petición es igual
-                  asíncrona como en el async pero va a deferir la ejecución del
-                  Javascript hasta el final de que se cargue todo el documento.
+                  <strong>defer</strong>: La petición es igual asíncrona como en
+                  el async pero va a deferir la ejecución del Javascript hasta
+                  el final de que se cargue todo el documento.
                 </li>
               </ul>
               <p>
@@ -271,15 +271,15 @@
               </p>
               <ul>
                 <li>
-                  <strong>Global Scope</strong>: Variables
-                  disponibles de forma global se usa la palabra var, son
-                  accesibles por todos los scripts que se cargan en la página.
-                  Aquí hay mucho riesgo de sobreescritura.
+                  <strong>Global Scope</strong>: Variables disponibles de forma
+                  global se usa la palabra var, son accesibles por todos los
+                  scripts que se cargan en la página. Aquí hay mucho riesgo de
+                  sobreescritura.
                 </li>
                 <li>
-                  <strong>Function Scope</strong>: Variables
-                  declaradas dentro de una función sólo visibles dentro de ella
-                  misma (incluyendo los argumentos que se pasan a la función).
+                  <strong>Function Scope</strong>: Variables declaradas dentro
+                  de una función sólo visibles dentro de ella misma (incluyendo
+                  los argumentos que se pasan a la función).
                 </li>
                 <li>
                   <strong>Block Scope</strong>
@@ -394,20 +394,19 @@
               <ul>
                 <li>
                   Cuando llamamos a this en el
-                  <strong>Global Scope o Function Scope</strong>, se
-                  hace referencia al objeto window. A excepción de cuando
-                  estamos en <strong>strict mode</strong> que nos
-                  regresará undefined.
+                  <strong>Global Scope o Function Scope</strong>, se hace
+                  referencia al objeto window. A excepción de cuando estamos en
+                  <strong>strict mode</strong> que nos regresará undefined.
                 </li>
                 <li>
                   Cuando llamamos a this desde
-                  <strong>una función</strong> que está contenida en
-                  un objeto, this se hace referencia a ese objeto.
+                  <strong>una función</strong> que está contenida en un objeto,
+                  this se hace referencia a ese objeto.
                 </li>
                 <li>
                   Cuando llamamos a this desde una
-                  <strong>"clase"</strong>, se hace referencia a la
-                  instancia generada por el constructor.
+                  <strong>"clase"</strong>, se hace referencia a la instancia
+                  generada por el constructor.
                 </li>
               </ul>
               <pre class="code">
@@ -695,7 +694,7 @@
                 mejor.
               </p>
               <img
-                src="../../images/js-avanzado-js-engine.png"
+                src="../../src/images/js-avanzado-js-engine.png"
                 alt="Proceso del JS Engine"
               />
               <ul>
@@ -722,7 +721,7 @@
                 Syntax Tree.
               </p>
               <img
-                src="../../images/js-avanzado-ast.png"
+                src="../../src/images/js-avanzado-ast.png"
                 alt="flujo de proceso del parser"
               />
               <p>
@@ -796,7 +795,7 @@
                 la vez. JavaScript se organiza en dos estructuras de datos:
               </p>
               <img
-                src="../../images/js-avanzado-event-loop.png"
+                src="../../src/images/js-avanzado-event-loop.png"
                 alt="Event Loop JS"
               />
               <p>
@@ -822,7 +821,7 @@
                   acción se le llama <span class="t-bold">pop</span>.
                   <br /><br />
                   <img
-                    src="../../images/js-avanzado-stack.png"
+                    src="../../src/images/js-avanzado-stack.png"
                     alt="Stack JS"
                   />
                 </li>
@@ -851,7 +850,7 @@
                 tareas entre estas dos estructuras.
               </p>
               <img
-                src="../../images/js-avanzado-event.png"
+                src="../../src/images/js-avanzado-event.png"
                 alt="Proceso del event loop JS"
               />
             </article>
