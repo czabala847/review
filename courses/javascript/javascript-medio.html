@@ -9,7 +9,6 @@
   <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../../src/css/styles.css" />
-  <link rel="stylesheet" href="../../fonts/style.css" />
 </head>
 
 <body>
@@ -97,7 +96,7 @@
           </div>
         </div>
         <div class="course-class__content">
-          <i class="icon-menu icon course-class__icon-menu" id="btn-menu"></i>
+          <i class="fas fa-bars icon course-class__icon-menu" id="btn-menu"></i>
           <article class="course-class__section" id="selector">
             <h2 class="course-class__section--title">Selectores</h2>
             <p>
@@ -461,6 +460,7 @@
       </footer>
     </div>
   </div>
+  <script src="https://kit.fontawesome.com/2028b75fa6.js" crossorigin="anonymous"></script>
   <script src="../../src/js/menu.js"></script>
   <script>
     const $menu = document.getElementById("btn-menu");
@@ -472,13 +472,21 @@
       $courseMenu.classList.toggle("is-active");
       $menu.classList.toggle("is-active");
 
-      if ($menu.classList.contains("icon-menu")) {
-        $menu.classList.remove("icon-menu");
-        $menu.classList.add("icon-close");
+      if ($menu.classList.contains("fa-bars")) {
+        $menu.classList.remove("fa-bars");
+        $menu.classList.add("fa-times");
       } else {
-        $menu.classList.remove("icon-close");
-        $menu.classList.add("icon-menu");
+        $menu.classList.remove("fa-times");
+        $menu.classList.add("fa-bars");
       }
+    }
+
+    const $footerYear = document.getElementById("footer-year");
+
+    if ($footerYear) {
+      let date = new Date();
+
+      $footerYear.innerHTML += " " + date.getFullYear();
     }
   </script>
 </body>

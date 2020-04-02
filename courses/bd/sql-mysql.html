@@ -9,7 +9,6 @@
   <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../../src/css/styles.css" />
-  <link rel="stylesheet" href="../../fonts/style.css" />
 </head>
 
 <body>
@@ -95,31 +94,32 @@
       </footer>
     </div>
   </div>
+  <script src="https://kit.fontawesome.com/2028b75fa6.js" crossorigin="anonymous"></script>
   <script src="../../src/js/menu.js"></script>
   <script>
-    const $menu = document.getElementById("btn-menu");
-    const $courseMenu = document.getElementById("course-class__left");
+    // const $menu = document.getElementById("btn-menu");
+    // const $courseMenu = document.getElementById("course-class__left");
 
-    $menu.addEventListener("click", handleClick);
+    // $menu.addEventListener("click", handleClick);
 
-    function handleClick() {
-      $courseMenu.classList.toggle("is-active");
-      $menu.classList.toggle("is-active");
+    // function handleClick() {
+    //   $courseMenu.classList.toggle("is-active");
+    //   $menu.classList.toggle("is-active");
 
-      if ($menu.classList.contains("icon-menu")) {
-        $menu.classList.remove("icon-menu");
-        $menu.classList.add("icon-close");
-      } else {
-        $menu.classList.remove("icon-close");
-        $menu.classList.add("icon-menu");
-      }
-    }
+    //   if ($menu.classList.contains("fa-bars")) {
+    //     $menu.classList.remove("fa-bars");
+    //     $menu.classList.add("fa-times");
+    //   } else {
+    //     $menu.classList.remove("fa-times");
+    //     $menu.classList.add("fa-bars");
+    //   }
+    // }
 
-    const $footerYear = document.getElementById("footer-year");
+    // const $footerYear = document.getElementById("footer-year");
 
-    let date = new Date();
+    // let date = new Date();
 
-    $footerYear.innerHTML += " " + date.getFullYear();
+    // $footerYear.innerHTML += " " + date.getFullYear();
   </script>
 </body>
 
