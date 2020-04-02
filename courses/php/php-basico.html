@@ -63,10 +63,6 @@
                 No esta diseñado para realizar aplicaciones de escritorio.
               </li>
             </ul>
-            <p>
-              Para trabajar con PHP instalaremos un entorno de desarrollo
-              llamado XAMPP, no es un entorno pensado para producción.
-            </p>
           </div>
           <div class="hero-course__buttons">
             <a target="_blank" href="https://platzi.com/clases/php/" class="btn btn--primary">Curso platzi</a>
@@ -79,22 +75,13 @@
             <nav class="course-class__menu">
               <ul>
                 <li>
-                  <a class="link course-class__menu--a" id="prueba" href="#syntax">Sintaxis</a>
+                  <a class="link course-class__menu--a" href="#syntax">Sintaxis</a>
                 </li>
                 <li>
                   <a class="link course-class__menu--a" href="#variable">Variables</a>
                 </li>
                 <li>
-                  <a class="link course-class__menu--a" href="#data-type">Tipos de datos</a>
-                </li>
-                <li>
                   <a class="link course-class__menu--a" href="#array">Arreglos</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#conditional-loop">Condicionales y Ciclos</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#for-each">Foreach</a>
                 </li>
                 <li>
                   <a class="link course-class__menu--a" href="#require">Archivos externos</a>
@@ -121,13 +108,7 @@
                   <a class="link course-class__menu--a" href="#orm">ORM</a>
                 </li>
                 <li>
-                  <a class="link course-class__menu--a" href="#form">Formularios</a>
-                </li>
-                <li>
                   <a class="link course-class__menu--a" href="#eloquent">Eloquent</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#show-data-eloquent">Listar registros</a>
                 </li>
                 <li>
                   <a class="link course-class__menu--a" href="#front-controller">Front Controller</a>
@@ -168,29 +149,13 @@
             </h2>
             <div class="course-class__section--content">
               <p>
-                Una variable puede ser una pequeña cajita en la que puedes
-                almacenar un valor y este lo pueden usar para realizar alguna
-                operación.
-              </p>
-              <p>
                 Para declararla usaremos el símbolo de <strong>$</strong> y en
                 seguida el nombre, este puede ser un _ o una letra.
-              </p>
-              <p>
                 PHP no es estáticamente tipado, es decir que no tenemos que
                 decirle qué tipo de dato es esa variable. Además, es
                 débilmente tipado porque podemos fácilmente cambiar el tipo de
                 dato, es decir PHP ejecuta una conversión de datos interna.
               </p>
-              <pre class="code">
-
-                  $var1 = 1;
-                  $name = <span class="code-text">'Carlos'</span>;
-                  $lastName = <span class="code-text">'Zabala'</span>;
-
-                  <span class="code-comment">#Con comillas dobles PHP trata de interpretas la variables</span>
-                  $fullName = <span class="code-text">"Nombre completo</span> $name $lastName<span class="code-text">"</span>;
-                </pre>
               <p>
                 Al momento de trabajar con PHP una cosa muy importante es
                 hacer debugging a nuestras variables, para ello utilizamos la
@@ -210,53 +175,9 @@
                 </pre>
             </div>
           </article>
-          <article class="course-class__section" id="data-type">
-            <h2 class="course-class__section--title">
-              Tipos de Datos en PHP
-            </h2>
-            <div class="course-class__section--content">
-              <h3>Escalares</h3>
-              <ul>
-                <li>
-                  <a class="link link-refe" href="https://www.php.net/manual/es/language.types.boolean.php"
-                    target="_blank"><strong>boolean</strong></a>: Representa solamente un valor verdadero
-                  (<strong>true</strong>) o falso (<strong>false</strong>).
-                </li>
-                <li>
-                  <a class="link link-refe" href="https://www.php.net/manual/es/language.types.integer.php"
-                    target="_blank"><strong>Integer</strong></a>: Representa un número entero positivo, negativo o 0.
-                </li>
-                <li>
-                  <a class="link link-refe" href="http://php.net/manual/es/language.types.float.php"
-                    target="_blank"><strong>float o double</strong></a>: Representa un número de punto flotante, existen
-                  problemas
-                  de precisión con los números flotantes debido a la
-                  naturaleza binaria de las computadoras.
-                </li>
-                <li>
-                  <a class="link link-refe" href="https://www.php.net/manual/es/language.types.string.php"
-                    target="_blank"><strong>string</strong></a>: Representa una cadena de caracteres. Existen 4 formas
-                  de
-                  representar una cadena. Las 2 principales son usando
-                  comillas simples o comillas dobles.
-                </li>
-              </ul>
-              <div class="note">
-                <p>
-                  Los otros tipos de datos son los compuestos, como por
-                  ejemplo: array, objetos, etc.
-                </p>
-              </div>
-            </div>
-          </article>
           <article class="course-class__section" id="array">
             <h2 class="course-class__section--title">Arreglos</h2>
             <div class="course-class__section--content">
-              <p>
-                Estas variables que almacenan más de un dato se conocen como
-                <strong>arreglos</strong> y su sintaxis se va a indicar con [
-                ] (corchetes).
-              </p>
               <p>
                 La estructura de arreglos en PHP es conocida como mapa, lo que
                 quiere decir que tiene una composición de llave valor. Además,
@@ -286,67 +207,6 @@
               </div>
             </div>
           </article>
-          <article class="course-class__section" id="conditional-loop">
-            <h2 class="course-class__section--title">
-              Condicionales y Ciclos
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Las condiciones nos permiten tomar decisiones en el código, si
-                se cumple la condición entonces se ejecutarán ciertas
-                instrucciones sino se cumple se ejecutarán otras. Estas se
-                denotan por la instrucción <strong>if else</strong>.
-              </p>
-              <p>
-                Los ciclos funcionan de la mano con las condiciones, en este
-                caso si se cumple la instrucción se estará ejecutando
-                repetidas veces una instrucción dada.
-              </p>
-              <p>
-                <strong>for</strong> es una forma más simplificada de usar
-                todos los elementos que componen los ciclos.
-              </p>
-              <pre class="code">
-
-                  <span class="code-comment">#Ejemplo de recorrer un array con for</span>
-                  &lt;?php
-
-                    <span class="code-sym">for</span>($i = 0; $i < <span class="code-var">count</span>($array); $i++ ){
-                      <span class="code-comment">#Template HTML</span>
-                      <span class="code-var">echo</span> <span class="code-text">"
-                          &lt;li class = \"name-class\" &gt;
-                            &lt;h5&gt; {$array[$i]['title']} &lt;/h5&gt;
-                            &lt;p&gt; {$array[$i]['description']} &lt;/p&gt;
-                          &lt;/li&gt;
-                        "</span>
-                    }
-
-                  ?&gt;
-                </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="for-each">
-            <h2 class="course-class__section--title">Foreach</h2>
-            <div class="course-class__section--content">
-              <p>
-                El constructor foreach proporciona un modo sencillo de iterar
-                sobre arrays. foreach funciona sólo sobre arrays y objetos, y
-                emitirá un error al intentar usarlo con una variable de un
-                tipo diferente de datos o una variable no inicializada.
-                <a href="https://www.php.net/manual/es/control-structures.foreach.php" class="link link-refe"
-                  target="_blank">más información</a>.
-              </p>
-              <pre class="code">
-
-                  <span class="code-comment">#En cada iteración, el valor del elemento actual
-                  #se asigna a $element y el puntero interno del array avanza una posición</span>
-                  <span class="code-sym">foreach</span> ($arreglo <span class="code-sym">as</span> $element){}
-
-                  <span class="code-comment">#Asigna la clave del elemento actual a la variable $clave en cada iteración</span>
-                  <span class="code-sym">foreach</span> ($arreglo <span class="code-sym">as</span> $clave => $valor){}
-                </pre>
-            </div>
-          </article>
           <article class="course-class__section" id="require">
             <h2 class="course-class__section--title">
               Agregando archivos externos
@@ -354,7 +214,7 @@
             <div class="course-class__section--content">
               <p>
                 Para organizar mejor nuestro código podemos separar archivos
-                php. <br />
+                php.
                 Se usa la palabra reservada <strong>include</strong> para
                 hacer que el archivo index incluya el archivo php externo, si
                 lo encuentra lo incluye, pero si no nos mostrará un warning.
@@ -405,7 +265,8 @@
                 inicializar valores por default, así como también pasar datos
                 como parámetro al momento de inicializar un objeto. Todas las
                 funciones que tienen __ antes del nombre de la función se
-                conocen como <strong>métodos mágicos</strong>.
+                conocen como <a class="link link-refe" target="_blank"
+                  href="https://www.php.net/manual/es/language.oop5.magic.php">métodos mágicos</a>.
               </p>
               <pre class="code">
 
@@ -545,10 +406,8 @@
               <p>
                 Esta es una forma de mantener únicos los nombres de los
                 archivos en el mismo directorio.
-              </p>
-              <p>
                 Para declarar un espacio de nombres privado se utiliza la
-                palabra reservada namespace.
+                palabra reservada <strong>namespace</strong>. Es como el import de java.
               </p>
               <pre class="code">
 
@@ -631,17 +490,6 @@
                   básicas.
                 </p>
               </div>
-            </div>
-          </article>
-          <article class="course-class__section" id="form">
-            <h2 class="course-class__section--title">Formularios</h2>
-            <div class="course-class__section--content">
-              <p>
-                Podemos enviar información desde un formulario a través de
-                diferentes métodos, GET o POST. Para acceder a esta
-                información desde PHP llamaremos a <strong>$_GET</strong> y
-                <strong>$_POST</strong>, estas son variables super globales.
-              </p>
             </div>
           </article>
           <article class="course-class__section" id="eloquent">
@@ -728,17 +576,11 @@
               <pre class="code">
 
                 $clase = <span class="code-sym">new</span> Clase();
-                $clase->campo1 = $_POST[<span class="code-text">'campo1'</span>];
-                $clase->campo2 = $_POST[<span class="code-text">'campo2'</span>];
+                $clase->title = $_POST[<span class="code-text">'title'</span>];
+                $clase->description = $_POST[<span class="code-text">'description'</span>];
                 $clase-><span class="code-function">save</span>();
               </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="show-data-eloquent">
-            <h2 class="course-class__section--title">
-              Listar registros de la base de datos con Eloquent
-            </h2>
-            <div class="course-class__section--content">
+              <p>Listar registros de la base de datos con Eloquent</p>
               <pre class="code">
 
                 <span class="code-comment">Trae todos los registros que encuentre</span>
@@ -865,7 +707,6 @@
       </footer>
     </div>
   </div>
-  <script src="../../src/js/menu.js"></script>
   <script>
     const $menu = document.getElementById("btn-menu");
     const $courseMenu = document.getElementById("course-class__left");
