@@ -58,7 +58,9 @@
             </p>
           </div>
           <div class="hero-course__buttons">
-            <a target="_blank" href="#" class="btn btn--primary">Curso Youtube</a>
+            <a target="_blank"
+              href="https://www.youtube.com/watch?v=ZxrUVuOqsy0&list=PLPl81lqbj-4KPLqegK5DNKWSFBzn8QTbq"
+              class="btn btn--primary">Youtube Bluuweb!</a>
           </div>
         </div>
       </section>
@@ -71,19 +73,16 @@
                   <a class="link course-class__menu--a" href="#introduction">Introducción</a>
                 </li>
                 <li>
-                  <a class="link course-class__menu--a" href="#conexion">Conexión</a>
+                  <a class="link course-class__menu--a" href="#conexion">Mysqli Conexión</a>
                 </li>
                 <li>
-                  <a class="link course-class__menu--a" href="#insert">Insertar</a>
+                  <a class="link course-class__menu--a" href="#insert">Mysqli Insertar</a>
                 </li>
                 <li>
-                  <a class="link course-class__menu--a" href="#read">Leer</a>
+                  <a class="link course-class__menu--a" href="#read">Mysqli Leer</a>
                 </li>
                 <li>
-                  <a class="link course-class__menu--a" href="#update">Actualizar</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#delete">Eliminar</a>
+                  <a class="link course-class__menu--a" href="#update">Mysqli Actualizar</a>
                 </li>
                 <li>
                   <a class="link course-class__menu--a" href="#pdo">PDO</a>
@@ -100,6 +99,9 @@
                 <li>
                   <a class="link course-class__menu--a" href="#update-pdo">PDO Update</a>
                 </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#close-conection">Cerrar conexión</a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -110,7 +112,7 @@
             <h2 class="course-class__section--title">Introducción</h2>
             <div class="course-class__section--content">
               <p>
-                Para concectarse a una base de datos usando PHP hay varias
+                Para conectarse a una base de datos usando PHP hay varias
                 formas,
                 <a target="_blank" class="link link-refe"
                   href="https://www.php.net/manual/es/book.mysqli.php">Mysqli</a>,
@@ -120,13 +122,13 @@
                 primero se iniciara con
                 <strong>Mysqli</strong>, se verá como conectarse a la base de
                 datos, y a realizar el famoso CRUD para el manejo de
-                información.
+                información, luego se hará lo mismo pero usando <strong>PDO</strong>.
               </p>
             </div>
           </article>
           <article class="course-class__section" id="conexion">
             <h2 class="course-class__section--title">
-              Configuración conexión
+              Mysqli Configuración conexión
             </h2>
             <div class="course-class__section--content">
               <p>
@@ -145,7 +147,7 @@
             </div>
           </article>
           <article class="course-class__section" id="insert">
-            <h2 class="course-class__section--title">Insertar</h2>
+            <h2 class="course-class__section--title">Mysqli Insertar</h2>
             <div class="course-class__section--content">
               <p>
                 Si usamos un formulario, utilizaremos el método
@@ -156,14 +158,9 @@
                   &lt;?<span class="code-sym">php</span>
                   <span class="code-sym">require_once</span> <span class="code-text">"conexion.php"</span>;
 
-                  <span class="code-comment">#Obtener los datos por medio de POST, el parametro
-                  #que se le pasa a ese método es el nombre (name) del input </span>
                   $name = $_POST[<span class="code-text">'name'</span>]; 
                   $id = $_POST[<span class="code-text">'id'</span>]; 
 
-                  <span class="code-comment">#Para manejar radiobutton</span>
-                  <span class="code-comment">#Se usa <strong>isset</strong> Para ver si radio está definido y no es null, es decir
-                  #Si el usuario selecciono el radiobutton</span>
                   $radio = <span class="code-var">isset</span>($_POST[<span class="code-text">'radio'</span>]) ? $_POST[<span class="code-text">'radio'</span>] : <span class="code-text">'no'</span>;
                 </pre>
               <p>
@@ -192,20 +189,21 @@
                 </pre>
               <p>
                 Para insertar datos en la base de datos se hace llamando a la
-                variable <strong>mysqli</strong> creada en el archivo
+                instancia de la conexión <strong>mysqli</strong> creada en el archivo
                 <strong>conexion.php</strong> y usando el método
                 <strong>query</strong> se le pasa la consulta a realizar en la
                 base de datos.
               </p>
               <pre class="code">
 
-                  $queryInsert  = <span class="code-text">"</span><span class="code-sym">INSERT INTO</span> <span class="code-text">table (campo1, campo2numerico, campo3)</span> <span class="code-sym">VALUES</span> <span class="code-text">('$campo1', $campo2numerico, '$campo3')"</span>;
+                  $queryInsert  = <span class="code-text">"</span><span class="code-sym">INSERT INTO</span> <span class="code-text">table (campo1, campo2numerico, campo3)</span>
+                   <span class="code-sym">VALUES</span> <span class="code-text">('$campo1', $campo2numerico, '$campo3')"</span>;
                   $response = $mysqli-><span class="code-var">query</span>($queryInsert);
                 </pre>
             </div>
           </article>
           <article class="course-class__section" id="read">
-            <h2 class="course-class__section--title">Leer</h2>
+            <h2 class="course-class__section--title">Mysqli Leer</h2>
             <div class="course-class__section--content">
               <p>
                 Para consultar los datos se hace mediante el
@@ -223,10 +221,8 @@
                 select debemos llamar a la función
                 <strong>fetch_array</strong>. Esta función retorna un
                 <strong>vector asociativo</strong> con los datos del registro
-                rescatado, o false en caso de no haber más registros. Es decir
-                que si retorna un registro se almacena en el vector $row y la
-                condición del while se valida como verdadero y pasa a
-                ejecutarse el bloque del while:
+                rescatado, o false en caso de no haber más registros. En el ciclo while
+                se ejecuta hasta que el método fetch_array devuelva false.
               </p>
               <pre class="code">
 
@@ -235,7 +231,7 @@
               <p>
                 Para rescatar cada campo accedemos mediante el vector
                 asociativo $row indicando como subíndice un campo contenido en
-                el select:$reg['campo'].
+                el select.
               </p>
               <pre class="code">
 
@@ -244,7 +240,7 @@
             </div>
           </article>
           <article class="course-class__section" id="update">
-            <h2 class="course-class__section--title">Actualizar</h2>
+            <h2 class="course-class__section--title">Mysqli Actualizar</h2>
             <div class="course-class__section--content">
               <p>
                 Para actualizar, lo primero es configurar el botón o la acción
@@ -276,26 +272,6 @@
               <pre class="code">
 
                   &lt;<span class="code-sym">input</span> <span class="code-function">name</span>=<span class="code-text">"id"</span> <span class="code-function">type</span>=<span class="code-text">"hidden"</span> <span class="code-function">value</span>=&lt;?<span class="code-sym">php</span> <span class="code-var">echo</span> <span class="code-text">"\""</span> . $row[<span class="code-text">'id'</span>]  . <span class="code-text">"\""</span> ?&gt;"&gt;
-                  
-                  <span class="code-comment">#Update</span>
-                  $id = $_GET[<span class="code-text">'id'</span>];
-
-                  $queryUpdate  = <span class="code-text">"</span><span class="code-sym">UPDATE</span> <span class="code-text">table</span> <span class="code-sym">SET</span> <span class="code-text">nombre = '$name'</span> <span class="code-sym">WHERE</span> <span class="code-text">id = '$id'"</span>;
-
-                  $response = $mysqli-><span class="code-var">query</span>($queryUpdate);
-                </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="delete">
-            <h2 class="course-class__section--title">
-              Eliminar
-            </h2>
-            <div class="course-class__section--content">
-              <pre class="code">
-
-                  $queryDelete  = <span class="code-text">"</span><span class="code-sym">DELETE FROM</span> <span class="code-text">table</span> <span class="code-sym">WHERE</span> <span class="code-text">id = '$id'"</span>;
-
-                  $response = $mysqli-><span class="code-var">query</span>($queryDelete);
                 </pre>
             </div>
           </article>
@@ -402,11 +378,12 @@
           </article>
           <article class="course-class__section" id="update-pdo">
             <h2 class="course-class__section--title">
-              Update PDO
+              Update y Delete PDO
             </h2>
             <div class="course-class__section--content">
               <p>
-                Para implementar el update, es necesario obtener el id del elemento a modificar en base de datos, y para
+                Para implementar el update o el delete, es necesario obtener el id del elemento a modificar en base de
+                datos, y para
                 obtener el id, se puede hacer mediante el método <strong>GET</strong>.
               </p>
               <pre class="code">
@@ -418,6 +395,28 @@
                 $query_update = <span class="code-text">"UPDATE table SET campo1 = ?, campo2 = ? WHERE id = ?"</span>;
                 $stmt = $pdo-><span class="code-function">prepare</span>($query_update);
                 $stmt-><span class="code-function">execute</span>($valor1, $valor2, $id);
+              </pre>
+              <p>Para la acción de eliminar sería la siguiente, aunque se recomienda hacer una validación previa con Js,
+                preguntandolé al usuario si realmente quiere borrar el registro.</p>
+              <pre class="code">
+
+                  $query_delete = <span class="code-text">"DELETE FROM table WHERE id = ?"</span>;
+                  $stmt = $pdo-><span class="code-function">prepare</span>($query_delete);
+                  $stmt-><span class="code-function">execute</span>($id);
+                </pre>
+            </div>
+          </article>
+          <article class="course-class__section" id="close-conection">
+            <h2 class="course-class__section--title">Cerrar conexión PDO</h2>
+            <div class="course-class__section">
+              <p>
+                Para cerrar una conexión en PDO, solo basta con volver null, la instancia de la clase PDO, asi como
+                también la variable statement.
+              </p>
+              <pre class="code">
+
+                $pdo = <span class="code-sym">null</span>;
+                $stmt = <span class="code-sym">null</span>;
               </pre>
             </div>
           </article>
