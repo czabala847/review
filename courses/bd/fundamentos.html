@@ -1,588 +1,515 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Fundamentos de bases de datos</title>
-    <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../../src/css/styles.css" />
-    <link rel="stylesheet" href="../../fonts/style.css" />
-  </head>
-  <body>
-    <div class="app">
-      <div class="app-bd-fundamentos">
-        <header class="header">
-          <div class="container-general">
-            <nav class="header-menu">
-              <ul class="header-menu__list menu-left">
-                <li class="header-menu__list--item">
-                  <a class="link" href="../../index.html">Inicio</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Fundamentos de bases de datos</title>
+  <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../src/css/styles.css" />
+  <link rel="stylesheet" href="../../fonts/style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <div class="app-bd-fundamentos">
+      <header class="header">
+        <div class="container-general">
+          <nav class="header-menu">
+            <ul class="header-menu__list menu-left">
+              <li class="header-menu__list--item">
+                <a class="link" href="../../index.html">Inicio</a>
+              </li>
+              <li class="header-menu__list--item">
+                <a class="link" href="../../index.html##courses">Carreras</a>
+              </li>
+            </ul>
+            <figure class="header-menu__logo">
+              <a href="../../index.html"><img class="header-menu__logo--img" src="../../src/images/logo_white.png"
+                  alt="logo carlos zabala" /></a>
+            </figure>
+            <ul class="header-menu__list menu-right">
+              <li class="header-menu__list--item">
+                <a class="link" href="">Me</a>
+              </li>
+              <li class="header-menu__list--item">
+                <a class="link" href="">Contacto</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <section class="hero-course">
+        <div class="container-general">
+          <h1 class="hero-course__title">Fundamentos de bases de datos</h1>
+          <p class="hero-course__description">
+            Desde la antigüedad el ser humano se percató de la necesidad de
+            <strong class="t-yellow">almacenar la información</strong> de
+            manera tal que no se distorsionara y prolongarla mucho tiempo más
+            que el de la vida de un ser humano. Se data que algunas
+            civilizaciones como los sumerios empezaron a grabar la información
+            en piedra y tablas de arcilla, pero esto tiene varias desventajas,
+            como la movilidad, o la fragilidad de fracturas, es por eso que
+            damos un salto al papiro y a los pergaminos, eran mucho más
+            portátiles y ligeros, pero por ser de material animal, tenían
+            tendencia a sufrir de hongos o a descomponerse, fue cuando los
+            chinos brindaron la revolución con las hojas de papel. Fue hasta
+            el siglo XX donde se inventa el microfilm, el cual permitía
+            guardar en teoría información infinita, el problema principal es
+            que leer esta información o modificarla es mucho más complicado y
+            requiere maquinas complejas. Después de un tiempo llega la era
+            digital donde migramos a nuevos métodos con CD, Discos duros,
+            Discos sólidos, pasado el tiempo llega la
+            <strong class="t-yellow">nube</strong> la cual tiene una gran
+            ventaja con respecto a estos medios tradicionales, y es que es
+            accesible desde cualquier parte del mundo (centralizado).
+          </p>
+          <div class="hero-course__buttons">
+            <a target="_blank" href="https://platzi.com/clases/bd/" class="btn btn--blue">Curso platzi</a>
+          </div>
+        </div>
+      </section>
+      <section class="course-class">
+        <div class="course-class__left" id="course-class__left">
+          <div class="course-class__left--container">
+            <nav class="course-class__menu">
+              <ul>
+                <li>
+                  <a class="link course-class__menu--a" href="#rdb-history">Historia RDB</a>
                 </li>
-                <li class="header-menu__list--item">
-                  <a class="link" href="../../index.html##courses">Carreras</a>
+                <li>
+                  <a class="link course-class__menu--a" href="#entities-attributes">Entidades y atributos</a>
                 </li>
-              </ul>
-              <figure class="header-menu__logo">
-                <a href="../../index.html"
-                  ><img
-                    class="header-menu__logo--img"
-                    src="../../src/images/logo_white.png"
-                    alt="logo carlos zabala"
-                /></a>
-              </figure>
-              <ul class="header-menu__list menu-right">
-                <li class="header-menu__list--item">
-                  <a class="link" href="">Me</a>
+                <li>
+                  <a class="link course-class__menu--a" href="#relation">Relaciones</a>
                 </li>
-                <li class="header-menu__list--item">
-                  <a class="link" href="">Contacto</a>
+                <li>
+                  <a class="link course-class__menu--a" href="#diagram-er">Diagrama ER</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#data-constraints">Tipos de datos y Constraints</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#normalization">Normalización</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#rdb">RDB</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#sql-history">Historia de SQL</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#ddl-create">DDL Create</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#ddl-alter">DDL Alter</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#ddl-drop">DDL Drop</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#dml">DML</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#foreing-key">Llaves Foráneas</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#transitive-tables">Tablas transitivas</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#nosql">DB no relacionales</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#hierarchy-firebase">Firebase Jerarquía</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#top-level-collection">Firebase Top level collection</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#big-data">Big Data</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#data-warehouse">Data warehouse</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#data-mining">Data mining</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#etl">ETL</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#business-intelligence">Business intelligence</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#machine-learning">Machine Learning</a>
                 </li>
               </ul>
             </nav>
           </div>
-        </header>
-        <section class="hero-course">
-          <div class="container-general">
-            <h1 class="hero-course__title">Fundamentos de bases de datos</h1>
-            <p class="hero-course__description">
-              Desde la antigüedad el ser humano se percató de la necesidad de
-              <strong class="t-yellow">almacenar la información</strong> de
-              manera tal que no se distorsionara y prolongarla mucho tiempo más
-              que el de la vida de un ser humano. Se data que algunas
-              civilizaciones como los sumerios empezaron a grabar la información
-              en piedra y tablas de arcilla, pero esto tiene varias desventajas,
-              como la movilidad, o la fragilidad de fracturas, es por eso que
-              damos un salto al papiro y a los pergaminos, eran mucho más
-              portátiles y ligeros, pero por ser de material animal, tenían
-              tendencia a sufrir de hongos o a descomponerse, fue cuando los
-              chinos brindaron la revolución con las hojas de papel. Fue hasta
-              el siglo XX donde se inventa el microfilm, el cual permitía
-              guardar en teoría información infinita, el problema principal es
-              que leer esta información o modificarla es mucho más complicado y
-              requiere maquinas complejas. Después de un tiempo llega la era
-              digital donde migramos a nuevos métodos con CD, Discos duros,
-              Discos sólidos, pasado el tiempo llega la
-              <strong class="t-yellow">nube</strong> la cual tiene una gran
-              ventaja con respecto a estos medios tradicionales, y es que es
-              accesible desde cualquier parte del mundo (centralizado).
-            </p>
-            <div class="hero-course__buttons">
-              <a
-                target="_blank"
-                href="https://platzi.com/clases/bd/"
-                class="btn btn--blue"
-                >Curso platzi</a
-              >
+        </div>
+        <div class="course-class__content">
+          <i class="icon-menu icon course-class__icon-menu" id="btn-menu"></i>
+          <article class="course-class__section" id="rdb-history">
+            <h2 class="course-class__section--title">
+              Historia de las RDB
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Las bases de datos surgen de la necesidad de conservar la
+                información más allá de lo que existe en la memoria RAM.
+              </p>
+              <p>
+                En el esquema tradicional de computación
+                <strong>Von Neumann</strong> (Creador del sistema de
+                arquitectura computacional clásica) Se contempla el
+                procesamiento de datos, y la memoria RAM, pero no una memoria
+                que permitiera guardar datos persistentes. Así que cuando se
+                empezó a pensar en formas de guardar datos y extraerlos se
+                dieron los siguientes:
+              </p>
+              <ul>
+                <li>
+                  BB.DD basadas en archivo: Básicamente era texto plano (como
+                  guardar archivos en el bloc de notas separadas por comas),
+                  fácil de guardar, pero difícil de consultar de forma
+                  ordenada. Entonces surge la necesidad de crear algo más
+                  estructurado y emergen las famosas BB.DD relacionales por
+                  <strong>Edgar Codd</strong>.
+                </li>
+              </ul>
+              <p>
+                <strong>Edgar Codd</strong> Creo las BB.DD relacionales, quien
+                además dejo una serie reglas, considerados por algunos como
+                "Los mandamientos de Codd", quien tenía la intención de
+                asegurar que la filosofía de las BB.DD no se perdiera, o
+                tergiversara con el paso del tiempo, dejando claro una
+                doctrina y estandarizando el proceso.
+              </p>
             </div>
-          </div>
-        </section>
-        <section class="course-class">
-          <div class="course-class__left" id="course-class__left">
-            <div class="course-class__left--container">
-              <nav class="course-class__menu">
-                <ul>
-                  <li>
-                    <a class="link course-class__menu--a" href="#rdb-history"
-                      >Historia RDB</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="link course-class__menu--a"
-                      href="#entities-attributes"
-                      >Entidades y atributos</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#relation"
-                      >Relaciones</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#diagram-er"
-                      >Diagrama ER</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="link course-class__menu--a"
-                      href="#data-constraints"
-                      >Tipos de datos y Constraints</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#normalization"
-                      >Normalización</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#rdb">RDB</a>
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#sql-history"
-                      >Historia de SQL</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#ddl-create"
-                      >DDL Create</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#ddl-alter"
-                      >DDL Alter</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#ddl-drop"
-                      >DDL Drop</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#dml">DML</a>
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#foreing-key"
-                      >Llaves Foráneas</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="link course-class__menu--a"
-                      href="#transitive-tables"
-                      >Tablas transitivas</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#nosql"
-                      >DB no relacionales</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="link course-class__menu--a"
-                      href="#hierarchy-firebase"
-                      >Firebase Jerarquía</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="link course-class__menu--a"
-                      href="#top-level-collection"
-                      >Firebase Top level collection</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#big-data"
-                      >Big Data</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#data-warehouse"
-                      >Data warehouse</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#data-mining"
-                      >Data mining</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#etl">ETL</a>
-                  </li>
-                  <li>
-                    <a
-                      class="link course-class__menu--a"
-                      href="#business-intelligence"
-                      >Business intelligence</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="link course-class__menu--a"
-                      href="#machine-learning"
-                      >Machine Learning</a
-                    >
-                  </li>
-                </ul>
-              </nav>
+          </article>
+          <article class="course-class__section" id="entities-attributes">
+            <h2 class="course-class__section--title">
+              Entidades y atributos
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Una <strong>entidad</strong> es algo similar a un objeto
+                (programación orientada a objetos) y representa algo en el
+                mundo real, incluso algo abstracto. Tienen atributos que son
+                las cosas que los hacen ser una entidad y por convención se
+                ponen en plural. Gráficamente las entidades se representan con
+                un rectángulo.
+              </p>
+              <p>
+                Los <strong>atributos compuestos</strong> son aquellos que
+                tienen atributos ellos mismos.
+              </p>
+              <p>
+                Los <strong>atributos llave</strong> son aquellos que
+                identifican a la entidad y no pueden ser repetidos. Existen:
+              </p>
+              <ul>
+                <li>
+                  Naturales: Son inherentes al objeto como el número de serie
+                </li>
+                <li>
+                  Clave artificial: No es inherente al objeto y se asigna de
+                  manera arbitraria.
+                </li>
+              </ul>
+              <p>
+                <strong>Entidades débiles</strong>: No pueden existir sin una
+                entidad fuerte y se representan con un cuadrado con doble
+                línea.
+              </p>
+              <ul>
+                <li>
+                  Identidades débiles por identidad: No se diferencian entre
+                  sí más que por la clave de su identidad fuerte.
+                </li>
+                <li>
+                  Identidades débiles por existencia: Se les asigna una clave
+                  propia.
+                </li>
+              </ul>
+              <figure class="img-container">
+                <img class="img-container__image" src="https://i.ibb.co/YBYsTJ9/representacion-grafica-entidades.png"
+                  alt="Representación grafica de una entidad BD" />
+              </figure>
             </div>
-          </div>
-          <div class="course-class__content">
-            <i class="icon-menu icon course-class__icon-menu" id="btn-menu"></i>
-            <article class="course-class__section" id="rdb-history">
-              <h2 class="course-class__section--title">
-                Historia de las RDB
-              </h2>
-              <div class="course-class__section--content">
+          </article>
+          <article class="course-class__section" id="relation">
+            <h2 class="course-class__section--title">Relaciones</h2>
+            <div class="course-class__section--content">
+              <p>
+                Las relaciones nos permiten ligar o unir nuestras diferentes
+                entidades y se representan con rombos. Por convención se
+                definen a través de verbos.
+              </p>
+              <p>
+                Las relaciones tienen una propiedad llamada
+                <strong>cardinalidad</strong> y tiene que ver con números.
+                Cuántos de un lado pertenecen a cuántos del otro lado:
+              </p>
+              <ul>
+                <li>
+                  Cardinalidad: 1 a 1
+                </li>
+                <li>
+                  Cardinalidad: 0 a 1
+                </li>
+                <li>
+                  Cardinalidad: 1 a N
+                </li>
+                <li>
+                  Cardinalidad: 0 a N
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="course-class__section" id="diagram-er">
+            <h2 class="course-class__section--title">Diagrama ER</h2>
+            <div class="course-class__section--content">
+              <p>
+                Un diagrama es como un <strong>mapa</strong> y nos ayuda a
+                entender cuáles son las entidades con las que vamos a
+                trabajar, cuáles son sus relaciones y qué papel van a jugar en
+                las aplicaciones de la base de datos.
+              </p>
+              <figure class="img-container">
+                <img class="img-conteiner__image" src="https://i.ibb.co/PTrYqKP/diagrama-er.png"
+                  alt="Diagrama ER del blog de platzi" />
+              </figure>
+            </div>
+          </article>
+          <article class="course-class__section" id="data-constraints">
+            <h2 class="course-class__section--title">
+              Diagrama Físico: tipos de datos y constraints
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Para llevar a la práctica un diagrama debemos ir más allá y
+                darle detalle con parámetros como:
+              </p>
+              <ul>
+                <li>
+                  <strong>Tipos de datos</strong>
+                  <ul>
+                    <li>
+                      <strong>Texto:</strong>
+                      <ul>
+                        <li>
+                          <strong>CHAR:</strong>Guarda el espacio que se le
+                          asigne .
+                        </li>
+                        <li>
+                          <strong>VARCHAR:</strong> Asigna un espacio dinámico
+                          en memoria, dependiendo del número de caracteres del
+                          texto.
+                        </li>
+                        <li>
+                          <strong>TEXT:</strong> Almacena grandes cantidades
+                          de texto.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <strong>Números</strong>
+                      <ul>
+                        <li><strong>INTEGER.</strong></li>
+                        <li>
+                          <strong>BIGINT:</strong> Tiene una función similar a
+                          la INTERGER, pero la utilizamos cuando sabemos que
+                          necesitamos trabajar con números muy grandes.
+                        </li>
+                        <li>
+                          <strong>SMALLINT:</strong> Tiene una función similar
+                          a la INTERGER, pero la utilizamos cuando sabemos que
+                          necesitamos trabajar con números "pequeños".
+                        </li>
+                        <li>
+                          <strong>DECIMAL(n, s)</strong>
+                        </li>
+                        <li>
+                          <strong>NUMERIC(n, s)</strong>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <strong>Fecha/hora:</strong>
+                      <ul>
+                        <li><strong>DATE:</strong> Año, mes y día.</li>
+                        <li>
+                          <strong>TIME:</strong> La hora del día de las 24h
+                        </li>
+                        <li>
+                          <strong>DATETIME:</strong> Obtiene los dos
+                          anteriores
+                        </li>
+                        <li>
+                          <strong>TIMESTAMP.</strong>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <strong>Lógicos:</strong>
+                      <ul>
+                        <li><strong>BOOLEAN</strong></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Constraints (Restricciones)</strong>
+                  <ul>
+                    <li>
+                      <strong>NOT NULL: </strong>Se asegura que la columna no
+                      tenga valores nulos.
+                    </li>
+                    <li>
+                      <strong>UNIQUE:</strong> Se asegura que cada valor en la
+                      columna no se repita.
+                    </li>
+                    <li>
+                      <strong>PRIMARY KEY:</strong> Es una combinación de NOT
+                      NULL y UNIQUE.
+                    </li>
+                    <li>
+                      <strong>FOREIGN KEY:</strong> Identifica de manera única
+                      una tupla en otra tabla.
+                    </li>
+                    <li>
+                      <strong>CHECK:</strong> Se asegura que el valor en la
+                      columna cumpla una condición dada.
+                    </li>
+                    <li>
+                      <strong>DEFAULT:</strong> Coloca un valor por defecto
+                      cuando no hay un valor especificado .
+                    </li>
+                    <li>
+                      <strong>INDEX:</strong> Se crea por columna para
+                      permitir búsquedas más rápidas.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="course-class__section" id="normalization">
+            <h2 class="course-class__section--title">
+              Diagrama Físico: normalización
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                La normalización como su nombre lo indica nos ayuda a dejar
+                todo de una forma normal. Esto obedece a las 12 reglas de
+                <strong>Codd</strong>
+                y nos permiten separar componentes en la base de datos:
+              </p>
+              <ul>
+                <li>
+                  Primera forma normal (1FN): Atributos atómicos (Sin campos
+                  repetidos).
+                </li>
+                <li>
+                  Segunda forma normal (2FN): Cumple 1FN y cada campo de la
+                  tabla debe depender de una clave única.
+                </li>
+                <li>
+                  Tercera forma normal (3FN): Cumple 1FN y 2FN y los campos
+                  que NO son clave, NO deben tener dependencias.
+                </li>
+                <li>
+                  Cuarta forma normal (4FN): Cumple 1FN, 2FN, 3FN y los campos
+                  multivaluados se identifican por una clave única.
+                </li>
+              </ul>
+              <figure class="img-container">
+                <img class="img-container__image" src="https://i.ibb.co/3Mfzj7q/normalizacion.png"
+                  alt="Ejemplo de normalización en base de datos" />
+              </figure>
+            </div>
+          </article>
+          <article class="course-class__section" id="rdb">
+            <h2 class="course-class__section--title">RDB ¿Qué?</h2>
+            <div class="course-class__section--content">
+              <p>
+                RDBMS significa Relational Database Management System o
+                sistema manejador de bases de datos relacionales. Es un
+                programa que se encarga de seguir las reglas de Codd y se
+                puede utilizar de manera programática.
+              </p>
+            </div>
+          </article>
+          <article class="course-class__section" id="sql-history">
+            <h2 class="course-class__section--title">
+              Historia de SQL
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                SQL significa Structured Query Language y tiene una estructura
+                clara y fija. Su objetivo es hacer un solo lenguaje para
+                consultar cualquier manejador de bases de datos volviéndose un
+                gran estándar.
+              </p>
+              <p>
+                Ahora existe el <strong>NOSQL</strong> o Not Only Structured
+                Query Language que significa que no sólo se utiliza SQLen las
+                bases de datos no relacionales.
+              </p>
+              <div class="note">
                 <p>
-                  Las bases de datos surgen de la necesidad de conservar la
-                  información más allá de lo que existe en la memoria RAM.
-                </p>
-                <p>
-                  En el esquema tradicional de computación
-                  <strong>Von Neumann</strong> (Creador del sistema de
-                  arquitectura computacional clásica) Se contempla el
-                  procesamiento de datos, y la memoria RAM, pero no una memoria
-                  que permitiera guardar datos persistentes. Así que cuando se
-                  empezó a pensar en formas de guardar datos y extraerlos se
-                  dieron los siguientes:
-                </p>
-                <ul>
-                  <li>
-                    BB.DD basadas en archivo: Básicamente era texto plano (como
-                    guardar archivos en el bloc de notas separadas por comas),
-                    fácil de guardar, pero difícil de consultar de forma
-                    ordenada. Entonces surge la necesidad de crear algo más
-                    estructurado y emergen las famosas BB.DD relacionales por
-                    <strong>Edgar Codd</strong>.
-                  </li>
-                </ul>
-                <p>
-                  <strong>Edgar Codd</strong> Creo las BB.DD relacionales, quien
-                  además dejo una serie reglas, considerados por algunos como
-                  "Los mandamientos de Codd", quien tenía la intención de
-                  asegurar que la filosofía de las BB.DD no se perdiera, o
-                  tergiversara con el paso del tiempo, dejando claro una
-                  doctrina y estandarizando el proceso.
-                </p>
-              </div>
-            </article>
-            <article class="course-class__section" id="entities-attributes">
-              <h2 class="course-class__section--title">
-                Entidades y atributos
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  Una <strong>entidad</strong> es algo similar a un objeto
-                  (programación orientada a objetos) y representa algo en el
-                  mundo real, incluso algo abstracto. Tienen atributos que son
-                  las cosas que los hacen ser una entidad y por convención se
-                  ponen en plural. Gráficamente las entidades se representan con
-                  un rectángulo.
-                </p>
-                <p>
-                  Los <strong>atributos compuestos</strong> son aquellos que
-                  tienen atributos ellos mismos.
-                </p>
-                <p>
-                  Los <strong>atributos llave</strong> son aquellos que
-                  identifican a la entidad y no pueden ser repetidos. Existen:
-                </p>
-                <ul>
-                  <li>
-                    Naturales: Son inherentes al objeto como el número de serie
-                  </li>
-                  <li>
-                    Clave artificial: No es inherente al objeto y se asigna de
-                    manera arbitraria.
-                  </li>
-                </ul>
-                <p>
-                  <strong>Entidades débiles</strong>: No pueden existir sin una
-                  entidad fuerte y se representan con un cuadrado con doble
-                  línea.
-                </p>
-                <ul>
-                  <li>
-                    Identidades débiles por identidad: No se diferencian entre
-                    sí más que por la clave de su identidad fuerte.
-                  </li>
-                  <li>
-                    Identidades débiles por existencia: Se les asigna una clave
-                    propia.
-                  </li>
-                </ul>
-                <figure class="img-container">
-                  <img
-                    class="img-container__image"
-                    src="https://i.ibb.co/YBYsTJ9/representacion-grafica-entidades.png"
-                    alt="Representación grafica de una entidad BD"
-                  />
-                </figure>
-              </div>
-            </article>
-            <article class="course-class__section" id="relation">
-              <h2 class="course-class__section--title">Relaciones</h2>
-              <div class="course-class__section--content">
-                <p>
-                  Las relaciones nos permiten ligar o unir nuestras diferentes
-                  entidades y se representan con rombos. Por convención se
-                  definen a través de verbos.
-                </p>
-                <p>
-                  Las relaciones tienen una propiedad llamada
-                  <strong>cardinalidad</strong> y tiene que ver con números.
-                  Cuántos de un lado pertenecen a cuántos del otro lado:
-                </p>
-                <ul>
-                  <li>
-                    Cardinalidad: 1 a 1
-                  </li>
-                  <li>
-                    Cardinalidad: 0 a 1
-                  </li>
-                  <li>
-                    Cardinalidad: 1 a N
-                  </li>
-                  <li>
-                    Cardinalidad: 0 a N
-                  </li>
-                </ul>
-              </div>
-            </article>
-            <article class="course-class__section" id="diagram-er">
-              <h2 class="course-class__section--title">Diagrama ER</h2>
-              <div class="course-class__section--content">
-                <p>
-                  Un diagrama es como un <strong>mapa</strong> y nos ayuda a
-                  entender cuáles son las entidades con las que vamos a
-                  trabajar, cuáles son sus relaciones y qué papel van a jugar en
-                  las aplicaciones de la base de datos.
-                </p>
-                <figure class="img-container">
-                  <img
-                    class="img-conteiner__image"
-                    src="https://i.ibb.co/PTrYqKP/diagrama-er.png"
-                    alt="Diagrama ER del blog de platzi"
-                  />
-                </figure>
-              </div>
-            </article>
-            <article class="course-class__section" id="data-constraints">
-              <h2 class="course-class__section--title">
-                Diagrama Físico: tipos de datos y constraints
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  Para llevar a la práctica un diagrama debemos ir más allá y
-                  darle detalle con parámetros como:
-                </p>
-                <ul>
-                  <li>
-                    <strong>Tipos de datos</strong>
-                    <ul>
-                      <li>
-                        <strong>Texto:</strong>
-                        <ul>
-                          <li>
-                            <strong>CHAR:</strong>Guarda el espacio que se le
-                            asigne .
-                          </li>
-                          <li>
-                            <strong>VARCHAR:</strong> Asigna un espacio dinámico
-                            en memoria, dependiendo del número de caracteres del
-                            texto.
-                          </li>
-                          <li>
-                            <strong>TEXT:</strong> Almacena grandes cantidades
-                            de texto.
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <strong>Números</strong>
-                        <ul>
-                          <li><strong>INTEGER.</strong></li>
-                          <li>
-                            <strong>BIGINT:</strong> Tiene una función similar a
-                            la INTERGER, pero la utilizamos cuando sabemos que
-                            necesitamos trabajar con números muy grandes.
-                          </li>
-                          <li>
-                            <strong>SMALLINT:</strong> Tiene una función similar
-                            a la INTERGER, pero la utilizamos cuando sabemos que
-                            necesitamos trabajar con números "pequeños".
-                          </li>
-                          <li>
-                            <strong>DECIMAL(n, s)</strong>
-                          </li>
-                          <li>
-                            <strong>NUMERIC(n, s)</strong>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <strong>Fecha/hora:</strong>
-                        <ul>
-                          <li><strong>DATE:</strong> Año, mes y día.</li>
-                          <li>
-                            <strong>TIME:</strong> La hora del día de las 24h
-                          </li>
-                          <li>
-                            <strong>DATETIME:</strong> Obtiene los dos
-                            anteriores
-                          </li>
-                          <li>
-                            <strong>TIMESTAMP.</strong>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <strong>Lógicos:</strong>
-                        <ul>
-                          <li><strong>BOOLEAN</strong></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <strong>Constraints (Restricciones)</strong>
-                    <ul>
-                      <li>
-                        <strong>NOT NULL: </strong>Se asegura que la columna no
-                        tenga valores nulos.
-                      </li>
-                      <li>
-                        <strong>UNIQUE:</strong> Se asegura que cada valor en la
-                        columna no se repita.
-                      </li>
-                      <li>
-                        <strong>PRIMARY KEY:</strong> Es una combinación de NOT
-                        NULL y UNIQUE.
-                      </li>
-                      <li>
-                        <strong>FOREIGN KEY:</strong> Identifica de manera única
-                        una tupla en otra tabla.
-                      </li>
-                      <li>
-                        <strong>CHECK:</strong> Se asegura que el valor en la
-                        columna cumpla una condición dada.
-                      </li>
-                      <li>
-                        <strong>DEFAULT:</strong> Coloca un valor por defecto
-                        cuando no hay un valor especificado .
-                      </li>
-                      <li>
-                        <strong>INDEX:</strong> Se crea por columna para
-                        permitir búsquedas más rápidas.
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </article>
-            <article class="course-class__section" id="normalization">
-              <h2 class="course-class__section--title">
-                Diagrama Físico: normalización
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  La normalización como su nombre lo indica nos ayuda a dejar
-                  todo de una forma normal. Esto obedece a las 12 reglas de
-                  <strong>Codd</strong>
-                  y nos permiten separar componentes en la base de datos:
-                </p>
-                <ul>
-                  <li>
-                    Primera forma normal (1FN): Atributos atómicos (Sin campos
-                    repetidos).
-                  </li>
-                  <li>
-                    Segunda forma normal (2FN): Cumple 1FN y cada campo de la
-                    tabla debe depender de una clave única.
-                  </li>
-                  <li>
-                    Tercera forma normal (3FN): Cumple 1FN y 2FN y los campos
-                    que NO son clave, NO deben tener dependencias.
-                  </li>
-                  <li>
-                    Cuarta forma normal (4FN): Cumple 1FN, 2FN, 3FN y los campos
-                    multivaluados se identifican por una clave única.
-                  </li>
-                </ul>
-                <figure class="img-container">
-                  <img
-                    class="img-container__image"
-                    src="https://i.ibb.co/3Mfzj7q/normalizacion.png"
-                    alt="Ejemplo de normalización en base de datos"
-                  />
-                </figure>
-              </div>
-            </article>
-            <article class="course-class__section" id="rdb">
-              <h2 class="course-class__section--title">RDB ¿Qué?</h2>
-              <div class="course-class__section--content">
-                <p>
-                  RDBMS significa Relational Database Management System o
-                  sistema manejador de bases de datos relacionales. Es un
-                  programa que se encarga de seguir las reglas de Codd y se
-                  puede utilizar de manera programática.
+                  La utilidad más grande de SQL fue unificar la forma en la
+                  que pensamos y hacemos preguntas a un repositorio de datos.
+                  Ahora que nacen nuevas bases de datos igualmente siguen
+                  tomando elementos de SQL.
                 </p>
               </div>
-            </article>
-            <article class="course-class__section" id="sql-history">
-              <h2 class="course-class__section--title">
-                Historia de SQL
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  SQL significa Structured Query Language y tiene una estructura
-                  clara y fija. Su objetivo es hacer un solo lenguaje para
-                  consultar cualquier manejador de bases de datos volviéndose un
-                  gran estándar.
-                </p>
-                <p>
-                  Ahora existe el <strong>NOSQL</strong> o Not Only Structured
-                  Query Language que significa que no sólo se utiliza SQLen las
-                  bases de datos no relacionales.
-                </p>
-                <div class="note">
-                  <p>
-                    La utilidad más grande de SQL fue unificar la forma en la
-                    que pensamos y hacemos preguntas a un repositorio de datos.
-                    Ahora que nacen nuevas bases de datos igualmente siguen
-                    tomando elementos de SQL.
-                  </p>
-                </div>
-              </div>
-            </article>
-            <article class="course-class__section" id="ddl-create">
-              <h2 class="course-class__section--title">
-                DDL create
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  SQL tiene dos grandes sublenguajes: <br />
-                  <strong>DDL</strong> o Data Definition Language que nos ayuda
-                  a crear la estructura de una base de datos. Existen 3 grandes
-                  comandos:
-                </p>
-                <ul>
-                  <li>
-                    <strong>Create:</strong> Nos ayuda a crear bases de datos,
-                    tablas, vistas, índices, etc.
-                  </li>
-                  <li>
-                    <strong>Alter:</strong> Ayuda a alterar o modificar
-                    entidades.
-                  </li>
-                  <li>
-                    <strong>Drop:</strong> Nos ayuda a borrar. Hay que tener
-                    cuidado al utilizarlo.
-                  </li>
-                </ul>
-                <p>
-                  3 objetos que manipularemos con el lenguaje DDL:
-                </p>
-                <ul>
-                  <li>
-                    Database o bases de datos.
-                  </li>
-                  <li>
-                    Table o tablas. Son la traducción a SQL de las entidades.
-                  </li>
-                  <li>
-                    View o vistas: Se ofrece la proyección de los datos de la
-                    base de datos de forma entendible.
-                  </li>
-                </ul>
-                <pre class="code">
+            </div>
+          </article>
+          <article class="course-class__section" id="ddl-create">
+            <h2 class="course-class__section--title">
+              DDL create
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                SQL tiene dos grandes sublenguajes: <br />
+                <strong>DDL</strong> o Data Definition Language que nos ayuda
+                a crear la estructura de una base de datos. Existen 3 grandes
+                comandos:
+              </p>
+              <ul>
+                <li>
+                  <strong>Create:</strong> Nos ayuda a crear bases de datos,
+                  tablas, vistas, índices, etc.
+                </li>
+                <li>
+                  <strong>Alter:</strong> Ayuda a alterar o modificar
+                  entidades.
+                </li>
+                <li>
+                  <strong>Drop:</strong> Nos ayuda a borrar. Hay que tener
+                  cuidado al utilizarlo.
+                </li>
+              </ul>
+              <p>
+                3 objetos que manipularemos con el lenguaje DDL:
+              </p>
+              <ul>
+                <li>
+                  Database o bases de datos.
+                </li>
+                <li>
+                  Table o tablas. Son la traducción a SQL de las entidades.
+                </li>
+                <li>
+                  View o vistas: Se ofrece la proyección de los datos de la
+                  base de datos de forma entendible.
+                </li>
+              </ul>
+              <pre class="code">
 
                   <span class="code-comment">#Crear una base de datos</span>
                   CREATE DATABASE <span class="code-var">nombre_db</span>;
@@ -600,42 +527,42 @@
                     PRIMARY KEY (`id`)
                   );
                 </pre>
-              </div>
-            </article>
-            <article class="course-class__section" id="ddl-alter">
-              <h2 class="course-class__section--title">DDL alter</h2>
-              <div class="course-class__section--content">
-                <p>
-                  Los Views toman datos de la base de datos, los hacen
-                  presentables y los convierten en algo que podamos consultar de
-                  manera recurrente.
-                </p>
-                <pre class="code">
+            </div>
+          </article>
+          <article class="course-class__section" id="ddl-alter">
+            <h2 class="course-class__section--title">DDL alter</h2>
+            <div class="course-class__section--content">
+              <p>
+                Los Views toman datos de la base de datos, los hacen
+                presentables y los convierten en algo que podamos consultar de
+                manera recurrente.
+              </p>
+              <pre class="code">
 
                   <span class="code-comment">#Crear vistas</span>
                   CREATE VIEW <span class="code-var">v_nombre_tabla</span> AS
                     SELECT <span class="code-var">campo</span> FROM <span class="code-var">otra_tabla</span> WHERE <span class="code-var">campo</span> = <span class="code-text">"condicion"</span>;
                 </pre>
-                <p>Alterar tabla:</p>
-                <pre class="code">
+              <p>Alterar tabla:</p>
+              <pre class="code">
 
                   ALTER TABLE <span class="code-var">nombre_tabla</span>
                   ADD COLUMN <span class="code-var">campo_alterar</span> DATETIME NULL
                 </pre>
-              </div>
-            </article>
-            <article class="course-class__section" id="ddl-drop">
-              <h2 class="course-class__section--title">
-                DDL drop
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  Está puede ser la sentencia
-                  <span class="t-bold">¡más peligrosa!</span>, sobre todo cuando
-                  somos principiantes. Básicamente borra o desaparece de nuestra
-                  base de datos algún elemento.
-                </p>
-                <pre class="code">
+            </div>
+          </article>
+          <article class="course-class__section" id="ddl-drop">
+            <h2 class="course-class__section--title">
+              DDL drop
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Está puede ser la sentencia
+                <span class="t-bold">¡más peligrosa!</span>, sobre todo cuando
+                somos principiantes. Básicamente borra o desaparece de nuestra
+                base de datos algún elemento.
+              </p>
+              <pre class="code">
 
                   <span class="code-comment">#Borrar una tabla</span>
                   DROP TABLE <span class="code-var">nombre_tabla</span>;
@@ -643,341 +570,340 @@
                   <span class="code-comment">#Borrar una base de datos</span>
                   DROP DATABASE <span class="code-var">nombre_bd</span>;
                 </pre>
-              </div>
-            </article>
-            <article class="course-class__section" id="dml">
-              <h2 class="course-class__section--title">DML</h2>
-              <div class="course-class__section--content">
-                <p>
-                  <strong>DML</strong> trata del contenido de la base de datos.
-                  Son las siglas de Data Manipulation Language y sus comandos
-                  son:
-                </p>
-                <p>
-                  <strong>Insert</strong>: Inserta o agrega nuevos registros a
-                  la tabla.
-                </p>
-                <pre class="code">
+            </div>
+          </article>
+          <article class="course-class__section" id="dml">
+            <h2 class="course-class__section--title">DML</h2>
+            <div class="course-class__section--content">
+              <p>
+                <strong>DML</strong> trata del contenido de la base de datos.
+                Son las siglas de Data Manipulation Language y sus comandos
+                son:
+              </p>
+              <p>
+                <strong>Insert</strong>: Inserta o agrega nuevos registros a
+                la tabla.
+              </p>
+              <pre class="code">
 
                   INSERT INTO <span class="code-var">nombre_tabla</span>(campo1, campo2, campo3)
                   VALUES (<span class="code-text">'Dato1'</span>, <span class="code-text">'Dato2'</span>, <span class="code-text">'Dato3'</span>),
                   (<span class="code-text">'Dato1'</span>, <span class="code-text">'Dato2'</span>, <span class="code-text">'Dato3'</span>);
                 </pre>
-                <p>
-                  <strong>Update</strong>: Actualiza o modifica los datos que ya
-                  existen.
-                </p>
-                <pre class="code">
+              <p>
+                <strong>Update</strong>: Actualiza o modifica los datos que ya
+                existen.
+              </p>
+              <pre class="code">
 
                   UPDATE <span class="code-var">nombre_tabla</span>
                   SET <span class="code-var">campo_actualizar</span> = <span class="code-text">'Nuevo valor'</span>,  <span class="code-var">campo_actualizar</span> = <span class="code-text">'Nuevo valor'</span>
                   WHERE <span class="code-var">campo_condicion</span> = <span class="code-text">'condicion'</span>;
                 </pre>
-                <p>
-                  <strong>Delete</strong>: Esta sentencia es riesgosa porque
-                  puede borrar el contenido de una tabla.
-                </p>
-                <pre class="code">
+              <p>
+                <strong>Delete</strong>: Esta sentencia es riesgosa porque
+                puede borrar el contenido de una tabla.
+              </p>
+              <pre class="code">
 
                   DELETE FROM <span class="code-var">nombre_tabla</span> WHERE <span class="code-var">campo_condicion</span> = <span class="code-text">'condicion'</span>;
                 </pre>
-                <p>
-                  <strong>Select</strong>: Trae información de la base de datos.
-                </p>
-                <pre class="code">
+              <p>
+                <strong>Select</strong>: Trae información de la base de datos.
+              </p>
+              <pre class="code">
 
                   SELECT * FROM <span class="code-var">nombre_tabla</span> WHERE <span class="code-var">campo_condicion</span> = <span class="code-text">'condicion'</span>;
                 </pre>
-              </div>
-            </article>
-            <article class="course-class__section" id="foreing-key">
-              <h2 class="course-class__section--title">Llaves Foráneas</h2>
-              <div class="course-class__section--content">
-                <p>
-                  Para las llaves foráneas los campos de las dos tablas deben
-                  ser del mismo tipo y longitud.
-                </p>
-                <p>
-                  Las opciones de las llaves foráneas son:
-                </p>
-                <ul>
-                  <li>
-                    <strong>no action</strong>: No hacer nada. cuando se haga un
-                    update o un delete de la tabla principal.
-                  </li>
-                  <li>
-                    <strong>cascade</strong>: Sirve para que cada que se haga un
-                    update en la tabla principal, se refleje también en la tabla
-                    en la que estamos creando la relación.
-                  </li>
-                  <li>
-                    <strong>restrict</strong>: Cuando se haga update o delete de
-                    la tabla principal, no lo pueden hacer hasta que se haga
-                    primero en la tabla que tiene la relación.
-                  </li>
-                </ul>
-                <div class="note">
-                  <p>
-                    Se recomienda que el nombre de la llave foránea sea el
-                    nombre de las dos tablas, ejemplo: si queremos una llave
-                    foránea de un post y usuario, el nombre de la llave foránea
-                    debería ser post_usuario.
-                  </p>
-                </div>
-              </div>
-            </article>
-            <article class="course-class__section" id="transitive-tables">
-              <h2 class="course-class__section--title">
-                Tablas transitivas
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  Las tablas transitivas sirven como puente para unir dos
-                  tablas. No tienen contenido semántico.
-                </p>
-                <p>
-                  <strong>Reverse Engineer</strong> nos reproduce el esquema del
-                  cual nos basamos para crear nuestras tablas. Es útil cuando
-                  llegas a un nuevo trabajo y quieres entender cuál fue la
-                  mentalidad que tuvieron al momento de crear las bases de
-                  datos.
-                </p>
-              </div>
-            </article>
-            <article class="course-class__section" id="nosql">
-              <h2 class="course-class__section--title">
-                ¿Qué son y cuáles son los tipos de bases de datos no
-                relacionales?
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  Respecto a las bases de datos no relacionales, no existe un
-                  solo tipo aunque se engloben en una sola categoría.
-                </p>
-                <p>
-                  <strong>Tipos de bases de datos no relacionales:</strong>
-                </p>
-                <ul>
-                  <li>
-                    <strong>Clave - valor:</strong> Son ideales para almacenar y
-                    extraer datos con una clave única. Manejan los diccionarios
-                    de manera excepcional. Ejemplos: <strong>DynamoDB</strong>,
-                    <strong>Cassandra</strong>.
-                  </li>
-                  <li>
-                    <strong>Basadas en documentos:</strong> Son una
-                    implementación de clave valor que varía en la forma
-                    semiestructurada en que se trata la información. Ideal para
-                    almacenar datos JSON y XML. Ejemplos:
-                    <strong>MongoDB</strong>, <strong>Firestore</strong>.
-                  </li>
-                  <li>
-                    <strong>Basadas en grafos:</strong> Basadas en teoría de
-                    grafos, sirven para entidades que se encuentran
-                    interconectadas por múltiples relaciones. Ideales para
-                    almacenar relaciones complejas. Ejemplos:
-                    <strong>neo4j</strong>, <strong>TITAN</strong>.
-                  </li>
-                  <li>
-                    <strong>En memoria:</strong> Pueden ser de estructura
-                    variada, pero su ventaja radica en la velocidad, ya que al
-                    vivir en memoria la extracción de datos es casi inmediata.
-                    Ejemplos: <strong>Memcached</strong>,
-                    <strong>Redis</strong>.
-                  </li>
-                  <li>
-                    <strong>Optimizadas para búsquedas:</strong> Pueden ser de
-                    diversas estructuras, su ventaja radica en que se pueden
-                    hacer queries y búsquedas complejas de manera sencilla.
-                    Ejemplos: <strong>BigQuery</strong>,
-                    <strong>Elasticsearch</strong>.
-                  </li>
-                </ul>
-              </div>
-            </article>
-            <article class="course-class__section" id="hierarchy-firebase">
-              <h2 class="course-class__section--title">
-                Servicios administrados y jerarquía de datos
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  <strong>Firebase</strong> es un servicio de Google donde
-                  puedes tercerizar muchos elementos en la nube. <br />
-                  Jerarquía de datos:
-                </p>
-                <ul>
-                  <li>Base de datos</li>
-                  <li>
-                    Colección = Tablas
-                  </li>
-                  <li>
-                    Documento = Tuplas
-                  </li>
-                </ul>
-              </div>
-            </article>
-            <article class="course-class__section" id="top-level-collection">
-              <h2 class="course-class__section--title">
-                Top level collection con Firebase
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  El modelo de bases de datos no relacionales es un poco más
-                  cercano al mundo real en su comportamiento.
-                </p>
-                <ul>
-                  <li>
-                    Las top level collections son las colecciones que se tienen
-                    de inmediato o entrada en el proyecto. Top Level collection
-                    son consideradas aquellas colecciones que se tienen a nivel
-                    de la ruta principal.
-                  </li>
-                  <li>
-                    <strong>Firebase</strong> es un servicio que tiene múltiples
-                    opciones y está pensado principalmente para aplicaciones
-                    móviles y web.
-                  </li>
-                </ul>
-              </div>
-            </article>
-            <article class="course-class__section" id="big-data">
-              <h2 class="course-class__section--title">
-                Big Data
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  <strong>Big Data</strong> es un concepto que nace de la
-                  necesidad de manejar grandes cantidades de datos. La tendencia
-                  comenzó con compañías como YouTube al tener la necesidad de
-                  guardar y consultar mucha información de manera rápida. Es un
-                  gran movimiento que consiste en el uso de diferentes tipos de
-                  bases de datos.
-                </p>
-              </div>
-            </article>
-            <article class="course-class__section" id="data-warehouse">
-              <h2 class="course-class__section--title">Data warehouse</h2>
-              <div class="course-class__section--content">
-                <p>
-                  <strong>Data Warehouse</strong> trata de guardar cantidades
-                  masivas de datos para la posteridad. Allí se guarda todo lo
-                  que no está viviendo en la aplicación pero es necesario
-                  tenerlo.
-                </p>
-                <p>
-                  Debe servir para guardar datos por un largo periodo de tiempo
-                  y estos datos se deben poder usar para poder encontrar
-                  cuestiones interesantes para el negocio.
-                </p>
-              </div>
-            </article>
-            <article class="course-class__section" id="data-mining">
-              <h2 class="course-class__section--title">Data mining</h2>
-              <div class="course-class__section--content">
-                <p>
-                  El <strong>Data Mining</strong> se dedica a minar datos, a
-                  extraerlos de donde sea que estén (archivos muertos, base de
-                  datos actual, etc…) y hacer sentido de ellos para darles un
-                  uso.
-                </p>
-              </div>
-            </article>
-            <article class="course-class__section" id="etl">
-              <h2 class="course-class__section--title">ETL</h2>
-              <div class="course-class__section--content">
-                <p>
-                  <strong>ETL</strong> son las siglas de Extract, Transform,
-                  Load (extraer, transformar y cargar).Es una técnica que trata
-                  de tomar datos de archivos muertos y convertirlos en algo que
-                  sea de utilidad para el negocio.
-                </p>
-                <p>
-                  También ayuda a tomar los datos vivos de la aplicación,
-                  transformarlos y guardarlos en un data warehouse
-                  periódicamente.
-                </p>
-              </div>
-            </article>
-            <article class="course-class__section" id="business-intelligence">
-              <h2 class="course-class__section--title">
-                Business intelligence
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  <strong>Business Intelligence</strong> es una parte muy
-                  importante de las carreras de datos ya que es el punto final
-                  del manejo de estos. Su razón de ser es tener la información
-                  lista, clara y que tenga todos los elementos para tomar
-                  decisiones en una empresa. <br />
-                  Es necesario tener una buena sensibilidad por entender el
-                  negocio, sus necesidades y la información que puede llevar a
-                  tomar decisiones en el momento adecuado al momento de realizar
-                  business intelligence.
-                </p>
-              </div>
-            </article>
-            <article class="course-class__section" id="machine-learning">
-              <h2 class="course-class__section--title">Machine Learning</h2>
-              <div class="course-class__section--content">
-                <p>
-                  <strong>Machine Learning</strong> tiene significados que
-                  varían. Es una serie de técnicas que involucran la
-                  inteligencia artificial y la detección de patrones. Machine
-                  learning para datos tiene un gran campo de acción y es un paso
-                  más allá del business intelligence. Nos ayuda a hacer modelos
-                  que encuentran patrones fortuitos encontrando correlaciones
-                  inesperadas.
-                </p>
-                <p>
-                  Tiene dos casos de uso particulares:
-                </p>
-                <ul>
-                  <li>Clasificación.</li>
-                  <li>Predicción.</li>
-                </ul>
-              </div>
-            </article>
-          </div>
-        </section>
-        <footer class="footer">
-          <div class="container-general">
-            <div class="footer__container">
-              <p id="footer-year">@Carlos Zabala Roqueme -</p>
-              <figure class="footer__container--img">
-                <img
-                  src="../../src/images/logo-white-2.png"
-                  alt="logo Carlos Zabala"
-                />
-              </figure>
             </div>
+          </article>
+          <article class="course-class__section" id="foreing-key">
+            <h2 class="course-class__section--title">Llaves Foráneas</h2>
+            <div class="course-class__section--content">
+              <p>
+                Para las llaves foráneas los campos de las dos tablas deben
+                ser del mismo tipo y longitud.
+              </p>
+              <p>
+                Las opciones de las llaves foráneas son:
+              </p>
+              <ul>
+                <li>
+                  <strong>no action</strong>: No hacer nada. cuando se haga un
+                  update o un delete de la tabla principal.
+                </li>
+                <li>
+                  <strong>cascade</strong>: Sirve para que cada que se haga un
+                  update en la tabla principal, se refleje también en la tabla
+                  en la que estamos creando la relación.
+                </li>
+                <li>
+                  <strong>restrict</strong>: Cuando se haga update o delete de
+                  la tabla principal, no lo pueden hacer hasta que se haga
+                  primero en la tabla que tiene la relación.
+                </li>
+              </ul>
+              <div class="note">
+                <p>
+                  Se recomienda que el nombre de la llave foránea sea el
+                  nombre de las dos tablas, ejemplo: si queremos una llave
+                  foránea de un post y usuario, el nombre de la llave foránea
+                  debería ser post_usuario.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="course-class__section" id="transitive-tables">
+            <h2 class="course-class__section--title">
+              Tablas transitivas
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Las tablas transitivas sirven como puente para unir dos
+                tablas. No tienen contenido semántico.
+              </p>
+              <p>
+                <strong>Reverse Engineer</strong> nos reproduce el esquema del
+                cual nos basamos para crear nuestras tablas. Es útil cuando
+                llegas a un nuevo trabajo y quieres entender cuál fue la
+                mentalidad que tuvieron al momento de crear las bases de
+                datos.
+              </p>
+            </div>
+          </article>
+          <article class="course-class__section" id="nosql">
+            <h2 class="course-class__section--title">
+              ¿Qué son y cuáles son los tipos de bases de datos no
+              relacionales?
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Respecto a las bases de datos no relacionales, no existe un
+                solo tipo aunque se engloben en una sola categoría.
+              </p>
+              <p>
+                <strong>Tipos de bases de datos no relacionales:</strong>
+              </p>
+              <ul>
+                <li>
+                  <strong>Clave - valor:</strong> Son ideales para almacenar y
+                  extraer datos con una clave única. Manejan los diccionarios
+                  de manera excepcional. Ejemplos: <strong>DynamoDB</strong>,
+                  <strong>Cassandra</strong>.
+                </li>
+                <li>
+                  <strong>Basadas en documentos:</strong> Son una
+                  implementación de clave valor que varía en la forma
+                  semiestructurada en que se trata la información. Ideal para
+                  almacenar datos JSON y XML. Ejemplos:
+                  <strong>MongoDB</strong>, <strong>Firestore</strong>.
+                </li>
+                <li>
+                  <strong>Basadas en grafos:</strong> Basadas en teoría de
+                  grafos, sirven para entidades que se encuentran
+                  interconectadas por múltiples relaciones. Ideales para
+                  almacenar relaciones complejas. Ejemplos:
+                  <strong>neo4j</strong>, <strong>TITAN</strong>.
+                </li>
+                <li>
+                  <strong>En memoria:</strong> Pueden ser de estructura
+                  variada, pero su ventaja radica en la velocidad, ya que al
+                  vivir en memoria la extracción de datos es casi inmediata.
+                  Ejemplos: <strong>Memcached</strong>,
+                  <strong>Redis</strong>.
+                </li>
+                <li>
+                  <strong>Optimizadas para búsquedas:</strong> Pueden ser de
+                  diversas estructuras, su ventaja radica en que se pueden
+                  hacer queries y búsquedas complejas de manera sencilla.
+                  Ejemplos: <strong>BigQuery</strong>,
+                  <strong>Elasticsearch</strong>.
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="course-class__section" id="hierarchy-firebase">
+            <h2 class="course-class__section--title">
+              Servicios administrados y jerarquía de datos
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                <strong>Firebase</strong> es un servicio de Google donde
+                puedes tercerizar muchos elementos en la nube. <br />
+                Jerarquía de datos:
+              </p>
+              <ul>
+                <li>Base de datos</li>
+                <li>
+                  Colección = Tablas
+                </li>
+                <li>
+                  Documento = Tuplas
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="course-class__section" id="top-level-collection">
+            <h2 class="course-class__section--title">
+              Top level collection con Firebase
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                El modelo de bases de datos no relacionales es un poco más
+                cercano al mundo real en su comportamiento.
+              </p>
+              <ul>
+                <li>
+                  Las top level collections son las colecciones que se tienen
+                  de inmediato o entrada en el proyecto. Top Level collection
+                  son consideradas aquellas colecciones que se tienen a nivel
+                  de la ruta principal.
+                </li>
+                <li>
+                  <strong>Firebase</strong> es un servicio que tiene múltiples
+                  opciones y está pensado principalmente para aplicaciones
+                  móviles y web.
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="course-class__section" id="big-data">
+            <h2 class="course-class__section--title">
+              Big Data
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                <strong>Big Data</strong> es un concepto que nace de la
+                necesidad de manejar grandes cantidades de datos. La tendencia
+                comenzó con compañías como YouTube al tener la necesidad de
+                guardar y consultar mucha información de manera rápida. Es un
+                gran movimiento que consiste en el uso de diferentes tipos de
+                bases de datos.
+              </p>
+            </div>
+          </article>
+          <article class="course-class__section" id="data-warehouse">
+            <h2 class="course-class__section--title">Data warehouse</h2>
+            <div class="course-class__section--content">
+              <p>
+                <strong>Data Warehouse</strong> trata de guardar cantidades
+                masivas de datos para la posteridad. Allí se guarda todo lo
+                que no está viviendo en la aplicación pero es necesario
+                tenerlo.
+              </p>
+              <p>
+                Debe servir para guardar datos por un largo periodo de tiempo
+                y estos datos se deben poder usar para poder encontrar
+                cuestiones interesantes para el negocio.
+              </p>
+            </div>
+          </article>
+          <article class="course-class__section" id="data-mining">
+            <h2 class="course-class__section--title">Data mining</h2>
+            <div class="course-class__section--content">
+              <p>
+                El <strong>Data Mining</strong> se dedica a minar datos, a
+                extraerlos de donde sea que estén (archivos muertos, base de
+                datos actual, etc…) y hacer sentido de ellos para darles un
+                uso.
+              </p>
+            </div>
+          </article>
+          <article class="course-class__section" id="etl">
+            <h2 class="course-class__section--title">ETL</h2>
+            <div class="course-class__section--content">
+              <p>
+                <strong>ETL</strong> son las siglas de Extract, Transform,
+                Load (extraer, transformar y cargar).Es una técnica que trata
+                de tomar datos de archivos muertos y convertirlos en algo que
+                sea de utilidad para el negocio.
+              </p>
+              <p>
+                También ayuda a tomar los datos vivos de la aplicación,
+                transformarlos y guardarlos en un data warehouse
+                periódicamente.
+              </p>
+            </div>
+          </article>
+          <article class="course-class__section" id="business-intelligence">
+            <h2 class="course-class__section--title">
+              Business intelligence
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                <strong>Business Intelligence</strong> es una parte muy
+                importante de las carreras de datos ya que es el punto final
+                del manejo de estos. Su razón de ser es tener la información
+                lista, clara y que tenga todos los elementos para tomar
+                decisiones en una empresa. <br />
+                Es necesario tener una buena sensibilidad por entender el
+                negocio, sus necesidades y la información que puede llevar a
+                tomar decisiones en el momento adecuado al momento de realizar
+                business intelligence.
+              </p>
+            </div>
+          </article>
+          <article class="course-class__section" id="machine-learning">
+            <h2 class="course-class__section--title">Machine Learning</h2>
+            <div class="course-class__section--content">
+              <p>
+                <strong>Machine Learning</strong> tiene significados que
+                varían. Es una serie de técnicas que involucran la
+                inteligencia artificial y la detección de patrones. Machine
+                learning para datos tiene un gran campo de acción y es un paso
+                más allá del business intelligence. Nos ayuda a hacer modelos
+                que encuentran patrones fortuitos encontrando correlaciones
+                inesperadas.
+              </p>
+              <p>
+                Tiene dos casos de uso particulares:
+              </p>
+              <ul>
+                <li>Clasificación.</li>
+                <li>Predicción.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="container-general">
+          <div class="footer__container">
+            <p id="footer-year">@Carlos Zabala Roqueme -</p>
+            <figure class="footer__container--img">
+              <img src="../../src/images/logo-white-2.png" alt="logo Carlos Zabala" />
+            </figure>
           </div>
-        </footer>
-      </div>
+        </div>
+      </footer>
     </div>
-    <script>
-      const $menu = document.getElementById("btn-menu");
-      const $courseMenu = document.getElementById("course-class__left");
+  </div>
+  <script src="../../src/js/menu.js"></script>
+  <script>
+    const $menu = document.getElementById("btn-menu");
+    const $courseMenu = document.getElementById("course-class__left");
 
-      $menu.addEventListener("click", handleClick);
+    $menu.addEventListener("click", handleClick);
 
-      function handleClick() {
-        $courseMenu.classList.toggle("is-active");
-        $menu.classList.toggle("is-active");
+    function handleClick() {
+      $courseMenu.classList.toggle("is-active");
+      $menu.classList.toggle("is-active");
 
-        if ($menu.classList.contains("icon-menu")) {
-          $menu.classList.remove("icon-menu");
-          $menu.classList.add("icon-close");
-        } else {
-          $menu.classList.remove("icon-close");
-          $menu.classList.add("icon-menu");
-        }
+      if ($menu.classList.contains("icon-menu")) {
+        $menu.classList.remove("icon-menu");
+        $menu.classList.add("icon-close");
+      } else {
+        $menu.classList.remove("icon-close");
+        $menu.classList.add("icon-menu");
       }
+    }
 
-      const $footerYear = document.getElementById("footer-year");
+    const $footerYear = document.getElementById("footer-year");
 
-      let date = new Date();
+    let date = new Date();
 
-      $footerYear.innerHTML += " " + date.getFullYear();
-    </script>
-  </body>
+    $footerYear.innerHTML += " " + date.getFullYear();
+  </script>
+</body>
+
 </html>

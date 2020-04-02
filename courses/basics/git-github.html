@@ -1,493 +1,424 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Curso Git & GitHub</title>
-    <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../../src/css/styles.css" />
-    <link rel="stylesheet" href="../../fonts/style.css" />
-  </head>
-  <body>
-    <div class="app">
-      <div class="app-react-basico">
-        <header class="header">
-          <div class="container-general">
-            <nav class="header-menu">
-              <ul class="header-menu__list menu-left">
-                <li class="header-menu__list--item">
-                  <a class="link" href="../../index.html">Inicio</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Curso Git & GitHub</title>
+  <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../src/css/styles.css" />
+  <link rel="stylesheet" href="../../fonts/style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <div class="app-react-basico">
+      <header class="header">
+        <div class="container-general">
+          <nav class="header-menu">
+            <ul class="header-menu__list menu-left">
+              <li class="header-menu__list--item">
+                <a class="link" href="../../index.html">Inicio</a>
+              </li>
+              <li class="header-menu__list--item">
+                <a class="link" href="../../index.html##courses">Carreras</a>
+              </li>
+            </ul>
+            <figure class="header-menu__logo">
+              <a href="../../index.html"><img class="header-menu__logo--img" src="../../src/images/logo_white.png"
+                  alt="logo carlos zabala" /></a>
+            </figure>
+            <ul class="header-menu__list menu-right">
+              <li class="header-menu__list--item">
+                <a class="link" href="">Me</a>
+              </li>
+              <li class="header-menu__list--item">
+                <a class="link" href="">Contacto</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <section class="hero-course">
+        <div class="container-general">
+          <h1 class="hero-course__title">Curso de Git y Github</h1>
+          <p class="hero-course__description">
+            Este curso se enseñara para qué sirve Git, cómo usarlo, cómo
+            mejora nuestra productividad y cómo sacarle el mayor provecho.
+            <br />
+            Git es un software de control de versiones diseñado por Linus
+            Torvalds, pensando en la eficiencia y la confiabilidad del
+            mantenimiento de versiones de aplicaciones cuando estas tienen un
+            gran número de archivos de código fuente. En su lugar GitHub es
+            una forja para alojar proyectos utilizando el sistema de control
+            de versiones Git. GitHub sería la red social de código para los
+            programadores, tu propio curriculum vitae.
+          </p>
+          <div class="hero-course__buttons">
+            <a target="_blank" href="https://platzi.com/clases/git-github/" class="btn btn--primary">Curso platzi</a>
+          </div>
+        </div>
+      </section>
+      <section class="course-class">
+        <div class="course-class__left" id="course-class__left">
+          <div class="course-class__left--container">
+            <nav class="course-class__menu">
+              <ul>
+                <li>
+                  <a class="link course-class__menu--a" href="#introduction">Sistema de control de versiones</a>
                 </li>
-                <li class="header-menu__list--item">
-                  <a class="link" href="../../index.html##courses">Carreras</a>
+                <li>
+                  <a class="link course-class__menu--a" href="#install">Instalar Git</a>
                 </li>
-              </ul>
-              <figure class="header-menu__logo">
-                <a href="../../index.html"
-                  ><img
-                    class="header-menu__logo--img"
-                    src="../../src/images/logo_white.png"
-                    alt="logo carlos zabala"
-                /></a>
-              </figure>
-              <ul class="header-menu__list menu-right">
-                <li class="header-menu__list--item">
-                  <a class="link" href="">Me</a>
+                <li>
+                  <a class="link course-class__menu--a" href="#console">Línea de comandos</a>
                 </li>
-                <li class="header-menu__list--item">
-                  <a class="link" href="">Contacto</a>
+                <li>
+                  <a class="link course-class__menu--a" href="#ciclo">Ciclos de trabajo</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#user-git">Git config</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#show-diff">Git show y Git log</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#checkout-reset">Git reset y Git checkout</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#remote-repo">Repositorio remoto</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#git-branch">Git branch</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#git-merge">Git merge</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#conflict-merge">Git merge conflictos</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#github">GitHub</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#ssh-key">SSH</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#ssh-github">SSH con GitHub</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#git-tag">Git tag</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#github-branch">GitHub branch</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#github-collaborators">GitHub Collaborators</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#pull-requests">Pull requests</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#git-ignore">Git ignore</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#readme-md">Readme.md</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#git-stash">Git stash</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#git-clean">Git clean</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#git-amend">Git amend</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#git-reflog">Git reflog</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#git-grep">Git grep</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#command-git">Otros comandos Git</a>
                 </li>
               </ul>
             </nav>
           </div>
-        </header>
-        <section class="hero-course">
-          <div class="container-general">
-            <h1 class="hero-course__title">Curso de Git y Github</h1>
-            <p class="hero-course__description">
-              Este curso se enseñara para qué sirve Git, cómo usarlo, cómo
-              mejora nuestra productividad y cómo sacarle el mayor provecho.
-              <br />
-              Git es un software de control de versiones diseñado por Linus
-              Torvalds, pensando en la eficiencia y la confiabilidad del
-              mantenimiento de versiones de aplicaciones cuando estas tienen un
-              gran número de archivos de código fuente. En su lugar GitHub es
-              una forja para alojar proyectos utilizando el sistema de control
-              de versiones Git. GitHub sería la red social de código para los
-              programadores, tu propio curriculum vitae.
-            </p>
-            <div class="hero-course__buttons">
-              <a
-                target="_blank"
-                href="https://platzi.com/clases/git-github/"
-                class="btn btn--primary"
-                >Curso platzi</a
-              >
+        </div>
+        <div class="course-class__content">
+          <i class="icon-menu icon course-class__icon-menu" id="btn-menu"></i>
+          <article class="course-class__section" id="introduction">
+            <h2 class="course-class__section--title">
+              ¿Por qué usar un sistema de control de versiones como Git?
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Un sistema de control de versiones como Git nos ayuda a
+                guardar el historial de cambios y crecimiento de los archivos
+                de nuestro proyecto.
+              </p>
+              <p>
+                En realidad, los cambios y diferencias entre las versiones de
+                nuestros proyecto pueden tener similitudes, algunas veces los
+                cambios pueden ser solo una palabra o una parte específica de
+                un archivo específico. Git está optimizado para guardar todos
+                estos cambios de forma atómica e incremental, o sea, aplicando
+                cambios sobre los últimos cambios, estos sobre los cambios
+                anteriores y así hasta el inicio de nuestro proyecto.
+              </p>
+              <ul>
+                <li>
+                  El comando para iniciar nuestro repositorio, o sea,
+                  indicarle a Git que queremos usar su sistema de control de
+                  versiones en nuestro proyecto, es
+                  <strong>git init</strong>.
+                </li>
+                <li>
+                  El comando para que nuestro repositorio sepa de la
+                  existencia de un archivo o sus últimos cambios es
+                  <strong>git add</strong>. Este comando no almacena las
+                  actualizaciones de forma definitiva, solo las guarda en algo
+                  que conocemos como "Staging Area".
+                </li>
+                <li>
+                  El comando para almacenar definitivamente todos los cambios
+                  que por ahora viven en el staging area es
+                  <strong>git commit</strong>. También podemos guardar un
+                  mensaje para recordar muy bien qué cambios hicimos en este
+                  commit con el argumento
+                  <strong>-m "Mensaje del commit"</strong>.
+                </li>
+                <li>
+                  Por último, si queremos mandar nuestros commits a un
+                  servidor remoto, un lugar donde todos podamos conectar
+                  nuestros proyectos, usamos el comando
+                  <strong>git push</strong>.
+                </li>
+              </ul>
             </div>
-          </div>
-        </section>
-        <section class="course-class">
-          <div class="course-class__left" id="course-class__left">
-            <div class="course-class__left--container">
-              <nav class="course-class__menu">
-                <ul>
-                  <li>
-                    <a class="link course-class__menu--a" href="#introduction"
-                      >Sistema de control de versiones</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#install"
-                      >Instalar Git</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#console"
-                      >Línea de comandos</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#ciclo"
-                      >Ciclos de trabajo</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#user-git"
-                      >Git config</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#show-diff"
-                      >Git show y Git log</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#checkout-reset"
-                      >Git reset y Git checkout</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#remote-repo"
-                      >Repositorio remoto</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#git-branch"
-                      >Git branch</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#git-merge"
-                      >Git merge</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#conflict-merge"
-                      >Git merge conflictos</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#github"
-                      >GitHub</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#ssh-key"
-                      >SSH</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#ssh-github"
-                      >SSH con GitHub</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#git-tag"
-                      >Git tag</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#github-branch"
-                      >GitHub branch</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="link course-class__menu--a"
-                      href="#github-collaborators"
-                      >GitHub Collaborators</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#pull-requests"
-                      >Pull requests</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#git-ignore"
-                      >Git ignore</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#readme-md"
-                      >Readme.md</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#git-stash"
-                      >Git stash</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#git-clean"
-                      >Git clean</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#git-amend"
-                      >Git amend</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#git-reflog"
-                      >Git reflog</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#git-grep"
-                      >Git grep</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#command-git"
-                      >Otros comandos Git</a
-                    >
-                  </li>
-                </ul>
-              </nav>
+          </article>
+          <article class="course-class__section" id="install">
+            <h2 class="course-class__section--title">
+              Instalando Git y GitBash en Windows
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Windows y Linux usan comandos diferentes, graban el enter de
+                formas diferentes y tienen muchas otras diferencias. Cuando
+                instales Git Bash en Windows debes elegir si prefieres
+                trabajar con la forma de Windows o la forma de UNIX (Linux y
+                Mac).
+              </p>
+              <p>
+                Ten en cuenta que, normalmente, los entornos de desarrollo
+                profesionales tienen personas que usan sistemas operativos
+                diferentes. Esto significa que, si todos podemos usar los
+                mismos comandos, el trabajo resultará más fácil para todos en
+                el equipo.
+              </p>
+              <p>
+                Los comandos de UNIX son los más comunes entre los equipos de
+                desarrollo. Así que, a menos que trabajes con tecnologías
+                nativas de Microsoft (por ejemplo, .NET), la recomendación es
+                que elijas la opción de la terminal tipo UNIX para obtener una
+                mejor compatibilidad con todo tu equipo.
+              </p>
+              <a class="btn btn--blue" href="https://git-scm.com/" target="_blank">Descargar Git</a>
             </div>
-          </div>
-          <div class="course-class__content">
-            <i class="icon-menu icon course-class__icon-menu" id="btn-menu"></i>
-            <article class="course-class__section" id="introduction">
-              <h2 class="course-class__section--title">
-                ¿Por qué usar un sistema de control de versiones como Git?
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  Un sistema de control de versiones como Git nos ayuda a
-                  guardar el historial de cambios y crecimiento de los archivos
-                  de nuestro proyecto.
-                </p>
-                <p>
-                  En realidad, los cambios y diferencias entre las versiones de
-                  nuestros proyecto pueden tener similitudes, algunas veces los
-                  cambios pueden ser solo una palabra o una parte específica de
-                  un archivo específico. Git está optimizado para guardar todos
-                  estos cambios de forma atómica e incremental, o sea, aplicando
-                  cambios sobre los últimos cambios, estos sobre los cambios
-                  anteriores y así hasta el inicio de nuestro proyecto.
-                </p>
-                <ul>
-                  <li>
-                    El comando para iniciar nuestro repositorio, o sea,
-                    indicarle a Git que queremos usar su sistema de control de
-                    versiones en nuestro proyecto, es
-                    <strong>git init</strong>.
-                  </li>
-                  <li>
-                    El comando para que nuestro repositorio sepa de la
-                    existencia de un archivo o sus últimos cambios es
-                    <strong>git add</strong>. Este comando no almacena las
-                    actualizaciones de forma definitiva, solo las guarda en algo
-                    que conocemos como "Staging Area".
-                  </li>
-                  <li>
-                    El comando para almacenar definitivamente todos los cambios
-                    que por ahora viven en el staging area es
-                    <strong>git commit</strong>. También podemos guardar un
-                    mensaje para recordar muy bien qué cambios hicimos en este
-                    commit con el argumento
-                    <strong>-m "Mensaje del commit"</strong>.
-                  </li>
-                  <li>
-                    Por último, si queremos mandar nuestros commits a un
-                    servidor remoto, un lugar donde todos podamos conectar
-                    nuestros proyectos, usamos el comando
-                    <strong>git push</strong>.
-                  </li>
-                </ul>
-              </div>
-            </article>
-            <article class="course-class__section" id="install">
-              <h2 class="course-class__section--title">
-                Instalando Git y GitBash en Windows
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  Windows y Linux usan comandos diferentes, graban el enter de
-                  formas diferentes y tienen muchas otras diferencias. Cuando
-                  instales Git Bash en Windows debes elegir si prefieres
-                  trabajar con la forma de Windows o la forma de UNIX (Linux y
-                  Mac).
-                </p>
-                <p>
-                  Ten en cuenta que, normalmente, los entornos de desarrollo
-                  profesionales tienen personas que usan sistemas operativos
-                  diferentes. Esto significa que, si todos podemos usar los
-                  mismos comandos, el trabajo resultará más fácil para todos en
-                  el equipo.
-                </p>
-                <p>
-                  Los comandos de UNIX son los más comunes entre los equipos de
-                  desarrollo. Así que, a menos que trabajes con tecnologías
-                  nativas de Microsoft (por ejemplo, .NET), la recomendación es
-                  que elijas la opción de la terminal tipo UNIX para obtener una
-                  mejor compatibilidad con todo tu equipo.
-                </p>
-                <a
-                  class="btn btn--blue"
-                  href="https://git-scm.com/"
-                  target="_blank"
-                  >Descargar Git</a
-                >
-              </div>
-            </article>
-            <article class="course-class__section" id="console">
-              <h2 class="course-class__section--title">Línea de comandos</h2>
-              <div class="course-class__section--content">
-                <p>
-                  <span class="t-bold">Diferencias</span> entre la estructura de
-                  archivos de Windows, Mac o Linux.
-                </p>
-                <ul>
-                  <li>
-                    La ruta principal en Windows es C:\, en UNIX es solo /.
-                  </li>
-                  <li>
-                    Windows no hace diferencia entre mayúsculas y minúsculas
-                    pero UNIX sí.
-                  </li>
-                </ul>
-                <h3>Comandos básicos en la terminal</h3>
-                <ul>
-                  <li>
-                    <strong>pwd:</strong> Nos muestra la ruta de carpetas en la
-                    que te encuentras ahora mismo.
-                  </li>
-                  <li>
-                    <strong>mkdir:</strong> Nos permite crear carpetas.
-                    <pre class="code">
+          </article>
+          <article class="course-class__section" id="console">
+            <h2 class="course-class__section--title">Línea de comandos</h2>
+            <div class="course-class__section--content">
+              <p>
+                <span class="t-bold">Diferencias</span> entre la estructura de
+                archivos de Windows, Mac o Linux.
+              </p>
+              <ul>
+                <li>
+                  La ruta principal en Windows es C:\, en UNIX es solo /.
+                </li>
+                <li>
+                  Windows no hace diferencia entre mayúsculas y minúsculas
+                  pero UNIX sí.
+                </li>
+              </ul>
+              <h3>Comandos básicos en la terminal</h3>
+              <ul>
+                <li>
+                  <strong>pwd:</strong> Nos muestra la ruta de carpetas en la
+                  que te encuentras ahora mismo.
+                </li>
+                <li>
+                  <strong>mkdir:</strong> Nos permite crear carpetas.
+                  <pre class="code">
 
                       mkdir nombre-carpeta
                     </pre>
-                  </li>
-                  <li>
-                    <strong>touch:</strong> Nos permite crear archivos.
-                    <pre class="code">
+                </li>
+                <li>
+                  <strong>touch:</strong> Nos permite crear archivos.
+                  <pre class="code">
 
                       touch archivo.txt
                     </pre>
-                  </li>
-                  <li>
-                    <strong>rm:</strong> Nos permite borrar un archivo o
-                    carpeta.
-                  </li>
-                  <li><strong>cat:</strong> Ver el contenido de un archivo.</li>
-                  <li>
-                    <strong>ls:</strong>
-                    Nos permite cambiar ver los archivos de la carpeta donde
-                    estamos ahora mismo. Podemos usar uno o más argumentos para
-                    ver más información sobre estos archivos (los argumentos
-                    pueden ser -- + el nombre del argumento o - + una sola letra
-                    o shortcut por cada argumento).
-                    <ul>
-                      <li>
-                        <strong>ls -a:</strong> Mostrar todos los archivos,
-                        incluso los ocultos.
-                      </li>
-                      <li>
-                        <strong>ls -l:</strong> Ver todos los archivos como una
-                        lista.
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <strong>cd:</strong> Nos permite navegar entre carpetas.
-                  </li>
-                  <li>
-                    <strong>history:</strong> Ver los últimos comandos que
-                    ejecutamos y un número especial con el que podemos repetir
-                    su ejecución.
-                  </li>
-                  <li>
-                    <strong>! + número:</strong> Ejecutar algún comando con el
-                    número que nos muestra el comando history (por ejemplo,
-                    !72).
-                  </li>
-                  <li>
-                    <strong>clear:</strong> Para limpiar la terminal. También
-                    podemos usar los atajos de teclado Ctrl + L o Command + L.
-                  </li>
-                </ul>
+                </li>
+                <li>
+                  <strong>rm:</strong> Nos permite borrar un archivo o
+                  carpeta.
+                </li>
+                <li><strong>cat:</strong> Ver el contenido de un archivo.</li>
+                <li>
+                  <strong>ls:</strong>
+                  Nos permite cambiar ver los archivos de la carpeta donde
+                  estamos ahora mismo. Podemos usar uno o más argumentos para
+                  ver más información sobre estos archivos (los argumentos
+                  pueden ser -- + el nombre del argumento o - + una sola letra
+                  o shortcut por cada argumento).
+                  <ul>
+                    <li>
+                      <strong>ls -a:</strong> Mostrar todos los archivos,
+                      incluso los ocultos.
+                    </li>
+                    <li>
+                      <strong>ls -l:</strong> Ver todos los archivos como una
+                      lista.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>cd:</strong> Nos permite navegar entre carpetas.
+                </li>
+                <li>
+                  <strong>history:</strong> Ver los últimos comandos que
+                  ejecutamos y un número especial con el que podemos repetir
+                  su ejecución.
+                </li>
+                <li>
+                  <strong>! + número:</strong> Ejecutar algún comando con el
+                  número que nos muestra el comando history (por ejemplo,
+                  !72).
+                </li>
+                <li>
+                  <strong>clear:</strong> Para limpiar la terminal. También
+                  podemos usar los atajos de teclado Ctrl + L o Command + L.
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="course-class__section" id="ciclo">
+            <h2 class="course-class__section--title">
+              Ciclo de vida o estados de los archivos en Git
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Cuando trabajamos con Git, nuestros archivos pueden vivir y
+                moverse entre 4 diferentes estados (cuando trabajamos con
+                repositorios remotos pueden ser más estados pero lo
+                estudiaremos más adelante):
+              </p>
+              <ul>
+                <li>
+                  <strong>Archivos Untracked:</strong> Son archivos que NO
+                  viven dentro de Git, solo en el disco duro. Nunca han sido
+                  afectados por git add, así que Git no tiene registros de su
+                  existencia.
+                </li>
+                <li>
+                  <strong>Archivos Tracked:</strong> Son los archivos que
+                  viven dentro de Git, no tienen cambios pendientes y sus
+                  últimas actualizaciones han sido guardadas en el repositorio
+                  gracias a los comandos git add y git commit.
+                </li>
+                <li>
+                  <strong>Archivos Unstaged:</strong> Entiendelos como
+                  archivos "Tracked pero Unstaged". Son archivos que viven
+                  dentro de Git pero no han sido afectados por el comando
+                  <strong>git add</strong> ni mucho menos por
+                  <strong>git commit</strong>. Git tiene un registro de estos
+                  archivos pero está desactualizado, sus últimas versiones
+                  solo están guardadas en el disco duro.
+                </li>
+                <li>
+                  <strong>Archivos Staged:</strong> Son archivos en Staging.
+                  Viven dentro de Git y hay registro de ellos porque han sido
+                  afectados por el comando <strong>git add</strong>, aunque no
+                  sus últimos cambios. Git ya sabe de la existencia de estos
+                  últimos cambios pero todavía no han sido guardados
+                  definitivamente en el repositorio porque falta ejecutar el
+                  comando <strong>git commit</strong>.
+                </li>
+              </ul>
+              <p>
+                Recuerda que hay un caso muy raro donde los archivos tienen
+                dos estados al mismo tiempo: Staged y Untracked. Esto pasa
+                cuando guardas los cambios de un archivo en el área de Staging
+                (con el comando git add) pero, antes de hacer commit para
+                guardar los cambios en el repositorio, haces nuevos cambios
+                que todavía no han sido guardados en el área de Staging (en
+                realidad, todo sigue funcionando igual pero es un poco
+                divertido).
+              </p>
+              <h3>Comandos para mover archivos entre los estados de Git:</h3>
+              <ul>
+                <li>
+                  <strong>git status:</strong> Nos permite ver el estado de
+                  todos nuestros archivos y carpetas.
+                </li>
+                <li>
+                  <strong>git add:</strong> Nos ayuda a mover archivos del
+                  Untracked o Unstaged al estado Staged. Podemos usar git add
+                  nombre-del-archivo-o-carpeta para añadir archivos y carpetas
+                  individuales o git add -A para mover todos los archivos de
+                  nuestro proyecto (tanto Untrackeds como unstageds).
+                </li>
+                <li>
+                  <strong>git reset HEAD:</strong> Nos ayuda a sacar archivos
+                  del estado Staged para devolverlos a su estado anterior. Si
+                  los archivos venían de Unstaged, vuelven allí. Y lo mismo se
+                  venían de Untracked.
+                </li>
+                <li>
+                  <strong>git rm:</strong> Este comando necesita alguno de los
+                  siguientes argumentos para poder ejecutarse correctamente:
+                  <ul>
+                    <li>
+                      <strong>git rm --cached:</strong> Mueve los archivos que
+                      le indiquemos al estado Untracked.
+                    </li>
+                    <li>
+                      <strong>git rm --force:</strong> Elimina los archivos de
+                      Git y del disco duro. Git guarda el registro de la
+                      existencia de los archivos, por lo que podremos
+                      recuperarlos si es necesario (pero debemos usar comandos
+                      más avanzados).
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="note">
+                <p>
+                  Staging: Estado temporal de los archivos que estan en
+                  memoria, esperando a pasar al repositorio mediante un
+                  commit. Es un lugar antes de enviar los cambios al
+                  repositorio.
+                </p>
               </div>
-            </article>
-            <article class="course-class__section" id="ciclo">
-              <h2 class="course-class__section--title">
-                Ciclo de vida o estados de los archivos en Git
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  Cuando trabajamos con Git, nuestros archivos pueden vivir y
-                  moverse entre 4 diferentes estados (cuando trabajamos con
-                  repositorios remotos pueden ser más estados pero lo
-                  estudiaremos más adelante):
-                </p>
-                <ul>
-                  <li>
-                    <strong>Archivos Untracked:</strong> Son archivos que NO
-                    viven dentro de Git, solo en el disco duro. Nunca han sido
-                    afectados por git add, así que Git no tiene registros de su
-                    existencia.
-                  </li>
-                  <li>
-                    <strong>Archivos Tracked:</strong> Son los archivos que
-                    viven dentro de Git, no tienen cambios pendientes y sus
-                    últimas actualizaciones han sido guardadas en el repositorio
-                    gracias a los comandos git add y git commit.
-                  </li>
-                  <li>
-                    <strong>Archivos Unstaged:</strong> Entiendelos como
-                    archivos "Tracked pero Unstaged". Son archivos que viven
-                    dentro de Git pero no han sido afectados por el comando
-                    <strong>git add</strong> ni mucho menos por
-                    <strong>git commit</strong>. Git tiene un registro de estos
-                    archivos pero está desactualizado, sus últimas versiones
-                    solo están guardadas en el disco duro.
-                  </li>
-                  <li>
-                    <strong>Archivos Staged:</strong> Son archivos en Staging.
-                    Viven dentro de Git y hay registro de ellos porque han sido
-                    afectados por el comando <strong>git add</strong>, aunque no
-                    sus últimos cambios. Git ya sabe de la existencia de estos
-                    últimos cambios pero todavía no han sido guardados
-                    definitivamente en el repositorio porque falta ejecutar el
-                    comando <strong>git commit</strong>.
-                  </li>
-                </ul>
-                <p>
-                  Recuerda que hay un caso muy raro donde los archivos tienen
-                  dos estados al mismo tiempo: Staged y Untracked. Esto pasa
-                  cuando guardas los cambios de un archivo en el área de Staging
-                  (con el comando git add) pero, antes de hacer commit para
-                  guardar los cambios en el repositorio, haces nuevos cambios
-                  que todavía no han sido guardados en el área de Staging (en
-                  realidad, todo sigue funcionando igual pero es un poco
-                  divertido).
-                </p>
-                <h3>Comandos para mover archivos entre los estados de Git:</h3>
-                <ul>
-                  <li>
-                    <strong>git status:</strong> Nos permite ver el estado de
-                    todos nuestros archivos y carpetas.
-                  </li>
-                  <li>
-                    <strong>git add:</strong> Nos ayuda a mover archivos del
-                    Untracked o Unstaged al estado Staged. Podemos usar git add
-                    nombre-del-archivo-o-carpeta para añadir archivos y carpetas
-                    individuales o git add -A para mover todos los archivos de
-                    nuestro proyecto (tanto Untrackeds como unstageds).
-                  </li>
-                  <li>
-                    <strong>git reset HEAD:</strong> Nos ayuda a sacar archivos
-                    del estado Staged para devolverlos a su estado anterior. Si
-                    los archivos venían de Unstaged, vuelven allí. Y lo mismo se
-                    venían de Untracked.
-                  </li>
-                  <li>
-                    <strong>git rm:</strong> Este comando necesita alguno de los
-                    siguientes argumentos para poder ejecutarse correctamente:
-                    <ul>
-                      <li>
-                        <strong>git rm --cached:</strong> Mueve los archivos que
-                        le indiquemos al estado Untracked.
-                      </li>
-                      <li>
-                        <strong>git rm --force:</strong> Elimina los archivos de
-                        Git y del disco duro. Git guarda el registro de la
-                        existencia de los archivos, por lo que podremos
-                        recuperarlos si es necesario (pero debemos usar comandos
-                        más avanzados).
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-                <div class="note">
-                  <p>
-                    Staging: Estado temporal de los archivos que estan en
-                    memoria, esperando a pasar al repositorio mediante un
-                    commit. Es un lugar antes de enviar los cambios al
-                    repositorio.
-                  </p>
-                </div>
-              </div>
-            </article>
-            <article class="course-class__section" id="user-git">
-              <h2 class="course-class__section--title">
-                Comandos para configurar usuarios en Git
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  Los siguientes comandos serviran para poder hacer
-                  configuraciones en git ya sea para modifiar nombre, correo,
-                  entre otras cosas a nuestro usuario de git.
-                </p>
-                <pre class="code">
+            </div>
+          </article>
+          <article class="course-class__section" id="user-git">
+            <h2 class="course-class__section--title">
+              Comandos para configurar usuarios en Git
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Los siguientes comandos serviran para poder hacer
+                configuraciones en git ya sea para modifiar nombre, correo,
+                entre otras cosas a nuestro usuario de git.
+              </p>
+              <pre class="code">
 
                   <span class="code-comment">#Muestra todas las configuraciones posibles</span>
                   git config
@@ -501,32 +432,32 @@
                   <span class="code-comment">#Cambiar email</span>
                   git config --global user.email "carloszabala@example.com"
                 </pre>
+            </div>
+          </article>
+          <article class="course-class__section" id="show-diff">
+            <h2 class="course-class__section--title">
+              Analizar cambios en los archivos de tu proyecto con Git
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                El comando <strong>git show</strong> nos muestra los cambios
+                que han existido sobre un archivo y es muy útil para detectar
+                cuándo se produjeron ciertos cambios, qué se rompió y cómo lo
+                podemos solucionar. Pero podemos ser más detallados.
+              </p>
+              <p>
+                Si queremos ver la diferencia entre una versión y otra, no
+                necesariamente todos los cambios desde la creación del
+                archivo, podemos usar el comando
+                <strong>git diff commitA commitB</strong>.
+              </p>
+              <div class="note">
+                <p>
+                  Recuerda que puedes obtener el ID de tus commits con el
+                  comando <strong>git log</strong>.
+                </p>
               </div>
-            </article>
-            <article class="course-class__section" id="show-diff">
-              <h2 class="course-class__section--title">
-                Analizar cambios en los archivos de tu proyecto con Git
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  El comando <strong>git show</strong> nos muestra los cambios
-                  que han existido sobre un archivo y es muy útil para detectar
-                  cuándo se produjeron ciertos cambios, qué se rompió y cómo lo
-                  podemos solucionar. Pero podemos ser más detallados.
-                </p>
-                <p>
-                  Si queremos ver la diferencia entre una versión y otra, no
-                  necesariamente todos los cambios desde la creación del
-                  archivo, podemos usar el comando
-                  <strong>git diff commitA commitB</strong>.
-                </p>
-                <div class="note">
-                  <p>
-                    Recuerda que puedes obtener el ID de tus commits con el
-                    comando <strong>git log</strong>.
-                  </p>
-                </div>
-                <pre class="code">
+              <pre class="code">
 
                   <span class="code-comment">#Ver de una mejor forma los commit en git log</span>
                   git log --all --graph
@@ -540,105 +471,105 @@
                   <span class="code-comment">#Eliminar alias</span>
                   unalias nombre-alias
                   </pre>
-              </div>
-            </article>
-            <article class="course-class__section" id="checkout-reset">
-              <h2 class="course-class__section--title">
-                Reset y Checkout
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  El comando <span class="t-bold">git checkout</span> + ID del
-                  commit nos permite viajar en el tiempo. Podemos volver a
-                  cualquier versión anterior de un archivo específico o incluso
-                  del proyecto entero. Esta también es la forma de crear ramas y
-                  movernos entre ellas.
-                </p>
-                <p>
-                  También hay una forma de hacerlo un poco más "ruda": usando el
-                  comando <span class="t-bold">git reset</span>. En este caso,
-                  no solo "volvemos en el tiempo", sino que borramos los cambios
-                  que hicimos después de este commit.
-                </p>
-                <p>
-                  Hay dos formas de usar git reset: con el argumento
-                  <span class="t-bold">--hard</span>, borrando toda la
-                  información que tengamos en el área de staging (y perdiendo
-                  todo para siempre). O, un poco más seguro, con el argumento
-                  <span class="t-bold">--soft</span>, que mantiene allí los
-                  archivos del área de staging para que podamos aplicar nuestros
-                  últimos cambios pero desde un commit anterior.
-                </p>
-              </div>
-            </article>
-            <article class="course-class__section" id="remote-repo">
-              <h2 class="course-class__section--title">
-                Flujo de trabajo básico con un repositorio remoto
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  <strong>Servidores remotos</strong>: un nuevo estado que deben
-                  seguir nuestros archivos para conectarse y trabajar con
-                  equipos de cualquier parte del mundo.
-                </p>
-                <p>
-                  Estos servidores remotos pueden estar alojados en GitHub,
-                  GitLab, BitBucket, entre otros. Lo que van a hacer es guardar
-                  el mismo repositorio que tienes en tu computadora y darnos una
-                  URL con la que todos podremos acceder a los archivos del
-                  proyecto para descargarlos, hacer cambios y volverlos a enviar
-                  al servidor remoto para que otras personas vean los cambios,
-                  comparen sus versiones y creen nuevas propuestas para el
-                  proyecto.
-                </p>
-                <p>Nuevos comandos:</p>
-                <ul>
-                  <li>
-                    <strong>git clone url-del-servidor-remoto:</strong>
-                    Nos permite descargar los archivos de la última versión de
-                    la rama principal y todo el historial de cambios en la
-                    carpeta .git.
-                  </li>
-                  <li>
-                    <strong>git push: </strong> Luego de hacer git add y git
-                    commit debemos ejecutar este comando para mandar los cambios
-                    al servidor remoto.
-                  </li>
-                  <li>
-                    <strong>git fetch:</strong> Lo usamos para traer
-                    actualizaciones del servidor remoto y guardarlas en nuestro
-                    repositorio local (en caso de que hayan, por supuesto).
-                  </li>
-                  <li>
-                    <strong>git merge:</strong> También usamos el comando git
-                    fetch con servidores remotos. Lo necesitamos para combinar
-                    los últimos cambios del servidor remoto y nuestro directorio
-                    de trabajo.
-                  </li>
-                  <li>
-                    <strong>git pull:</strong> Básicamente, git fetch y git
-                    merge al mismo tiempo.
-                  </li>
-                </ul>
-              </div>
-            </article>
-            <article class="course-class__section" id="git-branch">
-              <h2 class="course-class__section--title">
-                Introducción a las ramas o branches de Git
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  Las ramas son la forma de hacer cambios en nuestro proyecto
-                  sin afectar el flujo de trabajo de la rama principal. Esto
-                  porque queremos trabajar una parte muy específica de la
-                  aplicación o simplemente experimentar.
-                </p>
-                <p>
-                  La cabecera o HEAD representan la rama y el commit de esa rama
-                  donde estamos trabajando. Por defecto, esta cabecera aparecerá
-                  en el último commit de nuestra rama principal.
-                </p>
-                <pre class="code">
+            </div>
+          </article>
+          <article class="course-class__section" id="checkout-reset">
+            <h2 class="course-class__section--title">
+              Reset y Checkout
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                El comando <span class="t-bold">git checkout</span> + ID del
+                commit nos permite viajar en el tiempo. Podemos volver a
+                cualquier versión anterior de un archivo específico o incluso
+                del proyecto entero. Esta también es la forma de crear ramas y
+                movernos entre ellas.
+              </p>
+              <p>
+                También hay una forma de hacerlo un poco más "ruda": usando el
+                comando <span class="t-bold">git reset</span>. En este caso,
+                no solo "volvemos en el tiempo", sino que borramos los cambios
+                que hicimos después de este commit.
+              </p>
+              <p>
+                Hay dos formas de usar git reset: con el argumento
+                <span class="t-bold">--hard</span>, borrando toda la
+                información que tengamos en el área de staging (y perdiendo
+                todo para siempre). O, un poco más seguro, con el argumento
+                <span class="t-bold">--soft</span>, que mantiene allí los
+                archivos del área de staging para que podamos aplicar nuestros
+                últimos cambios pero desde un commit anterior.
+              </p>
+            </div>
+          </article>
+          <article class="course-class__section" id="remote-repo">
+            <h2 class="course-class__section--title">
+              Flujo de trabajo básico con un repositorio remoto
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                <strong>Servidores remotos</strong>: un nuevo estado que deben
+                seguir nuestros archivos para conectarse y trabajar con
+                equipos de cualquier parte del mundo.
+              </p>
+              <p>
+                Estos servidores remotos pueden estar alojados en GitHub,
+                GitLab, BitBucket, entre otros. Lo que van a hacer es guardar
+                el mismo repositorio que tienes en tu computadora y darnos una
+                URL con la que todos podremos acceder a los archivos del
+                proyecto para descargarlos, hacer cambios y volverlos a enviar
+                al servidor remoto para que otras personas vean los cambios,
+                comparen sus versiones y creen nuevas propuestas para el
+                proyecto.
+              </p>
+              <p>Nuevos comandos:</p>
+              <ul>
+                <li>
+                  <strong>git clone url-del-servidor-remoto:</strong>
+                  Nos permite descargar los archivos de la última versión de
+                  la rama principal y todo el historial de cambios en la
+                  carpeta .git.
+                </li>
+                <li>
+                  <strong>git push: </strong> Luego de hacer git add y git
+                  commit debemos ejecutar este comando para mandar los cambios
+                  al servidor remoto.
+                </li>
+                <li>
+                  <strong>git fetch:</strong> Lo usamos para traer
+                  actualizaciones del servidor remoto y guardarlas en nuestro
+                  repositorio local (en caso de que hayan, por supuesto).
+                </li>
+                <li>
+                  <strong>git merge:</strong> También usamos el comando git
+                  fetch con servidores remotos. Lo necesitamos para combinar
+                  los últimos cambios del servidor remoto y nuestro directorio
+                  de trabajo.
+                </li>
+                <li>
+                  <strong>git pull:</strong> Básicamente, git fetch y git
+                  merge al mismo tiempo.
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="course-class__section" id="git-branch">
+            <h2 class="course-class__section--title">
+              Introducción a las ramas o branches de Git
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Las ramas son la forma de hacer cambios en nuestro proyecto
+                sin afectar el flujo de trabajo de la rama principal. Esto
+                porque queremos trabajar una parte muy específica de la
+                aplicación o simplemente experimentar.
+              </p>
+              <p>
+                La cabecera o HEAD representan la rama y el commit de esa rama
+                donde estamos trabajando. Por defecto, esta cabecera aparecerá
+                en el último commit de nuestra rama principal.
+              </p>
+              <pre class="code">
 
                   <span class="code-comment">#Crear una rama</span>
                   git branch nombre-rama
@@ -654,110 +585,110 @@
                   <span class="code-comment">#Moverse entre ramas o en el tiempo</span>
                   git checkout nombre-rama-o-id-commit
                 </pre>
-                </ul>
-              </div>
-            </article>
-            <article class="course-class__section" id="git-merge">
-              <h2 class="course-class__section--title">
-                Fusión de ramas con Git merge
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  El comando <strong>git merge</strong> nos permite crear un
-                  nuevo commit con la combinación de dos ramas (la rama donde
-                  nos encontramos cuando ejecutamos el comando y la rama que
-                  indiquemos después del comando).
-                </p>
-                <pre class="code">
+              </ul>
+            </div>
+          </article>
+          <article class="course-class__section" id="git-merge">
+            <h2 class="course-class__section--title">
+              Fusión de ramas con Git merge
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                El comando <strong>git merge</strong> nos permite crear un
+                nuevo commit con la combinación de dos ramas (la rama donde
+                nos encontramos cuando ejecutamos el comando y la rama que
+                indiquemos después del comando).
+              </p>
+              <pre class="code">
 
                   git merge nombre-rama-fusionar -m "Mensaje"
                 </pre>
-                <div class="note">
-                  <p>
-                    Recuerda que al ejecutar el comando
-                    <strong>git checkout</strong> para cambiar de rama o commit
-                    puedes perder el trabajo que no hayas guardado. Guarda tus
-                    cambios antes de hacer git checkout.
-                  </p>
-                </div>
-              </div>
-            </article>
-            <article class="course-class__section" id="conflict-merge">
-              <h2 class="course-class__section--title">
-                Solución de conflictos al hacer un merge
-              </h2>
-              <div class="course-class__section--content">
+              <div class="note">
                 <p>
-                  Git es muy inteligente y puede resolver algunos conflictos
-                  automáticamente: cambios, nuevas líneas, entre otros. Pero
-                  algunas veces no sabe cómo resolver estas diferencias, por
-                  ejemplo, cuando dos ramas diferentes hacen cambios distintos a
-                  una misma línea.
-                </p>
-                <p>
-                  Esto lo conocemos como <strong>conflicto</strong> y lo podemos
-                  resolver manualmente, solo debemos hacer el merge, ir a
-                  nuestro editor de código y elegir si queremos quedarnos con
-                  alguna de estas dos versiones o algo diferente. Algunos
-                  editores de código como VSCode nos ayudan a resolver estos
-                  conflictos sin necesidad de borrar o escribir líneas de texto,
-                  basta con hundir un botón y guardar el archivo.
-                </p>
-                <p>
-                  Recuerda que siempre debemos crear un nuevo commit para
-                  aplicar los cambios del merge. Si Git puede resolver el
-                  conflicto hará commit automáticamente. Pero, en caso de no
-                  pueda resolverlo, debemos solucionarlo y hacer el commit.
-                </p>
-                <p>
-                  Los archivos con conflictos por el comando git merge entran en
-                  un nuevo estado que conocemos como
-                  <strong>Unmerged</strong>. Funcionan muy parecido a los
-                  archivos en estado Unstaged, algo así como un estado
-                  intermedio entre Untracked y Unstaged, solo debemos ejecutar
-                  git add para pasarlos al área de staging y git commit para
-                  aplicar los cambios en el repositorio.
+                  Recuerda que al ejecutar el comando
+                  <strong>git checkout</strong> para cambiar de rama o commit
+                  puedes perder el trabajo que no hayas guardado. Guarda tus
+                  cambios antes de hacer git checkout.
                 </p>
               </div>
-            </article>
-            <article class="course-class__section" id="github">
-              <h2 class="course-class__section--title">Uso de GitHub</h2>
-              <div class="course-class__section--content">
-                <p>
-                  GitHub es una plataforma que nos permite guardar repositorios
-                  de Git que podemos usar como servidores remotos y ejecutar
-                  algunos comandos de forma visual e interactiva (sin necesidad
-                  de la consola de comandos).
-                </p>
-                <p>
-                  Luego de crear nuestra cuenta, podemos crear o importar
-                  repositorios, crear organizaciones y proyectos de trabajo,
-                  descubrir repositorios de otras personas, contribuir a esos
-                  proyectos, dar estrellas y muchas otras cosas.
-                </p>
-                <p>
-                  El <strong>README.md</strong> es el archivo que veremos por
-                  defecto al entrar a un repositorio. Es una muy buena práctica
-                  configurarlo para describir el proyecto, los requerimientos y
-                  las instrucciones que debemos seguir para contribuir
-                  correctamente.
-                </p>
-                <p>
-                  Para <strong>clonar</strong> un repositorio desde GitHub (o
-                  cualquier otro servidor remoto) debemos copiar la URL (por
-                  ahora, usando HTTPS) y ejecutar el comando
-                  <strong>git clone + la URL</strong> que acabamos de copiar.
-                  Esto descargara la versión de nuestro proyecto que se
-                  encuentra en GitHub.
-                </p>
-                <p>
-                  Sin embargo, esto solo funciona para las personas que quieren
-                  empezar a contribuir en el proyecto. Si queremos conectar el
-                  repositorio de GitHub con nuestro repositorio local, el que
-                  creamos con git init, debemos ejecutar las siguientes
-                  instrucciones:
-                </p>
-                <pre class="code">
+            </div>
+          </article>
+          <article class="course-class__section" id="conflict-merge">
+            <h2 class="course-class__section--title">
+              Solución de conflictos al hacer un merge
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Git es muy inteligente y puede resolver algunos conflictos
+                automáticamente: cambios, nuevas líneas, entre otros. Pero
+                algunas veces no sabe cómo resolver estas diferencias, por
+                ejemplo, cuando dos ramas diferentes hacen cambios distintos a
+                una misma línea.
+              </p>
+              <p>
+                Esto lo conocemos como <strong>conflicto</strong> y lo podemos
+                resolver manualmente, solo debemos hacer el merge, ir a
+                nuestro editor de código y elegir si queremos quedarnos con
+                alguna de estas dos versiones o algo diferente. Algunos
+                editores de código como VSCode nos ayudan a resolver estos
+                conflictos sin necesidad de borrar o escribir líneas de texto,
+                basta con hundir un botón y guardar el archivo.
+              </p>
+              <p>
+                Recuerda que siempre debemos crear un nuevo commit para
+                aplicar los cambios del merge. Si Git puede resolver el
+                conflicto hará commit automáticamente. Pero, en caso de no
+                pueda resolverlo, debemos solucionarlo y hacer el commit.
+              </p>
+              <p>
+                Los archivos con conflictos por el comando git merge entran en
+                un nuevo estado que conocemos como
+                <strong>Unmerged</strong>. Funcionan muy parecido a los
+                archivos en estado Unstaged, algo así como un estado
+                intermedio entre Untracked y Unstaged, solo debemos ejecutar
+                git add para pasarlos al área de staging y git commit para
+                aplicar los cambios en el repositorio.
+              </p>
+            </div>
+          </article>
+          <article class="course-class__section" id="github">
+            <h2 class="course-class__section--title">Uso de GitHub</h2>
+            <div class="course-class__section--content">
+              <p>
+                GitHub es una plataforma que nos permite guardar repositorios
+                de Git que podemos usar como servidores remotos y ejecutar
+                algunos comandos de forma visual e interactiva (sin necesidad
+                de la consola de comandos).
+              </p>
+              <p>
+                Luego de crear nuestra cuenta, podemos crear o importar
+                repositorios, crear organizaciones y proyectos de trabajo,
+                descubrir repositorios de otras personas, contribuir a esos
+                proyectos, dar estrellas y muchas otras cosas.
+              </p>
+              <p>
+                El <strong>README.md</strong> es el archivo que veremos por
+                defecto al entrar a un repositorio. Es una muy buena práctica
+                configurarlo para describir el proyecto, los requerimientos y
+                las instrucciones que debemos seguir para contribuir
+                correctamente.
+              </p>
+              <p>
+                Para <strong>clonar</strong> un repositorio desde GitHub (o
+                cualquier otro servidor remoto) debemos copiar la URL (por
+                ahora, usando HTTPS) y ejecutar el comando
+                <strong>git clone + la URL</strong> que acabamos de copiar.
+                Esto descargara la versión de nuestro proyecto que se
+                encuentra en GitHub.
+              </p>
+              <p>
+                Sin embargo, esto solo funciona para las personas que quieren
+                empezar a contribuir en el proyecto. Si queremos conectar el
+                repositorio de GitHub con nuestro repositorio local, el que
+                creamos con git init, debemos ejecutar las siguientes
+                instrucciones:
+              </p>
+              <pre class="code">
 
                   <span class="code-comment">#Primero: Conectar con el repositorio remoto</span>
                   git remote add origin url
@@ -776,27 +707,27 @@
                     # los cambios de nuestro repositorio local en GitHub:</spam>
                   git push origin master
                 </pre>
-              </div>
-            </article>
-            <article class="course-class__section" id="ssh-key">
-              <h2 class="course-class__section--title">
-                Configura tus llaves SSH en local
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  <span class="t-bold">Primer paso: Generar tus llaves SSH</span
-                  >. Recuerda que es muy buena idea proteger tu llave privada
-                  con una contraseña.
-                </p>
-                <pre class="code">
+            </div>
+          </article>
+          <article class="course-class__section" id="ssh-key">
+            <h2 class="course-class__section--title">
+              Configura tus llaves SSH en local
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                <span class="t-bold">Primer paso: Generar tus llaves SSH</span>. Recuerda que es muy buena idea proteger
+                tu llave privada
+                con una contraseña.
+              </p>
+              <pre class="code">
 
                   ssh-keygen -t rsa -b 4096 -C "tu@email.com"
                 </pre>
-                <p>
-                  <span class="t-bold">Segundo paso:</span> Terminar de
-                  configurar nuestro sistema.
-                </p>
-                <pre class="code">
+              <p>
+                <span class="t-bold">Segundo paso:</span> Terminar de
+                configurar nuestro sistema.
+              </p>
+              <pre class="code">
 
                   <span class="code-comment"># Encender el "servidor" de llaves SSH de tu computadora:</span>
                   eval $(ssh-agent -s)
@@ -804,36 +735,36 @@
                   <span class="code-comment"># Añadir tu llave SSH a este "servidor":</span>
                   ssh-add ruta-donde-guardaste-tu-llave-privada (~/.ssh/id_rsa)
                 </pre>
-                <div class="note">
-                  <p>
-                    Las llaves en windows por defecto se guardan en la ruta
-                    <span class="t-bold">c/users/nombre-pc/.ssh</span>
-                  </p>
-                </div>
+              <div class="note">
+                <p>
+                  Las llaves en windows por defecto se guardan en la ruta
+                  <span class="t-bold">c/users/nombre-pc/.ssh</span>
+                </p>
               </div>
-            </article>
-            <article class="course-class__section" id="ssh-github">
-              <h2 class="course-class__section--title">
-                Conexión a GitHub con SSH
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  Luego de crear nuestras llaves SSH podemos entregarle la llave
-                  pública a GitHub para comunicarnos de forma segura y sin
-                  necesidad de escribir nuestro usuario y contraseña todo el
-                  tiempo.
-                </p>
-                <p>
-                  Para esto debes entrar a la Configuración de Llaves SSH en
-                  GitHub, crear una nueva llave con el nombre que le quieras dar
-                  y el contenido de la llave pública de tu computadora.
-                </p>
-                <p>
-                  Ahora podemos actualizar la URL que guardamos en nuestro
-                  repositorio remoto, solo que, en vez de guardar la URL con
-                  HTTPS, vamos a usar la URL con SSH:
-                </p>
-                <pre class="code">
+            </div>
+          </article>
+          <article class="course-class__section" id="ssh-github">
+            <h2 class="course-class__section--title">
+              Conexión a GitHub con SSH
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Luego de crear nuestras llaves SSH podemos entregarle la llave
+                pública a GitHub para comunicarnos de forma segura y sin
+                necesidad de escribir nuestro usuario y contraseña todo el
+                tiempo.
+              </p>
+              <p>
+                Para esto debes entrar a la Configuración de Llaves SSH en
+                GitHub, crear una nueva llave con el nombre que le quieras dar
+                y el contenido de la llave pública de tu computadora.
+              </p>
+              <p>
+                Ahora podemos actualizar la URL que guardamos en nuestro
+                repositorio remoto, solo que, en vez de guardar la URL con
+                HTTPS, vamos a usar la URL con SSH:
+              </p>
+              <pre class="code">
 
                   <span class="code-comment">#Ver el repositorio remoto al cual estamos conectados</span>
                   git remote -v
@@ -841,19 +772,19 @@
                   <span class="code-comment">#Actualizar el ssh por el https</span>
                   git remote set-url origin url-ssh-del-repositorio-en-github
                 </pre>
-              </div>
-            </article>
-            <article class="course-class__section" id="git-tag">
-              <h2 class="course-class__section--title">
-                Tags y versiones en Git y GitHub
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  Los tags o etiquetas nos permiten asignar versiones a los
-                  commits con cambios más importantes o significativos de
-                  nuestro proyecto.
-                </p>
-                <pre class="code">
+            </div>
+          </article>
+          <article class="course-class__section" id="git-tag">
+            <h2 class="course-class__section--title">
+              Tags y versiones en Git y GitHub
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Los tags o etiquetas nos permiten asignar versiones a los
+                commits con cambios más importantes o significativos de
+                nuestro proyecto.
+              </p>
+              <pre class="code">
 
                   <span class="code-comment">#git tag -a(agregar) nombre-tag(v0.1) -m(mensaje) id-commit</span>
                   git tag a v0.1 -m "primer resultado del repo" 1b5664d5
@@ -871,172 +802,161 @@
                   <span class="code-comment">#elimar tag en el remoto</span>
                   git push origin :refs/tags/nombre-tag
                 </pre>
-              </div>
-            </article>
-            <article class="course-class__section" id="github-branch">
-              <h2 class="course-class__section--title">
-                Manejo de ramas en GitHub
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  Puedes trabajar con ramas que nunca envias a GitHub, así como
-                  pueden haber ramas importantes en GitHub que nunca usas en el
-                  repositorio local. Lo importantes que aprendas a manejarlas
-                  para trabajar profesionalmente
-                </p>
-                <ul>
-                  <li>
-                    Primero posicionarnos en la rama que queremos enviar al
-                    remoto con <strong>checkout</strong>.
-                  </li>
-                  <li>
-                    comando:
-                    <strong>git push origin nombre-rama</strong>.
-                  </li>
-                </ul>
-              </div>
-            </article>
-            <article class="course-class__section" id="github-collaborators">
-              <h2 class="course-class__section--title">
-                Configurar múltiples colaboradores en un repositorio de GitHub
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  Por defecto, cualquier persona puede clonar o descargar tu
-                  proyecto desde GitHub, pero no pueden crear commits, ni ramas,
-                  ni nada.
-                </p>
-                <p>
-                  Existen varias formas de solucionar esto para poder aceptar
-                  contribuciones. Una de ellas es añadir a cada persona de
-                  nuestro equipo como colaborador de nuestro repositorio.
-                </p>
-                <p>
-                  Solo debemos entrar a la configuración de colaboradores de
-                  nuestro proyecto
-                  <span class="t-bold"
-                    >(Repositorio > Settings > Collaborators)</span
-                  >
-                  y añadir el email o username de los nuevos colaboradores.
-                </p>
-                <pre class="code">
+            </div>
+          </article>
+          <article class="course-class__section" id="github-branch">
+            <h2 class="course-class__section--title">
+              Manejo de ramas en GitHub
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Puedes trabajar con ramas que nunca envias a GitHub, así como
+                pueden haber ramas importantes en GitHub que nunca usas en el
+                repositorio local. Lo importantes que aprendas a manejarlas
+                para trabajar profesionalmente
+              </p>
+              <ul>
+                <li>
+                  Primero posicionarnos en la rama que queremos enviar al
+                  remoto con <strong>checkout</strong>.
+                </li>
+                <li>
+                  comando:
+                  <strong>git push origin nombre-rama</strong>.
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="course-class__section" id="github-collaborators">
+            <h2 class="course-class__section--title">
+              Configurar múltiples colaboradores en un repositorio de GitHub
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Por defecto, cualquier persona puede clonar o descargar tu
+                proyecto desde GitHub, pero no pueden crear commits, ni ramas,
+                ni nada.
+              </p>
+              <p>
+                Existen varias formas de solucionar esto para poder aceptar
+                contribuciones. Una de ellas es añadir a cada persona de
+                nuestro equipo como colaborador de nuestro repositorio.
+              </p>
+              <p>
+                Solo debemos entrar a la configuración de colaboradores de
+                nuestro proyecto
+                <span class="t-bold">(Repositorio > Settings > Collaborators)</span>
+                y añadir el email o username de los nuevos colaboradores.
+              </p>
+              <pre class="code">
 
                   <span class="code-comment">#Clonar el repositorio remoto de otra persona</span>
                   git clone ssh-https-repo-remoto
                 </pre>
-              </div>
-            </article>
-            <article class="course-class__section" id="pull-requests">
-              <h2 class="course-class__section--title">
-                Flujo de trabajo profesional con Pull requests
-              </h2>
-              <div class="course-class__section--content">
+            </div>
+          </article>
+          <article class="course-class__section" id="pull-requests">
+            <h2 class="course-class__section--title">
+              Flujo de trabajo profesional con Pull requests
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                En un entorno profesional normalmente se bloquea la rama
+                <span class="t-bold">master</span>, y para enviar código a
+                dicha rama pasa por un code review y luego de su aprobación se
+                unen códigos con los llamados merge request.
+              </p>
+              <p>
+                Para realizar pruebas enviamos el código a servidores que
+                normalmente los llamamos staging develop (servidores de
+                pruebas) luego de que se realizan las pruebas pertinentes
+                tanto de código como de la aplicación estos pasan a el
+                servidor de producción con el ya antes mencionado merge
+                request.
+              </p>
+              <div class="note">
                 <p>
-                  En un entorno profesional normalmente se bloquea la rama
-                  <span class="t-bold">master</span>, y para enviar código a
-                  dicha rama pasa por un code review y luego de su aprobación se
-                  unen códigos con los llamados merge request.
-                </p>
-                <p>
-                  Para realizar pruebas enviamos el código a servidores que
-                  normalmente los llamamos staging develop (servidores de
-                  pruebas) luego de que se realizan las pruebas pertinentes
-                  tanto de código como de la aplicación estos pasan a el
-                  servidor de producción con el ya antes mencionado merge
-                  request.
-                </p>
-                <div class="note">
-                  <p>
-                    <strong>Pull Requests:</strong> es un intermedio antes de
-                    enviar el merge. Permite que otros miembros del equipo
-                    puedan ver los cambios que se hicieron y si les gusta
-                    aprobarlos y al aprobarlos se auto ejecuta el merge en
-                    staging.
-                  </p>
-                </div>
-              </div>
-            </article>
-            <article class="course-class__section" id="git-ignore">
-              <h2 class="course-class__section--title">
-                Ignorar archivos en el respositorio con .gitignore
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  No todos los archivos que agregas a un proyecto deberían ir a
-                  un repositorio, por ejemplo cuando tienes un archivo donde
-                  están tus contraseñas que comúnmente tienen la extensión .env
-                  o cuando te estás conectando a una base de datos; son archivos
-                  que nadie debe ver o las imagenes, en un repositorio no deben
-                  de ir guardados archivos binarios.
-                </p>
-                <ul>
-                  <li>Primero crear un archivo <strong>.gitignore</strong></li>
-                  <li>
-                    Segundo: dentro de ese archivo agregar las extensiones de
-                    los archivos a ignorar, ejemplo: *.jpg
-                  </li>
-                </ul>
-                <div class="note">
-                  <p>
-                    Podemos agregar imagenes en
-                    <a
-                      target="_blank"
-                      href="https://imgur.com/"
-                      class="link link-refe"
-                      >imgur</a
-                    >
-                    y luego llamarlas en los archivos de nuestros proyectos.
-                  </p>
-                </div>
-              </div>
-            </article>
-            <article class="course-class__section" id="readme-md">
-              <h2 class="course-class__section--title">
-                Readme.md es una excelente práctica
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  README.md es una excelente práctica en tus proyectos, md
-                  significa <strong>Markdown</strong> es un especie de código
-                  que te permite cambiar la manera en que se ve un archivo de
-                  texto.
-                </p>
-                <p>
-                  Lo interesante de Markdown es que funciona en muchas páginas,
-                  por ejemplo la edición en Wikipedia; es un lenguaje intermedio
-                  que no es HTML, no es texto plano, es una manera de crear
-                  excelentes texto formateados.
-                </p>
-                <p>
-                  También podemos usar un editor online de markdowm
-                  <a
-                    class="link link-refe"
-                    target="_blank"
-                    href="https://pandao.github.io/editor.md/en.html"
-                    >Editor.md</a
-                  >
+                  <strong>Pull Requests:</strong> es un intermedio antes de
+                  enviar el merge. Permite que otros miembros del equipo
+                  puedan ver los cambios que se hicieron y si les gusta
+                  aprobarlos y al aprobarlos se auto ejecuta el merge en
+                  staging.
                 </p>
               </div>
-            </article>
-            <article class="course-class__section" id="git-stash">
-              <h2 class="course-class__section--title">
-                Git Stash: Guardar cambios en memoria y recuperarlos después
-              </h2>
-              <div class="course-class__section--content">
+            </div>
+          </article>
+          <article class="course-class__section" id="git-ignore">
+            <h2 class="course-class__section--title">
+              Ignorar archivos en el respositorio con .gitignore
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                No todos los archivos que agregas a un proyecto deberían ir a
+                un repositorio, por ejemplo cuando tienes un archivo donde
+                están tus contraseñas que comúnmente tienen la extensión .env
+                o cuando te estás conectando a una base de datos; son archivos
+                que nadie debe ver o las imagenes, en un repositorio no deben
+                de ir guardados archivos binarios.
+              </p>
+              <ul>
+                <li>Primero crear un archivo <strong>.gitignore</strong></li>
+                <li>
+                  Segundo: dentro de ese archivo agregar las extensiones de
+                  los archivos a ignorar, ejemplo: *.jpg
+                </li>
+              </ul>
+              <div class="note">
                 <p>
-                  Cuando necesitamos regresar en el tiempo porque borramos
-                  alguna línea de código pero no queremos pasarnos a otra rama
-                  porque nos daría un error ya que debemos pasar ese "mal
-                  cambio" que hicimos a stage, podemos usar git stash para
-                  regresar el cambio anterior que hicimos.
+                  Podemos agregar imagenes en
+                  <a target="_blank" href="https://imgur.com/" class="link link-refe">imgur</a>
+                  y luego llamarlas en los archivos de nuestros proyectos.
                 </p>
-                <p>
-                  git stash es típico cuando estamos cambios que no merecen una
-                  rama o no merecen un rebase si no simplemente estamos probando
-                  algo y luego quieres volver rápidamente a tu versión anterior
-                  la cual es la correcta.
-                </p>
-                <pre class="code">
+              </div>
+            </div>
+          </article>
+          <article class="course-class__section" id="readme-md">
+            <h2 class="course-class__section--title">
+              Readme.md es una excelente práctica
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                README.md es una excelente práctica en tus proyectos, md
+                significa <strong>Markdown</strong> es un especie de código
+                que te permite cambiar la manera en que se ve un archivo de
+                texto.
+              </p>
+              <p>
+                Lo interesante de Markdown es que funciona en muchas páginas,
+                por ejemplo la edición en Wikipedia; es un lenguaje intermedio
+                que no es HTML, no es texto plano, es una manera de crear
+                excelentes texto formateados.
+              </p>
+              <p>
+                También podemos usar un editor online de markdowm
+                <a class="link link-refe" target="_blank"
+                  href="https://pandao.github.io/editor.md/en.html">Editor.md</a>
+              </p>
+            </div>
+          </article>
+          <article class="course-class__section" id="git-stash">
+            <h2 class="course-class__section--title">
+              Git Stash: Guardar cambios en memoria y recuperarlos después
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                Cuando necesitamos regresar en el tiempo porque borramos
+                alguna línea de código pero no queremos pasarnos a otra rama
+                porque nos daría un error ya que debemos pasar ese "mal
+                cambio" que hicimos a stage, podemos usar git stash para
+                regresar el cambio anterior que hicimos.
+              </p>
+              <p>
+                git stash es típico cuando estamos cambios que no merecen una
+                rama o no merecen un rebase si no simplemente estamos probando
+                algo y luego quieres volver rápidamente a tu versión anterior
+                la cual es la correcta.
+              </p>
+              <pre class="code">
 
                   <span class="code-comment">#Guardar cambios en el lugar temporal</span>
                   git stash
@@ -1054,208 +974,205 @@
                   <span class="code-comment">#borrar un stash</span>
                   git stash drop
                 </pre>
-              </div>
-            </article>
-            <article class="course-class__section" id="git-clean">
-              <h2 class="course-class__section--title">
-                Git Clean: Limpiar tu proyecto de archivos no deseados
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  A veces creamos archivos cuando estamos realizando nuestro
-                  proyecto que realmente no forman parte de nuestro directorio
-                  de trabajo, que no se debería agregar y lo sabemos.
-                </p>
-                <ul>
-                  <li>
-                    Para saber qué archivos vamos a borrar tecleamos
-                    <strong>git clean --dry-run</strong>.
-                  </li>
-                  <li>
-                    Para borrar todos los archivos listados (que no son
-                    carpetas) tecleamos <strong>git clean -f</strong>
-                  </li>
-                </ul>
-              </div>
-            </article>
-            <article class="course-class__section" id="git-amend">
-              <h2 class="course-class__section--title">
-                Reconstruír commits en Git con amend
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  A veces hacemos un commit, pero resulta que no queríamos
-                  mandarlo porque faltaba algo más. Utilizamos
-                  <strong>git commit --amend</strong>, amend en inglés es
-                  remendar y lo que hará es que los cambios que hicimos nos lo
-                  agregará al commit anterior.
-                </p>
-              </div>
-            </article>
-            <article class="course-class__section" id="git-reflog">
-              <h2 class="course-class__section--title">
-                Git Reset y Reflog: Úsese en caso de emergencia
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  ¿Qué pasa cuando todo se rompe y no sabemos qué está pasando?
-                  Con git reset HashDelHEAD nos devolveremos al estado en que el
-                  proyecto funcionaba.
-                </p>
-                <ul>
-                  <li>
-                    <strong>git reset --soft</strong> HashDelHEAD te mantiene lo
-                    que tengas en staging ahí.
-                  </li>
-                  <li>
-                    <strong>git reset --hard</strong> HashDelHEAD resetea
-                    absolutamente todo incluyendo lo que tengas en staging.
-                  </li>
-                </ul>
-                <div class="note">
-                  <p>
-                    git reset es una <span class="t-bold">mala práctica</span>,
-                    no deberías usarlo en ningún momento; debe ser nuestro
-                    último recurso.
-                  </p>
-                </div>
-              </div>
-            </article>
-            <article class="course-class__section" id="git-grep">
-              <h2 class="course-class__section--title">
-                Buscar en archivos y commits de Git con Grep y log
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  A medida que nuestro proyecto se hace grande vamos a querer
-                  buscar ciertas cosas.
-                </p>
-                <p>
-                  Por ejemplo: ¿cuántas veces en nuestro proyecto utilizamos la
-                  palabra color?
-                </p>
-                <p>
-                  Para buscar utilizamos el comando git grep color y nos buscará
-                  en todo el proyecto los archivos en donde está la palabra
-                  color.
-                </p>
-                <ul>
-                  <li>
-                    Con <strong>git grep -n</strong> color nos saldrá un output
-                    el cual nos dirá en qué línea está lo que estamos buscando.
-                  </li>
-                  <li>
-                    Con <strong>git grep -c</strong> color nos saldrá un output
-                    el cual nos dirá cuántas veces se repite esa palabra y en
-                    qué archivo.
-                  </li>
-                  <li>
-                    Si queremos buscar cuántas veces utilizamos un atributo de
-                    HTML lo hacemos con <strong>git grep</strong> -c
-                    "&lt;p&gt;".
-                  </li>
-                  <li>
-                    Para buscar un palabra especifica en un commit toca usar el
-                    comando: <strong>git log -S</strong> "Platzi".
-                  </li>
-                </ul>
-              </div>
-            </article>
-            <article class="course-class__section" id="command-git">
-              <h2 class="course-class__section--title">
-                Comandos y recursos colaborativos en Git y Github
-              </h2>
-              <div class="course-class__section--content">
-                <ul>
-                  <li>
-                    <strong>git shortlog:</strong> Ver cuantos commits a hecho
-                    los miembros del equipo.
-                  </li>
-                  <li>
-                    <strong>git shortlog -sn:</strong> Las personas que han
-                    hecho ciertos commits.
-                  </li>
-                  <li>
-                    <strong>git shortlog -sn --all:</strong> Todos los commits
-                    (también los borrados).
-                  </li>
-                  <li>
-                    <strong>git shortlog -sn --all --no-merges:</strong> muestra
-                    las estadisticas de los comigs del repositorio donde estoy.
-                  </li>
-                  <li>
-                    <strong
-                      >git config --global alias.stats "shortlog -sn --all
-                      --no-merges":</strong
-                    >
-                    configura el comando "shortlog -sn --all --no-merges" en un
-                    Alias en las configuraciones globales de git del pc.
-                  </li>
-                  <li>
-                    <strong>git blame -c blogpost.html:</strong> Muestra quien
-                    ha hecho cambios en dicho archivo identado.
-                  </li>
-                  <li>
-                    <strong>git blame --help:</strong> Muestra en el navegador
-                    el uso del comando.
-                  </li>
-                  <li>
-                    <strong>git blame archivo -L 35, 60 -c:</strong> Muestra
-                    quien escribio el codigo con informacion de la linea 35 a la
-                    60, EJ: git blame css/estilos.css -L 35, 60 -c.
-                  </li>
-                  <li>
-                    <strong>git branch -r:</strong> Muestra las Ramas remotas de
-                    GitHub.
-                  </li>
-                  <li>
-                    <strong>git branch -a:</strong> Muestra todas las Ramas del
-                    repo y remotas de GitHub.
-                  </li>
-                </ul>
-              </div>
-            </article>
-          </div>
-        </section>
-        <footer class="footer">
-          <div class="container-general">
-            <div class="footer__container">
-              <p id="footer-year">@Carlos Zabala Roqueme -</p>
-              <figure class="footer__container--img">
-                <img
-                  src="../../src/images/logo-white-2.png"
-                  alt="logo Carlos Zabala"
-                />
-              </figure>
             </div>
+          </article>
+          <article class="course-class__section" id="git-clean">
+            <h2 class="course-class__section--title">
+              Git Clean: Limpiar tu proyecto de archivos no deseados
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                A veces creamos archivos cuando estamos realizando nuestro
+                proyecto que realmente no forman parte de nuestro directorio
+                de trabajo, que no se debería agregar y lo sabemos.
+              </p>
+              <ul>
+                <li>
+                  Para saber qué archivos vamos a borrar tecleamos
+                  <strong>git clean --dry-run</strong>.
+                </li>
+                <li>
+                  Para borrar todos los archivos listados (que no son
+                  carpetas) tecleamos <strong>git clean -f</strong>
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="course-class__section" id="git-amend">
+            <h2 class="course-class__section--title">
+              Reconstruír commits en Git con amend
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                A veces hacemos un commit, pero resulta que no queríamos
+                mandarlo porque faltaba algo más. Utilizamos
+                <strong>git commit --amend</strong>, amend en inglés es
+                remendar y lo que hará es que los cambios que hicimos nos lo
+                agregará al commit anterior.
+              </p>
+            </div>
+          </article>
+          <article class="course-class__section" id="git-reflog">
+            <h2 class="course-class__section--title">
+              Git Reset y Reflog: Úsese en caso de emergencia
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                ¿Qué pasa cuando todo se rompe y no sabemos qué está pasando?
+                Con git reset HashDelHEAD nos devolveremos al estado en que el
+                proyecto funcionaba.
+              </p>
+              <ul>
+                <li>
+                  <strong>git reset --soft</strong> HashDelHEAD te mantiene lo
+                  que tengas en staging ahí.
+                </li>
+                <li>
+                  <strong>git reset --hard</strong> HashDelHEAD resetea
+                  absolutamente todo incluyendo lo que tengas en staging.
+                </li>
+              </ul>
+              <div class="note">
+                <p>
+                  git reset es una <span class="t-bold">mala práctica</span>,
+                  no deberías usarlo en ningún momento; debe ser nuestro
+                  último recurso.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="course-class__section" id="git-grep">
+            <h2 class="course-class__section--title">
+              Buscar en archivos y commits de Git con Grep y log
+            </h2>
+            <div class="course-class__section--content">
+              <p>
+                A medida que nuestro proyecto se hace grande vamos a querer
+                buscar ciertas cosas.
+              </p>
+              <p>
+                Por ejemplo: ¿cuántas veces en nuestro proyecto utilizamos la
+                palabra color?
+              </p>
+              <p>
+                Para buscar utilizamos el comando git grep color y nos buscará
+                en todo el proyecto los archivos en donde está la palabra
+                color.
+              </p>
+              <ul>
+                <li>
+                  Con <strong>git grep -n</strong> color nos saldrá un output
+                  el cual nos dirá en qué línea está lo que estamos buscando.
+                </li>
+                <li>
+                  Con <strong>git grep -c</strong> color nos saldrá un output
+                  el cual nos dirá cuántas veces se repite esa palabra y en
+                  qué archivo.
+                </li>
+                <li>
+                  Si queremos buscar cuántas veces utilizamos un atributo de
+                  HTML lo hacemos con <strong>git grep</strong> -c
+                  "&lt;p&gt;".
+                </li>
+                <li>
+                  Para buscar un palabra especifica en un commit toca usar el
+                  comando: <strong>git log -S</strong> "Platzi".
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="course-class__section" id="command-git">
+            <h2 class="course-class__section--title">
+              Comandos y recursos colaborativos en Git y Github
+            </h2>
+            <div class="course-class__section--content">
+              <ul>
+                <li>
+                  <strong>git shortlog:</strong> Ver cuantos commits a hecho
+                  los miembros del equipo.
+                </li>
+                <li>
+                  <strong>git shortlog -sn:</strong> Las personas que han
+                  hecho ciertos commits.
+                </li>
+                <li>
+                  <strong>git shortlog -sn --all:</strong> Todos los commits
+                  (también los borrados).
+                </li>
+                <li>
+                  <strong>git shortlog -sn --all --no-merges:</strong> muestra
+                  las estadisticas de los comigs del repositorio donde estoy.
+                </li>
+                <li>
+                  <strong>git config --global alias.stats "shortlog -sn --all
+                    --no-merges":</strong>
+                  configura el comando "shortlog -sn --all --no-merges" en un
+                  Alias en las configuraciones globales de git del pc.
+                </li>
+                <li>
+                  <strong>git blame -c blogpost.html:</strong> Muestra quien
+                  ha hecho cambios en dicho archivo identado.
+                </li>
+                <li>
+                  <strong>git blame --help:</strong> Muestra en el navegador
+                  el uso del comando.
+                </li>
+                <li>
+                  <strong>git blame archivo -L 35, 60 -c:</strong> Muestra
+                  quien escribio el codigo con informacion de la linea 35 a la
+                  60, EJ: git blame css/estilos.css -L 35, 60 -c.
+                </li>
+                <li>
+                  <strong>git branch -r:</strong> Muestra las Ramas remotas de
+                  GitHub.
+                </li>
+                <li>
+                  <strong>git branch -a:</strong> Muestra todas las Ramas del
+                  repo y remotas de GitHub.
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="container-general">
+          <div class="footer__container">
+            <p id="footer-year">@Carlos Zabala Roqueme -</p>
+            <figure class="footer__container--img">
+              <img src="../../src/images/logo-white-2.png" alt="logo Carlos Zabala" />
+            </figure>
           </div>
-        </footer>
-      </div>
+        </div>
+      </footer>
     </div>
-    <script>
-      const $menu = document.getElementById("btn-menu");
-      const $courseMenu = document.getElementById("course-class__left");
+  </div>
+  <script src="../../src/js/menu.js"></script>
+  <script>
+    const $menu = document.getElementById("btn-menu");
+    const $courseMenu = document.getElementById("course-class__left");
 
-      $menu.addEventListener("click", handleClick);
+    $menu.addEventListener("click", handleClick);
 
-      function handleClick() {
-        $courseMenu.classList.toggle("is-active");
-        $menu.classList.toggle("is-active");
+    function handleClick() {
+      $courseMenu.classList.toggle("is-active");
+      $menu.classList.toggle("is-active");
 
-        if ($menu.classList.contains("icon-menu")) {
-          $menu.classList.remove("icon-menu");
-          $menu.classList.add("icon-close");
-        } else {
-          $menu.classList.remove("icon-close");
-          $menu.classList.add("icon-menu");
-        }
+      if ($menu.classList.contains("icon-menu")) {
+        $menu.classList.remove("icon-menu");
+        $menu.classList.add("icon-close");
+      } else {
+        $menu.classList.remove("icon-close");
+        $menu.classList.add("icon-menu");
       }
+    }
 
-      const $footerYear = document.getElementById("footer-year");
+    const $footerYear = document.getElementById("footer-year");
 
-      let date = new Date();
+    let date = new Date();
 
-      $footerYear.innerHTML += " " + date.getFullYear();
-    </script>
-  </body>
+    $footerYear.innerHTML += " " + date.getFullYear();
+  </script>
+</body>
+
 </html>

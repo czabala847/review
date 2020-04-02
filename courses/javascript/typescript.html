@@ -1,160 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>TypeScript</title>
-    <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../../src/css/styles.css" />
-    <link rel="stylesheet" href="../../fonts/style.css" />
-  </head>
-  <body>
-    <div class="app">
-      <div class="app-js-basico">
-        <header class="header">
-          <div class="container-general">
-            <nav class="header-menu">
-              <ul class="header-menu__list menu-left">
-                <li class="header-menu__list--item">
-                  <a class="link" href="../../index.html">Inicio</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>TypeScript</title>
+  <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../src/css/styles.css" />
+  <link rel="stylesheet" href="../../fonts/style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <div class="app-js-basico">
+      <header class="header">
+        <div class="container-general">
+          <nav class="header-menu">
+            <ul class="header-menu__list menu-left">
+              <li class="header-menu__list--item">
+                <a class="link" href="../../index.html">Inicio</a>
+              </li>
+              <li class="header-menu__list--item">
+                <a class="link" href="../../index.html#courses">Carreras</a>
+              </li>
+            </ul>
+            <figure class="header-menu__logo">
+              <a href="../../index.html"><img class="header-menu__logo--img" src="../../src/images/logo_white.png"
+                  alt="logo carlos zabala" /></a>
+            </figure>
+            <ul class="header-menu__list menu-right">
+              <li class="header-menu__list--item">
+                <a class="link" href="">Me</a>
+              </li>
+              <li class="header-menu__list--item">
+                <a class="link" href="">Contacto</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <section class="hero-course">
+        <div class="container-general">
+          <h1 class="hero-course__title">TypeScript</h1>
+          <p class="hero-course__description">
+            TypeScript es un <span class="t-bold">superset</span> de
+            JavaScript que añade tipos a nuestras variables ayudando así a la
+            detección de errores de forma temprana y mejorando el
+            autocompletado. Los navegadores no entienden TypeScript así que
+            hay que transpilar a JavaScript usa Parcel.
+          </p>
+          <div class="hero-course__buttons">
+            <a target="_blank" href="https://platzi.com/clases/javascript-profesional/" class="btn btn--primary">Curso
+              platzi</a>
+          </div>
+        </div>
+      </section>
+      <section class="course-class">
+        <div class="course-class__left" id="course-class__left">
+          <div class="course-class__left--container">
+            <nav class="course-class__menu">
+              <ul>
+                <li>
+                  <a class="link course-class__menu--a" href="#parcel">Parcel</a>
                 </li>
-                <li class="header-menu__list--item">
-                  <a class="link" href="../../index.html#courses">Carreras</a>
+                <li>
+                  <a class="link course-class__menu--a" href="#typed">Tipado</a>
                 </li>
-              </ul>
-              <figure class="header-menu__logo">
-                <a href="../../index.html"
-                  ><img
-                    class="header-menu__logo--img"
-                    src="../../src/images/logo_white.png"
-                    alt="logo carlos zabala"
-                /></a>
-              </figure>
-              <ul class="header-menu__list menu-right">
-                <li class="header-menu__list--item">
-                  <a class="link" href="">Me</a>
+                <li>
+                  <a class="link course-class__menu--a" href="#type-data">Tipos básicos de datos</a>
                 </li>
-                <li class="header-menu__list--item">
-                  <a class="link" href="">Contacto</a>
+                <li>
+                  <a class="link course-class__menu--a" href="#function">Funciones</a>
+                </li>
+                <li>
+                  <a class="link course-class__menu--a" href="#interface">Interfaces</a>
                 </li>
               </ul>
             </nav>
           </div>
-        </header>
-        <section class="hero-course">
-          <div class="container-general">
-            <h1 class="hero-course__title">TypeScript</h1>
-            <p class="hero-course__description">
-              TypeScript es un <span class="t-bold">superset</span> de
-              JavaScript que añade tipos a nuestras variables ayudando así a la
-              detección de errores de forma temprana y mejorando el
-              autocompletado. Los navegadores no entienden TypeScript así que
-              hay que transpilar a JavaScript usa Parcel.
-            </p>
-            <div class="hero-course__buttons">
-              <a
-                target="_blank"
-                href="https://platzi.com/clases/javascript-profesional/"
-                class="btn btn--primary"
-                >Curso platzi</a
-              >
-            </div>
-          </div>
-        </section>
-        <section class="course-class">
-          <div class="course-class__left" id="course-class__left">
-            <div class="course-class__left--container">
-              <nav class="course-class__menu">
-                <ul>
-                  <li>
-                    <a class="link course-class__menu--a" href="#parcel"
-                      >Parcel</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#typed"
-                      >Tipado</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#type-data"
-                      >Tipos básicos de datos</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#function"
-                      >Funciones</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#interface"
-                      >Interfaces</a
-                    >
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-          <div class="course-class__content">
-            <i class="icon-menu icon course-class__icon-menu" id="btn-menu"></i>
-            <article class="course-class__section" id="parcel">
-              <h2 class="course-class__section--title">
-                Transpilar código de TypeScript a JS
-              </h2>
-              <p>Instalar parcel en el proyecto a través de npm:</p>
-              <pre class="code">
+        </div>
+        <div class="course-class__content">
+          <i class="icon-menu icon course-class__icon-menu" id="btn-menu"></i>
+          <article class="course-class__section" id="parcel">
+            <h2 class="course-class__section--title">
+              Transpilar código de TypeScript a JS
+            </h2>
+            <p>Instalar parcel en el proyecto a través de npm:</p>
+            <pre class="code">
 
                 npm install -D parcel-bundler
               </pre>
-              <p>
-                Hay que reemplazar en script del archivo
-                <span class="t-bold">package.json</span> y configurar los HTML
-                que queremos que <span class="t-bold">parcel</span> procese.
-              </p>
-              <pre class="code">
+            <p>
+              Hay que reemplazar en script del archivo
+              <span class="t-bold">package.json</span> y configurar los HTML
+              que queremos que <span class="t-bold">parcel</span> procese.
+            </p>
+            <pre class="code">
 
                 <span class="code-var">"scripts"</span>: {
                   "start": <span class="code-text">"parcel index.html ejercicios/index.html ejercicios/**/*.html"</span>
                 },              
               </pre>
-              <p>
-                Se pueden añadir configuraciones, ejemplo decirle a parcel que
-                transpile el código para el navegador que esta utilizando, que
-                es una versión reciente de chrome.
-              </p>
-              <pre class="code">
+            <p>
+              Se pueden añadir configuraciones, ejemplo decirle a parcel que
+              transpile el código para el navegador que esta utilizando, que
+              es una versión reciente de chrome.
+            </p>
+            <pre class="code">
 
                 <span class="code-comment">//Browserlist: que navegadores queremos darle apoyo.</span>
                 <span class="code-var">"browserlist"</span>: [
                   "last 1 Chrome version"
                 ]
               </pre>
-              <p>
-                Si antes estaba instalado
-                <span class="t-bold">liveServer</span> debemos desistalarlo
-              </p>
-              <pre class="code">
+            <p>
+              Si antes estaba instalado
+              <span class="t-bold">liveServer</span> debemos desistalarlo
+            </p>
+            <pre class="code">
 
                 npm rm live-server
               </pre>
-              <p>
-                Ahora se podrá correr el servidor de parcel, mediante
-                <span class="t-bold">npm start</span>, si no es así se debe
-                apagar el servidor y borrar las carpetas
-                <span class="t-bold">.cache</span> y
-                <span class="t-bold">dist</span>
-              </p>
-              <pre class="code">
+            <p>
+              Ahora se podrá correr el servidor de parcel, mediante
+              <span class="t-bold">npm start</span>, si no es así se debe
+              apagar el servidor y borrar las carpetas
+              <span class="t-bold">.cache</span> y
+              <span class="t-bold">dist</span>
+            </p>
+            <pre class="code">
 
                 rm -rf .cache dist
               </pre>
-              <h3>Transpilar TS a JS</h3>
-              <pre class="code">
+            <h3>Transpilar TS a JS</h3>
+            <pre class="code">
 
                 <span class="code-comment">#Instalar TypeScript</span>
                 npm i -g typescript
@@ -165,13 +146,13 @@
                 <span class="code-comment">#Transpilar desde la consola de VSCODE</span>
                 tsc nombreArchivo.ts <span class="code-comment">#Resultado nombreArchivo.js</span>
               </pre>
-            </article>
-            <article class="course-class__section" id="typed">
-              <h2 class="course-class__section--title">
-                Tipado con TypeScript
-              </h2>
-              <pre class="code">
-                
+          </article>
+          <article class="course-class__section" id="typed">
+            <h2 class="course-class__section--title">
+              Tipado con TypeScript
+            </h2>
+            <pre class="code">
+
                 <span class="code-comment">//La siguiente función solo recibe como parametros números</span>
                 <span class="code-var">function</span> <span class="code-function">add</span>(a: <span class="code-var">number</span>, b: <span class="code-var">number</span>) {
                   <span class="code-sym">return</span> a + b;
@@ -179,81 +160,81 @@
                 
                 <span class="code-var">const</span> sum = <span class="code-function">add</span>(4, 5);                
               </pre>
-              <h3>
-                ¿A que se refiere con que TypeScript ayuda a mejorar el
-                autocompletado?
-              </h3>
-              <p>
-                En parte es porque al ser una versión tipada de JavaScript te
-                permite predecir exactamente qué tipo de datos lleva cada
-                variable, argumento, método, contenido de objetos y arrays; Es
-                decir te permite predecir lo que quieres hacer. Por otra parte
-                hay que tener en cuenta que
-                <span class="t-bold">Visual Studio Code</span> y TypeScript son
-                ambos de Microsoft, lo que hace que se complementen
-                perfectamente.
-              </p>
-            </article>
-            <article class="course-class__section" id="type-data">
-              <h2 class="course-class__section--title">
-                Tipos básicos de datos
-              </h2>
-              <ul>
-                <li>
-                  <span class="t-bold">boolean</span>: El tipo de datos más
-                  básico es el valor verdadero / falso simple, que JavaScript y
-                  TypeScript llaman un boolean valor.
-                  <pre class="code">
+            <h3>
+              ¿A que se refiere con que TypeScript ayuda a mejorar el
+              autocompletado?
+            </h3>
+            <p>
+              En parte es porque al ser una versión tipada de JavaScript te
+              permite predecir exactamente qué tipo de datos lleva cada
+              variable, argumento, método, contenido de objetos y arrays; Es
+              decir te permite predecir lo que quieres hacer. Por otra parte
+              hay que tener en cuenta que
+              <span class="t-bold">Visual Studio Code</span> y TypeScript son
+              ambos de Microsoft, lo que hace que se complementen
+              perfectamente.
+            </p>
+          </article>
+          <article class="course-class__section" id="type-data">
+            <h2 class="course-class__section--title">
+              Tipos básicos de datos
+            </h2>
+            <ul>
+              <li>
+                <span class="t-bold">boolean</span>: El tipo de datos más
+                básico es el valor verdadero / falso simple, que JavaScript y
+                TypeScript llaman un boolean valor.
+                <pre class="code">
 
                     <span class="code-var">let</span> state: <span class="code-var">boolean</span> = <span class="code-sym">false</span>
                   </pre>
-                </li>
-                <li>
-                  <span class="t-bold">Números</span>: Como en JavaScript, todos
-                  los números en TypeScript son valores de coma flotante. Estos
-                  números de coma flotante obtienen el tipo number. Además de
-                  los literales hexadecimales y decimales, TypeScript también
-                  admite literales binarios y octales introducidos en ECMAScript
-                  2015.
-                  <pre class="code">
+              </li>
+              <li>
+                <span class="t-bold">Números</span>: Como en JavaScript, todos
+                los números en TypeScript son valores de coma flotante. Estos
+                números de coma flotante obtienen el tipo number. Además de
+                los literales hexadecimales y decimales, TypeScript también
+                admite literales binarios y octales introducidos en ECMAScript
+                2015.
+                <pre class="code">
 
                     <span class="code-var">let</span> decimal: <span class="code-var">number</span> = 6;
                     <span class="code-var">let</span> hex: <span class="code-var">number</span> = 0xf00d;
                     <span class="code-var">let</span> binary: <span class="code-var">number</span> = 0b1010;
                     <span class="code-var">let</span> octal: <span class="code-var">number</span> = 0o744;
                   </pre>
-                </li>
-                <li>
-                  <span class="t-bold">String</span>: Otra parte fundamental de
-                  la creación de programas en JavaScript para páginas web y
-                  servidores es trabajar con datos textuales. Como en otros
-                  idiomas, usamos el tipo String para referirnos a estos tipos
-                  de datos textuales. Al igual que JavaScript, TypeScript
-                  también utiliza comillas dobles (") o comillas simples (')
-                  para rodear los datos de cadena.
-                  <pre class="code">
+              </li>
+              <li>
+                <span class="t-bold">String</span>: Otra parte fundamental de
+                la creación de programas en JavaScript para páginas web y
+                servidores es trabajar con datos textuales. Como en otros
+                idiomas, usamos el tipo String para referirnos a estos tipos
+                de datos textuales. Al igual que JavaScript, TypeScript
+                también utiliza comillas dobles (") o comillas simples (')
+                para rodear los datos de cadena.
+                <pre class="code">
 
                     <span class="code-var">let</span> color: <span class="code-var">string</span> = <span class="code-text">"blue"</span>
                   </pre>
-                </li>
-                <li>
-                  <span class="t-bold">Array</span>: TypeScript, como
-                  JavaScript, le permite trabajar con matrices de valores. Los
-                  tipos de matriz se pueden escribir de una de dos maneras. En
-                  el primero, usa el tipo de elementos seguido de []para denotar
-                  una matriz de ese tipo de elemento:
-                  <pre class="code">
+              </li>
+              <li>
+                <span class="t-bold">Array</span>: TypeScript, como
+                JavaScript, le permite trabajar con matrices de valores. Los
+                tipos de matriz se pueden escribir de una de dos maneras. En
+                el primero, usa el tipo de elementos seguido de []para denotar
+                una matriz de ese tipo de elemento:
+                <pre class="code">
 
                     <span class="code-var">let</span> list : <span class="code-var">number</span>[] = [1, 2, 3]
                     <span class="code-var">let</span> list : Array<<span class="code-var">Number</span> | <span class="code-var">String</span>> = [1, 2, <span class="code-text">'3'</span>]
                   </pre>
-                </li>
-                <li>
-                  <span class="t-bold">enum</span>: Una adición útil al conjunto
-                  estándar de tipos de datos de JavaScript es enum. Como en
-                  lenguajes como C #, una enumeración es una forma de dar
-                  nombres más amigables a conjuntos de valores numéricos.
-                  <pre class="code">
+              </li>
+              <li>
+                <span class="t-bold">enum</span>: Una adición útil al conjunto
+                estándar de tipos de datos de JavaScript es enum. Como en
+                lenguajes como C #, una enumeración es una forma de dar
+                nombres más amigables a conjuntos de valores numéricos.
+                <pre class="code">
 
                     <span class="code-sym">enum</span> Color {Red, Green, Blue}
                     <span class="code-sym">enum</span> Color {Red = <span class="code-text">"Red"</span>,
@@ -262,34 +243,34 @@
 
                      <span class="code-var">let</span> c : Color = Color.Green
                   </pre>
-                </li>
-                <li>
-                  <span class="t-bold">Any</span>: Es posible que necesitemos
-                  describir el tipo de variables que no sabemos cuándo estamos
-                  escribiendo una solicitud. Estos valores pueden provenir de
-                  contenido dinámico, por ejemplo, del usuario o de una
-                  biblioteca de terceros. En estos casos, queremos inhabilitar
-                  la verificación de tipos y dejar que los valores pasen por las
-                  comprobaciones en tiempo de compilación. Para hacerlo, los
-                  etiquetamos con el any tipo:
-                  <pre class="code">
+              </li>
+              <li>
+                <span class="t-bold">Any</span>: Es posible que necesitemos
+                describir el tipo de variables que no sabemos cuándo estamos
+                escribiendo una solicitud. Estos valores pueden provenir de
+                contenido dinámico, por ejemplo, del usuario o de una
+                biblioteca de terceros. En estos casos, queremos inhabilitar
+                la verificación de tipos y dejar que los valores pasen por las
+                comprobaciones en tiempo de compilación. Para hacerlo, los
+                etiquetamos con el any tipo:
+                <pre class="code">
 
                     <span class="code-var">let</span> notSure: <span class="code-var">any</span> = 4;
                     <span class="code-var">let</span> notSure: <span class="code-var">any</span>[] = [<span class="code-text">'Carlos'</span>, 1 , <span class="code-sym">true</span> ];
                   </pre>
-                </li>
-              </ul>
-            </article>
-            <article class="course-class__section" id="function">
-              <h2 class="course-class__section--title">Funciones</h2>
-              <p>
-                TypeScript aporta varias características que JavaScript no
-                dispone hasta el momento cuando tenemos que plantear funciones y
-                métodos. Podemos indicar a cada parámetro el tipo de dato que
-                puede recibir y también el tipo de dato que retorna la función o
-                método en caso que estemos en una clase:
-              </p>
-              <pre class="code">
+              </li>
+            </ul>
+          </article>
+          <article class="course-class__section" id="function">
+            <h2 class="course-class__section--title">Funciones</h2>
+            <p>
+              TypeScript aporta varias características que JavaScript no
+              dispone hasta el momento cuando tenemos que plantear funciones y
+              métodos. Podemos indicar a cada parámetro el tipo de dato que
+              puede recibir y también el tipo de dato que retorna la función o
+              método en caso que estemos en una clase:
+            </p>
+            <pre class="code">
 
                 <span class="code-var">function</span> <span class="code-function">sumar</span>(valor1:<span class="code-var">number</span>, valor2:<span class="code-var">number</span>): <span class="code-var">number</span>{
                   <span class="code-sym">return</span> valor1+valor2;
@@ -297,24 +278,24 @@
               
                 console.<span class="code-var">log</span>(<span class="code-function">sumar</span>(10, 5));              
               </pre>
-              <p>
-                La función sumar recibe dos parámetros de tipo number y retorna
-                un valor de tipo number. Luego si llamamos a esta función
-                enviando un valor distinto a number el compilador nos avisará
-                del error.
-              </p>
-              <h3>Parámetros opcionales y predeterminados</h3>
-              <p>
-                En TypeScript, se supone que cada parámetro es requerido por la
-                función. Esto no significa que no se pueda dar null o undefined,
-                sino que, cuando se llama a la función, el compilador verificará
-                que el usuario haya proporcionado un valor para cada parámetro.
-                El compilador también supone que estos parámetros son los únicos
-                parámetros que se pasarán a la función. En resumen, el número de
-                argumentos dados a una función tiene que coincidir con el número
-                de parámetros que la función espera.
-              </p>
-              <pre class="code">
+            <p>
+              La función sumar recibe dos parámetros de tipo number y retorna
+              un valor de tipo number. Luego si llamamos a esta función
+              enviando un valor distinto a number el compilador nos avisará
+              del error.
+            </p>
+            <h3>Parámetros opcionales y predeterminados</h3>
+            <p>
+              En TypeScript, se supone que cada parámetro es requerido por la
+              función. Esto no significa que no se pueda dar null o undefined,
+              sino que, cuando se llama a la función, el compilador verificará
+              que el usuario haya proporcionado un valor para cada parámetro.
+              El compilador también supone que estos parámetros son los únicos
+              parámetros que se pasarán a la función. En resumen, el número de
+              argumentos dados a una función tiene que coincidir con el número
+              de parámetros que la función espera.
+            </p>
+            <pre class="code">
 
                 <span class="code-var">function</span> <span class="code-function">buildName</span>(firstName: <span class="code-var">string</span> , lastName: <span class="code-var">string</span>) {
                   <span class="code-sym">return</span> firstName + " " + lastName;
@@ -324,28 +305,28 @@
                 <span class="code-var">let</span> result2 = <span class="code-function">buildName</span>(<span class="code-text">"Bob"</span>, <span class="code-text">"Adams"</span>, <span class="code-text">"Sr."</span>);  <span class="code-comment">// error, too many parameters</span>
                 <span class="code-var">let</span> result3 = <span class="code-function">buildName</span>(<span class="code-text">"Bob"</span>, <span class="code-text">"Adams"</span>); <span class="code-comment">//// ah, just right</span>
               </pre>
-              <p>
-                En JavaScript, cada parámetro es opcional, y los usuarios pueden
-                dejarlos como mejor les parezca. Cuando lo hacen, su valor es
-                undefined. Podemos obtener esta funcionalidad en TypeScript
-                agregando un (?) al final de los parámetros que queremos que
-                sean opcionales. Por ejemplo, supongamos que queremos que el
-                parámetro de apellido anterior sea opcional:
-              </p>
-              <pre class="code">
+            <p>
+              En JavaScript, cada parámetro es opcional, y los usuarios pueden
+              dejarlos como mejor les parezca. Cuando lo hacen, su valor es
+              undefined. Podemos obtener esta funcionalidad en TypeScript
+              agregando un (?) al final de los parámetros que queremos que
+              sean opcionales. Por ejemplo, supongamos que queremos que el
+              parámetro de apellido anterior sea opcional:
+            </p>
+            <pre class="code">
 
                 <span class="code-var">function</span> <span class="code-function">buildName</span>(firstName: <span class="code-var">string</span> , lastName<span class="t-bold">?</span>: <span class="code-var">string</span>) {
                   <span class="code-sym">return</span> firstName + " " + lastName;
                 } 
               </pre>
-            </article>
-            <article class="course-class__section" id="interface">
-              <h2 class="course-class__section--title">Interfaces</h2>
-              <p>
-                Nos permiten declarar la forma exacta de un objeto, definiendo
-                los tipos de sus propiedades y si son opcionales o no. ejemplo:
-              </p>
-              <pre class="code">
+          </article>
+          <article class="course-class__section" id="interface">
+            <h2 class="course-class__section--title">Interfaces</h2>
+            <p>
+              Nos permiten declarar la forma exacta de un objeto, definiendo
+              los tipos de sus propiedades y si son opcionales o no. ejemplo:
+            </p>
+            <pre class="code">
 
                 <span class="code-var">enum</span> Color {
                   rojo = <span class="code-text">"Rojo"</span>,
@@ -371,29 +352,31 @@
                 
                 <span class="code-var">let</span> areaRect = <span class="code-function">area</span>(rect);                
               </pre>
-            </article>
-          </div>
-        </section>
-      </div>
+          </article>
+        </div>
+      </section>
     </div>
-    <script>
-      const $menu = document.getElementById("btn-menu");
-      const $courseMenu = document.getElementById("course-class__left");
+  </div>
+  <script src="../../src/js/menu.js"></script>
+  <script>
+    const $menu = document.getElementById("btn-menu");
+    const $courseMenu = document.getElementById("course-class__left");
 
-      $menu.addEventListener("click", handleClick);
+    $menu.addEventListener("click", handleClick);
 
-      function handleClick() {
-        $courseMenu.classList.toggle("is-active");
-        $menu.classList.toggle("is-active");
+    function handleClick() {
+      $courseMenu.classList.toggle("is-active");
+      $menu.classList.toggle("is-active");
 
-        if ($menu.classList.contains("icon-menu")) {
-          $menu.classList.remove("icon-menu");
-          $menu.classList.add("icon-close");
-        } else {
-          $menu.classList.remove("icon-close");
-          $menu.classList.add("icon-menu");
-        }
+      if ($menu.classList.contains("icon-menu")) {
+        $menu.classList.remove("icon-menu");
+        $menu.classList.add("icon-close");
+      } else {
+        $menu.classList.remove("icon-close");
+        $menu.classList.add("icon-menu");
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>
