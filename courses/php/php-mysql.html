@@ -1,140 +1,202 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso de PHP y MYSQL</title>
+    <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../src/css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Curso de PHP y MYSQL</title>
-  <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
-  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../src/css/styles.css" />
-</head>
-
-<body>
-  <div class="app">
-    <div class="app-react-basico">
-      <header class="header">
-        <div class="container-general">
-          <nav class="header-menu">
-            <ul class="header-menu__list menu-left">
-              <li class="header-menu__list--item">
-                <a class="link" href="../../index.html">Inicio</a>
-              </li>
-              <li class="header-menu__list--item">
-                <a class="link" href="">Carreras</a>
-              </li>
-            </ul>
-            <figure class="header-menu__logo">
-              <a href="../../index.html"><img class="header-menu__logo--img" src="../../src/images/logo_white.png"
-                  alt="logo carlos zabala" /></a>
-            </figure>
-            <ul class="header-menu__list menu-right">
-              <li class="header-menu__list--item">
-                <a class="link" href="">Me</a>
-              </li>
-              <li class="header-menu__list--item">
-                <a class="link" href="">Contacto</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <section class="hero-course">
-        <div class="container-general">
-          <h1 class="hero-course__title">Curso de PHP y MYSQL</h1>
-          <div class="hero-course__description">
-            <p>
-              Este es el primer curso donde manejo la administración de
-              información en una base de datos usando como motor Mysql y como
-              lenguaje Backend PHP, el curso es una mezcla de diversos sitios
-              donde recopilo el conocimiento para afrontar estos nuevos retos.
-            </p>
-            <p>
-              Es el inicio para poder conocer sobre los temas básicos y
-              familiarizar sobre estos conceptos, y seguir avanzado más en el
-              campo de la programación web.
-            </p>
-          </div>
-          <div class="hero-course__buttons">
-            <a target="_blank"
-              href="https://www.youtube.com/watch?v=ZxrUVuOqsy0&list=PLPl81lqbj-4KPLqegK5DNKWSFBzn8QTbq"
-              class="btn btn--primary">Youtube Bluuweb!</a>
-          </div>
-        </div>
-      </section>
-      <section class="course-class">
-        <div class="course-class__left" id="course-class__left">
-          <div class="course-class__left--container">
-            <nav class="course-class__menu">
-              <ul>
-                <li>
-                  <a class="link course-class__menu--a" href="#introduction">Introducción</a>
+  <body>
+    <div class="app">
+      <div class="app-react-basico">
+        <header class="header">
+          <div class="container-general">
+            <nav class="header-menu">
+              <ul class="header-menu__list menu-left">
+                <li class="header-menu__list--item">
+                  <a class="link" href="../../index.html">Inicio</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#conexion">Mysqli Conexión</a>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Carreras</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#insert">Mysqli Insertar</a>
+              </ul>
+              <figure class="header-menu__logo">
+                <a href="../../index.html"
+                  ><img
+                    class="header-menu__logo--img"
+                    src="../../src/images/logo_white.png"
+                    alt="logo carlos zabala"
+                /></a>
+              </figure>
+              <ul class="header-menu__list menu-right">
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Me</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#read">Mysqli Leer</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#update">Mysqli Actualizar</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#pdo">PDO</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#conexion-pdo">PDO Conexión</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#consult-pdo">PDO Consultas</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#insert-pdo">PDO Insertar</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#update-pdo">PDO Update</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#close-conection">Cerrar conexión</a>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Contacto</a>
                 </li>
               </ul>
             </nav>
           </div>
-        </div>
-        <div class="course-class__content">
-          <i class="fas fa-bars icon course-class__icon-menu" id="btn-menu"></i>
-          <article class="course-class__section" id="introduction">
-            <h2 class="course-class__section--title">Introducción</h2>
-            <div class="course-class__section--content">
+        </header>
+        <section class="hero-course">
+          <div class="container-general">
+            <h1 class="hero-course__title">Curso de PHP y MYSQL</h1>
+            <div class="hero-course__description">
               <p>
-                Para conectarse a una base de datos usando PHP hay varias
-                formas,
-                <a target="_blank" class="link link-refe"
-                  href="https://www.php.net/manual/es/book.mysqli.php">Mysqli</a>,
-                <a class="link link-refe" target="_blank" href="https://www.php.net/manual/es/book.pdo.php">PDO</a>
-                o un ORM como
-                <a class="link link-refe" href="https://laravel.com/docs/5.8/eloquent">Eloquent</a>, en este parte
-                primero se iniciara con
-                <strong>Mysqli</strong>, se verá como conectarse a la base de
-                datos, y a realizar el famoso CRUD para el manejo de
-                información, luego se hará lo mismo pero usando <strong>PDO</strong>.
+                Este es el primer curso donde manejo la administración de
+                información en una base de datos usando como motor Mysql y como
+                lenguaje Backend PHP, el curso es una mezcla de diversos sitios
+                donde recopilo el conocimiento para afrontar estos nuevos retos.
+              </p>
+              <p>
+                Es el inicio para poder conocer sobre los temas básicos y
+                familiarizar sobre estos conceptos, y seguir avanzado más en el
+                campo de la programación web.
               </p>
             </div>
-          </article>
-          <article class="course-class__section" id="conexion">
-            <h2 class="course-class__section--title">
-              Mysqli Configuración conexión
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Para la conexión se hace a través de una instancia de la clase
-                <strong>mysqli</strong>, de la siguiente manera:
-              </p>
-              <pre class="code">
+            <div class="hero-course__buttons">
+              <a
+                target="_blank"
+                href="https://www.youtube.com/watch?v=ZxrUVuOqsy0&list=PLPl81lqbj-4KPLqegK5DNKWSFBzn8QTbq"
+                class="btn btn--primary"
+                >Youtube Bluuweb!</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="course-class">
+          <div class="course-class__left" id="course-class__left">
+            <div class="course-class__left--container">
+              <nav class="course-class__menu">
+                <ul>
+                  <li>
+                    <a class="link course-class__menu--a" href="#introduction"
+                      >Introducción</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#conexion"
+                      >Mysqli Conexión</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#insert"
+                      >Mysqli Insertar</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#read"
+                      >Mysqli Leer</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#update"
+                      >Mysqli Actualizar</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#pdo">PDO</a>
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#conexion-pdo"
+                      >PDO Conexión</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#consult-pdo"
+                      >PDO Consultas</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#insert-pdo"
+                      >PDO Insertar</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#update-pdo"
+                      >PDO Update</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#close-conection"
+                      >Cerrar conexión</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#session"
+                      >Sesiones</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#pass"
+                      >Password Hash</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#htaccess"
+                      >htaccess</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="course-class__content">
+            <i
+              class="fas fa-bars icon course-class__icon-menu"
+              id="btn-menu"
+            ></i>
+            <article class="course-class__section" id="introduction">
+              <h2 class="course-class__section--title">Introducción</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para conectarse a una base de datos usando PHP hay varias
+                  formas,
+                  <a
+                    target="_blank"
+                    class="link link-refe"
+                    href="https://www.php.net/manual/es/book.mysqli.php"
+                    >Mysqli</a
+                  >,
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://www.php.net/manual/es/book.pdo.php"
+                    >PDO</a
+                  >
+                  o un ORM como
+                  <a
+                    class="link link-refe"
+                    href="https://laravel.com/docs/5.8/eloquent"
+                    >Eloquent</a
+                  >, en este parte primero se iniciara con
+                  <strong>Mysqli</strong>, se verá como conectarse a la base de
+                  datos, y a realizar el famoso CRUD para el manejo de
+                  información, luego se hará lo mismo pero usando
+                  <strong>PDO</strong>.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="conexion">
+              <h2 class="course-class__section--title">
+                Mysqli Configuración conexión
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para la conexión se hace a través de una instancia de la clase
+                  <strong>mysqli</strong>, de la siguiente manera:
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">(ipservidor, nombreUsuario, contraseña, nombreBaseDatos)</span>
                   $mysqli = <span class="code-sym">new</span> <span class="code-var">mysqli</span>(<span class="code-text">"localhost"</span>, <span class="code-text">"root"</span>, <span class="code-text">""</span>, <span class="code-text">"bd"</span>);
@@ -143,16 +205,16 @@
                     <span class="code-sym">die</span> (<span class="code-text">'Error en la conexión '</span> . $mysqli-><span class="code-var">connect_error</span>);
                   }
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="insert">
-            <h2 class="course-class__section--title">Mysqli Insertar</h2>
-            <div class="course-class__section--content">
-              <p>
-                Si usamos un formulario, utilizaremos el método
-                <strong>POST</strong> para el envió de datos.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="insert">
+              <h2 class="course-class__section--title">Mysqli Insertar</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Si usamos un formulario, utilizaremos el método
+                  <strong>POST</strong> para el envió de datos.
+                </p>
+                <pre class="code">
 
                   &lt;?<span class="code-sym">php</span>
                   <span class="code-sym">require_once</span> <span class="code-text">"conexion.php"</span>;
@@ -162,12 +224,12 @@
 
                   $radio = <span class="code-var">isset</span>($_POST[<span class="code-text">'radio'</span>]) ? $_POST[<span class="code-text">'radio'</span>] : <span class="code-text">'no'</span>;
                 </pre>
-              <p>
-                Para el manejo de checkbox, se debe definir dentro del
-                elemento HTML, en la propiedad name un arreglo, para ir
-                almacenando los check que se van seleccionando.
-              </p>
-              <pre class="code">
+                <p>
+                  Para el manejo de checkbox, se debe definir dentro del
+                  elemento HTML, en la propiedad name un arreglo, para ir
+                  almacenando los check que se van seleccionando.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#En HTML</span>
                   &lt;<span class="code-sym">input</span> <span class="code-function">type</span>=<span class="code-text">"checkbox"</span> <span class="code-function">name</span>=<span class="code-text">"interests[]"</span> <span class="code-function">value</span>=<span class="code-text">"item1"</span>&gt;
@@ -186,70 +248,71 @@
                     $count++;
                   }
                 </pre>
-              <p>
-                Para insertar datos en la base de datos se hace llamando a la
-                instancia de la conexión <strong>mysqli</strong> creada en el archivo
-                <strong>conexion.php</strong> y usando el método
-                <strong>query</strong> se le pasa la consulta a realizar en la
-                base de datos.
-              </p>
-              <pre class="code">
+                <p>
+                  Para insertar datos en la base de datos se hace llamando a la
+                  instancia de la conexión <strong>mysqli</strong> creada en el
+                  archivo <strong>conexion.php</strong> y usando el método
+                  <strong>query</strong> se le pasa la consulta a realizar en la
+                  base de datos.
+                </p>
+                <pre class="code">
 
                   $queryInsert  = <span class="code-text">"</span><span class="code-sym">INSERT INTO</span> <span class="code-text">table (campo1, campo2numerico, campo3)</span>
                    <span class="code-sym">VALUES</span> <span class="code-text">('$campo1', $campo2numerico, '$campo3')"</span>;
                   $response = $mysqli-><span class="code-var">query</span>($queryInsert);
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="read">
-            <h2 class="course-class__section--title">Mysqli Leer</h2>
-            <div class="course-class__section--content">
-              <p>
-                Para consultar los datos se hace mediante el
-                <strong>select</strong>.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="read">
+              <h2 class="course-class__section--title">Mysqli Leer</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para consultar los datos se hace mediante el
+                  <strong>select</strong>.
+                </p>
+                <pre class="code">
 
                   <span class="code-function">require_once</span>(<span class="code-text">'conexion.php'</span>);
 
                   $sqlSelect = <span class="code-text">"</span><span class="code-sym">SELECT</span> <span class="code-text">*</span> <span class="code-sym">FROM</span> <span class="code-text">persona"</span>;
                   $response = $mysqli-><span class="code-var">query</span>($sqlSelect);
                 </pre>
-              <p>
-                Para rescatar registro a registro los datos obtenidos por el
-                select debemos llamar a la función
-                <strong>fetch_array</strong>. Esta función retorna un
-                <strong>vector asociativo</strong> con los datos del registro
-                rescatado, o false en caso de no haber más registros. En el ciclo while
-                se ejecuta hasta que el método fetch_array devuelva false.
-              </p>
-              <pre class="code">
+                <p>
+                  Para rescatar registro a registro los datos obtenidos por el
+                  select debemos llamar a la función
+                  <strong>fetch_array</strong>. Esta función retorna un
+                  <strong>vector asociativo</strong> con los datos del registro
+                  rescatado, o false en caso de no haber más registros. En el
+                  ciclo while se ejecuta hasta que el método fetch_array
+                  devuelva false.
+                </p>
+                <pre class="code">
 
                   <span class="code-sym">while</span> ($row = $response-><span class="code-function">fetch_array</span>(<span class="code-var">MYSQLI_ASSOC</span>)){...}
                 </pre>
-              <p>
-                Para rescatar cada campo accedemos mediante el vector
-                asociativo $row indicando como subíndice un campo contenido en
-                el select.
-              </p>
-              <pre class="code">
+                <p>
+                  Para rescatar cada campo accedemos mediante el vector
+                  asociativo $row indicando como subíndice un campo contenido en
+                  el select.
+                </p>
+                <pre class="code">
 
                   $row[<span class="code-text">'nombre'</span>];
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="update">
-            <h2 class="course-class__section--title">Mysqli Actualizar</h2>
-            <div class="course-class__section--content">
-              <p>
-                Para actualizar, lo primero es configurar el botón o la acción
-                donde el usuario podrá actualizar los datos. Y para esto
-                necesitamos un campo <strong>clave</strong> sobre el registro
-                a editar, como por ejemplo el id, este campo se enviará por
-                <strong>GET</strong> a la página que se encargará de la
-                programación.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="update">
+              <h2 class="course-class__section--title">Mysqli Actualizar</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para actualizar, lo primero es configurar el botón o la acción
+                  donde el usuario podrá actualizar los datos. Y para esto
+                  necesitamos un campo <strong>clave</strong> sobre el registro
+                  a editar, como por ejemplo el id, este campo se enviará por
+                  <strong>GET</strong> a la página que se encargará de la
+                  programación.
+                </p>
+                <pre class="code">
 
                   &lt;<span class="code-sym">a</span> <span class="code-function">href</span>=&lt;?<span class="code-sym">php</span> <span class="code-var">echo</span> <span class="code-text">"modificar.php?id=$row[id]"</span>?&gt;&gt;&lt;/<span class="code-sym">a</span>&gt;
                   
@@ -263,36 +326,42 @@
                   <span class="code-comment">$row será el vector asosiativo con los datos del select anterior</span>
                   $row = $response-><span class="code-function">fetch_array</span>(<span class="code-var">MYSQLI_ASSOC</span>);
                 </pre>
-              <p>
-                Podemos pasar datos ocultos en un formulario, sin que el
-                usuario lo visualice o lo modifique, esto es útil cuando
-                queremos pasar el id de un usuario por ejemplo.
-              </p>
-              <pre class="code">
+                <p>
+                  Podemos pasar datos ocultos en un formulario, sin que el
+                  usuario lo visualice o lo modifique, esto es útil cuando
+                  queremos pasar el id de un usuario por ejemplo.
+                </p>
+                <pre class="code">
 
                   &lt;<span class="code-sym">input</span> <span class="code-function">name</span>=<span class="code-text">"id"</span> <span class="code-function">type</span>=<span class="code-text">"hidden"</span> <span class="code-function">value</span>=&lt;?<span class="code-sym">php</span> <span class="code-var">echo</span> <span class="code-text">"\""</span> . $row[<span class="code-text">'id'</span>]  . <span class="code-text">"\""</span> ?&gt;"&gt;
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="pdo">
-            <h2 class="course-class__section--title">
-              PDO
-            </h2>
-            <div class="course-class__section--content">
-              <P>
-                La extensión Objetos de Datos de PHP (PDO por sus siglás en inglés) define una interfaz ligera para
-                poder acceder a bases de datos en PHP. Cada controlador de bases de datos que implemente la interfaz PDO
-                puede exponer características específicas de la base de datos, como las funciones habituales de la
-                extensión. <a href="https://www.php.net/manual/es/book.pdo.php" class="link link-refe"
-                  target="_blank">Documentación</a>
-              </P>
-
-            </div>
-          </article>
-          <article class="course-class__section" id="conexion-pdo">
-            <h2 class="course-class__section--title">Conexión con PDO</h2>
-            <div class="course-class__section--content">
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="pdo">
+              <h2 class="course-class__section--title">
+                PDO
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  La extensión Objetos de Datos de PHP (PDO por sus siglás en
+                  inglés) define una interfaz ligera para poder acceder a bases
+                  de datos en PHP. Cada controlador de bases de datos que
+                  implemente la interfaz PDO puede exponer características
+                  específicas de la base de datos, como las funciones habituales
+                  de la extensión.
+                  <a
+                    href="https://www.php.net/manual/es/book.pdo.php"
+                    class="link link-refe"
+                    target="_blank"
+                    >Documentación</a
+                  >
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="conexion-pdo">
+              <h2 class="course-class__section--title">Conexión con PDO</h2>
+              <div class="course-class__section--content">
+                <pre class="code">
 
                 <span class="code-var">define</span>(<span class="code-text">"DB_USER"</span>, <span class="code-text">"root"</span>)
                 <span class="code-var">define</span>(<span class="code-text">"DB_PASS"</span>, <span class="code-text">"root"</span>)
@@ -306,12 +375,12 @@
                   <span class="code-function">die</span>();
                 }
               </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="consult-pdo">
-            <h2 class="course-class__section--title">Consultas PDO</h2>
-            <div class="course-class__section--content">
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="consult-pdo">
+              <h2 class="course-class__section--title">Consultas PDO</h2>
+              <div class="course-class__section--content">
+                <pre class="code">
 
                 $query_select = <span class="code-text">'SELECT * FROM tabla_example'</span>;
                 $gsent = $pdo-><span class="code-function">prepare</span>($quey_select);
@@ -319,15 +388,23 @@
 
                 $result = $gsent-><span class="code-function">fetchAll</span>();
               </pre>
-              <p>
-                Si solo se va a obtener un resultado de la consulta, en vez de usar <strong>fetchAll</strong> se usa
-                solo <strong>fetch</strong>.
-              </p>
-              <p>
-                Se puede recorrer el array resultado con un <strong>foreach</strong>
-                <div class=""></div>
-              </p>
-              <pre class="code">
+                <p>
+                  Si solo se va a obtener un resultado de la consulta, en vez de
+                  usar <strong>fetchAll</strong> se usa solo
+                  <strong>fetch</strong>.
+                </p>
+                <div class="note">
+                  <p>
+                    El método <strong>execute</strong>, devuelve TRUE o FALSE,
+                    dependiendo si se completo con exito la consulta a la base
+                    de datos.
+                  </p>
+                </div>
+                <p>
+                  Se puede recorrer el array resultado con un
+                  <strong>foreach</strong>
+                </p>
+                <pre class="code">
 
                 &lt;?php <span class="code-sym">foreach</span> ($result <span class="code-sym">as</span> $data): ?&gt;
 
@@ -336,31 +413,40 @@
                   &lt;/div&gt;
                 &lt;?php <span class="code-sym">endforeach</span> ?&gt;
               </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="insert-pdo">
-            <h2 class="course-class__section--title">
-              Insertar PDO, Sentencias preparadas
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Una Sentencia Preparada, o <strong>Prepared Statement</strong>, es una característica de algunos
-                sistemas de bases de
-                datos que permite ejecutar la misma (o similar) sentencia SQL provocando una mejora en la seguridad y en
-                el rendimiento de la aplicación.
-              </p>
-              <p>
-                Muchas de las bases de datos más maduras admiten el concepto de sentencias preparadas. Estas pueden
-                definirse como un tipo de plantillas compiladas para SQL que las aplicaciones quieren ejecutar, pudiendo
-                ser personalizadas utilizando parámetros variables.
-                <a href="https://www.php.net/manual/es/pdo.prepared-statements.php" class="link link-refe"
-                  target="_blank">Documentación</a>
-              </p>
-            </div>
-            <div class="note">
-              <p>Con las sentencias preparadas se evita la inyección de sql.</p>
-            </div>
-            <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="insert-pdo">
+              <h2 class="course-class__section--title">
+                Insertar PDO, Sentencias preparadas
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Una Sentencia Preparada, o
+                  <strong>Prepared Statement</strong>, es una característica de
+                  algunos sistemas de bases de datos que permite ejecutar la
+                  misma (o similar) sentencia SQL provocando una mejora en la
+                  seguridad y en el rendimiento de la aplicación.
+                </p>
+                <p>
+                  Muchas de las bases de datos más maduras admiten el concepto
+                  de sentencias preparadas. Estas pueden definirse como un tipo
+                  de plantillas compiladas para SQL que las aplicaciones quieren
+                  ejecutar, pudiendo ser personalizadas utilizando parámetros
+                  variables.
+                  <a
+                    href="https://www.php.net/manual/es/pdo.prepared-statements.php"
+                    class="link link-refe"
+                    target="_blank"
+                    >Documentación</a
+                  >
+                </p>
+              </div>
+              <div class="note">
+                <p>
+                  Con las sentencias preparadas se evita la inyección de sql.
+                </p>
+              </div>
+              <pre class="code">
 
               <span class="code-sym">if</span>($_POST){
                 $valor1 = $_POST[<span class="code-text">"campo1</span>];
@@ -374,18 +460,19 @@
                 <span class="code-sym">header</span>(<span class="code-text">'location:index.php'</span>);
               }
             </pre>
-          </article>
-          <article class="course-class__section" id="update-pdo">
-            <h2 class="course-class__section--title">
-              Update y Delete PDO
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Para implementar el update o el delete, es necesario obtener el id del elemento a modificar en base de
-                datos, y para
-                obtener el id, se puede hacer mediante el método <strong>GET</strong>.
-              </p>
-              <pre class="code">
+            </article>
+            <article class="course-class__section" id="update-pdo">
+              <h2 class="course-class__section--title">
+                Update y Delete PDO
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para implementar el update o el delete, es necesario obtener
+                  el id del elemento a modificar en base de datos, y para
+                  obtener el id, se puede hacer mediante el método
+                  <strong>GET</strong>.
+                </p>
+                <pre class="code">
 
                 $id = $_GET[<span class="code-text">"id"</span>];
                 $valor1 = $_GET[<span class="code-text">"valor1"</span>];
@@ -395,73 +482,202 @@
                 $stmt = $pdo-><span class="code-function">prepare</span>($query_update);
                 $stmt-><span class="code-function">execute</span>($valor1, $valor2, $id);
               </pre>
-              <p>Para la acción de eliminar sería la siguiente, aunque se recomienda hacer una validación previa con Js,
-                preguntandolé al usuario si realmente quiere borrar el registro.</p>
-              <pre class="code">
+                <p>
+                  Para la acción de eliminar sería la siguiente, aunque se
+                  recomienda hacer una validación previa con Js, preguntandolé
+                  al usuario si realmente quiere borrar el registro.
+                </p>
+                <pre class="code">
 
                   $query_delete = <span class="code-text">"DELETE FROM table WHERE id = ?"</span>;
                   $stmt = $pdo-><span class="code-function">prepare</span>($query_delete);
                   $stmt-><span class="code-function">execute</span>($id);
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="close-conection">
-            <h2 class="course-class__section--title">Cerrar conexión PDO</h2>
-            <div class="course-class__section">
-              <p>
-                Para cerrar una conexión en PDO, solo basta con volver null, la instancia de la clase PDO, asi como
-                también la variable statement.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="close-conection">
+              <h2 class="course-class__section--title">Cerrar conexión PDO</h2>
+              <div class="course-class__section">
+                <p>
+                  Para cerrar una conexión en PDO, solo basta con volver null,
+                  la instancia de la clase PDO, asi como también la variable
+                  statement.
+                </p>
+                <pre class="code">
 
                 $pdo = <span class="code-sym">null</span>;
                 $stmt = <span class="code-sym">null</span>;
               </pre>
-            </div>
-          </article>
-        </div>
-      </section>
-      <footer class="footer">
-        <div class="container-general">
-          <div class="footer__container">
-            <p id="footer-year">@Carlos Zabala Roqueme -</p>
-            <figure class="footer__container--img">
-              <img src="../../src/images/logo-white-2.png" alt="logo Carlos Zabala" />
-            </figure>
+              </div>
+            </article>
+            <article class="course-class__section" id="session">
+              <h2 class="course-class__section--title">Sesiones</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Se utiliza mucho para dar u otorgar permisos especificos a los
+                  usuarios que inicien sesión en una página. Para esto se usa
+                  una variable superglobal
+                  <a
+                    href="https://www.php.net/manual/es/reserved.variables.session.php"
+                    target="_blank"
+                    class="link link-refe"
+                    ><strong>$_SESSION</strong></a
+                  >, que es un array asociativo que contiene variables de sesión
+                  disponibles para el script actual.
+                </p>
+                <p>
+                  Para tener ese array asosiativo de sesiones en todos los
+                  archivos php, se debe colocar al inicio de cada archivo la
+                  función <strong>session_start</strong>, que permitira acceder
+                  de manera global a nuestras sesiones.
+                </p>
+                <pre class="code">
+
+                <span class="code-var">session_start</span>();
+
+                $login = <span class="code-text">"usuario"</span>;
+
+                <span class="code-comment">#En vez de admin, puede ser cualquier nombre</span>
+                $_SESSION[<span class="code-text">"admin"</span>] = $login;
+
+                <span class="code-comment">#Para validar si la sesión existe se usa isset</span>
+                <span class="code-var">isset</span>($_SESSION[<span class="code-text">"admin"</span>]);
+              </pre>
+                <p>
+                  Para destruir una sesión se emplea el método
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://www.php.net/manual/es/function.session-destroy.php"
+                    ><strong>session_destroy</strong></a
+                  >.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="pass">
+              <h2 class="course-class__section--title">Password Hash</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para el manejo de contraseñas en php se recomienda usar la
+                  encriptación que ofrece
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://www.php.net/manual/es/function.password-hash.php"
+                    >password_hash</a
+                  >, el cual crea un nuevo hash de contraseña usando un
+                  algoritmo de hash fuerte de único sentido. En la columna de la
+                  base de datos donde se almacenara ese hash, debe permitir
+                  hasta 255 caracteres para evitar errores.
+                </p>
+                <pre class="code">
+
+                  <span class="code-var">password_hash</span>(<span class="code-text">"Password"</span>, PASSWORD_DEFAULT);
+                </pre>
+                <p>
+                  Para hacer comparación entre contraseñas se usa
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://www.php.net/manual/es/function.password-verify.php"
+                    >password_verify</a
+                  >, devuelve <b>TRUE</b> si la contraseña y el hash coinciden,
+                  o <b>FALSE</b> de lo contrario.
+                </p>
+                <pre class="code">
+
+                  <span class="code-var">password_verify</span>(<span class="code-text">"passwordCompare"</span>, $hash)
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="htaccess">
+              <h2 class="course-class__section--title">htaccess</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Es el nombre por defecto del archivo de configuración de
+                  directorios de Apache. Se utiliza para personalizar la
+                  configuración de directivas y parámetros definidos en el
+                  archivo de configuración principal del alojamiento.
+                </p>
+                <p>
+                  <ul>
+                    <li>Expesiones regulares, valores que va a aceptar nuestra url.
+                      <ol>
+                        <li><b>(^)</b>, inicio de los caracteres a aceptar.</li>
+                        <li><b>(a-zA-Z)</b>, aceptar de la (A) a la (Z), tanto en mayúsculas como en minúsculas.</li>
+                        <li><b>(0-9)</b>, para los números.</li>
+                        <li><b>(*)</b> Para configurar que será una combinación de caracteres.</li>
+                      </ol>
+                    </li>
+                  </ul> 
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">#En el archivo .htaccess</span>
+                  Option +FollowSymLinks <span class="code-comment">#Compartiendo los enlaces</span>
+                  RewriteEngine On <span class="code-comment">#Reescribir la url</span>
+
+                  <span class="code-comment">#Funcion que va a redirigir a la url especifica</span>
+                  <span class="code-comment">#RewriteRule ExpresionRegular UrlDestino [banderas_config_opcional]</span>
+                  #RewriteRule ^([a-zA-z0-9]*)$ destino.php?variable=$1
+                </pre>
+                <p>
+                  Hay que capturar lo que se ingrese en la ruta y guardarlo en una variable, por medio de <b>GET</b>.
+                </p>
+                <pre class="code">
+
+                  $peticionUrl = $_GET[<span class="code-text">"variable"</span>];
+                </pre>
+              </div>
+            </article>
           </div>
-        </div>
-      </footer>
+        </section>
+        <footer class="footer">
+          <div class="container-general">
+            <div class="footer__container">
+              <p id="footer-year">@Carlos Zabala Roqueme -</p>
+              <figure class="footer__container--img">
+                <img
+                  src="../../src/images/logo-white-2.png"
+                  alt="logo Carlos Zabala"
+                />
+              </figure>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
-  </div>
-  <script src="https://kit.fontawesome.com/2028b75fa6.js" crossorigin="anonymous"></script>
-  <script src="../../src/js/menu.js"></script>
-  <script>
-    const $menu = document.getElementById("btn-menu");
-    const $courseMenu = document.getElementById("course-class__left");
+    <script
+      src="https://kit.fontawesome.com/2028b75fa6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../src/js/menu.js"></script>
+    <script>
+      const $menu = document.getElementById("btn-menu");
+      const $courseMenu = document.getElementById("course-class__left");
 
-    $menu.addEventListener("click", handleClick);
+      $menu.addEventListener("click", handleClick);
 
-    function handleClick() {
-      $courseMenu.classList.toggle("is-active");
-      $menu.classList.toggle("is-active");
+      function handleClick() {
+        $courseMenu.classList.toggle("is-active");
+        $menu.classList.toggle("is-active");
 
-      if ($menu.classList.contains("fa-bars")) {
-        $menu.classList.remove("fa-bars");
-        $menu.classList.add("fa-times");
-      } else {
-        $menu.classList.remove("fa-times");
-        $menu.classList.add("fa-bars");
+        if ($menu.classList.contains("fa-bars")) {
+          $menu.classList.remove("fa-bars");
+          $menu.classList.add("fa-times");
+        } else {
+          $menu.classList.remove("fa-times");
+          $menu.classList.add("fa-bars");
+        }
       }
-    }
 
-    const $footerYear = document.getElementById("footer-year");
+      const $footerYear = document.getElementById("footer-year");
 
-    if ($footerYear) {
-      let date = new Date();
+      if ($footerYear) {
+        let date = new Date();
 
-      $footerYear.innerHTML += " " + date.getFullYear();
-    }
-  </script>
-</body>
-
+        $footerYear.innerHTML += " " + date.getFullYear();
+      }
+    </script>
+  </body>
 </html>
