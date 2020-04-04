@@ -147,6 +147,9 @@
                       >htaccess</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#api">API</a>
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -599,34 +602,80 @@
                   configuración de directivas y parámetros definidos en el
                   archivo de configuración principal del alojamiento.
                 </p>
-                <p>
-                  <ul>
-                    <li>Expesiones regulares, valores que va a aceptar nuestra url.
-                      <ol>
-                        <li><b>(^)</b>, inicio de los caracteres a aceptar.</li>
-                        <li><b>(a-zA-Z)</b>, aceptar de la (A) a la (Z), tanto en mayúsculas como en minúsculas.</li>
-                        <li><b>(0-9)</b>, para los números.</li>
-                        <li><b>(*)</b> Para configurar que será una combinación de caracteres.</li>
-                      </ol>
-                    </li>
-                  </ul> 
-                </p>
+
+                <ul>
+                  <li>
+                    Expesiones regulares, valores que va a aceptar nuestra url.
+                    <ol>
+                      <li><b>(^)</b>, inicio de los caracteres a aceptar.</li>
+                      <li>
+                        <b>(a-zA-Z)</b>, aceptar de la (A) a la (Z), tanto en
+                        mayúsculas como en minúsculas.
+                      </li>
+                      <li><b>(0-9)</b>, para los números.</li>
+                      <li>
+                        <b>(*)</b> Para configurar que será una combinación de
+                        caracteres.
+                      </li>
+                    </ol>
+                  </li>
+                </ul>
+
                 <pre class="code">
 
                   <span class="code-comment">#En el archivo .htaccess</span>
-                  Option +FollowSymLinks <span class="code-comment">#Compartiendo los enlaces</span>
+                  Options +FollowSymLinks <span class="code-comment">#Compartiendo los enlaces</span>
                   RewriteEngine On <span class="code-comment">#Reescribir la url</span>
 
                   <span class="code-comment">#Funcion que va a redirigir a la url especifica</span>
                   <span class="code-comment">#RewriteRule ExpresionRegular UrlDestino [banderas_config_opcional]</span>
-                  #RewriteRule ^([a-zA-z0-9]*)$ destino.php?variable=$1
+                  RewriteRule ^([a-zA-Z0-9]*)$ datos.php?route=$1
                 </pre>
                 <p>
-                  Hay que capturar lo que se ingrese en la ruta y guardarlo en una variable, por medio de <b>GET</b>.
+                  Hay que capturar lo que se ingrese en la ruta y guardarlo en
+                  una variable, por medio de <b>GET</b>.
                 </p>
                 <pre class="code">
 
-                  $peticionUrl = $_GET[<span class="code-text">"variable"</span>];
+                  $peticionUrl = $_GET[<span class="code-text">"route"</span>];
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="api">
+              <h2 class="course-class__section--title">API</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para trabajar con APIs desde PHP, hay que usar la función
+                  <strong>json_encode</strong>, que convertira un array de php a
+                  objeto tipo Json, el cual luego podemos manipular con
+                  Javascript, en el frontend de la aplicación.
+                </p>
+                <pre class="code">
+
+                  <span class="code-var">echo json_encode</span>($array);
+                </pre>
+                <p>
+                  También hay que especificar en PHP, que el archivo que vamos a
+                  exportar es un JSON, eso se hace a través de la cabecera. Se
+                  colocá al comienzo del archivo PHP.
+                </p>
+                <pre class="code">
+
+                  <span class="code-var">header</span>(<span class="code-text">'Content-Type: application/json'</span>);
+                </pre>
+                <p>
+                  Otra parte importante son los
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://victorroblesweb.es/2017/04/23/cabeceras-http-php-permitir-acceso-cors/"
+                    >CORS</a
+                  >, esto se configura en el archivo PHP, para que cualquier
+                  persona pueda consumir una API.
+                </p>
+                <pre class="code">
+
+                  <span class="code-var">header</span>(<span class="code-text">'Access-Control-Allow-Origin: *'</span>);
                 </pre>
               </div>
             </article>
