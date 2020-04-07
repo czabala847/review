@@ -1,159 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso de Javascript Intermedio</title>
+    <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../src/css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Curso de Javascript Intermedio</title>
-  <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
-  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../src/css/styles.css" />
-</head>
-
-<body>
-  <div class="app">
-    <div class="app-react-basico">
-      <header class="header">
-        <div class="container-general">
-          <nav class="header-menu">
-            <ul class="header-menu__list menu-left">
-              <li class="header-menu__list--item">
-                <a class="link" href="../../index.html">Inicio</a>
-              </li>
-              <li class="header-menu__list--item">
-                <a class="link" href="">Carreras</a>
-              </li>
-            </ul>
-            <figure class="header-menu__logo">
-              <a href="../../index.html"><img class="header-menu__logo--img" src="../../src/images/logo_white.png"
-                  alt="logo carlos zabala" /></a>
-            </figure>
-            <ul class="header-menu__list menu-right">
-              <li class="header-menu__list--item">
-                <a class="link" href="">Me</a>
-              </li>
-              <li class="header-menu__list--item">
-                <a class="link" href="">Contacto</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <section class="hero-course">
-        <div class="container-general">
-          <h1 class="hero-course__title">
-            Curso Javascript intermedio
-          </h1>
-          <p class="hero-course__description">
-            Este curso es un repaso sobre las técnicas de cómo manejar
-            javascript en la manipulación de elementos del DOM. la temática
-            que se expone a continuación toma como base el curso de platzi
-            "Curso de jQuery a JavaScript",
-          </p>
-          <div class="hero-course__buttons">
-            <a target="_blank" href="https://platzi.com/clases/jquery-js/" class="btn btn--primary">Curso platzi</a>
-          </div>
-        </div>
-      </section>
-      <section class="course-class">
-        <div class="course-class__left" id="course-class__left">
-          <div class="course-class__left--container">
-            <nav class="course-class__menu">
-              <ul>
-                <li>
-                  <a class="link course-class__menu--a" href="#selector">Selectores</a>
+  <body>
+    <div class="app">
+      <div class="app-react-basico">
+        <header class="header">
+          <div class="container-general">
+            <nav class="header-menu">
+              <ul class="header-menu__list menu-left">
+                <li class="header-menu__list--item">
+                  <a class="link" href="../../index.html">Inicio</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#template">Templates</a>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Carreras</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#dom">Creación DOM</a>
+              </ul>
+              <figure class="header-menu__logo">
+                <a href="../../index.html"
+                  ><img
+                    class="header-menu__logo--img"
+                    src="../../src/images/logo_white.png"
+                    alt="logo carlos zabala"
+                /></a>
+              </figure>
+              <ul class="header-menu__list menu-right">
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Me</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#event">Eventos</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#class">Clases y estilos CSS</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#create-element">Create Element</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#form-data">FormData</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#destructuring">Desestructuración de objetos</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#data-set">DataSet</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#local-storage">LocalStorage</a>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Contacto</a>
                 </li>
               </ul>
             </nav>
           </div>
-        </div>
-        <div class="course-class__content">
-          <i class="fas fa-bars icon course-class__icon-menu" id="btn-menu"></i>
-          <article class="course-class__section" id="selector">
-            <h2 class="course-class__section--title">Selectores</h2>
-            <p>
-              Un selector nos sirve para poder manipular un objeto del DOM,
-              puedes buscar dicho objeto ya sea por su id, clase, atributo,
-              etc. <br />
-              Por convención una variable que este represente un objeto del
-              DOM lleva el <span class="t-bold">signo $</span>, esto es para
-              tener claro que estamos manipulando un objeto del DOM y no algún
-              tipo de información o dato. <br />
-              Dentro de JavaScript existen distintas funciones para hacer
-              selectores, entre ellas se encuentra:
+        </header>
+        <section class="hero-course">
+          <div class="container-general">
+            <h1 class="hero-course__title">
+              Curso Javascript intermedio
+            </h1>
+            <p class="hero-course__description">
+              Este curso es un repaso sobre las técnicas de cómo manejar
+              javascript en la manipulación de elementos del DOM. la temática
+              que se expone a continuación toma como base el curso de platzi
+              "Curso de jQuery a JavaScript",
             </p>
-            <ul>
-              <li>
-                <a target="_blank" href="https://developer.mozilla.org/es/docs/Web/API/Document/getElementById"
-                  class="link link-refe t-bold">getElementById</a>: recibe como parámetro el id del objeto del DOM que
-                estás
-                buscando. Te regresa un solo objeto.
-              </li>
-              <li>
-                <a target="_blank" href="https://developer.mozilla.org/es/docs/Web/API/Document/getElementsByTagName"
-                  class="t-bold link link-refe">getElementsByTagName</a>: recibe como parámetro el tag que estás
-                buscando y te
-                regresa una colección html de los elementos que tengan ese
-                tag.
-              </li>
-              <li>
-                <a target="_blank" href="https://developer.mozilla.org/es/docs/Web/API/Document/getElementsByClassName"
-                  class="t-bold link link-refe">getElementByClassName</a>: recibe como parámetro la clase y te regresa
-                una colección
-                html de los elementos que tengan esa clase.
-              </li>
-              <li>
-                <a target="_blank" href="https://developer.mozilla.org/es/docs/Web/API/Document/querySelector"
-                  class="t-bold link link-refe">querySelector</a>: va a buscar el primer elemento que coincida con el
-                selector
-                que le pases como parámetro.
-              </li>
-              <li>
-                <a target="_blank" href="https://developer.mozilla.org/es/docs/Web/API/Document/querySelectorAll"
-                  class="t-bold link link-refe">querySelectorAll</a>: va a buscar todos los elementos que coincidan con
-                el
-                selector que le pases como parámetro.
-              </li>
-            </ul>
-          </article>
-          <article class="course-class__section" id="template">
-            <h2 class="course-class__section--title">
-              Creación de templates
-            </h2>
-            <p>
-              Desde ECMAScript 6 contamos con una nueva característica llamada
-              <strong>template literals</strong> que se representan con las
-              comillas invertidas (``), ejemplo:
-            </p>
-            <pre class="code">
+            <div class="hero-course__buttons">
+              <a
+                target="_blank"
+                href="https://platzi.com/clases/jquery-js/"
+                class="btn btn--primary"
+                >Curso platzi</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="course-class">
+          <div class="course-class__left" id="course-class__left">
+            <div class="course-class__left--container">
+              <nav class="course-class__menu">
+                <ul>
+                  <li>
+                    <a class="link course-class__menu--a" href="#template"
+                      >Templates</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#dom"
+                      >Creación DOM</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#event"
+                      >Eventos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#class"
+                      >Clases y estilos CSS</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#create-element"
+                      >Create Element</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#form-data"
+                      >FormData</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#destructuring"
+                      >Desestructuración de objetos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#data-set"
+                      >DataSet</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#local-storage"
+                      >LocalStorage</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="course-class__content">
+            <i
+              class="fas fa-bars icon course-class__icon-menu"
+              id="btn-menu"
+            ></i>
+            <article class="course-class__section" id="template">
+              <h2 class="course-class__section--title">
+                Creación de templates
+              </h2>
+              <p>
+                Desde ECMAScript 6 contamos con una nueva característica llamada
+                <strong>template literals</strong> que se representan con las
+                comillas invertidas (``), ejemplo:
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">#La interpolación de texto ayuda a
                 #colocar código html en js de
@@ -165,7 +147,7 @@
                     &lt;/div&gt;
                   `</span>
               </pre>
-            <pre class="code">
+              <pre class="code">
 
                 <span class="code-comment">#Creación del template de movies, del curso Curso de jQuery a JavaScript de Platzi</span>
                 <span class="code-var">function</span> <span class="code-function">template</span>(movie){
@@ -183,31 +165,32 @@
                   )
                 }
               </pre>
-          </article>
-          <article class="course-class__section" id="dom">
-            <h2 class="course-class__section--title">Creación de DOM</h2>
-            <p>
-              La plantilla que se creo anteriormente de momento es puro texto,
-              no es un elemento HTML que podamos poner dentro del navegador
-              pues si los imprimimos en el navegador lo único que veremos es
-              texto. <br />
-              Vamos a insertar la plantilla dentro de nuestro container, para
-              ello recuerda que JavaScript se lee de arriba hacia abajo
-              entonces debemos declarar la variable del container antes de
-              llamar a algún método de este. <br />
-              Para convertir nuestra plantilla de texto a un
-              <strong>Document Object Model</strong> necesitamos crear dentro
-              de memoria un documento HTML, esto es posible gracias al método
-              <span class="t-bold">document.implementation.createHTMLDocument</span>. A este documento HTML le vamos a
-              añadir al body, mediante
-              <span class="t-bold">innerHTML</span>, nuestra plantilla de
-              texto. Una vez añadida le pedimos al body el primer elemento
-              hijo que tenga y este lo añadimos a nuestro container.
-              <br />
-              Este flujo es la magia que hay detrás de varias librerías y
-              frameworks que nos ayudan a crear interfaces.
-            </p>
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="dom">
+              <h2 class="course-class__section--title">Creación de DOM</h2>
+              <p>
+                La plantilla que se creo anteriormente de momento es puro texto,
+                no es un elemento HTML que podamos poner dentro del navegador
+                pues si los imprimimos en el navegador lo único que veremos es
+                texto. <br />
+                Vamos a insertar la plantilla dentro de nuestro container, para
+                ello recuerda que JavaScript se lee de arriba hacia abajo
+                entonces debemos declarar la variable del container antes de
+                llamar a algún método de este. <br />
+                Para convertir nuestra plantilla de texto a un
+                <strong>Document Object Model</strong> necesitamos crear dentro
+                de memoria un documento HTML, esto es posible gracias al método
+                <span class="t-bold"
+                  >document.implementation.createHTMLDocument</span
+                >. A este documento HTML le vamos a añadir al body, mediante
+                <span class="t-bold">innerHTML</span>, nuestra plantilla de
+                texto. Una vez añadida le pedimos al body el primer elemento
+                hijo que tenga y este lo añadimos a nuestro container.
+                <br />
+                Este flujo es la magia que hay detrás de varias librerías y
+                frameworks que nos ayudan a crear interfaces.
+              </p>
+              <pre class="code">
 
                 <span class="code-var">function</span> <span class="code-function">createTemplate</span>(HTMLString){
                   <span class="code-comment">#Crea un elemento html</span>
@@ -218,8 +201,8 @@
                   <span class="code-sym">return</span> html.body.children[0]
                 }
               </pre>
-            <p>Utilización</p>
-            <pre class="code">
+              <p>Utilización</p>
+              <pre class="code">
 
                 <span class="code-comment">#Guardar el template dentro de una constante</span>
                 <span class="code-var">const</span>  HTMLString = <span class="code-function">videoActionTemplate</span>(movie);
@@ -229,108 +212,120 @@
                 <span class="code-comment">#Agregar el template al contenedor usando append</span>
                 $container.<span class="code-var">append</span>(movieElement)
               </pre>
-            <div class="note">
+              <div class="note">
+                <p>
+                  Todos los elementos del DOM tienen un api:
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://developer.mozilla.org/es/docs/Web/API/HTMLMediaElement"
+                    >documentación</a
+                  >.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="event">
+              <h2 class="course-class__section--title">Eventos</h2>
               <p>
-                Todos los elementos del DOM tienen un api:
-                <a class="link link-refe" target="_blank"
-                  href="https://developer.mozilla.org/es/docs/Web/API/HTMLMediaElement">documentación</a>.
+                Toda aplicación web necesita lidiar con
+                <span class="t-bold">interacciones del usuario</span> , desde un
+                click hasta arrastrar algún elemento, estas interacciones son
+                escuchadas por el navegador mediante algo llamado eventos.
+                Existen muchos tipos de eventos, el más común es el evento de
+                click. <br />
+                Para que un elemento HTML pueda escuchar algún evento debemos
+                usar el método <strong>addEventListener</strong>. Este método
+                recibe dos parámetros, el nombre del evento que va a escuchar y
+                la función que se va a ejecutar al momento de que se accione el
+                evento.
               </p>
-            </div>
-          </article>
-          <article class="course-class__section" id="event">
-            <h2 class="course-class__section--title">Eventos</h2>
-            <p>
-              Toda aplicación web necesita lidiar con
-              <span class="t-bold">interacciones del usuario</span> , desde un
-              click hasta arrastrar algún elemento, estas interacciones son
-              escuchadas por el navegador mediante algo llamado eventos.
-              Existen muchos tipos de eventos, el más común es el evento de
-              click. <br />
-              Para que un elemento HTML pueda escuchar algún evento debemos
-              usar el método <strong>addEventListener</strong>. Este método
-              recibe dos parámetros, el nombre del evento que va a escuchar y
-              la función que se va a ejecutar al momento de que se accione el
-              evento.
-            </p>
-            <p>
-              Para el evento de click, se puede simplificar usando el método
-              <span class="t-bold">onClick</span>()
-            </p>
-            <pre class="code">
+              <p>
+                Para el evento de click, se puede simplificar usando el método
+                <span class="t-bold">onClick</span>()
+              </p>
+              <pre class="code">
 
                 $elementoHTML.<span class="code-function">onClick</span> = () => console.<span class="code-var">log</span>(<span class="code-text">'Este mensaje se mostrara al hacer click'</span>)
               </pre>
-            <div class="note">
+              <div class="note">
+                <p>
+                  La página se recarga al momento de ejecutarse el evento
+                  <strong>submit</strong>, para evitar esto debemos quitarle la
+                  acción por defecto que viene en submit usando el método
+                  <strong>event.preventDefault()</strong>.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="class">
+              <h2 class="course-class__section--title">Clases y estilos CSS</h2>
               <p>
-                La página se recarga al momento de ejecutarse el evento
-                <strong>submit</strong>, para evitar esto debemos quitarle la
-                acción por defecto que viene en submit usando el método
-                <strong>event.preventDefault()</strong>.
+                Dentro de cada elemento tenemos un método llamado
+                <strong>classList</strong>, con este podemos ver las clases que
+                tiene nuestro elemento y además llamar a otros métodos para
+                añadir, borrar o hacer toggle a alguna clase. De igual forma
+                podemos acceder a todas las propiedades de CSS algún elemento
+                mediante <strong>element.style</strong>.
               </p>
-            </div>
-          </article>
-          <article class="course-class__section" id="class">
-            <h2 class="course-class__section--title">Clases y estilos CSS</h2>
-            <p>
-              Dentro de cada elemento tenemos un método llamado
-              <strong>classList</strong>, con este podemos ver las clases que
-              tiene nuestro elemento y además llamar a otros métodos para
-              añadir, borrar o hacer toggle a alguna clase. De igual forma
-              podemos acceder a todas las propiedades de CSS algún elemento
-              mediante <strong>element.style</strong>.
-            </p>
-            <p>Algunos métodos que nos ofrece classList</p>
-            <ul>
-              <li>
-                <strong>add</strong>: Añade las clases indicadas. Si estas
-                clases existieran en el atributo del elemento serán ignoradas.
-              </li>
-              <li><strong>remove</strong>: Elimina las clases indicadas.</li>
-              <li>
-                <strong>toggle</strong>: Cuando sólo hay un argumento
-                presente: Alterna el valor de la clase; ej., si la clase
-                existe la elimina y devuelve false, si no, la añade y devuelve
-                true.
-              </li>
-              <li>
-                <strong>contains</strong>: Comprueba si la clase indicada
-                existe en el atributo de clase del elemento.
-              </li>
-              <li>
-                <strong>replace</strong>: Reemplaza una clase existente por
-                una nueva.
-              </li>
-            </ul>
-            <a target="_blank" class="link link-refe"
-              href="https://developer.mozilla.org/es/docs/Web/API/Element/classList">Más información</a>
-            <p>
-              Para los estilos se hace mediante
-              <a target="_blank" class="link link-refe t-bold"
-                href="https://developer.mozilla.org/es/docs/Web/API/HTMLElement/style">style</a>
-              :
-            </p>
-            <pre class="code">
+              <p>Algunos métodos que nos ofrece classList</p>
+              <ul>
+                <li>
+                  <strong>add</strong>: Añade las clases indicadas. Si estas
+                  clases existieran en el atributo del elemento serán ignoradas.
+                </li>
+                <li><strong>remove</strong>: Elimina las clases indicadas.</li>
+                <li>
+                  <strong>toggle</strong>: Cuando sólo hay un argumento
+                  presente: Alterna el valor de la clase; ej., si la clase
+                  existe la elimina y devuelve false, si no, la añade y devuelve
+                  true.
+                </li>
+                <li>
+                  <strong>contains</strong>: Comprueba si la clase indicada
+                  existe en el atributo de clase del elemento.
+                </li>
+                <li>
+                  <strong>replace</strong>: Reemplaza una clase existente por
+                  una nueva.
+                </li>
+              </ul>
+              <a
+                target="_blank"
+                class="link link-refe"
+                href="https://developer.mozilla.org/es/docs/Web/API/Element/classList"
+                >Más información</a
+              >
+              <p>
+                Para los estilos se hace mediante
+                <a
+                  target="_blank"
+                  class="link link-refe t-bold"
+                  href="https://developer.mozilla.org/es/docs/Web/API/HTMLElement/style"
+                  >style</a
+                >
+                :
+              </p>
+              <pre class="code">
 
                 $container.<span class="code-var">style</span>.color =  <span class="code-text">"blue"</span>;
               </pre>
-          </article>
-          <article class="course-class__section" id="create-element">
-            <h2 class="course-class__section--title">
-              Creación de elementos y asignación de atributos
-            </h2>
-            <p>
-              Vamos a crear un elemento HTML sin usar un template string. Para
-              crear el elemento desde cero vamos a usar el método
-              <span class="t-bold">document.createElement</span>, este recibe
-              como parámetro la etiqueta html del elemento que se quiere
-              crear, no funciona mandándole el template string. Para añadirle
-              un atributo al elemento que acabamos de crear haremos uso del
-              método <span class="t-bold">setAttribute</span>. Este recibe dos
-              parámetros, uno indicando el nombre del atributo que vamos a
-              añadir y el segundo parámetro indicando el valor de dicho
-              atributo.
-            </p>
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="create-element">
+              <h2 class="course-class__section--title">
+                Creación de elementos y asignación de atributos
+              </h2>
+              <p>
+                Vamos a crear un elemento HTML sin usar un template string. Para
+                crear el elemento desde cero vamos a usar el método
+                <span class="t-bold">document.createElement</span>, este recibe
+                como parámetro la etiqueta html del elemento que se quiere
+                crear, no funciona mandándole el template string. Para añadirle
+                un atributo al elemento que acabamos de crear haremos uso del
+                método <span class="t-bold">setAttribute</span>. Este recibe dos
+                parámetros, uno indicando el nombre del atributo que vamos a
+                añadir y el segundo parámetro indicando el valor de dicho
+                atributo.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">#Crear elemento html sin template</span>
                 <span class="code-var">const</span> $loader = document.<span class="code-var">createElement</span>( <span class="code-text">'img'</span> ) <span class="code-comment">Se crea una elemento img</span>
@@ -342,58 +337,77 @@
                   <span class="code-function">width</span>: 50
                 })
               </pre>
-          </article>
-          <article class="course-class__section" id="form-data">
-            <h2 class="course-class__section--title">FormData</h2>
-            <p>
-              Los objetos FormData le permiten compilar un conjunto de pares
-              clave/valor para enviar mediante XMLHttpRequest. Están
-              destinados principalmente para el envío de los datos del
-              formulario, pero se pueden utilizar de forma independiente con
-              el fin de transmitir los datos tecleados. Los datos transmitidos
-              estarán en el mismo formato que usa el método submit() del
-              formulario para enviar los datos si el tipo de codificación del
-              formulario se establece en "multipart/form-data".
-            </p>
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="form-data">
+              <h2 class="course-class__section--title">FormData</h2>
+              <p>
+                Los objetos FormData le permiten compilar un conjunto de pares
+                clave/valor para enviar mediante XMLHttpRequest. Están
+                destinados principalmente para el envío de los datos del
+                formulario, pero se pueden utilizar de forma independiente con
+                el fin de transmitir los datos tecleados. Los datos transmitidos
+                estarán en el mismo formato que usa el método submit() del
+                formulario para enviar los datos si el tipo de codificación del
+                formulario se establece en "multipart/form-data".
+              </p>
+              <pre class="code">
 
                 <span class="code-var">const</span> dataForm = <span class="code-sym">new</span> FormData($form)
               </pre>
-            <p>
-              Tiene <strong>getters</strong> y <strong>setters</strong>, para
-              obtener lo que se escribió en la caja de texto se usa el get, y
-              el atributo
-              <strong>name del input en el formulario html</strong>.
-            </p>
-            <pre class="code">
+              <p>
+                Tiene <strong>getters</strong> y <strong>setters</strong>, para
+                obtener lo que se escribió en la caja de texto se usa el get, y
+                el atributo
+                <strong>name del input en el formulario html</strong>.
+              </p>
+              <pre class="code">
 
                 dataForm.<span class="code-var">set</span>(<span class="code-text">'name'</span>, <span class="code-text">'example name'</span>)
                 
                 dataForm.<span class="code-var">get</span>(<span class="code-text">'name'</span>)
                 <span class="code-comment">#Resultado : 'example name'</span>
               </pre>
-            <div class="note">
+              <div class="note">
+                <p>
+                  Para resumir, dataSet nos permite controlar los
+                  <strong>inputs</strong> de un fomulario y a través de sus
+                  metodos getters y setters podremos manipular la información
+                  que se ingrese en ellos.
+                </p>
+              </div>
               <p>
-                Para resumir, dataSet nos permite controlar los
-                <strong>inputs</strong> de un fomulario y a través de sus
-                metodos getters y setters podremos manipular la información
-                que se ingrese en ellos.
+                Usando FormData y Fetch.
               </p>
-            </div>
-          </article>
-          <article class="course-class__section" id="destructuring">
-            <h2 class="course-class__section--title">
-              Desestructuración de objetos
-            </h2>
-            <p>
-              Desestructuración de objetos es el procedimiento que nos permite
-              desglosar un objeto con el fin de asignar una variable y
-              simplificar el código.
-              <a target="_blank" class="link link-refe"
-                href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Destructuring_assignment">Más
-                información</a>
-            </p>
-            <pre class="code">
+              <pre class="code">
+
+                <span class="code-var">const</span> fd = <span class="code-sym">new</span> <span class="code-var">FormData</span>();
+
+                <span class="code-var">const</span> <span class="code-function">fetchData</span> = () => {
+                  <span class="code-var">const</span> config = {
+                    method: <span class="code-text">"POST"</span>,
+                    body: fd
+                  }
+
+                  <span class="code-var">const</span> urlFetch = <span class="code-function">fetch</span>(url, config);
+                }
+              </pre>
+            </article>
+            <article class="course-class__section" id="destructuring">
+              <h2 class="course-class__section--title">
+                Desestructuración de objetos
+              </h2>
+              <p>
+                Desestructuración de objetos es el procedimiento que nos permite
+                desglosar un objeto con el fin de asignar una variable y
+                simplificar el código.
+                <a
+                  target="_blank"
+                  class="link link-refe"
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Destructuring_assignment"
+                  >Más información</a
+                >
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">#En vez de usar</span>
                 <span class="code-var">const</span> peliculaBuscada = data.movies[0]
@@ -403,14 +417,14 @@
                   data.movies[0] : peliculaBuscada
                 }}
               </pre>
-          </article>
-          <article class="course-class__section" id="data-set">
-            <h2 class="course-class__section--title">Dataset</h2>
-            <p>
-              Dataset permite acceder a un objeto con todos los atributos data
-              de un elemento DOM.
-            </p>
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="data-set">
+              <h2 class="course-class__section--title">Dataset</h2>
+              <p>
+                Dataset permite acceder a un objeto con todos los atributos data
+                de un elemento DOM.
+              </p>
+              <pre class="code">
 
                 &lt;<span class="code-sym">div</span> <span class="code-function">id</span>= <span class="code-text">"element"</span> <span class="code-function">data-id</span> = <span class="code-text">"10"</span> <span class="code-function">data-category</span> = <span class="code-text">"action"</span>&gt;&lt;/<span class="code-sym">div</span>&gt;
                 
@@ -419,76 +433,88 @@
                 <span class="code-comment">#Guarda el valor de data-category</span>
                 <span class="code-var">const</span> category = $element.<span class="code-var">dataset</span>.category;
               </pre>
-          </article>
-          <article class="course-class__section" id="local-storage">
-            <h2 class="course-class__section--title">LocalStorage</h2>
-            <p>
-              Para respaldar los datos que pedimos a la API utilizamos
-              <a class="link link-refe" target="_blank"
-                href="https://developer.mozilla.org/es/docs/Web/API/Window/localStorage">localStorage</a>
-              ó sessionStorage. Son objetos nativos en javascript.
-              <a class="link link-refe t-bold" target="_blank"
-                href="https://github.com/pablojorgeandres/notas-clases/blob/master/jQuery-JavaScript.md#clase21">Más
-                información</a>
-            </p>
-            <ul>
-              <li>
-                <span class="t-bold">localStorage</span>: nos permite guardar
-                los datos sin un tiempo de expiración, es decir persisten
-                entre ventanas/tabs con el mismo origen incluso al cerrar el
-                navegador.
-              </li>
-              <li>
-                <span class="t-bold">sessionStorage</span>: nos permite
-                guardar los datos con tiempo de expiración. Son eliminados
-                cuando finaliza la sesion de navegación, lo que ocurre cuando
-                se cierra el navegador.
-              </li>
-            </ul>
-          </article>
-        </div>
-      </section>
-      <footer class="footer">
-        <div class="container-general">
-          <div class="footer__container">
-            <p>@Carlos Zabala Roqueme - 2019</p>
-            <figure class="footer__container--img">
-              <img src="../../src/images/logo-white-2.png" alt="logo Carlos Zabala" />
-            </figure>
+            </article>
+            <article class="course-class__section" id="local-storage">
+              <h2 class="course-class__section--title">LocalStorage</h2>
+              <p>
+                Para respaldar los datos que pedimos a la API utilizamos
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://developer.mozilla.org/es/docs/Web/API/Window/localStorage"
+                  >localStorage</a
+                >
+                ó sessionStorage. Son objetos nativos en javascript.
+                <a
+                  class="link link-refe t-bold"
+                  target="_blank"
+                  href="https://github.com/pablojorgeandres/notas-clases/blob/master/jQuery-JavaScript.md#clase21"
+                  >Más información</a
+                >
+              </p>
+              <ul>
+                <li>
+                  <span class="t-bold">localStorage</span>: nos permite guardar
+                  los datos sin un tiempo de expiración, es decir persisten
+                  entre ventanas/tabs con el mismo origen incluso al cerrar el
+                  navegador.
+                </li>
+                <li>
+                  <span class="t-bold">sessionStorage</span>: nos permite
+                  guardar los datos con tiempo de expiración. Son eliminados
+                  cuando finaliza la sesion de navegación, lo que ocurre cuando
+                  se cierra el navegador.
+                </li>
+              </ul>
+            </article>
           </div>
-        </div>
-      </footer>
+        </section>
+        <footer class="footer">
+          <div class="container-general">
+            <div class="footer__container">
+              <p>@Carlos Zabala Roqueme - 2019</p>
+              <figure class="footer__container--img">
+                <img
+                  src="../../src/images/logo-white-2.png"
+                  alt="logo Carlos Zabala"
+                />
+              </figure>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
-  </div>
-  <script src="https://kit.fontawesome.com/2028b75fa6.js" crossorigin="anonymous"></script>
-  <script src="../../src/js/menu.js"></script>
-  <script>
-    const $menu = document.getElementById("btn-menu");
-    const $courseMenu = document.getElementById("course-class__left");
+    <script
+      src="https://kit.fontawesome.com/2028b75fa6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../src/js/menu.js"></script>
+    <script>
+      const $menu = document.getElementById("btn-menu");
+      const $courseMenu = document.getElementById("course-class__left");
 
-    $menu.addEventListener("click", handleClick);
+      $menu.addEventListener("click", handleClick);
 
-    function handleClick() {
-      $courseMenu.classList.toggle("is-active");
-      $menu.classList.toggle("is-active");
+      function handleClick() {
+        $courseMenu.classList.toggle("is-active");
+        $menu.classList.toggle("is-active");
 
-      if ($menu.classList.contains("fa-bars")) {
-        $menu.classList.remove("fa-bars");
-        $menu.classList.add("fa-times");
-      } else {
-        $menu.classList.remove("fa-times");
-        $menu.classList.add("fa-bars");
+        if ($menu.classList.contains("fa-bars")) {
+          $menu.classList.remove("fa-bars");
+          $menu.classList.add("fa-times");
+        } else {
+          $menu.classList.remove("fa-times");
+          $menu.classList.add("fa-bars");
+        }
       }
-    }
 
-    const $footerYear = document.getElementById("footer-year");
+      const $footerYear = document.getElementById("footer-year");
 
-    if ($footerYear) {
-      let date = new Date();
+      if ($footerYear) {
+        let date = new Date();
 
-      $footerYear.innerHTML += " " + date.getFullYear();
-    }
-  </script>
-</body>
-
+        $footerYear.innerHTML += " " + date.getFullYear();
+      }
+    </script>
+  </body>
 </html>
