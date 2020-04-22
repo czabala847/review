@@ -48,7 +48,7 @@ function templateCareer(career) {
 // renderizar el template en pantalla, recibe un array de elementos,
 //el contenedor donde se va a mostrar
 //y el tipo de elemento que es (career o course)
-function render(listElement, $container, typeElement) {
+export function render(listElement, $container, typeElement) {
   let countCareer = 0;
   listElement.forEach((item) => {
     let HTMLString = ""; //variable almacenara el template (curso o carrera)
@@ -86,16 +86,12 @@ function render(listElement, $container, typeElement) {
   });
 }
 
-async function fetchData(url) {
+export async function fetchData(url) {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    // contenedor padre de las carreras
-    const $sectionCourse = document.getElementById("courses");
-    render(data, $sectionCourse, "career");
+    return data;
   } catch (e) {
     console.log(e);
   }
 }
-
-fetchData("./src/js/cursos.json");
