@@ -1,221 +1,156 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso básico de Javascript</title>
+    <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../src/css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Curso básico de Javascript</title>
-  <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
-  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../src/css/styles.css" />
-</head>
-
-<body>
-  <div class="app">
-    <div class="app-react-basico">
-      <header class="header">
-        <div class="container-general">
-          <nav class="header-menu">
-            <ul class="header-menu__list menu-left">
-              <li class="header-menu__list--item">
-                <a class="link" href="../../index.html">Inicio</a>
-              </li>
-              <li class="header-menu__list--item">
-                <a class="link" href="">Carreras</a>
-              </li>
-            </ul>
-            <figure class="header-menu__logo">
-              <a href="../../index.html"><img class="header-menu__logo--img" src="../../src/images/logo_white.png"
-                  alt="logo carlos zabala" /></a>
-            </figure>
-            <ul class="header-menu__list menu-right">
-              <li class="header-menu__list--item">
-                <a class="link" href="">Me</a>
-              </li>
-              <li class="header-menu__list--item">
-                <a class="link" href="">Contacto</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <section class="hero-course">
-        <div class="container-general">
-          <h1 class="hero-course__title">Curso básico de Javascript</h1>
-          <p class="hero-course__description">
-            A lo largo del curso aprenderemos las bases sólidas para dominar
-            el lenguaje JavaScript. Veremos desde lo más básico como:
-            variables, tipos de datos y operadores, e iremos avanzando con los
-            condicionales y las estructuras de control. Luego veremos los
-            conceptos relacionados con asincronismo, uno de los aspectos
-            fundamentales de JavaScript, usando callbacks, promesas y async
-            await.
-          </p>
-          <div class="hero-course__buttons">
-            <a target="_blank" href="https://platzi.com/clases/fundamentos-javascript/" class="btn btn--primary">Curso
-              platzi</a>
-          </div>
-        </div>
-      </section>
-      <section class="course-class">
-        <div class="course-class__left" id="course-class__left">
-          <div class="course-class__left--container">
-            <nav class="course-class__menu">
-              <ul>
-                <li>
-                  <a class="link course-class__menu--a" href="#variables">Variables</a>
+  <body>
+    <div class="app">
+      <div class="app-react-basico">
+        <header class="header">
+          <div class="container-general">
+            <nav class="header-menu">
+              <ul class="header-menu__list menu-left">
+                <li class="header-menu__list--item">
+                  <a class="link" href="../../index.html">Inicio</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#functions">Funciones</a>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Carreras</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#function-scope">Alcance de las funciones</a>
+              </ul>
+              <figure class="header-menu__logo">
+                <a href="../../index.html"
+                  ><img
+                    class="header-menu__logo--img"
+                    src="../../src/images/logo_white.png"
+                    alt="logo carlos zabala"
+                /></a>
+              </figure>
+              <ul class="header-menu__list menu-right">
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Me</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#objects">Objetos</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#compare">Comparaciones</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#conditional">Condicionales</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#arrow-function">Arrow Functions</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#switch">Condicional múltiple: switch</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#array">Arrays</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#class">Clases</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#this">This</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#class-ecma">Clases ECMAScript</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#async">Asincronismo</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#callbacks">Callbacks</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#promise">Promesas</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#async-await">Async-await</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#context-function">Contexto de una función</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#api">API</a>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Contacto</a>
                 </li>
               </ul>
             </nav>
           </div>
-        </div>
-        <div class="course-class__content">
-          <i class="fas fa-bars icon course-class__icon-menu" id="btn-menu"></i>
-          <article class="course-class__section" id="variables">
-            <h2 class="course-class__section--title">Variables</h2>
-            <p>
-              Dentro de JavaScript tenemos tres formas de declarar una
-              variable las cuales son: var, const y let.
+        </header>
+        <section class="hero-course">
+          <div class="container-general">
+            <h1 class="hero-course__title">Curso básico de Javascript</h1>
+            <p class="hero-course__description">
+              A lo largo del curso aprenderemos las bases sólidas para dominar
+              el lenguaje JavaScript. Veremos desde lo más básico como:
+              variables, tipos de datos y operadores, e iremos avanzando con los
+              condicionales y las estructuras de control. Luego veremos los
+              conceptos relacionados con asincronismo, uno de los aspectos
+              fundamentales de JavaScript, usando callbacks, promesas y async
+              await.
             </p>
-            <ul>
-              <li>
-                <strong>var</strong> era la forma en que se declaraban las
-                variables hasta ECMAScript 5.
-              </li>
-              <li>
-                <strong>const</strong> y <strong>let</strong> es la forma en
-                que se declaran las variables a partir de ECMAScript 6.
-              </li>
-            </ul>
-            <p>
-              <strong>const</strong> sirve para declarar variables que nunca
-              van a ser modificadas y en cambio <strong>let</strong> son
-              variables que pueden ser modificadas.
-            </p>
-            <p>
-              Para declarar una variable se hace de la siguiente forma, en el
-              ejemplo se declara y se le asigna un valor:
-            </p>
-            <pre class="code">
-
-                <span class="code-var">var</span> nombreVariable <span class="code-sym">=</span> <span class="code-text">"valor de la variable"</span>
-              </pre>
-            <p>
-              <span class="t-bold">Js lenguaje débilmente tipado</span>, en
-              una variable se pueden asignar tanto números y textos (esto
-              puede cambiar con Typescript), ej:
-            </p>
-            <pre class="code">
-
-                edad <span class="code-sym">=</span> 28
-                edad <span class="code-sym">=</span> <span class="code-text">'28'</span>
-              </pre>
-            <h3>Variables: Strings</h3>
-            <p>
-              Los strings son cadenas de texto. Para indicar que estamos
-              usando una cadena de texto debemos de colocar las comillas
-              simples (''), algunas funciones que se pueden hacer con los
-              string:
-            </p>
-            <ul>
-              <li>
-                <a target="_blank" class="t-bold link link-refe"
-                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/charAt">charAt</a>(indice)
-                devuelve un caracter de una cadena de texto.
-              </li>
-              <li>
-                <a target="_blank" class="t-bold link link-refe"
-                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/substr">substr</a>(inicio,
-                longitud) devuelve los caracteres de una cadena que
-                comienzan en una localización especificada y de acuerdo al
-                número de caracteres que se especifiquen.
-              </li>
-            </ul>
-            <p>
-              Si queremos evitar la concatenación de texto con (+), podemos
-              usar
-              <span class="t-bold">Interpolación</span> de texto que ofrece
-              JS. Para usarla podemos definir una cadena de texto por medio de
-              las comillas invertidas (``), ejemplo:
-            </p>
-            <pre class="code">
-
-                <span class="code-var">var</span> interpolacion <span class="code-sym">=</span> <span class="code-text">`${Aquí se puede poner código js}`</span>
-                <span class="code-var">var</span> nombreCompleto <span class="code-sym">=</span> <span class="code-text">`Hello, my name is ${name} ${lastName}`</span>
-              </pre>
-            <h3>Diferencias entre LET vs VAR</h3>
-            <p>
-              <strong>let</strong> permite declarar variables limitando su
-              alcance (scope) al bloque, declaración, o expresión donde se
-              está usando. Lo anterior diferencia la expresión let de la
-              palabra reservada <strong>var</strong>, la cual define una
-              variable global o local en una función sin importar el ámbito
-              del bloque.
-            </p>
-          </article>
-          <article class="course-class__section" id="functions">
-            <h2 class="course-class__section--title">Funciones</h2>
-            <p>
-              Las funciones son
-              <strong>fracciones de código reutilizable</strong>. JavaScript
-              es un lenguaje <strong>interpretado</strong>, esto quiere decir
-              que intentará ejecutar el código sin importar si los parámetros
-              que le pasemos a la función estén invertidos o incluso
-              incompletos.
-            </p>
-            <pre class="code">
+            <div class="hero-course__buttons">
+              <a
+                target="_blank"
+                href="https://platzi.com/clases/fundamentos-javascript/"
+                class="btn btn--primary"
+                >Curso platzi</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="course-class">
+          <div class="course-class__left" id="course-class__left">
+            <div class="course-class__left--container">
+              <nav class="course-class__menu">
+                <ul>
+                  <li>
+                    <a class="link course-class__menu--a" href="#functions"
+                      >Funciones</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#objects"
+                      >Objetos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#arrow-function"
+                      >Arrow Functions</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#array"
+                      >Arrays</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#class"
+                      >Clases</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#this">This</a>
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#class-ecma"
+                      >Clases ECMAScript</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#async"
+                      >Asincronismo</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#promise"
+                      >Promesas</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#async-await"
+                      >Async-await</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#context-function"
+                      >Contexto de una función</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#api">API</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="course-class__content">
+            <i
+              class="fas fa-bars icon course-class__icon-menu"
+              id="btn-menu"
+            ></i>
+            <article class="course-class__section" id="functions">
+              <h2 class="course-class__section--title">Funciones</h2>
+              <p>
+                Las funciones son
+                <strong>fracciones de código reutilizable</strong>. JavaScript
+                es un lenguaje <strong>interpretado</strong>, esto quiere decir
+                que intentará ejecutar el código sin importar si los parámetros
+                que le pasemos a la función estén invertidos o incluso
+                incompletos.
+              </p>
+              <pre class="code">
 
                 <span class="code-var">var</span> nombre = <span class="code-text">'Carlos'</span> , apellido = <span class="code-text">'Zabala'</span>, edad = 21
 
@@ -228,96 +163,35 @@
                 <span class="code-function">imprimirEdad</span>(<span class="code-text">'Juan'</span>, <span class="code-text">'Diaz'</span>, 21) <span class="code-comment">#Juan Diaz tiene 21 años</span>
                 <span class="code-function">imprimirEdad</span>(21, 5, <span class="code-text">'Lopez'</span>) <span class="code-comment">#21 5 tiene lopez años</span>
               </pre>
-            <h3>Funciones que retornan valores</h3>
-            <p>
-              <strong>Return</strong> detiene la ejecución de una función y
-              devuelve el valor de esa función.
-            </p>
-            <pre class="code">
-
-                <span class="code-var">function</span> <span class="code-function">esMayorEdad</span>(persona){
-                  <span class="code-sym">return</span> persona.edad >= MAYORIA_DE_EDAD <span class="code-comment"># retorna true / false</span>
-                }
-              </pre>
-            <p>Podemos declarar una función e invocarla allí mismo.</p>
-            <pre class="code">
-
-                <span class="code-var">function</span> <span class="code-function">load</span>(){}
-
-                <span class="code-function">load</span>()
-              </pre>
-            <p>Lo anterior equivaldría a esto:</p>
-            <pre class="code">
-
-                (<span class="code-var">function</span> <span class="code-function">load</span>(){
-
-                })()
-              </pre>
-          </article>
-          <article class="course-class__section" id="function-scope">
-            <h2 class="course-class__section--title">
-              El alcance de las funciones
-            </h2>
-            <p>
-              Si una variable no está definida dentro del cuerpo de una
-              función hablamos de una variable global. Por el contrario, una
-              variable definida dentro de una función es una variable local.
-              Para que la ejecución de una función no modifique una variable
-              global usamos parámetros en lugar de pasar directamente la
-              variable. Es posible utilizar el mismo nombre para una variable
-              global y para el parámetro de una función con un alcance local.
-            </p>
-            <p>
-              Al hacer referencia directa a una variable global dentro de una
-              función, podemos modificar su valor, esto se le denomina
-              <strong>sideEfect</strong>, y esto lo vamos a querer evitar.
-            </p>
-            <pre class="code">
-
-                <span class="code-comment">#Accediendo a una variable global (no hacer)</span>
-                <span class="code-var">var</span> nombre = <span class="code-text">'Cosme Fulanito'</span>
-
-                <span class="code-var">function</span> <span class="code-function">imprimirNombreMayusculas</span>(){
-                  nombre = nombre.<span class="code-var">toUpperCase</span>()
-                  console.<span class="code-var">log</span>(nombre)
-                }
-
-                <span class="code-function">imprimirNombreMayusculas</span>()
-
-                <span class="code-comment">#Accediendo a los parametros de la función (recomendado)</span>
-                <span class="code-comment">#El alcance de la siguiente función solo es para la variable local que le llega por parámetro</span>
-                <span class="code-var">function</span> <span class="code-function">imprimirNombreMayusculas</span>(nombre){
-                  nombre = nombre.<span class="code-var">toUpperCase</span>()
-                  console.<span class="code-var">log</span>(nombre)
-                }
-
-                <span class="code-function">imprimirNombreMayusculas</span>(nombre)
-              </pre>
-            <div class="note">
+              <div class="note">
+                <p>
+                  <strong>SideEfect</strong> funciones que modifican variables
+                  que "no le corresponde".
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="objects">
+              <h2 class="course-class__section--title">Objetos</h2>
               <p>
-                <strong>SideEfect</strong> funciones que modifican variables
-                que "no le corresponde".
+                Los objetos se definen delimitados mediante llaves {}, Un
+                atributo se compone de una clave (key) y un valor (value), que
+                se separan entre sí por dos puntos (:), los valores pueden ser
+                de tipo string, número, booleano, etc. Cada atributo está
+                separado del siguiente por una coma. Un objeto puede tener todos
+                los atributos que sean necesarios.
               </p>
-            </div>
-          </article>
-          <article class="course-class__section" id="objects">
-            <h2 class="course-class__section--title">Objetos</h2>
-            <p>
-              Los objetos se definen delimitados mediante llaves {}, Un
-              atributo se compone de una clave (key) y un valor (value), que
-              se separan entre sí por dos puntos (:), los valores pueden ser
-              de tipo string, número, booleano, etc. Cada atributo está
-              separado del siguiente por una coma. Un objeto puede tener todos
-              los atributos que sean necesarios.
-            </p>
-            <p>
-              Las últimas versiones de JavaScript nos permiten
-              <a class="link link-refe" href="./javascript-medio.html#destructuring">desglosar</a>
-              el objeto para acceder únicamente al atributo que nos interesa.
-              Esto se consigue encerrando el nombre del atributo entre llaves
-              { }.
-            </p>
-            <pre class="code">
+              <p>
+                Las últimas versiones de JavaScript nos permiten
+                <a
+                  class="link link-refe"
+                  href="./javascript-medio.html#destructuring"
+                  >desglosar</a
+                >
+                el objeto para acceder únicamente al atributo que nos interesa.
+                Esto se consigue encerrando el nombre del atributo entre llaves
+                { }.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">#Creación de objetos</span>
                 <span class="code-var">var</span> carlos = {
@@ -326,33 +200,37 @@
                   edad : 22
                 }
 
-                <span class="code-comment">#Una nueva funcionalidad de js es pedir el atributo de un objeto en los parametros para esto se usan las llaves {nombreAtributo}</span>
+                <span class="code-comment">#Una nueva funcionalidad de js es pedir el atributo
+                de un objeto en los parametros para esto se usan las llaves {nombreAtributo}</span>
                 <span class="code-var">function</span> <span class="code-function">imprimirNombreMayusculas</span>({nombre}){
                   console.<span class="code-var">log</span>(nombre.<span class="code-var">toUpperCase</span>())
                 }
               </pre>
-            <h3>Parámetros como referencia o como valor</h3>
-            <p>
-              Javascript se comporta de manera distinta cuando le pasamos un
-              objeto como parámetro. Cuando los objetos se pasan como una
-              referencia, estos se modifican fuera de la función. Para
-              solucionar esto se puede crear un objeto diferente. Esto lo
-              podemos hacer con
-              <a class="link link-refe" target="_blank"
-                href="https://platzi.com/tutoriales/1339-fundamentos-javascript/2231-entendiendo-el-spread-operator-en-javascript/">Spread
-                Operator</a>
-              colocando tres puntos antes del nombre. Ej …persona.
-            </p>
-            <p>
-              Cuando a una función le pasamos un objeto como parámetro y
-              dentro de esa función se modifica algún atributo del objeto, ese
-              objeto se verá modificado en todo el documento. Si se quiere
-              evitar esto se puede retornar un objeto nuevo con los mismos
-              atributos que el original, pero a la vez con la modificación que
-              se requería, es decir, el original quedara igual sin
-              modificación y el nuevo será el que tenga el cambio.
-            </p>
-            <pre class="code">
+              <h3>Parámetros como referencia o como valor</h3>
+              <p>
+                Javascript se comporta de manera distinta cuando le pasamos un
+                objeto como parámetro. Cuando los objetos se pasan como una
+                referencia, estos se modifican fuera de la función. Para
+                solucionar esto se puede crear un objeto diferente. Esto lo
+                podemos hacer con
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://platzi.com/tutoriales/1339-fundamentos-javascript/2231-entendiendo-el-spread-operator-en-javascript/"
+                  >Spread Operator</a
+                >
+                colocando tres puntos antes del nombre. Ej …persona.
+              </p>
+              <p>
+                Cuando a una función le pasamos un objeto como parámetro y
+                dentro de esa función se modifica algún atributo del objeto, ese
+                objeto se verá modificado en todo el documento. Si se quiere
+                evitar esto se puede retornar un objeto nuevo con los mismos
+                atributos que el original, pero a la vez con la modificación que
+                se requería, es decir, el original quedara igual sin
+                modificación y el nuevo será el que tenga el cambio.
+              </p>
+              <pre class="code">
 
                 <span class="code-var">function</span> <span class="code-function">birthday</span>(persona){
                   <span class="code-sym">return</span>{
@@ -364,152 +242,51 @@
                 <span class="code-function">birthday</span>(carlos) <span class="code-comment">#{nombre: 'Carlos', apellido : 'Zabala', edad : 23}</span>
                 carlos <span class="code-comment">#El objeto original no fue modificado {nombre : 'Carlos', apellido : 'Zabala', edad:22}</span>
               </pre>
-          </article>
-          <article class="course-class__section" id="compare">
-            <h2 class="course-class__section--title">
-              Comparaciones en JavaScript
-            </h2>
-            <p>
-              Existen varias maneras de comparar variables u objetos dentro de
-              javascript. En el primer ejemplo le asignamos a X un valor
-              numérico y a Y un string. Para poder compararlos debemos agregar
-              dos signos de igual (==). Esto los convierte al mismo tipo de
-              valor y permite que se puedan comparar. Cuando realizamos
-              operaciones es recomendable usar tres símbolos de igual (===).
-              Esto permite que JavasScript no iguale las variables que son de
-              distinto tipo.
-            </p>
-            <p>
-              Existen cinco tipos de datos que son primitivos:
-            </p>
-            <ul>
-              <li>Boolean.</li>
-              <li>Null.</li>
-              <li>Undefined.</li>
-              <li>Number.</li>
-              <li>String.</li>
-            </ul>
-          </article>
-          <article class="course-class__section" id="conditional">
-            <h2 class="course-class__section--title">Condicionales</h2>
-            <p>
-              Las estructuras de control nos permiten decidir el flujo de
-              nuestro código. Empezaremos con los condicionales. Los
-              condicionales nos permiten decidir si un código se ejecuta o no.
-              También introducimos un nuevo tipo de datos primitivos: el
-              booleano, que determina si un valor es falso o verdadero.
-              Mediante un condicional (if) decidiremos si se ejecuta una parte
-              de nuestro código cuando se cumpla o no cierta condición.
-            </p>
-            <pre class="code">
-
-                <span class="code-var">function</span> <span class="code-function">esMayorDeEdad</span>(persona){
-                  <span class="code-sym">if</span>(persona.edad >= 18){
-                    console.<span class="code-var">log</span>(<span class="code-text">`${persona.nombre} es mayor de edad`</span>)
-                  }
-                  <span class="code-sym">else</span>{
-                    console.<span class="code-var">log</span>(<span class="code-text">`${persona.nombre} es menor de edad`</span>)
-                  }
-                }
-              </pre>
-            <p>Lo anterior se puede simplificar a lo siguiente.</p>
-            <pre class="code">
-
-                <span class="code-var">function</span> <span class="code-function">esMayorDeEdad</span>({nombre, edad}){
-                  console.<span class="code-var">log</span>(<span class="code-text">`${nombre} es ${edad >= 18 ? 'mayor':'menor'} de edad`</span>)
-                }
-              </pre>
-          </article>
-          <article class="course-class__section" id="arrow-function">
-            <h2 class="course-class__section--title">Arrow functions</h2>
-            <p>
-              Permiten una nomenclatura más corta para escribir expresiones de
-              funciones. Este tipo de funciones deben definirse antes de ser
-              utilizadas. Al escribir las Arrow Functions no es necesario
-              escribir la palabra function, la palabra return, ni las llaves.
-            </p>
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="arrow-function">
+              <h2 class="course-class__section--title">Arrow functions</h2>
+              <p>
+                Permiten una nomenclatura más corta para escribir expresiones de
+                funciones. Este tipo de funciones deben definirse antes de ser
+                utilizadas. Al escribir las Arrow Functions no es necesario
+                escribir la palabra function, la palabra return, ni las llaves.
+              </p>
+              <pre class="code">
 
               <span class="code-var">function</span> <span class="code-function">esMayorEdad</span>(persona){
                 <span class="code-sym">return</span> persona.edad >= MAYORIA_DE_EDAD
               }
-
-              <span class="code-comment">#La funcion anterior se puede guardar en una variable</span>
-              <span class="code-var">const</span> esMayorEdad = <span class="code-var">function</span>(persona){
-                <span class="code-sym">return</span> persona.edad >= MAYORIA_DE_EDAD
-              }
             </pre>
-            <p>Ahora usando arrow functions</p>
-            <pre class="code">
+              <p>Ahora usando arrow functions</p>
+              <pre class="code">
 
               <span class="code-var">const</span> esMayorEdad = persona <span class="code-sym">=></span> persona.edad >= MAYORIA_DE_EDAD
 
               <span class="code-comment">#Otro ejemplo</span>
               <span class="code-var">const</span> permitirAcceso = ({edad}) <span class="code-sym">=></span> esMayorEdad({edad}) <span class="code-sym">?</span> console.<span class="code-var">log</span>(<span class="code-text">'NICE'</span>) <span class="code-sym">:</span> console.<span class="code-var">log</span>(<span class="code-text">'NO'</span>)
             </pre>
-          </article>
-          <article class="course-class__section" id="switch">
-            <h2 class="course-class__section--title">
-              Condicional múltiple: switch
-            </h2>
-            <p>
-              Switch se utiliza para realizar diferentes acciones basadas en
-              múltiples condiciones.
-              <span class="t-bold">Prompt, muestra un cuadro de mensaje que le pide al usuario
-                que ingrese algúna información.</span>
-              <br />
-              Break, sirve para que el browser se salte un bucle.
-            </p>
-            <pre class="code">
-
-                <span class="code-var">var</span> signo = <span class="code-var">prompt</span>(<span class="code-text">'Ingrese su signo zodiacal'</span>)
-
-                <span class="code-var">const</span> HOROSCOPOS = [
-                  <span class="code-text">'21 marzo - 19 abril'</span>,
-                  <span class="code-text">'20 abril - 20 mayo'</span>,
-                  ...
-                ]
-
-                <span class="code-var">var</span>  <span class="code-function">calcularSigno</span> = (signo) <span class="code-sym">=></span> {
-                  <span class="code-sym">switch</span> (signo.<span class="code-var">toLowerCase</span>()) {
-                    <span class="code-sym">case</span> <span class="code-text">'aries'</span>:
-                      console.<span class="code-var">log</span>(HOROSCOPOS[0])
-                      <span class="code-sym">break</span>
-                    <span class="code-sym">case</span> <span class="code-text">'tauro'</span>:
-                      console.<span class="code-var">log</span>(HOROSCOPOS[1])
-                      <span class="code-sym">break</span>
-                    <span class="code-sym">case</span> <span class="code-text">'geminis'</span>:
-                    <span class="code-sym">case</span> <span class="code-text">'géminis'</span>:
-                      console.<span class="code-var">log</span>(HOROSCOPOS[2])
-                      <span class="code-sym">break</span>    
-                    <span class="code-sym">default</span> : console.<span class="code-var">log</span>(<span class="code-text">'Signo incorrecto'</span>); <span class="code-sym">break</span>;
-                  }
-                }
-
-                <span class="code-function">calcularSigno</span>(signo)
-              </pre>
-          </article>
-          <article class="course-class__section" id="array">
-            <h2 class="course-class__section--title">
-              Introducción a arrays
-            </h2>
-            <p>
-              Los arrays son estructuras que nos permiten organizar elementos
-              dentro de una colección. Estos elementos pueden ser números,
-              strings, booleanos, objetos, etc.
-              <br />
-              Para indicar que algo es un array se utiliza el símbolo []. En
-              js se permiten mezclar diferentes tipos de datos en un array.
-            </p>
-            <h3>Filtrar un array</h3>
-            <p>
-              Para filtrar siempre necesitamos establecer una condición. El
-              método <strong>filter()</strong> crea una nueva matriz con todos
-              los elementos que pasan la prueba implementada por la función
-              proporcionada. Recuerda que si no hay elementos que pasen la
-              prueba, filter devuelve un array vacío.
-            </p>
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="array">
+              <h2 class="course-class__section--title">
+                Introducción a arrays
+              </h2>
+              <p>
+                Los arrays son estructuras que nos permiten organizar elementos
+                dentro de una colección. Estos elementos pueden ser números,
+                strings, booleanos, objetos, etc.
+                <br />
+                Para indicar que algo es un array se utiliza el símbolo []. En
+                js se permiten mezclar diferentes tipos de datos en un array.
+              </p>
+              <h3>Filtrar un array</h3>
+              <p>
+                Para filtrar siempre necesitamos establecer una condición. El
+                método <strong>filter()</strong> crea una nueva matriz con todos
+                los elementos que pasan la prueba implementada por la función
+                proporcionada. Recuerda que si no hay elementos que pasen la
+                prueba, filter devuelve un array vacío.
+              </p>
+              <pre class="code">
 
                 <span class="code-var">const</span> <span class="code-function">sonAltas</span> = ({altura}) <span class="code-sym">=></span> altura >= 1.80 
                 <span class="code-var">const</span> <span class="code-function">sonBajas</span> = ({altura}) <span class="code-sym">=></span> altura < 1.80
@@ -520,45 +297,24 @@
                 <span class="code-var">var</span> personasAltas = personas.<span class="code-var t-bold">filter</span>(sonAltas)
                 <span class="code-var">var</span> personasBajas = personas.<span class="code-var t-bold">filter</span>(sonBajas)
               </pre>
-            <div class="note">
+              <h3>Transformar un array</h3>
               <p>
-                Para filtrar se necesitan dos cosas: un array y una condición
-                y la condición puede ser una función. Para filtrar en un
-                array, se utiliza el método <strong>filter</strong>, y recibe
-                como parámetros una condición. <br /><br />
-                <strong>var filtro = array.filter(condición)</strong>
-                <br /><br />
-                Filter lo que hace es ir filtrando, recorriendo e iterando
-                cada elemento del array.
+                El método
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/map"
+                  ><strong>map</strong></a
+                >
+                itera sobre los elementos de un array en el orden de inserción y
+                devuelve array nuevo con los elementos modificados.
               </p>
-            </div>
-            <h3>Transformar un array</h3>
-            <p>
-              El método
-              <a class="link link-refe" target="_blank"
-                href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/map"><strong>map</strong></a>
-              itera sobre los elementos de un array en el orden de inserción y
-              devuelve array nuevo con los elementos modificados.
-            </p>
-            <pre class="code">
+              <pre class="code">
 
                 <span class="code-var">const</span> nuevo_array = array.<span class="code-var">map</span>(iterador_elementos_array => {
                   <span class="code-comment">#Código de la condición</span>
                 })
 
-                <span class="code-comment">#esta funcion modificaria el array original</span>
-                <span class="code-var">const</span> <span class="code-function">convertirCm</span> = persona => {
-                  persona.altura *= 100
-                  <span class="code-sym">return</span> persona
-                }
-
-                <span class="code-comment">#esta funcion no modifica el original, devuelve uno nuevo</span>
-                <span class="code-var">const</span> <span class="code-function">convertirCm</span> = persona => ({
-                  <span class="code-sym">...</span>persona,
-                  altura: persona.altura * 100
-                })
-
-                <span class="code-comment">#otra forma de escribirlo</span>
                 <span class="code-var">const</span> <span class="code-function">convertirCm</span> = persona =>{
                   <span class="code-comment">#el return {} se usa cuando se devuelve un array nuevo ...</span>
                   <span class="code-sym">return</span> {
@@ -570,69 +326,77 @@
                 <span class="code-comment">#Usando el método map</span>
                 <span class="code-var">var</span> personasCm = personas.<span class="code-var t-bold">map</span>(<span class="code-function">convertirCms</span>)
               </pre>
-            <div class="note">
+              <div class="note">
+                <p>
+                  A diferencia de filter, la función Map nos devuelve un
+                  <span class="t-bold"
+                    >nuevo array que modifica a todos los elementos del array
+                    original</span
+                  >.
+                </p>
+                <p>
+                  Para mostrar en la consola una lista de arrays tabulados, se
+                  puede usar console.<span class="t-bold">table</span>(array).
+                </p>
+              </div>
+              <p>Otras funciones que se pueden aplicar a los arrays son:</p>
+              <ul>
+                <li>
+                  <a
+                    class="link link-refe t-bold"
+                    target="_blank"
+                    href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce"
+                    >Reduce</a
+                  >: El método
+                  <strong>reduce()</strong>
+                  nos permite reducir, mediante una función que se aplica a cada
+                  uno de los elemento del array, todos los elementos de dicho
+                  array, a un valor único.
+                </li>
+                <li>
+                  <a
+                    class="link link-refe t-bold"
+                    target="_blank"
+                    href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/find"
+                    >Find</a
+                  >: El método
+                  <strong>find()</strong>
+                  devuelve el valor del primer elemento del array que cumple la
+                  función de prueba proporcionada. En cualquier otro caso se
+                  devuelve undefined.
+                </li>
+              </ul>
+            </article>
+            <article class="course-class__section" id="class">
+              <h2 class="course-class__section--title">Clases</h2>
               <p>
-                A diferencia de filter, la función Map nos devuelve un
-                <span class="t-bold">nuevo array que modifica a todos los elementos del array
-                  original</span>.
+                Las clases son funciones cuya sintaxis tiene dos componentes:
               </p>
+              <ul>
+                <li>expresiones</li>
+                <li>declaraciones</li>
+              </ul>
               <p>
-                Para mostrar en la consola una lista de arrays tabulados, se
-                puede usar console.<span class="t-bold">table</span>(array).
+                Dentro de una función, el valor de this depende de cómo es
+                llamada ésta.
               </p>
-            </div>
-            <p>Otras funciones que se pueden aplicar a los arrays son:</p>
-            <ul>
-              <li>
-                <a class="link link-refe t-bold" target="_blank"
-                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce">Reduce</a>:
-                El método
-                <strong>reduce()</strong>
-                nos permite reducir, mediante una función que se aplica a cada
-                uno de los elemento del array, todos los elementos de dicho
-                array, a un valor único.
-              </li>
-              <li>
-                <a class="link link-refe t-bold" target="_blank"
-                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/find">Find</a>:
-                El método
-                <strong>find()</strong>
-                devuelve el valor del primer elemento del array que cumple la
-                función de prueba proporcionada. En cualquier otro caso se
-                devuelve undefined.
-              </li>
-            </ul>
-          </article>
-          <article class="course-class__section" id="class">
-            <h2 class="course-class__section--title">Clases</h2>
-            <p>
-              Las clases son funciones cuya sintaxis tiene dos componentes:
-            </p>
-            <ul>
-              <li>expresiones</li>
-              <li>declaraciones</li>
-            </ul>
-            <p>
-              Dentro de una función, el valor de this depende de cómo es
-              llamada ésta.
-            </p>
-            <ul>
-              <li>
-                Hablar de objetos en javascript es hablar de prototipos.
-              </li>
-              <li>
-                this hace referencia al nuevo objeto que se acaba de crear.
-              </li>
-              <li>
-                la función que define al prototipo retorna implícitamente
-                this, es decir retorna el nuevo objeto que se creo.
-              </li>
-              <li>
-                La palabra reservada new se utiliza para crear un nuevo objeto
-                con el prototipo indicado.
-              </li>
-            </ul>
-            <pre class="code">
+              <ul>
+                <li>
+                  Hablar de objetos en javascript es hablar de prototipos.
+                </li>
+                <li>
+                  this hace referencia al nuevo objeto que se acaba de crear.
+                </li>
+                <li>
+                  la función que define al prototipo retorna implícitamente
+                  this, es decir retorna el nuevo objeto que se creo.
+                </li>
+                <li>
+                  La palabra reservada new se utiliza para crear un nuevo objeto
+                  con el prototipo indicado.
+                </li>
+              </ul>
+              <pre class="code">
 
                 <span class="code-var">function</span> <span class="code-function">Persona</span>(nombre, apellido, altura){
                   <span class="code-var">this</span>.nombre = nombre
@@ -648,27 +412,27 @@
                    console.<span class="code-var">log</span>(<span class="code-text">`${this.nombre} ${this.altura >= 1.8 ? 'es': 'no es'} una persona alta`</span>)
                 }
               </pre>
-            <h3>La verdad oculta sobre las clases en JavaScript</h3>
-            <p>
-              Los objetos en JavaScript son "contenedores" dinámicos de
-              propiedades. Estos objetos poseen un enlace a un objeto
-              prototipo. Cuando intentamos acceder a la propiedad de un
-              objeto, la propiedad no sólo se busca en el propio objeto sino
-              también en el prototipo del objeto, en el prototipo del
-              prototipo, y así sucesivamente hasta que se encuentre una
-              propiedad que coincida con el nombre o se alcance el final de la
-              cadena de prototipos.
-            </p>
-            <div class="note">
+              <h3>La verdad oculta sobre las clases en JavaScript</h3>
               <p>
-                En js las clases no existen son prototipos, son objetos que
-                les vamos agregando métodos que son funciones.
+                Los objetos en JavaScript son "contenedores" dinámicos de
+                propiedades. Estos objetos poseen un enlace a un objeto
+                prototipo. Cuando intentamos acceder a la propiedad de un
+                objeto, la propiedad no sólo se busca en el propio objeto sino
+                también en el prototipo del objeto, en el prototipo del
+                prototipo, y así sucesivamente hasta que se encuentre una
+                propiedad que coincida con el nombre o se alcance el final de la
+                cadena de prototipos.
               </p>
-            </div>
-            <p>
-              Para simular la "herencia" se debe crear una función propia.
-            </p>
-            <pre class="code">
+              <div class="note">
+                <p>
+                  En js las clases no existen son prototipos, son objetos que
+                  les vamos agregando métodos que son funciones.
+                </p>
+              </div>
+              <p>
+                Para simular la "herencia" se debe crear una función propia.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">#hacer herencia de prototipos</span>
                 <span class="code-var">function</span> <span class="code-function">heredaDe</span>(prototipoHijo, prototipoPadre){
@@ -680,51 +444,53 @@
 
                 <span class="code-function">heredaDe</span>(Desarrollador, Persona)
               </pre>
-          </article>
-          <article class="course-class__section" id="this">
-            <h2 class="course-class__section--title">
-              El contexto de las funciones: quién es this
-            </h2>
-            <p>
-              El error del contexto de this en javascrip es uno de los errores
-              más comunes. Recuerda que dentro de la arrow function, this está
-              haciendo referencia al espacio global, a windows.
-            </p>
-            <div class="note">
+            </article>
+            <article class="course-class__section" id="this">
+              <h2 class="course-class__section--title">
+                El contexto de las funciones: quién es this
+              </h2>
               <p>
-                <span class="t-bold">Window</span> es el objeto global dentro
-                del navegador. <br />
-                Cuando this no es lo que esperamos, este es el principal error
-                en JS. <br />
-                En las <span class="t-bold">Arrow functions</span>, se asigna
-                la función , pero cambia el this dentro de la función , ya que
-                trata de tomar el this global, es decir, el que está fuera de
-                la Arrow function. Para
-                <span class="t-bold">comprobarlo en consola</span>: <br />
-                this === window.
+                El error del contexto de this en javascrip es uno de los errores
+                más comunes. Recuerda que dentro de la arrow function, this está
+                haciendo referencia al espacio global, a windows.
               </p>
-            </div>
-            <p>
-              <span class="t-bold">¿Para qué sirve el debugger?</span> Para
-              solventar errores ("bugs" como dicen los programadores)
-              deteniendo tu programa en la línea de código donde coloques el
-              debugger y dándote herramientas para ver qué sucede.
-              <a class="link link-refe" href="./javascript-avanzado.html#this">Más sobre this</a>
-            </p>
-          </article>
-          <article class="course-class__section" id="class-ecma">
-            <h2 class="course-class__section--title">Clases en ECMAScript</h2>
-            <p>
-              Las clases de JavaScript son introducidas en el ECMAScript 2015
-              y son una mejora en la sintaxis sobre la herencia basada en
-              prototipos de JavaScript. <br />
-              La palabra clave extends se usa en declaraciones de clase o
-              expresiones de clase para crear una clase que es hija de otra
-              clase. <br />
-              El método constructor es un método especial para crear e
-              inicializar un objeto creado a partir de una clase.
-            </p>
-            <pre class="code">
+              <div class="note">
+                <p>
+                  <span class="t-bold">Window</span> es el objeto global dentro
+                  del navegador. <br />
+                  Cuando this no es lo que esperamos, este es el principal error
+                  en JS. <br />
+                  En las <span class="t-bold">Arrow functions</span>, se asigna
+                  la función , pero cambia el this dentro de la función , ya que
+                  trata de tomar el this global, es decir, el que está fuera de
+                  la Arrow function. Para
+                  <span class="t-bold">comprobarlo en consola</span>: <br />
+                  this === window.
+                </p>
+              </div>
+              <p>
+                <span class="t-bold">¿Para qué sirve el debugger?</span> Para
+                solventar errores ("bugs" como dicen los programadores)
+                deteniendo tu programa en la línea de código donde coloques el
+                debugger y dándote herramientas para ver qué sucede.
+                <a class="link link-refe" href="./javascript-avanzado.html#this"
+                  >Más sobre this</a
+                >
+              </p>
+            </article>
+            <article class="course-class__section" id="class-ecma">
+              <h2 class="course-class__section--title">Clases en ECMAScript</h2>
+              <p>
+                Las clases de JavaScript son introducidas en el ECMAScript 2015
+                y son una mejora en la sintaxis sobre la herencia basada en
+                prototipos de JavaScript. <br />
+                La palabra clave extends se usa en declaraciones de clase o
+                expresiones de clase para crear una clase que es hija de otra
+                clase. <br />
+                El método constructor es un método especial para crear e
+                inicializar un objeto creado a partir de una clase.
+              </p>
+              <pre class="code">
 
                 <span class="code-var">class</span> <span class="code-function">Persona</span>{
                   <span class="code-var">constructor</span>(nombre, apellido, altura){
@@ -742,8 +508,8 @@
                   }
                 }
               </pre>
-            <p>Ahora aplicando herencia.</p>
-            <pre class="code">
+              <p>Ahora aplicando herencia.</p>
+              <pre class="code">
 
                 <span class="code-var">class</span> <span class="code-function">Profesor</span> <span class="code-var">extends</span> <span class="code-function">Persona</span>{
                   <span class="code-var">constructor</span>(nombre, apellido, altura, materia_profesor){
@@ -753,122 +519,62 @@
                   }
                 }
               </pre>
-          </article>
-          <article class="course-class__section" id="async">
-            <h2 class="course-class__section--title">
-              Cómo funciona el asincronismo en JavaScript
-            </h2>
-            <p>
-              JavaScript sólo puede hacer una cosa a la vez, sin embargo; es
-              capaz de delegar la ejecución de ciertas funciones a otros
-              procesos. Este modelo de concurrencia se llama
-              <a class="link link-refe" href="./javascript-avanzado.html#event-loop">EventLoop</a>. JavaScript delega en
-              el navegador ciertas tareas y les asocia
-              funciones que deberán ser ejecutadas al ser completadas. Estas
-              funciones se llaman callbacks, y una vez que el navegador ha
-              regresado con la respuesta, el callback asociado pasa a la cola
-              de tareas para ser ejecutado una vez que JavaScript haya
-              terminado todas las instrucciones que están en la pila de
-              ejecución. Si se acumulan funciones en la cola de tareas y
-              JavaScript se encuentra ejecutando procesos muy pesados, el
-              EventLoop quedará bloqueado y esas funciones pudieran tardar
-              demasiado en ejecutarse.
-            </p>
-            <div class="note">
+            </article>
+            <article class="course-class__section" id="async">
+              <h2 class="course-class__section--title">
+                Cómo funciona el asincronismo en JavaScript
+              </h2>
               <p>
-                Js no es multitarea, pero puede delegar funciones -> a eso se
-                le llama event loop.
+                JavaScript sólo puede hacer una cosa a la vez, sin embargo; es
+                capaz de delegar la ejecución de ciertas funciones a otros
+                procesos. Este modelo de concurrencia se llama
+                <a
+                  class="link link-refe"
+                  href="./javascript-avanzado.html#event-loop"
+                  >EventLoop</a
+                >. JavaScript delega en el navegador ciertas tareas y les asocia
+                funciones que deberán ser ejecutadas al ser completadas. Estas
+                funciones se llaman callbacks, y una vez que el navegador ha
+                regresado con la respuesta, el callback asociado pasa a la cola
+                de tareas para ser ejecutado una vez que JavaScript haya
+                terminado todas las instrucciones que están en la pila de
+                ejecución. Si se acumulan funciones en la cola de tareas y
+                JavaScript se encuentra ejecutando procesos muy pesados, el
+                EventLoop quedará bloqueado y esas funciones pudieran tardar
+                demasiado en ejecutarse.
               </p>
-            </div>
-            <pre class="code">
+              <div class="note">
+                <p>
+                  Js no es multitarea, pero puede delegar funciones -> a eso se
+                  le llama event loop.
+                </p>
+              </div>
+              <pre class="code">
 
                 <span class="code-var">while</span>(<span class="code-sym">true</span>){ console.<span class="code-var">warn</span>(<span class="code-text">' NO VOY A BLOQUEAR EL EVENTLOOP'</span>) }
               </pre>
-          </article>
-          <article class="course-class__section" id="callbacks">
-            <h2 class="course-class__section--title">Callbacks</h2>
-            <p>
-              Un callback es una función que se pasa a otra función como un
-              argumento. Esta función se invoca, después, dentro de la función
-              externa para completar alguna acción.
-            </p>
-            <p>
-              para hacer request en jquery llamar al metodo $.get acepta
-              varios parametros :
-            </p>
-            <ol>
-              <li>URL</li>
-              <li>Indicar que el request es a una página externa</li>
-              <li>
-                Callback que se ejecutara en un futuro pero que no sabemos
-                cuando
-              </li>
-            </ol>
-            <pre class="code">
-
-                <span class="code-comment">#URL a acceder</span>
-                <span class="code-var">const</span> API_URL = <span class="code-text">'https://swapi.co/api/'</span>
-                <span class="code-var">const</span> PEOPLE_URL = <span class="code-text">'people/:id'</span>
-
-                <span class="code-var">const</span> LUKE_URL = <span class="code-text">`${API_URL}${PEOPLE_URL.replace(':id', 1)}`</span>
-                <span class="code-var">const</span> OPTS = {crossDomain : <span class="code-sym">true</span>}
-
-                <span class="code-comment">#Función callback</span>
-                <span class="code-var">const</span> <span class="code-function">onPeopleResponse</span> = <span class="code-var">function</span>(person){
-                  console.<span class="code-var">log</span>(<span class="code-text">`Hola soy ${person.name}`</span>)
-                }
-
-                $.get(LUKE_URL, OPTS, <span class="code-function">onPeopleResponse</span>)
-              </pre>
-            <h3>Manejando el Orden y el Asincronismo en JavaScript</h3>
-            <p>
-              Una manera de asegurar que se respete la secuencia en que hemos
-              realizado múltiples tareas es utilizando callbacks, con lo que
-              se ejecutará luego, en cada llamada. Lo importante es que el
-              llamado al callback se haga a través de una función anónima. Sin
-              embargo, al hacerlo de esta manera generamos una situación poco
-              deseada llamada CallbackHell.
-            </p>
-            <pre class="code">
-
-              <span class="code-comment">#callback hell</span>
-               <span class="code-function">obtenerPersonaje</span>(1, function () {
-                <span class="code-function">obtenerPersonaje</span>(2, function () {
-                  <span class="code-function">obtenerPersonaje</span>(3, function () {
-                    <span class="code-function">obtenerPersonaje</span>(4, function () {
-                      <span class="code-function">obtenerPersonaje</span>(5, function () {
-                        <span class="code-function">obtenerPersonaje</span>(6, function () {
-                          <span class="code-function">obtenerPersonaje</span>(7, function () {
-                            <span class="code-function">obtenerPersonaje</span>(8)
-                          })
-                        })
-                      })
-                    })
-                  })
-                })
-              })
-              </pre>
-          </article>
-          <article class="course-class__section" id="promise">
-            <h2 class="course-class__section--title">Promesas</h2>
-            <p>
-              <span class="t-bold">"Una Promesa es un objeto que representa la terminación o el
-                fracaso eventual de una operación asíncrona"</span>, o dicho de forma más cotidiana, se va a mandar una
-              función
-              para ver si falla o se ejecuta con éxito.
-              <br />
-              Al crear una Promesa debemos pasarle por argumento la función
-              que vamos a ejecutar de forma asíncrona, dicha función va a
-              recibir dos parámetros para evaluar si se ejecutó bien
-              <span class="t-bold">(resolve)</span> o si fallo
-              <span class="t-bold">(reject)</span>.
-            </p>
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="promise">
+              <h2 class="course-class__section--title">Promesas</h2>
+              <p>
+                <span class="t-bold"
+                  >"Una Promesa es un objeto que representa la terminación o el
+                  fracaso eventual de una operación asíncrona"</span
+                >, o dicho de forma más cotidiana, se va a mandar una función
+                para ver si falla o se ejecuta con éxito.
+                <br />
+                Al crear una Promesa debemos pasarle por argumento la función
+                que vamos a ejecutar de forma asíncrona, dicha función va a
+                recibir dos parámetros para evaluar si se ejecutó bien
+                <span class="t-bold">(resolve)</span> o si fallo
+                <span class="t-bold">(reject)</span>.
+              </p>
+              <pre class="code">
 
                 <span class="code-var">const</span> <span class="code-function">getUser</span> = <span class="code-sym">new</span> Promise(<span class="code-var">function</span>(resolve, reject))
               </pre>
-            <p>Las promesas se invocan de la siguiente forma:</p>
-            <pre class="code">
+              <p>Las promesas se invocan de la siguiente forma:</p>
+              <pre class="code">
 
                 <span class="code-sym">new</span> Promise((resolve, reject) <span class="code-sym">=></span> {
                   <span class="code-sym">if</span>(todoOk){
@@ -881,10 +587,10 @@
                   }
                 })
               </pre>
-            <p class="t-bold">
-              Pensemos las promesas como valores que aún no conocemos.
-            </p>
-            <pre class="code">
+              <p class="t-bold">
+                Pensemos las promesas como valores que aún no conocemos.
+              </p>
+              <pre class="code">
 
                 <span class="code-var">function</span> <span class="code-function">obtenerPersonaje</span>(id) {
                   <span class="code-sym">return new</span> Promise(<span class="code-var">function</span>(resolve, reject){
@@ -905,33 +611,34 @@
                 })
                 .<span class="code-var">catch</span>(error => console.<span class="code-var">log</span>(<span class="code-text">`error`</span>))
               </pre>
-            <p>
-              Nuestra promesa va a tener dos métodos para saber si todo salió
-              bien o fallo. El método <span class="t-bold">then</span> se
-              encarga cuando la promesa se cumplió exitosamente, mientras que
-              el método <span class="t-bold">catch</span> se encarga cuando la
-              promesa falla.
-            </p>
-            <div class="note">
               <p>
-                A diferencia de los callbacks en el CallbackHell, que terminan
-                estando anidados unos dentro de otros, cuando se usan Promesas
-                la ejecución de las llamadas no se hacen de manera anidada
-                sino de <span class="t-bold"> manera encadenada</span>, al
-                mismo nivel una debajo de la otra, lo que hace que el código
-                sea mucho más legible y mantenible.
+                Nuestra promesa va a tener dos métodos para saber si todo salió
+                bien o fallo. El método <span class="t-bold">then</span> se
+                encarga cuando la promesa se cumplió exitosamente, mientras que
+                el método <span class="t-bold">catch</span> se encarga cuando la
+                promesa falla.
               </p>
-            </div>
-            <h3>Múltiples promesas en paralelo</h3>
-            <p>
-              Si queremos resolver varias promesas a la misma vez, Promise
-              cuenta con un método llamado <span class="t-bold">all</span> que
-              recibe un array de promesas como parámetro. Este método se
-              termina cuando todas las promesas del array se terminan de
-              ejecutar. Si una de las promesas falla entonces el método all
-              saltara un error mandándote al método catch.
-            </p>
-            <pre class="code">
+              <div class="note">
+                <p>
+                  A diferencia de los callbacks en el CallbackHell, que terminan
+                  estando anidados unos dentro de otros, cuando se usan Promesas
+                  la ejecución de las llamadas no se hacen de manera anidada
+                  sino de <span class="t-bold"> manera encadenada</span>, al
+                  mismo nivel una debajo de la otra, lo que hace que el código
+                  sea mucho más legible y mantenible.
+                </p>
+              </div>
+              <h3>Múltiples promesas en paralelo</h3>
+              <p>
+                Si queremos resolver varias promesas a la misma vez, Promise
+                cuenta con un método llamado <span class="t-bold">all</span> que
+                recibe un array de promesas como parámetro. Este método se
+                termina cuando todas las promesas del array se terminan de
+                ejecutar. Si una de las promesas falla entonces el método
+                <strong>all</strong>
+                saltara un error mandándote al método catch.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">#crear array de ids</span>
                 <span class="code-var">var</span> ids = [1, 2, 3, 4, 5, 6, 7]
@@ -948,49 +655,49 @@
                   })
                   .<span class="code-var">catch</span>(onError)
               </pre>
-            <p>
-              Promise también cuenta con el método
-              <span class="t-bold">race</span> que te regresa los resultados
-              de la promesa que termine primero.
-            </p>
-          </article>
-          <article class="course-class__section" id="async-await">
-            <h2 class="course-class__section--title">
-              Async-await: lo último en asincronismo
-            </h2>
-            <p>
-              Una función asíncrona va a ser como una función normal, pero
-              poniendo código asíncrono de forma que sea más fácil de leer de
-              forma síncrona.
-            </p>
-            <p>
-              <strong>Async-await</strong> es la manera más simple y clara de
-              realizar tareas asíncronas. <strong>Await</strong> detiene la
-              ejecución del programa hasta que todas las promesas sean
-              resueltas. Para poder utilizar esta forma, hay que colocar
-              <strong>async</strong> antes de la definición de la función
-              asíncrona.
-            </p>
-            <div class="note">
               <p>
-                Sin el uso de funciones asíncronas para cada fetch tendríamos
-                que usar los métodos then y catch, en cambio gracias a
-                async/await solo debemos escribir la palabra await antes de
-                cada promesa
+                Promise también cuenta con el método
+                <span class="t-bold">race</span> que te regresa los resultados
+                de la promesa que termine primero.
               </p>
-            </div>
-            <p>
-              <strong>API</strong> es un servicio externo, en el cual
-              accedemos y nos devuelve unos datos (json). Con esos datos
-              podemos hacer lo que queramos, <strong>CRUD</strong> Crear,
-              Leer, Actualizar y Borrar. Para manejar funciones asíncronas,
-              como pedir datos a una API,
-              <strong>no sabemos cuándo tardar en darnos respuestas</strong>,
-              para eso manejamos <strong>async await</strong> para manejar
-              procesos asíncronos y hacerlos más lineales, lo que hace es que
-              va a detener el programa hasta que se resuelvan las peticiones.
-            </p>
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="async-await">
+              <h2 class="course-class__section--title">
+                Async-await: lo último en asincronismo
+              </h2>
+              <p>
+                Una función asíncrona va a ser como una función normal, pero
+                poniendo código asíncrono de forma que sea más fácil de leer de
+                forma síncrona.
+              </p>
+              <p>
+                <strong>Async-await</strong> es la manera más simple y clara de
+                realizar tareas asíncronas. <strong>Await</strong> detiene la
+                ejecución del programa hasta que todas las promesas sean
+                resueltas. Para poder utilizar esta forma, hay que colocar
+                <strong>async</strong> antes de la definición de la función
+                asíncrona.
+              </p>
+              <div class="note">
+                <p>
+                  Sin el uso de funciones asíncronas para cada fetch tendríamos
+                  que usar los métodos then y catch, en cambio gracias a
+                  async/await solo debemos escribir la palabra await antes de
+                  cada promesa
+                </p>
+              </div>
+              <p>
+                <strong>API</strong> es un servicio externo, en el cual
+                accedemos y nos devuelve unos datos (json). Con esos datos
+                podemos hacer lo que queramos, <strong>CRUD</strong> Crear,
+                Leer, Actualizar y Borrar. Para manejar funciones asíncronas,
+                como pedir datos a una API,
+                <strong>no sabemos cuándo tardar en darnos respuestas</strong>,
+                para eso manejamos <strong>async await</strong> para manejar
+                procesos asíncronos y hacerlos más lineales, lo que hace es que
+                va a detener el programa hasta que se resuelvan las peticiones.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">#Usando async await se guarda la promesa que retorna fecth dentro de una constante</span>
                 (<span class="code-sym">async</span> <span class="code-var">function</span> <span class="code-function">load</span>(){
@@ -1003,12 +710,12 @@
                 <span class="code-comment">#1. respuesta de la API</span>
                 <span class="code-comment">#2. Esto se ejecutara después del llamada a la API</span>
               </pre>
-            <p>
-              Como se observa el proceso devuelve un poco más síncrono
-              (líneal). El resultado o la data de una API, lo obtenemos a
-              través del método <strong>json</strong>().
-            </p>
-            <pre class="code">
+              <p>
+                Como se observa el proceso devuelve un poco más síncrono
+                (líneal). El resultado o la data de una API, lo obtenemos a
+                través del método <strong>json</strong>().
+              </p>
+              <pre class="code">
 
                 <span class="code-var">const</span> response = <span class="code-sym">await</span> <span class="code-function">fetch</span>(<span class="code-text">'https://yts.lt/api/v2/list_movies.json?genre=horror'</span>)
                 <span class="code-var">const</span> data = <span class="code-sym">await</span> response.<span class="code-var">json</span>()
@@ -1016,8 +723,8 @@
                 <span class="code-comment">#Retornamos la información</span>
                 <span class="code-sym">return</span> data
               </pre>
-            <p>Más ejemplos</p>
-            <pre class="code">
+              <p>Más ejemplos</p>
+              <pre class="code">
 
                 (<span class="code-sym">async</span> <span class="code-var">function</span> <span class="code-function">load</span>(){
 
@@ -1030,109 +737,121 @@
 
                   <span class="code-var">const</span> actionMovieList = <span class="code-sym">await</span> <span class="code-function">getData</span>(<span class="code-text">'https://yts.lt/api/v2/list_movies.json?genre=action'</span>)
                   <span class="code-var">const</span> dramaMovieList = <span class="code-sym">await</span> <span class="code-function">getData</span>(<span class="code-text">'https://yts.lt/api/v2/list_movies.json?genre=drama'</span>)
-                  <span class="code-var">const</span> animationMovieList = <span class="code-sym">await</span> <span class="code-function">getData</span>(<span class="code-text">'https://yts.lt/api/v2/list_movies.json?genre=animation'</span>)
                 })()
               </pre>
-          </article>
-          <article class="course-class__section" id="context-function">
-            <h2 class="course-class__section--title">
-              Cambiando de contexto al llamar a una función
-            </h2>
-            <p>
-              El contexto (o alcance) de una función es por lo general,
-              window. Así que, en ciertos casos, cuando intentamos referirnos
-              a this en alguna parte del código, es posible que tengamos un
-              comportamiento inesperado, porque el contexto quizás no sea el
-              que esperamos. <br />
-              Existen al menos tres maneras de cambiar el contexto de una
-              función.
-            </p>
-            <ul>
-              <li>
-                Usando el método .bind, enviamos la referencia a la función
-                sin ejecutarla, pasando el contexto como parámetro.
-              </li>
-              <li>
-                Usando el método .call, ejecutamos inmediatamente la función
-                con el contexto indicado.s
-              </li>
-              <li>
-                Usando el método .apply, es similar a .call pero los
-                parámetros adicionales se pasan como un arreglo de valores
-              </li>
-            </ul>
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="context-function">
+              <h2 class="course-class__section--title">
+                Cambiando de contexto al llamar a una función
+              </h2>
+              <p>
+                El contexto (o alcance) de una función es por lo general,
+                window. Así que, en ciertos casos, cuando intentamos referirnos
+                a this en alguna parte del código, es posible que tengamos un
+                comportamiento inesperado, porque el contexto quizás no sea el
+                que esperamos. <br />
+                Existen al menos tres maneras de cambiar el contexto de una
+                función.
+              </p>
+              <ul>
+                <li>
+                  Usando el método .bind, enviamos la referencia a la función
+                  sin ejecutarla, pasando el contexto como parámetro.
+                </li>
+                <li>
+                  Usando el método .call, ejecutamos inmediatamente la función
+                  con el contexto indicado.s
+                </li>
+                <li>
+                  Usando el método .apply, es similar a .call pero los
+                  parámetros adicionales se pasan como un arreglo de valores
+                </li>
+              </ul>
+              <pre class="code">
 
                 <span class="code-var">constructor</span>(){
                   <span class="code-sym">this</span>.<span class="code-function">handleClick</span> = <span class="code-sym">this</span>.<span class="code-function">handleClick</span>.<span class="code-var">bind</span>(this)
                 }
               </pre>
-            <a class="link link-refe" href="./javascript-avanzado.html#cab">Más información</a>
-          </article>
-          <article class="course-class__section" id="api">
-            <h2 class="course-class__section--title">API</h2>
-            <p>
-              Una característica muy solicitada en cualquier sitio dinámico es
-              solicitar datos a un servidor, denominado API. Para esto
-              normalmente se utiliza <strong>Ajax</strong>. <br />
-              Ajax recibe dos parámetros los cuales son la url de la API y un
-              objeto donde pondrás la configuración que se usara para realizar
-              la petición. En la configuración se añaden dos funciones para
-              manejar cuando la petición se realizó correctamente y cuando
-              falla. <br />
-              JavaScript internamente cuenta con una función llamada
-              <strong>fetch</strong> que también realiza peticiones a una API.
-              Al igual que Ajax necesita dos parámetros, una url y una
-              configuración, pero si solo le mandas la url fetch usará una
-              configuración por defecto donde el
-              <strong>método HTTP será GET</strong>. <br />
-              fetch te regresa una promesa, esa promesa al resolverse te da
-              los datos de respuesta y tiene un método llamado
-              <strong>json</strong> que te regresa otra promesa con los datos
-              en formato JSON. <br />
-              Las promesas resuelven el problema del Callback Hell haciendo
-              que una promesa pueda devolver otra promesa y en lugar de ser
-              anidadas como los callback, estas promesas son encadenadas.
-              <br />
-              <br />
-              <a target="_blank" class="btn btn--primary" href="https://yts.lt/api#list_movies">Api Movies</a>
-              <a target="_blank" class="btn btn--blue" href="https://rickandmortyapi.com/documentation/">Rick and
-                Morty</a>
-            </p>
-          </article>
-        </div>
-      </section>
+              <a class="link link-refe" href="./javascript-avanzado.html#cab"
+                >Más información</a
+              >
+            </article>
+            <article class="course-class__section" id="api">
+              <h2 class="course-class__section--title">API</h2>
+              <p>
+                Una característica muy solicitada en cualquier sitio dinámico es
+                solicitar datos a un servidor, denominado API. Para esto
+                normalmente se utiliza <strong>Ajax</strong>. <br />
+                Ajax recibe dos parámetros los cuales son la url de la API y un
+                objeto donde pondrás la configuración que se usara para realizar
+                la petición. En la configuración se añaden dos funciones para
+                manejar cuando la petición se realizó correctamente y cuando
+                falla. <br />
+                JavaScript internamente cuenta con una función llamada
+                <strong>fetch</strong> que también realiza peticiones a una API.
+                Al igual que Ajax necesita dos parámetros, una url y una
+                configuración, pero si solo le mandas la url fetch usará una
+                configuración por defecto donde el
+                <strong>método HTTP será GET</strong>. <br />
+                fetch te regresa una promesa, esa promesa al resolverse te da
+                los datos de respuesta y tiene un método llamado
+                <strong>json</strong> que te regresa otra promesa con los datos
+                en formato JSON. <br />
+                Las promesas resuelven el problema del Callback Hell haciendo
+                que una promesa pueda devolver otra promesa y en lugar de ser
+                anidadas como los callback, estas promesas son encadenadas.
+                <br />
+                <br />
+                <a
+                  target="_blank"
+                  class="btn btn--primary"
+                  href="https://yts.lt/api#list_movies"
+                  >Api Movies</a
+                >
+                <a
+                  target="_blank"
+                  class="btn btn--blue"
+                  href="https://rickandmortyapi.com/documentation/"
+                  >Rick and Morty</a
+                >
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
     </div>
-  </div>
-  <script src="https://kit.fontawesome.com/2028b75fa6.js" crossorigin="anonymous"></script>
-  <script src="../../src/js/menu.js"></script>
-  <script>
-    const $menu = document.getElementById("btn-menu");
-    const $courseMenu = document.getElementById("course-class__left");
+    <script
+      src="https://kit.fontawesome.com/2028b75fa6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../src/js/menu.js"></script>
+    <script>
+      const $menu = document.getElementById("btn-menu");
+      const $courseMenu = document.getElementById("course-class__left");
 
-    $menu.addEventListener("click", handleClick);
+      $menu.addEventListener("click", handleClick);
 
-    function handleClick() {
-      $courseMenu.classList.toggle("is-active");
-      $menu.classList.toggle("is-active");
+      function handleClick() {
+        $courseMenu.classList.toggle("is-active");
+        $menu.classList.toggle("is-active");
 
-      if ($menu.classList.contains("fa-bars")) {
-        $menu.classList.remove("fa-bars");
-        $menu.classList.add("fa-times");
-      } else {
-        $menu.classList.remove("fa-times");
-        $menu.classList.add("fa-bars");
+        if ($menu.classList.contains("fa-bars")) {
+          $menu.classList.remove("fa-bars");
+          $menu.classList.add("fa-times");
+        } else {
+          $menu.classList.remove("fa-times");
+          $menu.classList.add("fa-bars");
+        }
       }
-    }
 
-    const $footerYear = document.getElementById("footer-year");
+      const $footerYear = document.getElementById("footer-year");
 
-    if ($footerYear) {
-      let date = new Date();
+      if ($footerYear) {
+        let date = new Date();
 
-      $footerYear.innerHTML += " " + date.getFullYear();
-    }
-  </script>
-</body>
-
+        $footerYear.innerHTML += " " + date.getFullYear();
+      }
+    </script>
+  </body>
 </html>
