@@ -200,8 +200,8 @@
                   edad : 22
                 }
 
-                <span class="code-comment">#Una nueva funcionalidad de js es pedir el atributo
-                de un objeto en los parametros para esto se usan las llaves {nombreAtributo}</span>
+                <span class="code-comment">#Una nueva funcionalidad de js es pedir el atributo de un objeto en
+                los parametros para esto se usan las llaves {nombreAtributo}</span>
                 <span class="code-var">function</span> <span class="code-function">imprimirNombreMayusculas</span>({nombre}){
                   console.<span class="code-var">log</span>(nombre.<span class="code-var">toUpperCase</span>())
                 }
@@ -281,10 +281,19 @@
               <h3>Filtrar un array</h3>
               <p>
                 Para filtrar siempre necesitamos establecer una condición. El
-                método <strong>filter()</strong> crea una nueva matriz con todos
-                los elementos que pasan la prueba implementada por la función
-                proporcionada. Recuerda que si no hay elementos que pasen la
-                prueba, filter devuelve un array vacío.
+                método
+                <strong
+                  ><a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/filter"
+                    >filter</a
+                  >
+                </strong>
+                crea una nueva matriz con todos los elementos que pasan la
+                prueba implementada por la función proporcionada. Recuerda que
+                si no hay elementos que pasen la prueba, filter devuelve un
+                array vacío.
               </p>
               <pre class="code">
 
@@ -310,10 +319,6 @@
                 devuelve array nuevo con los elementos modificados.
               </p>
               <pre class="code">
-
-                <span class="code-var">const</span> nuevo_array = array.<span class="code-var">map</span>(iterador_elementos_array => {
-                  <span class="code-comment">#Código de la condición</span>
-                })
 
                 <span class="code-var">const</span> <span class="code-function">convertirCm</span> = persona =>{
                   <span class="code-comment">#el return {} se usa cuando se devuelve un array nuevo ...</span>
@@ -782,12 +787,11 @@
               <p>
                 Una característica muy solicitada en cualquier sitio dinámico es
                 solicitar datos a un servidor, denominado API. Para esto
-                normalmente se utiliza <strong>Ajax</strong>. <br />
-                Ajax recibe dos parámetros los cuales son la url de la API y un
-                objeto donde pondrás la configuración que se usara para realizar
-                la petición. En la configuración se añaden dos funciones para
-                manejar cuando la petición se realizó correctamente y cuando
-                falla. <br />
+                normalmente se utiliza <strong>Ajax</strong>. Este recibe dos
+                parámetros los cuales son la url de la API y un objeto donde
+                pondrás la configuración que se usara para realizar la petición.
+                En la configuración se añaden dos funciones para manejar cuando
+                la petición se realizó correctamente y cuando falla. <br />
                 JavaScript internamente cuenta con una función llamada
                 <strong>fetch</strong> que también realiza peticiones a una API.
                 Al igual que Ajax necesita dos parámetros, una url y una
