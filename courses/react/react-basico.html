@@ -1,222 +1,314 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso básico de React JS</title>
+    <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../src/css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Curso básico de React JS</title>
-  <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
-  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../src/css/styles.css" />
-</head>
-
-<body>
-  <div class="app">
-    <div class="app-react-basico">
-      <header class="header">
-        <div class="container-general">
-          <nav class="header-menu">
-            <ul class="header-menu__list menu-left">
-              <li class="header-menu__list--item">
-                <a class="link" href="../../index.html">Inicio</a>
-              </li>
-              <li class="header-menu__list--item">
-                <a class="link" href="">Carreras</a>
-              </li>
-            </ul>
-            <figure class="header-menu__logo">
-              <a href="../../index.html"><img class="header-menu__logo--img" src="../../src/images/logo_white.png"
-                  alt="logo carlos zabala" /></a>
-            </figure>
-            <ul class="header-menu__list menu-right">
-              <li class="header-menu__list--item">
-                <a class="link" href="">Me</a>
-              </li>
-              <li class="header-menu__list--item">
-                <a class="link" href="">Contacto</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <section class="hero-course">
-        <div class="container-general">
-          <h1 class="hero-course__title">Curso básico de react js</h1>
-          <p class="hero-course__description">
-            <strong>React</strong> cumple su función como biblioteca ya que
-            para utilizar su código se debe importar. También es un Framework
-            aunque las convenciones de cómo debe ser organizado todo no son
-            estrictas. <br />
-            <span class="t-bold">React es declarativo</span>, lo que quiere
-            decir que se le indica qué debe hacer pero no cómo debe hacerse,
-            ahorrando de esta manera muchos pasos. <br />
-            React está estructurado por componentes que son como pequeños
-            bloques de lego que al ser unidos forman aplicaciones de React.
-            Estos componentes pueden tener estilos, ser enlazados a eventos y
-            sus estados pueden ser modificados. Con React también se tiene la
-            ventaja de que será escrito una sola vez y podrá ser utilizado en
-            aplicaciones web, móviles, entre otras.
-          </p>
-          <div class="hero-course__buttons">
-            <a target="_blank" href="https://es.reactjs.org/" class="btn btn--blue">Web oficial</a>
-            <a target="_blank" href="https://platzi.com/clases/react/" class="btn btn--primary">Curso platzi</a>
-          </div>
-        </div>
-      </section>
-      <section class="course-class">
-        <div class="course-class__left" id="course-class__left">
-          <div class="course-class__left--container">
-            <nav class="course-class__menu">
-              <ul>
-                <li>
-                  <a class="link course-class__menu--a" href="#tools">Herramientas a usar</a>
+  <body>
+    <div class="app">
+      <div class="app-react-basico">
+        <header class="header">
+          <div class="container-general">
+            <nav class="header-menu">
+              <ul class="header-menu__list menu-left">
+                <li class="header-menu__list--item">
+                  <a class="link" href="../../index.html">Inicio</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#react-app">Create React App</a>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Carreras</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#react-dom">ReactDOM.render</a>
+              </ul>
+              <figure class="header-menu__logo">
+                <a href="../../index.html"
+                  ><img
+                    class="header-menu__logo--img"
+                    src="../../src/images/logo_white.png"
+                    alt="logo carlos zabala"
+                /></a>
+              </figure>
+              <ul class="header-menu__list menu-right">
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Me</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#jsx">JSX</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#component">Componentes</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#create-component">Creación de componentes</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#css">Estilos CSS</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#props">Props</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#page-react">Páginas en React</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#event">Eventos</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#conditional">Condicionales en JSX</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#state">Estados</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#lifting-state">Levantamiento de estados</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#list-component">Listas de componentes</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#icon">Font Awesome</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#react-router">React Router</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#layout">Layout</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#lifecycle">Ciclo de vida</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#api">Llamadas API</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#get">Datos GET</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#post">Enviando datos POST</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#put">Actualizando datos PUT</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#container-components">UI Components y Container
-                    Components</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#portals">Portales</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#modal">Modales</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#hooks">Hooks</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#search">Search filter</a>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Contacto</a>
                 </li>
               </ul>
             </nav>
           </div>
-        </div>
-        <div class="course-class__content">
-          <i class="fas fa-bars icon course-class__icon-menu" id="btn-menu"></i>
-          <article class="course-class__section" id="tools">
-            <h2 class="course-class__section--title">Herramientas a usar</h2>
-            <p>
-              La herramientas que se usaron en el curso básico de react en
-              <strong>platzi</strong> son:
+        </header>
+        <section class="hero-course">
+          <div class="container-general">
+            <h1 class="hero-course__title">Curso básico de react js</h1>
+            <p class="hero-course__description">
+              <strong>React</strong> cumple su función como biblioteca ya que
+              para utilizar su código se debe importar. También es un Framework
+              aunque las convenciones de cómo debe ser organizado todo no son
+              estrictas. <br />
+              <span class="t-bold">React es declarativo</span>, lo que quiere
+              decir que se le indica qué debe hacer pero no cómo debe hacerse,
+              ahorrando de esta manera muchos pasos. <br />
+              React está estructurado por componentes que son como pequeños
+              bloques de lego que al ser unidos forman aplicaciones de React.
+              Estos componentes pueden tener estilos, ser enlazados a eventos y
+              sus estados pueden ser modificados. Con React también se tiene la
+              ventaja de que será escrito una sola vez y podrá ser utilizado en
+              aplicaciones web, móviles, entre otras.
             </p>
-            <ul>
-              <li>
-                <span class="t-bold">React Developer Tools:</span> Es una
-                herramienta Open Source creada por Facebook y tiene
-                instalación para
-                <a class="link link-refe t-bold" target="_blank"
-                  href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=es">chrome</a>
-                o firefox. Nos dejará ver el código de React inspeccionando
-                elementos.
-              </li>
-              <li>
-                <span class="t-bold">Editor de texto:</span> Puedes usar
-                cualquiera, en este curso se sugirió
-                <a target="_blank" href="https://code.visualstudio.com/" class="link link-refe t-bold">Visual Studio
-                  Code</a>.
-              </li>
-            </ul>
-            <p>
-              VS Code tiene muchos plugis utiles entre los cuales esta: <br />
-              <a target="_blank" href="https://github.com/prettier/prettier-vscode"
-                class="t-bold link link-refe">Prettier</a>
-              Es un plugin que hace que el código se vea bien sin importar
-              cómo esta escrito. Tiene la función de que al darle save, le da
-              formato al código.
-            </p>
-            <div class="note">
-              Para activar la función de que al guardar el documento se haga
-              el autoformateado, se debe habilitar la opción
-              <span class="t-bold">editor.formatOnSave</span>:
+            <div class="hero-course__buttons">
+              <a
+                target="_blank"
+                href="https://es.reactjs.org/"
+                class="btn btn--blue"
+                >Web oficial</a
+              >
+              <a
+                target="_blank"
+                href="https://platzi.com/clases/react/"
+                class="btn btn--primary"
+                >Curso platzi</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="course-class">
+          <div class="course-class__left" id="course-class__left">
+            <div class="course-class__left--container">
+              <nav class="course-class__menu">
+                <ul>
+                  <li>
+                    <a class="link course-class__menu--a" href="#tools"
+                      >Herramientas a usar</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#react-app"
+                      >Create React App</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#react-dom"
+                      >ReactDOM.render</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#jsx">JSX</a>
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#component"
+                      >Componentes</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#create-component"
+                      >Creación de componentes</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#css"
+                      >Estilos CSS</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#props"
+                      >Props</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#page-react"
+                      >Páginas en React</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#event"
+                      >Eventos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#conditional"
+                      >Condicionales en JSX</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#state"
+                      >Estados</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#lifting-state"
+                      >Levantamiento de estados</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#list-component"
+                      >Listas de componentes</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#icon"
+                      >Font Awesome</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#react-router"
+                      >React Router</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#layout"
+                      >Layout</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#lifecycle"
+                      >Ciclo de vida</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#api"
+                      >Llamadas API</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#get"
+                      >Datos GET</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#post"
+                      >Enviando datos POST</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#put"
+                      >Actualizando datos PUT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#container-components"
+                      >UI Components y Container Components</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#portals"
+                      >Portales</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#modal"
+                      >Modales</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#hooks"
+                      >Hooks</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#search"
+                      >Search filter</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="course-class__content">
+            <i
+              class="fas fa-bars icon course-class__icon-menu"
+              id="btn-menu"
+            ></i>
+            <article class="course-class__section" id="tools">
+              <h2 class="course-class__section--title">Herramientas a usar</h2>
+              <p>
+                La herramientas que se usaron en el curso básico de react en
+                <strong>platzi</strong> son:
+              </p>
               <ul>
                 <li>
-                  Abril el Command Palette, control + shift + p (en windows)
+                  <span class="t-bold">React Developer Tools:</span> Es una
+                  herramienta Open Source creada por Facebook y tiene
+                  instalación para
+                  <a
+                    class="link link-refe t-bold"
+                    target="_blank"
+                    href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=es"
+                    >chrome</a
+                  >
+                  o firefox. Nos dejará ver el código de React inspeccionando
+                  elementos.
                 </li>
-                <li>Escribir Open user Settings</li>
-                <li>Buscar format on save y activarlo</li>
+                <li>
+                  <span class="t-bold">Editor de texto:</span> Puedes usar
+                  cualquiera, en este curso se sugirió
+                  <a
+                    target="_blank"
+                    href="https://code.visualstudio.com/"
+                    class="link link-refe t-bold"
+                    >Visual Studio Code</a
+                  >.
+                </li>
               </ul>
               <p>
-                Para deshabilitar prettier para ciertos lenguajes, se puede
-                emplear la siguiente configuración, en el archivo
-                <span class="t-bold">setting.json</span> de VS Code: <br />
-                <span class="t-bold">"prettier.disableLanguages" : ["html"]</span>.
+                VS Code tiene muchos plugis utiles entre los cuales esta: <br />
+                <a
+                  target="_blank"
+                  href="https://github.com/prettier/prettier-vscode"
+                  class="t-bold link link-refe"
+                  >Prettier</a
+                >
+                Es un plugin que hace que el código se vea bien sin importar
+                cómo esta escrito. Tiene la función de que al darle save, le da
+                formato al código.
               </p>
-            </div>
-          </article>
-          <article class="course-class__section" id="react-app">
-            <h2 class="course-class__section--title">Create React App</h2>
-            <p>
-              <a class="link link-refe t-bold" href="https://github.com/facebook/create-react-app"
-                target="_blank">Create React App</a>
-              app es una aplicación moderna que se usa desde una línea de
-              comando. Antes de ella se configuraba todo el entorno
-              manualmente lo cual tomaba mucho tiempo.
-            </p>
-            <pre class="code">
+              <div class="note">
+                Para activar la función de que al guardar el documento se haga
+                el autoformateado, se debe habilitar la opción
+                <span class="t-bold">editor.formatOnSave</span>:
+                <ul>
+                  <li>
+                    Abril el Command Palette, control + shift + p (en windows)
+                  </li>
+                  <li>Escribir Open user Settings</li>
+                  <li>Buscar format on save y activarlo</li>
+                </ul>
+                <p>
+                  Para deshabilitar prettier para ciertos lenguajes, se puede
+                  emplear la siguiente configuración, en el archivo
+                  <span class="t-bold">setting.json</span> de VS Code: <br />
+                  <span class="t-bold"
+                    >"prettier.disableLanguages" : ["html"]</span
+                  >.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="react-app">
+              <h2 class="course-class__section--title">Create React App</h2>
+              <p>
+                <a
+                  class="link link-refe t-bold"
+                  href="https://github.com/facebook/create-react-app"
+                  target="_blank"
+                  >Create React App</a
+                >
+                app es una aplicación moderna que se usa desde una línea de
+                comando. Antes de ella se configuraba todo el entorno
+                manualmente lo cual tomaba mucho tiempo.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">//Instalar de forma global</span>
                 npm install -g react-create-app
@@ -224,61 +316,61 @@
                 <span class="code-comment">//Crear proyecto</span>
                 react-create-app nombre_proyecto
               </pre>
-            <p>
-              En este punto se estará instalando React y otras herramientas,
-              también se configurará el entorno usando
-              <a class="link link-refe t-bold" href="#">Webpack</a>. Una vez
-              se instala todo entra a la carpeta src donde estará todo el
-              código fuente de la aplicación, siendo el más importante
-              <i>index.js</i> que es el punto de entrada a la aplicación.
-              <br />
-              Finalmente, para correr la aplicación se usa el comando:
-            </p>
-            <pre class="code">
+              <p>
+                En este punto se estará instalando React y otras herramientas,
+                también se configurará el entorno usando
+                <a class="link link-refe t-bold" href="#">Webpack</a>. Una vez
+                se instala todo entra a la carpeta src donde estará todo el
+                código fuente de la aplicación, siendo el más importante
+                <i>index.js</i> que es el punto de entrada a la aplicación.
+                <br />
+                Finalmente, para correr la aplicación se usa el comando:
+              </p>
+              <pre class="code">
 
                 npm run start
               </pre>
-            <div class="note">
+              <div class="note">
+                <p>
+                  <strong>Babel: </strong> Traduce Javascript moderno (JSX) a un
+                  Javascript que todos los navegadores puedan interpretar.
+                  <br />
+                  <strong>Eslint: </strong> Lee el código y avisa de errores.
+                  <br /><br />
+                  Para desistalar Creat React App :
+                  <span class="t-bold">npm uninstall -g react</span>.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="react-dom">
+              <h2 class="course-class__section--title">ReactDOM.render</h2>
+              <ul>
+                <li>
+                  <strong>React</strong> y <strong>ReactDOM</strong> trabajarán
+                  en conjunto.
+                </li>
+                <li>
+                  React como análogo a
+                  <span class="t-bold">createElement</span>.
+                </li>
+                <li>ReactDOM a <span class="t-bold">appendChild</span>.</li>
+                <li>
+                  <span class="t-bold">ReactDOM.render()</span> toma dos
+                  argumentos: Qué queremos renderizar y dónde lo queremos
+                  renderizar.
+                </li>
+                <li>
+                  Siempre que escribas <span class="t-bold">JSX</span> es
+                  requisito importar React.
+                </li>
+              </ul>
               <p>
-                <strong>Babel: </strong> Traduce Javascript moderno (JSX) a un
-                Javascript que todos los navegadores puedan interpretar.
-                <br />
-                <strong>Eslint: </strong> Lee el código y avisa de errores.
-                <br /><br />
-                Para desistalar Creat React App :
-                <span class="t-bold">npm uninstall -g react</span>.
+                Ahora veremos como seria una aplicación que añade un elemento al
+                DOM sin usar React y otra donde si implementemos React, (Estos
+                cambios se haran en el index.js de la aplicación). <br /><br />
+                <span class="t-bold">Sin usar React</span>
               </p>
-            </div>
-          </article>
-          <article class="course-class__section" id="react-dom">
-            <h2 class="course-class__section--title">ReactDOM.render</h2>
-            <ul>
-              <li>
-                <strong>React</strong> y <strong>ReactDOM</strong> trabajarán
-                en conjunto.
-              </li>
-              <li>
-                React como análogo a
-                <span class="t-bold">createElement</span>.
-              </li>
-              <li>ReactDOM a <span class="t-bold">appendChild</span>.</li>
-              <li>
-                <span class="t-bold">ReactDOM.render()</span> toma dos
-                argumentos: Qué queremos renderizar y dónde lo queremos
-                renderizar.
-              </li>
-              <li>
-                Siempre que escribas <span class="t-bold">JSX</span> es
-                requisito importar React.
-              </li>
-            </ul>
-            <p>
-              Ahora veremos como seria una aplicación que añade un elemento al
-              DOM sin usar React y otra donde si implementemos React, (Estos
-              cambios se haran en el index.js de la aplicación). <br /><br />
-              <span class="t-bold">Sin usar React</span>
-            </p>
-            <pre class="code">
+              <pre class="code">
 
                 <span class="code-comment">//Se crea un elemento html, en este caso un h1</span>
                 <span class="code-var">const</span> element <span class="code-sym">=</span> document.<span class="code-function">createElement</span>(<span class="code-text">"h1"</span>)
@@ -294,9 +386,9 @@
                 container.<span class="code-function">appendChild</span>(element)
               </pre>
 
-            <span class="t-bold">Con React</span><br />
+              <span class="t-bold">Con React</span><br />
 
-            <pre class="code">
+              <pre class="code">
 
                 <span class="code-comment">/*Lo primero es <span class="t-bold">importar</span> React, que esta en el módulo(carpeta que ya tenemos descargada al instalar react-create-app)
                 este elemento se comportara como <span class="t-bold">createElement</span> de JS Vanilla.*/ </span>
@@ -312,42 +404,42 @@
 
                 ReactDOM.<span class="code-function">render</span>(element, container)
               </pre>
-          </article>
-          <article class="course-class__section" id="jsx">
-            <h2 class="course-class__section--title">JSX</h2>
-            Es una extensión de JavaScript creada por Facebook para el uso con
-            la biblioteca React. Sirve de preprocesador (como Sass o Stylus a
-            CSS) y transforma el código generado con React a JavaScript.
-            <br />
-            JSX tiene su alternativa que es
-            <span class="t-bold">React.createElement</span> pero es preferible
-            JSX porque es mucho más legible y expresivo. Ambos tienen el mismo
-            poder y la misma capacidad. <br />
-            <br />
-            <span class="t-bold">React.createElement</span> recibe 3
-            argumentos:
-            <ul>
-              <li>El tipo de elemento que estamos creando.</li>
-              <li>sus atributos o props.</li>
-              <li>Y el children que es el contenido.</li>
-            </ul>
-            Ejemplo:
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="jsx">
+              <h2 class="course-class__section--title">JSX</h2>
+              Es una extensión de JavaScript creada por Facebook para el uso con
+              la biblioteca React. Sirve de preprocesador (como Sass o Stylus a
+              CSS) y transforma el código generado con React a JavaScript.
+              <br />
+              JSX tiene su alternativa que es
+              <span class="t-bold">React.createElement</span> pero es preferible
+              JSX porque es mucho más legible y expresivo. Ambos tienen el mismo
+              poder y la misma capacidad. <br />
+              <br />
+              <span class="t-bold">React.createElement</span> recibe 3
+              argumentos:
+              <ul>
+                <li>El tipo de elemento que estamos creando.</li>
+                <li>sus atributos o props.</li>
+                <li>Y el children que es el contenido.</li>
+              </ul>
+              Ejemplo:
+              <pre class="code">
 
                 React.<span class="code-function">createElement</span>(<span class="code-text">"h1"</span>, {href:<span class="code-text">"https://carloszabala.com"</span>},<span class="code-text">"ir al home"</span>)
               </pre>
-            <div class="note">
+              <div class="note">
+                <p>
+                  Jsx es azúcar sintética (Syntactic Sugar! es como el Async
+                  Await de las promesas de JS).
+                </p>
+              </div>
               <p>
-                Jsx es azúcar sintética (Syntactic Sugar! es como el Async
-                Await de las promesas de JS).
+                Veamos en un ejemplo la
+                <span class="t-bold">diferencia</span> entre JSX y
+                createElement.
               </p>
-            </div>
-            <p>
-              Veamos en un ejemplo la
-              <span class="t-bold">diferencia</span> entre JSX y
-              createElement.
-            </p>
-            <pre class="code">
+              <pre class="code">
 
                 <span class="code-comment t-bold">//JSX</span>
                 <span class="code-var">const</span> jsx <span class="code-sym">=</span> (
@@ -364,79 +456,79 @@
                 ))
 
               </pre>
-            <div class="note">
+              <div class="note">
+                <p>
+                  Jsx es mas expresivo, mejor legible, más claro. Jsx antes de
+                  llegar al navegador, se debe interpretar con webpack y babel,
+                  para poder transformar las líneas de código "fácil" que
+                  escribimos a js para que lo puede entender el navegador.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="component">
+              <h2 class="course-class__section--title">
+                ¿Qué es un componente?
+              </h2>
               <p>
-                Jsx es mas expresivo, mejor legible, más claro. Jsx antes de
-                llegar al navegador, se debe interpretar con webpack y babel,
-                para poder transformar las líneas de código "fácil" que
-                escribimos a js para que lo puede entender el navegador.
+                Los componentes en React son
+                <span class="t-bold">bloques de construcción</span>. <br />
+                Las aplicaciones hechas con React son como figuras de Lego.
+                Junta varias piezas (componentes) y puedes construir un website
+                tan pequeño o grande como quieras. Los componentes serán barras
+                de búsquedas, enlaces, encabezados, el header, etc.
               </p>
-            </div>
-          </article>
-          <article class="course-class__section" id="component">
-            <h2 class="course-class__section--title">
-              ¿Qué es un componente?
-            </h2>
-            <p>
-              Los componentes en React son
-              <span class="t-bold">bloques de construcción</span>. <br />
-              Las aplicaciones hechas con React son como figuras de Lego.
-              Junta varias piezas (componentes) y puedes construir un website
-              tan pequeño o grande como quieras. Los componentes serán barras
-              de búsquedas, enlaces, encabezados, el header, etc.
-            </p>
-            <p>
-              <span class="t-bold">Componente vs elemento</span> <br />
-              Un elemento es a un objeto como un componente es a una clase. Si
-              el elemento fuera una casa, el componente serían los planos para
-              hacer esa casa.
-            </p>
-            <p>
-              <span class="t-bold">Identificación de componentes</span> <br />
-              Para identificarlos debes hacerte las siguientes preguntas:
-            </p>
-            <ul>
-              <li>
-                ¿Qué elementos se repiten? Estos son los elementos en una
-                lista o los que comparten aspecto visual y su funcionalidad
-              </li>
-              <li>
-                ¿Qué elementos cumplen una función muy específica? Estos
-                sirven para encapsular la lógica y permiten juntar muchos
-                comportamientos y aspectos visuales en un solo lugar.
-              </li>
-            </ul>
-            <div class="note">
               <p>
-                Unidad básica de desarrollo --> elemento (átomo).
-                <br />
-                Lo que forma un website --> componente.
+                <span class="t-bold">Componente vs elemento</span> <br />
+                Un elemento es a un objeto como un componente es a una clase. Si
+                el elemento fuera una casa, el componente serían los planos para
+                hacer esa casa.
               </p>
-            </div>
-          </article>
-          <article class="course-class__section" id="create-component">
-            <h2 class="course-class__section--title">
-              Creación de un componente
-            </h2>
-            <ul>
-              <li>
-                Es una buena práctica que los componentes vivan en su propio
-                archivo y para ello se les crea una carpeta (src/components).
-              </li>
-              <li>
-                Todos los componentes requieren por lo menos el método
-                <span class="t-bold">render</span>
-                que define cuál será el resultado que aparecerá en pantalla.
-              </li>
-              <li>
-                El source de las imágenes en React puede contener direcciones
-                en la web o se le puede hacer una referencia directa
-                importándola. Si se importa deben usarse llaves para que sea
-                evaluado.
-              </li>
-            </ul>
-            A continuación, se creara el componente badge:
-            <pre class="code">
+              <p>
+                <span class="t-bold">Identificación de componentes</span> <br />
+                Para identificarlos debes hacerte las siguientes preguntas:
+              </p>
+              <ul>
+                <li>
+                  ¿Qué elementos se repiten? Estos son los elementos en una
+                  lista o los que comparten aspecto visual y su funcionalidad
+                </li>
+                <li>
+                  ¿Qué elementos cumplen una función muy específica? Estos
+                  sirven para encapsular la lógica y permiten juntar muchos
+                  comportamientos y aspectos visuales en un solo lugar.
+                </li>
+              </ul>
+              <div class="note">
+                <p>
+                  Unidad básica de desarrollo --> elemento (átomo).
+                  <br />
+                  Lo que forma un website --> componente.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="create-component">
+              <h2 class="course-class__section--title">
+                Creación de un componente
+              </h2>
+              <ul>
+                <li>
+                  Es una buena práctica que los componentes vivan en su propio
+                  archivo y para ello se les crea una carpeta (src/components).
+                </li>
+                <li>
+                  Todos los componentes requieren por lo menos el método
+                  <span class="t-bold">render</span>
+                  que define cuál será el resultado que aparecerá en pantalla.
+                </li>
+                <li>
+                  El source de las imágenes en React puede contener direcciones
+                  en la web o se le puede hacer una referencia directa
+                  importándola. Si se importa deben usarse llaves para que sea
+                  evaluado.
+                </li>
+              </ul>
+              A continuación, se creara el componente badge:
+              <pre class="code">
 
                 <span class="code-comment">//Lo primero siempre <span class="t-bold">importar</span> React </span>
                 <span class="code-sym">import</span> React <span class="code-sym">from</span> <span class="code-text">"react"</span>
@@ -471,9 +563,9 @@
                 <span class="code-comment">//Por último hay que exportar ese componente</span>
                 <span class="code-sym">export default</span> Badge
               </pre>
-            En el archivo principal <span class="t-bold">index.js</span> hay
-            que importar ese componente.
-            <pre class="code">
+              En el archivo principal <span class="t-bold">index.js</span> hay
+              que importar ese componente.
+              <pre class="code">
 
                 <span class="code-sym">import</span> React <span class="code-sym">from</span> <span class="code-text">"react"</span>
                 <span class="code-sym">import</span> ReactDOM <span class="code-sym">from</span> <span class="code-text">"react-dom"</span>
@@ -488,78 +580,83 @@
                 ReactDOM.<span class="code-function">render</span>( &lt <span class="code-var">Badge</span> / &gt, container )
               </pre>
 
-            Para hacer uso de imagenes, primero hay que importarlas
-            <pre class="code">
+              Para hacer uso de imagenes, primero hay que importarlas
+              <pre class="code">
 
                 <span class="code-sym">import</span> logoConf <span class="code-sym">from</span> <span class="code-text">"../images/logo.svg"</span>
               </pre>
-            Y para usarla
-            <pre class="code">
+              Y para usarla
+              <pre class="code">
 
                   &lt<span class="code-sym">img</span> <span class="code-function">src</span><span class="code-sym">=</span>{logoConf} <span class="code-function">alt</span><span class="code-sym">=</span><span class="code-text">"Logo de la conferencia"</span> /&gt
               </pre>
-            <p>
-              puede ocurrir en VS Code un problema y es que Emmet no reconoce
-              a JSX, para solucionar esto hay que ir al archivo
-              <span class="t-bold">settings.json</span> y colocar el siguiente
-              código:
-              <a class="link link-refe" target="_blank"
-                href="https://medium.com/@eshwaren/enable-emmet-support-for-jsx-in-visual-studio-code-react-f1f5dfe8809c">referencia</a>
-            </p>
-            <pre class="code">
+              <p>
+                puede ocurrir en VS Code un problema y es que Emmet no reconoce
+                a JSX, para solucionar esto hay que ir al archivo
+                <span class="t-bold">settings.json</span> y colocar el siguiente
+                código:
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://medium.com/@eshwaren/enable-emmet-support-for-jsx-in-visual-studio-code-react-f1f5dfe8809c"
+                  >referencia</a
+                >
+              </p>
+              <pre class="code">
 
                     {
                       "emmet.includeLanguages": {
                         "javascript": "javascriptreact"
                       }
                     }
-                  </pre>
-          </article>
-          <article class="course-class__section" id="css">
-            <h2 class="course-class__section--title">
-              Estilos CSS
-            </h2>
-            <ul>
-              <li>
-                Para los estilos crearemos una carpeta llamada
-                <span class="t-bold">Styles</span> y allí vivirán todos los
-                archivos de estilos que tienen que ver con los componentes.
-              </li>
-              <li>
-                Para usar los estilos es necesario importarlos con import.
-              </li>
-              <li>
-                React funciona ligeramente diferente y para los atributos de
-                clases no se utiliza class sino
-                <span class="t-bold">className</span>.
-              </li>
-              <li>
-                Es posible utilizar <span class="t-bold">Bootstrap</span> con
-                React, sólo debe ser instalado con
-                <i>npm install bootstrap</i> y debe ser importado en el
-                <span class="t-bold">index.js</span>.
-              </li>
-              <li>
-                Existen estilos que son usados de manera global o en varios
-                componentes, así que deben ser importados en el index.js.
-              </li>
-            </ul>
-          </article>
-          <article class="course-class__section" id="props">
-            <h2 class="course-class__section--title">
-              Props
-            </h2>
-            <p>
-              Los props que es la forma corta de properties son argumentos de
-              una función y en este caso serán los atributos de nuestro
-              componente como <span class="t-bold">class, src, etc</span>.
-              Estos props salen de una variable de la clase que se llama
-              this.props y los valores son asignados directamente en el
-              <span class="t-bold">ReactDOM.render()</span>.
-            </p>
-            Los props son como atributos en HTML, primero hay que pasarle los
-            props al componente de la siguiente forma:
-            <pre class="code">
+                  </pre
+              >
+            </article>
+            <article class="course-class__section" id="css">
+              <h2 class="course-class__section--title">
+                Estilos CSS
+              </h2>
+              <ul>
+                <li>
+                  Para los estilos crearemos una carpeta llamada
+                  <span class="t-bold">Styles</span> y allí vivirán todos los
+                  archivos de estilos que tienen que ver con los componentes.
+                </li>
+                <li>
+                  Para usar los estilos es necesario importarlos con import.
+                </li>
+                <li>
+                  React funciona ligeramente diferente y para los atributos de
+                  clases no se utiliza class sino
+                  <span class="t-bold">className</span>.
+                </li>
+                <li>
+                  Es posible utilizar <span class="t-bold">Bootstrap</span> con
+                  React, sólo debe ser instalado con
+                  <i>npm install bootstrap</i> y debe ser importado en el
+                  <span class="t-bold">index.js</span>.
+                </li>
+                <li>
+                  Existen estilos que son usados de manera global o en varios
+                  componentes, así que deben ser importados en el index.js.
+                </li>
+              </ul>
+            </article>
+            <article class="course-class__section" id="props">
+              <h2 class="course-class__section--title">
+                Props
+              </h2>
+              <p>
+                Los props que es la forma corta de properties son argumentos de
+                una función y en este caso serán los atributos de nuestro
+                componente como <span class="t-bold">class, src, etc</span>.
+                Estos props salen de una variable de la clase que se llama
+                this.props y los valores son asignados directamente en el
+                <span class="t-bold">ReactDOM.render()</span>.
+              </p>
+              Los props son como atributos en HTML, primero hay que pasarle los
+              props al componente de la siguiente forma:
+              <pre class="code">
 
                 &lt <span class="code-var">Badge</span> <span class="code-function">nombreProps</span> = valorProps /&gt
 
@@ -571,60 +668,60 @@
                 /&gt
               </pre>
 
-            Y en el componente se usan por medio de
-            <span class="t-bold">this.props</span>.
+              Y en el componente se usan por medio de
+              <span class="t-bold">this.props</span>.
 
-            <pre class="code">
+              <pre class="code">
 
                 <span class="code-comment">//Puedes usar destructuring para acceder fácilmente a las props. El nombre de la variable debe ser igual al nombre del prop.</span>
                 <span class="code-function">render</span>(){
                   <span class="code-var">const</span> {firstName, lastName, jobTitle, twitter} <span class="code-sym">=</span> this.<span class="code-function">props</span>
                 }
               </pre>
-          </article>
-          <article class="course-class__section" id="page-react">
-            <h2 class="course-class__section--title">
-              Páginas en React
-            </h2>
-            <p>
-              Las páginas en React son componentes y conseguir distinguirlas
-              nos servirá para saber que es un componente que adentro lleva
-              otros componentes. <br />
-              Al escribir los props no importa el orden en el que lo hagas,
-              únicamente importa el nombre.
-            </p>
-            <p>
-              Para crear la página es igual al componente, la diferencia es
-              que esta contendra más componente, los cuales deberan ser
-              importados mediante <span class="t-bold">import</span>. <br />
-              La página será la que se importe en el archivo principal
-              index.js.
-            </p>
-          </article>
-          <article class="course-class__section" id="event">
-            <h2 class="course-class__section--title">Eventos</h2>
-            <ul>
-              <li>
-                React dispone de eventos. Cada vez que se recibe información
-                en un input se obtiene un evento
-                <span class="t-bold">onChange</span> y se maneja con un método
-                de la clase this.handleChange.
-              </li>
-              <li>
-                Los elementos button también tienen un evento que es
-                <span class="t-bold">onClick</span>.
-              </li>
-              <li>
-                Cuando hay un botón dentro de un formulario, este
-                automáticamente será de tipo
-                <span class="t-bold">submit</span>. Si no queremos que pase
-                así hay dos maneras de evitarlo: especificando que su valor es
-                de tipo button o manejándolo desde el formulario cuando ocurre
-                el evento <span class="t-bold">onSubmit</span>.
-              </li>
-            </ul>
-            El evento se usa como atributo(props)
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="page-react">
+              <h2 class="course-class__section--title">
+                Páginas en React
+              </h2>
+              <p>
+                Las páginas en React son componentes y conseguir distinguirlas
+                nos servirá para saber que es un componente que adentro lleva
+                otros componentes. <br />
+                Al escribir los props no importa el orden en el que lo hagas,
+                únicamente importa el nombre.
+              </p>
+              <p>
+                Para crear la página es igual al componente, la diferencia es
+                que esta contendra más componente, los cuales deberan ser
+                importados mediante <span class="t-bold">import</span>. <br />
+                La página será la que se importe en el archivo principal
+                index.js.
+              </p>
+            </article>
+            <article class="course-class__section" id="event">
+              <h2 class="course-class__section--title">Eventos</h2>
+              <ul>
+                <li>
+                  React dispone de eventos. Cada vez que se recibe información
+                  en un input se obtiene un evento
+                  <span class="t-bold">onChange</span> y se maneja con un método
+                  de la clase this.handleChange.
+                </li>
+                <li>
+                  Los elementos button también tienen un evento que es
+                  <span class="t-bold">onClick</span>.
+                </li>
+                <li>
+                  Cuando hay un botón dentro de un formulario, este
+                  automáticamente será de tipo
+                  <span class="t-bold">submit</span>. Si no queremos que pase
+                  así hay dos maneras de evitarlo: especificando que su valor es
+                  de tipo button o manejándolo desde el formulario cuando ocurre
+                  el evento <span class="t-bold">onSubmit</span>.
+                </li>
+              </ul>
+              El evento se usa como atributo(props)
+              <pre class="code">
 
                 <span class="code-comment">//Usando el evento de onChange dentro de la caja de texto</span>
                 &lt<span class="code-sym">input</span>
@@ -652,64 +749,66 @@
                   e.<span class="code-function">preventDefault</span>()
                 }
               </pre>
-            <div class="note">
-              <p>Si el evento es onChange el método debe ser handleChange.</p>
-            </div>
-          </article>
-          <article class="course-class__section" id="conditional">
-            <h2 class="course-class__section--title">
-              Condiciones en React JS
-            </h2>
-            <p>
-              Dentro de <span class="t-bold">jsx</span>, para el manejo de
-              condiciones se pueden usar las siguientes:
-            </p>
-            <pre class="code">
+              <div class="note">
+                <p>Si el evento es onChange el método debe ser handleChange.</p>
+              </div>
+            </article>
+            <article class="course-class__section" id="conditional">
+              <h2 class="course-class__section--title">
+                Condiciones en React JS
+              </h2>
+              <p>
+                Dentro de <span class="t-bold">jsx</span>, para el manejo de
+                condiciones se pueden usar las siguientes:
+              </p>
+              <pre class="code">
 
                 {this.state.loading === <span class="code-sym">true</span> ? <span class="code-text">"Parte del true"</span> : <span class="code-text">"Parte del false"</span> }
               </pre>
-            <p>O</p>
-            <pre class="code">
+              <p>O</p>
+              <pre class="code">
 
                 {this.state.loading <span class="code-sym">&&</span> (
                   &lt<span class="code-sym">p</span>&gtSi la condición se cumple se mostrara este parrafo.&lt<span class="code-sym">/p</span>&gt
                  ) }
               </pre>
-          </article>
-          <article class="course-class__section" id="state">
-            <h2 class="course-class__section--title">
-              Estados
-            </h2>
-            <p>
-              Hasta esta clase todos los componentes han obtenido su
-              información a través de props que vienen desde afuera (otros
-              componentes) pero hay otra manera en la que
-              <span class="t-bold">los componentes pueden producir su propia información</span>
-              y guardarla para ser consumida o pasada a otros componentes a
-              través de sus props. La clave está en que la información del
-              <span class="t-bold">state</span> a otros componentes pasará en
-              una sola dirección y podrá ser consumida pero no modificada.
-            </p>
-            <ul>
-              <li>
-                Para guardar la información en el estado se usa una función de
-                la clase component llamada
-                <span class="t-bold">setState</span> a la cual se le debe
-                pasar un objeto con la información que se quiere guardar.
-              </li>
-              <li>
-                Aunque no se ve, la información está siendo guardada en dos
-                sitios. Cada input guarda su propio valor y al tiempo la está
-                guardando en setState, lo cual no es ideal. Para solucionarlo
-                hay que modificar los inputs de un estado de no controlados a
-                <span class="t-bold">controlados</span>.
-              </li>
-            </ul>
-            <p>
-              Guardar dentro del state, la información digitada en el
-              formulario gracias al evento onSubmit y el método handleSubmit.
-            </p>
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="state">
+              <h2 class="course-class__section--title">
+                Estados
+              </h2>
+              <p>
+                Hasta esta clase todos los componentes han obtenido su
+                información a través de props que vienen desde afuera (otros
+                componentes) pero hay otra manera en la que
+                <span class="t-bold"
+                  >los componentes pueden producir su propia información</span
+                >
+                y guardarla para ser consumida o pasada a otros componentes a
+                través de sus props. La clave está en que la información del
+                <span class="t-bold">state</span> a otros componentes pasará en
+                una sola dirección y podrá ser consumida pero no modificada.
+              </p>
+              <ul>
+                <li>
+                  Para guardar la información en el estado se usa una función de
+                  la clase component llamada
+                  <span class="t-bold">setState</span> a la cual se le debe
+                  pasar un objeto con la información que se quiere guardar.
+                </li>
+                <li>
+                  Aunque no se ve, la información está siendo guardada en dos
+                  sitios. Cada input guarda su propio valor y al tiempo la está
+                  guardando en setState, lo cual no es ideal. Para solucionarlo
+                  hay que modificar los inputs de un estado de no controlados a
+                  <span class="t-bold">controlados</span>.
+                </li>
+              </ul>
+              <p>
+                Guardar dentro del state, la información digitada en el
+                formulario gracias al evento onSubmit y el método handleSubmit.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">//Es una función flecha, para así no tener problemas con el this, si se hace con una función normal hay que usar bind, para especificarlo.</span>
                 <span class="code-function">handleChange</span> <span class="code-sym">=</span> (e) => {
@@ -718,8 +817,8 @@
                   })
                 }
               </pre>
-            Guardar todos los campos del formulario:
-            <pre class="code">
+              Guardar todos los campos del formulario:
+              <pre class="code">
 
                 <span class="code-comment">/*[e.target.name] crea variables con el nombre de los inputs del formulario (firstName, lastName, email)
                 e.target.value, guarda el valor ingresado en las cajas de texto dentro de las variables(atributos) nombrados anteriormente*/</span>
@@ -727,25 +826,25 @@
                   [e.target.name] = e.target.value
                 })
               </pre>
-            <div class="note">
+              <div class="note">
+                <p>
+                  El <span class="t-bold">state</span> en React es un objeto que
+                  deriva de la clase React Component. Puede definirse a sí mismo
+                  como un objeto que almacena las propiedades observables que
+                  controlan el comportamiento del componente. (como en este caso
+                  el value de los inputs de los formularios).
+                </p>
+              </div>
               <p>
-                El <span class="t-bold">state</span> en React es un objeto que
-                deriva de la clase React Component. Puede definirse a sí mismo
-                como un objeto que almacena las propiedades observables que
-                controlan el comportamiento del componente. (como en este caso
-                el value de los inputs de los formularios).
+                para declarar una variable como key del set state es necesario
+                escribirla entre corchetes cuadrados:
               </p>
-            </div>
-            <p>
-              para declarar una variable como key del set state es necesario
-              escribirla entre corchetes cuadrados:
-            </p>
-            <pre class="code">
+              <pre class="code">
 
                 [e.target.name]
               </pre>
-            <p>Ejemplo de un <span class="t-bold">input controlado</span>:</p>
-            <pre class="code">
+              <p>Ejemplo de un <span class="t-bold">input controlado</span>:</p>
+              <pre class="code">
 
                 &lt<span class="code-sym">input</span>
                   <span class="code-function">onChange</span> <span class="code-sym">=</span> {this.handleChange}
@@ -754,8 +853,8 @@
                   <span class="code-function">value</span> <span class="code-sym">=</span> {this.state.firstName}
                 /&gt
               </pre>
-            <p>Importante inicializar el state</p>
-            <pre class="code">
+              <p>Importante inicializar el state</p>
+              <pre class="code">
 
                 state <span class="code-sym">=</span> {
                   <span class="code-var">firstName</span> : "",
@@ -779,35 +878,40 @@
                 }
 
               </pre>
-            <p>
-              <span class="t-bold">Resumen formularios controlados</span>:
-              darle el poder a react que controle todo, y que lo que se
-              muestre en las cajas de texto sea state.value, y no lo que
-              digite el usuario, claro que debe estar el evento onChange
-              escuchando cada que digitamos o borramos una letra.
-              <a target="_blank" class="link link-refe t-bold" href="https://es.reactjs.org/docs/forms.html">
-                Documentación formularios controlados</a>.
-            </p>
-          </article>
-          <article class="course-class__section" id="lifting-state">
-            <h2 class="course-class__section--title">
-              Levantamiento del estado
-            </h2>
-            <p>
-              Levantar el estado es una técnica de React que pone el estado en
-              una localización donde se le pueda pasar como props a los
-              componentes. Lo ideal es poner el estado en el lugar más cercano
-              a todos los componentes que quieren compartir esa información.
-              Algo interesante que le da el nombre a React es su parte de
-              "reactivo" ya que cada vez que hay un cambio en el estado o en
-              los props que recibe un componente se vuelve a renderizar todo
-              el componente y todos sus descendientes. <br />
-              <i>
-                Pasar el state a la página y no en el componente, para que así
-                la información se pueda compartir en otros componentes
-              </i>
-            </p>
-            <pre class="code">
+              <p>
+                <span class="t-bold">Resumen formularios controlados</span>:
+                darle el poder a react que controle todo, y que lo que se
+                muestre en las cajas de texto sea state.value, y no lo que
+                digite el usuario, claro que debe estar el evento onChange
+                escuchando cada que digitamos o borramos una letra.
+                <a
+                  target="_blank"
+                  class="link link-refe t-bold"
+                  href="https://es.reactjs.org/docs/forms.html"
+                >
+                  Documentación formularios controlados</a
+                >.
+              </p>
+            </article>
+            <article class="course-class__section" id="lifting-state">
+              <h2 class="course-class__section--title">
+                Levantamiento del estado
+              </h2>
+              <p>
+                Levantar el estado es una técnica de React que pone el estado en
+                una localización donde se le pueda pasar como props a los
+                componentes. Lo ideal es poner el estado en el lugar más cercano
+                a todos los componentes que quieren compartir esa información.
+                Algo interesante que le da el nombre a React es su parte de
+                "reactivo" ya que cada vez que hay un cambio en el estado o en
+                los props que recibe un componente se vuelve a renderizar todo
+                el componente y todos sus descendientes. <br />
+                <i>
+                  Pasar el state a la página y no en el componente, para que así
+                  la información se pueda compartir en otros componentes
+                </i>
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">//En la <span class="t-bold">página</span>, que tendra el state, se crea el método handleChange</span>
                 <span class="code-function">handleChange</span>= (e) => {
@@ -827,12 +931,12 @@
                   <span class="code-function">dataForm</span> = {this.state.form}
                 /&gt
               </pre>
-            <p>
-              En los inputs del componente hijo, al evento dispararse el
-              evento onChange, se llamara al método handleChange del
-              componente padre.
-            </p>
-            <pre class="code">
+              <p>
+                En los inputs del componente hijo, al evento dispararse el
+                evento onChange, se llamara al método handleChange del
+                componente padre.
+              </p>
+              <pre class="code">
 
                 &lt<span class="code-sym">input</span>
                   <span class="code-comment">//Se llama al método del componente padre pasado como prop.</span>
@@ -842,23 +946,23 @@
                   <span class="code-function">value</span> <span class="code-sym">=</span> {this.props.dataForm}
                 /&gt
               </pre>
-            <p>
-              Al modificar directamente el state, sin utilizar la función
-              <span class="t-bold">setState</span>, se pierde el poder de
-              React como, por ejemplo:
-              <span class="t-bold">componentDidMount</span>, no verá esto como
-              una actualización porque se modifica directamente.
-            </p>
-            <p>
-              Una forma sencilla y clara de modificar el state sin alterar su
-              <span class="t-bold">mutabilidad</span> es mediante el siguiente
-              ejemplo: <br />
-              En el state hay un array de géneros de películas, el array tiene
-              un nombre, una descripción y un array de películas. Lo que se
-              quiere es modificar el array de películas por los datos de una
-              API y actualizar el state sin mutarlo.
-            </p>
-            <pre class="code">
+              <p>
+                Al modificar directamente el state, sin utilizar la función
+                <span class="t-bold">setState</span>, se pierde el poder de
+                React como, por ejemplo:
+                <span class="t-bold">componentDidMount</span>, no verá esto como
+                una actualización porque se modifica directamente.
+              </p>
+              <p>
+                Una forma sencilla y clara de modificar el state sin alterar su
+                <span class="t-bold">mutabilidad</span> es mediante el siguiente
+                ejemplo: <br />
+                En el state hay un array de géneros de películas, el array tiene
+                un nombre, una descripción y un array de películas. Lo que se
+                quiere es modificar el array de películas por los datos de una
+                API y actualizar el state sin mutarlo.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">//Primero clonar el array de géneros, hacerle una copia</span>
                 <span class="code-var">const</span> genreNew = [...this.state.genre]
@@ -877,46 +981,56 @@
                   genre : genreNew
                 })
               </pre>
-            <div class="note">
+              <div class="note">
+                <p>
+                  Más información de como modificar el index de un array en el
+                  state.
+                  <a
+                    class="link link-refe t-bold"
+                    target="_blank"
+                    href="https://stackoverflow.com/questions/29537299/react-how-do-i-update-state-item1-on-setstate-with-jsfiddle"
+                    >Update state item</a
+                  >. <br />
+                  Inmutablidad en React JS
+                  <a
+                    class="link link-refe t-bold"
+                    target="_blank"
+                    href="https://stackoverflow.com/questions/46232867/why-is-react-setstate-method-immutable"
+                    >setState method immutable</a
+                  >.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="list-component">
+              <h2 class="course-class__section--title">
+                Lista de componentes
+              </h2>
               <p>
-                Más información de como modificar el index de un array en el
-                state.
-                <a class="link link-refe t-bold" target="_blank"
-                  href="https://stackoverflow.com/questions/29537299/react-how-do-i-update-state-item1-on-setstate-with-jsfiddle">Update
-                  state item</a>. <br />
-                Inmutablidad en React JS
-                <a class="link link-refe t-bold" target="_blank"
-                  href="https://stackoverflow.com/questions/46232867/why-is-react-setstate-method-immutable">setState
-                  method immutable</a>.
+                Cuando queremos hacer una lista de elementos tener en cuenta que
+                para cada ítem <span class="t-bold">(li)</span> se le debe pasar
+                un atributo data-id para así ayudar a react, para cuando se
+                renderice ver si ese elemento con ese id cambio, se quitó, o se
+                mantuvo en la lista, el data clave debe ser único.
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://reactjs.org/docs/lists-and-keys.html#keys"
+                  >documentación</a
+                >
               </p>
-            </div>
-          </article>
-          <article class="course-class__section" id="list-component">
-            <h2 class="course-class__section--title">
-              Lista de componentes
-            </h2>
-            <p>
-              Cuando queremos hacer una lista de elementos tener en cuenta que
-              para cada ítem <span class="t-bold">(li)</span> se le debe pasar
-              un atributo data-id para así ayudar a react, para cuando se
-              renderice ver si ese elemento con ese id cambio, se quitó, o se
-              mantuvo en la lista, el data clave debe ser único.
-              <a class="link link-refe" target="_blank"
-                href="https://reactjs.org/docs/lists-and-keys.html#keys">documentación</a>
-            </p>
-            <pre class="code">
+              <pre class="code">
 
                 &lt<span class="code-sym">li</span> <span class="code-function">key</span> = {badge.id} &gt
               </pre>
-            <p>
-              Es recomendable usar la función
-              <span class="t-bold">map</span> para recorrer el array de
-              elementos a mostrar en pantalla, Hay que recordar que los
-              elementos que se repiten y tiene el mismo estilo como las
-              listas, deben ser componentes así que deben de estar en un
-              archivo aparte.
-            </p>
-            <pre class="code">
+              <p>
+                Es recomendable usar la función
+                <span class="t-bold">map</span> para recorrer el array de
+                elementos a mostrar en pantalla, Hay que recordar que los
+                elementos que se repiten y tiene el mismo estilo como las
+                listas, deben ser componentes así que deben de estar en un
+                archivo aparte.
+              </p>
+              <pre class="code">
 
                 <span class="code-function">render</span>(){
                   <span class="code-sym t-bold">return</span>(
@@ -936,12 +1050,12 @@
                   )
                 }
               </pre>
-          </article>
-          <article class="course-class__section" id="icon">
-            <h2 class="course-class__section--title">
-              Iconos con FontAwesome
-            </h2>
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="icon">
+              <h2 class="course-class__section--title">
+                Iconos con FontAwesome
+              </h2>
+              <pre class="code">
 
                 <span class="code-comment">//Instalación con npm</span>
                 npm i --save @fortawesome/fontawesome-svg-core
@@ -956,58 +1070,66 @@
                 <span class="code-comment">//Usando el icono</span>
                 &lt<span class="code-sym">FontAwesomeIcon</span> <span class="code-function">icon</span> <span class="code-sym">=</span> {faTwitter} /&gt
               </pre>
-            <a target="_blank" href="https://www.npmjs.com/package/@fortawesome/react-fontawesome"
-              class="link link-refe">Documentación</a>.
-          </article>
-          <article class="course-class__section" id="react-router">
-            <h2 class="course-class__section--title">React Router</h2>
-            <p>
-              Las aplicaciones que se trabajan en React son llamadas
-              <span class="t-bold">single page apps</span>. Esto es posible
-              gracias a
-              <a class="link link-refe t-bold" href="https://reacttraining.com/react-router/web/guides/quick-start"
-                target="_blank">React Router</a>
-              que es una librería Open Source. <br />
-              <span class="t-bold">Multi Page Apps</span>: Cada página implica
-              una petición al servidor. La respuesta usualmente tiene todo el
-              contenido de la página. <br />
-              <span class="t-bold">Single Page Apps (SPA)</span>: Aplicaciones
-              que cargan una sola página de HTML y cualquier actualización la
-              hacen re-escribiendo el HTML que ya tenían. <br />
-              <span class="t-bold">React Router (v4)</span>: Nos da las
-              herramientas para poder hacer SPA fácilmente. Usaremos 4
-              componentes:
-            </p>
-            <ul>
-              <li>
-                <span class="t-bold">BrowserRouter</span>: es un componente
-                que debe estar siempre lo más arriba de la aplicación. Todo lo
-                que esté adentro funcionará como una SPA.
-              </li>
-              <li>
-                <span class="t-bold">Route</span>: Cuando hay un match con el
-                path, se hace render del component. El component va a recibir
-                tres props: match, history, location.
-              </li>
-              <li>
-                <span class="t-bold">Switch</span>: Dentro de Switch solamente
-                van elementos de Route. Switch se asegura que solamente un
-                Route se renderize.
-              </li>
-              <li>
-                <span class="t-bold">Link</span>: Toma el lugar del elemento
-                &lt<span class="code-sym">a</span>&gt, evita que se recargue
-                la página completamente y actualiza la URL.
-              </li>
-            </ul>
-            <div class="note">
+              <a
+                target="_blank"
+                href="https://www.npmjs.com/package/@fortawesome/react-fontawesome"
+                class="link link-refe"
+                >Documentación</a
+              >.
+            </article>
+            <article class="course-class__section" id="react-router">
+              <h2 class="course-class__section--title">React Router</h2>
               <p>
-                Gracias a <span class="t-bold">SPA</span> No perdemos toda la
-                información, no hay que pintar todo de nuevo, es mucho más
-                rápido.
+                Las aplicaciones que se trabajan en React son llamadas
+                <span class="t-bold">single page apps</span>. Esto es posible
+                gracias a
+                <a
+                  class="link link-refe t-bold"
+                  href="https://reacttraining.com/react-router/web/guides/quick-start"
+                  target="_blank"
+                  >React Router</a
+                >
+                que es una librería Open Source. <br />
+                <span class="t-bold">Multi Page Apps</span>: Cada página implica
+                una petición al servidor. La respuesta usualmente tiene todo el
+                contenido de la página. <br />
+                <span class="t-bold">Single Page Apps (SPA)</span>: Aplicaciones
+                que cargan una sola página de HTML y cualquier actualización la
+                hacen re-escribiendo el HTML que ya tenían. <br />
+                <span class="t-bold">React Router (v4)</span>: Nos da las
+                herramientas para poder hacer SPA fácilmente. Usaremos 4
+                componentes:
               </p>
-            </div>
-            <pre class="code">
+              <ul>
+                <li>
+                  <span class="t-bold">BrowserRouter</span>: es un componente
+                  que debe estar siempre lo más arriba de la aplicación. Todo lo
+                  que esté adentro funcionará como una SPA.
+                </li>
+                <li>
+                  <span class="t-bold">Route</span>: Cuando hay un match con el
+                  path, se hace render del component. El component va a recibir
+                  tres props: match, history, location.
+                </li>
+                <li>
+                  <span class="t-bold">Switch</span>: Dentro de Switch solamente
+                  van elementos de Route. Switch se asegura que solamente un
+                  Route se renderize.
+                </li>
+                <li>
+                  <span class="t-bold">Link</span>: Toma el lugar del elemento
+                  &lt<span class="code-sym">a</span>&gt, evita que se recargue
+                  la página completamente y actualiza la URL.
+                </li>
+              </ul>
+              <div class="note">
+                <p>
+                  Gracias a <span class="t-bold">SPA</span> No perdemos toda la
+                  información, no hay que pintar todo de nuevo, es mucho más
+                  rápido.
+                </p>
+              </div>
+              <pre class="code">
 
                 <span class="code-comment">//Brouser Router hace que el switch, link, route funcionen este siempre debe estar declarado en lo más alto de la página.</span>
                 
@@ -1017,38 +1139,38 @@
               
                 <span class="code-comment">//Switch igual al switch de js, solo se ejecuta una opción de muchas.</span>                  
               </pre>
-          </article>
-          <article class="course-class__section">
-            <h2 class="course-class__section--title">
-              Dividiendo la aplicación en rutas
-            </h2>
-            <p>
-              Lo primero es instalar React Router por npm.
-            </p>
-            <pre class="code">
+            </article>
+            <article class="course-class__section">
+              <h2 class="course-class__section--title">
+                Dividiendo la aplicación en rutas
+              </h2>
+              <p>
+                Lo primero es instalar React Router por npm.
+              </p>
+              <pre class="code">
 
                 npm install react-router-dom
               </pre>
-            <p>
-              Se comienza con browser Router, esto habilita que la app
-              funcione con react Router, se crea un nuevo componente, es allí
-              donde se usará react Router y donde se añadirán las rutas. Se
-              crea un archivo en la carpeta de components llamado
-              <span class="t-bold">App.js</span>. <br /><br />
-              Y dicho componente se importa en el index.js.
-            </p>
-            <pre class="code">
+              <p>
+                Se comienza con browser Router, esto habilita que la app
+                funcione con react Router, se crea un nuevo componente, es allí
+                donde se usará react Router y donde se añadirán las rutas. Se
+                crea un archivo en la carpeta de components llamado
+                <span class="t-bold">App.js</span>. <br /><br />
+                Y dicho componente se importa en el index.js.
+              </p>
+              <pre class="code">
 
                 <span class="code-sym">import</span> App <span class="code-sym">from</span> <span class="code-text">"../components/App"</span>
               </pre>
-            <p>
-              Dentro de App, se crea el componente, pero esta vez no sera una
-              clase si no un componente <span class="t-bold">funcional</span>,
-              ya que no necesitaremos del state. Se procede a import React
-              Router, y el primer componente como ya se dijo debe ser
-              <span class="t-bold">BrowserRouter</span>.
-            </p>
-            <pre class="code">
+              <p>
+                Dentro de App, se crea el componente, pero esta vez no sera una
+                clase si no un componente <span class="t-bold">funcional</span>,
+                ya que no necesitaremos del state. Se procede a import React
+                Router, y el primer componente como ya se dijo debe ser
+                <span class="t-bold">BrowserRouter</span>.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">//App iria quedando así:</span>
                 
@@ -1069,34 +1191,36 @@
 
                 <span class="code-sym">export default</span> App
               </pre>
-            <p>
-              Dentro de esos tags se van a añadir las rutas, que serán las
-              paginas de nuestra aplicación.
-            </p>
-            <pre class="code">
+              <p>
+                Dentro de esos tags se van a añadir las rutas, que serán las
+                paginas de nuestra aplicación.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">//Esas páginas hay que importarlas antes, (donde se importa todo)</span>
                 &lt<span class="code-sym">Route</span> <span class="code-function">path</span> <span class="code-sym">=</span> <span class="code-text">"/badges"</span> <span class="code-function">component</span> <span class="code-sym">=</span> {Badge} /&gt
                 &lt<span class="code-sym">Route</span> <span class="code-function">path</span> <span class="code-sym">=</span> <span class="code-text">"/badges/new"</span> <span class="code-function">component</span> <span class="code-sym">=</span> {BadgeNew} /&gt
               </pre>
-            <p>
-              Si se dejara esto así, se generaria el siguiente error
-              <span class="t-bold">"Uncaught Invariat Violation: A &ltRouter&gt, may have only
-                one child element."</span>
-              <br />
-              Esto se debe a que BrowserRouter, solo acepta un solo hijo, y le
-              estamos pasando dos (2 Route). Se podría colocar un
-              <span class="t-bold">div</span> y dentro de él colocar los
-              Route. Aunque esto generaría 2 errores, uno que se recargaría
-              toda la página algo que se quiere evitar y segundo las páginas
-              se renderizarían a la misma vez. En vez de usar un div se
-              utiliza <span class="t-bold">Switch</span>, este toma la
-              dirección que está en el navegador y renderizara una sola
-              página, la primera que coincida con dicha ruta, para asegurarnos
-              de que la ruta que se va a renderizar sea la correcta, que sea
-              exacta se coloca el prop <span class="t-bold">exact</span>.
-            </p>
-            <pre class="code">
+              <p>
+                Si se dejara esto así, se generaria el siguiente error
+                <span class="t-bold"
+                  >"Uncaught Invariat Violation: A &ltRouter&gt, may have only
+                  one child element."</span
+                >
+                <br />
+                Esto se debe a que BrowserRouter, solo acepta un solo hijo, y le
+                estamos pasando dos (2 Route). Se podría colocar un
+                <span class="t-bold">div</span> y dentro de él colocar los
+                Route. Aunque esto generaría 2 errores, uno que se recargaría
+                toda la página algo que se quiere evitar y segundo las páginas
+                se renderizarían a la misma vez. En vez de usar un div se
+                utiliza <span class="t-bold">Switch</span>, este toma la
+                dirección que está en el navegador y renderizara una sola
+                página, la primera que coincida con dicha ruta, para asegurarnos
+                de que la ruta que se va a renderizar sea la correcta, que sea
+                exacta se coloca el prop <span class="t-bold">exact</span>.
+              </p>
+              <pre class="code">
 
                 <span class="code-sym">import</span> React <span class="code-sym">from</span> <span class="code-text">"react"</span>
                 <span class="code-sym">import</span> {BrowserRouter, Route, Switch, Link} <span class="code-sym">from</span> <span class="code-text">"react-router-dom"</span>
@@ -1114,61 +1238,61 @@
 
                 <span class="code-sym">export default</span> App
               </pre>
-            <p>Solo quedaria reemplazar las anclas por Link.</p>
-            <pre class="code">
+              <p>Solo quedaria reemplazar las anclas por Link.</p>
+              <pre class="code">
 
                 &lt<span class="code-sym">Link</span> <span class="code-function">to</span> <span class="code-sym">=</span> <span class="code-text">"/badge/new"</span> <span class="code-function">className</span> <span class="code-sym">=</span> <span class="code-text">"btn btn--primary"</span> &gt 
                   New Badge
                 &lt<span class="code-sym">/Link</span>&gt
               </pre>
-            <p>
-              Si quieren pasar props a cada componente deberían borrar el
-              atributo component y cambiarlo por render. render quedaría un
-              arrow function para que no se ejecute al instante y espere la
-              decisión del usuario. Dentro del segundo paréntesis damos por
-              implícito el return.
-            </p>
-            <pre class="code">
+              <p>
+                Si quieren pasar props a cada componente deberían borrar el
+                atributo component y cambiarlo por render. render quedaría un
+                arrow function para que no se ejecute al instante y espere la
+                decisión del usuario. Dentro del segundo paréntesis damos por
+                implícito el return.
+              </p>
+              <pre class="code">
 
                 &lt<span class="code-sym">Route</span> <span class="code-function">exact</span> <span class="code-function">path</span> <span class="code-sym">=</span> <span class="code-text">"/badges/new"</span> <span class="code-function">render</span> <span class="code-sym">=</span> {() => ( &ltBadges <span class="code-function">props</span> <span class="code-sym">=</span> {this.props} )} /&gt
               </pre>
-          </article>
-          <article class="course-class__section" id="layout">
-            <h2 class="course-class__section--title">Layout</h2>
-            <ul>
-              <li>
-                <strong>React.Fragment</strong> es la herramienta que te
-                ayudará a renderizar varios componentes y/o elementos sin
-                necesidad de colocar un div o cualquier otro elemento de HTML
-                para renderizar sus hijos. Al usar esta característica de
-                React podremos renderizar un código más limpio y legible, ya
-                que React.Fragment no se renderiza en el navegador o solo
-                colando (&lt &gt).
-              </li>
-              <li>
-                El 404 es la ruta que se renderizará cuando ninguna otra
-                coincida con la dirección ingresada.
-              </li>
-            </ul>
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="layout">
+              <h2 class="course-class__section--title">Layout</h2>
+              <ul>
+                <li>
+                  <strong>React.Fragment</strong> es la herramienta que te
+                  ayudará a renderizar varios componentes y/o elementos sin
+                  necesidad de colocar un div o cualquier otro elemento de HTML
+                  para renderizar sus hijos. Al usar esta característica de
+                  React podremos renderizar un código más limpio y legible, ya
+                  que React.Fragment no se renderiza en el navegador o solo
+                  colando (&lt &gt).
+                </li>
+                <li>
+                  El 404 es la ruta que se renderizará cuando ninguna otra
+                  coincida con la dirección ingresada.
+                </li>
+              </ul>
+              <pre class="code">
 
                 <span class="code-comment">//Si el usuario ingresa una ruta incorrecta podemos mostrar el 404 de la siguiente forma:</span>
                 &lt<span class="code-sym">Route</span> <span class="code-function">component</span> <span class="code-sym">=</span> {NotFound} /&gt
               </pre>
-            <p>
-              Al contruir páginas con react, debemos ver que componentes se
-              estan reptiendo que código se repite, para poder evitarlo, hay
-              páginas donde el navbar y el footer se repiten para todo el
-              sitio. Este código repetido se puede llevar a un solo sitio para
-              que se comparta en todas las paginas a eso se le llama
-              <span class="t-bold">layout</span> o plantilla en común para
-              todas las páginas.
-            </p>
-            <p>
-              El Layout sera un componente funcional que se importar en App.js
-              donde esta el React Router.
-            </p>
-            <pre class="code">
+              <p>
+                Al contruir páginas con react, debemos ver que componentes se
+                estan reptiendo que código se repite, para poder evitarlo, hay
+                páginas donde el navbar y el footer se repiten para todo el
+                sitio. Este código repetido se puede llevar a un solo sitio para
+                que se comparta en todas las paginas a eso se le llama
+                <span class="t-bold">layout</span> o plantilla en común para
+                todas las páginas.
+              </p>
+              <p>
+                El Layout sera un componente funcional que se importar en App.js
+                donde esta el React Router.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">//Todo lo que tiene Switch queda dentro del componente Layout</span>
                 &lt<span class="code-sym">BrowserRouter</span>&gt
@@ -1180,12 +1304,12 @@
                   &lt<span class="code-sym">/Layout</span>&gt
                 &lt<span class="code-sym">/BrowserRouter</span>&gt
               </pre>
-            <p>
-              Ahora para que esto funcione y se pueda renderizar las páginas
-              dentro del componente Layout, se deben retornar sus hijo, que
-              sera Switch.
-            </p>
-            <pre class="code">
+              <p>
+                Ahora para que esto funcione y se pueda renderizar las páginas
+                dentro del componente Layout, se deben retornar sus hijo, que
+                sera Switch.
+              </p>
+              <pre class="code">
 
                 <span class="code-var">function</span> <span class="code-function">Layout</span>(props){
                   <span class="code-sym">return</span>(
@@ -1204,88 +1328,88 @@
                 tendran tu custom Navbar y tu Custom Footer
                 </span>
               </pre>
-            <div class="note">
+              <div class="note">
+                <p>
+                  Si el componente tiene etiquetas de apertura y cierre, se
+                  deben retornar sus children, mediante sus props.
+                  {this.props.children}.
+                </p>
+                <p>
+                  Componente clase -> presentacional <br />
+                  Componente funcion -> funcional
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="lifecycle">
+              <h2 class="course-class__section--title">
+                Ciclo de vida de un componente
+              </h2>
               <p>
-                Si el componente tiene etiquetas de apertura y cierre, se
-                deben retornar sus children, mediante sus props.
-                {this.props.children}.
+                Cuando React renderiza los componentes decimos que entran en
+                escena, cuando su estado cambia o recibe unos props diferentes
+                se actualizan y cuando cambiamos de página se dice que se
+                desmontan.
               </p>
+              <ul>
+                <li>
+                  <span class="t-bold">
+                    Montaje
+                  </span>
+                  <ul>
+                    <li>
+                      Representa el momento donde se inserta el código del
+                      componente en el DOM.
+                    </li>
+                    <li>
+                      Se llaman tres métodos: constructor (donde se inicializan
+                      los estados o valores), render (momento preciso donde
+                      react calcula este elemento y lo introduce en el código),
+                      <strong>componentDidMount</strong> (una vez lo del render
+                      ocurra, react envía una señal, ejecuta el método
+                      componentDidMount, ya con esto el código es visible en
+                      pantalla).
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <span class="t-bold">Actualización</span>
+                  <ul>
+                    <li>
+                      Ocurre cuando los props o el estado del componente
+                      cambian.
+                    </li>
+                    <li>
+                      Se llaman dos métodos: render,
+                      <strong>componentDidUpdate</strong> (recibe dos
+                      argumentos, los props que tenía anteriormente y el estado
+                      que tenía ).
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <span class="t-bold">Desmontaje</span>
+                  <ul>
+                    <li>
+                      Nos da la oportunidad de hacer limpieza de nuestro
+                      componente. Cuando el componente sale de escena, ejemplo
+                      cuando se va de una página a otra.
+                    </li>
+                    <li>
+                      Se llama un método:
+                      <strong>componentWillUnmount</strong> (lugar perfecto para
+                      limpiar memoria).
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <h3>Practica del ciclo de vida</h3>
+              <p>Un componente pasa por muchos estados.</p>
               <p>
-                Componente clase -> presentacional <br />
-                Componente funcion -> funcional
+                <span class="t-bold">El constructor</span> recibe unos props,
+                esos props se le pasan al constructor de la clase padre (super).
+                El constructor es el lugar donde se deben inicializar los datos.
               </p>
-            </div>
-          </article>
-          <article class="course-class__section" id="lifecycle">
-            <h2 class="course-class__section--title">
-              Ciclo de vida de un componente
-            </h2>
-            <p>
-              Cuando React renderiza los componentes decimos que entran en
-              escena, cuando su estado cambia o recibe unos props diferentes
-              se actualizan y cuando cambiamos de página se dice que se
-              desmontan.
-            </p>
-            <ul>
-              <li>
-                <span class="t-bold">
-                  Montaje
-                </span>
-                <ul>
-                  <li>
-                    Representa el momento donde se inserta el código del
-                    componente en el DOM.
-                  </li>
-                  <li>
-                    Se llaman tres métodos: constructor (donde se inicializan
-                    los estados o valores), render (momento preciso donde
-                    react calcula este elemento y lo introduce en el código),
-                    <strong>componentDidMount</strong> (una vez lo del render
-                    ocurra, react envía una señal, ejecuta el método
-                    componentDidMount, ya con esto el código es visible en
-                    pantalla).
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <span class="t-bold">Actualización</span>
-                <ul>
-                  <li>
-                    Ocurre cuando los props o el estado del componente
-                    cambian.
-                  </li>
-                  <li>
-                    Se llaman dos métodos: render,
-                    <strong>componentDidUpdate</strong> (recibe dos
-                    argumentos, los props que tenía anteriormente y el estado
-                    que tenía ).
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <span class="t-bold">Desmontaje</span>
-                <ul>
-                  <li>
-                    Nos da la oportunidad de hacer limpieza de nuestro
-                    componente. Cuando el componente sale de escena, ejemplo
-                    cuando se va de una página a otra.
-                  </li>
-                  <li>
-                    Se llama un método:
-                    <strong>componentWillUnmount</strong> (lugar perfecto para
-                    limpiar memoria).
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <h3>Practica del ciclo de vida</h3>
-            <p>Un componente pasa por muchos estados.</p>
-            <p>
-              <span class="t-bold">El constructor</span> recibe unos props,
-              esos props se le pasan al constructor de la clase padre (super).
-              El constructor es el lugar donde se deben inicializar los datos.
-            </p>
-            <pre class="code">
+              <pre class="code">
 
                 <span class="code-var">constructor</span>(props){
                   super(props)
@@ -1309,24 +1433,24 @@
                   }
                 }
               </pre>
-            <p>
-              <span class="t-bold">componentDidMount</span>, que será el que
-              se ejecuta después del render. Es en este método el ideal si
-              queremos hacer una petición aun API, ya que esa llamada se
-              ejectura una vez nuestros componentes esten cargados en
-              pantalla.
-            </p>
-            <pre class="code">
+              <p>
+                <span class="t-bold">componentDidMount</span>, que será el que
+                se ejecuta después del render. Es en este método el ideal si
+                queremos hacer una petición aun API, ya que esa llamada se
+                ejectura una vez nuestros componentes esten cargados en
+                pantalla.
+              </p>
+              <pre class="code">
 
                 <span class="code-function">componentDidMount</span>(){
                   <span class="code-var">console</span>.log(<span class="code-text">"this is a componentDidMount"</span>)
                 }
               </pre>
-            <p>
-              <span class="t-bold">Render</span>, dentro de el estarán todos
-              los componentes que se mostraran en pantalla.
-            </p>
-            <pre class="code">
+              <p>
+                <span class="t-bold">Render</span>, dentro de el estarán todos
+                los componentes que se mostraran en pantalla.
+              </p>
+              <pre class="code">
 
                 <span class="code-function">render</span>(){
                   <span class="code-sym">return</span>(
@@ -1338,19 +1462,19 @@
                   )
                 }
               </pre>
-            <pre class="code">
+              <pre class="code">
 
                 <span class="code-comment">//El orden en que se ejecutan es el siguiente.</span>
                 <span class="code-comment">1. constructor()</span>
                 <span class="code-comment">2. render()</span>
                 <span class="code-comment">3. componentDidMount()</span>
               </pre>
-            <p>
-              Si nuestro componente hay un cambió en el state o en los props,
-              lo que hace React es volver a llamar al método render y dispara
-              la señal <span class="t-bold">componentDidUpdate</span>.
-            </p>
-            <pre class="code">
+              <p>
+                Si nuestro componente hay un cambió en el state o en los props,
+                lo que hace React es volver a llamar al método render y dispara
+                la señal <span class="t-bold">componentDidUpdate</span>.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">//El nuevo orden de ejecución seria:</span>
                 <span class="code-comment">1. constructor()</span>
@@ -1359,11 +1483,11 @@
                 <span class="code-comment">4. render()</span>
                 <span class="code-comment">5. componentDidUpdate()</span>
               </pre>
-            <p>
-              El método componentDidUpdate recibe dos parámetros los props que
-              tenía antes y el state que tenía antes
-            </p>
-            <pre class="code">
+              <p>
+                El método componentDidUpdate recibe dos parámetros los props que
+                tenía antes y el state que tenía antes
+              </p>
+              <pre class="code">
 
                 <span class="code-function">componentDidUpdate</span>(prevProps, prevState){
                   <span class="code-comment">//imprimir datos que tenía antes</span>
@@ -1379,12 +1503,12 @@
                   })
                 }
               </pre>
-            <p>
-              <span class="t-bold">Desmontaje</span>, El ultimo método es el
-              <span class="t-bold">componentWillUnmount</span> es el que se
-              ejecuta antes de que el componente salga de escena.
-            </p>
-            <pre class="code">
+              <p>
+                <span class="t-bold">Desmontaje</span>, El ultimo método es el
+                <span class="t-bold">componentWillUnmount</span> es el que se
+                ejecuta antes de que el componente salga de escena.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">//Orden de ejecución:</span>
                 <span class="code-comment">1. constructor()</span>
@@ -1394,67 +1518,73 @@
                 <span class="code-comment">5. componentDidUpdate()</span>
                 <span class="code-comment">6. componentWillUnmount()</span>
               </pre>
-            <p>
-              El <span class="t-bold">componentWillUnmount()</span>, es el
-              lugar donde debemos limpiar procesos que se están ejecutando,
-              como funciones asíncronas.
-            </p>
-            <pre class="code">
+              <p>
+                El <span class="t-bold">componentWillUnmount()</span>, es el
+                lugar donde debemos limpiar procesos que se están ejecutando,
+                como funciones asíncronas.
+              </p>
+              <pre class="code">
 
                 <span class="code-function">componentWillUnmount</span>(){
                   <span class="code-comment">//Cancelar un setTimeOut</span>
                   <span class="code-var">clearTimeout</span>(this.timeOutID)
                 }
               </pre>
-          </article>
-          <article class="course-class__section" id="api">
-            <h2 class="course-class__section--title">Llamadas API</h2>
-            <p>
-              Las llamadas a una API siguen un patrón similar siempre que las
-              hacemos, cada llamada consta de tres estados:
-            </p>
-            <ul>
-              <li>
-                <span class="t-bold">Loading</span>: cuando la petición se
-                envía y estamos esperando.
-              </li>
-              <li>
-                <span class="t-bold">Error</span>: se debe dejar un mensaje
-                para el usuario para arreglar el error o volver a intentarlo.
-              </li>
-              <li>
-                <span class="t-bold">Data</span>: los datos nos pueden llegar
-                de dos formas, o en error o con los datos requeridos.
-              </li>
-            </ul>
-            <a class="link link-refe t-bold" target="_blank"
-              href="https://blog.iamsuleiman.com/stop-using-loading-spinner-theres-something-better/">Loading
-              Spinner</a>
-            <h3>Datos API React</h3>
-            <p>
-              Una llamada a una API es un proceso asíncrono, es decir que lo
-              comenzamos, pero no sabemos cuándo acabará. Por lo mismo la
-              función a escribir debe ser asíncrona. La llamada se hará usando
-              <span class="t-bold">fetch</span> que es una función de React
-              que, al pasarle una dirección de internet, hará una petición
-              <span class="t-bold">GET</span> y lo que sea que exista ahí será
-              devuelto.
-              <a class="link link-refe" target="_blank"
-                href="https://es.reactjs.org/docs/state-and-lifecycle.html#state-updates-may-be-asynchronous">Asynchronous
-                React</a>.
-            </p>
-          </article>
-          <article class="course-class__section" id="get">
-            <h2 class="course-class__section--title">
-              Solicitando datos GET
-            </h2>
-            <p>
-              Lo primero es definir en el state valores iniciales, para tres
-              variables (atributos), como son la data (donde se guardarán los
-              datos resultantes del llamado a la API), loading (estado de
-              carga) y el error.
-            </p>
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="api">
+              <h2 class="course-class__section--title">Llamadas API</h2>
+              <p>
+                Las llamadas a una API siguen un patrón similar siempre que las
+                hacemos, cada llamada consta de tres estados:
+              </p>
+              <ul>
+                <li>
+                  <span class="t-bold">Loading</span>: cuando la petición se
+                  envía y estamos esperando.
+                </li>
+                <li>
+                  <span class="t-bold">Error</span>: se debe dejar un mensaje
+                  para el usuario para arreglar el error o volver a intentarlo.
+                </li>
+                <li>
+                  <span class="t-bold">Data</span>: los datos nos pueden llegar
+                  de dos formas, o en error o con los datos requeridos.
+                </li>
+              </ul>
+              <a
+                class="link link-refe t-bold"
+                target="_blank"
+                href="https://blog.iamsuleiman.com/stop-using-loading-spinner-theres-something-better/"
+                >Loading Spinner</a
+              >
+              <h3>Datos API React</h3>
+              <p>
+                Una llamada a una API es un proceso asíncrono, es decir que lo
+                comenzamos, pero no sabemos cuándo acabará. Por lo mismo la
+                función a escribir debe ser asíncrona. La llamada se hará usando
+                <span class="t-bold">fetch</span> que es una función de React
+                que, al pasarle una dirección de internet, hará una petición
+                <span class="t-bold">GET</span> y lo que sea que exista ahí será
+                devuelto.
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://es.reactjs.org/docs/state-and-lifecycle.html#state-updates-may-be-asynchronous"
+                  >Asynchronous React</a
+                >.
+              </p>
+            </article>
+            <article class="course-class__section" id="get">
+              <h2 class="course-class__section--title">
+                Solicitando datos GET
+              </h2>
+              <p>
+                Lo primero es definir en el state valores iniciales, para tres
+                variables (atributos), como son la data (donde se guardarán los
+                datos resultantes del llamado a la API), loading (estado de
+                carga) y el error.
+              </p>
+              <pre class="code">
 
                 state = {
                   <span class="code-comment">//Estado de carga en true, para mostrar al usuario que se estan cargando los datos.</span>
@@ -1467,13 +1597,13 @@
                   error : <span class="code-sym">null</span>
                 }
               </pre>
-            <p>
-              Dentro del <span class="t-bold">render</span>, podemos mostrar
-              uno de estos casos, la acción de carga (para mejorar la
-              experiencia de usuario), los datos o un mensaje de error o
-              warning.
-            </p>
-            <pre class="code">
+              <p>
+                Dentro del <span class="t-bold">render</span>, podemos mostrar
+                uno de estos casos, la acción de carga (para mejorar la
+                experiencia de usuario), los datos o un mensaje de error o
+                warning.
+              </p>
+              <pre class="code">
 
                 <span class="code-function">render</span>(){
 
@@ -1493,13 +1623,13 @@
                   )
                 }
               </pre>
-            <p>
-              Se debe tener un método que es el que hará la llamada a la API
-              <span class="t-bold">fetchData</span>, en él se vuelve a iniciar
-              el state a sus valores por defecto. Se manejaran los errores con
-              un <span class="t-bold">try catch</span>.
-            </p>
-            <pre class="code">
+              <p>
+                Se debe tener un método que es el que hará la llamada a la API
+                <span class="t-bold">fetchData</span>, en él se vuelve a iniciar
+                el state a sus valores por defecto. Se manejaran los errores con
+                un <span class="t-bold">try catch</span>.
+              </p>
+              <pre class="code">
 
                 <span class="code-function">fetchData</span>(){
                   <span class="code-comment">//Valores por defecto del state</span>
@@ -1515,12 +1645,12 @@
                   }
                 }
               </pre>
-            <p>
-              Si tenemos suerte recibimos unos datos y esos datos los
-              guardamos en el state, y si tenemos un error lo manejamos en el
-              catch y también se guarda en el state.
-            </p>
-            <pre class="code">
+              <p>
+                Si tenemos suerte recibimos unos datos y esos datos los
+                guardamos en el state, y si tenemos un error lo manejamos en el
+                catch y también se guarda en el state.
+              </p>
+              <pre class="code">
 
                 <span class="code-var">try</span>{
                   <span class="code-var">const</span> data = []
@@ -1534,25 +1664,25 @@
                   })
                 }
               </pre>
-            <p>
-              <span class="t-bold">Loading</span> para los dos casos es false,
-              porque se supone que ya termino de buscar, todo comienza en el
-              <span class="t-bold">componentDidMount</span> llamando al método
-              fetchData.
-            </p>
-            <pre class="code">
+              <p>
+                <span class="t-bold">Loading</span> para los dos casos es false,
+                porque se supone que ya termino de buscar, todo comienza en el
+                <span class="t-bold">componentDidMount</span> llamando al método
+                fetchData.
+              </p>
+              <pre class="code">
 
                 <span class="code-function">componentDidMount</span>(){
                   this.<span class="code-function">fetchData</span>()
                 }
               </pre>
-            <p>
-              Hay que recordar que al llamar una API, es un proceso asíncrono
-              así que el método fetchData, debe ser una función asíncrona,
-              para esto se usaran los manejadores de promesas
-              <span class="t-bold">async await</span>.
-            </p>
-            <pre class="code">
+              <p>
+                Hay que recordar que al llamar una API, es un proceso asíncrono
+                así que el método fetchData, debe ser una función asíncrona,
+                para esto se usaran los manejadores de promesas
+                <span class="t-bold">async await</span>.
+              </p>
+              <pre class="code">
 
                 <span class="code-function">fetchData</span> = <span class="code-sym">async</span> () => {
                   this.<span class="code-var">setState</span>({
@@ -1572,45 +1702,64 @@
                   }
                 }
               </pre>
-            <p>
-              Ejemplo de solicitud de una API GET curso de React Paltzi
-              <a class="link link-refe t-bold" target="_blank"
-                href="https://github.com/afisaacs/reactjs/blob/master/src/pages/Badges.js">Repo GIT</a>.
-            </p>
-            <div class="note">
               <p>
-                Es importante para la experiencia de usuario, mostrar un
-                mensaje si no hay datos disponibles y una acción que él haga
-                si esto ocurre.
+                Ejemplo de solicitud de una API GET curso de React Paltzi
+                <a
+                  class="link link-refe t-bold"
+                  target="_blank"
+                  href="https://github.com/afisaacs/reactjs/blob/master/src/pages/Badges.js"
+                  >Repo GIT</a
+                >.
               </p>
-            </div>
-            <h3>Mejorando la experiencia de usuario</h3>
-            <p>
-              Para mejorar la experiencia de los usuarios, lo ideal es manejar
-              el loading y el error como componente, recomendado usar
-              animaciones para el loading.
-              <a class="link link-refe" target="_blank" href="https://loading.io/css/">animaciones</a>
-            </p>
-          </article>
-          <article class="course-class__section" id="post">
-            <h2 class="course-class__section--title">Enviando datos POST</h2>
-            <p>
-              <span class="t-bold">MD5</span> es una pequeña librería a la
-              cual se le da un texto y ella regresa un
-              <span class="t-bold">hash</span>. Podremos hacer pruebas para
-              cifrar nuestros textos a md5 en el siguiente sitio
-              <a class="link link-refe" target="_blank" href="https://md5online.es/cifrar-md5">MD5 Online</a>. <br />
-              Esto si queremos usar
-              <a class="link link-refe t-bold" target="_blank" href="https://es.gravatar.com/">Gravatar</a>
-              en nuestras aplicaciones.
-            </p>
-            <pre class="code">
+              <div class="note">
+                <p>
+                  Es importante para la experiencia de usuario, mostrar un
+                  mensaje si no hay datos disponibles y una acción que él haga
+                  si esto ocurre.
+                </p>
+              </div>
+              <h3>Mejorando la experiencia de usuario</h3>
+              <p>
+                Para mejorar la experiencia de los usuarios, lo ideal es manejar
+                el loading y el error como componente, recomendado usar
+                animaciones para el loading.
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://loading.io/css/"
+                  >animaciones</a
+                >
+              </p>
+            </article>
+            <article class="course-class__section" id="post">
+              <h2 class="course-class__section--title">Enviando datos POST</h2>
+              <p>
+                <span class="t-bold">MD5</span> es una pequeña librería a la
+                cual se le da un texto y ella regresa un
+                <span class="t-bold">hash</span>. Podremos hacer pruebas para
+                cifrar nuestros textos a md5 en el siguiente sitio
+                <a
+                  class="link link-refe"
+                  target="_blank"
+                  href="https://md5online.es/cifrar-md5"
+                  >MD5 Online</a
+                >. <br />
+                Esto si queremos usar
+                <a
+                  class="link link-refe t-bold"
+                  target="_blank"
+                  href="https://es.gravatar.com/"
+                  >Gravatar</a
+                >
+                en nuestras aplicaciones.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">//instalar libreria MD5</span>
                 npm install md5
               </pre>
-            <p>Crear el componente que generara el avatar.</p>
-            <pre class="code">
+              <p>Crear el componente que generara el avatar.</p>
+              <pre class="code">
 
                 <span class="code-comment">//Gravatar.js</span>
                 <span class="code-sym">import</span> React <span class="code-sym">from</span> <span class="code-text">"react"</span>
@@ -1630,18 +1779,18 @@
                   )
                 }
               </pre>
-            <p>Usandolo:</p>
-            <pre class="code">
+              <p>Usandolo:</p>
+              <pre class="code">
 
                 &lt<span class="code-var">Gravatar</span> <span class="code-function">email</span> = {email} <span class="code-function">name</span> = {firstName} <span class="code-function">className</span> = <span class="code-text">"Badge__avatar"</span> /&gt
               </pre>
-            <p>
-              Para guardar los datos de un formulario a una API, en este caso
-              se coloca el evento <span class="t-bold">onSubmit</span> y en el
-              método <span class="t-bold">handleSubmit</span> se hace el
-              desarrollo.
-            </p>
-            <pre class="code">
+              <p>
+                Para guardar los datos de un formulario a una API, en este caso
+                se coloca el evento <span class="t-bold">onSubmit</span> y en el
+                método <span class="t-bold">handleSubmit</span> se hace el
+                desarrollo.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">//método handleSubmit</span>
                 <span class="code-function">handleSubmit</span> = <span class="code-sym">async</span> (e)=>{
@@ -1665,38 +1814,38 @@
                   }
                 }
               </pre>
-            <pre class="code">
+              <pre class="code">
 
                 <span class="code-comment">//el || funciona como un (o) si no hay nada en firstName entonces coloca el texo "firstName" </span>
                 {firstName <span class="code-sym">||</span> <span class="code-text">"FirstName"</span>}
               </pre>
-            <p>
-              De la misma manera en la que se manejan los estados cuando se
-              solicitan datos, deben ser manejados cuando los datos son
-              enviados. Existe un tiempo entre que se da clic y los datos son
-              enviados. Ese tiempo de espera es necesario visualizarlo. Igual
-              hay que mostrar mensajes de error cuando no funcionan las cosas.
-            </p>
-          </article>
-          <article class="course-class__section" id="put">
-            <h2 class="course-class__section--title">
-              Actualizando datos PUT
-            </h2>
-            <p>
-              En React Router se pueden pasar variables entre las rutas de las
-              páginas, ejemplo, si queremos editar o ver un producto en una
-              página lo podemos hacer mediante la dirección general y el id
-              del producto.
-            </p>
-            <pre class="code">
+              <p>
+                De la misma manera en la que se manejan los estados cuando se
+                solicitan datos, deben ser manejados cuando los datos son
+                enviados. Existe un tiempo entre que se da clic y los datos son
+                enviados. Ese tiempo de espera es necesario visualizarlo. Igual
+                hay que mostrar mensajes de error cuando no funcionan las cosas.
+              </p>
+            </article>
+            <article class="course-class__section" id="put">
+              <h2 class="course-class__section--title">
+                Actualizando datos PUT
+              </h2>
+              <p>
+                En React Router se pueden pasar variables entre las rutas de las
+                páginas, ejemplo, si queremos editar o ver un producto en una
+                página lo podemos hacer mediante la dirección general y el id
+                del producto.
+              </p>
+              <pre class="code">
 
                 &lt<span class="code-sym">Route</span> <span class="code-function">exact</span> <span class="code-function">path</span> = <span class="code-text">"/badges/:badgeID/edit"</span> <span class="code-function">component</span>={BadgeNew} /&gt
               </pre>
-            <p>
-              Gracias a react-router, podemos obtener el
-              <span class="t-bold">id</span> de un elemento mediante la url
-            </p>
-            <pre class="code">
+              <p>
+                Gracias a react-router, podemos obtener el
+                <span class="t-bold">id</span> de un elemento mediante la url
+              </p>
+              <pre class="code">
 
                 this.props.match.params.nombreVariable
 
@@ -1705,102 +1854,104 @@
                   ir
                 &lt<span class="code-sym">/Link</span>&gt
               </pre>
-            <p>Lo que se ha hecho con el manejo de API es:</p>
-            <ul>
-              <li>Importar API</li>
-              <li>Ejecutar el método fetchData en componentDidMount</li>
-              <li>Inicializar el state: loading, error</li>
-              <li>Usar try catch para capturar errores</li>
-              <li>Async await para las promesas</li>
-              <li>
-                El id del badge se obtiene por medio de la URL
-                (this.props.match.params.badgeID)
-              </li>
-              <li>Apagar loading, manejar error</li>
-              <li>
-                Condicionales dentro del método render, mostrar loading,
-                mostrar error si hay
-              </li>
-            </ul>
-          </article>
-          <article class="course-class__section" id="container-components">
-            <h2 class="course-class__section--title">
-              UI Components y Container Components
-            </h2>
-            <p>
-              En la programación es bueno separar las tareas en diferentes
-              funciones y en React sucede lo mismo. Cuando un componente hace
-              demasiado, probablemente es mejor dividirlo en dos. Esta técnica
-              de componentes presentacionales y componentes container es
-              común, útil y hace parte de las buenas prácticas.
-            </p>
-            <p>
-              Separar el pedir los datos a la api y mostrarlos en el render,
-              esto hay que separarlo. En un componente ira la lógica de la
-              aplicación y en otro la parte visual.
-            </p>
-            <p>
-              Existe un enfoque interesante de React:
-              <span class="t-bold">Ese donde hay dos tipos de componentes</span>
-              Los primeros tontos, superficiales, solo se enfocan en el
-              <i>look and feel</i> Los segundos más inteligentes, racionales,
-              solo se enfocan en la lógica En la práctica:
-            </p>
-            <ul>
-              <li>
-                Los componentes presentacionales casi nunca tienen estados y
-                se hacen en base a funciones, importan los estilos y contienen
-                las clases.
-              </li>
-              <li>
-                Los componentes inteligentes contienen el estado y los métodos
-                que dan lógica a la App y lo transfieren a otros componentes a
-                través de Props.
-              </li>
-            </ul>
-            <p>
-              Me parece recomendable contenedor el segundo tipo de componentes
-              a través de un <span class="t-bold">React.Fragment</span>.
-              <br />
-              Así mismo el contenedor del primero dependerá de lo que sea
-              (div, section, figure, article, header, aside).
-            </p>
-            <div class="note">
+              <p>Lo que se ha hecho con el manejo de API es:</p>
+              <ul>
+                <li>Importar API</li>
+                <li>Ejecutar el método fetchData en componentDidMount</li>
+                <li>Inicializar el state: loading, error</li>
+                <li>Usar try catch para capturar errores</li>
+                <li>Async await para las promesas</li>
+                <li>
+                  El id del badge se obtiene por medio de la URL
+                  (this.props.match.params.badgeID)
+                </li>
+                <li>Apagar loading, manejar error</li>
+                <li>
+                  Condicionales dentro del método render, mostrar loading,
+                  mostrar error si hay
+                </li>
+              </ul>
+            </article>
+            <article class="course-class__section" id="container-components">
+              <h2 class="course-class__section--title">
+                UI Components y Container Components
+              </h2>
               <p>
-                1000 componentes = Utilizar Redux. <br />
-                Solo si se usa este método para aplicaciones con 5 a 10
-                componentes máximo,
+                En la programación es bueno separar las tareas en diferentes
+                funciones y en React sucede lo mismo. Cuando un componente hace
+                demasiado, probablemente es mejor dividirlo en dos. Esta técnica
+                de componentes presentacionales y componentes container es
+                común, útil y hace parte de las buenas prácticas.
               </p>
-            </div>
-          </article>
-          <article class="course-class__section" id="portals">
-            <h2 class="course-class__section--title">
-              Portales
-            </h2>
-            <p>
-              Hay momentos en los que queremos renderizar un modal, un
-              tooltip, etc. Esto puede volverse algo complicado ya sea por la
-              presencia de un z-index o un overflow hidden. En estos casos lo
-              ideal será renderizar en un nodo completamente aparte y para
-              esto React tiene una herramienta llamada
-              <span class="t-bold">Portales</span> que funcionan parecido a
-              ReactDOM.render; se les dice qué se desea renderizar y dónde,
-              con la diferencia de que ese dónde puede ser fuera de la
-              aplicación.
-            </p>
-            <pre class="code">
+              <p>
+                Separar el pedir los datos a la api y mostrarlos en el render,
+                esto hay que separarlo. En un componente ira la lógica de la
+                aplicación y en otro la parte visual.
+              </p>
+              <p>
+                Existe un enfoque interesante de React:
+                <span class="t-bold"
+                  >Ese donde hay dos tipos de componentes</span
+                >
+                Los primeros tontos, superficiales, solo se enfocan en el
+                <i>look and feel</i> Los segundos más inteligentes, racionales,
+                solo se enfocan en la lógica En la práctica:
+              </p>
+              <ul>
+                <li>
+                  Los componentes presentacionales casi nunca tienen estados y
+                  se hacen en base a funciones, importan los estilos y contienen
+                  las clases.
+                </li>
+                <li>
+                  Los componentes inteligentes contienen el estado y los métodos
+                  que dan lógica a la App y lo transfieren a otros componentes a
+                  través de Props.
+                </li>
+              </ul>
+              <p>
+                Me parece recomendable contenedor el segundo tipo de componentes
+                a través de un <span class="t-bold">React.Fragment</span>.
+                <br />
+                Así mismo el contenedor del primero dependerá de lo que sea
+                (div, section, figure, article, header, aside).
+              </p>
+              <div class="note">
+                <p>
+                  1000 componentes = Utilizar Redux. <br />
+                  Solo si se usa este método para aplicaciones con 5 a 10
+                  componentes máximo,
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="portals">
+              <h2 class="course-class__section--title">
+                Portales
+              </h2>
+              <p>
+                Hay momentos en los que queremos renderizar un modal, un
+                tooltip, etc. Esto puede volverse algo complicado ya sea por la
+                presencia de un z-index o un overflow hidden. En estos casos lo
+                ideal será renderizar en un nodo completamente aparte y para
+                esto React tiene una herramienta llamada
+                <span class="t-bold">Portales</span> que funcionan parecido a
+                ReactDOM.render; se les dice qué se desea renderizar y dónde,
+                con la diferencia de que ese dónde puede ser fuera de la
+                aplicación.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">//La idea es que cuando se le de click al botón, se muestre el modal</span>
                 &lt<span class="code-sym">button</span>&gt
                   <span class="code-function">onClick</span>={this.<span class="code-function">openModal</span>} <span class="code-function">className</span>={<span class="code-text">"btn btn-modal"</span>}
                 &lt<span class="code-sym">/button</span>&gt
               </pre>
-            <p>
-              El <span class="t-bold">ReactDOM.createPortal</span>, lo
-              usaremos para crear el modal en un nodo aparte, funciona de la
-              siguiente manera
-            </p>
-            <pre class="code">
+              <p>
+                El <span class="t-bold">ReactDOM.createPortal</span>, lo
+                usaremos para crear el modal en un nodo aparte, funciona de la
+                siguiente manera
+              </p>
+              <pre class="code">
 
                 {ReactDOM.<span class="code-function">createPortal</span>(que, donde) }
 
@@ -1815,26 +1966,26 @@
                 &lt<span class="code-sym">/div</span>&gt
 
               </pre>
-            <p>
-              Cuando se habla de nodos se refieren a los elementos que estan
-              dentro del <span class="t-bold">index.html</span>.
-            </p>
-            <pre class="code">
+              <p>
+                Cuando se habla de nodos se refieren a los elementos que estan
+                dentro del <span class="t-bold">index.html</span>.
+              </p>
+              <pre class="code">
 
                 &lt<span class="code-sym">body</span>&gt
                   &lt<span class="code-sym">div</span> <span class="code-function">id</span>=<span class="code-text">"app"</span>&gt&lt<span class="code-sym">div</span>&gt
                   &lt<span class="code-sym">div</span> <span class="code-function">id</span>=<span class="code-text">"modal"</span>&gt&lt<span class="code-sym">div</span>&gt
                 &lt<span class="code-sym">/body</span>&gt
               </pre>
-          </article>
-          <article class="course-class__section" id="modal">
-            <h2 class="course-class__section--title">Modales</h2>
-            <p>
-              La técnica de usar componentes genéricos para crear uno nuevo
-              especializado se llama composición y es una herramienta que todo
-              buen programador debe saber utilizar.
-            </p>
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="modal">
+              <h2 class="course-class__section--title">Modales</h2>
+              <p>
+                La técnica de usar componentes genéricos para crear uno nuevo
+                especializado se llama composición y es una herramienta que todo
+                buen programador debe saber utilizar.
+              </p>
+              <pre class="code">
 
                 <span class="code-comment">//Componente Modal</span>
 
@@ -1853,53 +2004,53 @@
 
                 }
               </pre>
-          </article>
-          <article class="course-class__section" id="hooks">
-            <h2 class="course-class__section--title">Hooks</h2>
-            <p>
-              Las funciones no tienen un estado propio que manejar como ciclos
-              de vida a los que deben suscribirse, mientras tanto las clases
-              sí cuentan con ello. React tiene un feature llamado
-              <strong>Hooks</strong> que permite que las funciones también
-              tengan features que solamente tienen las clases.
-            </p>
-            <ul>
-              <li>
-                <span class="t-bold">useState</span>: Para manejo de estado.
-                Regresa un arreglo de dos argumentos.
-              </li>
-              <li>
-                <span class="t-bold">useEffect</span>: Para suscribir el
-                componente a su ciclo de vida.
-              </li>
-              <li>
-                <span class="t-bold">useReducer</span>: Ejecutar un efecto
-                basado en una acción.
-              </li>
-              <li>
-                <span class="t-bold">Custom Hooks</span>:Usamos los hooks
-                fundamentales para crear nuevos hooks custom. Estos hooks irán
-                en su propia función y su nombre comenzará con la palabra use.
-                Otra de sus características es que no pueden ser ejecutados
-                condicionalmente (if).
-              </li>
-            </ul>
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="hooks">
+              <h2 class="course-class__section--title">Hooks</h2>
+              <p>
+                Las funciones no tienen un estado propio que manejar como ciclos
+                de vida a los que deben suscribirse, mientras tanto las clases
+                sí cuentan con ello. React tiene un feature llamado
+                <strong>Hooks</strong> que permite que las funciones también
+                tengan features que solamente tienen las clases.
+              </p>
+              <ul>
+                <li>
+                  <span class="t-bold">useState</span>: Para manejo de estado.
+                  Regresa un arreglo de dos argumentos.
+                </li>
+                <li>
+                  <span class="t-bold">useEffect</span>: Para suscribir el
+                  componente a su ciclo de vida.
+                </li>
+                <li>
+                  <span class="t-bold">useReducer</span>: Ejecutar un efecto
+                  basado en una acción.
+                </li>
+                <li>
+                  <span class="t-bold">Custom Hooks</span>:Usamos los hooks
+                  fundamentales para crear nuevos hooks custom. Estos hooks irán
+                  en su propia función y su nombre comenzará con la palabra use.
+                  Otra de sus características es que no pueden ser ejecutados
+                  condicionalmente (if).
+                </li>
+              </ul>
+              <pre class="code">
 
                 <span class="code-var">const</span> [state, setState] = React.<span class="code-function">useState</span>(initialState)
               </pre>
-          </article>
-          <article class="course-class__section" id="search">
-            <h2 class="course-class__section--title">Search filter</h2>
-            <p>
-              Hacer caja de búsqueda que este filtrando cada vez que se digite
-              una palabra, para eso se usan los hooks. Los hooks solo viven en
-              componentes funcionales.
-            </p>
-            <p>
-              Hacer que los inputs sean controlados.
-            </p>
-            <pre class="code">
+            </article>
+            <article class="course-class__section" id="search">
+              <h2 class="course-class__section--title">Search filter</h2>
+              <p>
+                Hacer caja de búsqueda que este filtrando cada vez que se digite
+                una palabra, para eso se usan los hooks. Los hooks solo viven en
+                componentes funcionales.
+              </p>
+              <p>
+                Hacer que los inputs sean controlados.
+              </p>
+              <pre class="code">
 
                 &lt<span class="code-sym">input</span>
                   <span class="code-function">type</span> = <span class="code-text">"text"</span>
@@ -1913,13 +2064,13 @@
                 <span class="code-comment">//Crear primer hooks, que sera igual al state de los componentes clases</span>
                 <span class="code-var">const</span>[query, setQuery] = React.<span class="code-function">useState</span>(<span class="code-text">''</span>)
               </pre>
-            <p>
-              Ese Query es lo que se usa en el value del input, para explicar
-              mejor, se guardaran los datos ingresados en la caja de texto
-              mediante setQuery y se mostraran esos datos en la caja de texto
-              por medio de Query a través del atributo value
-            </p>
-            <pre class="code">
+              <p>
+                Ese Query es lo que se usa en el value del input, para explicar
+                mejor, se guardaran los datos ingresados en la caja de texto
+                mediante setQuery y se mostraran esos datos en la caja de texto
+                por medio de Query a través del atributo value
+              </p>
+              <pre class="code">
 
                 &lt<span class="code-sym">input</span>
                   <span class="code-function">type</span> = <span class="code-text">"text"</span>
@@ -1930,54 +2081,54 @@
                   }}
                 /&gt
               </pre>
-            <p>
-              El resultado de ese filtro se guardará en una variable, y
-              filtramos el array de badges, usando la función de los array
-              <span class="t-bold">filter</span>. <br />
-              Cuya condición para filtrar los badges son los que contengan en
-              el nombre lo que se esta escribiendo en la caja de texto. Para
-              comparar que una palabra esta contenida en otra se usa la
-              función includes().
-            </p>
-            <pre class="code">
+              <p>
+                El resultado de ese filtro se guardará en una variable, y
+                filtramos el array de badges, usando la función de los array
+                <span class="t-bold">filter</span>. <br />
+                Cuya condición para filtrar los badges son los que contengan en
+                el nombre lo que se esta escribiendo en la caja de texto. Para
+                comparar que una palabra esta contenida en otra se usa la
+                función includes().
+              </p>
+              <pre class="code">
 
                 <span class="code-var">const</span> filteredBadges = badges.<span class="code-function">filter</span>(badge => {
                   <span class="code-sym">return</span> badge.firstName<span class="code-function">includes</span>(query);
                 })
               </pre>
-            <p>
-              Se pueden ignorar las mayúsculas y minúsculas para evitar
-              problemas de filtrado.
-            </p>
-            <pre class="code">
+              <p>
+                Se pueden ignorar las mayúsculas y minúsculas para evitar
+                problemas de filtrado.
+              </p>
+              <pre class="code">
 
                 <span class="code-sym">return</span> badge.firstName.<span class="code-function">toLoweCase</span>().<span class="code-function">includes</span>(query.<span class="code-function">toLowerCase</span>())
               </pre>
-            <p>
-              Este filtrado puede generar un cuello de botella cuando la lista
-              sea mucho más grande ya que cada vez esta calculando y
-              renderizando cada vez que se digite una letra en la caja de
-              texto, para eso se puede usar otro hook uno que ya trae react.
-              Se llama <strong>useMemo</strong>, el cual calcula, busca los
-              resultados y los guarda por decirlo así, ya que con esto al
-              hacer nuevamente la misma búsqueda el ya tiene guardado esos
-              datos de la búsqueda (argumentos) y no tiene que volver a
-              calcularlos, con esto los mostrara muy rápidamente ya que los
-              conoce
-            </p>
-            <p>
-              Recibe como argumentos una función, la que ya teníamos, y
-              segundo unos argumentos, que si cambian realizara el filtrado,
-              el cambio y si no cambian mostrara los que ya tiene guardado.
-              Los argumentos que siempre cambian en este caso son la lista de
-              badges, y los datos que ingresan en la caja de texto.
-            </p>
-            <p>
-              Antes hay que crear un estado, cuyo valor inicial será la lista
-              de badges completas Luego en el useMemo guardamos el result en
-              el estado que creamos.
-            </p>
-            <pre class="code">
+              <p>
+                Este filtrado puede generar un cuello de botella cuando la lista
+                sea mucho más grande ya que cada vez esta calculando y
+                renderizando cada vez que se digite una letra en la caja de
+                texto, para eso se puede usar otro hook uno que ya trae react.
+                Se llama <strong>useMemo</strong>, el cual calcula, busca los
+                resultados y los guarda por decirlo así, ya que con esto al
+                hacer nuevamente la misma búsqueda el ya tiene guardado esos
+                datos de la búsqueda (argumentos) y no tiene que volver a
+                calcularlos, con esto los mostrara muy rápidamente ya que los
+                conoce
+              </p>
+              <p>
+                Recibe como argumentos una función, la que ya teníamos, y
+                segundo unos argumentos, que si cambian realizara el filtrado,
+                el cambio y si no cambian mostrara los que ya tiene guardado.
+                Los argumentos que siempre cambian en este caso son la lista de
+                badges, y los datos que ingresan en la caja de texto.
+              </p>
+              <p>
+                Antes hay que crear un estado, cuyo valor inicial será la lista
+                de badges completas Luego en el useMemo guardamos el result en
+                el estado que creamos.
+              </p>
+              <pre class="code">
 
                 <span class="code-var">const</span> [filteredBadges, setFilteredBadges] = React.<span class="code-function">useState</span>(badgeList)
 
@@ -1988,10 +2139,10 @@
                   setFilteredBadges(result)
                 }, [badge, query])
               </pre>
-            <p>
-              Último paso empaquetar todo en un customhook.
-            </p>
-            <pre class="code">
+              <p>
+                Último paso empaquetar todo en un customhook.
+              </p>
+              <pre class="code">
 
                 <span class="code-var">function</span> <span class="code-function">useSearchBadges</span>(badges){
 
@@ -2011,50 +2162,29 @@
                 <span class="code-comment">//uso</span>
                 <span class="code-var">const</span> {setQuery, filteredBadges} = <span class="code-function">useSearchBadges</span>(listBadges)
               </pre>
-          </article>
-        </div>
-      </section>
-      <footer class="footer">
-        <div class="container-general">
-          <div class="footer__container">
-            <p>@Carlos Zabala Roqueme - 2019</p>
-            <figure class="footer__container--img">
-              <img src="../../src/images/logo-white-2.png" alt="logo Carlos Zabala" />
-            </figure>
+            </article>
           </div>
-        </div>
-      </footer>
+        </section>
+        <footer class="footer">
+          <div class="container-general">
+            <div class="footer__container">
+              <p id="footer-year">@Carlos Zabala Roqueme -</p>
+              <figure class="footer__container--img">
+                <img
+                  src="../../src/images/logo-white-2.png"
+                  alt="logo Carlos Zabala"
+                />
+              </figure>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
-  </div>
-  <script src="https://kit.fontawesome.com/2028b75fa6.js" crossorigin="anonymous"></script>
-  <script src="../../src/js/menu.js"></script>
-  <script>
-    const $menu = document.getElementById("btn-menu");
-    const $courseMenu = document.getElementById("course-class__left");
-
-    $menu.addEventListener("click", handleClick);
-
-    function handleClick() {
-      $courseMenu.classList.toggle("is-active");
-      $menu.classList.toggle("is-active");
-
-      if ($menu.classList.contains("fa-bars")) {
-        $menu.classList.remove("fa-bars");
-        $menu.classList.add("fa-times");
-      } else {
-        $menu.classList.remove("fa-times");
-        $menu.classList.add("fa-bars");
-      }
-    }
-
-    const $footerYear = document.getElementById("footer-year");
-
-    if ($footerYear) {
-      let date = new Date();
-
-      $footerYear.innerHTML += " " + date.getFullYear();
-    }
-  </script>
-</body>
-
+    <script
+      src="https://kit.fontawesome.com/2028b75fa6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../src/js/menu.js"></script>
+    <script type="module" src="../../index.js"></script>
+  </body>
 </html>

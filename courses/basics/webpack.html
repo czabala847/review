@@ -1,203 +1,261 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso de Webpack</title>
+    <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../src/css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Curso de Webpack</title>
-  <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
-  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../src/css/styles.css" />
-</head>
-
-<body>
-  <div class="app">
-    <div class="app-react-basico">
-      <header class="header">
-        <div class="container-general">
-          <nav class="header-menu">
-            <ul class="header-menu__list menu-left">
-              <li class="header-menu__list--item">
-                <a class="link" href="../../index.html">Inicio</a>
-              </li>
-              <li class="header-menu__list--item">
-                <a class="link" href="../../index.html##courses">Carreras</a>
-              </li>
-            </ul>
-            <figure class="header-menu__logo">
-              <a href="../../index.html"><img class="header-menu__logo--img" src="../../src/images/logo_white.png"
-                  alt="logo carlos zabala" /></a>
-            </figure>
-            <ul class="header-menu__list menu-right">
-              <li class="header-menu__list--item">
-                <a class="link" href="">Me</a>
-              </li>
-              <li class="header-menu__list--item">
-                <a class="link" href="">Contacto</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <section class="hero-course">
-        <div class="container-general">
-          <h1 class="hero-course__title">Curso de Webpack</h1>
-          <p class="hero-course__description">
-            Una aplicación web lleva múltiples tipos de assets como imágenes,
-            fuentes personalizadas, JSON, CSS, JavaScript, etc. y manejar esto
-            se vuelve un dolor de cabeza a medida que nuestra aplicación tiene
-            éxito y va creciendo. Todo esto lo resuelve Webpack y es por eso
-            que será nuestro empaquetador de módulos (o Module Mundler).
-          </p>
-          <div class="hero-course__buttons">
-            <a target="_blank" href="https://platzi.com/clases/webpack/" class="btn btn--primary">Curso platzi</a>
-          </div>
-        </div>
-      </section>
-      <section class="course-class">
-        <div class="course-class__left" id="course-class__left">
-          <div class="course-class__left--container">
-            <nav class="course-class__menu">
-              <ul>
-                <li>
-                  <a class="link course-class__menu--a" href="#introduction">Introducción</a>
+  <body>
+    <div class="app">
+      <div class="app-react-basico">
+        <header class="header">
+          <div class="container-general">
+            <nav class="header-menu">
+              <ul class="header-menu__list menu-left">
+                <li class="header-menu__list--item">
+                  <a class="link" href="../../index.html">Inicio</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#config">Configuración</a>
+                <li class="header-menu__list--item">
+                  <a class="link" href="../../index.html##courses">Carreras</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#first-bundle">Webpack CLI</a>
+              </ul>
+              <figure class="header-menu__logo">
+                <a href="../../index.html"
+                  ><img
+                    class="header-menu__logo--img"
+                    src="../../src/images/logo_white.png"
+                    alt="logo carlos zabala"
+                /></a>
+              </figure>
+              <ul class="header-menu__list menu-right">
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Me</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#webpack-config">Webpack Config</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#custom-webpack-config">Webpack Config Personalizado</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#multi-entry-points">Múltiples puntos de entrada</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#loaders">Assets con Loaders</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#plugins">Plugins</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#dev-server">Servidor de desarrollo</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#hot-module-replacement">Hot Module Replacement</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#babel">Babel</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#jsx">JSX React</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#media">Soporte imágenes, fuentes y videos</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#preprocesadores">Estilos con preprocesadores</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#code-splitting">Código duplicado</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#dynamic-link-library">Dynamic Link Library</a>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Contacto</a>
                 </li>
               </ul>
             </nav>
           </div>
-        </div>
-        <div class="course-class__content">
-          <i class="fas fa-bars icon course-class__icon-menu" id="btn-menu"></i>
-          <article class="course-class__section" id="introduction">
-            <h2 class="course-class__section--title">
-              Introducción a Webpack
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                <strong>Webpack</strong> es un empaquetador para Javascript y
-                sus amigos. Convierte módulos con dependencias en archivos
-                estáticos que los navegadores entienden.
-              </p>
-              <p>
-                Nos permite empaquetar, optimizar los diferentes módulos
-                Javascript y sus dependencia en nuestro proyecto. Es usado en
-                proyectos basados en Javascript como: React, Vue, Angular
-                entre otros.
-              </p>
-              <ul>
-                <li>
-                  <strong>User Experience</strong>. Se logra con una
-                  aplicación que:
-                  <ul>
-                    <li>Funcione.</li>
-                    <li>Sea rápida.</li>
-                    <li>Cumpla sus necesidades.</li>
-                    <li>Se actualice.</li>
-                    <li>Responda a sus interacciones.</li>
-                    <li>Producto de calidad.</li>
-                  </ul>
-                </li>
-                <li>
-                  <strong>Developer Experience</strong>
-                  <ul>
-                    <li>Escribir aplicaciones de manera eficiente.</li>
-                    <li>Tener un código limpio.</li>
-                    <li>Aplicar tecnología para resolver sus problemas.</li>
-                    <li>Tener un conjunto de reglas y convenciones.</li>
-                    <li>
-                      Entorno de desarrollo optimizado en productividad.
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-              <div class="note">
-                <p>
-                  Webpack es un conjunto de reglas que se configuran para
-                  saber como esta funcionando nuestro stack y como manipular
-                  el stack.
-                </p>
-              </div>
-              <p>Como funciona webpack:</p>
-              <figure class="img-container">
-                <img class="img-container__image"
-                  src="https://static.platzi.com/media/user_upload/Captura%20de%20pantalla%202017-11-02%20a%20la%28s%29%205.44.19%20p.m.-b1431449-be51-46e6-8335-6b0f8a90b0b4.jpg"
-                  alt="como funciona webpack" />
-              </figure>
+        </header>
+        <section class="hero-course">
+          <div class="container-general">
+            <h1 class="hero-course__title">Curso de Webpack</h1>
+            <p class="hero-course__description">
+              Una aplicación web lleva múltiples tipos de assets como imágenes,
+              fuentes personalizadas, JSON, CSS, JavaScript, etc. y manejar esto
+              se vuelve un dolor de cabeza a medida que nuestra aplicación tiene
+              éxito y va creciendo. Todo esto lo resuelve Webpack y es por eso
+              que será nuestro empaquetador de módulos (o Module Mundler).
+            </p>
+            <div class="hero-course__buttons">
+              <a
+                target="_blank"
+                href="https://platzi.com/clases/webpack/"
+                class="btn btn--primary"
+                >Curso platzi</a
+              >
             </div>
-          </article>
-          <article class="course-class__section" id="config">
-            <h2 class="course-class__section--title">
-              Configurando un nuevo proyecto de Javascript
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Para inciar un proyecto en <strong>JavaScript</strong> debemos
-                tener instaldo <strong>node</strong> y <strong>npm</strong> en
-                nuestro ordenador.
-              </p>
-              <pre class="code">
+          </div>
+        </section>
+        <section class="course-class">
+          <div class="course-class__left" id="course-class__left">
+            <div class="course-class__left--container">
+              <nav class="course-class__menu">
+                <ul>
+                  <li>
+                    <a class="link course-class__menu--a" href="#introduction"
+                      >Introducción</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#config"
+                      >Configuración</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#first-bundle"
+                      >Webpack CLI</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#webpack-config"
+                      >Webpack Config</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#custom-webpack-config"
+                      >Webpack Config Personalizado</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#multi-entry-points"
+                      >Múltiples puntos de entrada</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#loaders"
+                      >Assets con Loaders</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#plugins"
+                      >Plugins</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#dev-server"
+                      >Servidor de desarrollo</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#hot-module-replacement"
+                      >Hot Module Replacement</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#babel"
+                      >Babel</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#jsx"
+                      >JSX React</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#media"
+                      >Soporte imágenes, fuentes y videos</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#preprocesadores"
+                      >Estilos con preprocesadores</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#code-splitting"
+                      >Código duplicado</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#dynamic-link-library"
+                      >Dynamic Link Library</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="course-class__content">
+            <i
+              class="fas fa-bars icon course-class__icon-menu"
+              id="btn-menu"
+            ></i>
+            <article class="course-class__section" id="introduction">
+              <h2 class="course-class__section--title">
+                Introducción a Webpack
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  <strong>Webpack</strong> es un empaquetador para Javascript y
+                  sus amigos. Convierte módulos con dependencias en archivos
+                  estáticos que los navegadores entienden.
+                </p>
+                <p>
+                  Nos permite empaquetar, optimizar los diferentes módulos
+                  Javascript y sus dependencia en nuestro proyecto. Es usado en
+                  proyectos basados en Javascript como: React, Vue, Angular
+                  entre otros.
+                </p>
+                <ul>
+                  <li>
+                    <strong>User Experience</strong>. Se logra con una
+                    aplicación que:
+                    <ul>
+                      <li>Funcione.</li>
+                      <li>Sea rápida.</li>
+                      <li>Cumpla sus necesidades.</li>
+                      <li>Se actualice.</li>
+                      <li>Responda a sus interacciones.</li>
+                      <li>Producto de calidad.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Developer Experience</strong>
+                    <ul>
+                      <li>Escribir aplicaciones de manera eficiente.</li>
+                      <li>Tener un código limpio.</li>
+                      <li>Aplicar tecnología para resolver sus problemas.</li>
+                      <li>Tener un conjunto de reglas y convenciones.</li>
+                      <li>
+                        Entorno de desarrollo optimizado en productividad.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <div class="note">
+                  <p>
+                    Webpack es un conjunto de reglas que se configuran para
+                    saber como esta funcionando nuestro stack y como manipular
+                    el stack.
+                  </p>
+                </div>
+                <p>Como funciona webpack:</p>
+                <figure class="img-container">
+                  <img
+                    class="img-container__image"
+                    src="https://static.platzi.com/media/user_upload/Captura%20de%20pantalla%202017-11-02%20a%20la%28s%29%205.44.19%20p.m.-b1431449-be51-46e6-8335-6b0f8a90b0b4.jpg"
+                    alt="como funciona webpack"
+                  />
+                </figure>
+              </div>
+            </article>
+            <article class="course-class__section" id="config">
+              <h2 class="course-class__section--title">
+                Configurando un nuevo proyecto de Javascript
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para inciar un proyecto en <strong>JavaScript</strong> debemos
+                  tener instaldo <strong>node</strong> y <strong>npm</strong> en
+                  nuestro ordenador.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#Iniciar un nuevo proyecto</span>
                   npm init
                 </pre>
-              <p>
-                Una <strong>dependencia</strong> son los módulos que vamos a
-                necesitar para que nuestra aplicación funcione.
-              </p>
-              <p>
-                En nuestro proyecto existen dependencias del tipo desarrollo y
-                del tipo core con sus respectivas versiones, por eso usaremos
-                NPM para administrarlas e instalar Webpack que viene a ser una
-                dependencia (de desarrollo) más en nuestro proyecto de
-                Javascript.
-              </p>
-              <pre class="code">
+                <p>
+                  Una <strong>dependencia</strong> son los módulos que vamos a
+                  necesitar para que nuestra aplicación funcione.
+                </p>
+                <p>
+                  En nuestro proyecto existen dependencias del tipo desarrollo y
+                  del tipo core con sus respectivas versiones, por eso usaremos
+                  NPM para administrarlas e instalar Webpack que viene a ser una
+                  dependencia (de desarrollo) más en nuestro proyecto de
+                  Javascript.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#Instalar webpack</span>
                   npm install webpack --save-dev --save-exact
@@ -209,21 +267,21 @@
                   <span class="code-comment">#Versión del curso de platzi</span>
                   npm install -D -E webpack@4.32.2
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="first-bundle">
-            <h2 class="course-class__section--title">
-              Creando nuestro primer bundle con Webpack
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Vamos a instalar otra dependencia llamada
-                <strong>webpack-cli</strong>, la API que expone webpack en
-                forma de CLI (Command Line Interface) que nos va a permitir
-                interactuar y configurar Webpack desde la terminal. Sin esto
-                no podemos manipular ni escribir webpack desde la consola.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="first-bundle">
+              <h2 class="course-class__section--title">
+                Creando nuestro primer bundle con Webpack
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Vamos a instalar otra dependencia llamada
+                  <strong>webpack-cli</strong>, la API que expone webpack en
+                  forma de CLI (Command Line Interface) que nos va a permitir
+                  interactuar y configurar Webpack desde la terminal. Sin esto
+                  no podemos manipular ni escribir webpack desde la consola.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#Instalar webpack-cli</span>
                   npm install webpack-cli --save-dev --save-exact
@@ -231,63 +289,63 @@
                   <span class="code-comment">#El del curso</span>
                   npm i webpack-cli@3.3.2 -D -E
                 </pre>
-              <p>
-                Es muy importante que nuestras dependencia o módulos se
-                instalen en nuestros proyectos y no en el entorno global, para
-                así no tener problemas con las versiones si tenemos varios
-                proyectos.
-              </p>
-              <pre class="code">
+                <p>
+                  Es muy importante que nuestras dependencia o módulos se
+                  instalen en nuestros proyectos y no en el entorno global, para
+                  así no tener problemas con las versiones si tenemos varios
+                  proyectos.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#Para usar webpack se hace a través del comando npx</span>
                   npx webpack -v <span class="code-comment">#Ver la versión de webpack</span>
                 </pre>
-              <p>
-                Pasar nuestros archivos a webpack(archivos que se van a
-                transpilar)
-              </p>
-              <pre class="code">
+                <p>
+                  Pasar nuestros archivos a webpack(archivos que se van a
+                  transpilar)
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#npx webpack --entrada ./nombreArchivoTranspilar.extension --salida ./nombreArchivoNuevo.extension</span>
                   npx webpack --entry ./index.js --output ./bundle.js
                 </pre>
-              <p>
-                El archivo salida (output) es el archivo que le daremos al
-                cliente, en este caso es el archivo que ira en el src de la
-                etiqueta <strong>script</strong> del HTML.
-              </p>
-              <p>
-                El comando webpack tiene una bandera llamada --mode que nos
-                permite cambiar entre los modos producción y desarrollo.
-                Recuerda que por defecto nos pone en modo producción si no la
-                especificamos.
-              </p>
-              <pre class="code">
+                <p>
+                  El archivo salida (output) es el archivo que le daremos al
+                  cliente, en este caso es el archivo que ira en el src de la
+                  etiqueta <strong>script</strong> del HTML.
+                </p>
+                <p>
+                  El comando webpack tiene una bandera llamada --mode que nos
+                  permite cambiar entre los modos producción y desarrollo.
+                  Recuerda que por defecto nos pone en modo producción si no la
+                  especificamos.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#Especificar el modo</span>
                   npx webpack --entry ./index.js --output ./bundle.js --mode production/development
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="webpack-config">
-            <h2 class="course-class__section--title">
-              Iniciando un webpack.config
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Al ir creciendo nuestra configuración de Webpack iremos
-                agregando cada vez más banderas a nuestros comandos y
-                terminará como una línea gigante en la terminal. ¿Cómo hacemos
-                que esa línea sea muy pequeñita, personalizable y escalable?
-                Por medio de un archivo llamado por defecto
-                <strong>webpack.config.js</strong>.
-              </p>
-              <p>
-                Este archivo permite importar módulos usando el formato
-                commonJS y recibe por lo menos dos configuraciones básicas, un
-                <strong>entry</strong> y un <strong>output</strong>.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="webpack-config">
+              <h2 class="course-class__section--title">
+                Iniciando un webpack.config
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Al ir creciendo nuestra configuración de Webpack iremos
+                  agregando cada vez más banderas a nuestros comandos y
+                  terminará como una línea gigante en la terminal. ¿Cómo hacemos
+                  que esa línea sea muy pequeñita, personalizable y escalable?
+                  Por medio de un archivo llamado por defecto
+                  <strong>webpack.config.js</strong>.
+                </p>
+                <p>
+                  Este archivo permite importar módulos usando el formato
+                  commonJS y recibe por lo menos dos configuraciones básicas, un
+                  <strong>entry</strong> y un <strong>output</strong>.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#En el archivo webpack.config.js</span>
                   <span class="code-comment">#Path para usar rutas relativas en cualquier S.O</span>
@@ -304,45 +362,45 @@
                     }
                   }
                 </pre>
-              <p>Ahora en la terminal correr el comando:</p>
-              <pre class="code">
+                <p>Ahora en la terminal correr el comando:</p>
+                <pre class="code">
 
                   npx webpack
                 </pre>
-              <p>
-                Correr el comando desde el package.json
-              </p>
-              <pre class="code">
+                <p>
+                  Correr el comando desde el package.json
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#package.json</span>
                   <span class="code-var">"script"</span>: {
                     <span class="code-var">"build"</span>: <span class="code-text">"webpack"</span>
                   }
                 </pre>
-              <p>
-                Ahora si desde la terminal correr el script:
-              </p>
-              <pre class="code">
+                <p>
+                  Ahora si desde la terminal correr el script:
+                </p>
+                <pre class="code">
 
                   npm run build
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="custom-webpack-config">
-            <h2 class="course-class__section--title">
-              Cargando configuraciones por defecto y personalizadas
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                A medida que nuestro proyecto se hace más grande necesitaremos
-                de varias <strong>configuraciones diferentes</strong> (varios
-                webpack.config.js), para eso es recomendado crear una carpeta
-                llamada <strong>external</strong>, dentro de esa carpeta se
-                crear el nuevo archivo
-                <strong>webpack.config.js</strong> (ahora se puede poner el
-                nombre que queramos). Tendrá la siguiente configuración:
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="custom-webpack-config">
+              <h2 class="course-class__section--title">
+                Cargando configuraciones por defecto y personalizadas
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  A medida que nuestro proyecto se hace más grande necesitaremos
+                  de varias <strong>configuraciones diferentes</strong> (varios
+                  webpack.config.js), para eso es recomendado crear una carpeta
+                  llamada <strong>external</strong>, dentro de esa carpeta se
+                  crear el nuevo archivo
+                  <strong>webpack.config.js</strong> (ahora se puede poner el
+                  nombre que queramos). Tendrá la siguiente configuración:
+                </p>
+                <pre class="code">
 
                   <span class="code-var">const</span> path = <span class="code-var">require</span>(<span class="code-text">'path'</span>)
 
@@ -357,14 +415,14 @@
                   }
 
                 </pre>
-              <p>
-                En el <strong>package.json</strong>: Podemos crear nuestros
-                comandos personalizados, Por medio del uso de la bandera
-                <strong>--config</strong> podemos especificar un archivo de
-                configuración externo con el nombre que queramos en lugar del
-                nombre por defecto webpack.config.js.
-              </p>
-              <pre class="code">
+                <p>
+                  En el <strong>package.json</strong>: Podemos crear nuestros
+                  comandos personalizados, Por medio del uso de la bandera
+                  <strong>--config</strong> podemos especificar un archivo de
+                  configuración externo con el nombre que queramos en lugar del
+                  nombre por defecto webpack.config.js.
+                </p>
+                <pre class="code">
 
                   <span class="code-var">"script"</span>: {
                     <span class="code-comment">#1. Correr todo manual, y en modo development </span>
@@ -377,22 +435,22 @@
                     <span class="code-var">"build:external"</span>: <span class="code-text">"webpack --config ./external/webpack.config.js"</span>
                   }
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="multi-entry-points">
-            <h2 class="course-class__section--title">
-              Múltiples puntos de entrada
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Nuestra aplicación no solo dependerá de un solo archivo, sino
-                de varios, de muchos puntos de entrada, múltiples manejadores
-                de varias páginas. Para eso en nuestro archivo de
-                configuración <strong>webpack.config.js</strong> en la parte
-                de <strong>entry</strong> podemos pasar un objeto con varias
-                rutas.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="multi-entry-points">
+              <h2 class="course-class__section--title">
+                Múltiples puntos de entrada
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Nuestra aplicación no solo dependerá de un solo archivo, sino
+                  de varios, de muchos puntos de entrada, múltiples manejadores
+                  de varias páginas. Para eso en nuestro archivo de
+                  configuración <strong>webpack.config.js</strong> en la parte
+                  de <strong>entry</strong> podemos pasar un objeto con varias
+                  rutas.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#webpack.config.js</span>
                   entry: {
@@ -410,60 +468,60 @@
                     filename: <span class="code-text">'js/[name].js'</span>
                   }
                 </pre>
-              <p>Ahora en el <strong>package.json</strong>:</p>
-              <pre class="code">
+                <p>Ahora en el <strong>package.json</strong>:</p>
+                <pre class="code">
 
                   <span class="code-var">"build:multi"</span>: <span class="code-text">"webpack --config ./multi/webpack.config.js"</span>
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="loaders">
-            <h2 class="course-class__section--title">
-              Manejo de assets con Loaders
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                La idea de webpack es hacer aplicaciones modernas basadas en
-                JavaScript, de manera nativa no se puede importar un archivo
-                .css en un .js, pero en webpack si lo podemos hacer gracias a
-                los <strong>loaders.</strong>
-              </p>
-              <p>
-                <strong>Los Loaders</strong> son la funcionalidad que nos da
-                Webpack para interpretar tipos de archivos no soportados de
-                forma nativa por Javascript. Se configura en
-                <strong>webpack.config.js</strong> de la siguiente manera:
-              </p>
-              <ul>
-                <li>
-                  <strong>module</strong>: Key dónde vivirán nuestros archivos
-                  loaders.
-                </li>
-                <li>
-                  <strong>rules</strong>: Segunda key dónde se pasarán los
-                  loaders en un <strong>array</strong> de objetos.
-                </li>
-                <li>
-                  <strong>test</strong>: Para especificar qué tipo de archivo
-                  queremos interpretar (se coloca como
-                  <strong>una expresión regular</strong>).
-                </li>
-                <li>
-                  <strong>use</strong>: ¿Cuándo encontremos un archivo del
-                  tipo especificado en <strong>test</strong> que hacer? en
-                  este ejemplo llamar a otro loader llamado
-                  <strong>css-loader</strong>.
-                </li>
-                <li>
-                  <strong>css-loader</strong>: Permite colocar un archivo .css
-                  en un .js, hace que el programa no se rompa.
-                </li>
-                <li>
-                  <strong>style-loader</strong>: Inyecta CSS al código HTML.
-                  Se usa junto a css-loader.
-                </li>
-              </ul>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="loaders">
+              <h2 class="course-class__section--title">
+                Manejo de assets con Loaders
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  La idea de webpack es hacer aplicaciones modernas basadas en
+                  JavaScript, de manera nativa no se puede importar un archivo
+                  .css en un .js, pero en webpack si lo podemos hacer gracias a
+                  los <strong>loaders.</strong>
+                </p>
+                <p>
+                  <strong>Los Loaders</strong> son la funcionalidad que nos da
+                  Webpack para interpretar tipos de archivos no soportados de
+                  forma nativa por Javascript. Se configura en
+                  <strong>webpack.config.js</strong> de la siguiente manera:
+                </p>
+                <ul>
+                  <li>
+                    <strong>module</strong>: Key dónde vivirán nuestros archivos
+                    loaders.
+                  </li>
+                  <li>
+                    <strong>rules</strong>: Segunda key dónde se pasarán los
+                    loaders en un <strong>array</strong> de objetos.
+                  </li>
+                  <li>
+                    <strong>test</strong>: Para especificar qué tipo de archivo
+                    queremos interpretar (se coloca como
+                    <strong>una expresión regular</strong>).
+                  </li>
+                  <li>
+                    <strong>use</strong>: ¿Cuándo encontremos un archivo del
+                    tipo especificado en <strong>test</strong> que hacer? en
+                    este ejemplo llamar a otro loader llamado
+                    <strong>css-loader</strong>.
+                  </li>
+                  <li>
+                    <strong>css-loader</strong>: Permite colocar un archivo .css
+                    en un .js, hace que el programa no se rompa.
+                  </li>
+                  <li>
+                    <strong>style-loader</strong>: Inyecta CSS al código HTML.
+                    Se usa junto a css-loader.
+                  </li>
+                </ul>
+                <pre class="code">
 
                   <span class="code-comment">#webpack.config.js</span>
                   module:{
@@ -478,110 +536,118 @@
                     ]
                   }
                 </pre>
-              <p>
-                Esto por sí solo no funciona ya que
-                <strong>css-loader</strong> y
-                <strong>style-loader</strong> son módulos que se deben
-                instalar a webpack como herramientas extras.
-              </p>
-              <pre class="code">
+                <p>
+                  Esto por sí solo no funciona ya que
+                  <strong>css-loader</strong> y
+                  <strong>style-loader</strong> son módulos que se deben
+                  instalar a webpack como herramientas extras.
+                </p>
+                <pre class="code">
 
                   npm i -D -E css-loader
                   npm i -D -E style-loader
                 </pre>
-              <p>
-                En el <strong>package.json</strong> añadir la tarea en
-                <strong>scripts</strong>.
-              </p>
-              <pre class="code">
+                <p>
+                  En el <strong>package.json</strong> añadir la tarea en
+                  <strong>scripts</strong>.
+                </p>
+                <pre class="code">
 
                   <span class="code-var">"build:css"</span> <span class="code-text">"webpack --config ./css-style-loader/webpack.config.js"</span>
                 </pre>
-              <p>
-                Dentro del archivo .js se importa la hoja de estilos:
-              </p>
-              <pre class="code">
+                <p>
+                  Dentro del archivo .js se importa la hoja de estilos:
+                </p>
+                <pre class="code">
 
                   <span class="code-sym">import</span> <span class="code-text">"../src/css/index.css"</span>
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="plugins">
-            <h2 class="course-class__section--title">
-              Introducción al uso de plugins
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                <strong>Los Plugins</strong> sirven para extender las
-                capacidades de webpack y dar más poder a los loaders.
-                <span class="t-bold">Los loaders interpretan los tipos de archivos que tenemos y
-                  ya!!!</span>. Pero para poder manipular esos archivos, para hacer lo que
-                queremos necesitamos de plugins.
-              </p>
-              <h3>Plugins CSS</h3>
-              <p>
-                Para manipular archivos .css usaremos dos plugins:
-              </p>
-              <ul>
-                <li>
-                  <a class="link link-refe" target="_blank"
-                    href="https://github.com/webpack-contrib/mini-css-extract-plugin">mini-css-extract-plugin</a>: Este
-                  complemento extrae CSS en archivos separados. Crea
-                  un archivo CSS por archivo JS que contiene CSS. Admite carga
-                  bajo demanda de CSS y SourceMaps.
-                </li>
-                <li>
-                  <a class="link link-refe" target="_blank"
-                    href="https://github.com/jantimon/html-webpack-plugin">html-webpack-plugin</a>: Complemento que
-                  simplifica la creación de archivos HTML
-                  para servir sus paquetes.
-                </li>
-              </ul>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="plugins">
+              <h2 class="course-class__section--title">
+                Introducción al uso de plugins
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  <strong>Los Plugins</strong> sirven para extender las
+                  capacidades de webpack y dar más poder a los loaders.
+                  <span class="t-bold"
+                    >Los loaders interpretan los tipos de archivos que tenemos y
+                    ya!!!</span
+                  >. Pero para poder manipular esos archivos, para hacer lo que
+                  queremos necesitamos de plugins.
+                </p>
+                <h3>Plugins CSS</h3>
+                <p>
+                  Para manipular archivos .css usaremos dos plugins:
+                </p>
+                <ul>
+                  <li>
+                    <a
+                      class="link link-refe"
+                      target="_blank"
+                      href="https://github.com/webpack-contrib/mini-css-extract-plugin"
+                      >mini-css-extract-plugin</a
+                    >: Este complemento extrae CSS en archivos separados. Crea
+                    un archivo CSS por archivo JS que contiene CSS. Admite carga
+                    bajo demanda de CSS y SourceMaps.
+                  </li>
+                  <li>
+                    <a
+                      class="link link-refe"
+                      target="_blank"
+                      href="https://github.com/jantimon/html-webpack-plugin"
+                      >html-webpack-plugin</a
+                    >: Complemento que simplifica la creación de archivos HTML
+                    para servir sus paquetes.
+                  </li>
+                </ul>
+                <pre class="code">
 
                   <span class="code-comment">#Instalación</span>
                   npm i -D -E mini-css-extract-plugin html-webpack-plugin
                 </pre>
-              <p>En el archivo <strong>webpack.config.js</strong>:</p>
-              <pre class="code">
+                <p>En el archivo <strong>webpack.config.js</strong>:</p>
+                <pre class="code">
 
                   <span class="code-comment">#Los plugins se importan al comienzo del documento</span>
                   <span class="code-var">const</span> MiniCSSExtractPlugin = <span class="code-var">require</span>(<span class="code-text">'mini-css-extract-plugin'</span>);
                   <span class="code-var">const</span> HTMLWebpackPlugin = <span class="code-var">require</span>(<span class="code-text">'html-webpack-plugin'</span>);
                 </pre>
-              <p>
-                Lo que acabamos de importar son clases y para usarlos hay que
-                <strong>instanciarlos</strong>, los plugins se definen en una
-                nueva <strong>key</strong> del archivo llamada
-                <strong>plugins</strong> que recibira un arreglo.
-              </p>
-              <ul>
-                <li>
-                  <strong>Configuración MiniCSSExtractPlugin</strong>:
-                  <ul>
-                    <li>
-                      <strong>filename:</strong>: Donde se exportara el
-                      archivo finalizado de CSS.
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <strong>HTMLWebpackPlugin</strong>: Genera un nuevo HTML.
-                  <ul>
-                    <li>
-                      <strong>title</strong>: Titulo (etiqueta title) del
-                      nuevo archivo HTML.
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-              <p>
-                Cuando usamos estos plugins ya no es necesario el loader de
-                <strong>style-loader</strong>, ya que no queremos que inyecte
-                todo el CSS dentro del HTML, si no majarlo como un archivo
-                aparte.
-              </p>
-              <pre class="code">
+                <p>
+                  Lo que acabamos de importar son clases y para usarlos hay que
+                  <strong>instanciarlos</strong>, los plugins se definen en una
+                  nueva <strong>key</strong> del archivo llamada
+                  <strong>plugins</strong> que recibira un arreglo.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Configuración MiniCSSExtractPlugin</strong>:
+                    <ul>
+                      <li>
+                        <strong>filename:</strong>: Donde se exportara el
+                        archivo finalizado de CSS.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>HTMLWebpackPlugin</strong>: Genera un nuevo HTML.
+                    <ul>
+                      <li>
+                        <strong>title</strong>: Titulo (etiqueta title) del
+                        nuevo archivo HTML.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>
+                  Cuando usamos estos plugins ya no es necesario el loader de
+                  <strong>style-loader</strong>, ya que no queremos que inyecte
+                  todo el CSS dentro del HTML, si no majarlo como un archivo
+                  aparte.
+                </p>
+                <pre class="code">
 
                   plugins: [
                     <span class="code-sym">new </span> HTMLWebpackPlugin({
@@ -592,13 +658,13 @@
                     })
                   ]
                 </pre>
-              <p>
-                En la configuración de los loaders en
-                <strong>use</strong> debemos importar los plugins.
-                <strong>MiniCSSExtractPlugin.loader</strong> devolvera una
-                cadena de texto.
-              </p>
-              <pre class="code">
+                <p>
+                  En la configuración de los loaders en
+                  <strong>use</strong> debemos importar los plugins.
+                  <strong>MiniCSSExtractPlugin.loader</strong> devolvera una
+                  cadena de texto.
+                </p>
+                <pre class="code">
 
                   use: [
                     {
@@ -607,15 +673,15 @@
                     <span class="code-text">css-loader</span>
                   ]
                 </pre>
-              <p><strong>package.json</strong>:</p>
-              <pre class="code">
+                <p><strong>package.json</strong>:</p>
+                <pre class="code">
 
                   <span class="code-var">"build:plugins"</span> : <span class="code-text">"webpack --config ./plugins/webpack.config.js"</span>
                 </pre>
-              <p>
-                Si tenemos varios archivos HTML:
-              </p>
-              <pre class="code">
+                <p>
+                  Si tenemos varios archivos HTML:
+                </p>
+                <pre class="code">
 
                   <span class="code-sym">new</span> HtmlWebpackPlugin({
                     template: <span class="code-text">"./src/templates/home.html"</span>,
@@ -628,38 +694,42 @@
                     chunks: [<span class="code-text">'contact'</span>] 
                   })
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="dev-server">
-            <h2 class="course-class__section--title">
-              Servidor de desarrollo
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Webpack nos permite avanzar rápido en nuestra experiencia de
-                desarrollo, como por ejemplo ver plasmado nuestros cambios en
-                el navegador (que se compile automáticamente).
-              </p>
-              <p>
-                En el package json el flag <strong>--watch</strong> o
-                <strong>-w</strong> nos permite autocompliar webpack cada vez
-                que hagamos cambios a nuestro proyecto. También podemos añadir
-                ese flag desde la consola:
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="dev-server">
+              <h2 class="course-class__section--title">
+                Servidor de desarrollo
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Webpack nos permite avanzar rápido en nuestra experiencia de
+                  desarrollo, como por ejemplo ver plasmado nuestros cambios en
+                  el navegador (que se compile automáticamente).
+                </p>
+                <p>
+                  En el package json el flag <strong>--watch</strong> o
+                  <strong>-w</strong> nos permite autocompliar webpack cada vez
+                  que hagamos cambios a nuestro proyecto. También podemos añadir
+                  ese flag desde la consola:
+                </p>
+                <pre class="code">
 
                   npm run build:dev -- -w
                 </pre>
-              <p>
-                Con lo anterior cada cambio vuelve a compilar los archivos,
-                pero el "problema" es que todavía debemos recargar la página
-                del navegador manualmente para ver los cambios que hacemos a
-                nuestro proyecto. Si queremos evitar eso podemos instalar el
-                módulo
-                <a class="link link-refe" target="_blank" href="https://github.com/webpack/webpack-dev-server">webpack
-                  dev server</a>.
-              </p>
-              <pre class="code">
+                <p>
+                  Con lo anterior cada cambio vuelve a compilar los archivos,
+                  pero el "problema" es que todavía debemos recargar la página
+                  del navegador manualmente para ver los cambios que hacemos a
+                  nuestro proyecto. Si queremos evitar eso podemos instalar el
+                  módulo
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://github.com/webpack/webpack-dev-server"
+                    >webpack dev server</a
+                  >.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#Instalación</span>
                   npm i -D -E webpack-dev-server
@@ -667,28 +737,32 @@
                   <span class="code-comment">#En <strong>package.json</strong></span>
                   <span class="code-var">"build:dev"</span> : <span class="code-text">"webpack-dev-server" --config ./webpack-dev-server/webpack.config.js"</span>
                 </pre>
-              <h3>Configuraciones adicionales a Dev Server</h3>
-              <ul>
-                <li>
-                  <strong>hot:</strong> Activa el
-                  <strong>HotModuleReplacementPlugin</strong>
-                  que muestra los cambios sin actualizar la página.
-                </li>
-                <li>
-                  <strong>port:</strong> Al crear un servidor de prueba con
-                  webpack-dev-server éste tomará por defecto el puerto 8080,
-                  acá podrás cambiar el puerto.
-                </li>
-                <li>
-                  <strong>open</strong>: Abrirá el navegador al iniciar el
-                  servidor.
-                </li>
-              </ul>
-              <p>
-                <a class="link link-refe" target="_blank" href="https://webpack.js.org/configuration/dev-server/">más
-                  configuraciones</a>.
-              </p>
-              <pre class="code">
+                <h3>Configuraciones adicionales a Dev Server</h3>
+                <ul>
+                  <li>
+                    <strong>hot:</strong> Activa el
+                    <strong>HotModuleReplacementPlugin</strong>
+                    que muestra los cambios sin actualizar la página.
+                  </li>
+                  <li>
+                    <strong>port:</strong> Al crear un servidor de prueba con
+                    webpack-dev-server éste tomará por defecto el puerto 8080,
+                    acá podrás cambiar el puerto.
+                  </li>
+                  <li>
+                    <strong>open</strong>: Abrirá el navegador al iniciar el
+                    servidor.
+                  </li>
+                </ul>
+                <p>
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://webpack.js.org/configuration/dev-server/"
+                    >más configuraciones</a
+                  >.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#Añadir key (objeto) a module.exports</span>
                   devServer: {
@@ -697,24 +771,24 @@
                     port: 9090
                   }
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="hot-module-replacement">
-            <h2 class="course-class__section--title">
-              Hot Module Replacement
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                <strong>Hot Module Replacement (HMR)</strong> es un plugin de
-                Webpack que permite intercambiar, agregar o eliminar módulos
-                en tiempo de ejecución, sin una recarga completa de la página
-              </p>
-              <p>
-                Para activarlo lo tienes que importar desde webpack, agregarlo
-                como plugin y en el <strong>devServer</strong> agregar la
-                propiedad hot.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="hot-module-replacement">
+              <h2 class="course-class__section--title">
+                Hot Module Replacement
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  <strong>Hot Module Replacement (HMR)</strong> es un plugin de
+                  Webpack que permite intercambiar, agregar o eliminar módulos
+                  en tiempo de ejecución, sin una recarga completa de la página
+                </p>
+                <p>
+                  Para activarlo lo tienes que importar desde webpack, agregarlo
+                  como plugin y en el <strong>devServer</strong> agregar la
+                  propiedad hot.
+                </p>
+                <pre class="code">
 
                   <span class="code-var">const</span> webpack = <span class="code-var">require</span> (<span class="code-text">'webpack'</span>);
                   module.<span class="code-var">exports</span> = {
@@ -727,32 +801,36 @@
                     ]
                   };
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="babel">
-            <h2 class="course-class__section--title">
-              Soporte de Javascript moderno
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Javascript es un lenguaje moderno en evolución, siempre
-                agregando nuevas funciones. El problema es que al ser
-                interpretado en el navegador, no tenemos control sobre que
-                versión de Javascript soportan y por lo tanto que funciones.
-              </p>
-              <p>
-                Para poder usar Javascript moderno y tener una buena
-                <strong>Developer Experience</strong> sin afectar la
-                <strong>User Experience</strong>, existe
-                <a class="link link-refe" target="_blank" href="https://github.com/babel/babel">Babel</a>. Babel
-                transpila nuestro código moderno de Javascript a una
-                una versión que todos los navegadores pueden entender.
-              </p>
-              <p>
-                Babel será un nuevo <strong>loader</strong> para intersertar
-                los archivos de Javascript.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="babel">
+              <h2 class="course-class__section--title">
+                Soporte de Javascript moderno
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Javascript es un lenguaje moderno en evolución, siempre
+                  agregando nuevas funciones. El problema es que al ser
+                  interpretado en el navegador, no tenemos control sobre que
+                  versión de Javascript soportan y por lo tanto que funciones.
+                </p>
+                <p>
+                  Para poder usar Javascript moderno y tener una buena
+                  <strong>Developer Experience</strong> sin afectar la
+                  <strong>User Experience</strong>, existe
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://github.com/babel/babel"
+                    >Babel</a
+                  >. Babel transpila nuestro código moderno de Javascript a una
+                  una versión que todos los navegadores pueden entender.
+                </p>
+                <p>
+                  Babel será un nuevo <strong>loader</strong> para intersertar
+                  los archivos de Javascript.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#Se crea la regla</span>
                   module: {
@@ -763,19 +841,24 @@
                     ]
                   }
                 </pre>
-              <p>
-                <strong>exclude</strong>: Que directorios o tipos de archivos
-                que, aunque sean Javascript no queremos que se le aplique
-                <strong>babel-loader</strong>.
-              </p>
-              <p>
-                Babel requerirá de configuración, ésta puede ser declarada
-                dentro del webpack, pero se recomienda hacerlo dentro de un
-                archivo llamado
-                <a class="link link-refe" target="_blank" href="https://babeljs.io/docs/en/config-files">.babelrc</a>
-                que leerá babel a la hora de ser configurado por webpack.
-              </p>
-              <pre class="code">
+                <p>
+                  <strong>exclude</strong>: Que directorios o tipos de archivos
+                  que, aunque sean Javascript no queremos que se le aplique
+                  <strong>babel-loader</strong>.
+                </p>
+                <p>
+                  Babel requerirá de configuración, ésta puede ser declarada
+                  dentro del webpack, pero se recomienda hacerlo dentro de un
+                  archivo llamado
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://babeljs.io/docs/en/config-files"
+                    >.babelrc</a
+                  >
+                  que leerá babel a la hora de ser configurado por webpack.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#archivo .babelrc</span>
                   
@@ -787,18 +870,18 @@
                     ]
                   }
                 </pre>
-              <p>
-                Instalar las dependencia:
-              </p>
-              <pre class="code">
+                <p>
+                  Instalar las dependencia:
+                </p>
+                <pre class="code">
 
                   npm i -D -E @babel/core babel-loader @babel/preset-env
 
                   <span class="code-comment">#En package.json</span>
                   <span class="code-var">"build:babel"</span> : <span class="code-text">"webpack-dev-server --config ./webpack-babel/webpack.config.js"</span>
                 </pre>
-              <h3>Funciones asíncronas</h3>
-              <pre class="code">
+                <h3>Funciones asíncronas</h3>
+                <pre class="code">
 
                   <span class="code-comment">#Instalar dependencias para que babel interprete async await</span>
                   npm i -D -E @babel/plugin-transform-runtime
@@ -810,25 +893,25 @@
                     "@babel/plugin-transform-runtime"
                   ]
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="jsx">
-            <h2 class="course-class__section--title">
-              Soporte de JSX (React)
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                <strong>JSX</strong> es un lenguaje de templates para React
-                que permite definir componentes con un código muy similar al
-                HTML.
-              </p>
-              <p>
-                No existe navegador que entienda JSX porque no es un estándar,
-                es algo especifico de React. Afortunadamente Babel puede
-                transpilar el código JSX de nuestros archivos JS a código que
-                el navegador.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="jsx">
+              <h2 class="course-class__section--title">
+                Soporte de JSX (React)
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  <strong>JSX</strong> es un lenguaje de templates para React
+                  que permite definir componentes con un código muy similar al
+                  HTML.
+                </p>
+                <p>
+                  No existe navegador que entienda JSX porque no es un estándar,
+                  es algo especifico de React. Afortunadamente Babel puede
+                  transpilar el código JSX de nuestros archivos JS a código que
+                  el navegador.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#En .babelrc</span>
                   <span class="code-var">"presets"</span>: [
@@ -848,44 +931,48 @@
                     template : path.<span class="code-var">resolve</span>(__dirname, <span class="code-text">'index.html'</span>)
                   })
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="media">
-            <h2 class="course-class__section--title">
-              Soporte imágenes, fuentes y videos
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Para soportar la importación de archivos binarios en nuestro
-                código Javascript cómo lo son: fuentes, imágenes y videos,
-                podemos usar <strong>url-loader</strong>.
-              </p>
-              <p>
-                url-loader transforma archivos a un cadena de texto base64
-                para que carguen dentro de nuestros archivos Javascript y así
-                ahorrarnos un request al servidor por cada archivo
-                transformado.
-              </p>
-              <p>
-                Debemos tomar en cuenta que sólo nos conviene convertir
-                archivos pequeños, ya que archivos muy grandes podrían hacer
-                nuestro archivo bundle muy pesado. Es por esto que la opción
-                <strong>limit</strong> del url-loader sirve para asignar el
-                peso máximo que un archivo puede tener para ser transformado
-                en base64.
-              </p>
-              <p>
-                No olvides instalar <strong>file-loader</strong> junto con
-                <strong>url-loader</strong> ya que cuando se sobrepasa el
-                limite establecido en la opción limit y el archivo no pueda
-                ser transformado a base64, <strong>url-loader</strong> hará
-                uso del
-                <a class="link link-refe" target="_blank"
-                  href="https://webpack.js.org/loaders/file-loader/">file-loader</a>
-                para insertar un nombre y ruta de archivo en el lugar
-                correspondiente.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="media">
+              <h2 class="course-class__section--title">
+                Soporte imágenes, fuentes y videos
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para soportar la importación de archivos binarios en nuestro
+                  código Javascript cómo lo son: fuentes, imágenes y videos,
+                  podemos usar <strong>url-loader</strong>.
+                </p>
+                <p>
+                  url-loader transforma archivos a un cadena de texto base64
+                  para que carguen dentro de nuestros archivos Javascript y así
+                  ahorrarnos un request al servidor por cada archivo
+                  transformado.
+                </p>
+                <p>
+                  Debemos tomar en cuenta que sólo nos conviene convertir
+                  archivos pequeños, ya que archivos muy grandes podrían hacer
+                  nuestro archivo bundle muy pesado. Es por esto que la opción
+                  <strong>limit</strong> del url-loader sirve para asignar el
+                  peso máximo que un archivo puede tener para ser transformado
+                  en base64.
+                </p>
+                <p>
+                  No olvides instalar <strong>file-loader</strong> junto con
+                  <strong>url-loader</strong> ya que cuando se sobrepasa el
+                  limite establecido en la opción limit y el archivo no pueda
+                  ser transformado a base64, <strong>url-loader</strong> hará
+                  uso del
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://webpack.js.org/loaders/file-loader/"
+                    >file-loader</a
+                  >
+                  para insertar un nombre y ruta de archivo en el lugar
+                  correspondiente.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#Instalar loader</span>
                   npm i -D -E url-loader file-loader
@@ -903,23 +990,23 @@
                     }
                   ]
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="preprocesadores">
-            <h2 class="course-class__section--title">
-              Estilos con preprocesadores
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Es una práctica común usar preprocesadores de CSS como: Sass,
-                Less, Stylus y hasta PostCSS. Webpack permite integrar estos
-                preprocesadores en su configuración a través de loaders, sólo
-                ten cuidado con las <strong>peerDependencies</strong> que son
-                dependencias que el loader espera estén instaladas
-                previamente, como el caso de <strong>stylus</strong> para
-                <strong>stylus-loader</strong>.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="preprocesadores">
+              <h2 class="course-class__section--title">
+                Estilos con preprocesadores
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Es una práctica común usar preprocesadores de CSS como: Sass,
+                  Less, Stylus y hasta PostCSS. Webpack permite integrar estos
+                  preprocesadores en su configuración a través de loaders, sólo
+                  ten cuidado con las <strong>peerDependencies</strong> que son
+                  dependencias que el loader espera estén instaladas
+                  previamente, como el caso de <strong>stylus</strong> para
+                  <strong>stylus-loader</strong>.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#Instalación loader</span>
                   npm i sass-loader stylus-loader less-loader postcss-loader -D -E
@@ -927,12 +1014,12 @@
                   <span class="code-comment">#sass, stylus y less deben ser instalados antes</span>
                   npm i stylus less node-sass -D -E
                 </pre>
-              <p>
-                Dentro del <strong>webpack.config.js</strong> agregar las
-                nuevas reglas en <strong>module</strong> >
-                <strong>rules</strong>:
-              </p>
-              <pre class="code">
+                <p>
+                  Dentro del <strong>webpack.config.js</strong> agregar las
+                  nuevas reglas en <strong>module</strong> >
+                  <strong>rules</strong>:
+                </p>
+                <pre class="code">
 
                   [
                     {
@@ -961,24 +1048,28 @@
                     }
                   ]
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="code-splitting">
-            <h2 class="course-class__section--title">
-              Evitar código duplicado
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Es útil dividir nuestro código en diversos archivos y a veces
-                enteros proyectos, pero no queremos cargar nuestra aplicación
-                de más multiplicando el peso de alguna dependencia al
-                utilizarla en diferentes partes de la aplicación, para eso
-                utilizamos el módulo de optimización con splitChunks en
-                webpack.
-                <a target="_blank" class="link link-refe"
-                  href="https://webpack.js.org/plugins/split-chunks-plugin/">Documentación Split Chunks</a>.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="code-splitting">
+              <h2 class="course-class__section--title">
+                Evitar código duplicado
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Es útil dividir nuestro código en diversos archivos y a veces
+                  enteros proyectos, pero no queremos cargar nuestra aplicación
+                  de más multiplicando el peso de alguna dependencia al
+                  utilizarla en diferentes partes de la aplicación, para eso
+                  utilizamos el módulo de optimización con splitChunks en
+                  webpack.
+                  <a
+                    target="_blank"
+                    class="link link-refe"
+                    href="https://webpack.js.org/plugins/split-chunks-plugin/"
+                    >Documentación Split Chunks</a
+                  >.
+                </p>
+                <pre class="code">
 
                   module.exports = {
                     entry:{
@@ -994,36 +1085,36 @@
                     },
                   }
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="dynamic-link-library">
-            <h2 class="course-class__section--title">
-              Añadiendo un Dynamic Link Library
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Mientras más librerías agregamos más lento se empiezan a
-                volver nuestros builds, arruinando así la
-                <strong>Developer Experience</strong>. Por suerte podemos
-                crear una (o varias) Dynamic Link Library para acortar estos
-                tiempos.
-              </p>
-              <p>
-                Una <strong>Dynamic Link Library (DLL)</strong> es un conjunto
-                de librerías comunes que no cambian frecuentemente por lo que
-                se hace un build por adelantado de las mismas para no
-                re-empaquetar cada vez que hacemos build de nuestra
-                aplicación.
-              </p>
-              <p>
-                Beneficiando tanto la
-                <strong>Developer Experience</strong> como la
-                <strong>User Experience</strong> ya que el caché del navegador
-                va a mantener una copia que solo va a cambiar cuando nosotros
-                agreguemos o quitemos alguna dependencia, ahorrando así
-                valiosos requests al servidor.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="dynamic-link-library">
+              <h2 class="course-class__section--title">
+                Añadiendo un Dynamic Link Library
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Mientras más librerías agregamos más lento se empiezan a
+                  volver nuestros builds, arruinando así la
+                  <strong>Developer Experience</strong>. Por suerte podemos
+                  crear una (o varias) Dynamic Link Library para acortar estos
+                  tiempos.
+                </p>
+                <p>
+                  Una <strong>Dynamic Link Library (DLL)</strong> es un conjunto
+                  de librerías comunes que no cambian frecuentemente por lo que
+                  se hace un build por adelantado de las mismas para no
+                  re-empaquetar cada vez que hacemos build de nuestra
+                  aplicación.
+                </p>
+                <p>
+                  Beneficiando tanto la
+                  <strong>Developer Experience</strong> como la
+                  <strong>User Experience</strong> ya que el caché del navegador
+                  va a mantener una copia que solo va a cambiar cuando nosotros
+                  agreguemos o quitemos alguna dependencia, ahorrando así
+                  valiosos requests al servidor.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment"><strong>#webpack.dll.config.js</strong></span>
                   <span class="code-comment">#Para exportar librerias comunes (react, react-dom)</span>
@@ -1056,51 +1147,30 @@
                     })
                   ]
                 </pre>
-            </div>
-          </article>
-        </div>
-      </section>
-      <footer class="footer">
-        <div class="container-general">
-          <div class="footer__container">
-            <p id="footer-year">@Carlos Zabala Roqueme -</p>
-            <figure class="footer__container--img">
-              <img src="../../src/images/logo-white-2.png" alt="logo Carlos Zabala" />
-            </figure>
+              </div>
+            </article>
           </div>
-        </div>
-      </footer>
+        </section>
+        <footer class="footer">
+          <div class="container-general">
+            <div class="footer__container">
+              <p id="footer-year">@Carlos Zabala Roqueme -</p>
+              <figure class="footer__container--img">
+                <img
+                  src="../../src/images/logo-white-2.png"
+                  alt="logo Carlos Zabala"
+                />
+              </figure>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
-  </div>
-  <script src="https://kit.fontawesome.com/2028b75fa6.js" crossorigin="anonymous"></script>
+    <script
+    src="https://kit.fontawesome.com/2028b75fa6.js"
+    crossorigin="anonymous"
+  ></script>
   <script src="../../src/js/menu.js"></script>
-  <script>
-    const $menu = document.getElementById("btn-menu");
-    const $courseMenu = document.getElementById("course-class__left");
-
-    $menu.addEventListener("click", handleClick);
-
-    function handleClick() {
-      $courseMenu.classList.toggle("is-active");
-      $menu.classList.toggle("is-active");
-
-      if ($menu.classList.contains("fa-bars")) {
-        $menu.classList.remove("fa-bars");
-        $menu.classList.add("fa-times");
-      } else {
-        $menu.classList.remove("fa-times");
-        $menu.classList.add("fa-bars");
-      }
-    }
-
-    const $footerYear = document.getElementById("footer-year");
-
-    if ($footerYear) {
-      let date = new Date();
-
-      $footerYear.innerHTML += " " + date.getFullYear();
-    }
-  </script>
-</body>
-
+  <script type="module" src="../../index.js"></script>
+  </body>
 </html>

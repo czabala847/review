@@ -701,32 +701,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../../src/js/menu.js"></script>
-    <script>
-      const $menu = document.getElementById("btn-menu");
-      const $courseMenu = document.getElementById("course-class__left");
-
-      $menu.addEventListener("click", handleClick);
-
-      function handleClick() {
-        $courseMenu.classList.toggle("is-active");
-        $menu.classList.toggle("is-active");
-
-        if ($menu.classList.contains("fa-bars")) {
-          $menu.classList.remove("fa-bars");
-          $menu.classList.add("fa-times");
-        } else {
-          $menu.classList.remove("fa-times");
-          $menu.classList.add("fa-bars");
-        }
-      }
-
-      const $footerYear = document.getElementById("footer-year");
-
-      if ($footerYear) {
-        let date = new Date();
-
-        $footerYear.innerHTML += " " + date.getFullYear();
-      }
-    </script>
+    <script type="module" src="../../index.js"></script>
   </body>
 </html>

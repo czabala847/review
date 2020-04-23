@@ -1,189 +1,229 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso básico de PHP</title>
+    <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../src/css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Curso básico de PHP</title>
-  <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
-  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../src/css/styles.css" />
-</head>
-
-<body>
-  <div class="app">
-    <div class="app-react-basico">
-      <header class="header">
-        <div class="container-general">
-          <nav class="header-menu">
-            <ul class="header-menu__list menu-left">
-              <li class="header-menu__list--item">
-                <a class="link" href="../../index.html">Inicio</a>
-              </li>
-              <li class="header-menu__list--item">
-                <a class="link" href="">Carreras</a>
-              </li>
-            </ul>
-            <figure class="header-menu__logo">
-              <a href="../../index.html"><img class="header-menu__logo--img" src="../../src/images/logo_white.png"
-                  alt="logo carlos zabala" /></a>
-            </figure>
-            <ul class="header-menu__list menu-right">
-              <li class="header-menu__list--item">
-                <a class="link" href="">Me</a>
-              </li>
-              <li class="header-menu__list--item">
-                <a class="link" href="">Contacto</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <section class="hero-course">
-        <div class="container-general">
-          <h1 class="hero-course__title">Curso básico de PHP</h1>
-          <div class="hero-course__description">
-            <p>
-              PHP es un lenguaje de programación de propósito general de alto
-              nivel que fue diseñado especialmente para el desarrollo de
-              aplicaciones web.
-              <br />
-              Es interpretado, multiplataforma, open source, el cual ha sido
-              muy popular en los últimos años.
-            </p>
-            <p><strong>¿Qué NO es PHP?</strong> <br /></p>
-            <ul>
-              <li>
-                No es un lenguaje compilado, por lo cual siempre tendrás que
-                llevar juntos tu código y tu interprete.
-              </li>
-              <li>
-                No esta diseñado para realizar aplicaciones de escritorio.
-              </li>
-            </ul>
-          </div>
-          <div class="hero-course__buttons">
-            <a target="_blank" href="https://platzi.com/clases/php/" class="btn btn--primary">Curso platzi</a>
-          </div>
-        </div>
-      </section>
-      <section class="course-class">
-        <div class="course-class__left" id="course-class__left">
-          <div class="course-class__left--container">
-            <nav class="course-class__menu">
-              <ul>
-                <li>
-                  <a class="link course-class__menu--a" href="#syntax">Sintaxis</a>
+  <body>
+    <div class="app">
+      <div class="app-react-basico">
+        <header class="header">
+          <div class="container-general">
+            <nav class="header-menu">
+              <ul class="header-menu__list menu-left">
+                <li class="header-menu__list--item">
+                  <a class="link" href="../../index.html">Inicio</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#variable">Variables</a>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Carreras</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#array">Arreglos</a>
+              </ul>
+              <figure class="header-menu__logo">
+                <a href="../../index.html"
+                  ><img
+                    class="header-menu__logo--img"
+                    src="../../src/images/logo_white.png"
+                    alt="logo carlos zabala"
+                /></a>
+              </figure>
+              <ul class="header-menu__list menu-right">
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Me</a>
                 </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#require">Archivos externos</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#poo">Programación Orientada a Objetos</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#inheritance">Herencia</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#interface">Interfaces</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#autoload">Autoload</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#namespaces">Namespaces</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#composer">Composer</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#orm">ORM</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#eloquent">Eloquent</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#front-controller">Front Controller</a>
-                </li>
-                <li>
-                  <a class="link course-class__menu--a" href="#psr-7">PSR7</a>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Contacto</a>
                 </li>
               </ul>
             </nav>
           </div>
-        </div>
-        <div class="course-class__content">
-          <i class="fas fa-bars icon course-class__icon-menu" id="btn-menu"></i>
-          <article class="course-class__section" id="syntax">
-            <h2 class="course-class__section--title">Sintaxis de PHP</h2>
-            <div class="course-class__section--content">
+        </header>
+        <section class="hero-course">
+          <div class="container-general">
+            <h1 class="hero-course__title">Curso básico de PHP</h1>
+            <div class="hero-course__description">
               <p>
-                Siempre que usemos PHP usaremos lo siguiente:
-                <strong>&lt;?php ?&gt; </strong>
-                todo lo que pongamos dentro de esto será lo que el servidor va
-                a interpretar como código php, lo que esté fuera lo ignorará.
+                PHP es un lenguaje de programación de propósito general de alto
+                nivel que fue diseñado especialmente para el desarrollo de
+                aplicaciones web.
+                <br />
+                Es interpretado, multiplataforma, open source, el cual ha sido
+                muy popular en los últimos años.
               </p>
-              <p>
-                Si queremos escribir código php en nuestra vista HTML
-                tendremos que cambiarle la extensión al archivo por
-                <strong>.php</strong>
-                porque nuestro servidor esta configurado a solo interpretar
-                archivos PHP. Solo las partes dentro de
-                <span class="t-i">&lt;?php ?&gt;</span>
-                van a ser interpretadas y su código fuente no será visible
-                desde el navegador.
-              </p>
+              <p><strong>¿Qué NO es PHP?</strong> <br /></p>
+              <ul>
+                <li>
+                  No es un lenguaje compilado, por lo cual siempre tendrás que
+                  llevar juntos tu código y tu interprete.
+                </li>
+                <li>
+                  No esta diseñado para realizar aplicaciones de escritorio.
+                </li>
+              </ul>
             </div>
-          </article>
-          <article class="course-class__section" id="variable">
-            <h2 class="course-class__section--title">
-              Variables
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Para declararla usaremos el símbolo de <strong>$</strong> y en
-                seguida el nombre, este puede ser un _ o una letra.
-                PHP no es estáticamente tipado, es decir que no tenemos que
-                decirle qué tipo de dato es esa variable. Además, es
-                débilmente tipado porque podemos fácilmente cambiar el tipo de
-                dato, es decir PHP ejecuta una conversión de datos interna.
-              </p>
-              <p>
-                Al momento de trabajar con PHP una cosa muy importante es
-                hacer debugging a nuestras variables, para ello utilizamos la
-                función <strong>var_dump();</strong> pasándole por parámetro
-                la variable a revisar.
-              </p>
-              <pre class="code">
+            <div class="hero-course__buttons">
+              <a
+                target="_blank"
+                href="https://platzi.com/clases/php/"
+                class="btn btn--primary"
+                >Curso platzi</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="course-class">
+          <div class="course-class__left" id="course-class__left">
+            <div class="course-class__left--container">
+              <nav class="course-class__menu">
+                <ul>
+                  <li>
+                    <a class="link course-class__menu--a" href="#syntax"
+                      >Sintaxis</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#variable"
+                      >Variables</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#array"
+                      >Arreglos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#require"
+                      >Archivos externos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#poo"
+                      >Programación Orientada a Objetos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#inheritance"
+                      >Herencia</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#interface"
+                      >Interfaces</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#autoload"
+                      >Autoload</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#namespaces"
+                      >Namespaces</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#composer"
+                      >Composer</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#orm">ORM</a>
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#eloquent"
+                      >Eloquent</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#front-controller"
+                      >Front Controller</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#psr-7">PSR7</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="course-class__content">
+            <i
+              class="fas fa-bars icon course-class__icon-menu"
+              id="btn-menu"
+            ></i>
+            <article class="course-class__section" id="syntax">
+              <h2 class="course-class__section--title">Sintaxis de PHP</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Siempre que usemos PHP usaremos lo siguiente:
+                  <strong>&lt;?php ?&gt; </strong>
+                  todo lo que pongamos dentro de esto será lo que el servidor va
+                  a interpretar como código php, lo que esté fuera lo ignorará.
+                </p>
+                <p>
+                  Si queremos escribir código php en nuestra vista HTML
+                  tendremos que cambiarle la extensión al archivo por
+                  <strong>.php</strong>
+                  porque nuestro servidor esta configurado a solo interpretar
+                  archivos PHP. Solo las partes dentro de
+                  <span class="t-i">&lt;?php ?&gt;</span>
+                  van a ser interpretadas y su código fuente no será visible
+                  desde el navegador.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="variable">
+              <h2 class="course-class__section--title">
+                Variables
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para declararla usaremos el símbolo de <strong>$</strong> y en
+                  seguida el nombre, este puede ser un _ o una letra. PHP no es
+                  estáticamente tipado, es decir que no tenemos que decirle qué
+                  tipo de dato es esa variable. Además, es débilmente tipado
+                  porque podemos fácilmente cambiar el tipo de dato, es decir
+                  PHP ejecuta una conversión de datos interna.
+                </p>
+                <p>
+                  Al momento de trabajar con PHP una cosa muy importante es
+                  hacer debugging a nuestras variables, para ello utilizamos la
+                  función <strong>var_dump();</strong> pasándole por parámetro
+                  la variable a revisar.
+                </p>
+                <pre class="code">
 
                   var_dump($name);
                 </pre>
-              <p>
-                Con el comando echo mostramos un mensaje en el navegador.
-              </p>
-              <pre class="code">
+                <p>
+                  Con el comando echo mostramos un mensaje en el navegador.
+                </p>
+                <pre class="code">
 
                   &lt;?php <span class="code-var">echo</span> <span class="code-text">"Esto se mostrara en el documento, me llamó $name"</span> ?&gt;
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="array">
-            <h2 class="course-class__section--title">Arreglos</h2>
-            <div class="course-class__section--content">
-              <p>
-                La estructura de arreglos en PHP es conocida como mapa, lo que
-                quiere decir que tiene una composición de llave valor. Además,
-                un arreglo puede contener más arreglos y cada uno de ellos
-                seguirá la misma estructura.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="array">
+              <h2 class="course-class__section--title">Arreglos</h2>
+              <div class="course-class__section--content">
+                <p>
+                  La estructura de arreglos en PHP es conocida como mapa, lo que
+                  quiere decir que tiene una composición de llave valor. Además,
+                  un arreglo puede contener más arreglos y cada uno de ellos
+                  seguirá la misma estructura.
+                </p>
+                <pre class="code">
 
                 $array = [
                   [
@@ -198,76 +238,80 @@
                 <span class="code-comment">#Usando el array</span>
                 $array[0][llave] <span class="code-comment">#Resultado: Valor</span>
                 </pre>
-              <div class="note">
-                <p>
-                  Algo que debes saber es que en PHP podrás almacenar
-                  diferentes tipos de datos en un mismo arreglo.
-                </p>
+                <div class="note">
+                  <p>
+                    Algo que debes saber es que en PHP podrás almacenar
+                    diferentes tipos de datos en un mismo arreglo.
+                  </p>
+                </div>
               </div>
-            </div>
-          </article>
-          <article class="course-class__section" id="require">
-            <h2 class="course-class__section--title">
-              Agregando archivos externos
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Para organizar mejor nuestro código podemos separar archivos
-                php.
-                Se usa la palabra reservada <strong>include</strong> para
-                hacer que el archivo index incluya el archivo php externo, si
-                lo encuentra lo incluye, pero si no nos mostrará un warning.
-                Existe otro llamado <strong>require</strong> que si no lo
-                encuentra nos muestra un error en todo el archivo.
-              </p>
-              <p>
-                Los métodos include y require ejecutan el código del archivo
-                cada vez que lo incluyen, esto puede traer errores en la
-                ejecución de tu código si tienes archivos con funciones pues
-                te dirá que no puedes declarar dos veces una función con el
-                mismo nombre. Para resolver esto existen include_once y
-                require_once que obligan a incluir una sola vez el archivo.
-              </p>
-              <pre class="code">
+            </article>
+            <article class="course-class__section" id="require">
+              <h2 class="course-class__section--title">
+                Agregando archivos externos
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para organizar mejor nuestro código podemos separar archivos
+                  php. Se usa la palabra reservada <strong>include</strong> para
+                  hacer que el archivo index incluya el archivo php externo, si
+                  lo encuentra lo incluye, pero si no nos mostrará un warning.
+                  Existe otro llamado <strong>require</strong> que si no lo
+                  encuentra nos muestra un error en todo el archivo.
+                </p>
+                <p>
+                  Los métodos include y require ejecutan el código del archivo
+                  cada vez que lo incluyen, esto puede traer errores en la
+                  ejecución de tu código si tienes archivos con funciones pues
+                  te dirá que no puedes declarar dos veces una función con el
+                  mismo nombre. Para resolver esto existen include_once y
+                  require_once que obligan a incluir una sola vez el archivo.
+                </p>
+                <pre class="code">
 
                 <span class="code-var">include</span>(<span class="code-text">'otraArchivo.php'</span>);
                 <span class="code-var">require</span>(<span class="code-text">'otraArchivo.php'</span>);
                 <span class="code-var">require_once</span>(<span class="code-text">'otraArchivo.php'</span>);
               </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="poo">
-            <h2 class="course-class__section--title">
-              Programación Orientada a Objetos
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                La programación orientada a objetos nos ayudará a estructurar
-                mejor nuestros programas, lo que lo hace tener código más
-                reutilizable y mantenible. Una <strong>clase</strong> es una
-                plantilla o definición de algo. Y una
-                <strong>instancia</strong> es la representación concreta de la
-                clase.
-              </p>
-              <p>
-                Encapsulamiento será el nivel de visibilidad que queramos
-                darle a alguna variable, para ello podemos utilizar los
-                modificadores de acceso <strong>private</strong>,
-                <strong>public</strong> y <strong>protected</strong>.
-              </p>
-              <p>
-                Con la palabra reservada <strong>this</strong> estaremos
-                haciendo referencia a la variable que pertenece a la clase.
-              </p>
-              <p>
-                El método <strong>constructor</strong> nos permitirá
-                inicializar valores por default, así como también pasar datos
-                como parámetro al momento de inicializar un objeto. Todas las
-                funciones que tienen __ antes del nombre de la función se
-                conocen como <a class="link link-refe" target="_blank"
-                  href="https://www.php.net/manual/es/language.oop5.magic.php">métodos mágicos</a>.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="poo">
+              <h2 class="course-class__section--title">
+                Programación Orientada a Objetos
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  La programación orientada a objetos nos ayudará a estructurar
+                  mejor nuestros programas, lo que lo hace tener código más
+                  reutilizable y mantenible. Una <strong>clase</strong> es una
+                  plantilla o definición de algo. Y una
+                  <strong>instancia</strong> es la representación concreta de la
+                  clase.
+                </p>
+                <p>
+                  Encapsulamiento será el nivel de visibilidad que queramos
+                  darle a alguna variable, para ello podemos utilizar los
+                  modificadores de acceso <strong>private</strong>,
+                  <strong>public</strong> y <strong>protected</strong>.
+                </p>
+                <p>
+                  Con la palabra reservada <strong>this</strong> estaremos
+                  haciendo referencia a la variable que pertenece a la clase.
+                </p>
+                <p>
+                  El método <strong>constructor</strong> nos permitirá
+                  inicializar valores por default, así como también pasar datos
+                  como parámetro al momento de inicializar un objeto. Todas las
+                  funciones que tienen __ antes del nombre de la función se
+                  conocen como
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://www.php.net/manual/es/language.oop5.magic.php"
+                    >métodos mágicos</a
+                  >.
+                </p>
+                <pre class="code">
 
                 <span class="code-var">class</span> NombreClase {
                   <span class="code-var">private</span> $atributo1;
@@ -299,30 +343,30 @@
                 $objeto1 = <span class="code-sym">new</span> <span class="code-var">NombreClase</span>(<span class="code-text">'valor1'</span>, <span class="code-text">'valor2'</span>);
                 $objeto1-><span class="code-function">setAtributo1</span>(<span class="code-text">'Valor'</span>);
               </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="inheritance">
-            <h2 class="course-class__section--title">Herencia</h2>
-            <div class="course-class__section--content">
-              <p>
-                La herencia permite que ciertas clases tengan características
-                de una clase padre. Esta clase se llamará hijo. La herencia la
-                expresaremos con la palabra reservada
-                <strong>extends</strong>.
-              </p>
-              <p>
-                Es muy conveniente utilizar
-                <strong>require_once</strong> cuando queremos utilizar
-                herencia e incluir clases que están en otros archivos.
-              </p>
-              <p>
-                Dentro de nuestra clase hijo podemos sobrescribir algún método
-                del padre, esto es un concepto que conocemos como
-                <strong>polimorfismo</strong>. Lo que polimorfismo quiere
-                decir es que tendremos un método que va a funcionar de acuerdo
-                con su contexto donde es llamado.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="inheritance">
+              <h2 class="course-class__section--title">Herencia</h2>
+              <div class="course-class__section--content">
+                <p>
+                  La herencia permite que ciertas clases tengan características
+                  de una clase padre. Esta clase se llamará hijo. La herencia la
+                  expresaremos con la palabra reservada
+                  <strong>extends</strong>.
+                </p>
+                <p>
+                  Es muy conveniente utilizar
+                  <strong>require_once</strong> cuando queremos utilizar
+                  herencia e incluir clases que están en otros archivos.
+                </p>
+                <p>
+                  Dentro de nuestra clase hijo podemos sobrescribir algún método
+                  del padre, esto es un concepto que conocemos como
+                  <strong>polimorfismo</strong>. Lo que polimorfismo quiere
+                  decir es que tendremos un método que va a funcionar de acuerdo
+                  con su contexto donde es llamado.
+                </p>
+                <pre class="code">
 
                   <span class="code-sym">require_once</span>(<span class="code-text">'clasePadre.php'</span>);
 
@@ -338,29 +382,29 @@
                     }
                   }
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="interface">
-            <h2 class="course-class__section--title">Interfaces</h2>
-            <div class="course-class__section--content">
-              <p>
-                Una Interface es un tipo abstracto que es usado para definir o
-                especificar el comportamiento de ciertas clases. Los métodos
-                de las interfaces no tienen implementación (Solo se describe
-                el "enunciado"). Las interfaces no pueden ser instanciadas,
-                sino implementadas por aquellas clases que tienen el
-                comportamiento definido en la interfaz (es) que esta
-                implementa.
-              </p>
-              <p>
-                Las interfaces son usadas para implementar las similitudes que
-                varios tipos de clases comparten.
-              </p>
-              <p>
-                Con las interfaces se puede simular la
-                <strong>herencia múltiple</strong>.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="interface">
+              <h2 class="course-class__section--title">Interfaces</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Una Interface es un tipo abstracto que es usado para definir o
+                  especificar el comportamiento de ciertas clases. Los métodos
+                  de las interfaces no tienen implementación (Solo se describe
+                  el "enunciado"). Las interfaces no pueden ser instanciadas,
+                  sino implementadas por aquellas clases que tienen el
+                  comportamiento definido en la interfaz (es) que esta
+                  implementa.
+                </p>
+                <p>
+                  Las interfaces son usadas para implementar las similitudes que
+                  varios tipos de clases comparten.
+                </p>
+                <p>
+                  Con las interfaces se puede simular la
+                  <strong>herencia múltiple</strong>.
+                </p>
+                <pre class="code">
 
                   <span class="code-comment">#Definiendo la interfaz</span>
                   <span class="code-var">interface</span> <span class="code-function">PrintableInterface</span>{
@@ -377,12 +421,12 @@
                     ...
                   }
                 </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="autoload">
-            <h2 class="course-class__section--title">Autoload</h2>
-            <div class="course-class__section--content">
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="autoload">
+              <h2 class="course-class__section--title">Autoload</h2>
+              <div class="course-class__section--content">
+                <pre class="code">
 
                 <span class="code-comment">#autoload.php</span>
                 <span class="code-var">function</span> <span class="code-function">autocargador</span>($clase){
@@ -395,20 +439,20 @@
                 <span class="code-var">include</span> <span class="code-text">'autoload.php'</span>;
 
               </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="namespaces">
-            <h2 class="course-class__section--title">
-              Namespaces
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                Esta es una forma de mantener únicos los nombres de los
-                archivos en el mismo directorio.
-                Para declarar un espacio de nombres privado se utiliza la
-                palabra reservada <strong>namespace</strong>. Es como el import de java.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="namespaces">
+              <h2 class="course-class__section--title">
+                Namespaces
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Esta es una forma de mantener únicos los nombres de los
+                  archivos en el mismo directorio. Para declarar un espacio de
+                  nombres privado se utiliza la palabra reservada
+                  <strong>namespace</strong>. Es como el import de java.
+                </p>
+                <pre class="code">
 
                 <span class="code-sym">namespace</span> App\Models;
 
@@ -416,26 +460,30 @@
                 <span class="code-sym">use</span> App\Models\NombreClase;
                 <span class="code-sym">use</span> App\Models\{NombreClase, OtraClase};
               </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="composer">
-            <h2 class="course-class__section--title">Composer</h2>
-            <div class="course-class__section--content">
-              <p>
-                <a class="link link-refe t-bold" href="https://getcomposer.org/">Composer</a>
-                es un manejador de dependencias de PHP, no solo nos ayudara a
-                traer librerías de tercero al proyecto además va a implementar
-                el estándar <strong>PSR4</strong> (uno de los estándar para
-                escribir código php) que nos va a permitir tener el cargado de
-                archivos automático.
-              </p>
-              <p>
-                <strong>composer.phar</strong> será un documento que nos
-                servirá para manejar las dependencias en PHP, son archivos de
-                un empaquetado completo hecho en php, esta va muy de la mano
-                con otro archivo llamado <strong>composer.json</strong>.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="composer">
+              <h2 class="course-class__section--title">Composer</h2>
+              <div class="course-class__section--content">
+                <p>
+                  <a
+                    class="link link-refe t-bold"
+                    href="https://getcomposer.org/"
+                    >Composer</a
+                  >
+                  es un manejador de dependencias de PHP, no solo nos ayudara a
+                  traer librerías de tercero al proyecto además va a implementar
+                  el estándar <strong>PSR4</strong> (uno de los estándar para
+                  escribir código php) que nos va a permitir tener el cargado de
+                  archivos automático.
+                </p>
+                <p>
+                  <strong>composer.phar</strong> será un documento que nos
+                  servirá para manejar las dependencias en PHP, son archivos de
+                  un empaquetado completo hecho en php, esta va muy de la mano
+                  con otro archivo llamado <strong>composer.json</strong>.
+                </p>
+                <pre class="code">
 
                 <span class="code-comment">
                 #Instalar composer
@@ -458,58 +506,62 @@
                 <span class="code-comment">#4. Llamar el autoload en la clase</span>
                 <span class="code-sym">require_once</span> (<span class="code-text">'vendor/autoload.php'</span>);
               </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="orm">
-            <h2 class="course-class__section--title">ORM</h2>
-            <div class="course-class__section--content">
-              <p>
-                Un <strong>ORM</strong>, que significa Object Relational
-                Mapping, es un concepto en el cual vamos a crear dentro de
-                nuestro código algunos modelos basados en las tablas de
-                nuestra base de datos.
-              </p>
-              <p>
-                Una principal característica de un ORM es que hace más
-                transparente las conexiones a PostgreSQL y MySQL, además nos
-                protege de algunas vulnerabilidades de SQL y facilita algunas
-                validaciones a la información.
-              </p>
-              <div class="note">
-                <p>
-                  <strong>PDO (PHP Data Object)</strong>: Permite estandarizar
-                  como trabajar con diferentes sistemas manejadores de bases
-                  de datos.
-                </p>
-                <p>
-                  <strong>ORM (Object Relational Mapping)</strong>: Permite
-                  crear modelos/objetos basados en las tablas que tenemos en
-                  nuestra base de datos. Esto permite que la conexión sea más
-                  transparente con MySQL/PostgreSQL. Tiene ya validaciones
-                  básicas.
-                </p>
               </div>
-            </div>
-          </article>
-          <article class="course-class__section" id="eloquent">
-            <h2 class="course-class__section--title">Eloquent</h2>
-            <div class="course-class__section--content">
-              <p>
-                <a target="_blank" class="t-bold link link-refe"
-                  href="https://packagist.org/packages/illuminate/database">Eloquent</a>
-                es una libreria de <strong>laravel</strong>, funciona como un
-                ORM, que se utiliza para hacer conexiones con la base de datos
-                de manera más "fácil".
-              </p>
-              <pre class="code">
+            </article>
+            <article class="course-class__section" id="orm">
+              <h2 class="course-class__section--title">ORM</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Un <strong>ORM</strong>, que significa Object Relational
+                  Mapping, es un concepto en el cual vamos a crear dentro de
+                  nuestro código algunos modelos basados en las tablas de
+                  nuestra base de datos.
+                </p>
+                <p>
+                  Una principal característica de un ORM es que hace más
+                  transparente las conexiones a PostgreSQL y MySQL, además nos
+                  protege de algunas vulnerabilidades de SQL y facilita algunas
+                  validaciones a la información.
+                </p>
+                <div class="note">
+                  <p>
+                    <strong>PDO (PHP Data Object)</strong>: Permite estandarizar
+                    como trabajar con diferentes sistemas manejadores de bases
+                    de datos.
+                  </p>
+                  <p>
+                    <strong>ORM (Object Relational Mapping)</strong>: Permite
+                    crear modelos/objetos basados en las tablas que tenemos en
+                    nuestra base de datos. Esto permite que la conexión sea más
+                    transparente con MySQL/PostgreSQL. Tiene ya validaciones
+                    básicas.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="course-class__section" id="eloquent">
+              <h2 class="course-class__section--title">Eloquent</h2>
+              <div class="course-class__section--content">
+                <p>
+                  <a
+                    target="_blank"
+                    class="t-bold link link-refe"
+                    href="https://packagist.org/packages/illuminate/database"
+                    >Eloquent</a
+                  >
+                  es una libreria de <strong>laravel</strong>, funciona como un
+                  ORM, que se utiliza para hacer conexiones con la base de datos
+                  de manera más "fácil".
+                </p>
+                <pre class="code">
 
                 <span class="code-comment">#Instalar eloquent</span>
                 composer require illuminate/database
 
                 php composer.phar require illuminate/database
               </pre>
-              <p>Configurar el acceso a la base de datos.</p>
-              <pre class="code">
+                <p>Configurar el acceso a la base de datos.</p>
+                <pre class="code">
 
                 <span class="code-sym">use</span> Illuminate\Database\Capsule\Manager <span class="code-sym">as</span> Capsule;
                 
@@ -526,30 +578,30 @@
                     'prefix'    => '',
                 ]);
               </pre>
-              <p>
-                <strong>setAsGlobal</strong>: Hacer todo como si estubiera en
-                el contexto global
-              </p>
-              <pre class="code">
+                <p>
+                  <strong>setAsGlobal</strong>: Hacer todo como si estubiera en
+                  el contexto global
+                </p>
+                <pre class="code">
 
                 $capsule-><span class="code-function">setAsGlobal</span>();
               </pre>
-              <p><strong>bootEloquent</strong>: Inicializar el ORM.</p>
-              <pre class="code">
+                <p><strong>bootEloquent</strong>: Inicializar el ORM.</p>
+                <pre class="code">
 
                 $capsule-><span class="code-function">bootEloquent</span>();
               </pre>
-              <p>
-                Hacer que nuestras clases (cuyas instancias son las que se
-                guardan en las tablas de bd), hereden de
-                <strong>Illuminate\Database\Eloquent\Model</strong>.
-              </p>
-              <p>
-                Illuminate coge las columnas de la tabla, y las convierte en
-                atributos de la clase, es decir, de manera abstracta al
-                extender la clase de Model.
-              </p>
-              <pre class="code">
+                <p>
+                  Hacer que nuestras clases (cuyas instancias son las que se
+                  guardan en las tablas de bd), hereden de
+                  <strong>Illuminate\Database\Eloquent\Model</strong>.
+                </p>
+                <p>
+                  Illuminate coge las columnas de la tabla, y las convierte en
+                  atributos de la clase, es decir, de manera abstracta al
+                  extender la clase de Model.
+                </p>
+                <pre class="code">
 
                 <span class="code-sym">use</span> Illuminate\Database\Eloquent\Model
                 <span class="code-var">class</span> nombreClase <span class="code-var">extends</span> Model{
@@ -565,42 +617,42 @@
                   </span>
                 }
               </pre>
-              <p>
-                Ahora para insertar datos a la base de datos, se crea una
-                instancia de la clase y con el método global
-                <strong>$_POST</strong> se toman los campos ingresados en el
-                formulario, finalmente se usa el método
-                <strong>save</strong> que viene heredado de Eloquent\Model.
-              </p>
-              <pre class="code">
+                <p>
+                  Ahora para insertar datos a la base de datos, se crea una
+                  instancia de la clase y con el método global
+                  <strong>$_POST</strong> se toman los campos ingresados en el
+                  formulario, finalmente se usa el método
+                  <strong>save</strong> que viene heredado de Eloquent\Model.
+                </p>
+                <pre class="code">
 
                 $clase = <span class="code-sym">new</span> Clase();
                 $clase->title = $_POST[<span class="code-text">'title'</span>];
                 $clase->description = $_POST[<span class="code-text">'description'</span>];
                 $clase-><span class="code-function">save</span>();
               </pre>
-              <p>Listar registros de la base de datos con Eloquent</p>
-              <pre class="code">
+                <p>Listar registros de la base de datos con Eloquent</p>
+                <pre class="code">
 
                 <span class="code-comment">Trae todos los registros que encuentre</span>
                 $listData = ClaseExtendsModel::<span class="code-var">all</span>();
               </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="front-controller">
-            <h2 class="course-class__section--title">Front Controller</h2>
-            <div class="course-class__section--content">
-              <p>
-                Front Controller es un patrón de diseño que nos dará una
-                solución a la redundancia del código en las múltiples entradas
-                a la aplicación. Este tendrá el control de todas las entradas
-                además de las inicializaciones de base de datos etc.
-              </p>
-              <p>
-                Crear una carpeta public, dónde estara el index.php que será
-                el front controller.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="front-controller">
+              <h2 class="course-class__section--title">Front Controller</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Front Controller es un patrón de diseño que nos dará una
+                  solución a la redundancia del código en las múltiples entradas
+                  a la aplicación. Este tendrá el control de todas las entradas
+                  además de las inicializaciones de base de datos etc.
+                </p>
+                <p>
+                  Crear una carpeta public, dónde estara el index.php que será
+                  el front controller.
+                </p>
+                <pre class="code">
 
                 <span class="code-comment">#Inicializar errores:</span>
                 <span class="code-var">ini_set</span>(<span class="code-text">'display_errors'</span>, 1);
@@ -615,15 +667,15 @@
                   <span class="code-var">require</span> <span class="code-text">'../addJob.php'</span>;
                 }
               </pre>
-              <div class="note">
-                <p>
-                  Ya no es necesario el
-                  <strong>require_once "vendor/autoload.php"</strong> en todos
-                  los archivos solo en el index.php que tiene el
-                  front-controller.
-                </p>
-              </div>
-              <pre class="code">
+                <div class="note">
+                  <p>
+                    Ya no es necesario el
+                    <strong>require_once "vendor/autoload.php"</strong> en todos
+                    los archivos solo en el index.php que tiene el
+                    front-controller.
+                  </p>
+                </div>
+                <pre class="code">
 
                   <span class="code-comment">#Esto:</span>
                   $route = <span class="code-var">isset</span>($_GET[<span class="code-text">'route'</span>]) ? $_GET[<span class="code-text">'route'</span>] : <span class="code-text">'/'</span>;
@@ -631,26 +683,34 @@
                   <span class="code-comment">#Es lo mismo que esto:</span>
                   $route = $_GET[<span class="code-text">'route'</span>] ?? <span class="code-text">'/'</span>;
               </pre>
-            </div>
-          </article>
-          <article class="course-class__section" id="psr-7">
-            <h2 class="course-class__section--title">
-              PSR7
-            </h2>
-            <div class="course-class__section--content">
-              <p>
-                PSR7 es un estandar que nos permite normalizar un request y un
-                response en PHP. En este enlace encontrarás la documentación
-                de
-                <a class="link link-refe" href="https://www.php-fig.org/psr/psr-7/" target="_blank">PSR7</a>.
-              </p>
-              <p>
-                <a class="link link-refe" target="_blank"
-                  href="https://docs.laminas.dev/laminas-diactoros/">laminas-diactoros</a>: Es un paquete que nos
-                ayudara a implementar PSR7 en nuestro
-                proyecto.
-              </p>
-              <pre class="code">
+              </div>
+            </article>
+            <article class="course-class__section" id="psr-7">
+              <h2 class="course-class__section--title">
+                PSR7
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  PSR7 es un estandar que nos permite normalizar un request y un
+                  response en PHP. En este enlace encontrarás la documentación
+                  de
+                  <a
+                    class="link link-refe"
+                    href="https://www.php-fig.org/psr/psr-7/"
+                    target="_blank"
+                    >PSR7</a
+                  >.
+                </p>
+                <p>
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://docs.laminas.dev/laminas-diactoros/"
+                    >laminas-diactoros</a
+                  >: Es un paquete que nos ayudara a implementar PSR7 en nuestro
+                  proyecto.
+                </p>
+                <pre class="code">
 
                 <span class="code-comment">#Instalación</span>
                 composer require laminas/laminas-diactoros
@@ -669,12 +729,12 @@
 
                 $request-><span class="code-var">getUri</span>()-><span class="code-var">getPath</span>();
               </pre>
-              <p>
-                Para configurar las rutas dinámicas de la aplicación, se crea
-                un archivo <strong>.htaccess</strong> es un archivo de
-                configuración de apache.
-              </p>
-              <pre class="code">
+                <p>
+                  Para configurar las rutas dinámicas de la aplicación, se crea
+                  un archivo <strong>.htaccess</strong> es un archivo de
+                  configuración de apache.
+                </p>
+                <pre class="code">
 
                 <span class="code-comment">#Habilitar motor de rewrite</span>
                 RewriteEngine On
@@ -682,59 +742,39 @@
                 RewriteRule ^ %1 [L,NE,R=302]
                 RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
               </pre>
-              <p>Archivo .htaccess en la carpeta public:</p>
-              <pre class="code">
+                <p>Archivo .htaccess en la carpeta public:</p>
+                <pre class="code">
 
                 RewriteEngine On
                 RewriteCond %{REQUEST_FILENAME} !-d
                 RewriteCond %{REQUEST_FILENAME} !-f
                 RewriteRule ^ index.php [QSA,L] 
-              </pre>
-            </div>
-          </article>
-        </div>
-      </section>
-      <footer class="footer">
-        <div class="container-general">
-          <div class="footer__container">
-            <p id="footer-year">@Carlos Zabala Roqueme -</p>
-            <figure class="footer__container--img">
-              <img src="../../src/images/logo-white-2.png" alt="logo Carlos Zabala" />
-            </figure>
+              </pre
+                >
+              </div>
+            </article>
           </div>
-        </div>
-      </footer>
+        </section>
+        <footer class="footer">
+          <div class="container-general">
+            <div class="footer__container">
+              <p id="footer-year">@Carlos Zabala Roqueme -</p>
+              <figure class="footer__container--img">
+                <img
+                  src="../../src/images/logo-white-2.png"
+                  alt="logo Carlos Zabala"
+                />
+              </figure>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
-  </div>
-  <script src="https://kit.fontawesome.com/2028b75fa6.js" crossorigin="anonymous"></script>
-  <script src="../../src/js/menu.js"></script>
-  <script>
-    const $menu = document.getElementById("btn-menu");
-    const $courseMenu = document.getElementById("course-class__left");
-
-    $menu.addEventListener("click", handleClick);
-
-    function handleClick() {
-      $courseMenu.classList.toggle("is-active");
-      $menu.classList.toggle("is-active");
-
-      if ($menu.classList.contains("fa-bars")) {
-        $menu.classList.remove("fa-bars");
-        $menu.classList.add("fa-times");
-      } else {
-        $menu.classList.remove("fa-times");
-        $menu.classList.add("fa-bars");
-      }
-    }
-
-    const $footerYear = document.getElementById("footer-year");
-
-    if ($footerYear) {
-      let date = new Date();
-
-      $footerYear.innerHTML += " " + date.getFullYear();
-    }
-  </script>
-</body>
-
+    <script
+      src="https://kit.fontawesome.com/2028b75fa6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../src/js/menu.js"></script>
+    <script type="module" src="../../index.js"></script>
+  </body>
 </html>
