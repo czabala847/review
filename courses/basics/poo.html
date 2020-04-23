@@ -93,6 +93,11 @@
                       >Paradigma POO</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#modularity"
+                      >Modularidad</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -159,6 +164,28 @@
                 </ul>
               </div>
             </article>
+            <article class="course-class__section" id="modularity">
+              <h2 class="course-class__section--title">Modularidad</h2>
+              <div class="course-class__section--content">
+                <p>
+                  La modularidad va muy relacionada con las clases y es un
+                  principio de la Programación Orientado a Objetos y va de la
+                  mano con el Diseño Modular que significa dividir un sistema en
+                  partes pequeñas y estas serán nuestros módulos pudiendo
+                  funcionar de manera independiente.
+                </p>
+                <p>
+                  La modularidad de nuestro código nos va a permitir
+                </p>
+                <ul>
+                  <li>Reutilizar</li>
+                  <li>Evitar colapsos</li>
+                  <li>Hacer nuestro código más mantenible</li>
+                  <li>Legibilidad</li>
+                  <li>Resolución rápida de problemas</li>
+                </ul>
+              </div>
+            </article>
           </div>
         </section>
         <footer class="footer">
@@ -181,32 +208,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../../src/js/menu.js"></script>
-    <script>
-      const $menu = document.getElementById("btn-menu");
-      const $courseMenu = document.getElementById("course-class__left");
-
-      $menu.addEventListener("click", handleClick);
-
-      function handleClick() {
-        $courseMenu.classList.toggle("is-active");
-        $menu.classList.toggle("is-active");
-
-        if ($menu.classList.contains("fa-bars")) {
-          $menu.classList.remove("fa-bars");
-          $menu.classList.add("fa-times");
-        } else {
-          $menu.classList.remove("fa-times");
-          $menu.classList.add("fa-bars");
-        }
-      }
-
-      const $footerYear = document.getElementById("footer-year");
-
-      if ($footerYear) {
-        let date = new Date();
-
-        $footerYear.innerHTML += " " + date.getFullYear();
-      }
-    </script>
+    <script type="module" src="../../index.js"></script>
   </body>
 </html>
