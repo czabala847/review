@@ -75,8 +75,7 @@ figure {
   padding: 0.5rem 1rem;
 }
 
-.code {
-  background-color: #ededed;
+.code, .code-container {
   outline: 0;
   overflow: auto;
   line-height: 20px;
@@ -90,6 +89,11 @@ figure {
   color: #fff;
   background-color: #282c34;
   border-radius: 5px;
+}
+
+.code-container {
+  overflow: auto;
+  width: 100%;
 }
 
 @media only screen and (max-width: 1024px) {

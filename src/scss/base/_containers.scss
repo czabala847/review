@@ -28,7 +28,7 @@
 
 .code {
   // border: 2px dashed $color-dark-gray;
-  background-color: $color-gray-code;
+  // background-color: $color-gray-code;
   outline: 0;
   overflow: auto;
   line-height: 20px;
@@ -39,6 +39,12 @@
   color: $color-white;
   background-color: $color-code-black;
   border-radius: $border-radius-min;
+}
+
+.code-container {
+  overflow: auto;
+  width: 100%;
+  @extend .code;
 }
 
 @media only screen and (max-width: 1024px) {

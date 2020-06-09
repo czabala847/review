@@ -71,6 +71,20 @@
   },
   {
     "id": 5,
+    "name": "Wordpress",
+    "description": "Crea cualquier tipo de página web. Sin código, ni manuales ni límites.",
+    "courses": [
+      {
+        "courseID": 1,
+        "courseName": "Curso práctico",
+        "courseDescription": "Aprender desde 0 cómo instalarlo, luego, cómo crear las primeras vistas y hasta poder desarrollar un plug-in",
+        "courseURL": "./courses/wordpress/fundamentos.html",
+        "courseImage": "https://cdn.icon-icons.com/icons2/1945/PNG/512/iconfinder-wordpress-4661616_122498.png"
+      }
+    ]
+  },
+  {
+    "id": 6,
     "name": "Base de Datos",
     "description": "Crear y modelar bases de datos para aplicaciones web como locales, bases para ser un profesional en DBs.",
     "courses": [
@@ -84,7 +98,7 @@
     ]
   },
   {
-    "id": 6,
+    "id": 7,
     "name": "Fundamentos",
     "description": "Cursos de fundamentos que hay que tener encuenta en el mundo de la programación.",
     "courses": [

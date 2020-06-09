@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso práctico de Wordpress</title>
+    <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../src/css/styles.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <div class="app-react-basico">
+        <header class="header">
+          <div class="container-general">
+            <nav class="header-menu">
+              <ul class="header-menu__list menu-left">
+                <li class="header-menu__list--item">
+                  <a class="link" href="../../index.html">Inicio</a>
+                </li>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Carreras</a>
+                </li>
+              </ul>
+              <figure class="header-menu__logo">
+                <a href="../../index.html"
+                  ><img
+                    class="header-menu__logo--img"
+                    src="../../src/images/logo_white.png"
+                    alt="logo carlos zabala"
+                /></a>
+              </figure>
+              <ul class="header-menu__list menu-right">
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Me</a>
+                </li>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Contacto</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <section class="hero-course">
+          <div class="container-general">
+            <h1 class="hero-course__title">Curso práctico de Wordpress</h1>
+            <p class="hero-course__description">
+              Wordpress es un gestor de contenido <strong>CMS</strong> escrito
+              en PHP, en el cual podemos gestionar contenido como texto o
+              imagenes sin tener que saber código. Wordpress funciona con Mysql
+              y como licencia maneja la <strong>GPL</strong> eso significa que
+              es de código abierto.
+            </p>
+            <div class="hero-course__buttons">
+              <a
+                target="_blank"
+                href="https://platzi.com/clases/fundamentos-wordpress/"
+                class="btn btn--primary"
+                >Curso platzi</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="course-class">
+          <div class="course-class__left" id="course-class__left">
+            <div class="course-class__left--container">
+              <nav class="course-class__menu">
+                <ul>
+                  <li>
+                    <a class="link course-class__menu--a" href="#features"
+                      >Caracteristicas</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#theme"
+                      >Temas</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#hook">Hooks</a>
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#rol"
+                      >Roles de usuario</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="course-class__content">
+            <i
+              class="fas fa-bars icon course-class__icon-menu"
+              id="btn-menu"
+            ></i>
+            <article class="course-class__section" id="features">
+              <h2 class="course-class__section--title">
+                Caracteristicas Principales
+              </h2>
+              <div class="course-class__section--content">
+                <ul>
+                  <li>
+                    <b>Autoadministrable</b>: Permite administrar contenido y
+                    configuración sin usar código.
+                  </li>
+                  <li>
+                    <b>Gestión de usuarios</b>: Permite asignar roles a los
+                    usuarios.
+                  </li>
+                  <li>
+                    <b>API REST</b>: Permite generar operaciones mediante API,
+                    puede funcionar también como un Backend y podemos gestionar
+                    el Frontend desde otra tecnología.
+                  </li>
+                  <li>
+                    <b>Flexible</b>: Permite personalizar tanto sus diseños como
+                    sus funcionalidades.
+                  </li>
+                  <li>
+                    <b>Actualizaciones</b>: Está en constante crecimiento.
+                  </li>
+                  <li>
+                    <b>Comunidad</b>: Cuenta con una gran comunidad que aporta a
+                    su desarrollo.
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="course-class__section" id="theme">
+              <h2 class="course-class__section--title">
+                Temas, archivos principales
+              </h2>
+              <div class="course-class__section--content">
+                <ul>
+                  <li>
+                    <b>index.php</b>: Archivo principal del tema y página de
+                    inicio.
+                  </li>
+                  <li><b>style.css</b>: Archivo principal de estilos.</li>
+                  <li>
+                    <b>front-page.php</b>: Es la vista que carga por defecto
+                    como página de inicio.
+                  </li>
+                  <li>
+                    <b>function.php</b>: Archivo central de todas las
+                    funcionalidades del tema. Nos permite con nuestro código
+                    ampliar las funcionalidades del código fuente de Wordpress.
+                  </li>
+                  <li>
+                    <b>page.php</b>: Es la vista que carga por defecto para las
+                    páginas que se crean en Wordpress.
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="course-class__section" id="hook">
+              <h2 class="course-class__section--title">Hooks</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Los hooks son funciones de Wordpress que nos permiten agregar
+                  código propio al código fuente de Wordpress, esto con el fin
+                  de evitar manipular directamente el código fuente y generar
+                  errores o perder las modificaciones por alguna actualización.
+                  Tipos de hooks:
+                </p>
+                <p>
+                  <b>Action</b>: Nos permite ejecutar una función personalizada
+                  en un punto específico del código fuente de Wordpress.
+                </p>
+                <pre class="code">
+
+                  <span class="code-var">function</span> holaMundo(){
+                    <span class="code-var">echo</span> <span class="code-text">"Hello world"</span>;
+                  }
+                  <span class="code-var">add_action</span>(<span class="code-text">'wp_head'</span>, <span class="code-text">'holaMundo'</span>)
+                  <span class="code-comment">// add_action($hook, $function)</span>
+                </pre>
+                <p>
+                  <b>Filter</b> Permite ejecutar una función personalizada en un
+                  determinado punto, pero la función que usemos tendrá un
+                  parámetro de entrada, dentro de nuestra función haremos
+                  modificaciones al parámetro y finalmente lo retornaremos
+                  modificado.
+                </p>
+                <pre class="code">
+
+                  <span class="code-var">function</span> upperTitle($title){
+                    <span class="code-sym">return</span> <span class="code-var">strtoupper</span>($title);
+                  }
+                  <span class="code-var">add_filter</span>(<span class="code-text">'the_title'</span>, <span class="code-text">'upperTitle'</span>)
+                  <span class="code-comment">// add_filter($hook, $function)</span>
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="rol">
+              <h2 class="course-class__section--title">
+                Roles de usuario
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Se pueden presentar casos en los que los roles por defecto no
+                  alcancen o sean demasiado restrictivos, para eso WordPress
+                  brinda la posibilidad de crear, eliminar y modificar roles.
+                </p>
+                <p>
+                  Para crear un rol de usuario podés utilizar la función
+                  add_role() que nos provee WordPress, la tenés que utilizar
+                  dentro de una función y asignarla al hook init. Esto tiene que
+                  hacerse desde el archivo functions.php.
+                </p>
+                <!-- <div class="code-container"> -->
+                <pre class="code">
+
+                    function add_administrador_tema_role() { //nombre de nuestra función, puede ser el nombre que quieras
+                      add_role(
+                          'administrador_tema', //Nombre de role.
+                          'Administrador Tema', //Nombre que se visualará en la creación o página de opciones de usuarios.
+                         array(    
+                              'read' => true, //Permite el acceso al dashboard del adminitrador.
+                              'switch_themes' => true, //Permite el cambio de temas.
+                              'edit_themes'   => true, //Permite editar archivos desde el administrado de archivos del tema.
+                              'edit_theme_options' => true, //Permite modificar Widgets,Menús, Personalizar.
+                              'install_themes'    => true,  //Permite instalar temas nuevos.
+                              'update_themes' => true, //Permite actualizar temas instalados.
+                              'delete_themes' => true, //Permite eliminar temas.
+                  
+                              )   //Array con las capabilities
+                      );
+                    }
+                  
+                    //add_action(Hook, Nombre de la función)
+                    add_action('init', 'add_administrador_tema_role'); 
+                  </pre
+                >
+                <!-- </div> -->
+                <p>
+                  Para más información
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://platzi.com/clases/1812-fundamentos-wordpress/26213-mas-sobre-los-roles-de-usuario/"
+                    >blog platzi</a
+                  >
+                  o en la documentación oficial de
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://wordpress.org/support/article/roles-and-capabilities/#administrator"
+                    >wordpress</a
+                  >.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+        <footer class="footer">
+          <div class="container-general">
+            <div class="footer__container">
+              <p id="footer-year">@Carlos Zabala Roqueme -</p>
+              <figure class="footer__container--img">
+                <img
+                  src="../../src/images/logo-white-2.png"
+                  alt="logo Carlos Zabala"
+                />
+              </figure>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/2028b75fa6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="../../src/js/menu.js"></script>
+    <script type="module" src="../../index.js"></script>
+  </body>
+</html>
