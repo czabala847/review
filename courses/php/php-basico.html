@@ -439,6 +439,13 @@
                 <span class="code-var">include</span> <span class="code-text">'autoload.php'</span>;
 
               </pre>
+                <p>Si usamos <strong>namespace</strong> el autoload cambia.</p>
+                <pre class="code">
+
+                  <span class="code-comment">//..Dentro de function autocargador...</span>
+                  $url = <span class="code-var">str_replace</span>(<span class="code-text">"\\"</span>, <span class="code-text">"/"</span>, $clase . <span class="code-text">".php"</span>);
+                  <span class="code-sym">require_once</span>($url);
+              </pre>
               </div>
             </article>
             <article class="course-class__section" id="namespaces">
