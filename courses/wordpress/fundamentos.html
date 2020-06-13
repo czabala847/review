@@ -89,6 +89,16 @@
                       >Roles de usuario</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#themes"
+                      >Personalizar temas</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#lib"
+                      >Manejo librerias</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -253,6 +263,103 @@
                     >wordpress</a
                   >.
                 </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="themes">
+              <h2 class="course-class__section--title">
+                Personalizar temas
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para crear temás hijos de una manera más fácil se puede
+                  acceder a la página
+                  <a
+                    class="link link-refe"
+                    target="_blank"
+                    href="https://underscores.me/"
+                    >underscores</a
+                  >.
+                </p>
+                <p>
+                  Lo primero a crear en un tema hijo si lo hacemos de forma
+                  manual es crear el encabezado para eso se crea el archivo
+                  header.php, con la estructura <strong>HTML</strong> básica, en
+                  la etiqueta <strong>title</strong>, se usa una función de
+                  wordpress, que traerá todas las dependencias que se usaran en
+                  el encabezado.
+                </p>
+                <pre class="code">
+
+                  &lt;?<span class="code-sym">php</span> <span class="code-function">wp_head</span>() &gt;
+                </pre>
+                <p>
+                  En el archivo footer.php, usar otra función que cargará todas
+                  las dependencias del pie de página.
+                </p>
+                <pre class="code">
+
+                  <span class="code-function">wp_footer</span>()
+                </pre>
+                <p>
+                  Estos archivos deberán ser llamados en el index.php, de la
+                  siguiente manera:
+                </p>
+                <pre class="code">
+
+                  <span class="code-function">get_header</span>();
+                  <span class="code-function">get_footer</span>();
+                </pre>
+                <p>
+                  Además de lo anterior hay que inicializar algunas funciones de
+                  nuestro tema. Esto se hace en el
+                  <strong>funcions.php</strong>.
+                </p>
+                <pre class="code">
+
+                  <span class="code-comment">//Archivo functions.php</span>
+                  <span class="code-var">function</span> <span class="code-function">init_template</span>(){
+                    <span class="code-comment">//Dentro de todas las páginas usar una imagen destacada</span>
+                    <span class="code-function">add_theme_support</span>(<span class="code-text">'post-thumbnails'</span>);
+                    <span class="code-comment">//Para mostrar el title de la página</span>
+                    <span class="code-function">add_theme_support</span>(<span class="code-text">'title-tag'</span>);
+                  }
+
+                  <span class="code-comment">//Hay que ejecutar esta función dentro del código fuente de wordpress, para eso se usa un hook</span>
+                  <span class="code-function">add_action(<span class="code-text">'after_setup_theme'</span>, <span class="code-text">'init_template'</span>)</span>;
+                </pre>
+                <p class="note">
+                  En visual se puede instalar la extensión WordPress Snippets,
+                  para escribir más rapido código.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="lib">
+              <h2 class="course-class__section--title">
+                Manejo de librerías
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para usar assets externos en nuestro sitio, lo podemos
+                  configurar dentro del archivo functions.php de la siguiente
+                  manera:
+                </p>
+                <pre class="code">
+
+                  <span class="code-var">function</span> <span class="code-function">assets</span>(){
+                    <span class="code-comment">//Cargar estilos, registrarlos como dependencias</span>
+                    <span class="code-comment">wp_register_style('nombre_handle', 'url_libreria', 'dependencias', 'version', 'en donde se usara, mediaqueries')</span>;
+                    <span class="code-function">wp_register_style</span>(<span class="code-text">'bootstrap'</span>,<span class="code-text">'url'</span>, <span class="code-text">''</span>, <span class="code-text">'4.1.1'</span>,<span class="code-text">'all'</span>);
+                    <span class="code-function">wp_register_style</span>(<span class="code-text">'font'</span>,<span class="code-text">'urlGoogleFonts'</span>, <span class="code-text">''</span>, <span class="code-text">'1.0'</span>,<span class="code-text">'all'</span>);
+                  
+                    <span class="code-comment">//Añadir estas librerias al archivo style.css del proyecto</span>
+                    <span class="code-comment">//get_stylesheet_uri(), retorna la dirección exacta del archivo style.css</span>
+                    <span class="code-function">wp_enqueue_style</span>(<span class="code-text">'estilos'</span>, <span class="code-function">get_stylesheet_uri()</span>, <span class="code-var">array</span>(<span class="code-text">'bootstrap'</span> ,<span class="code-text">'font'</span>),<span class="code-text">'V1.0'</span>,<span class="code-text">'all'</span>);
+                  }
+
+                  <span class="code-comment">//Añadir al código fuente de wordpress por un hook</span>
+                  <span class="code-comment">//Se ejecuta cuando se empieza a renderizar la página</span>
+                  <span class="code-function">add_action</span>(<span class="code-text">'wp_enqueue_scripts'</span>, <span class="code-text">'assets'</span>);
+                </pre>
               </div>
             </article>
           </div>
