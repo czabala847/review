@@ -75,7 +75,7 @@ figure {
   padding: 0.5rem 1rem;
 }
 
-.code, .code-container {
+.code {
   outline: 0;
   overflow: auto;
   line-height: 20px;
@@ -92,8 +92,9 @@ figure {
 }
 
 .code-container {
-  overflow: auto;
   width: 100%;
+  overflow: scroll;
+  border: 1px solid blue;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -606,6 +607,10 @@ h3 {
   left: 0;
   right: 0;
   width: 100%;
+}
+
+.course-class__section {
+  border: 1px solid orange;
 }
 
 .course-class__left--container {
