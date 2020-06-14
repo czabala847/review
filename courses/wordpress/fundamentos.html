@@ -10,12 +10,16 @@
       href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/styles/monokai-sublime.min.css"
+    />
     <link rel="stylesheet" href="../../src/css/styles.css" />
   </head>
 
   <body>
     <div class="app">
-      <div class="app-react-basico">
+      <div class="app-wp-basico">
         <header class="header">
           <div class="container-general">
             <nav class="header-menu">
@@ -182,13 +186,14 @@
                   <b>Action</b>: Nos permite ejecutar una función personalizada
                   en un punto específico del código fuente de Wordpress.
                 </p>
-                <pre class="code">
-
-                  <span class="code-var">function</span> holaMundo(){
-                    <span class="code-var">echo</span> <span class="code-text">"Hello world"</span>;
-                  }
-                  <span class="code-var">add_action</span>(<span class="code-text">'wp_head'</span>, <span class="code-text">'holaMundo'</span>)
-                  <span class="code-comment">// add_action($hook, $function)</span>
+                <pre>
+                  <code class="php hljs">
+                    function holaMundo(){
+                      echo "Hello world";
+                    }
+                    add_action('wp_head', 'holaMundo');
+                    // add_action($hook, $function)
+                  </code>
                 </pre>
                 <p>
                   <b>Filter</b> Permite ejecutar una función personalizada en un
@@ -197,13 +202,14 @@
                   modificaciones al parámetro y finalmente lo retornaremos
                   modificado.
                 </p>
-                <pre class="code">
-
-                  <span class="code-var">function</span> upperTitle($title){
-                    <span class="code-sym">return</span> <span class="code-var">strtoupper</span>($title);
-                  }
-                  <span class="code-var">add_filter</span>(<span class="code-text">'the_title'</span>, <span class="code-text">'upperTitle'</span>)
-                  <span class="code-comment">// add_filter($hook, $function)</span>
+                <pre>
+                  <code class="php">
+                    function upperTitle($title){
+                      return strtoupper($title);
+                    }
+                    add_filter('the_title', 'upperTitle')
+                    // add_filter($hook, $function)
+                  </code>
                 </pre>
               </div>
             </article>
@@ -224,28 +230,29 @@
                   hacerse desde el archivo functions.php.
                 </p>
                 <!-- <div class="code-container"> -->
-                <pre class="code">
-
-                    <span class="code-var">function</span> <span class="code-function">add_administrador_tema_role</span>() { <span class="code-comment">//nombre de nuestra función, puede ser el nombre que quieras</span>
-                      <span class="code-var">add_role</span>(
-                          <span class="code-text">'administrador_tema'</span>, <span class="code-comment">//Nombre de role.</span>
-                          <span class="code-text">'Administrador Tema'</span>, <span class="code-comment">//Nombre que se visualará en la creación o página de opciones de usuarios.</span>
-                         <span class="code-var">array</span>(    
-                              <span class="code-text">'read'</span> => <span class="code-var">true</span>, <span class="code-comment">//Permite el acceso al dashboard del adminitrador.</span>
-                              <span class="code-text">'switch_themes'</span> => <span class="code-var">true</span>, <span class="code-comment">//Permite el cambio de temas.</span>
-                              <span class="code-text">'edit_themes'</span>   => <span class="code-var">true</span>, <span class="code-comment"> //Permite editar archivos desde el administrado de archivos del tema.</span>
-                              <span class="code-text">'edit_theme_options'</span> => <span class="code-var">true</span>, <span class="code-comment">//Permite modificar Widgets,Menús, Personalizar.</span>
-                              <span class="code-text">'install_themes'</span>    => <span class="code-var">true</span>,  <span class="code-comment">//Permite instalar temas nuevos.</span>
-                              <span class="code-text">'update_themes'</span> => <span class="code-var">true</span>, <span class="code-comment">//Permite actualizar temas instalados.</span>
-                              <span class="code-text">'delete_themes'</span> => <span class="code-var">true</span>, <span class="code-comment">//Permite eliminar temas.</span>
+                <pre>
+                  <code class="php">
+                    function add_administrador_tema_role() { //nombre de nuestra función, puede ser el nombre que quieras
+                      add_role(
+                          'administrador_tema', //Nombre de role.
+                          'Administrador Tema', //Nombre que se visualará en la creación o página de opciones de usuarios.
+                         array(    
+                              'read' => true, //Permite el acceso al dashboard del adminitrador.
+                              'switch_themes' => true, //Permite el cambio de temas.
+                              'edit_themes'   => true,  //Permite editar archivos desde el administrado de archivos del tema.
+                              'edit_theme_options' => true, //Permite modificar Widgets,Menús, Personalizar.
+                              'install_themes'    => true,  //Permite instalar temas nuevos.
+                              'update_themes' => true, //Permite actualizar temas instalados.
+                              'delete_themes' => true, //Permite eliminar temas.
                   
-                              )   <span class="code-comment">//Array con las capabilities</span>
+                              )   //Array con las capabilities
                       );
                     }
                   
-                    <span class="code-comment">//add_action(Hook, Nombre de la función)</span>
-                    <span class="code-var">add_action</span>(<span class="code-text">'init'</span>, <span class="code-text">'add_administrador_tema_role'</span>); 
-                  </pre>
+                   //add_action(Hook, Nombre de la función)
+                    add_action('init', 'add_administrador_tema_role');
+                  </code>
+                </pre>
                 <!-- </div> -->
                 <p>
                   Para más información
@@ -383,8 +390,10 @@
       src="https://kit.fontawesome.com/2028b75fa6.js"
       crossorigin="anonymous"
     ></script>
-    <!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script> -->
-    <!-- <script src="syntaxhighlighter.js" /> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
     <script src="../../src/js/menu.js"></script>
     <script type="module" src="../../index.js"></script>
   </body>

@@ -5,9 +5,10 @@
 .course-class {
   @extend .grid-center;
   grid-template-columns: 20% 1fr;
-  column-gap: sum-space(2rem);
+  column-gap: $espaced-base;
   position: relative;
   grid-template-areas: "menu content";
+  width: 100%;
 }
 
 .course-class__left {
@@ -17,7 +18,12 @@
   bottom: 0;
   left: 0;
   right: 0;
+  width: 100%;
 }
+
+// .course-class__section {
+//   border: 1px solid orange;
+// }
 
 .course-class__left--container {
   position: relative;
@@ -25,9 +31,13 @@
 }
 
 .course-class__content {
-  display: grid;
-  grid-template-columns: 95%;
+  // display: grid;
+  // grid-template-columns: 95%;
   position: relative;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 $espaced-base;
 }
 
 .course-class__menu {
