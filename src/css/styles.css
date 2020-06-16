@@ -93,13 +93,18 @@ figure {
 
 .code-container {
   width: 100%;
-  overflow: scroll;
-  border: 1px solid blue;
+  overflow: auto;
 }
 
 @media only screen and (max-width: 1024px) {
   .container-general {
     padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .code-container {
+    overflow: scroll;
   }
 }
 
@@ -607,10 +612,6 @@ h3 {
   left: 0;
   right: 0;
   width: 100%;
-}
-
-.course-class__section {
-  border: 1px solid orange;
 }
 
 .course-class__left--container {

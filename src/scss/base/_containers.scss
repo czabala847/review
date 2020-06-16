@@ -43,12 +43,19 @@
 
 .code-container {
   width: 100%;
-  overflow: scroll;
-  border: 1px solid blue;
+  overflow: auto;
+  // border: 1px solid blue;
 }
 
 @media only screen and (max-width: 1024px) {
   .container-general {
     padding: 0 $padding-base;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .code-container {
+    overflow: scroll;
+    // border: 1px solid blue;
   }
 }
