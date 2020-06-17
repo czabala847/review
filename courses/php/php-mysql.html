@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/styles/monokai-sublime.min.css"
+    />
     <link rel="stylesheet" href="../../src/css/styles.css" />
   </head>
 
@@ -150,6 +154,11 @@
                   <li>
                     <a class="link course-class__menu--a" href="#api">API</a>
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#mvc-binder"
+                      >Orden carpetas MVC</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -199,14 +208,15 @@
                   Para la conexión se hace a través de una instancia de la clase
                   <strong>mysqli</strong>, de la siguiente manera:
                 </p>
-                <pre class="code">
-
-                  <span class="code-comment">(ipservidor, nombreUsuario, contraseña, nombreBaseDatos)</span>
-                  $mysqli = <span class="code-sym">new</span> <span class="code-var">mysqli</span>(<span class="code-text">"localhost"</span>, <span class="code-text">"root"</span>, <span class="code-text">""</span>, <span class="code-text">"bd"</span>);
+                <pre>
+                  <code class="php">
+                  //(ipservidor, nombreUsuario, contraseña, nombreBaseDatos)
+                  $mysqli = mysqli("localhost", "root", "", "bd");
                 
-                  <span class="code-sym">if</span> ($mysqli-><span class="code-var">connect_error</span>) {
-                    <span class="code-sym">die</span> (<span class="code-text">'Error en la conexión '</span> . $mysqli-><span class="code-var">connect_error</span>);
+                  if ($mysqli->connect_error) {
+                    die ('Error en la conexión ' . $mysqli->connect_error);
                   }
+                  </code>
                 </pre>
               </div>
             </article>
@@ -217,39 +227,41 @@
                   Si usamos un formulario, utilizaremos el método
                   <strong>POST</strong> para el envió de datos.
                 </p>
-                <pre class="code">
+                <pre>
+                  <code class="php">
+                    &lt;php
+                    require_once "conexion.php";
 
-                  &lt;?<span class="code-sym">php</span>
-                  <span class="code-sym">require_once</span> <span class="code-text">"conexion.php"</span>;
+                    $name = $_POST['name']; 
+                    $id = $_POST['id']; 
 
-                  $name = $_POST[<span class="code-text">'name'</span>]; 
-                  $id = $_POST[<span class="code-text">'id'</span>]; 
-
-                  $radio = <span class="code-var">isset</span>($_POST[<span class="code-text">'radio'</span>]) ? $_POST[<span class="code-text">'radio'</span>] : <span class="code-text">'no'</span>;
+                    $radio = isset($_POST['radio']) ? $_POST['radio'] : 'no';
+                  </code>
                 </pre>
                 <p>
                   Para el manejo de checkbox, se debe definir dentro del
                   elemento HTML, en la propiedad name un arreglo, para ir
                   almacenando los check que se van seleccionando.
                 </p>
-                <pre class="code">
-
-                  <span class="code-comment">#En HTML</span>
-                  &lt;<span class="code-sym">input</span> <span class="code-function">type</span>=<span class="code-text">"checkbox"</span> <span class="code-function">name</span>=<span class="code-text">"interests[]"</span> <span class="code-function">value</span>=<span class="code-text">"item1"</span>&gt;
-                  
-                  <span class="code-comment">#En PHP</span>
-                  $arrayToString = <span class="code-text">""</span>;
-                  $count = 1;
-
-                  <span class="code-sym">foreach</span> ($arrayCheckbox <span class="code-sym">as</span> $key <span class="code-sym">=></span> $value) {
-                    <span class="code-sym">if</span> (<span class="code-var">count</span>($arrayCheckbox) != $count) {
-                      $arrayToString .= $value . <span class="code-text">", "</span>;
-                    } <span class="code-sym">else</span> {
-                      $arrayToString .= $value;
+                <pre>
+                  <code class="php">
+                    #En HTML
+                    &lt;input type="checkbox" name="interests[]" value="item1"&gt;
+                    
+                    #En PHP
+                    $arrayToString = "";
+                    $count = 1;
+  
+                    foreach ($arrayCheckbox as $key => $value) {
+                      if (count($arrayCheckbox) != $count) {
+                        $arrayToString .= $value . ", ";
+                      } else {
+                        $arrayToString .= $value;
+                      }
+  
+                      $count++;
                     }
-
-                    $count++;
-                  }
+                  </code>
                 </pre>
                 <p>
                   Para insertar datos en la base de datos se hace llamando a la
@@ -258,11 +270,12 @@
                   <strong>query</strong> se le pasa la consulta a realizar en la
                   base de datos.
                 </p>
-                <pre class="code">
-
-                  $queryInsert  = <span class="code-text">"</span><span class="code-sym">INSERT INTO</span> <span class="code-text">table (campo1, campo2numerico, campo3)</span>
-                   <span class="code-sym">VALUES</span> <span class="code-text">('$campo1', $campo2numerico, '$campo3')"</span>;
-                  $response = $mysqli-><span class="code-var">query</span>($queryInsert);
+                <pre>
+                  <code class="php">
+                    $queryInsert  = "INSERT INTO table (campo1, campo2numerico, campo3)
+                    VALUES ('$campo1', $campo2numerico, '$campo3')";
+                    $response = $mysqli->query($queryInsert);
+                  </code>
                 </pre>
               </div>
             </article>
@@ -273,12 +286,13 @@
                   Para consultar los datos se hace mediante el
                   <strong>select</strong>.
                 </p>
-                <pre class="code">
+                <pre>
+                  <code class="php">
+                    require_once('conexion.php');
 
-                  <span class="code-function">require_once</span>(<span class="code-text">'conexion.php'</span>);
-
-                  $sqlSelect = <span class="code-text">"</span><span class="code-sym">SELECT</span> <span class="code-text">*</span> <span class="code-sym">FROM</span> <span class="code-text">persona"</span>;
-                  $response = $mysqli-><span class="code-var">query</span>($sqlSelect);
+                    $sqlSelect = "SELECT * FROM persona";
+                    $response = $mysqli->query($sqlSelect);
+                  </code>
                 </pre>
                 <p>
                   Para rescatar registro a registro los datos obtenidos por el
@@ -289,18 +303,20 @@
                   ciclo while se ejecuta hasta que el método fetch_array
                   devuelva false.
                 </p>
-                <pre class="code">
-
-                  <span class="code-sym">while</span> ($row = $response-><span class="code-function">fetch_array</span>(<span class="code-var">MYSQLI_ASSOC</span>)){...}
+                <pre>
+                  <code class="php">
+                    while ($row = $response->fetch_array(MYSQLI_ASSOC)){...}
+                  </code>
                 </pre>
                 <p>
                   Para rescatar cada campo accedemos mediante el vector
                   asociativo $row indicando como subíndice un campo contenido en
                   el select.
                 </p>
-                <pre class="code">
-
-                  $row[<span class="code-text">'nombre'</span>];
+                <pre>
+                  <code class="php">
+                    $row['nombre';
+                  </code>
                 </pre>
               </div>
             </article>
@@ -315,28 +331,30 @@
                   <strong>GET</strong> a la página que se encargará de la
                   programación.
                 </p>
-                <pre class="code">
-
-                  &lt;<span class="code-sym">a</span> <span class="code-function">href</span>=&lt;?<span class="code-sym">php</span> <span class="code-var">echo</span> <span class="code-text">"modificar.php?id=$row[id]"</span>?&gt;&gt;&lt;/<span class="code-sym">a</span>&gt;
+                <pre>
+                  <code class="php">
+                    &lt;a href=&lt;?php echo"modificar.php?id=$row[id]"?&gt;&gt;&lt;/a&gt;
                   
-                  <span class="code-comment">#Ahora en el archivo</span>
-                  <span class="code-comment">#Se obtiene el id mediante GET</span>
-                  $id = $_GET[<span class="code-text">'id'</span>];
+                    #Ahora en el archivo
+                    #Se obtiene el id mediante GET
+                    $id = $_GET['id'];
 
-                  $querySearchId = <span class="code-text">"</span><span class="code-sym">SELECT</span> <span class="code-text">*</span> <span class="code-sym">FROM</span> <span class="code-text">persona</span> <span class="code-sym">WHERE</span> <span class="code-text">id = '$id'"</span>;
-                  $response = $mysqli-><span class="code-var">query</span>($querySearchId);
+                    $querySearchId ="SELECT* FROMpersona WHEREid = '$id'";
+                    $response = $mysqli->query($querySearchId);
 
-                  <span class="code-comment">$row será el vector asosiativo con los datos del select anterior</span>
-                  $row = $response-><span class="code-function">fetch_array</span>(<span class="code-var">MYSQLI_ASSOC</span>);
+                    $row será el vector asosiativo con los datos del select anterior
+                    $row = $response->fetch_array(MYSQLI_ASSOC);
+                  </code>
                 </pre>
                 <p>
                   Podemos pasar datos ocultos en un formulario, sin que el
                   usuario lo visualice o lo modifique, esto es útil cuando
                   queremos pasar el id de un usuario por ejemplo.
                 </p>
-                <pre class="code">
-
-                  &lt;<span class="code-sym">input</span> <span class="code-function">name</span>=<span class="code-text">"id"</span> <span class="code-function">type</span>=<span class="code-text">"hidden"</span> <span class="code-function">value</span>=&lt;?<span class="code-sym">php</span> <span class="code-var">echo</span> <span class="code-text">"\""</span> . $row[<span class="code-text">'id'</span>]  . <span class="code-text">"\""</span> ?&gt;"&gt;
+                <pre>
+                  <code class="html">
+                    &lt;input name="id" type="hidden" value=&lt;?php>echo "\"" . $row['id']  . "\"" ?&gt;"&gt;
+                  </code>
                 </pre>
               </div>
             </article>
@@ -364,33 +382,36 @@
             <article class="course-class__section" id="conexion-pdo">
               <h2 class="course-class__section--title">Conexión con PDO</h2>
               <div class="course-class__section--content">
-                <pre class="code">
-
-                <span class="code-var">define</span>(<span class="code-text">"DB_USER"</span>, <span class="code-text">"root"</span>)
-                <span class="code-var">define</span>(<span class="code-text">"DB_PASS"</span>, <span class="code-text">"root"</span>)
-
-                <span class="code-sym">try</span>{
-                  $pdo = <span class="code-sym">new</span> PDO(<span class="code-text">'mysql:host=localhost;dbname=prueba'</span>, DB_USER, DB_PASS);
-                  <span class="code-var">echo</span> <span class="code-text">"Conexión realizada"</span>;
-                }
-                <span class="code-sym">catch</span>(<span class="code-function">PDOException</span> $e){
-                  <span class="code-var">print</span> <span class="code-text">"Error"</span> . $e-><span class="code-function">getMessage</span>();
-                  <span class="code-function">die</span>();
-                }
+                <pre>
+                  <code class="php">
+                    define("DB_USER", "root")
+                    define("DB_PASS", "root")
+    
+                    try{
+                      $pdo = new PDO('mysql:host=localhost;dbname=prueba', DB_USER, DB_PASS);
+                      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                      echo "Conexión realizada";
+                    }
+                    catch(PDOException $e){
+                      print "Error" . $e->getMessage();
+                      die();
+                    }
+                  </code>     
               </pre>
               </div>
             </article>
             <article class="course-class__section" id="consult-pdo">
               <h2 class="course-class__section--title">Consultas PDO</h2>
               <div class="course-class__section--content">
-                <pre class="code">
+                <pre>
+                  <code class="php">
+                    $query_select = 'SELECT * FROM tabla_example';
+                    $gsent = $pdo->prepare($quey_select);
+                    $gsent->execute();
 
-                $query_select = <span class="code-text">'SELECT * FROM tabla_example'</span>;
-                $gsent = $pdo-><span class="code-function">prepare</span>($quey_select);
-                $gsent-><span class="code-function">execute</span>();
-
-                $result = $gsent-><span class="code-function">fetchAll</span>();
-              </pre>
+                    $result = $gsent->fetchAll();
+                  </code>
+                </pre>
                 <p>
                   Si solo se va a obtener un resultado de la consulta, en vez de
                   usar <strong>fetchAll</strong> se usa solo
@@ -407,15 +428,16 @@
                   Se puede recorrer el array resultado con un
                   <strong>foreach</strong>
                 </p>
-                <pre class="code">
+                <pre>
+                  <code class="php">
+                    &lt;?php foreach ($result as $data): ?&gt;
 
-                &lt;?php <span class="code-sym">foreach</span> ($result <span class="code-sym">as</span> $data): ?&gt;
-
-                  &lt;div <span class="code-function">class</span>=<span class="code-text">"container"</span> &gt; 
-                    ... $data ...
-                  &lt;/div&gt;
-                &lt;?php <span class="code-sym">endforeach</span> ?&gt;
-              </pre>
+                      &lt;div class="container" &gt; 
+                        ... $data ...
+                      &lt;/div&gt;
+                    &lt;?php endforeach ?&gt;
+                  </code>
+                </pre>
               </div>
             </article>
             <article class="course-class__section" id="insert-pdo">
@@ -449,20 +471,21 @@
                   Con las sentencias preparadas se evita la inyección de sql.
                 </p>
               </div>
-              <pre class="code">
-
-              <span class="code-sym">if</span>($_POST){
-                $valor1 = $_POST[<span class="code-text">"campo1</span>];
-                $valor2 = $_POST[<span class="code-text">"campo2</span>];
-                
-                $sql_add = <span class="code-text">'INSERT INTO table (campo1, campo2) VALUES (?,?)'</span>;
-                $stmadd = $pdo-><span class="code-function">prepare</span>($sql_add);
-                $stmadd-><span class="code-function">execute</span>(<span class="code-var">array</span>($valor1, $valor2));
-                
-                <span class="code-comment">#Para que se recargue la página y se vean los cambios</span>
-                <span class="code-sym">header</span>(<span class="code-text">'location:index.php'</span>);
-              }
-            </pre>
+              <pre>
+                <code class="php">
+                  if($_POST){
+                    $valor1 = $_POST["campo1];
+                    $valor2 = $_POST["campo2];
+                    
+                    $sql_add = 'INSERT INTO table (campo1, campo2) VALUES (?,?)';
+                    $stmadd = $pdo->prepare($sql_add);
+                    $stmadd->execute(array($valor1, $valor2));
+                    
+                    #Para que se recargue la página y se vean los cambios
+                    header('location:index.php');
+                  }
+                </code> 
+              </pre>
             </article>
             <article class="course-class__section" id="update-pdo">
               <h2 class="course-class__section--title">
@@ -475,26 +498,28 @@
                   obtener el id, se puede hacer mediante el método
                   <strong>GET</strong>.
                 </p>
-                <pre class="code">
+                <pre>
+                  <code class="php">
+                    $id = $_GET["id"];
+                    $valor1 = $_GET["valor1"];
+                    $valor2 = $_GET["valor2"];
 
-                $id = $_GET[<span class="code-text">"id"</span>];
-                $valor1 = $_GET[<span class="code-text">"valor1"</span>];
-                $valor2 = $_GET[<span class="code-text">"valor2"</span>];
-
-                $query_update = <span class="code-text">"UPDATE table SET campo1 = ?, campo2 = ? WHERE id = ?"</span>;
-                $stmt = $pdo-><span class="code-function">prepare</span>($query_update);
-                $stmt-><span class="code-function">execute</span>($valor1, $valor2, $id);
-              </pre>
+                    $query_update = "UPDATE table SET campo1 = ?, campo2 = ? WHERE id = ?";
+                    $stmt = $pdo->prepare($query_update);
+                    $stmt->execute($valor1, $valor2, $id);
+                  </code>
+                </pre>
                 <p>
                   Para la acción de eliminar sería la siguiente, aunque se
                   recomienda hacer una validación previa con Js, preguntandolé
                   al usuario si realmente quiere borrar el registro.
                 </p>
-                <pre class="code">
-
-                  $query_delete = <span class="code-text">"DELETE FROM table WHERE id = ?"</span>;
-                  $stmt = $pdo-><span class="code-function">prepare</span>($query_delete);
-                  $stmt-><span class="code-function">execute</span>($id);
+                <pre>
+                  <code class="php">
+                    $query_delete = "DELETE FROM table WHERE id = ?";
+                    $stmt = $pdo->prepare($query_delete);
+                    $stmt->execute($id);
+                  </code>
                 </pre>
               </div>
             </article>
@@ -506,11 +531,12 @@
                   la instancia de la clase PDO, asi como también la variable
                   statement.
                 </p>
-                <pre class="code">
-
-                $pdo = <span class="code-sym">null</span>;
-                $stmt = <span class="code-sym">null</span>;
-              </pre>
+                <pre>
+                  <code class="php">
+                    $pdo = null;
+                    $stmt = null;
+                  </code>
+                </pre>
               </div>
             </article>
             <article class="course-class__section" id="session">
@@ -534,18 +560,19 @@
                   función <strong>session_start</strong>, que permitira acceder
                   de manera global a nuestras sesiones.
                 </p>
-                <pre class="code">
+                <pre>
+                  <code class="php">
+                    session_start();
 
-                <span class="code-var">session_start</span>();
+                    $login = "usuario";
 
-                $login = <span class="code-text">"usuario"</span>;
+                    #En vez de admin, puede ser cualquier nombre
+                    $_SESSION["admin"] = $login;
 
-                <span class="code-comment">#En vez de admin, puede ser cualquier nombre</span>
-                $_SESSION[<span class="code-text">"admin"</span>] = $login;
-
-                <span class="code-comment">#Para validar si la sesión existe se usa isset</span>
-                <span class="code-var">isset</span>($_SESSION[<span class="code-text">"admin"</span>]);
-              </pre>
+                    #Para validar si la sesión existe se usa isset
+                    isset($_SESSION["admin"]);
+                  </code>
+                </pre>
                 <p>
                   Para destruir una sesión se emplea el método
                   <a
@@ -573,9 +600,10 @@
                   base de datos donde se almacenara ese hash, debe permitir
                   hasta 255 caracteres para evitar errores.
                 </p>
-                <pre class="code">
-
-                  <span class="code-var">password_hash</span>(<span class="code-text">"Password"</span>, PASSWORD_DEFAULT);
+                <pre>
+                  <code class="php">
+                    password_hash("Password", PASSWORD_DEFAULT);
+                  </code>
                 </pre>
                 <p>
                   Para hacer comparación entre contraseñas se usa
@@ -587,9 +615,10 @@
                   >, devuelve <b>TRUE</b> si la contraseña y el hash coinciden,
                   o <b>FALSE</b> de lo contrario.
                 </p>
-                <pre class="code">
-
-                  <span class="code-var">password_verify</span>(<span class="code-text">"passwordCompare"</span>, $hash)
+                <pre>
+                  <code class="php">
+                    password_verify("passwordCompare", $hash);
+                  </code>
                 </pre>
               </div>
             </article>
@@ -621,23 +650,25 @@
                   </li>
                 </ul>
 
-                <pre class="code">
+                <pre>
+                  <code class="php">
+                    #En el archivo .htaccess
+                    Options +FollowSymLinks #Compartiendo los enlaces
+                    RewriteEngine On #Reescribir la url
 
-                  <span class="code-comment">#En el archivo .htaccess</span>
-                  Options +FollowSymLinks <span class="code-comment">#Compartiendo los enlaces</span>
-                  RewriteEngine On <span class="code-comment">#Reescribir la url</span>
-
-                  <span class="code-comment">#Funcion que va a redirigir a la url especifica</span>
-                  <span class="code-comment">#RewriteRule ExpresionRegular UrlDestino [banderas_config_opcional]</span>
-                  RewriteRule ^([a-zA-Z0-9]*)$ datos.php?route=$1
+                    #Funcion que va a redirigir a la url especifica
+                    #RewriteRule ExpresionRegular UrlDestino [banderas_config_opcional]
+                    RewriteRule ^([a-zA-Z0-9]*)$ datos.php?route=$1
+                  </code>
                 </pre>
                 <p>
                   Hay que capturar lo que se ingrese en la ruta y guardarlo en
                   una variable, por medio de <b>GET</b>.
                 </p>
-                <pre class="code">
-
-                  $peticionUrl = $_GET[<span class="code-text">"route"</span>];
+                <pre>
+                  <code class="php">
+                    $peticionUrl = $_GET["route"];
+                  </code>
                 </pre>
               </div>
             </article>
@@ -650,18 +681,20 @@
                   objeto tipo Json, el cual luego podemos manipular con
                   Javascript, en el frontend de la aplicación.
                 </p>
-                <pre class="code">
-
-                  <span class="code-var">echo json_encode</span>($array);
+                <pre>
+                  <code class="php">
+                    echo json_encode($array);
+                  </code>
                 </pre>
                 <p>
                   También hay que especificar en PHP, que el archivo que vamos a
                   exportar es un JSON, eso se hace a través de la cabecera. Se
                   colocá al comienzo del archivo PHP.
                 </p>
-                <pre class="code">
-
-                  <span class="code-var">header</span>(<span class="code-text">'Content-Type: application/json'</span>);
+                <pre>
+                  <code class="php">
+                    header('Content-Type: application/json');
+                  </code>
                 </pre>
                 <p>
                   Otra parte importante son los
@@ -673,9 +706,41 @@
                   >, esto se configura en el archivo PHP, para que cualquier
                   persona pueda consumir una API.
                 </p>
-                <pre class="code">
+                <pre>
+                  <code class="php">
+                    header('Access-Control-Allow-Origin: *');
+                  </code>
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="mvc-binder">
+              <h2 class="course-class__section--title">Oden de carpetas MVC</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Las carpetas a tener encuenta para dividir el programa en MVC,
+                  podría ser la siguiente:
+                </p>
+                <ul>
+                  <li>Assets</li>
+                  <li>Config</li>
+                  <li>Controllers</li>
+                  <li>Helpers</li>
+                  <li>Libraries</li>
+                  <li>Models</li>
+                  <li>Views</li>
+                  <li>.htaccess</li>
+                  <li>index.php</li>
+                </ul>
+                <pre>
+                  <code class="php">
+                    #Archivo .htaccess
+                    Options All -Indexes #Para que no se pueda navegar entre los directorios
+                    RewriteEngine on
 
-                  <span class="code-var">header</span>(<span class="code-text">'Access-Control-Allow-Origin: *'</span>);
+                    RewriteCond %{REQUEST_FILENAME} ! -d
+                    RewriteCond %{REQUEST_FILENAME} ! -f
+                    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+                  </code>
                 </pre>
               </div>
             </article>
@@ -700,6 +765,10 @@
       src="https://kit.fontawesome.com/2028b75fa6.js"
       crossorigin="anonymous"
     ></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
     <script src="../../src/js/menu.js"></script>
     <script type="module" src="../../index.js"></script>
   </body>
