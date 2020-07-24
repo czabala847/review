@@ -159,6 +159,13 @@
                       >Orden carpetas MVC</a
                     >
                   </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#helpers-functions"
+                      >Funciones de ayuda</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -742,6 +749,44 @@
                     RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
                   </code>
                 </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="helpers-functions">
+              <h2 class="course-class__section--title">
+                Funciones de ayuda en PHP
+              </h2>
+              <div class="course-class__section--content">
+                <div class="div">
+                  <h3>
+                    Limpiar cadenas
+                  </h3>
+                  <p>
+                    Para validar cadenas de texto ingresadas por los usuarios
+                    mediante algún tipo de formulario
+                  </p>
+                  <pre>
+                    <code class="php">
+                      function clean_string(string $str){
+                        $str = trim($str); //Quitar espacios en blanco
+                        $str = stripslashes($str); //Quitar slash
+                        $str = str_ireplace("&lt;script&gt;", "", $str); //Eliminar etiqueta js
+                        $str = str_ireplace("&lt;/script&gt;", "", $str); //Eliminar etiqueta js
+                        $str = str_ireplace("&lt;script src&gt;", "", $str); //Eliminar etiqueta js
+                        $str = str_ireplace("&lt;script type&gt;", "", $str); //Eliminar etiqueta js
+                        $str = str_ireplace("--", "", $str); //Eliminar etiqueta js
+                        $str = str_ireplace("SELECT * FROM", "", $str); //Eliminar etiqueta js
+                        $str = str_ireplace("DELETE FROM", "", $str); //Eliminar etiqueta js
+                        $str = str_ireplace("UPDATE SET", "", $str); //Eliminar etiqueta js
+                        $str = str_ireplace("INSERT INTO", "", $str); //Eliminar etiqueta js
+                        $str = str_ireplace("^", "", $str); //Eliminar etiqueta js
+                        $str = str_ireplace("[", "", $str); //Eliminar etiqueta js
+                        $str = str_ireplace("]", "", $str); //Eliminar etiqueta js
+
+                        return $str;
+                      }
+                    </code>
+                  </pre>
+                </div>
               </div>
             </article>
           </div>
