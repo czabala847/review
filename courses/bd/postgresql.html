@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>PostgreSQL</title>
+    <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/styles/monokai-sublime.min.css"
+    />
+    <link rel="stylesheet" href="../../src/css/styles.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <div class="app-postgresql">
+        <header class="header">
+          <div class="container-general">
+            <nav class="header-menu">
+              <ul class="header-menu__list menu-left">
+                <li class="header-menu__list--item">
+                  <a class="link" href="../../index.html">Inicio</a>
+                </li>
+                <li class="header-menu__list--item">
+                  <a class="link" href="../../index.html##courses">Carreras</a>
+                </li>
+              </ul>
+              <figure class="header-menu__logo">
+                <a href="../../index.html"
+                  ><img
+                    class="header-menu__logo--img"
+                    src="../../src/images/logo_white.png"
+                    alt="logo carlos zabala"
+                /></a>
+              </figure>
+              <ul class="header-menu__list menu-right">
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Me</a>
+                </li>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Contacto</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <section class="hero-course">
+          <div class="container-general">
+            <h1 class="hero-course__title">PostgreSQL</h1>
+            <p class="hero-course__description">
+              PostgreSQL es un poderoso sistema de base de datos relacional de
+              objetos de código abierto con más de 30 años de desarrollo activo
+              que le ha ganado una sólida reputación por su confiabilidad,
+              robustez de funciones y rendimiento.
+            </p>
+            <div class="hero-course__buttons">
+              <a
+                target="_blank"
+                href="https://platzi.com/clases/postgresql/"
+                class="btn btn--blue"
+                >Curso platzi</a
+              >
+              <a
+                target="_blank"
+                href="https://www.postgresql.org/"
+                class="btn btn--primary"
+                >Web oficial</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="course-class">
+          <div class="course-class__left" id="course-class__left">
+            <div class="course-class__left--container">
+              <nav class="course-class__menu">
+                <ul>
+                  <li>
+                    <a class="link course-class__menu--a" href="#postgresql"
+                      >PostgreSQL</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="course-class__content">
+            <i
+              class="fas fa-bars icon course-class__icon-menu"
+              id="btn-menu"
+            ></i>
+            <article class="course-class__section" id="postgresql">
+              <h2 class="course-class__section--title">¿Qué es Postgresql?</h2>
+              <div class="course-class__section--content">
+                <p>Estandar <strong>ACID</strong>:</p>
+                <ul>
+                  <li>
+                    Atomicity – Atomicidad -> Separar las funciones
+                    desarrolladas en la BD como pequeñas tareas y ejecutarlas
+                    como un todo. Si alguna tarea falla se hace un rollback(Se
+                    deshacen los cambios)
+                  </li>
+                  <li>
+                    Consistency – Consistencia -> Todo lo que se desarrolló en
+                    base al objeto relacional. Los datos tienen congruencia
+                  </li>
+                  <li>
+                    Isolation – Aislamiento -> Varias tareas ejecutándose al
+                    mismo tiempo dentro de la BD
+                  </li>
+                  <li>
+                    Durability – Durabilidad -> Puedes tener seguridad que la
+                    información no se perderá por un fallo catastrófico.
+                    PostgreSQL guarda la información en una Bitácora
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="course-class__section" id="console">
+              <h2 class="course-class__section--title">
+                Interacción con Postgres desde la Consola
+              </h2>
+              <div class="course-class__section--content">
+                <p>Comandos para manera Postgres desde la consola:</p>
+                <pre>
+                  <code class="php">
+                    \l -> Lista todas las bases de datos
+                    \dt -> Listar tablas
+                    \c nombre_BD -> Cambiar a otra tabla
+                    \d nombre_tabla -> Describir una tabla
+                    \h -> Ver todos los comandos sql
+                  </code>
+                </pre>
+              </div>
+            </article>
+          </div>
+        </section>
+        <footer class="footer">
+          <div class="container-general">
+            <div class="footer__container">
+              <p id="footer-year">@Carlos Zabala Roqueme -</p>
+              <figure class="footer__container--img">
+                <img
+                  src="../../src/images/logo-white-2.png"
+                  alt="logo Carlos Zabala"
+                />
+              </figure>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/2028b75fa6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="../../src/js/menu.js"></script>
+    <!-- <script>
+      const $menu = document.getElementById("btn-menu");
+      const $courseMenu = document.getElementById("course-class__left");
+
+      $menu.addEventListener("click", handleClick);
+
+      function handleClick() {
+        $courseMenu.classList.toggle("is-active");
+        $menu.classList.toggle("is-active");
+
+        if ($menu.classList.contains("fa-bars")) {
+          $menu.classList.remove("fa-bars");
+          $menu.classList.add("fa-times");
+        } else {
+          $menu.classList.remove("fa-times");
+          $menu.classList.add("fa-bars");
+        }
+      }
+
+      const $footerYear = document.getElementById("footer-year");
+
+      if ($footerYear) {
+        let date = new Date();
+
+        $footerYear.innerHTML += " " + date.getFullYear();
+      }
+    </script> -->
+  </body>
+</html>

@@ -94,6 +94,13 @@
         "courseDescription": "Conoce los conceptos básicos para manejar profesionalmente los sistemas de BD, para realizar CRUD.",
         "courseURL": "./courses/bd/fundamentos.html",
         "courseImage": "https://image.flaticon.com/icons/svg/1420/1420398.svg"
+      },
+      {
+        "courseID": 2,
+        "courseName": "PostgreSQL",
+        "courseDescription": "Es un sistema de gestión de bases de datos relacional orientado a objetos y de código abierto.",
+        "courseURL": "./courses/bd/postgresql.html",
+        "courseImage": "https://miro.medium.com/max/3840/1*wsG43wOOFexWg_xa0CEhuQ.jpeg"
       }
     ]
   },
