@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso básico de Laravel</title>
+    <link rel="icon" href="../../src/images/favicon.png" type="img/text" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../src/css/styles.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <div class="app-react-basico">
+        <header class="header">
+          <div class="container-general">
+            <nav class="header-menu">
+              <ul class="header-menu__list menu-left">
+                <li class="header-menu__list--item">
+                  <a class="link" href="../../index.html">Inicio</a>
+                </li>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Carreras</a>
+                </li>
+              </ul>
+              <figure class="header-menu__logo">
+                <a href="../../index.html"
+                  ><img
+                    class="header-menu__logo--img"
+                    src="../../src/images/logo_white.png"
+                    alt="logo carlos zabala"
+                /></a>
+              </figure>
+              <ul class="header-menu__list menu-right">
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Me</a>
+                </li>
+                <li class="header-menu__list--item">
+                  <a class="link" href="">Contacto</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <section class="hero-course">
+          <div class="container-general">
+            <h1 class="hero-course__title">Curso básico de Laravel</h1>
+            <div class="hero-course__description">
+              <p>
+                Laravel es un framework de código abierto para desarrollar
+                aplicaciones y servicios web con PHP 5 y PHP 7. Su filosofía es
+                desarrollar código PHP de forma elegante y simple, evitando el
+                "código espagueti"
+              </p>
+            </div>
+            <div class="hero-course__buttons">
+              <a
+                target="_blank"
+                href="https://platzi.com/clases/intro-laravel/"
+                class="btn btn--primary"
+                >Curso platzi</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="course-class">
+          <div class="course-class__left" id="course-class__left">
+            <div class="course-class__left--container">
+              <nav class="course-class__menu">
+                <ul>
+                  <li>
+                    <a class="link course-class__menu--a" href="#syntax"
+                      >Sintaxis</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="course-class__content">
+            <i
+              class="fas fa-bars icon course-class__icon-menu"
+              id="btn-menu"
+            ></i>
+            <article class="course-class__section" id="syntax">
+              <h2 class="course-class__section--title">Sintaxis de PHP</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Siempre que usemos PHP usaremos lo siguiente:
+                  <strong>&lt;?php ?&gt; </strong>
+                  todo lo que pongamos dentro de esto será lo que el servidor va
+                  a interpretar como código php, lo que esté fuera lo ignorará.
+                </p>
+                <p>
+                  Si queremos escribir código php en nuestra vista HTML
+                  tendremos que cambiarle la extensión al archivo por
+                  <strong>.php</strong>
+                  porque nuestro servidor esta configurado a solo interpretar
+                  archivos PHP. Solo las partes dentro de
+                  <span class="t-i">&lt;?php ?&gt;</span>
+                  van a ser interpretadas y su código fuente no será visible
+                  desde el navegador.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+        <footer class="footer">
+          <div class="container-general">
+            <div class="footer__container">
+              <p id="footer-year">@Carlos Zabala Roqueme -</p>
+              <figure class="footer__container--img">
+                <img
+                  src="../../src/images/logo-white-2.png"
+                  alt="logo Carlos Zabala"
+                />
+              </figure>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/2028b75fa6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../src/js/menu.js"></script>
+    <script type="module" src="../../index.js"></script>
+  </body>
+</html>

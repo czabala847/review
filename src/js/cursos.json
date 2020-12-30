@@ -66,6 +66,13 @@
         "courseDescription": "Primer curso sobre la manipulación(CRUD) de datos por medio de PHP y Mysql.",
         "courseURL": "./courses/php/php-mysql.html",
         "courseImage": "https://www.eclixxo.com/wp-content/uploads/2009/01/PHP-MYSQL.jpg"
+      },
+      {
+        "courseID": 3,
+        "courseName": "Curso básico de Laravel",
+        "courseDescription": "Iniciando con el framework más usado para PHP, conociendo lo básico.",
+        "courseURL": "./courses/php/laravel-basico.html",
+        "courseImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/200px-Laravel.svg.png"
       }
     ]
   },
