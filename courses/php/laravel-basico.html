@@ -92,6 +92,11 @@
                       >Crear proyecto</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#crud"
+                      >CRUD en laravel</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -122,7 +127,7 @@
                 </pre>
               </div>
             </article>
-            <article class="course class__section" id="create">
+            <article class="course-class__section" id="create">
               <h2 class="course-class__section--title">
                 Creando un proyecto en laravel
               </h2>
@@ -138,6 +143,76 @@
                   composer create-project --prefer-dist laravel/laravel:^version nombre-proyecto
                 </code>
               </pre>
+            </article>
+            <article class="course-class__section" id="crud">
+              <h2 class="course-class__section--title">CRUD en Laravel</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Lo primero es configurar la base de datos en el proyecto de
+                  laravel, para eso hay que ir a la ruta
+                  <i>config/database.php</i> en la cual se encuentran los datos
+                  de configuración de los motores de bases de datos, aunque
+                  <b>no se debe modificar</b> ese archivo manualmente.
+                </p>
+                <p>
+                  Para eso se debe modificar variables que se declaran en el
+                  archivo <i>.env</i> en donde se cambiamos el nombre de la base
+                  de datos, nombre de usuario, contraseñas y otras
+                  configuraciones para la conexión a la base de datos.
+                </p>
+                <p>
+                  Para la creación de las <b>tablas</b> se hacen directamente en
+                  laravel y no en el cliente de desarrollo, en la ruta
+                  <i>database/migrations</i>. Desde el terminal se procede a
+                  crear las tablas en nuestra base de datos.
+                </p>
+                <pre>
+                  <code>
+                    php artisan migrate
+                  </code>
+                </pre>
+                <p class="note">
+                  Todas las tablas se crean en un archivo php y por medio de los
+                  comandos de artisan que viene implementado en laravel, se
+                  migran y se crean en base de datos. Nunca se manipula
+                  manualmente la base de datos.
+                </p>
+                <h3>Creación de rutas</h3>
+                Para las rutas en laravel se definen en el archivo
+                <i>routes/web.php</i>, en el podemos configurar las rutas de
+                acceso a la aplicación, conectando con los
+                <strong>controladores</strong> y funciones que se encargaran de
+                manipular esa petición realizada por el usuario.
+                <pre>
+                  <code class="php">
+                    //Creación de rutas laravel 7
+
+                    //Route::get('/', 'Controlador@metodo');
+                    Route::get('/', 'UserController@index');
+                    Route::post('users', 'UserController@store')->name('users.store');
+                    Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');
+
+                    //laravel 8
+                    use App\Http\Controllers\UserController;
+                    Route::get('/', [UserController::class, 'index']);
+                    Route::post('users', [UserController::class, 'store']);
+                    Route::delete('users/{user}', [UserController::class, 'destroy']);
+                  </code>
+                </pre>
+                <p>
+                  Los <strong>Controladores</strong> se crean en la ruta
+                  <i>http/Controllers</i>, se pueden crear de forma manual o
+                  mediante laravel, con los comandos que ofrece artisan.
+                </p>
+                <pre>
+                  <code>
+                    php artisan make:controller UserController
+
+                    //Listar rutas
+                    php artisan route:list
+                  </code>
+                </pre>
+              </div>
             </article>
           </div>
         </section>
