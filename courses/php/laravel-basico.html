@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/styles/monokai-sublime.min.css"
+    />
     <link rel="stylesheet" href="../../src/css/styles.css" />
   </head>
 
@@ -54,7 +58,13 @@
                 Laravel es un framework de código abierto para desarrollar
                 aplicaciones y servicios web con PHP 5 y PHP 7. Su filosofía es
                 desarrollar código PHP de forma elegante y simple, evitando el
-                "código espagueti"
+                "código espagueti".
+              </p>
+              <p>
+                Una definición sencilla de laravel es herramienta de desarrollo
+                web, nos ayudara mucho para crear un sistema web. A laravel
+                podemos entenderlo como un sistema de capas, si lo entendemos
+                bien podemos resolver cualquier problema.
               </p>
             </div>
             <div class="hero-course__buttons">
@@ -73,8 +83,13 @@
               <nav class="course-class__menu">
                 <ul>
                   <li>
-                    <a class="link course-class__menu--a" href="#syntax"
-                      >Sintaxis</a
+                    <a class="link course-class__menu--a" href="#install"
+                      >Instalación</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#create"
+                      >Crear proyecto</a
                     >
                   </li>
                 </ul>
@@ -86,26 +101,43 @@
               class="fas fa-bars icon course-class__icon-menu"
               id="btn-menu"
             ></i>
-            <article class="course-class__section" id="syntax">
-              <h2 class="course-class__section--title">Sintaxis de PHP</h2>
+            <article class="course-class__section" id="install">
+              <h2 class="course-class__section--title">
+                Instalación de Laravel
+              </h2>
               <div class="course-class__section--content">
                 <p>
-                  Siempre que usemos PHP usaremos lo siguiente:
-                  <strong>&lt;?php ?&gt; </strong>
-                  todo lo que pongamos dentro de esto será lo que el servidor va
-                  a interpretar como código php, lo que esté fuera lo ignorará.
+                  Instalación mediante Laravel Installer.
+                  <a
+                    target="_blank"
+                    href="https://laravel.com/docs/6.x/installation"
+                    class="link link-refe"
+                    >Más información</a
+                  >
                 </p>
-                <p>
-                  Si queremos escribir código php en nuestra vista HTML
-                  tendremos que cambiarle la extensión al archivo por
-                  <strong>.php</strong>
-                  porque nuestro servidor esta configurado a solo interpretar
-                  archivos PHP. Solo las partes dentro de
-                  <span class="t-i">&lt;?php ?&gt;</span>
-                  van a ser interpretadas y su código fuente no será visible
-                  desde el navegador.
-                </p>
+                <pre>
+                  <code class="php">
+                    composer global require laravel/installer
+                  </code>
+                </pre>
               </div>
+            </article>
+            <article class="course class__section" id="create">
+              <h2 class="course-class__section--title">
+                Creando un proyecto en laravel
+              </h2>
+              <p>
+                Con los siguiente comandos se puede crear un nuevo proyecto
+                usando el framework Laravel.
+              </p>
+              <pre>
+                <code class="php">
+                  laravel new nombre-proyecto
+
+                  //Otra forma
+                  composer create-project --prefer-dist laravel/laravel:^version nombre-proyecto
+                </code>
+              </pre>
             </article>
           </div>
         </section>
@@ -128,6 +160,10 @@
       src="https://kit.fontawesome.com/2028b75fa6.js"
       crossorigin="anonymous"
     ></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
     <script src="../../src/js/menu.js"></script>
     <script type="module" src="../../index.js"></script>
   </body>
