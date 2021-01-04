@@ -97,6 +97,16 @@
                       >CRUD en laravel</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#test-data"
+                      >Datos de prueba</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#controller"
+                      >Lógica de controladores</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -212,6 +222,68 @@
                     php artisan route:list
                   </code>
                 </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="test-data">
+              <h2 class="course-class__section--title">
+                Datos de prueba en Laravel
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Con Laravel contamos con datos para realizar pruebas, como es
+                  el caso de llenar con información una tabla en base de datos.
+                  Para realizarlo se hace mediante la consola con
+                  <strong>artisan</strong>
+                </p>
+                <pre>
+                  <code>
+                    php artisan tinker
+                  </code>
+                </pre>
+                <p>
+                  El anterior comando, abre una consola para manipular archivos
+                  en laravel.
+                </p>
+                <pre>
+                  <code>
+                    //Crear 12 registros de tipo usuario en BD
+
+                    //laravel 7^
+                    factory(App\User::class, 12)->create()
+
+                    //laravel 8
+                    User::factory()->count(12)->create();
+                  </code>
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="controller">
+              <h2 class="course-class__section--title">
+                Lógica de controladores y vistas
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para listar los datos de una tabla en laravel 7^, se
+                  implementa el siguiente código:
+                </p>
+                <pre>
+                  <code class="php">
+                    //Ejemplo lista de usuarios
+                    $user = User::latest()->get();
+
+                    //Cargar una vista
+                    return view('users.index', [
+                        'users' => $user
+                    ]);
+                  </code>
+                </pre>
+                <p>
+                  Se debe crear esa vista, en la dirección
+                  <i>resources/views/</i> crear la carpeta users y el archivo
+                  index, (para este ejemplo), esa será la vista a mostrar al
+                  usuario, dicho archivo deberá seguir la siguiente estructura:
+                  nombreVista.blade.php
+                </p>
               </div>
             </article>
           </div>
