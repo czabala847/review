@@ -107,6 +107,11 @@
                       >Lógica de controladores</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#form-validate"
+                      >Validar formularios</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -275,6 +280,13 @@
                     return view('users.index', [
                         'users' => $user
                     ]);
+
+                    //Ejemplo guardar un usuario en BD
+                    User::create([
+                      'name' => $request->name,
+                      'email' => $request->email,
+                      'password' => bcrypt($request->password) //Encripar contraseñas
+                    ]);
                   </code>
                 </pre>
                 <p>
@@ -284,6 +296,117 @@
                   usuario, dicho archivo deberá seguir la siguiente estructura:
                   nombreVista.blade.php
                 </p>
+                <h3>Tips vistas laravel</h3>
+                <p>
+                  Para recorrer una colección de arrays se puede emplear el
+                  metodo <strong>foreach</strong> de la siguiente manera:
+                </p>
+                <pre>
+                  <code class="php">
+                    @foreach($arrayList as $item)
+                    @endforeach
+                  </code>
+                </pre>
+                <p>
+                  Para convinar código php y HTML en laravel se usa la siguiente
+                  sintaxis:
+                </p>
+                <pre>
+                  <code class="php">
+                    {{ $item->value }}
+                  </code>
+                </pre>
+                <p>
+                  Para los formularios en el action, se puede especificar
+                  mediante el uso de la función predeterminada en laravel
+                  <strong>route</strong> pasando por parametros la ruta que se
+                  especifico en el archivo <i>routes/web.php</i>, además se le
+                  debe especificar a laravel el tipo de petición a realizar por
+                  medio de <strong>@method</strong> y para cuestiones de
+                  seguridad enviar un toquen para informar que es nuestro
+                  formulario el que esta realizando la petición
+                  <strong>@csrf</strong>
+                </p>
+                <pre>
+                  <code class="html">
+                      &lt;form action="{{ route('nombre.ruta', $parametros) }}" method="POST"&gt;
+                        @method('DELETE')
+                        @csrf
+
+                        &lt;input type="submit" value="Eliminar" onclick="return confirm('¿Desea eliminar {{ $user->name }} ...?')"&gt;
+                      &lt;/form&gt;
+                  </code>
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="form-validate">
+              <h2 class="course-class__section--title">
+                Validaciones en formularios Laravel
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  En laravel podemos validar de forma sencilla, la información
+                  suministrada por los usuarios en un formulario, la validación
+                  se realiza en el controlador de cada clase, utilizando la
+                  clase <strong>Request</strong>.
+                </p>
+                <pre>
+                  <code class="php">
+                    $request->validate([
+                        'name'     => ['required'],
+                        'email'    => ['required', 'email', 'unique:nombreTablaBD'],
+                        'password' => ['required', 'min:8']
+                    ]);
+                  </code>
+                </pre>
+                <p>
+                  En lo anterior validamos que cada campo del formulario sea
+                  obligatorio o que cumpla con ciertos requisitos. Laravel
+                  tambien nos ofrece la posibilidad de manipular si ocurre un
+                  error en la validación por medio de la variable global
+                  <strong>$errors</strong>.
+                </p>
+                <pre>
+                  <code class="php">
+                    //Si se encuentra un error
+                    @if($errors->any())
+
+                    //Ver todos los errores
+                    @foreach($errors->all() as $error)
+
+                    //Guardar en las cajas de texto datos ingresados
+                    //Para que no se borren cada vez que se validen
+                    &lt;input value="{{ old('nombre-campo') }}"&gt
+                  </code>
+                </pre>
+                <div class="note">
+                  <p>
+                    Traducir mensajes de errores a españo, en el archivo
+                    <i>config/app.php</i> buscar la variable
+                    <strong>locale</strong> y añadir el valor "es", luego en el
+                    archivo <i>resources/lang</i> crear la carpeta en español
+                    con el nombre "es" y crear el archivo
+                    <strong>validation.php</strong> en el repositorio
+                    <a
+                      target="_blank"
+                      href="https://github.com/italomoralesf/Laravel-lang/blob/master/es/validation.php"
+                      class="link link-refe"
+                      >traducciónes</a
+                    >
+                    se encuentra todo el archivo con las traducciones, además
+                    hay que añadir en el array <strong>attributes</strong> las
+                    palabras a traducir.
+                  </p>
+                </div>
+                <pre>
+                  <code class="php">
+                    'attributes' => [
+                        'name' => 'nombre',
+                        'email' => 'correo electrónico',
+                        'password' => 'Contraseña'
+                    ],
+                  </code>
+                </pre>
               </div>
             </article>
           </div>
