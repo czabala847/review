@@ -70,7 +70,7 @@
             <div class="hero-course__buttons">
               <a
                 target="_blank"
-                href="https://platzi.com/clases/intro-laravel/"
+                href="https://platzi.com/clases/intro-laravel-2020/"
                 class="btn btn--primary"
                 >Curso platzi</a
               >
@@ -110,6 +110,11 @@
                   <li>
                     <a class="link course-class__menu--a" href="#form-validate"
                       >Validar formularios</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#middlewares"
+                      >Middlewares</a
                     >
                   </li>
                 </ul>
@@ -405,6 +410,82 @@
                         'email' => 'correo electrónico',
                         'password' => 'Contraseña'
                     ],
+                  </code>
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="middlewares">
+              <h2 class="course-class__section--title">Middlewares</h2>
+              <div class="course-class__section--content">
+                <p>
+                  La función principal es proporcionar una fácil y conveniente
+                  capa para filtrar las solicitudes HTTP. Existen diferentes
+                  maneras de hacerlo y de hecho Laravel incluye un middleware
+                  que verifica si el usuario está autenticado. Puedes crear un
+                  middleware de registro y tener logs detallados de cada
+                  solicitud entrante, cualquier cosa que se te ocurra respecto a
+                  HTTP puedes llevarla a cabo usando esta tecnología.
+                </p>
+                <pre>
+                  <code class="php">
+                    //Crear un middleware de autentificación de usuarios
+                    Route::get('/', function () {
+                      return view('welcome');
+                    })->middleware('auth');
+                  </code>
+                </pre>
+                <h3>Middleware Personalizado</h3>
+                <p>
+                  Se crea un middleware personalizado mediante artisan, con el
+                  comando <strong>make:middleware</strong>.
+                </p>
+                <pre>
+                  <code class="php">
+                    //php artisan make:middleware NombreMiddleware
+                    php artisan make:middleware VerifyAge
+                  </code>
+                </pre>
+                <p>
+                  Se creara el archivo en la ruta <i>app/Http/Middleware/</i> en
+                  el cual se deberá configurar toda la lógica de programación,
+                  dependiendo de lo que queremos hacer. En este caso de ejemplo
+                  verificar si el usuario es mayor de edad
+                </p>
+                <pre>
+                  <code class="php">
+                    //Archivo VerifyAge
+                    class VerifyAge{
+                      public function handle($request, Clouse $next){
+                        if($request->get('age') < 18){
+                          return redirect('guidelines') //si es menor redirigir a guidelines
+                         }
+
+                         return $next($request) //si no dejarlo continuar en la app
+                      }
+                    }
+                  </code>
+                </pre>
+                <p>
+                  Luego se procede a registrar la clase del Middleware dentro
+                  del archivo <strong>kernel.php</strong>, que se encuentra en
+                  la ruta <i>Http/Middleware/</i> y se añade al array
+                  <strong>$routeMiddleware</strong>.
+                </p>
+                <pre>
+                  <code class="php">
+                    //Archivo Kernel
+                    protected $routeMiddleware = [
+                        'verify-age' => \App\Http\Middleware\VerifyAge::class,
+                    ];
+
+                    //Uso del Middleware
+                    Route::get('/example', 'ExampleController@...')->middleware('verify-age');
+
+                    //Middleware a varias rutas
+                    Route::middleware(['auth'])->group(function () {
+                      Route::view('/', 'welcome');
+                      Route::resource('users', 'UserController');
+                    }
                   </code>
                 </pre>
               </div>
