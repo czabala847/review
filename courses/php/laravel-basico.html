@@ -117,6 +117,13 @@
                       >Middlewares</a
                     >
                   </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#routes-and-controllers"
+                      >Rutas y controladores</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -486,6 +493,63 @@
                       Route::view('/', 'welcome');
                       Route::resource('users', 'UserController');
                     }
+                  </code>
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="routes-and-controllers">
+              <h2 class="course-class__section--title">
+                Sistema de rutas y controladores
+              </h2>
+              <div class="course-class__section--content">
+                <ul>
+                  <li>
+                    <strong>Route</strong>: Capa encargada de manejar todo el
+                    flujo de la aplicación.
+                  </li>
+                  <li>
+                    <strong>Controller</strong>: Donde escribimos toda la lógica
+                    de programación.
+                  </li>
+                </ul>
+                <p>
+                  Retornar una vista en laravel, dentro del archivo
+                  <i>web.php</i>, es útil cuando queremos retornar páginas
+                  estaticas, además podemos pasarle datos por medio de un
+                  arreglo.
+                </p>
+                <pre>
+                  <code class="php">
+                    Route::view('vista', 'welcomeView', ['app'=>'datos']);
+                  </code>
+                </pre>
+                <p>
+                  Debemos recordar de que cuando creamos una ruta, trabajamos
+                  para conectarnos con los datos de un controlador, con el
+                  metodo <strong>resource</strong> de la clase Route, nos
+                  permite trabajar con 7 rutas posibles de un CRUD.
+                </p>
+                <pre>
+                  <code class="php">
+                    //Archivo web.php
+                    //Laravel 7.0
+                    Route::resource('pages', 'PageController');
+
+                    //Laravel 8
+                    use App\Http\Controllers\PageController;
+
+                    Route::resource('pages', PageController::class);
+                  </code>
+                </pre>
+                <p>
+                  Luego debemos crear el controlador mediante los comandos de
+                  artisan. Se crearán así las 7 rutas, con esto no es necesario
+                  crear una por una.
+                </p>
+                <pre>
+                  <code>
+                    //Crear controlador con los 7 métodos básicos y conectarlo a un modelo
+                    php artisan make:controller [NombreController] --resource --model=NombreModelo
                   </code>
                 </pre>
               </div>
