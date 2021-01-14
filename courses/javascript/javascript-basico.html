@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/styles/monokai-sublime.min.css"
+    />
     <link rel="stylesheet" href="../../src/css/styles.css" />
   </head>
 
@@ -150,18 +154,19 @@
                 que le pasemos a la función estén invertidos o incluso
                 incompletos.
               </p>
-              <pre class="code">
+              <pre>
+                <code class="javascript">
+                  var nombre = 'Carlos', apellido = 'Zabala', edad = 21
 
-                <span class="code-var">var</span> nombre = <span class="code-text">'Carlos'</span> , apellido = <span class="code-text">'Zabala'</span>, edad = 21
+                  function imprimirEdad(nombre, apellido, edad){
+                    console.log(`${n} ${a} tiene ${e} años`)
+                  }
 
-                <span class="code-var">function</span> <span class="code-function">imprimirEdad</span>(nombre, apellido, edad){
-                  console.<span class="code-var">log</span>(<span class="code-text">`${n} ${a} tiene ${e} años`</span>)
-                }
-
-                <span class="code-function">imprimirEdad</span>(nombre, apellido, edad) <span class="code-comment">#Carlos Zabala tiene 21 años</span>
-                <span class="code-function">imprimirEdad</span>() <span class="code-comment">#undefined undefined tiene undefined años</span>
-                <span class="code-function">imprimirEdad</span>(<span class="code-text">'Juan'</span>, <span class="code-text">'Diaz'</span>, 21) <span class="code-comment">#Juan Diaz tiene 21 años</span>
-                <span class="code-function">imprimirEdad</span>(21, 5, <span class="code-text">'Lopez'</span>) <span class="code-comment">#21 5 tiene lopez años</span>
+                  imprimirEdad(nombre, apellido, edad) //Carlos Zabala tiene 21 años
+                  imprimirEdad() //undefined undefined tiene undefined años
+                  imprimirEdad('Juan', 'Diaz', 21) //Juan Diaz tiene 21 años
+                  imprimirEdad(21, 5, 'Lopez') //21 5 tiene lopez años
+                </code>
               </pre>
               <div class="note">
                 <p>
@@ -195,7 +200,7 @@
 
                 <span class="code-comment">#Creación de objetos</span>
                 <span class="code-var">var</span> carlos = {
-                  nombre : <span class="code-text">'Carlos'</span>,
+                  nombre : 'Carlos'</span>,
                   apellido : <span class="code-text">'Zabala'</span>,
                   edad : 22
                 }
@@ -842,6 +847,10 @@
       src="https://kit.fontawesome.com/2028b75fa6.js"
       crossorigin="anonymous"
     ></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
     <script src="../../src/js/menu.js"></script>
     <script type="module" src="../../index.js"></script>
   </body>

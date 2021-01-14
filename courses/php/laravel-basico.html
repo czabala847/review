@@ -124,6 +124,11 @@
                       >Rutas y controladores</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#validation"
+                      >Validación de datos</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -550,6 +555,74 @@
                   <code>
                     //Crear controlador con los 7 métodos básicos y conectarlo a un modelo
                     php artisan make:controller [NombreController] --resource --model=NombreModelo
+                  </code>
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="validation">
+              <h2 class="course-class__section--title">
+                Validación de datos (rutas, vistas, formularios y controladores)
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  La forma correcta de realizar validaciones es creando un
+                  archivo aparte para estas validaciones.
+                </p>
+                <pre>
+                  <code class="php">
+                    //Ruta laravel 7.0 para guardar datos formularios
+                    Route::post('post', 'PostController@store')->name('posts.store');
+                  </code>
+                </pre>
+                <p>
+                  La validación del formulario no la realizamos en el
+                  controlador si no en un archivo aparte, esos son los archivos
+                  <strong>FormRequest</strong>, para crear uno se hace mediante
+                  el comando artisan:
+                </p>
+                <pre>
+                  <code>
+                    php artisan make:request [NombreRequest]
+                  </code>
+                </pre>
+                <p>
+                  Dentro del archivo request, se debe validar que el método
+                  <strong>authorize</strong> devuelva verdadero. Y en el método
+                  <strong>rules</strong> es donde se programará toda la
+                  validación necesaria.
+                </p>
+                <pre>
+                  <code class="php">
+                    //Archivo request
+                    public function rules(){
+                      return [
+                        'title' => 'required',
+                        'email' => ['required','email','unique:users'],
+                      ]
+                    }
+
+                    //Mensajes personalizados
+                    public function message(){
+                      return [
+                        'name.required' => 'El campo nombre es requerido'
+                      ]
+                    }
+                  </code>
+                </pre>
+                <p>
+                  Una vez listo el archivo de las validaciones, podemos hacer
+                  uso de él en los controladores que queramos, importanto la
+                  ruta y solicitandolo por parametros
+                </p>
+                <pre>
+                  <code class="php">
+                    //En el controlador
+                    use App\Http\Request\NombreRequest;
+
+                    public function store(NombreRequest $request){
+                      //dd -> validar, como debugger o var_dump
+                      dd($request->all());
+                    }
                   </code>
                 </pre>
               </div>
