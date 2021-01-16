@@ -129,6 +129,11 @@
                       >Validación de datos</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#blade"
+                      >blade</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -625,6 +630,37 @@
                     }
                   </code>
                 </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="blade">
+              <h2 class="course-class__section--title">
+                Blade: sistema de plantillas avanzado
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Es el sistema de plantillas de laravel en el que se puede
+                  combinar código PHP y HTML de una manera mucho más sencilla.
+                </p>
+                <ul>
+                  <li>
+                    @yield('contenido'): Esto le indica a Laravel que aquí se va
+                    registrar el contenido, y le pondremos dentro un nombre
+                    identificador.
+                  </li>
+                  <li>
+                    @extends('archivo'): Para indicar de quién vamos a utilizar
+                    el @yield
+                  </li>
+                  <li>
+                    @section('contenido'): Con este le indicamos a Laravel el
+                    @yeild donde va llevar el contenido que escribamos dentro de
+                    este.
+                  </li>
+                  <li>
+                    @include('contenido'): Incluye el código de otros archivos
+                    al archivo que lo está incluyendo.
+                  </li>
+                </ul>
               </div>
             </article>
           </div>
