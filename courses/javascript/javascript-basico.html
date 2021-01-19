@@ -88,11 +88,6 @@
                     >
                   </li>
                   <li>
-                    <a class="link course-class__menu--a" href="#arrow-function"
-                      >Arrow Functions</a
-                    >
-                  </li>
-                  <li>
                     <a class="link course-class__menu--a" href="#array"
                       >Arrays</a
                     >
@@ -196,20 +191,21 @@
                 Esto se consigue encerrando el nombre del atributo entre llaves
                 { }.
               </p>
-              <pre class="code">
+              <pre>
+                <code class="javascript">
+                  //Creación de objetos
+                  var carlos = {
+                    nombre : 'Carlos',
+                    apellido : 'Zabala',
+                    edad : 22
+                  }
 
-                <span class="code-comment">#Creación de objetos</span>
-                <span class="code-var">var</span> carlos = {
-                  nombre : 'Carlos'</span>,
-                  apellido : <span class="code-text">'Zabala'</span>,
-                  edad : 22
-                }
-
-                <span class="code-comment">#Una nueva funcionalidad de js es pedir el atributo de un objeto en
-                los parametros para esto se usan las llaves {nombreAtributo}</span>
-                <span class="code-var">function</span> <span class="code-function">imprimirNombreMayusculas</span>({nombre}){
-                  console.<span class="code-var">log</span>(nombre.<span class="code-var">toUpperCase</span>())
-                }
+                  /*Una nueva funcionalidad de js es pedir el atributo de un objeto en
+                  los parametros para esto se usan las llaves {nombreAtributo} */
+                  function imprimirNombreMayusculas({nombre}){
+                    console.  log(nombre. toUpperCase())
+                  }
+                </code>
               </pre>
               <h3>Parámetros como referencia o como valor</h3>
               <p>
@@ -235,41 +231,19 @@
                 se requería, es decir, el original quedara igual sin
                 modificación y el nuevo será el que tenga el cambio.
               </p>
-              <pre class="code">
-
-                <span class="code-var">function</span> <span class="code-function">birthday</span>(persona){
-                  <span class="code-sym">return</span>{
-                    ...persona,
-                    edad : persona.edad + 1
+              <pre>
+                <code class="javascript">
+                  function birthday(persona){
+                    return{
+                      ...persona,
+                      edad : persona.edad + 1
+                    }
                   }
-                }
-
-                <span class="code-function">birthday</span>(carlos) <span class="code-comment">#{nombre: 'Carlos', apellido : 'Zabala', edad : 23}</span>
-                carlos <span class="code-comment">#El objeto original no fue modificado {nombre : 'Carlos', apellido : 'Zabala', edad:22}</span>
+  
+                  birthday(carlos) //{nombre: 'Carlos', apellido : 'Zabala', edad : 23}
+                  carlos //El objeto original no fue modificado {nombre : 'Carlos', apellido : 'Zabala', edad:22}
+                </code>
               </pre>
-            </article>
-            <article class="course-class__section" id="arrow-function">
-              <h2 class="course-class__section--title">Arrow functions</h2>
-              <p>
-                Permiten una nomenclatura más corta para escribir expresiones de
-                funciones. Este tipo de funciones deben definirse antes de ser
-                utilizadas. Al escribir las Arrow Functions no es necesario
-                escribir la palabra function, la palabra return, ni las llaves.
-              </p>
-              <pre class="code">
-
-              <span class="code-var">function</span> <span class="code-function">esMayorEdad</span>(persona){
-                <span class="code-sym">return</span> persona.edad >= MAYORIA_DE_EDAD
-              }
-            </pre>
-              <p>Ahora usando arrow functions</p>
-              <pre class="code">
-
-              <span class="code-var">const</span> esMayorEdad = persona <span class="code-sym">=></span> persona.edad >= MAYORIA_DE_EDAD
-
-              <span class="code-comment">#Otro ejemplo</span>
-              <span class="code-var">const</span> permitirAcceso = ({edad}) <span class="code-sym">=></span> esMayorEdad({edad}) <span class="code-sym">?</span> console.<span class="code-var">log</span>(<span class="code-text">'NICE'</span>) <span class="code-sym">:</span> console.<span class="code-var">log</span>(<span class="code-text">'NO'</span>)
-            </pre>
             </article>
             <article class="course-class__section" id="array">
               <h2 class="course-class__section--title">
@@ -300,16 +274,17 @@
                 si no hay elementos que pasen la prueba, filter devuelve un
                 array vacío.
               </p>
-              <pre class="code">
+              <pre>
+                <code class="js">
+                  const sonAltas = ({altura}) => altura >= 1.80 
+                  const sonBajas = ({altura}) => altura < 1.80
 
-                <span class="code-var">const</span> <span class="code-function">sonAltas</span> = ({altura}) <span class="code-sym">=></span> altura >= 1.80 
-                <span class="code-var">const</span> <span class="code-function">sonBajas</span> = ({altura}) <span class="code-sym">=></span> altura < 1.80
+                  //Array de personas
+                  var personas = [sacha, alan, martin, dario, vicky, paula]
 
-                <span class="code-comment">#Array de personas</span>
-                <span class="code-var">var</span> personas = [sacha, alan, martin, dario, vicky, paula]
-
-                <span class="code-var">var</span> personasAltas = personas.<span class="code-var t-bold">filter</span>(sonAltas)
-                <span class="code-var">var</span> personasBajas = personas.<span class="code-var t-bold">filter</span>(sonBajas)
+                  var personasAltas = personas.filter(sonAltas)
+                  var personasBajas = personas.filter(sonBajas)
+                </code>
               </pre>
               <h3>Transformar un array</h3>
               <p>
@@ -323,18 +298,19 @@
                 itera sobre los elementos de un array en el orden de inserción y
                 devuelve array nuevo con los elementos modificados.
               </p>
-              <pre class="code">
-
-                <span class="code-var">const</span> <span class="code-function">convertirCm</span> = persona =>{
-                  <span class="code-comment">#el return {} se usa cuando se devuelve un array nuevo ...</span>
-                  <span class="code-sym">return</span> {
-                    <span class="code-sym">...</span>persona,
-                    altura : persona.altura * 100
+              <pre>
+                <code class="js">
+                  const convertirCm = persona =>{
+                    //el return {} se usa cuando se devuelve un array nuevo ...
+                    return {
+                      ...persona,
+                      altura : persona.altura * 100
+                    }
                   }
-                }
-                
-                <span class="code-comment">#Usando el método map</span>
-                <span class="code-var">var</span> personasCm = personas.<span class="code-var t-bold">map</span>(<span class="code-function">convertirCms</span>)
+                  
+                  //Usando el método map
+                  var personasCm = personas.map(convertirCms)
+                </code>
               </pre>
               <div class="note">
                 <p>
@@ -406,21 +382,22 @@
                   con el prototipo indicado.
                 </li>
               </ul>
-              <pre class="code">
-
-                <span class="code-var">function</span> <span class="code-function">Persona</span>(nombre, apellido, altura){
-                  <span class="code-var">this</span>.nombre = nombre
-                  <span class="code-var">this</span>.apellido = apellido
-                  <span class="code-var">this</span>.altura = altura
-                }
-                
-                Persona.<span class="code-var">prototype</span>.saludar = <span class="code-var">function</span>(){
-                  console.<span class="code-var">log</span>(<span class="code-text">`Hola, me llamo ${this.nombre} ${this.apellido} y ${this.esAlto()}`</span>)
-                }
-                
-                Persona.<span class="code-var">prototype</span>.esAlto = <span class="code-var">function</span>(){
-                   console.<span class="code-var">log</span>(<span class="code-text">`${this.nombre} ${this.altura >= 1.8 ? 'es': 'no es'} una persona alta`</span>)
-                }
+              <pre>
+                <code class="js">
+                  function Persona(nombre, apellido, altura){
+                    this.nombre = nombre
+                    this.apellido = apellido
+                    this.altura = altura
+                  }
+                    
+                  Persona.prototype.saludar = function(){
+                    console.log(`Hola, me llamo ${this.nombre} ${this.apellido} y ${this.esAlto()}`)
+                  }
+                    
+                  Persona.prototype.esAlto = function(){
+                    console.log(`${this.nombre} ${this.altura >= 1.8 ? 'es': 'no es'} una persona alta`)
+                  }
+                </code>
               </pre>
               <h3>La verdad oculta sobre las clases en JavaScript</h3>
               <p>
@@ -436,23 +413,22 @@
               <div class="note">
                 <p>
                   En js las clases no existen son prototipos, son objetos que
-                  les vamos agregando métodos que son funciones.
+                  les vamos agregando métodos que son funciones. Para simular la
+                  "herencia" se debe crear una función propia.
                 </p>
               </div>
-              <p>
-                Para simular la "herencia" se debe crear una función propia.
-              </p>
-              <pre class="code">
+              <pre>
+                <code class="js">
+                  //hacer herencia de prototipos
+                  function heredaDe(prototipoHijo, prototipoPadre){
+                    var fn = function(){}
+                    fn.prototype = prototipoPadre.prototype
+                    prototipoHijo.prototype = new fn
+                    prototipoHijo.prototype.constructor = prototipoHijo
+                  }
 
-                <span class="code-comment">#hacer herencia de prototipos</span>
-                <span class="code-var">function</span> <span class="code-function">heredaDe</span>(prototipoHijo, prototipoPadre){
-                  <span class="code-var">var</span> fn = <span class="code-var">function</span>(){}
-                  fn.prototype = prototipoPadre.prototype
-                  prototipoHijo.prototype = <span class="code-sym">new</span> fn
-                  prototipoHijo.prototype.constructor = prototipoHijo
-                }
-
-                <span class="code-function">heredaDe</span>(Desarrollador, Persona)
+                  heredaDe(Desarrollador, Persona)
+                </code>
               </pre>
             </article>
             <article class="course-class__section" id="this">
@@ -473,8 +449,7 @@
                   En las <span class="t-bold">Arrow functions</span>, se asigna
                   la función , pero cambia el this dentro de la función , ya que
                   trata de tomar el this global, es decir, el que está fuera de
-                  la Arrow function. Para
-                  <span class="t-bold">comprobarlo en consola</span>: <br />
+                  la Arrow function. Para comprobarlo en consola: <br />
                   this === window.
                 </p>
               </div>
@@ -500,34 +475,34 @@
                 El método constructor es un método especial para crear e
                 inicializar un objeto creado a partir de una clase.
               </p>
-              <pre class="code">
-
-                <span class="code-var">class</span> <span class="code-function">Persona</span>{
-                  <span class="code-var">constructor</span>(nombre, apellido, altura){
-                    <span class="code-sym">this</span>.nombre = nombre
-                    <span class="code-sym">this</span>.apellido = apellido
-                    <span class="code-sym">this</span>.altura = altura
+              <pre>
+                <code class="js">
+                  class Persona{
+                    constructor(nombre, apellido, altura){
+                      this.nombre = nombre
+                      this.apellido = apellido
+                      this.altura = altura
+                    }
+  
+                    saludar(){
+                      console.log(`Hola, me llamo ${this.nombre} ${this.apellido}`)
+                    }
+  
+                    soyAlto(){...}
                   }
-
-                  <span class="code-var">saludar</span>(){
-                    console.<span class="code-var">log</span>(<span class="code-text">`Hola, me llamo ${this.nombre} ${this.apellido}`</span>)
-                  }
-
-                  <span class="code-var">soyAlto</span>(){
-
-                  }
-                }
+                </code>
               </pre>
               <p>Ahora aplicando herencia.</p>
-              <pre class="code">
-
-                <span class="code-var">class</span> <span class="code-function">Profesor</span> <span class="code-var">extends</span> <span class="code-function">Persona</span>{
-                  <span class="code-var">constructor</span>(nombre, apellido, altura, materia_profesor){
-                    <span class="code-comment">#Llamando al constructor del padre</span>
-                    <span class="code-var">super</span>(nombre, apellido, altura)
-                    <span class="code-sym">this</span>.materia_profesor = materia_profesor
+              <pre>
+                <code class="js">
+                  class Profesor extends Persona{
+                    constructor(nombre, apellido, altura, materia_profesor){
+                      //Llamando al constructor del padre
+                      super(nombre, apellido, altura)
+                      this.materia_profesor = materia_profesor
+                    }
                   }
-                }
+                </code>
               </pre>
             </article>
             <article class="course-class__section" id="async">
@@ -559,10 +534,6 @@
                   le llama event loop.
                 </p>
               </div>
-              <pre class="code">
-
-                <span class="code-var">while</span>(<span class="code-sym">true</span>){ console.<span class="code-var">warn</span>(<span class="code-text">' NO VOY A BLOQUEAR EL EVENTLOOP'</span>) }
-              </pre>
             </article>
             <article class="course-class__section" id="promise">
               <h2 class="course-class__section--title">Promesas</h2>
@@ -579,47 +550,50 @@
                 <span class="t-bold">(resolve)</span> o si fallo
                 <span class="t-bold">(reject)</span>.
               </p>
-              <pre class="code">
-
-                <span class="code-var">const</span> <span class="code-function">getUser</span> = <span class="code-sym">new</span> Promise(<span class="code-var">function</span>(resolve, reject))
+              <pre>
+                <code class="js">
+                  const getUser = new Promise(function(resolve, reject))
+                </code>
               </pre>
               <p>Las promesas se invocan de la siguiente forma:</p>
-              <pre class="code">
-
-                <span class="code-sym">new</span> Promise((resolve, reject) <span class="code-sym">=></span> {
-                  <span class="code-sym">if</span>(todoOk){
-                    <span class="code-comment">#Se ejecutó el llamado exitosamente</span>
-                    <span class="code-var">resolve</span>()
-                  }
-                  <span class="code-sym">else</span>{
-                    <span class="code-comment">#Hubo un error en el llamado</span>
-                    <span class="code-var">reject</span>()
-                  }
-                })
+              <pre>
+                <code class="js">
+                  new Promise((resolve, reject) => {
+                    if(todoOk){
+                      //Se ejecutó el llamado exitosamente
+                      resolve()
+                    }
+                    else{
+                      //Hubo un error en el llamado
+                      reject()
+                    }
+                  })
+                </code>
               </pre>
               <p class="t-bold">
                 Pensemos las promesas como valores que aún no conocemos.
               </p>
-              <pre class="code">
-
-                <span class="code-var">function</span> <span class="code-function">obtenerPersonaje</span>(id) {
-                  <span class="code-sym">return new</span> Promise(<span class="code-var">function</span>(resolve, reject){
-                    <span class="code-var">const</span> URL = <span class="code-text">`${API_URL}${PEOPLE_URL.replace(':id', id)}`</span>
-                    $
-                    .<span class="code-function">get</span>(URL, OPTS, <span class="code-var">function</span>(data){
-                      <span class="code-var">resolve</span>(data)
+              <pre>
+                <code class="js">
+                  function obtenerPersonaje(id) {
+                    return new Promise(function(resolve, reject){
+                      const URL = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
+                      $
+                      .get(URL, OPTS, function(data){
+                        resolve(data)
+                      })
+                      .fail(function(){
+                        reject(id)
+                      })
                     })
-                    .<span class="code-function">fail</span>(<span class="code-var">function</span>(){
-                      <span class="code-var">reject</span>(id)
-                    })
+                  }
+  
+                  obtenerPersonaje(1)
+                  .then(function(personaje){
+                    console.log(`El personaje 1 es ${personaje.name}`)
                   })
-                }
-
-                <span class="code-function">obtenerPersonaje</span>(1)
-                .<span class="code-var">then</span>(<span class="code-var">function</span>(personaje){
-                  console.<span class="code-var">log</span>(<span class="code-text">`El personaje 1 es ${personaje.name}`</span>)
-                })
-                .<span class="code-var">catch</span>(error => console.<span class="code-var">log</span>(<span class="code-text">`error`</span>))
+                  .catch(error => console.log(`error`))
+                </code>
               </pre>
               <p>
                 Nuestra promesa va a tener dos métodos para saber si todo salió
@@ -633,9 +607,9 @@
                   A diferencia de los callbacks en el CallbackHell, que terminan
                   estando anidados unos dentro de otros, cuando se usan Promesas
                   la ejecución de las llamadas no se hacen de manera anidada
-                  sino de <span class="t-bold"> manera encadenada</span>, al
-                  mismo nivel una debajo de la otra, lo que hace que el código
-                  sea mucho más legible y mantenible.
+                  sino de manera encadenada, al mismo nivel una debajo de la
+                  otra, lo que hace que el código sea mucho más legible y
+                  mantenible.
                 </p>
               </div>
               <h3>Múltiples promesas en paralelo</h3>
@@ -648,27 +622,28 @@
                 <strong>all</strong>
                 saltara un error mandándote al método catch.
               </p>
-              <pre class="code">
+              <pre>
+                <code class="js">
+                  //crear array de ids
+                  var ids = [1, 2, 3, 4, 5, 6, 7]
 
-                <span class="code-comment">#crear array de ids</span>
-                <span class="code-var">var</span> ids = [1, 2, 3, 4, 5, 6, 7]
+                  //crear un array de promesas, con base al array IDS llamar al metodo obtener personajes
+                  var promesas = ids.map(id => obtenerPersonaje(id))
 
-                <span class="code-comment">#crear un array de promesas, con base al array IDS llamar al metodo obtener personajes</span>
-                <span class="code-var">var</span> promesas = ids.<span class="code-var">map</span>(id <span class="code-sym">=></span> <span class="code-function">obtenerPersonaje</span>(id))
-
-                <span class="code-var">Promise</span> 
-                  .<span class="code-var">all</span> (promesas)
-                  .<span class="code-var">then</span> (<span class="code-var">function</span> (personajes){
-                    <span class="code-sym">form</span> (let i = 0; i < personajes.length;i++){
-                      console.<span class="code-var">log</span> (<span class="code-text">`El personaje ${i+1} es: ${personajes[i].name}`</span>)
-                    }
-                  })
-                  .<span class="code-var">catch</span>(onError)
+                  Promise 
+                    .all (promesas)
+                    .then (function (personajes){
+                      form (let i = 0; i < personajes.length;i++){
+                        console.log (`El personaje ${i+1} es: ${personajes[i].name}`)
+                      }
+                    })
+                    .catch(onError)
+                </code>
               </pre>
               <p>
                 Promise también cuenta con el método
-                <span class="t-bold">race</span> que te regresa los resultados
-                de la promesa que termine primero.
+                <span class="t-bold">race</span> te regresa los resultados de la
+                promesa que termine primero.
               </p>
             </article>
             <article class="course-class__section" id="async-await">
@@ -707,47 +682,33 @@
                 procesos asíncronos y hacerlos más lineales, lo que hace es que
                 va a detener el programa hasta que se resuelvan las peticiones.
               </p>
-              <pre class="code">
+              <pre>
+                <code class="js">
+                  //Usando async await se guarda la promesa que retorna fecth dentro de una constante
+                  (async function load(){
+                    const response = await fetch('https://yts.lt/api/v2/list_movies.json?genre=horror')
+                    console.log(response)
+                    console.log('Esto se ejecutara después del llamado a la API')
+                  })()
 
-                <span class="code-comment">#Usando async await se guarda la promesa que retorna fecth dentro de una constante</span>
-                (<span class="code-sym">async</span> <span class="code-var">function</span> <span class="code-function">load</span>(){
-                  <span class="code-var">const</span> response = <span class="code-sym">await</span> <span class="code-function">fetch</span>(<span class="code-text">'https://yts.lt/api/v2/list_movies.json?genre=horror'</span>)
-                  console.<span class="code-var">log</span>(response)
-                  console.<span class="code-var">log</span>(<span class="code-text">'Esto se ejecutara después del llamado a la API'</span>)
-                })()
-
-                <span class="code-comment">#Esto seria el resultado</span>
-                <span class="code-comment">#1. respuesta de la API</span>
-                <span class="code-comment">#2. Esto se ejecutara después del llamada a la API</span>
+                  //Esto seria el resultado
+                  //1. respuesta de la API
+                  //2. Esto se ejecutara después del llamada a la API
+                </code>
               </pre>
               <p>
                 Como se observa el proceso devuelve un poco más síncrono
                 (líneal). El resultado o la data de una API, lo obtenemos a
                 través del método <strong>json</strong>().
               </p>
-              <pre class="code">
+              <pre>
+                <code class="js">
+                  const response = await fetch('https://yts.lt/api/v2/list_movies.json?genre=horror')
+                  const data = await response.json()
 
-                <span class="code-var">const</span> response = <span class="code-sym">await</span> <span class="code-function">fetch</span>(<span class="code-text">'https://yts.lt/api/v2/list_movies.json?genre=horror'</span>)
-                <span class="code-var">const</span> data = <span class="code-sym">await</span> response.<span class="code-var">json</span>()
-
-                <span class="code-comment">#Retornamos la información</span>
-                <span class="code-sym">return</span> data
-              </pre>
-              <p>Más ejemplos</p>
-              <pre class="code">
-
-                (<span class="code-sym">async</span> <span class="code-var">function</span> <span class="code-function">load</span>(){
-
-                  <span class="code-sym">async</span> <span class="code-var">function</span> <span class="code-function">getData</span>(url){
-                    <span class="code-var">const</span> response = <span class="code-sym">await</span> <span class="code-function">fetch</span>(url)
-                    <span class="code-var">const</span> data = <span class="code-sym">await</span> response.json()
-                    
-                    <span class="code-sym">return</span> data
-                  }
-
-                  <span class="code-var">const</span> actionMovieList = <span class="code-sym">await</span> <span class="code-function">getData</span>(<span class="code-text">'https://yts.lt/api/v2/list_movies.json?genre=action'</span>)
-                  <span class="code-var">const</span> dramaMovieList = <span class="code-sym">await</span> <span class="code-function">getData</span>(<span class="code-text">'https://yts.lt/api/v2/list_movies.json?genre=drama'</span>)
-                })()
+                  //Retornamos la información
+                  return data
+                </code>
               </pre>
             </article>
             <article class="course-class__section" id="context-function">
@@ -770,18 +731,19 @@
                 </li>
                 <li>
                   Usando el método .call, ejecutamos inmediatamente la función
-                  con el contexto indicado.s
+                  con el contexto indicado.
                 </li>
                 <li>
                   Usando el método .apply, es similar a .call pero los
                   parámetros adicionales se pasan como un arreglo de valores
                 </li>
               </ul>
-              <pre class="code">
-
-                <span class="code-var">constructor</span>(){
-                  <span class="code-sym">this</span>.<span class="code-function">handleClick</span> = <span class="code-sym">this</span>.<span class="code-function">handleClick</span>.<span class="code-var">bind</span>(this)
-                }
+              <pre>
+                <code class="js">
+                  constructor(){
+                    this.handleClick = this.handleClick.bind(this)
+                  }
+                </code>
               </pre>
               <a class="link link-refe" href="./javascript-avanzado.html#cab"
                 >Más información</a
