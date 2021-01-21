@@ -103,11 +103,6 @@
                     >
                   </li>
                   <li>
-                    <a class="link course-class__menu--a" href="#controller"
-                      >Lógica de controladores</a
-                    >
-                  </li>
-                  <li>
                     <a class="link course-class__menu--a" href="#form-validate"
                       >Validar formularios</a
                     >
@@ -137,6 +132,18 @@
                   <li>
                     <a class="link course-class__menu--a" href="#laravel-ui"
                       >Componente Laravel UI</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#eloquent"
+                      >Eloquent</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#eloquent-consult"
+                      >Eloquent: Consultas</a
                     >
                   </li>
                 </ul>
@@ -282,78 +289,6 @@
 
                     //laravel 8
                     User::factory()->count(12)->create();
-                  </code>
-                </pre>
-              </div>
-            </article>
-            <article class="course-class__section" id="controller">
-              <h2 class="course-class__section--title">
-                Lógica de controladores y vistas
-              </h2>
-              <div class="course-class__section--content">
-                <p>
-                  Para listar los datos de una tabla en laravel 7^, se
-                  implementa el siguiente código:
-                </p>
-                <pre>
-                  <code class="php">
-                    //Ejemplo lista de usuarios
-                    $user = User::latest()->get();
-
-                    //Ejemplo guardar un usuario en BD
-                    User::create([
-                      'name' => $request->name,
-                      'email' => $request->email,
-                      'password' => bcrypt($request->password) //Encripar contraseñas
-                    ]);
-                  </code>
-                </pre>
-                <p>
-                  Se debe crear esa vista, en la dirección
-                  <i>resources/views/</i> crear la carpeta users y el archivo
-                  index, (para este ejemplo), esa será la vista a mostrar al
-                  usuario, dicho archivo deberá seguir la siguiente estructura:
-                  nombreVista.blade.php
-                </p>
-                <h3>Tips vistas laravel</h3>
-                <p>
-                  Para recorrer una colección de arrays se puede emplear el
-                  metodo <strong>foreach</strong> de la siguiente manera:
-                </p>
-                <pre>
-                  <code class="php">
-                    @foreach($arrayList as $item)
-                    @endforeach
-                  </code>
-                </pre>
-                <p>
-                  Para convinar código php y HTML en laravel se usa la siguiente
-                  sintaxis:
-                </p>
-                <pre>
-                  <code class="php">
-                    {{ $item->value }}
-                  </code>
-                </pre>
-                <p>
-                  Para los formularios en el action, se puede especificar
-                  mediante el uso de la función predeterminada en laravel
-                  <strong>route</strong> pasando por parametros la ruta que se
-                  especifico en el archivo <i>routes/web.php</i>, además se le
-                  debe especificar a laravel el tipo de petición a realizar por
-                  medio de <strong>@method</strong> y para cuestiones de
-                  seguridad enviar un toquen para informar que es nuestro
-                  formulario el que esta realizando la petición
-                  <strong>@csrf</strong>
-                </p>
-                <pre>
-                  <code class="html">
-                      &lt;form action="{{ route('nombre.ruta', $parametros) }}" method="POST"&gt;
-                        @method('DELETE')
-                        @csrf
-
-                        &lt;input type="submit" value="Eliminar" onclick="return confirm('¿Desea eliminar {{ $user->name }} ...?')"&gt;
-                      &lt;/form&gt;
                   </code>
                 </pre>
               </div>
@@ -703,6 +638,135 @@
                   eso se dene ejecutar los siguientes comandos
                   <strong>npm install</strong> & <strong>npm run dev</strong>.
                 </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="eloquent">
+              <h2 class="course-class__section--title">
+                Eloquent: trabajando con este ORM
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Con Eloquent trabajamos el manejo de datos, este está incluido
+                  en Laravel y nos ayuda a trabajar con todo lo que tenga que
+                  ver con DB. Esta herramienta nos permitirá hacer consultas,
+                  eliminar, actualizar, y listar. Podremos hacer todo lo que se
+                  puede hacer con una DB sin escribir una sola línea d SQL. El
+                  comando de php artisan para crear nuevos modelos es:
+                </p>
+                <pre>
+                  <code>
+                    php artisan make:model [NombreModelo]
+                  </code>
+                </pre>
+                <p>
+                  Para crear el modelo y a la vez la migración y el factory se
+                  emplea el comando:
+                </p>
+                <pre>
+                  <code>
+                    php artisan make:model [NombreModelo] -m -f
+                  </code>
+                </pre>
+                <p>
+                  Dentro del archivo de la migración
+                  <i>database/migrations/[nombreModelo]</i> podemos enviar
+                  campos personalizados, los cuales serán columnas en nuestra
+                  base de datos
+                </p>
+                <pre>
+                  <code class="php">
+                    public function up(){
+                      Shema::create('posts', function(Blueprint $table){
+                        $table->bigIncrements('id');
+                        //Crear campo de la tabla en eloquent
+                        $table->string('title');
+                      });
+                    }
+                  </code>
+                </pre>
+                <div class="note">
+                  <p>
+                    Un modelo es la representación de una tabla que tenemos en
+                    la DB.
+                  </p>
+                </div>
+                <p>
+                  Migramos nuestros modelos a la base de datos por medio de
+                  artisan <strong>migrate</strong>, luego creamos datos de
+                  prueba mediante
+                  <a class="link link-refe" href="#test-data">tinker</a>, dentro
+                  del archivo factory que se crea
+                  <i>database/factories/[nombreModelo]</i> colocar las columnas
+                  que queramos llenar con valores aleatorios.
+                </p>
+                <pre>
+                  <code class="php">
+                    $factory->define(Post::class, function (Faker $faker){
+                      return [
+                        'title' => $faker->sentence //Crear oraciones aleatorias.
+                      ]
+                    });
+
+                    //Laravel 8
+                    public function definition()
+                    {
+                      return [
+                        'title' => $this->faker->sentence
+                      ];
+                    }
+                  </code>
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="eloquent-consult">
+              <h2 class="course-class__section--title">
+                Consultas en eloquent
+              </h2>
+              <div class="course-class__section--content">
+                <ol>
+                  <li>
+                    Ver <strong>todos</strong> los registros de una tabla, el
+                    nombre de la tabla es el nombre del modelo, ejemplo Modelo
+                    Post:
+                    <pre>
+                      <code class="php">
+                        //$data = NombreTabla::all();
+                        $data = Post::all();
+
+                        //Otra forma de listar Datos
+                        $user = User::latest()->get();
+                      </code>
+                    </pre>
+                  </li>
+                  <li>
+                    Consultas con condicionales:
+                    <pre>
+                      <code class="php">
+                        $data = Post::where('id', '>=', '20')->get();
+                      </code>
+                    </pre>
+                  </li>
+                  <li>
+                    Guardar datos en base de datos:
+                    <pre>
+                      <code class="php">
+                        User::create([
+                          'name' => $request->name,
+                          'email' => $request->email,
+                          'password' => bcrypt($request->password) //Encripar contraseñas
+                        ]);
+                      </code>
+                    </pre>
+                  </li>
+                  <li>
+                    Ordenar datos y tomar solo algunos registros:
+                    <pre>
+                      <code class="php">
+                        Post::all()->orderBy('id', 'desc')->take(3);
+                      </code>
+                    </pre>
+                  </li>
+                </ol>
               </div>
             </article>
           </div>
