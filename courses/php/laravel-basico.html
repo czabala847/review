@@ -134,6 +134,11 @@
                       >blade</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#laravel-ui"
+                      >Componente Laravel UI</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -242,11 +247,8 @@
                   mediante laravel, con los comandos que ofrece artisan.
                 </p>
                 <pre>
-                  <code>
+                  <code class="console">
                     php artisan make:controller UserController
-
-                    //Listar rutas
-                    php artisan route:list
                   </code>
                 </pre>
               </div>
@@ -297,11 +299,6 @@
                   <code class="php">
                     //Ejemplo lista de usuarios
                     $user = User::latest()->get();
-
-                    //Cargar una vista
-                    return view('users.index', [
-                        'users' => $user
-                    ]);
 
                     //Ejemplo guardar un usuario en BD
                     User::create([
@@ -661,6 +658,51 @@
                     al archivo que lo está incluyendo.
                   </li>
                 </ul>
+              </div>
+            </article>
+            <article class="course-class__section" id="laravel-ui">
+              <h2 class="course-class__section--title">
+                Componente Laravel UI
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Laravel ya tiene configurado ciertos componentes que
+                  utilizaremos en nuestros proyectos, por lo tanto no es
+                  necesario que realizemos todo desde cero. En este ejemplo
+                  utilizaremos el sistema de login que proporsiona laravel.
+                </p>
+                <p>
+                  El paquete a installar es <strong>laravel UI</strong>, que
+                  proporsiona un punto de partida básico usando Bootstrap ,
+                  React y/o Vue.
+                </p>
+                <pre>
+                  <code>
+                    #Instalación
+                    composer require laravel/ui --dev
+
+                    #Instalación laravel 7.^
+                    composer require laravel/ui:^2.4 --dev
+                  </code>
+                </pre>
+                <p>
+                  Ahora mediante <strong>artisan</strong> podemos crear los
+                  sistemas que nos ofrece laravel UI, en este caso seguiremos
+                  con el login, para eso tenemos tres opciones para el
+                  <strong>frontend</strong> de la vista del login, que puede ser
+                  Bootstrap, React o Vue.
+                </p>
+                <pre>
+                  <code>
+                    php artisan ui bootstrap --auth
+                  </code>
+                </pre>
+                <p>
+                  Lo anterior creara las rutas, controladores y demás archivos
+                  necesarios para el login, pero estos vienen sin estilos, para
+                  eso se dene ejecutar los siguientes comandos
+                  <strong>npm install</strong> & <strong>npm run dev</strong>.
+                </p>
               </div>
             </article>
           </div>
