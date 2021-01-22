@@ -146,6 +146,13 @@
                       >Eloquent: Consultas</a
                     >
                   </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#eloquent-relations-table"
+                      >Eloquent: Relación de tablas</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -767,6 +774,142 @@
                     </pre>
                   </li>
                 </ol>
+              </div>
+            </article>
+            <article
+              class="course-class__section"
+              id="eloquent-relations-table"
+            >
+              <h2 class="course-class__section--title">Relaciones de tablas</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para empezar a relacionar tablas, primero debemos crear los
+                  campos index para la relación, esto se hace en
+                  <i>database/migrations/[NombreTabla]</i> para este ejemplo,
+                  relacionaremos las tablas <strong>post</strong> y
+                  <strong>user</strong>, la creación de los campos se realiza en
+                  el método <strong>up</strong>.
+                </p>
+                <pre>
+                  <code class="php">
+                    //Tabla post, 
+                    public function up(){
+                      Shema::create('posts', function(Blueprint $table){
+                        //Crea un campo con números positivos
+                        $table->unsignedBigInteger('user_id'); 
+
+                        //Relacionar los campos
+                        $table->foreign('user_id')->references('id')->on('users');
+                      };)
+                    }
+
+                  </code>
+                </pre>
+                <p>
+                  Cuando se realicé la relación se debe actualizar las tablas en
+                  base de datos, para eso esta el siguiente comando:
+                </p>
+                <pre>
+                  <code class="php">
+                    php artisan migrate:refresh
+                  </code>
+                </pre>
+                <p>
+                  El problema del <strong>refresh</strong> es que elimina los
+                  datos de prueba, para esto en el archivo
+                  <i>database/seeds/DatabaseSeeder.php</i>, añadiremos el codigo
+                  tinker para que esos datos se creen al realizar un refresh.
+                </p>
+                <pre>
+                  <code class="php">
+                    public function run(){
+                      factory(App\User::class, 4)->create();
+                      factory(App\Post::class, 30)->create();
+                    }
+                  </code>
+                </pre>
+                <p>
+                  En el archivo <strong>factory</strong> también especificamos
+                  los datos a llenar, en este caso que se llene el id del
+                  usuario con números aleatorios.
+                </p>
+                <pre>
+                  <code class="php">
+                    //Archivo PostFactory.php
+                    $factory->define(Post::class, function(Faker$faker){
+                      return [
+                        //Números aleatorios del 1 al 4
+                        'user_id' => rand(1, 4),
+                        'title' => $faker->sentence
+                      ]
+                    });
+                  </code>
+                </pre>
+                <p>Correr el comando:</p>
+                <pre>
+                  <code>
+                    php artisan migrate:refresh --seed
+                  </code>
+                </pre>
+                <p>
+                  Ya la relación existe en la base de datos, sinembargo en
+                  laravel no, para poder relacionarlas en laravel debemos
+                  especificar en los archivos <strong>Model</strong> que
+                  representan las tablas.
+                </p>
+                <pre>
+                  <code class="php">
+                    //Archivo User.php
+                    /*
+                      * Método para especificar que un usuario puede
+                      * tener varios posts
+                    */
+                    public function posts(){
+                      return $this->hasMany(Post::class);
+                    }
+                  </code>
+                </pre>
+                <p>
+                  La relación se debe especificar en todos los archivos que se
+                  esten relacionando.
+                </p>
+                <pre>
+                  <code class="php">
+                    //Archivo Post.php
+                    /*
+                      * Método para especificar que un post solo
+                      * pertenece a un usuario, por eso el método
+                      * se coloca en singular
+                    */
+                    public function user(){
+                      return $this->belongsTo(User::class);
+                    }
+                  </code>
+                </pre>
+                <p>Probando la configuración, mediante un ejemplo:</p>
+                <pre>
+                  <code class="php">
+                    $posts = Post::get();
+
+                    foreach($posts as $post){
+                      echo "
+                        $post->id
+                        { $post->user->name }
+                      ";
+                    }
+
+                    //Otro ejemplo ver cuantos post tiene cada usuario
+                    $users = User::all();
+
+                    foreach($users as $user){
+                      echo "
+                        $user->id
+                        $user->name
+                        { $user->posts->count() }
+                      "
+                    }
+                  </code>
+                </pre>
               </div>
             </article>
           </div>
