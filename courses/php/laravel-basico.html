@@ -160,6 +160,11 @@
                       >Paquetes recomendados</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#pagination"
+                      >Paginación</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -940,6 +945,48 @@
                     determinado.
                   </li>
                 </ul>
+              </div>
+            </article>
+            <article class="course-class__section" id="pagination">
+              <h2 class="course-class__section--title">
+                Paginación en Laravel y Bootstrap
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para paginar datos con Laravel y Bootstrap, lo primero es
+                  haber instalado el componente de <strong>laravel/ui</strong> y
+                  bootstrap. Luego hay que configurar los datos que extraemos de
+                  la base de datos, para que esten en un formato de paginación.
+                </p>
+                <pre>
+                  <code class="php">
+                    $data = [nombreModelo]::with('nameFunctionJoin')->latest()->paginate();
+                  </code>
+                </pre>
+                <p>De lo anterior explicamos lo siguiente:</p>
+                <ul>
+                  <li>
+                    <strong>with</strong>: Se utiliza para obtener datos de
+                    modelo asociados.
+                  </li>
+                  <li>
+                    <strong>latest</strong>: Ordena los resultados por fecha
+                    <i>created_at</i>.
+                  </li>
+                  <li>
+                    <strong>paginate</strong>: se encarga automáticamente de
+                    establecer el "límite" y el "desplazamiento" de la consulta
+                    en función de la página actual que está viendo el usuario,
+                    se usa en vez de <strong>all</strong> o
+                    <strong>get</strong>.
+                  </li>
+                </ul>
+                <p>En la vista solo colocar el siguiente código</p>
+                <pre>
+                  <code class="php">
+                    {{ $dataArray->links() }}
+                  </code>
+                </pre>
               </div>
             </article>
           </div>
