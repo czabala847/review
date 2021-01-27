@@ -170,6 +170,13 @@
                       >Formularios: Validar y guardar información</a
                     >
                   </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#update-dataForm"
+                      >Formularios: Editar y eliminar información</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -1057,6 +1064,66 @@
                     ]
                   </code>
                 </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="update-dataForm">
+              <h2 class="course-class__section--title">
+                Actualizar y eliminar información desde formularios
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  En las vistas de los formularios podemos recordar la
+                  información que se ingresa o que esta guardada en nuestra base
+                  de datos por medio de la función <strong>old</strong>
+                </p>
+                <pre>
+                  <code class="html">
+                    &lt;textarea name="iframe"&gt;{{ old('iframe', $post->iframe) }}&lt;/textarea&gt;
+                    &lt;input type="text" name="title" value="{{ old('title', $post->title) }}" required/&gt;
+                  </code>
+                </pre>
+                <p>
+                  Para eliminar archivos del servidor se debe emplear la clase
+                  <strong>Storage</strong> y el método
+                  <strong>delete</strong> especificando la ruta y el archivo a
+                  eliminar.
+                </p>
+                <pre><code class="php">
+                  Use Illuminate\Support\Facades\Storage;
+                </code></pre>
+                <pre><code class="php">
+                  //Ejemplo actualizar post
+                  public function update(PostRequest $request, Post $post)
+                  {
+
+                      $post->update([
+                          'title' => $request->title,
+                          'body' => $request->body,
+                          'iframe' => $request->iframe
+                      ]);
+
+                      // si viene con file
+                      if ($request->file('image')) {
+                          //Eliminar archivo
+                          Storage::disk('public')->delete($post->image);
+                          //Nuevo archivo
+                          $post->image = $request->file('image')->store('posts', 'public');
+                          $post->save();
+                      }
+
+                      return back()->with('status', 'Editado con éxito');
+                  }
+
+                  //Eliminar post
+                  public function destroy(Post $post)
+                  {
+                      //eliminación
+                      Storage::disk('public')->delete($post->image);
+                      $post->delete();
+              
+                      return back()->with('status', 'Eliminado con éxito');
+                  }
+                </code></pre>
               </div>
             </article>
           </div>
