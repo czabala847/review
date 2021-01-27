@@ -165,6 +165,11 @@
                       >Paginación</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#save-dataForm"
+                      >Formularios: Validar y guardar información</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -985,6 +990,71 @@
                 <pre>
                   <code class="php">
                     {{ $dataArray->links() }}
+                  </code>
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="save-dataForm">
+              <h2 class="course-class__section--title">
+                Guardar información de un formulario
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  La forma correcta de guardar la información de un formulario
+                  por medio de laravel, es haciendo uso de los archivos de
+                  validación
+                  <strong>request</strong> que ofrece el mismo framework. A
+                  continuación se explicaran como guardar desde información en
+                  base de datos hasta como guardar archivos en el servidor de
+                  una manera segura. <br />
+                  Lo primero es crear el archivo de validación por medio de
+                  <a class="link link-refe" href="#validation">request</a>.
+                </p>
+                <p>
+                  Para salvar la información desde el controlador, lo hacemos en
+                  el método <strong>store</strong>.
+                </p>
+                <pre>
+                  <code class="php">
+                    //Ejemplo guardar información de un post
+                    public function store(PostRequest $request){
+                      
+                      //salvar
+                      $post = Post::create([
+                        //obtenemos el id del usuario mediante el metodo auth
+                        'user_id' => auth()->user()->id, 
+                      ] 
+                      + $request->validated() //Guardar el resto de datos que han sido validados
+                      );
+
+                      //Guardar archivos
+                      if ($request->file('image')) {
+                        /*
+                          * Por el método store, se guarda el archivo en el servidor y
+                          * se almacena la ruta en la base de datos
+                          * el archivo se almacena en storage/app/public/posts
+                        */
+                        $post->image = $request->file('image')->store('posts', 'public');
+                        $post->save();
+                      }
+
+                      //retornar
+                      //Se usa la variable de sesión status, para mostrar mensaje
+                      return back()->with('status', 'Creado con éxito');
+                    }
+                  </code>
+                </pre>
+                <p>
+                  También hay que configurar en nuestro archivo Model, que
+                  representa la tabla en base de datos que recibiremos los datos
+                  de forma masiva.
+                </p>
+                <pre>
+                  <code class="php">
+                    //Clase Post.php
+                    protected $fillable = [
+                      'title', 'body', 'iframe', 'image', 'user_id'
+                    ]
                   </code>
                 </pre>
               </div>
