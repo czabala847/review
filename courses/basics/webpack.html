@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/styles/monokai-sublime.min.css"
+    />
     <link rel="stylesheet" href="../../src/css/styles.css" />
   </head>
 
@@ -116,6 +120,11 @@
                     >
                   </li>
                   <li>
+                    <a class="link course-class__menu--a" href="#css"
+                      >CSS</a
+                    >
+                  </li>
+                  <li>
                     <a class="link course-class__menu--a" href="#dev-server"
                       >Servidor de desarrollo</a
                     >
@@ -147,6 +156,13 @@
                       class="link course-class__menu--a"
                       href="#preprocesadores"
                       >Estilos con preprocesadores</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#copy-file"
+                      >Copia de archivos</a
                     >
                   </li>
                   <li>
@@ -367,9 +383,7 @@
 
                   npx webpack
                 </pre>
-                <p>
-                  Correr el comando desde el package.json
-                </p>
+                <p>Correr el comando desde el package.json</p>
                 <pre class="code">
 
                   <span class="code-comment">#package.json</span>
@@ -377,9 +391,7 @@
                     <span class="code-var">"build"</span>: <span class="code-text">"webpack"</span>
                   }
                 </pre>
-                <p>
-                  Ahora si desde la terminal correr el script:
-                </p>
+                <p>Ahora si desde la terminal correr el script:</p>
                 <pre class="code">
 
                   npm run build
@@ -555,9 +567,7 @@
 
                   <span class="code-var">"build:css"</span> <span class="code-text">"webpack --config ./css-style-loader/webpack.config.js"</span>
                 </pre>
-                <p>
-                  Dentro del archivo .js se importa la hoja de estilos:
-                </p>
+                <p>Dentro del archivo .js se importa la hoja de estilos:</p>
                 <pre class="code">
 
                   <span class="code-sym">import</span> <span class="code-text">"../src/css/index.css"</span>
@@ -579,9 +589,7 @@
                   queremos necesitamos de plugins.
                 </p>
                 <h3>Plugins CSS</h3>
-                <p>
-                  Para manipular archivos .css usaremos dos plugins:
-                </p>
+                <p>Para manipular archivos .css usaremos dos plugins:</p>
                 <ul>
                   <li>
                     <a
@@ -678,9 +686,7 @@
 
                   <span class="code-var">"build:plugins"</span> : <span class="code-text">"webpack --config ./plugins/webpack.config.js"</span>
                 </pre>
-                <p>
-                  Si tenemos varios archivos HTML:
-                </p>
+                <p>Si tenemos varios archivos HTML:</p>
                 <pre class="code">
 
                   <span class="code-sym">new</span> HtmlWebpackPlugin({
@@ -694,6 +700,79 @@
                     chunks: [<span class="code-text">'contact'</span>] 
                   })
                 </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="css">
+              <h2 class="course-class__section--title">Loaders para CSS y preprocesadores de CSS</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Los elementos que se utilizaran serán los siguientes:
+                </p>
+                <ul>
+                  <li><strong>mini-css-extract-plugin</strong></li>
+                  <li><strong>css-loader</strong></li>
+                </ul>
+                <pre>
+                  <code>
+                    npm i mini-css-extract-plugin css-loader -D
+                  </code>
+                </pre>
+                <p>
+                  Lo que se debe hacer es que en el template principal el archivo <b>index.html</b>, quitar el enlace
+                  del archivo css, y en el archivo princial del proyecto <b>index.js</b> importar los estilos.
+                 </p>
+                 <pre>
+                   <code class="js">
+                     import "./css/styles.css"
+                   </code>
+                 </pre>
+                 <p>
+                   Archivo de configuración de webpack
+                 </p>
+                 <pre>
+                   <code class="js">
+                     const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+                     module: {
+                       rules: [
+                        {
+                          test: /\.css$/i,
+                          use: [MiniCssExtractPlugin.loader, 'css-loader']
+                        }
+                       ]
+                     },
+                     plugins: [
+                      new MiniCssExtractPlugin(),
+                     ]
+                   </code>
+                 </pre>
+                 <p>Implementando <strong>sass</strong> en el proyecto.</p>
+                 <pre>
+                   <code>
+                     npm i node-sass sass-loader
+                   </code>
+                 </pre>
+                 <P>
+                   Configurando en el archivo principal de webpack.
+                 </P>
+                 <pre>
+                   <code class="js">
+                    module: {
+                      rules: [
+                       {
+                         test: /\.css|.scss$/i,
+                         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+                       }
+                      ]
+                    },
+                   </code>
+                 </pre>
+                 <p>Importar archivo <b>index.scss</b> en el archivo principal del proyecto <b>index.js</b></p>
+                 <pre>
+                   <code class="js">
+                     import "./css/index.scss";
+                   </code>
+                 </pre>
               </div>
             </article>
             <article class="course-class__section" id="dev-server">
@@ -835,7 +914,7 @@
                   <span class="code-comment">#Se crea la regla</span>
                   module: {
                     rules: [
-                      test: /\.js$/,
+                      test: /\.m?js$/,
                       use: <span class="code-text">'babel-loader'</span>,
                       exclude: /node_modules/
                     ]
@@ -870,12 +949,13 @@
                     ]
                   }
                 </pre>
-                <p>
-                  Instalar las dependencia:
-                </p>
+                <p>Instalar las dependencia:</p>
                 <pre class="code">
 
                   npm i -D -E @babel/core babel-loader @babel/preset-env
+
+                  //Nueva forma
+                  npm i babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime -D
 
                   <span class="code-comment">#En package.json</span>
                   <span class="code-var">"build:babel"</span> : <span class="code-text">"webpack-dev-server --config ./webpack-babel/webpack.config.js"</span>
@@ -938,58 +1018,34 @@
                 Soporte imágenes, fuentes y videos
               </h2>
               <div class="course-class__section--content">
-                <p>
-                  Para soportar la importación de archivos binarios en nuestro
-                  código Javascript cómo lo son: fuentes, imágenes y videos,
-                  podemos usar <strong>url-loader</strong>.
-                </p>
-                <p>
-                  url-loader transforma archivos a un cadena de texto base64
-                  para que carguen dentro de nuestros archivos Javascript y así
-                  ahorrarnos un request al servidor por cada archivo
-                  transformado.
-                </p>
-                <p>
-                  Debemos tomar en cuenta que sólo nos conviene convertir
-                  archivos pequeños, ya que archivos muy grandes podrían hacer
-                  nuestro archivo bundle muy pesado. Es por esto que la opción
-                  <strong>limit</strong> del url-loader sirve para asignar el
-                  peso máximo que un archivo puede tener para ser transformado
-                  en base64.
-                </p>
-                <p>
-                  No olvides instalar <strong>file-loader</strong> junto con
-                  <strong>url-loader</strong> ya que cuando se sobrepasa el
-                  limite establecido en la opción limit y el archivo no pueda
-                  ser transformado a base64, <strong>url-loader</strong> hará
-                  uso del
-                  <a
-                    class="link link-refe"
-                    target="_blank"
-                    href="https://webpack.js.org/loaders/file-loader/"
-                    >file-loader</a
-                  >
-                  para insertar un nombre y ruta de archivo en el lugar
-                  correspondiente.
-                </p>
-                <pre class="code">
-
-                  <span class="code-comment">#Instalar loader</span>
-                  npm i -D -E url-loader file-loader
-
-                  <span class="code-comment">#webpack.config.js</span>
-                  rules: [
-                    {
-                      test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/
-                      use: {
-                        loader: <span class="code-text">'url-loader'</span>,
-                        options: {
-                          limit: 90000 <span class="code-text">convertir en base64</span>
-                        }
+                <div class="note">
+                  <p>Ya no es necesario la instalación de loader, ya que webpack nos ofrece la posibilidad 
+                    de manejar archivos sin instalar ningún paquete por npm.
+                  </p>
+                </div>
+                  <pre>
+                    <code class="js">
+                      module: {
+                        rules:[
+                          {
+                            test:/\.png/,
+                            type: "asset/resource"
+                          }
+                        ]
                       }
-                    }
-                  ]
-                </pre>
+                    </code>
+                  </pre>
+                  <p>
+                    Y ya podemos importar imagenes en los archivos de JavaScript.
+                  </p>
+                  <pre>
+                    <code class="js">
+                      import imgTwitter from "../assets/images/twitter.png";
+
+                      &lt;img src="${imgTwitter}" /&gt;
+                    </code>
+                  </pre>
+                
               </div>
             </article>
             <article class="course-class__section" id="preprocesadores">
@@ -1047,6 +1103,40 @@
                       ]
                     }
                   ]
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="copy-file">
+              <h2 class="course-class__section--title">
+                Copia de archivos con Webpack
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Hay veces que necesitamos mover archivos a la carpeta <b>dist</b> (distribución), para hacerlo con
+                  webpack necesitamos del plugin <a href="https://webpack.js.org/plugins/copy-webpack-plugin/" target="_blank" class="link link-refe">
+                    copy webpack plugin</a>.
+                </p>
+                <pre>
+                  <code>
+                    npm i copy-webpack-plugin
+                  </code>
+                </pre>
+                <pre>
+                  <code class="js">
+                    //webpack.config.js
+                    const CopyWebpack = require("copy-webpack-plugin");
+
+                    plugins: [
+                      new CopyWebpack({
+                        patterns: [
+                          {
+                            from: path.resolve(__dirname, "src/assets/images"),
+                            to: "assets/images",
+                          },
+                        ],
+                      }),
+                    ],
+                  </code>
                 </pre>
               </div>
             </article>
@@ -1167,10 +1257,14 @@
       </div>
     </div>
     <script
-    src="https://kit.fontawesome.com/2028b75fa6.js"
-    crossorigin="anonymous"
-  ></script>
-  <script src="../../src/js/menu.js"></script>
-  <script type="module" src="../../index.js"></script>
+      src="https://kit.fontawesome.com/2028b75fa6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="../../src/js/menu.js"></script>
+    <script type="module" src="../../index.js"></script>
   </body>
 </html>
