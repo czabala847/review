@@ -190,6 +190,11 @@
                       >Dynamic Link Library</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#analyzer"
+                      >Analyzer</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -1463,6 +1468,58 @@
                       manifest: <span class="code-var">require</span>(<span class="code-text">'./modules-manifest.json'</span>)
                     })
                   ]
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="analyzer">
+              <h2 class="course-class__section--title">
+                Webpack Bundle Analyzer
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Cuando tenemos un proyecto es buena idea poder revisar su
+                  impacto en tamaño por ese motivo webpack nos ofrece un paquete
+                  para poder verificar y analizar el tamaño del bundle final.
+                </p>
+                <pre>
+                  <code>
+                    npm i webpack-bundle-analyzer -D
+                  </code>
+                </pre>
+                <p>Esta configuración solo es para el modo de desarrollo.</p>
+                <pre>
+                  <code class="js">
+                    const BundleAnalyzerPlugin = require("webpack-bundle-analyzer");
+
+                    plugins: [
+                      new BundleAnalyzerPlugin(),
+                    ]
+                  </code>
+                </pre>
+                <p>
+                  Correr el recurso, y ver donde podemos hacer enfasis en
+                  mejorar nuestro código.
+                </p>
+                <pre>
+                  <code>
+                    npx webpack --profile --json > stats.json
+
+                    npx webpack-bundle-analyzer stats.json
+                  </code>
+                </pre>
+                <p class="note">
+                  Resolver problemas de codificación con Powershell en windows.
+                  <a
+                    href="https://github.com/webpack-contrib/webpack-bundle-analyzer/issues/47"
+                    class="link link-refe"
+                    target="_blank"
+                    >Referencia</a
+                  >, ejecutar el siguiente comando:
+                </p>
+                <pre>
+                  <code>
+                    npx webpack --profile --json | Out-file 'stats.json' -Encoding OEM
+                  </code>
                 </pre>
               </div>
             </article>
