@@ -120,9 +120,7 @@
                     >
                   </li>
                   <li>
-                    <a class="link course-class__menu--a" href="#css"
-                      >CSS</a
-                    >
+                    <a class="link course-class__menu--a" href="#css">CSS</a>
                   </li>
                   <li>
                     <a class="link course-class__menu--a" href="#dev-server"
@@ -152,6 +150,23 @@
                     >
                   </li>
                   <li>
+                    <a class="link course-class__menu--a" href="#optimization"
+                      >Optimización de archivos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#alias"
+                      >Alias</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#environment-variables"
+                      >Variables de entorno</a
+                    >
+                  </li>
+                  <li>
                     <a
                       class="link course-class__menu--a"
                       href="#preprocesadores"
@@ -159,9 +174,7 @@
                     >
                   </li>
                   <li>
-                    <a
-                      class="link course-class__menu--a"
-                      href="#copy-file"
+                    <a class="link course-class__menu--a" href="#copy-file"
                       >Copia de archivos</a
                     >
                   </li>
@@ -703,11 +716,11 @@
               </div>
             </article>
             <article class="course-class__section" id="css">
-              <h2 class="course-class__section--title">Loaders para CSS y preprocesadores de CSS</h2>
+              <h2 class="course-class__section--title">
+                Loaders para CSS y preprocesadores de CSS
+              </h2>
               <div class="course-class__section--content">
-                <p>
-                  Los elementos que se utilizaran serán los siguientes:
-                </p>
+                <p>Los elementos que se utilizaran serán los siguientes:</p>
                 <ul>
                   <li><strong>mini-css-extract-plugin</strong></li>
                   <li><strong>css-loader</strong></li>
@@ -718,18 +731,18 @@
                   </code>
                 </pre>
                 <p>
-                  Lo que se debe hacer es que en el template principal el archivo <b>index.html</b>, quitar el enlace
-                  del archivo css, y en el archivo princial del proyecto <b>index.js</b> importar los estilos.
-                 </p>
-                 <pre>
+                  Lo que se debe hacer es que en el template principal el
+                  archivo <b>index.html</b>, quitar el enlace del archivo css, y
+                  en el archivo princial del proyecto <b>index.js</b> importar
+                  los estilos.
+                </p>
+                <pre>
                    <code class="js">
                      import "./css/styles.css"
                    </code>
                  </pre>
-                 <p>
-                   Archivo de configuración de webpack
-                 </p>
-                 <pre>
+                <p>Archivo de configuración de webpack</p>
+                <pre>
                    <code class="js">
                      const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
@@ -746,16 +759,14 @@
                      ]
                    </code>
                  </pre>
-                 <p>Implementando <strong>sass</strong> en el proyecto.</p>
-                 <pre>
+                <p>Implementando <strong>sass</strong> en el proyecto.</p>
+                <pre>
                    <code>
                      npm i node-sass sass-loader
                    </code>
                  </pre>
-                 <P>
-                   Configurando en el archivo principal de webpack.
-                 </P>
-                 <pre>
+                <p>Configurando en el archivo principal de webpack.</p>
+                <pre>
                    <code class="js">
                     module: {
                       rules: [
@@ -767,8 +778,11 @@
                     },
                    </code>
                  </pre>
-                 <p>Importar archivo <b>index.scss</b> en el archivo principal del proyecto <b>index.js</b></p>
-                 <pre>
+                <p>
+                  Importar archivo <b>index.scss</b> en el archivo principal del
+                  proyecto <b>index.js</b>
+                </p>
+                <pre>
                    <code class="js">
                      import "./css/index.scss";
                    </code>
@@ -776,79 +790,52 @@
               </div>
             </article>
             <article class="course-class__section" id="dev-server">
-              <h2 class="course-class__section--title">
-                Servidor de desarrollo
-              </h2>
+              <h2 class="course-class__section--title">Webpack Dev Server</h2>
               <div class="course-class__section--content">
                 <p>
-                  Webpack nos permite avanzar rápido en nuestra experiencia de
-                  desarrollo, como por ejemplo ver plasmado nuestros cambios en
-                  el navegador (que se compile automáticamente).
-                </p>
-                <p>
-                  En el package json el flag <strong>--watch</strong> o
-                  <strong>-w</strong> nos permite autocompliar webpack cada vez
-                  que hagamos cambios a nuestro proyecto. También podemos añadir
-                  ese flag desde la consola:
-                </p>
-                <pre class="code">
-
-                  npm run build:dev -- -w
-                </pre>
-                <p>
-                  Con lo anterior cada cambio vuelve a compilar los archivos,
-                  pero el "problema" es que todavía debemos recargar la página
-                  del navegador manualmente para ver los cambios que hacemos a
-                  nuestro proyecto. Si queremos evitar eso podemos instalar el
-                  módulo
                   <a
                     class="link link-refe"
                     target="_blank"
                     href="https://github.com/webpack/webpack-dev-server"
-                    >webpack dev server</a
-                  >.
+                    >Webpack Dev Server</a
+                  >
+                  se encarga de montar un servidor para un entorno de desarrollo
+                  que se actualiza automáticamente cuando guardemos cambios en
+                  el proyecto.
                 </p>
-                <pre class="code">
-
-                  <span class="code-comment">#Instalación</span>
-                  npm i -D -E webpack-dev-server
-
-                  <span class="code-comment">#En <strong>package.json</strong></span>
-                  <span class="code-var">"build:dev"</span> : <span class="code-text">"webpack-dev-server" --config ./webpack-dev-server/webpack.config.js"</span>
+                <pre>
+                  <code>
+                    npm i webpack-dev-server -D
+                  </code>
                 </pre>
-                <h3>Configuraciones adicionales a Dev Server</h3>
-                <ul>
-                  <li>
-                    <strong>hot:</strong> Activa el
-                    <strong>HotModuleReplacementPlugin</strong>
-                    que muestra los cambios sin actualizar la página.
-                  </li>
-                  <li>
-                    <strong>port:</strong> Al crear un servidor de prueba con
-                    webpack-dev-server éste tomará por defecto el puerto 8080,
-                    acá podrás cambiar el puerto.
-                  </li>
-                  <li>
-                    <strong>open</strong>: Abrirá el navegador al iniciar el
-                    servidor.
-                  </li>
-                </ul>
                 <p>
-                  <a
-                    class="link link-refe"
-                    target="_blank"
-                    href="https://webpack.js.org/configuration/dev-server/"
-                    >más configuraciones</a
-                  >.
+                  La configuración se debe hacer en el archivo de webpack para
+                  desarrollo <b>webpack.config.dev.js</b>
                 </p>
-                <pre class="code">
-
-                  <span class="code-comment">#Añadir key (objeto) a module.exports</span>
-                  devServer: {
-                    hot: <span class="code-sym">true</span>,
-                    open: <span class="code-sym">true</span>,
-                    port: 9090
-                  }
+                <pre>
+                  <code class="js">
+                    module.exports = {
+                      ...
+                      devServer : {
+                        contentBase: path.join(__dirname, 'dist'),
+                        compress: true,
+                        historyApiFallback: true,
+                        port: 3006,
+                        open: true
+                      }
+                      ...
+                    }
+                  </code>
+                </pre>
+                <p>En el package hay que pasar la nueva configuración</p>
+                <pre>
+                  <code class="js">
+                    "scripts" : {
+                      ...
+                      "start" : "webpack serve --config webpack.config.dev.js"
+                      ... 
+                    }
+                  </code>
                 </pre>
               </div>
             </article>
@@ -1019,35 +1006,268 @@
               </h2>
               <div class="course-class__section--content">
                 <div class="note">
-                  <p>Ya no es necesario la instalación de loader, ya que webpack nos ofrece la posibilidad 
-                    de manejar archivos sin instalar ningún paquete por npm.
+                  <p>
+                    Ya no es necesario la instalación de loader, ya que webpack
+                    nos ofrece la posibilidad de manejar archivos sin instalar
+                    ningún paquete por npm.
                   </p>
                 </div>
-                  <pre>
-                    <code class="js">
+                <pre>
+                  <code class="js">
+                    output:{
+                      path: path.resolve(__dirname, 'dist'),
+                      filename: 'main.js',
+                      assetModuleFilename: 'assets/images/[hash][ext][query]'
+                    },
+                    module: {
+                      rules:[
+                        {
+                          test:/\.png/,
+                          type: "asset/resource"
+                        }
+                      ]
+                    }
+                  </code>
+                </pre>
+                <p>
+                  Y ya podemos importar imagenes en los archivos de JavaScript.
+                </p>
+                <pre>
+                  <code class="js">
+                    import imgTwitter from "../assets/images/twitter.png";
+
+                    &lt;img src="${imgTwitter}" /&gt;
+                  </code>
+                </pre>
+                <h3>Fuentes</h3>
+                <p>
+                  Hay que descargar los recursos de las fuentes que se usaran en
+                  el proyecto, google font proporciona la opción de descargar
+                  las fuentes en formato woff
+                  <a
+                    href="http://google-webfonts-helper.herokuapp.com/fonts/ubuntu?subsets=cyrillic,latin"
+                    target="_blank"
+                    class="link link-refe"
+                    >ir</a
+                  >.
+                </p>
+                <pre>
+                  <code class="css">
+                    /*css*/ 
+                    @font-face{
+                      font-family: 'Ubuntu';
+                      src: url('../assets/fonts/ubuntu-regular.woff2') format('woff2')
+                        url('../assets/fonts/ubuntu-regular.woff') format('woff');
+                      font-weight: 400;
+                      font-style: normal;
+                    }
+                  </code>
+                </pre>
+                <p>
+                  Tambien hay que mover los archivos de src a dist. Para eso se
+                  necesitan
+                  <a
+                    href="https://v4.webpack.js.org/loaders/url-loader/"
+                    class="link link-refe"
+                    target="_blank"
+                    >url-loader</a
+                  >.
+                </p>
+                <pre>
+                  <code>
+                    npm i url-loader file-loader -D
+                  </code>
+                </pre>
+                <p>Configuración en webpack.</p>
+                <pre>
+                  <code class="js">
+                    module: {
+                      rules:[
+                        {
+                          test:/\.(woff|woff2)$/,
+                          use: {
+                            loader: 'url-loader',
+                            options: {
+                              limit: 10000,
+                              mimetype: "application/font-woff",
+                              name: "[name].[ext]",
+                              outputPath: "./assets/fonts/",
+                              publicPath: "./assets/fonts/",
+                              esModule: false
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  </code>
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="optimization">
+              <h2 class="course-class__section--title">
+                Optimización: hashes, compresión y minificación de archivos
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Una de las cosas más importantes por las que se usa webpack es
+                  por la optimización de archivos como css, js, imagenes entre
+                  otros recursos. Las siguientes dependencias nos ayudaran en
+                  ese proceso.
+                </p>
+                <pre>
+                  <code>
+                    npm i css-minimizer-webpack-plugin terser-webpack-plugin -D
+                  </code>
+                </pre>
+                <p class="note">
+                  webpack nos comunica que actualmente terser-webpack-plugin
+                  viene incluido desde webpack 5
+                </p>
+                <pre>
+                  <code class="js">
+                    /*Archivo webpack*/
+                    const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+                    const TerserPlugin = require('terser-webpack-plugin');
+
+                    module.exports = {
+                      optimization: {
+                        minimize: true,
+                        minimizer: [
+                          new CssMinimizerPlugin(),
+                          new TerserPlugin(),
+                        ]
+                      }
+                    }
+                  </code>
+                </pre>
+                <h3>Hash</h3>
+                <p>
+                  Los recursos que se guardan en memoria cache suceden cuando el
+                  navegador entra a un sitio por primera vez detecta los
+                  recursos y los guarda. Por ello la siguiente vez sera mucho
+                  más rápido porque estarán en memoria
+                </p>
+                <ul>
+                  <li>
+                    La desventaja esta cuando sacamos una nueva versión, porque
+                    tendrán un mismo nombre evitando que se descargue los nuevos
+                    cambios, por lo tanto, el usuario no recibirá los nuevos
+                    cambios.
+                  </li>
+                  <li>
+                    Para que no haya conflictos con la cache una vez que
+                    tengamos nuestro proyecto en producción es importante darles
+                    un hash para cada nueva versión
+                  </li>
+                </ul>
+                <pre>
+                  <code>
+                    module.exports = {
+                      output: {
+                        filename: '[name].[contenthash].js'
+                      }
+
+                      /*Hash en las fuentes*/
                       module: {
-                        rules:[
+                        rules: [
                           {
-                            test:/\.png/,
-                            type: "asset/resource"
+                            test: /\.(woff|woff2)$/,
+                            name: '[name].[contenthash].[ext]'
                           }
                         ]
                       }
-                    </code>
-                  </pre>
-                  <p>
-                    Y ya podemos importar imagenes en los archivos de JavaScript.
-                  </p>
-                  <pre>
-                    <code class="js">
-                      import imgTwitter from "../assets/images/twitter.png";
 
-                      &lt;img src="${imgTwitter}" /&gt;
-                    </code>
-                  </pre>
-                
+                      /*plugins*/
+                      plugins: [
+                        new MiniCssExtractPlugin({
+                          filename: "assets/[name].[contenthash].css"
+                        })
+                      ]
+                    }
+                  </code>
+                </pre>
               </div>
             </article>
+            <div class="course-class__section" id="alias">
+              <h2 class="course-class__section--title">Alias</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Nos permiten otorgar nombres paths específicos evitando los
+                  paths largos.
+                </p>
+                <pre>
+                  <code class="js">
+                    /*Creación*/
+                    module.exports = {
+                      ...
+                      resolve:{
+                        alias: {
+                          '@utils' : path.resolve(__dirname, "src/utilis/"),
+                          '@templates' : path.resolve(__dirname, "src/templates/"),
+                          '@styles' : path.resolve(__dirname, "src/styles/"),
+                          '@images' : path.resolve(__dirname, "src/assets/images/"),
+                        }
+                      }
+                      ...
+                    }
+
+                    /*Uso*/
+                    import imgTwitter from '@images/twitter.png'
+                  </code>
+                </pre>
+              </div>
+            </div>
+            <div class="course-class__section" id="environment-variables">
+              <h2 class="course-class__section--title">Variables de entorno</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Es importante considerar las variables de entorno va a ser un
+                  espacio seguro donde podemos guardar datos sensibles. Por
+                  ejemplo, subir llaves al repositorio no es buena idea cuando
+                  tienes un proyecto open source, se debe instalar el paquete de
+                  npm
+                  <a
+                    href="https://www.npmjs.com/package/dotenv-webpack?activeTab=readme"
+                    target="_blank"
+                    class="link link-refe"
+                    >dotenv-webpack</a
+                  >.
+                </p>
+                <pre>
+                  <code>
+                    npm i dotenv-webpack -D
+                  </code>
+                </pre>
+                <p>
+                  Se debe crear los archivos .env, que es dondé viviran las
+                  variables de entorno, este archivo no se debe subir a ningún
+                  repositorio y debe ser confidencial y el archivo .env-example,
+                  para saber las variables que se usan en el proyecto.
+                </p>
+                <pre>
+                  <code>
+                    /*Archivo env*/
+                    API = https://randomuser.me/api/
+                  </code>
+                </pre>
+                <p>Configuración en webpack</p>
+                <pre>
+                  <code class="js">
+                    const Dotenv = require("dotenv-webpack");
+
+                    plugins: [
+                      new Dotenv()
+                    ]
+                  </code>
+                </pre>
+                <p>Ejemplo de uso de las variables de entorno.</p>
+                <pre>
+                  <code class="js">
+                    const API = process.env.API;
+                  </code>
+                </pre>
+              </div>
+            </div>
             <article class="course-class__section" id="preprocesadores">
               <h2 class="course-class__section--title">
                 Estilos con preprocesadores
@@ -1112,9 +1332,16 @@
               </h2>
               <div class="course-class__section--content">
                 <p>
-                  Hay veces que necesitamos mover archivos a la carpeta <b>dist</b> (distribución), para hacerlo con
-                  webpack necesitamos del plugin <a href="https://webpack.js.org/plugins/copy-webpack-plugin/" target="_blank" class="link link-refe">
-                    copy webpack plugin</a>.
+                  Hay veces que necesitamos mover archivos a la carpeta
+                  <b>dist</b> (distribución), para hacerlo con webpack
+                  necesitamos del plugin
+                  <a
+                    href="https://webpack.js.org/plugins/copy-webpack-plugin/"
+                    target="_blank"
+                    class="link link-refe"
+                  >
+                    copy webpack plugin</a
+                  >.
                 </p>
                 <pre>
                   <code>
