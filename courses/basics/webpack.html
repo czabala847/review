@@ -152,6 +152,11 @@
                       >Analyzer</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#reactjs"
+                      >React js</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -497,6 +502,8 @@
                 <pre>
                    <code>
                      npm i node-sass sass-loader
+
+                     npm i css-loader style-loader sass sass-loader
                    </code>
                  </pre>
                 <p>Configurando en el archivo principal de webpack.</p>
@@ -507,6 +514,12 @@
                        {
                          test: /\.css|.scss$/i,
                          use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+                       },
+
+                       /* Otra forma */
+                       {
+                        test: /\.s[ac]ss$/,
+                        use: ["style-loader", "css-loader", "sass-loader"],
                        }
                       ]
                     },
@@ -1013,6 +1026,55 @@
                 <pre>
                   <code>
                     npx webpack --profile --json | Out-file 'stats.json' -Encoding OEM
+                  </code>
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="reactjs">
+              <h2 class="course-class__section--title">Webpack para react</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Se puede configurar un entorno de webpack para comenzar a
+                  trabajar con react js, la base inicial se encuentra en este
+                  <a
+                    href="https://github.com/platzi/curso-webpack-react"
+                    target="_blank"
+                    class="link link-refe"
+                    >repositorio</a
+                  >. Una vez descargado esos archivos se debe instalar react por
+                  medio de npm.
+                </p>
+                <pre>
+                  <code>
+                    npm i react react-dom -S
+                  </code>
+                </pre>
+                <p>
+                  Asi mismo se debe instalar babel, para manejar todo el
+                  JavaScript moderno, y también un preset para react, para
+                  entender su sintaxis.
+                </p>
+                <pre>
+                  <code>
+                    npm i @babel/core @babel/preset-env @babel/preset-react babel-loader -D
+                  </code>
+                </pre>
+                <p>
+                  En el archivo <b>.babelrc</b> configurar los presets que se
+                  van a utilizar.
+                </p>
+                <pre>
+                  <code class="js">
+                    "presets": [
+                      "@babel/preset-env",
+                      "@babel/preset-react"
+                    ],
+                  </code>
+                </pre>
+                <p>Manejo de archivos HTML con React y Webpack.</p>
+                <pre>
+                  <code>
+                    npm i html-loader html-webpack-plugin -D
                   </code>
                 </pre>
               </div>
