@@ -121,7 +121,7 @@
         "courseName": "Git & GitHub",
         "courseDescription": "Curso sobre el manejo de control de versiones de nuestros proyectos usando git y github.",
         "courseURL": "./courses/basics/git-github.html",
-        "courseImage": "https://pbs.twimg.com/profile_images/1157035760085684224/iuxTnT5g_400x400.jpg"
+        "courseImage": "https://cdn2.iconfinder.com/data/icons/black-white-social-media/64/social_media_logo_github-128.png"
       },
       {
         "courseID": 2,
