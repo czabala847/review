@@ -1,6 +1,6 @@
 import * as render from "./src/js/RenderIndex.js";
 
-const $sectionCourse = document.getElementById("courses");
+const $sectionCourse = null | document.getElementById("courses");
 
 if ($sectionCourse) {
   (async () => {

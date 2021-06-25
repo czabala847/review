@@ -82,7 +82,24 @@
                 <ul>
                   <li>
                     <a class="link course-class__menu--a" href="#postgresql"
-                      >PostgreSQL</a
+                      >Introducción</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#console"
+                      >Consola</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#configuration-file"
+                      >Archivos de Configuración</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#type-date"
+                      >Tipos de datos</a
                     >
                   </li>
                 </ul>
@@ -97,7 +114,12 @@
             <article class="course-class__section" id="postgresql">
               <h2 class="course-class__section--title">¿Qué es Postgresql?</h2>
               <div class="course-class__section--content">
-                <p>Estandar <strong>ACID</strong>:</p>
+                <p>
+                  Es un motor de base de datos, que permite estructurar toda la
+                  información dentro de un servidor. Postgresql maneja el
+                  Estandar
+                  <strong>ACID</strong>:
+                </p>
                 <ul>
                   <li>
                     Atomicity – Atomicidad -> Separar las funciones
@@ -126,16 +148,99 @@
                 Interacción con Postgres desde la Consola
               </h2>
               <div class="course-class__section--content">
-                <p>Comandos para manera Postgres desde la consola:</p>
+                <p>
+                  Abrir la consola con el programa <strong>SQL Shell</strong>,
+                  comandos para manera Postgres desde la consola:
+                </p>
                 <pre>
-                  <code class="php">
-                    \l -> Lista todas las bases de datos
-                    \dt -> Listar tablas
-                    \c nombre_BD -> Cambiar a otra tabla
-                    \d nombre_tabla -> Describir una tabla
-                    \h -> Ver todos los comandos sql
+                  <code class="sql">
+                    \l /* Lista todas las bases de datos */
+                    \dt /* Listar tablas */
+                    \c nombre_BD /* Cambiar a otra tabla */
+                    \d nombre_tabla /* Describir una tabla */
+                    \h /* Ver todos los comandos sql */
+                    \g /* Ver última consulta realizada, de cualquier usuario */
+                    \timing /* Inicializar el contador de tiempo */
                   </code>
                 </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="configuration-files">
+              <h2 class="course-class__section--title">
+                Archivos de Configuración
+              </h2>
+              <div class="course-class__section--content">
+                <p>Los archivos de configuración son tres principales:</p>
+                <ul>
+                  <li>
+                    <b>postgreql.conf:</b> Configuración general de postgres,
+                    múltiples opciones referentes a direcciones de conexión de
+                    entrada, memoria, cantidad de hilos de pocesamiento,
+                    replica, etc.
+                  </li>
+                  <li>
+                    <b>pg_hba.conf:</b> Muestra los roles así como los tipos de
+                    acceso a la base de datos.
+                  </li>
+                  <li>
+                    <b>pg_ident.conf:</b> Permite realizar el mapeo de usuarios.
+                    Permite definir roles a usuarios del sistema operativo donde
+                    se ejecuta postgres.
+                  </li>
+                </ul>
+                <p>
+                  La ruta de los mismos depende del sistema Operarivo, para
+                  saber que que ruta estan, basta con hacer una Query.
+                </p>
+                <pre>
+                  <code class="sql">
+                    SHOW config_file;
+                  </code>
+                </pre>
+                <p>
+                  La ruta que nos arroge la debemos copiar y buscar en el
+                  explorador de archivos de nuestro sistema operativo.
+                </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="type-date">
+              <h2 class="course-class__section--title">Tipos de datos</h2>
+              <div class="course-class__section--content">
+                <p>
+                  <b>Principales:</b>
+                </p>
+                <ul>
+                  <li>
+                    Numéricos(Numeros enteros, Numeros Decimales, Seriales)
+                  </li>
+                  <li>Monetarios(cantidad de moneda)</li>
+                  <li>
+                    Texto(almacenar cadenas y texto, existen tres VARCHAR, CHAR,
+                    TEXT)
+                  </li>
+                  <li>Binario(1 Y 0)</li>
+                  <li>
+                    Fecha/Hora(Para almacenar Fechas y/o Horas, DATE TYPE, TIME
+                    TYPE, TIMESTAMP, INTERVAL)
+                  </li>
+                  <li>Boolean(Verdadero o Falso)</li>
+                </ul>
+                <p><b>Especiales</b>, propios de PostgreSQL:</p>
+                <ul>
+                  <li>
+                    Geométricos: Permiten calcular distancias y áreas usando dos
+                    valores X y Y.
+                  </li>
+                  <li>Direcciones de Red: Cálculos de máscara de red</li>
+                  <li>
+                    Texto tipo bit: Cálculos en otros sistemas, ejm(hexadecimal,
+                    binario)
+                  </li>
+                  <li>
+                    XML, JSON: Postgres no permite guardar en estos formatos
+                  </li>
+                  <li>Arreglos: Vectores y Matrices</li>
+                </ul>
               </div>
             </article>
           </div>
@@ -163,6 +268,7 @@
     <script>
       hljs.initHighlightingOnLoad();
     </script>
+    <script type="module" src="../../index.js"></script>
     <script src="../../src/js/menu.js"></script>
     <!-- <script>
       const $menu = document.getElementById("btn-menu");
