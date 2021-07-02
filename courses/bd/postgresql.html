@@ -102,6 +102,16 @@
                       >Tipos de datos</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#partitions"
+                      >Particiones</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#roles"
+                      >Roles</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -241,6 +251,113 @@
                   </li>
                   <li>Arreglos: Vectores y Matrices</li>
                 </ul>
+              </div>
+            </article>
+            <article class="course-class__section" id="partitions">
+              <h2 class="course-class__section--title">Particiones</h2>
+              <div class="course-class__section--content">
+                <p>
+                  En ocaciones llega un punto dondé tenemos mucha información en
+                  una tabla, la partición lo que consiste es en hacer una
+                  separación fisica de datos, es decir, guardar varias partes de
+                  la misma tabla en diferentes espacios de disco.
+                </p>
+                <p>
+                  Para hacer una partición se necesita de un rango como pueden
+                  ser las fechas, un ejemplo es particionar una tabla
+                  dependiendo de su fecha, una tabla para junio, julio, etc. De
+                  esta forma al hacer una consulta sobre los datos de junio no
+                  recorrera toda la tabla si no, solo la tabla que contenga las
+                  fechas de ese mes.
+                </p>
+                <p>
+                  En <strong>pgAdmin 4</strong>, al crear una tabla en las
+                  opciones generales podemos definirla como una tabla
+                  particionada, y en las configuraciones de
+                  <b>partition</b> seleccionar la llave o segmento que tendremos
+                  como referencia para hacer las particiones.
+                </p>
+                <pre>
+                  <code class="sql">
+                    /* Crear partición */
+                    CREATE TABLE bitacora_viaje202106 PARTITION OF bitacora_viaje
+                    FOR VALUES FROM ('2021-06-01') TO ('2021-06-30');
+                  </code>
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="roles">
+              <h2 class="course-class__section--title">Creación de Roles</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Es muy recomendado crear roles y no usar los predeterminados
+                  que ofrece postgres, ya que podemos por equivocación borrar o
+                  alterar las tablas de nuestras bases de datos, por eso siempre
+                  es recomendable tener limitaciones al momento de interactuar
+                  con bases de datos. Para crear un rol en postgres se realiza
+                  por consola lo siguiente:
+                </p>
+                <ol>
+                  <li>
+                    Listar opciones del CREATE ROLE:
+                    <pre>
+                      <code>
+                        \h CREATE ROLE
+                      </code>
+                    </pre>
+                  </li>
+                  <li>
+                    Crear un rol:
+                    <pre>
+                      <code>
+                        CREATE ROLE usuario_consulta;
+                      </code>
+                    </pre>
+                  </li>
+                  <li>
+                    Ver roles que estan creados:
+                    <pre>
+                      <code>
+                        \dg
+                      </code>
+                    </pre>
+                  </li>
+                  <li>
+                    Dar permisos a un rol para que pueda iniciar sesión en la
+                    base de datos:
+                  </li>
+                  <pre>
+                    <code>
+                      ALTER ROLE usuario_consulta WITH LOGIN;
+                    </code>
+                  </pre>
+                  <li>
+                    Asignarle contraseñas a un rol:
+                    <pre>
+                      <code>
+                        ALTER ROLE usuario_consulta WITH PASSWORD '1234';
+                      </code>
+                    </pre>
+                  </li>
+                  <li>
+                    Borrar un usuario:
+                    <pre>
+                      <code>
+                        DROP ROLE usuario_consulta;
+                      </code>
+                    </pre>
+                  </li>
+                </ol>
+                <p>
+                  Se pueden crear usuarios desde <b>pgAdmin 4</b>, accediendo
+                  desdé <i>Login/Group Roles</i>.
+                </p>
+                <p>
+                  Para dar permisos a un usuario sobre las tablas de la base de
+                  datos, para ello, dar click derecho sobre <i>tables</i> y
+                  escoger la opción <b>Grant Wizard</b>, nos aparecerán todas
+                  las tablas y podremos darle permiso a los usuarios.
+                </p>
               </div>
             </article>
           </div>
