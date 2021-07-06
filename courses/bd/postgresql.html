@@ -112,6 +112,16 @@
                       >Roles</a
                     >
                   </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#pl-sql"
+                      >PL/SQL</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#triggers"
+                      >Triggers</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -358,6 +368,154 @@
                   escoger la opción <b>Grant Wizard</b>, nos aparecerán todas
                   las tablas y podremos darle permiso a los usuarios.
                 </p>
+              </div>
+            </article>
+            <article class="course-class__section" id="pl-sql">
+              <h2 class="course-class__section--title">PL/SQL</h2>
+              <div class="course-class__section--content">
+                <p>
+                  PL Procedural language, también conocido como procedimientos
+                  almacenados, estas nos ayuda a desarrollar código directamente
+                  en el motor de bases de datos.
+                </p>
+                <p>Se compone de la siguiente estructura:</p>
+                <pre>
+                  <code class="sql">
+                    DO $$
+                    BEGIN 
+                      ...
+                    END
+                    $$
+                  </code>
+                </pre>
+                <p>
+                  Para el uso de variables se implementan dentro del bloque
+                  <strong>DECLARE</strong>, y se puede implementar loops para
+                  recorrer datos de consultas, con
+                  <strong>RICE NOTICE</strong> mostramos un mensaje en la
+                  consola de pgAdmin 4.
+                </p>
+                <pre>
+                  <code class="sql">
+                    DO $$
+                      DECLARE
+                        rec record;
+                      BEGIN
+                        FOR rec IN SELECT * FROM pasajeros LOOP
+                          RAISE NOTICE 'Un pasajero se llama %', rec.nombre;
+                        END LOOP;  
+                      END
+                    $$
+                  </code>
+                </pre>
+                <p>
+                  Con el comodin <b>%</b> indicamos a postgres que utilizaremos
+                  una variable en el mensaje. Se pueden utilizar contadores como
+                  en los lenguajes de programación.
+                </p>
+                <pre>
+                  <code class="sql">
+                    DO $$
+                      DECLARE 
+                        contador integer := 0;
+                      BEGIN
+                        contador := contador + 1;
+                        RAISE NOTICE 'Conteo es %' , contador;
+                      END
+                    $$
+                  </code>
+                </pre>
+                <h3>Crear funciones</h3>
+                <p>
+                  Para crear una función en postgres se debe seguir la siguiente
+                  estructura:
+                </p>
+                <pre>
+                  <code class="sql">
+                    CREATE OR REPLACE FUNCTION f_pasajero_nombre()
+                      RETURNS void
+                    AS $$
+                    DECLARE
+                      rec record;
+                      contador integer := 0;
+                    BEGIN
+                      FOR rec IN SELECT * FROM pasajeros LOOP
+                        RAISE NOTICE 'Un pasajero se llama %', rec.nombre;
+                      END LOOP;
+                    END
+                    $$
+                    LANGUAGE PLPGSQL;
+                  </code>
+                </pre>
+                <p>
+                  Se debe especificar el tipo de lenguaje que se esta usando en
+                  la función como lo pueden ser: SQL, PLPGSQL, PHYTON, entre
+                  otros. Para invocar a la función se utiliza mediante un
+                  select.
+                </p>
+                <pre>
+                  <code class="sql">
+                    SELECT f_pasajero_nombre();
+                  </code>
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="triggers">
+              <h2 class="course-class__section--title">Triggers</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Para la creación de triggers se debe hacer los siguiente Crear
+                  la función que activará el evento. Para ello se debe tomar los
+                  siguientes aspectos:
+                </p>
+                <ol>
+                  <li>
+                    En la declaración de la función, en la sección del retorno
+                    se debe indicar que es tipo triggers es decir RETURNS
+                    TRIGGER.
+                  </li>
+                  <li>
+                    La función tipo triggers debe retornar los valores OLD
+                    acepta lo viejo o NEW acepta lo nuevo. Sí se retorna VOID en
+                    nuestra función de tipo triggers no aceptamos cambios es
+                    decir RETURN NEW;
+                  </li>
+                  <li>
+                    Tanto NEW como OLD son un objeto de tipo record y contiene
+                    dentro de si el registro, es decir se puede acceder a los
+                    campos NEW.campo_nombre del registro
+                  </li>
+                </ol>
+                <p>Sintaxis de la función que devolvera el trigger:</p>
+                <pre>
+                  <code class="sql">
+                    CREATE OR REPLACE FUNCTION f_pasajero_nombre()
+                      RETURNS TRIGGER
+                    AS $$
+                    DECLARE
+                      rec record;
+                      contador integer := 0;
+                    BEGIN
+                      FOR rec IN SELECT * FROM pasajeros LOOP
+                        contador := contador + 1;
+                      END LOOP;
+                      INSERT INTO cont_pasajeros (total, tiempo) VALUES (contador, now());
+                      RETURN NEW;
+                    END
+                    $$
+                    LANGUAGE PLPGSQL;
+                  </code>
+                </pre>
+                <p>Y la sintaxis para crear el trigger:</p>
+                <pre>
+                  <code class="sql">
+                    CREATE TRIGGER myTrigger
+                    AFTER INSERT
+                    ON pasajeros
+                    FOR EACH ROW
+                    EXECUTE PROCEDURE f_pasajero_nombre();
+                  </code>
+                </pre>
               </div>
             </article>
           </div>
