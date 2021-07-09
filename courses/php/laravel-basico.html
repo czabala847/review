@@ -93,8 +93,8 @@
                     >
                   </li>
                   <li>
-                    <a class="link course-class__menu--a" href="#crud"
-                      >CRUD en laravel</a
+                    <a class="link course-class__menu--a" href="#conexion-bd"
+                      >Conexión BD en laravel</a
                     >
                   </li>
                   <li>
@@ -216,16 +216,17 @@
                 usando el framework Laravel.
               </p>
               <pre>
-                <code class="php">
+                <code class="console">
                   laravel new nombre-proyecto
 
-                  //Otra forma
                   composer create-project --prefer-dist laravel/laravel:^version nombre-proyecto
                 </code>
               </pre>
             </article>
-            <article class="course-class__section" id="crud">
-              <h2 class="course-class__section--title">CRUD en Laravel</h2>
+            <article class="course-class__section" id="conexion-bd">
+              <h2 class="course-class__section--title">
+                Conexión BD en Laravel
+              </h2>
               <div class="course-class__section--content">
                 <p>
                   Lo primero es configurar la base de datos en el proyecto de
@@ -241,52 +242,83 @@
                   configuraciones para la conexión a la base de datos.
                 </p>
                 <p>
-                  Para la creación de las <b>tablas</b> se hacen directamente en
-                  laravel y no en el cliente de desarrollo, en la ruta
-                  <i>database/migrations</i>. Desde el terminal se procede a
-                  crear las tablas en nuestra base de datos.
+                  Para la creación de las <b>tablas</b> o <b>entidades</b> que
+                  son clases que simulan una tabla en base de datos, se hacen
+                  directamente en laravel y no en el cliente de desarrollo, en
+                  la ruta <i>database/migrations</i>. Desde el terminal se
+                  procede a crear las tablas en nuestra base de datos.
                 </p>
-                <pre>
-                  <code>
-                    php artisan migrate
-                  </code>
-                </pre>
                 <p class="note">
                   Todas las tablas se crean en un archivo php y por medio de los
                   comandos de artisan que viene implementado en laravel, se
                   migran y se crean en base de datos. Nunca se manipula
                   manualmente la base de datos.
                 </p>
-                <h3>Creación de rutas</h3>
-                Para las rutas en laravel se definen en el archivo
-                <i>routes/web.php</i>, en el podemos configurar las rutas de
-                acceso a la aplicación, conectando con los
-                <strong>controladores</strong> y funciones que se encargaran de
-                manipular esa petición realizada por el usuario.
-                <pre>
-                  <code class="php">
-                    //Creación de rutas laravel 7
-
-                    //Route::get('/', 'Controlador@metodo');
-                    Route::get('/', 'UserController@index');
-                    Route::post('users', 'UserController@store')->name('users.store');
-                    Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');
-
-                    //laravel 8
-                    use App\Http\Controllers\UserController;
-                    Route::get('/', [UserController::class, 'index']);
-                    Route::post('users', [UserController::class, 'store']);
-                    Route::delete('users/{user}', [UserController::class, 'destroy']);
-                  </code>
-                </pre>
                 <p>
-                  Los <strong>Controladores</strong> se crean en la ruta
-                  <i>http/Controllers</i>, se pueden crear de forma manual o
-                  mediante laravel, con los comandos que ofrece artisan.
+                  Para crear todos los archivos necesarios para que la
+                  <strong>entidad</strong> funcione, se implementa el siguiente
+                  comando:
                 </p>
                 <pre>
                   <code class="console">
-                    php artisan make:controller UserController
+                    php artisan make:model Post -msfc
+                  </code>
+                </pre>
+                <ul>
+                  <li>
+                    <strong>m</strong>: Para hacer la migración, es una
+                    característica esencial en Laravel que le permite crear una
+                    tabla en su base de datos. Le permite modificar y compartir
+                    el esquema de la base de datos de la aplicación. Puede
+                    modificar la tabla agregando una nueva columna o eliminando
+                    una columna existente.
+                  </li>
+                  <li>
+                    <strong>s</strong>: Para los seeders, que no son más que
+                    datos de prueba para alimentar las tablas.
+                  </li>
+                  <li>
+                    <strong>f</strong>: Para crear el factory, junto con los
+                    seeders crean datos de prueba y dondé se puede especificar
+                    el tipo de dato a llenar para una columna en especifico.
+                    ejemplo: llenar una columna de una tabla solo con datos
+                    númericos.
+                  </li>
+                  <li>
+                    <p>
+                      <strong>c</strong>: Para el controlador. También se pueden
+                      crear los controladore por medio de <b>artisan</b>
+                    </p>
+                    <pre>
+                      <code class="console">
+                        php artisan make:controller UserController
+                      </code>
+                    </pre>
+                  </li>
+                </ul>
+                <p>
+                  Para la configuración de las columnas de las tablas, se
+                  modifican directamente en el código en
+                  <i>database/migrations</i>, en la función <b>up</b> se puede
+                  configurar el nombre y el tipo de dato.
+                </p>
+                <pre>
+                  <code class="php">
+                    public function up(){
+                      ...
+                        $table->id();
+                        $table->string('name');
+                      ...
+                    }
+                  </code>
+                </pre>
+                <p>
+                  Para terminar, se debe hacer la migración a la base de datos,
+                  con el comando <b>migrate</b>:
+                </p>
+                <pre>
+                  <code class="console">
+                    php artisan migrate
                   </code>
                 </pre>
               </div>
@@ -297,31 +329,81 @@
               </h2>
               <div class="course-class__section--content">
                 <p>
-                  Con Laravel contamos con datos para realizar pruebas, como es
-                  el caso de llenar con información una tabla en base de datos.
-                  Para realizarlo se hace mediante la consola con
-                  <strong>artisan</strong>
+                  Para la creación de datos de prueba se pueden realizar
+                  mediante el archivo <b>factory</b> de su respectiva entidad,
+                  ruta <i>database/factories/nombreEntidadFactory</i>.
                 </p>
-                <pre>
-                  <code>
-                    php artisan tinker
-                  </code>
-                </pre>
                 <p>
-                  El anterior comando, abre una consola para manipular archivos
-                  en laravel.
+                  Para llenar con datos falsos hay que hacer tambien uso de una
+                  variable llamada <b>faker</b>, Faker viene integrado por
+                  defecto en Laravel desde la versión 5.1, facilitándonos aún
+                  más su uso en nuestros proyectos, por tanto no necesitamos
+                  instalarlo.
+                </p>
+                <p>
+                  Con <b>Faker</b> podemos generar distintos tipos de datos
+                  como: nombres, teléfonos, ciudades, direcciones de correo,
+                  entre otros; ayudándonos a reducir tiempo y el esfuerzo de
+                  inventar datos ficticios para los registros.
                 </p>
                 <pre>
-                  <code>
-                    //Crear 12 registros de tipo usuario en BD
+                  <code class="php">
+                    use Illuminate\Support\Str;
 
-                    //laravel 7^
-                    factory(App\User::class, 12)->create()
-
-                    //laravel 8
-                    User::factory()->count(12)->create();
+                    $factory->define(Post::class, function (Faker $faker) {
+                      $title = $faker->sentence;
+                      return [
+                          'title' => $title,
+                          'slug' => Str::slug($title),
+                          'body' => $faker->text
+                      ];
+                    });
                   </code>
                 </pre>
+                <p>Adicional hay que configurar a los seeders:</p>
+                <ul>
+                  <li>
+                    <div>
+                      Primero se configura el archivo en
+                      <i>database/seeds/DatabaseSeeder.php</i>, en el método
+                      <b>run</b>.
+                    </div>
+                    <pre>
+                        <code class="php">
+                          public function run()
+                          {
+                              $this->call(PostSeeder::class);
+                          }
+                        </code>
+                      </pre>
+                  </li>
+                  <li>
+                    <div>
+                      Segúndo en el archivo seeder de la <b>entidad</b>
+                      <i>database/seeds/entidadSeeder.php</i>, configurar la
+                      creación de la información en base al factory que se
+                      configuro.
+                    </div>
+                    <pre>
+                      <code class="php">
+                        public function run()
+                        {
+                          factory(App\Post::class, 50)->create();
+                        }
+                      </code>
+                    </pre>
+                    <p class="note">
+                      Se crearan 50 post de la entidad Post, ya que ese archivo
+                      es el que representa la tabla en base de datos.
+                    </p>
+                    <p>Enviar los datos a la base de datos, con el comando:</p>
+                    <pre>
+                      <code class="console">
+                        php artisan migrate:refresh --seed
+                      </code>
+                    </pre>
+                  </li>
+                </ul>
               </div>
             </article>
             <article class="course-class__section" id="form-validate">
@@ -475,6 +557,29 @@
                 Sistema de rutas y controladores
               </h2>
               <div class="course-class__section--content">
+                <p>
+                  Para las rutas en laravel se definen en el archivo
+                  <i>routes/web.php</i>, en el podemos configurar las rutas de
+                  acceso a la aplicación, conectando con los
+                  <strong>controladores</strong> y funciones que se encargaran
+                  de manipular esa petición realizada por el usuario.
+                </p>
+                <pre>
+                  <code class="php">
+                    //Creación de rutas laravel 7
+
+                    //Route::get('/', 'Controlador@metodo');
+                    Route::get('/', 'UserController@index');
+                    Route::post('users', 'UserController@store')->name('users.store');
+                    Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');
+
+                    //laravel 8
+                    use App\Http\Controllers\UserController;
+                    Route::get('/', [UserController::class, 'index']);
+                    Route::post('users', [UserController::class, 'store']);
+                    Route::delete('users/{user}', [UserController::class, 'destroy']);
+                  </code>
+                </pre>
                 <ul>
                   <li>
                     <strong>Route</strong>: Capa encargada de manejar todo el
