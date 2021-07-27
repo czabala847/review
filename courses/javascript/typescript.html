@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/styles/monokai-sublime.min.css"
+    />
     <link rel="stylesheet" href="../../src/css/styles.css" />
   </head>
 
@@ -72,6 +76,18 @@
               <nav class="course-class__menu">
                 <ul>
                   <li>
+                    <a class="link course-class__menu--a" href="#install"
+                      >Instalación</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
+                      href="#configuration-file"
+                      >Archivo de configuración</a
+                    >
+                  </li>
+                  <li>
                     <a class="link course-class__menu--a" href="#parcel"
                       >Parcel</a
                     >
@@ -105,6 +121,76 @@
               class="fas fa-bars icon course-class__icon-menu"
               id="btn-menu"
             ></i>
+            <article class="course-class__section" id="install">
+              <h2 class="course-class__section--title">Instalación</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Lo primero es instalar <strong>TypeScript</strong> de manera
+                  global con el comando:
+                </p>
+                <pre>
+                  <code class="console">
+                    npm i -g typescript
+                  </code>
+                </pre>
+                <p>Compilar archivo de typescript a un archivo JavaScript:</p>
+                <pre>
+                  <code class="console">
+                    tsc hello.ts
+                  </code>
+                </pre>
+                <p>Compilar de manera "automática" los ficheros ts.</p>
+                <pre>
+                  <code class="console">
+                    tsc --watch hello.ts
+                  </code>
+                </pre>
+              </div>
+            </article>
+            <article class="course-class__section" id="configuration-file">
+              <h2 class="course-class__section--title">
+                Archivo de configuración de typescript
+              </h2>
+              <div class="course-class__section--content">
+                <p>Archivo de configuración <i>tsconfig.json</i>, permite:</p>
+                <ul>
+                  <li>Especificar la raíz del proyecto TypeScript.</li>
+                  <li>Permite configurar opciones para el compilador.</li>
+                </ul>
+                <pre>
+                  <code class="console">
+                    tsc --init
+                  </code>
+                </pre>
+                <p>
+                  Creara el archivo json, que nos permitira configurar las
+                  diferentes opciones para nuestro compilador.
+                </p>
+                <pre>
+                  <code class="js">
+                    {
+                      "compilerOptions":{
+                        //Heredar de otro archivo de configuración
+                        "extends" : "./configs/base",
+                        
+                        "compileOnSave" : true
+                        "target" : "es5",
+                        "module" : "commonjs",
+                        "strict" : true,
+                        "removeComments" : true
+                      },
+                      "include": [
+                        "src/**/*.ts"
+                      ],
+                      "exclude": [
+                        "node_modules",
+                        "**/*.test.ts"
+                      ]
+                    }
+                  </code>
+                </pre>
+              </div>
+            </article>
             <article class="course-class__section" id="parcel">
               <h2 class="course-class__section--title">
                 Transpilar código de TypeScript a JS
@@ -396,7 +482,11 @@
       src="https://kit.fontawesome.com/2028b75fa6.js"
       crossorigin="anonymous"
     ></script>
-    <script src="../../src/js/menu.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.0/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
     <script type="module" src="../../index.js"></script>
+    <script src="../../src/js/menu.js"></script>
   </body>
 </html>
