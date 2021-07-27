@@ -88,18 +88,18 @@
                     >
                   </li>
                   <li>
-                    <a class="link course-class__menu--a" href="#parcel"
-                      >Parcel</a
-                    >
-                  </li>
-                  <li>
-                    <a class="link course-class__menu--a" href="#typed"
-                      >Tipado</a
-                    >
-                  </li>
-                  <li>
                     <a class="link course-class__menu--a" href="#type-data"
                       >Tipos básicos de datos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#alias"
+                      >Unión de Tipos, Alias y Tipos Literales</a
+                    >
+                  </li>
+                  <li>
+                    <a class="link course-class__menu--a" href="#assertions"
+                      >Aserciones de tipo</a
                     >
                   </li>
                   <li>
@@ -191,98 +191,6 @@
                 </pre>
               </div>
             </article>
-            <article class="course-class__section" id="parcel">
-              <h2 class="course-class__section--title">
-                Transpilar código de TypeScript a JS
-              </h2>
-              <p>Instalar parcel en el proyecto a través de npm:</p>
-              <pre class="code">
-
-                npm install -D parcel-bundler
-              </pre>
-              <p>
-                Hay que reemplazar en script del archivo
-                <span class="t-bold">package.json</span> y configurar los HTML
-                que queremos que <span class="t-bold">parcel</span> procese.
-              </p>
-              <pre class="code">
-
-                <span class="code-var">"scripts"</span>: {
-                  "start": <span class="code-text">"parcel index.html ejercicios/index.html ejercicios/**/*.html"</span>
-                },              
-              </pre>
-              <p>
-                Se pueden añadir configuraciones, ejemplo decirle a parcel que
-                transpile el código para el navegador que esta utilizando, que
-                es una versión reciente de chrome.
-              </p>
-              <pre class="code">
-
-                <span class="code-comment">//Browserlist: que navegadores queremos darle apoyo.</span>
-                <span class="code-var">"browserlist"</span>: [
-                  "last 1 Chrome version"
-                ]
-              </pre>
-              <p>
-                Si antes estaba instalado
-                <span class="t-bold">liveServer</span> debemos desistalarlo
-              </p>
-              <pre class="code">
-
-                npm rm live-server
-              </pre>
-              <p>
-                Ahora se podrá correr el servidor de parcel, mediante
-                <span class="t-bold">npm start</span>, si no es así se debe
-                apagar el servidor y borrar las carpetas
-                <span class="t-bold">.cache</span> y
-                <span class="t-bold">dist</span>
-              </p>
-              <pre class="code">
-
-                rm -rf .cache dist
-              </pre>
-              <h3>Transpilar TS a JS</h3>
-              <pre class="code">
-
-                <span class="code-comment">#Instalar TypeScript</span>
-                npm i -g typescript
-
-                <span class="code-comment">#Ver si Typescript esta instalado</span>
-                tsc --version
-
-                <span class="code-comment">#Transpilar desde la consola de VSCODE</span>
-                tsc nombreArchivo.ts <span class="code-comment">#Resultado nombreArchivo.js</span>
-              </pre>
-            </article>
-            <article class="course-class__section" id="typed">
-              <h2 class="course-class__section--title">
-                Tipado con TypeScript
-              </h2>
-              <pre class="code">
-
-                <span class="code-comment">//La siguiente función solo recibe como parametros números</span>
-                <span class="code-var">function</span> <span class="code-function">add</span>(a: <span class="code-var">number</span>, b: <span class="code-var">number</span>) {
-                  <span class="code-sym">return</span> a + b;
-                }
-                
-                <span class="code-var">const</span> sum = <span class="code-function">add</span>(4, 5);                
-              </pre>
-              <h3>
-                ¿A que se refiere con que TypeScript ayuda a mejorar el
-                autocompletado?
-              </h3>
-              <p>
-                En parte es porque al ser una versión tipada de JavaScript te
-                permite predecir exactamente qué tipo de datos lleva cada
-                variable, argumento, método, contenido de objetos y arrays; Es
-                decir te permite predecir lo que quieres hacer. Por otra parte
-                hay que tener en cuenta que
-                <span class="t-bold">Visual Studio Code</span> y TypeScript son
-                ambos de Microsoft, lo que hace que se complementen
-                perfectamente.
-              </p>
-            </article>
             <article class="course-class__section" id="type-data">
               <h2 class="course-class__section--title">
                 Tipos básicos de datos
@@ -292,9 +200,10 @@
                   <span class="t-bold">boolean</span>: El tipo de datos más
                   básico es el valor verdadero / falso simple, que JavaScript y
                   TypeScript llaman un boolean valor.
-                  <pre class="code">
-
-                    <span class="code-var">let</span> state: <span class="code-var">boolean</span> = <span class="code-sym">false</span>
+                  <pre>
+                    <code class="js">
+                      let state: boolean = false
+                    </code>
                   </pre>
                 </li>
                 <li>
@@ -304,12 +213,13 @@
                   los literales hexadecimales y decimales, TypeScript también
                   admite literales binarios y octales introducidos en ECMAScript
                   2015.
-                  <pre class="code">
-
-                    <span class="code-var">let</span> decimal: <span class="code-var">number</span> = 6;
-                    <span class="code-var">let</span> hex: <span class="code-var">number</span> = 0xf00d;
-                    <span class="code-var">let</span> binary: <span class="code-var">number</span> = 0b1010;
-                    <span class="code-var">let</span> octal: <span class="code-var">number</span> = 0o744;
+                  <pre>
+                    <code class="js">
+                      let decimal: number = 6;
+                      let hex: number = 0xf00d;
+                      let binary: number = 0b1010;
+                      let octal: number = 0o744;
+                    </code>
                   </pre>
                 </li>
                 <li>
@@ -320,9 +230,10 @@
                   de datos textuales. Al igual que JavaScript, TypeScript
                   también utiliza comillas dobles (") o comillas simples (')
                   para rodear los datos de cadena.
-                  <pre class="code">
-
-                    <span class="code-var">let</span> color: <span class="code-var">string</span> = <span class="code-text">"blue"</span>
+                  <pre>
+                    <code class="js">
+                      let color: string = "blue"
+                    </code>
                   </pre>
                 </li>
                 <li>
@@ -331,10 +242,11 @@
                   tipos de matriz se pueden escribir de una de dos maneras. En
                   el primero, usa el tipo de elementos seguido de []para denotar
                   una matriz de ese tipo de elemento:
-                  <pre class="code">
-
-                    <span class="code-var">let</span> list : <span class="code-var">number</span>[] = [1, 2, 3]
-                    <span class="code-var">let</span> list : Array<<span class="code-var">Number</span> | <span class="code-var">String</span>> = [1, 2, <span class="code-text">'3'</span>]
+                  <pre>
+                    <code class="js">
+                      let list : number[] = [1, 2, 3]
+                      let list : Array&lt;Number | String&gt; = [1, 2, '3']
+                    </code>
                   </pre>
                 </li>
                 <li>
@@ -342,14 +254,16 @@
                   estándar de tipos de datos de JavaScript es enum. Como en
                   lenguajes como C #, una enumeración es una forma de dar
                   nombres más amigables a conjuntos de valores numéricos.
-                  <pre class="code">
+                  <pre>
+                    <code class="js">
+                      enum Color {Red, Green, Blue}
+                      enum Color {
+                        Red = "Red",
+                        Green = "Green",
+                        Blue = "Blue"}
 
-                    <span class="code-sym">enum</span> Color {Red, Green, Blue}
-                    <span class="code-sym">enum</span> Color {Red = <span class="code-text">"Red"</span>,
-                     Green = <span class="code-text">"Green"</span>,
-                     Blue = <span class="code-text">"Blue"</span>}
-
-                     <span class="code-var">let</span> c : Color = Color.Green
+                      let c : Color = Color.Green
+                    </code>
                   </pre>
                 </li>
                 <li>
@@ -361,13 +275,106 @@
                   la verificación de tipos y dejar que los valores pasen por las
                   comprobaciones en tiempo de compilación. Para hacerlo, los
                   etiquetamos con el any tipo:
-                  <pre class="code">
-
-                    <span class="code-var">let</span> notSure: <span class="code-var">any</span> = 4;
-                    <span class="code-var">let</span> notSure: <span class="code-var">any</span>[] = [<span class="code-text">'Carlos'</span>, 1 , <span class="code-sym">true</span> ];
+                  <pre>
+                    <code class="js">
+                      let notSure: any = 4;
+                      let notSure: any[] = ['Carlos', 1 , true ];
+                    </code>
+                  </pre>
+                </li>
+                <li>
+                  <span class="t-bold">Void</span>: Representa la ausencia de
+                  tipo. usado en funciones que no retornan nada:
+                  <pre>
+                    <code class="js">
+                      function showInfo(user: any) : void{
+                        console.log('...');
+                      }
+                    </code>
                   </pre>
                 </li>
               </ul>
+            </article>
+            <article class="course-class__section" id="alias">
+              <h2 class="course-class__section--title">
+                Unión de Tipos, Alias y Tipos Literales
+              </h2>
+              <div class="course-class__section--content">
+                <ul>
+                  <li>
+                    <b>Unión de tipos</b>: Permite el uso de uno o más tipos.
+                    Para unir tipos, se usa el caracter |
+                    <pre>
+                      <code class="js">
+                        let userId: string | number;
+                      </code>
+                    </pre>
+                  </li>
+                  <li>
+                    <b>Alias</b>: Sirven para definir un tipo de dato con nombre
+                    personalizado. Se usa la palabra reservada type
+                    <pre>
+                      <code class="js">
+                        type userId = string | number;
+
+                        let myUserId: userId
+                      </code>
+                    </pre>
+                  </li>
+                  <li>
+                    <b>Tipos literales</b>: Permiten definir rápidamente una
+                    serie de elementos constantes, se pueden usar con strings,
+                    numbers o booleanos.
+                    <pre>
+                      <code class="js">
+                        type SquareSize: '100x100' | '500x500' | '1000x1000';
+                        let smallPicture: SquareSize = "100x100"; //correcto
+                        let smallPicture: SquareSize = "200x200"; //incorrecto
+                      </code>
+                    </pre>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="course-class__section" id="assertions">
+              <h2 class="course-class__section--title">Aserciones de tipo</h2>
+              <div class="course-class__section--content">
+                <p>
+                  Aserciones de tipos: Mecanismo de conversión de tipos de
+                  datos. Se parece al casting de tipos en otros lenguajes de
+                  programación. Usa dos sintaxis.
+                </p>
+                <pre>
+                  <code class="js">
+                    let username: any = 'texto';
+
+                    let message: string = (&lt;string&gt;username).length > 5 ? "mayor 5" : "menor";
+                  </code>
+                </pre>
+                <p class="note">
+                  La prioridad de usar <b>as</b> por encima de
+                  <b>&lt;&gt;</b> es desde la versión 1.6 de Typescript debido a
+                  que había ambigüedad en archivos .jsx
+                </p>
+                <pre>
+                  <code class="js">
+                    let message: string = (username as string).length ;
+                  </code>
+                </pre>
+                <p>
+                  Se puede obligar el uso del método con as desde el archivo
+                  ts.config.js
+                </p>
+                <pre>
+                  <code class="js">
+                    {
+                      rules: {
+                        "no-angle-bracket-type-assertion": true
+                      }
+                    }
+                  </code>
+                </pre>
+              </div>
             </article>
             <article class="course-class__section" id="function">
               <h2 class="course-class__section--title">Funciones</h2>
@@ -378,13 +385,14 @@
                 puede recibir y también el tipo de dato que retorna la función o
                 método en caso que estemos en una clase:
               </p>
-              <pre class="code">
-
-                <span class="code-var">function</span> <span class="code-function">sumar</span>(valor1:<span class="code-var">number</span>, valor2:<span class="code-var">number</span>): <span class="code-var">number</span>{
-                  <span class="code-sym">return</span> valor1+valor2;
-                }
-              
-                console.<span class="code-var">log</span>(<span class="code-function">sumar</span>(10, 5));              
+              <pre>
+                <code class="js">
+                  function sumar(valor1:number, valor2:number): number{
+                    return valor1+valor2;
+                  }
+                
+                  console.log(sumar(10, 5)); 
+                </code>
               </pre>
               <p>
                 La función sumar recibe dos parámetros de tipo number y retorna
