@@ -411,15 +411,16 @@
                 argumentos dados a una función tiene que coincidir con el número
                 de parámetros que la función espera.
               </p>
-              <pre class="code">
-
-                <span class="code-var">function</span> <span class="code-function">buildName</span>(firstName: <span class="code-var">string</span> , lastName: <span class="code-var">string</span>) {
-                  <span class="code-sym">return</span> firstName + " " + lastName;
-                } 
-                
-                <span class="code-var">let</span> result1 = <span class="code-function">buildName</span>(<span class="code-text">"Bob"</span>); <span class="code-comment">// error, too few parameters</span>
-                <span class="code-var">let</span> result2 = <span class="code-function">buildName</span>(<span class="code-text">"Bob"</span>, <span class="code-text">"Adams"</span>, <span class="code-text">"Sr."</span>);  <span class="code-comment">// error, too many parameters</span>
-                <span class="code-var">let</span> result3 = <span class="code-function">buildName</span>(<span class="code-text">"Bob"</span>, <span class="code-text">"Adams"</span>); <span class="code-comment">//// ah, just right</span>
+              <pre>
+                <code class="js">
+                  function buildName(firstName: string , lastName: string) {
+                    return firstName + " " + lastName;
+                  } 
+                  
+                  let result1 = buildName("Bob"); // error, too few parameters
+                  let result2 = buildName("Bob", "Adams", "Sr.");  // error, too many parameters
+                  let result3 = buildName("Bob", "Adams"); //// ah, just right
+                </code>
               </pre>
               <p>
                 En JavaScript, cada parámetro es opcional, y los usuarios pueden
@@ -429,11 +430,12 @@
                 sean opcionales. Por ejemplo, supongamos que queremos que el
                 parámetro de apellido anterior sea opcional:
               </p>
-              <pre class="code">
-
-                <span class="code-var">function</span> <span class="code-function">buildName</span>(firstName: <span class="code-var">string</span> , lastName<span class="t-bold">?</span>: <span class="code-var">string</span>) {
-                  <span class="code-sym">return</span> firstName + " " + lastName;
-                } 
+              <pre>
+                <code class="js">
+                  function buildName(firstName: string , lastName?: string) {
+                    return firstName + " " + lastName;
+                  }
+                </code>
               </pre>
             </article>
             <article class="course-class__section" id="interface">
@@ -442,31 +444,32 @@
                 Nos permiten declarar la forma exacta de un objeto, definiendo
                 los tipos de sus propiedades y si son opcionales o no. ejemplo:
               </p>
-              <pre class="code">
-
-                <span class="code-var">enum</span> Color {
-                  rojo = <span class="code-text">"Rojo"</span>,
-                  verde = <span class="code-text">"Verde"</span>
-                }
-                
-                <span class="code-var">interface</span> Rectangulo {
-                  ancho: number;
-                  alto: number;
-                  color<span class="code-sym">?</span>: Color; <span class="code-comment">//Esta propiedad es opcional ?:</span>
-                }
-                
-                <span class="code-var">let</span> rect: Rectangulo = {
-                  ancho: 4,
-                  alto: 6,
-                  color: Color.rojo
-                };
-                
-                <span class="code-comment">//Funcion que pide un objeto Rectangulo y devuelve un número</span>
-                <span class="code-var">function</span> <span class="code-function">area</span>(rectangulo: <span class="code-var">Rectangulo</span>): <span class="code-var">number</span> {
-                  <span class="code-var">return</span> rectangulo.alto <span class="code-sym">*</span> rectangulo.ancho;
-                }
-                
-                <span class="code-var">let</span> areaRect = <span class="code-function">area</span>(rect);                
+              <pre>
+                <code class="js">
+                  enum Color {
+                    rojo = "Rojo",
+                    verde = "Verde"
+                  }
+                  
+                  interface Rectangulo {
+                    ancho: number;
+                    alto: number;
+                    color?: Color; //Esta propiedad es opcional ?:
+                  }
+                  
+                  let rect: Rectangulo = {
+                    ancho: 4,
+                    alto: 6,
+                    color: Color.rojo
+                  };
+                  
+                  //Funcion que pide un objeto Rectangulo y devuelve un número
+                  function area(rectangulo: Rectangulo): number {
+                    return rectangulo.alto * rectangulo.ancho;
+                  }
+                  
+                  let areaRect = area(rect);
+                </code>
               </pre>
             </article>
           </div>
