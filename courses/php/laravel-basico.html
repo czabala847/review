@@ -156,6 +156,13 @@
                   <li>
                     <a
                       class="link course-class__menu--a"
+                      href="#polymorphic-relationships"
+                      >Eloquent: Relación polimórficas</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="link course-class__menu--a"
                       href="#recommended-package"
                       >Paquetes recomendados</a
                     >
@@ -981,7 +988,7 @@
                   </code>
                 </pre>
                 <p>
-                  Ya la relación existe en la base de datos, sinembargo en
+                  Ya la relación existe en la base de datos, sin embargo en
                   laravel no, para poder relacionarlas en laravel debemos
                   especificar en los archivos <strong>Model</strong> que
                   representan las tablas.
@@ -1036,6 +1043,92 @@
                         $user->name
                         { $user->posts->count() }
                       "
+                    }
+                  </code>
+                </pre>
+              </div>
+            </article>
+            <article
+              class="course-class__section"
+              id="polymorphic-relationships"
+            >
+              <h2 class="course-class__section--title">
+                Relaciones polimórficas
+              </h2>
+              <div class="course-class__section--content">
+                <p>
+                  Básicamente consiste en relacionar un objeto con distintos
+                  tipos de modelo, por ejemplo: si tenemos un modelo
+                  <b>Producto</b> y un model <b>Post</b>, en ambos casos
+                  utilizaremos imagenes, en vez de que en cada tabla del modelo
+                  se cree un campo imagen dónde guardar la ruta de la imagen, se
+                  puede implementar una tabla imagen que este relacionada a
+                  ambos modelos, esto se le conoce como una relación
+                  polimórficas,
+                  <a
+                    href="https://virtumedia.wordpress.com/2020/04/10/relaciones-polimorficas-en-laravel/"
+                    target="_blank"
+                    class="link link-refe"
+                    >Más información</a
+                  >
+                </p>
+                <p>Implementación en laravel, migración imagen:</p>
+                <pre>
+                  <code class="php">
+                    {
+                      $table->id();
+                      $table->string('url');
+                      $table->morphs('imageable')
+                    }
+                  </code>
+                </pre>
+                <p>
+                  Como buena práctica, el nombre del campo polimórfico, se
+                  escribe terminando con la <b>able</b>, como se muestra en el
+                  ejemplo anterior.
+                </p>
+                <p>
+                  En los modelos se deben implementar las relaciones, ejemplo de
+                  relación 1 a 1, para más información visitar la documentación
+                  de
+                  <a
+                    href="https://laravel.com/docs/7.x/eloquent-relationships#polymorphic-relationships"
+                    target="_blank"
+                    class="link link-refe"
+                    >laravel</a
+                  >
+                </p>
+                <pre>
+                  <code class="php">
+                    //Model image
+                    public function imageable()
+                    {
+                        return $this->morphTo();
+                    }
+
+                    //Model Post
+                    public function image()
+                    {
+                        return $this->morphOne('App\Image', 'imageable');
+                    }
+                  </code>
+                </pre>
+                <p>
+                  Uso de la imagen desde el modelo, la linea importante es la
+                  creación de la imagen desde el modelo Post:
+                </p>
+                <pre>
+                  <code class="php">
+                    if ($request->hasFile('image')) {
+                      $image = $request->file('image');
+                      $nombre = time() . $image->getClientOriginalName();
+                      $ruta = public_path() . '/images';
+                      $image->move($ruta, $nombre);
+          
+                      $urlImage = '/images/' . $nombre;
+          
+                      $post->save();
+                      $post->image()->create($urlImage);
                     }
                   </code>
                 </pre>
